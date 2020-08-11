@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-biblio-style: apalike
+biblio-style: abntex2
 link-citations: yes
 description: "Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà."
 ---
@@ -28,17 +28,11 @@ knitr::opts_chunk$set(
 options(OutDec = ",")
 ```
 
-# Licença
+# Licença {-}
 
 Como está descrito no repositório, os poucos códigos originais desenvolvidos ao longo do texto estão sob a licença **GNU GPLv3** .
 
 O texto e as artes gráficas elaboradas de forma original estão sob licença **Creative Commons BY-NC-SA 4.0**.
-
-\begin{block}<+->{Licença Creative Commons BY NC SA}
-Este trabalho está licenciado sob a Licença Atribuição - Não Comercial - Compartilha Igual 4.0 Internacional Creative Commons. Para visualizar uma cópia desta licença, visite \url{http://creativecommons.org/licenses/by-nc-sa/4.0/} ou mande uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-\end{block}
-\centering
-  \includegraphics[height=4cm]{Figuras/by-nc-sa_pictures.eps}
 
 # Prerequisites
 

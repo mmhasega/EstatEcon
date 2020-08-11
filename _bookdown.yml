@@ -1,6 +1,12 @@
 output_dir: "docs"
 book_filename: "EstatEcon"
 delete_merged_file: true
-language:
+language: 
+  label:
+    fig: "FIGURA "
+    tab: "TABELA "
+
   ui:
-    chapter_name: "Chapter "
+    edit: Edit
+    chapter_name: "CAPITULO "
+    appendix_name: "APENDICE "

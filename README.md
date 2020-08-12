@@ -1,5 +1,5 @@
 # EstatEcon
-Desenvolvimento de notas de aulas para a disciplina de Estatística Econômica e Introdução à Econometria SE305 da Universidade Federal do Paraná usando o Bookdown.
+Desenvolvimento de notas de aulas para a disciplina de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paraná usando o Bookdown.
 
 Veja a versão HTML disponível através do GitHub https://mmhasega.github.io/EstatEcon/ !
 

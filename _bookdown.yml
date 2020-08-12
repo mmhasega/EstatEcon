@@ -8,6 +8,6 @@ language:
 
   ui:
     edit: Edit
-    chapter_name: "CAPITULO "
-    appendix_name: "APENDICE "
-    reference_name: "REFERENCIAS "
+    chapter_name: "CAPÍTULO "
+    appendix_name: "APÊNDICE "
+    reference_name: "REFERÊNCIAS "

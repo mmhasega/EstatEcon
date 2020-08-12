@@ -34,7 +34,7 @@ Como está descrito no repositório, os poucos códigos originais desenvolvidos 
 
 O texto e as artes gráficas elaboradas de forma original estão sob licença **Creative Commons BY-NC-SA 4.0**.
 
-# Prerequisites
+# Pré-requisitos
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
 

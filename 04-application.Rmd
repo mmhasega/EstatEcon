@@ -1,7 +1,7 @@
-# Applications
+# Aplicações
 
 Some _significant_ applications are demonstrated in this chapter.
 
-## Example one
+## Exemplo um
 
-## Example two
+## Examplo dois

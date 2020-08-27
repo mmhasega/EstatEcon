@@ -3,7 +3,7 @@ Desenvolvimento de notas de aulas para a disciplina de Estatística Econômica e
 
 Veja a versão HTML disponível através do GitHub https://mmhasega.github.io/EstatEcon/ !
 
-Os códigos de programação apresentado ao longo do texto desenvolvido estão sob a licença GNU GPLv.3.0. 
+Os poucos códigos de programação originais apresentados ao longo do texto desenvolvido estão sob a licença GNU GPLv.3.0. 
 
 O texto propriamente dito, o principal objeto ou produto do repositório, está sob a licença Creative Commons BY-NC-SA 4.0.
 

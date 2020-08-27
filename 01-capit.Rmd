@@ -1,4 +1,4 @@
-# Medidas de posição e dispersão (Sartoris, 2013, cap.2, p.30)
+# Medidas de posição e dispersão
 
 ## Variável Aleatória
 

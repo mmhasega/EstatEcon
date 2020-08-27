@@ -17,7 +17,7 @@ onde $i =1, ...,n$
 Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \ref{eq:eq1}.
 
 \begin{equation*}
-  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6 anos
+  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6~\mathrm{anos}
 \end{equation*}
 
 ## EXemplo 1 no R

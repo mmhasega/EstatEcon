@@ -2,7 +2,7 @@
 
 ## Variável Aleatória
 
-- variável aleatória (v.a.) é uma variável que está associada a uma \textit{distribuição de probabilidade}.
+- variável aleatória (v.a.) é uma variável que está associada a uma *distribuição de probabilidade*.
 - O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
 
 ## Média aritmética

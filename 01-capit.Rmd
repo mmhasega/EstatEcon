@@ -2,48 +2,4 @@
 
 ## Variável Aleatória
 
-- variável aleatória (v.a.) é uma variável que está associada a uma \textit{distribuição de probabilidade}.
-- O resultado do lançamento de uma dado, que pode ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
-
-## Média aritmética
-
-\begin{equation}\label{eq:eq1}
-    \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
-\end{equation}
-onde $i =1, ...,n$
-
-## Exemplo 1
-
-Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \ref{eq:eq1}.
-
-\begin{equation*}
-  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6 anos
-\end{equation*}
-
-## EXemplo 1 no R
-
-```{r media aritmetica ex1}
-X <- c(21,23,25,28,31)
-X
-mediaX <- mean(X)
-mediaX
-```
-
-
-## Exemplo 2
-
-Qual é a média aritmética de três provas realizadas por um aluno, cujas notas 
-foram 4,6 e 8. Para responder, basta aplicar \ref{eq:eq1}.
-
-\begin{equation*}
-  \overline{X} = \frac{4+6+8}{3} = 6
-\end{equation*}
-
-## Exemplo 2 no R
-
-```{r media aritmetica ex2}
-X2 <- c(4,6,8)
-X2
-mediaX2 <- mean(X2)
-mediaX2
-```
+-

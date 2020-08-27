@@ -1,23 +1,51 @@
-# Introdução {#intro}
+# Medidas de posição e dispersão (Sartoris, 2013, cap.2, p.30)
 
-Começando a elaborar as notas de aulas da disciplina de Estatística Econômica.
+## Variável Aleatória
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+\begin{itemize}
+  \item variável aleatória (v.a.) é uma variável que está associada a uma \textit{distribuição de probabilidade}.
+  \item O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
+\end{itemize}
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+## Média aritmética
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
+\begin{equation}\label{eq:eq1}
+    \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+\end{equation}
+onde $i =1, ...,n$
+
+## Exemplo 1
+
+Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \ref{eq:eq1}.
+
+\begin{equation*}
+  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6 anos
+\end{equation*}
+
+## EXemplo 1 no R
+
+```{r media aritmetica ex1}
+X <- c(21,23,25,28,31)
+X
+mediaX <- mean(X)
+mediaX
 ```
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
+## Exemplo 2
+
+Qual é a média aritmética de três provas realizadas por um aluno, cujas notas 
+foram 4,6 e 8. Para responder, basta aplicar \ref{eq:eq1}.
+
+\begin{equation*}
+  \overline{X} = \frac{4+6+8}{3} = 6
+\end{equation*}
+
+## Exemplo 2 no R
+
+```{r media aritmetica ex2}
+X2 <- c(4,6,8)
+X2
+mediaX2 <- mean(X2)
+mediaX2
 ```
-
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].

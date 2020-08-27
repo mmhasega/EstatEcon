@@ -2,10 +2,8 @@
 
 ## Variável Aleatória
 
-\begin{itemize}
-  \item variável aleatória (v.a.) é uma variável que está associada a uma \textit{distribuição de probabilidade}.
-  \item O resultado do lançamento de uma dado, que pode ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
-\end{itemize}
+- variável aleatória (v.a.) é uma variável que está associada a uma \textit{distribuição de probabilidade}.
+- O resultado do lançamento de uma dado, que pode ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
 
 ## Média aritmética
 

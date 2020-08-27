@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CAPÍTULO 1 Medidas de posição e dispersão | Notas de aulas de Estatística Econômica</title>
+  <title>Licença | Notas de aulas de Estatística Econômica</title>
   <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="CAPÍTULO 1 Medidas de posição e dispersão | Notas de aulas de Estatística Econômica" />
+  <meta property="og:title" content="Licença | Notas de aulas de Estatística Econômica" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="CAPÍTULO 1 Medidas de posição e dispersão | Notas de aulas de Estatística Econômica" />
+  <meta name="twitter:title" content="Licença | Notas de aulas de Estatística Econômica" />
   
   <meta name="twitter:description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sobre-o-autor.html"/>
-<link rel="next" href="revisão-de-literatura.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="sobre-o-material.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -134,9 +134,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Notas de aulas de Estatística Econômica</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
+<li class="chapter" data-level="" data-path="licença.html"><a href="licença.html"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
-<li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
 <li class="chapter" data-level="1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html"><i class="fa fa-check"></i><b>1</b> Medidas de posição e dispersão</a><ul>
 <li class="chapter" data-level="1.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1</b> Variável Aleatória</a></li>
 <li class="chapter" data-level="1.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-aritmética"><i class="fa fa-check"></i><b>1.2</b> Média aritmética</a></li>
@@ -171,50 +171,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="medidas-de-posição-e-dispersão" class="section level1">
-<h1><span class="header-section-number">CAPÍTULO 1</span> Medidas de posição e dispersão</h1>
-<div id="variável-aleatória" class="section level2">
-<h2><span class="header-section-number">1.1</span> Variável Aleatória</h2>
-<ul>
-<li>variável aleatória (v.a.) é uma variável que está associada a uma <em>distribuição de probabilidade</em>.</li>
-<li>O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de <span class="math inline">\(1/6\)</span>.</li>
-</ul>
-</div>
-<div id="média-aritmética" class="section level2">
-<h2><span class="header-section-number">1.2</span> Média aritmética</h2>
-<p><span class="math display">\[\begin{equation}\label{eq:eq1}
-    \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
-\end{equation}\]</span>
-onde <span class="math inline">\(i =1, ...,n\)</span></p>
-</div>
-<div id="exemplo-1" class="section level2">
-<h2><span class="header-section-number">1.3</span> Exemplo 1</h2>
-<p>Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar .</p>
-<p><span class="math display">\[\begin{equation*}
-  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6~\mathrm{anos}
-\end{equation*}\]</span></p>
-</div>
-<div id="exemplo-1-no-r" class="section level2">
-<h2><span class="header-section-number">1.4</span> EXemplo 1 no R</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="medidas-de-posição-e-dispersão.html#cb1-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">31</span>)</span>
-<span id="cb1-2"><a href="medidas-de-posição-e-dispersão.html#cb1-2"></a>X</span></code></pre></div>
-<pre><code>## [1] 21 23 25 28 31</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="medidas-de-posição-e-dispersão.html#cb3-1"></a>mediaX &lt;-<span class="st"> </span><span class="kw">mean</span>(X)</span>
-<span id="cb3-2"><a href="medidas-de-posição-e-dispersão.html#cb3-2"></a>mediaX</span></code></pre></div>
-<pre><code>## [1] 25,6</code></pre>
-<ul>
-<li></li>
-</ul>
-
-</div>
+<div id="licença" class="section level1 unnumbered">
+<h1>Licença</h1>
+<p>Como está descrito no repositório, os poucos códigos originais desenvolvidos ao longo do texto estão sob a licença <strong>GNU GPLv3</strong> .</p>
+<p>O texto e as artes gráficas elaboradas de forma original estão sob licença <strong>Creative Commons BY-NC-SA 4.0</strong>.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="sobre-o-autor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="revisão-de-literatura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sobre-o-material.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

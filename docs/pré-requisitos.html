@@ -135,7 +135,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
-<li class="chapter" data-level="1" data-path="pré-requisitos.html"><a href="pré-requisitos.html"><i class="fa fa-check"></i><b>1</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1" data-path="pré-requisitos.html"><a href="pré-requisitos.html"><i class="fa fa-check"></i><b>1</b> Pré-requisitos</a><ul>
+<li class="chapter" data-level="1.1" data-path="pré-requisitos.html"><a href="pré-requisitos.html#latex-e-r"><i class="fa fa-check"></i><b>1.1</b> LaTeX e R</a></li>
+<li class="chapter" data-level="1.2" data-path="pré-requisitos.html"><a href="pré-requisitos.html#intalando-r-rstudio-miktex-e-texstudio"><i class="fa fa-check"></i><b>1.2</b> Intalando R, RStudio, MikTEX e TEXstudio</a></li>
+<li class="chapter" data-level="1.3" data-path="pré-requisitos.html"><a href="pré-requisitos.html#utf-8-e-acentuação-direta-no-teclado"><i class="fa fa-check"></i><b>1.3</b> UTF-8 e acentuação direta no teclado</a></li>
+<li class="chapter" data-level="1.4" data-path="pré-requisitos.html"><a href="pré-requisitos.html#como-aprender-o-latex"><i class="fa fa-check"></i><b>1.4</b> Como aprender o LaTeX</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="medidas-de-posição-e-dispersão-sartoris-2013-cap-2-p-30.html"><a href="medidas-de-posição-e-dispersão-sartoris-2013-cap-2-p-30.html"><i class="fa fa-check"></i><b>2</b> Medidas de posição e dispersão (Sartoris, 2013, cap.2, p.30)</a><ul>
 <li class="chapter" data-level="2.1" data-path="medidas-de-posição-e-dispersão-sartoris-2013-cap-2-p-30.html"><a href="medidas-de-posição-e-dispersão-sartoris-2013-cap-2-p-30.html#variável-aleatória"><i class="fa fa-check"></i><b>2.1</b> Variável Aleatória</a></li>
 <li class="chapter" data-level="2.2" data-path="medidas-de-posição-e-dispersão-sartoris-2013-cap-2-p-30.html"><a href="medidas-de-posição-e-dispersão-sartoris-2013-cap-2-p-30.html#média-aritmética"><i class="fa fa-check"></i><b>2.2</b> Média aritmética</a></li>
@@ -174,14 +179,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="pré-requisitos" class="section level1">
 <h1><span class="header-section-number">CAPÍTULO 1</span> Pré-requisitos</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="pré-requisitos.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="pré-requisitos.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="pré-requisitos.html#cb1-3"></a><span class="co"># devtools::install_github(&#39;rstudio/bookdown&#39;)</span></span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
+<div id="latex-e-r" class="section level2">
+<h2><span class="header-section-number">1.1</span> LaTeX e R</h2>
+<ul>
+<li>LaTeX
+<ul>
+<li>Windows: ProTEXt (MikTEX) – Editor TEXStudio</li>
+<li>XOS/Mac: MacTEX – Editor TEX Shop</li>
+<li>Linux: TEX live – Editor TEX Works</li>
+</ul></li>
+<li>R
+<ul>
+<li>Windows/XOS/Linux: R – Editor RStudio</li>
+</ul></li>
+<li>R Markdown (disponível no RStudio)
+<ul>
+<li>HTML</li>
+<li>PDF</li>
+<li>LaTeX~ e Beamer</li>
+<li>MS-Word</li>
+</ul></li>
+</ul>
+</div>
+<div id="intalando-r-rstudio-miktex-e-texstudio" class="section level2">
+<h2><span class="header-section-number">1.2</span> Intalando R, RStudio, MikTEX e TEXstudio</h2>
+<ol style="list-style-type: decimal">
+<li>Baixar as instalação compatível com o seu sistema operacional em:  e instalar primeiro.</li>
+<li>Baixar o ProTEXt para Windows, MacTEX para xOS e TEX Live para Linux em  instalar depois do R. Instalar a versão completa. Esta instalação deveria ser realizada com tempo por ser demorada.</li>
+<li>Baixar o RStudio Desktop compatível com o seu sistema operacional em:  e instalar depois do ProTEXt ou MacTEX ou TEX Live.</li>
+<li>Baixar o TEXstudio em  e instalar por último.</li>
+</ol>
+</div>
+<div id="utf-8-e-acentuação-direta-no-teclado" class="section level2">
+<h2><span class="header-section-number">1.3</span> UTF-8 e acentuação direta no teclado</h2>
+<ul>
+<li>Usar o código de fonte UTF-8 que no RStudio pode ser feito e Global
+Options/Code/Saving/DefaultTextEncoding</li>
+<li>no cabeçalho dos arquivos LaTeX ou no arquivo “in header.txt”~ inclua os seguintes pacotes:
+<ul>
+<li>usepackage[brazil]{babel}</li>
+<li>usepackage[utf8]{inputenc}</li>
+<li>usepackage[T1]{fontenc}</li>
+</ul></li>
+</ul>
+</div>
+<div id="como-aprender-o-latex" class="section level2">
+<h2><span class="header-section-number">1.4</span> Como aprender o LaTeX</h2>
+<ul>
+<li><p>aula expressa no laboratório previsto na disciplina SE305. Só o básico. O slide tem muita informação para consulta.</p></li>
+<li><p>material na internet <strong>GRÁTIS</strong>, inclusive livros em pdf</p></li>
+<li><p>tutoriais e vídeo aulas <strong>GRÁTIS</strong> no YouTube</p></li>
+<li><p>a ajuda e exemplos do Overleaf que é apresentado no próximo slide.</p></li>
+<li><p>geralmente disponibilizo os códigos dos arquivos , Sweave e R Markdown do material das minhas aulas.</p>
+<ul>
+<li>Note que no R Markdown tem uma mistura de  e R Markdown.</li>
+<li>Procure pelas extensões: *.tex, *.Rwd e *.Rmd.</li>
+</ul></li>
+</ul>
 
+</div>
 </div>
             </section>
 

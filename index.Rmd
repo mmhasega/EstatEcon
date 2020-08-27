@@ -34,3 +34,6 @@ Como está descrito no repositório, os poucos códigos originais desenvolvidos 
 
 O texto e as artes gráficas elaboradas de forma original estão sob licença **Creative Commons BY-NC-SA 4.0**.
 
+# Sobre o material {-}
+
+A situação especial causada pela pandemia da COVID-19 forçou a muitos professores criarem materiais para facilitar aulas remotas das suas disciplinas. A disciplina SE305 Estatística Econômica e Introdução à Econometria da UFPR não poderia ser diferente. Então, o objetivo deste material é de suprir a falta das bibliografias básicas na sua versão digital. Não é o ideal, mas a ideia é melhorar o material com tempo.

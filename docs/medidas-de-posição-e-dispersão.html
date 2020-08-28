@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-08-26" />
+<meta name="date" content="2020-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,9 +139,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
 <li class="chapter" data-level="1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html"><i class="fa fa-check"></i><b>1</b> Medidas de posição e dispersão</a><ul>
 <li class="chapter" data-level="1.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1</b> Variável Aleatória</a></li>
-<li class="chapter" data-level="1.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-aritmética"><i class="fa fa-check"></i><b>1.2</b> Média aritmética</a></li>
-<li class="chapter" data-level="1.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-1"><i class="fa fa-check"></i><b>1.3</b> Exemplo 1</a></li>
-<li class="chapter" data-level="1.4" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-1-no-r"><i class="fa fa-check"></i><b>1.4</b> EXemplo 1 no R</a></li>
+<li class="chapter" data-level="1.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-aritmética"><i class="fa fa-check"></i><b>1.2</b> Média aritmética</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-1"><i class="fa fa-check"></i><b>1.2.1</b> Exemplo 1</a></li>
+<li class="chapter" data-level="1.2.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-1-no-r"><i class="fa fa-check"></i><b>1.2.2</b> EXemplo 1 no R</a></li>
+<li class="chapter" data-level="1.2.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-2"><i class="fa fa-check"></i><b>1.2.3</b> Exemplo 2</a></li>
+<li class="chapter" data-level="1.2.4" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-2-no-r"><i class="fa fa-check"></i><b>1.2.4</b> Exemplo 2 no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-ponderada"><i class="fa fa-check"></i><b>1.3</b> Média Ponderada</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-3"><i class="fa fa-check"></i><b>1.3.1</b> Exemplo 3</a></li>
+<li class="chapter" data-level="1.3.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-3-no-r"><i class="fa fa-check"></i><b>1.3.2</b> Exemplo 3 no R</a></li>
+<li class="chapter" data-level="1.3.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-4"><i class="fa fa-check"></i><b>1.3.3</b> Exemplo 4</a></li>
+<li class="chapter" data-level="1.3.4" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-4-no-r"><i class="fa fa-check"></i><b>1.3.4</b> Exemplo 4 no R</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="revisão-de-literatura.html"><a href="revisão-de-literatura.html"><i class="fa fa-check"></i><b>2</b> Revisão de Literatura</a></li>
 <li class="chapter" data-level="3" data-path="metodologia.html"><a href="metodologia.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a></li>
@@ -182,30 +191,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="média-aritmética" class="section level2">
 <h2><span class="header-section-number">1.2</span> Média aritmética</h2>
-<p><span class="math display">\[\begin{equation}\label{eq:eq1}
+<p><span class="math display" id="eq:eq11">\[\begin{equation}
     \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+    \tag{1.1}
 \end{equation}\]</span>
 onde <span class="math inline">\(i =1, ...,n\)</span></p>
-</div>
-<div id="exemplo-1" class="section level2">
-<h2><span class="header-section-number">1.3</span> Exemplo 1</h2>
-<p>Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar .</p>
+<div id="exemplo-1" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Exemplo 1</h3>
+<p>Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar <a href="medidas-de-posição-e-dispersão.html#eq:eq11">(1.1)</a>.</p>
 <p><span class="math display">\[\begin{equation*}
-  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6~\mathrm{anos}
+  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
 \end{equation*}\]</span></p>
 </div>
-<div id="exemplo-1-no-r" class="section level2">
-<h2><span class="header-section-number">1.4</span> EXemplo 1 no R</h2>
+<div id="exemplo-1-no-r" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> EXemplo 1 no R</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="medidas-de-posição-e-dispersão.html#cb1-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">31</span>)</span>
 <span id="cb1-2"><a href="medidas-de-posição-e-dispersão.html#cb1-2"></a>X</span></code></pre></div>
 <pre><code>## [1] 21 23 25 28 31</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="medidas-de-posição-e-dispersão.html#cb3-1"></a>mediaX &lt;-<span class="st"> </span><span class="kw">mean</span>(X)</span>
 <span id="cb3-2"><a href="medidas-de-posição-e-dispersão.html#cb3-2"></a>mediaX</span></code></pre></div>
 <pre><code>## [1] 25,6</code></pre>
-<ul>
-<li></li>
-</ul>
+</div>
+<div id="exemplo-2" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Exemplo 2</h3>
+<p>Qual é a média aritmética de três provas realizadas por um aluno, cujas notas
+foram 4,6 e 8. Para responder, basta aplicar <a href="medidas-de-posição-e-dispersão.html#eq:eq11">(1.1)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{4+6+8}{3} = 6
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-2-no-r" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Exemplo 2 no R</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="medidas-de-posição-e-dispersão.html#cb5-1"></a>X2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb5-2"><a href="medidas-de-posição-e-dispersão.html#cb5-2"></a>X2</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="medidas-de-posição-e-dispersão.html#cb7-1"></a>mediaX2 &lt;-<span class="st"> </span><span class="kw">mean</span>(X2)</span>
+<span id="cb7-2"><a href="medidas-de-posição-e-dispersão.html#cb7-2"></a>mediaX2</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+</div>
+</div>
+<div id="média-ponderada" class="section level2">
+<h2><span class="header-section-number">1.3</span> Média Ponderada</h2>
+<p><span class="math display" id="eq:eq12">\[\begin{equation}
+    \overline{X} = \frac{1}{\sum_{i=1}^{n}w_i} \sum_{i=1}^{n} w_i X_i
+    \tag{1.2}
+\end{equation}\]</span>
+onde <span class="math inline">\(w_i\)</span> é a ponderação ou peso associado a iésimo valor de <span class="math inline">\(X\)</span>.</p>
+<p>Podemos escrever na forma de frequência relativa dos valores da variável <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display" id="eq:eq13">\[\begin{equation}
+  f_i = \frac{w_i}{\sum_{i=1}^{n}w_i}
+  \tag{1.3}
+\end{equation}\]</span></p>
+<div id="exemplo-3" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Exemplo 3</h3>
+<p>Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete
+de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder,
+basta aplicar <a href="medidas-de-posição-e-dispersão.html#eq:eq12">(1.2)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{22\times 8 + 23\times 7 + 25 \times 3 + 28 \times 1 + 
+  30 \times 1}{20} = 23,5
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-3-no-r" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Exemplo 3 no R</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="medidas-de-posição-e-dispersão.html#cb9-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>)</span>
+<span id="cb9-2"><a href="medidas-de-posição-e-dispersão.html#cb9-2"></a>X3</span></code></pre></div>
+<pre><code>## [1] 22 23 25 28 30</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="medidas-de-posição-e-dispersão.html#cb11-1"></a>w3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb11-2"><a href="medidas-de-posição-e-dispersão.html#cb11-2"></a>w3</span></code></pre></div>
+<pre><code>## [1] 8 7 3 1 1</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="medidas-de-posição-e-dispersão.html#cb13-1"></a>wX3 &lt;-<span class="st"> </span>w3 <span class="op">*</span><span class="st"> </span>X3</span>
+<span id="cb13-2"><a href="medidas-de-posição-e-dispersão.html#cb13-2"></a>mediaX3 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX3)<span class="op">/</span><span class="kw">sum</span>(w3)</span>
+<span id="cb13-3"><a href="medidas-de-posição-e-dispersão.html#cb13-3"></a>mediaX3</span></code></pre></div>
+<pre><code>## [1] 23,5</code></pre>
+</div>
+<div id="exemplo-4" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Exemplo 4</h3>
+<p>Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar <a href="medidas-de-posição-e-dispersão.html#eq:eq12">(1.2)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-4-no-r" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Exemplo 4 no R</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="medidas-de-posição-e-dispersão.html#cb15-1"></a>X4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb15-2"><a href="medidas-de-posição-e-dispersão.html#cb15-2"></a>X4</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="medidas-de-posição-e-dispersão.html#cb17-1"></a>w4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb17-2"><a href="medidas-de-posição-e-dispersão.html#cb17-2"></a>w4</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="medidas-de-posição-e-dispersão.html#cb19-1"></a>wX4 &lt;-<span class="st"> </span>w4 <span class="op">*</span><span class="st"> </span>X4</span>
+<span id="cb19-2"><a href="medidas-de-posição-e-dispersão.html#cb19-2"></a>mediaX4 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX4)<span class="op">/</span><span class="kw">sum</span>(w4)</span>
+<span id="cb19-3"><a href="medidas-de-posição-e-dispersão.html#cb19-3"></a><span class="kw">round</span>(mediaX4, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 6,7</code></pre>
 
+</div>
 </div>
 </div>
             </section>

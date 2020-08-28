@@ -7,20 +7,21 @@
 
 ## Média aritmética
 
-\begin{equation}\label{eq:eq1}
+\begin{equation}
     \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+    (\#eq:eq11)
 \end{equation}
 onde $i =1, ...,n$
 
-## Exemplo 1
+### Exemplo 1
 
-Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \ref{eq:eq1}.
+Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \@ref(eq:eq11).
 
 \begin{equation*}
-  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6~\mathrm{anos}
+  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
 \end{equation*}
 
-## EXemplo 1 no R
+### EXemplo 1 no R
 
 ```{r media aritmetica ex1}
 X <- c(21,23,25,28,31)
@@ -28,4 +29,80 @@ X
 mediaX <- mean(X)
 mediaX
 ```
--
+
+### Exemplo 2
+
+Qual é a média aritmética de três provas realizadas por um aluno, cujas notas 
+foram 4,6 e 8. Para responder, basta aplicar \@ref(eq:eq11).
+
+\begin{equation*}
+  \overline{X} = \frac{4+6+8}{3} = 6
+\end{equation*}
+
+### Exemplo 2 no R
+
+```{r media aritmetica ex2}
+X2 <- c(4,6,8)
+X2
+mediaX2 <- mean(X2)
+mediaX2
+```
+
+## Média Ponderada
+
+\begin{equation}
+    \overline{X} = \frac{1}{\sum_{i=1}^{n}w_i} \sum_{i=1}^{n} w_i X_i
+    (#eq:eq12)
+\end{equation}
+onde $w_i$ é a ponderação ou peso associado a iésimo valor de $X$.
+
+Podemos escrever na forma de frequência relativa dos valores da variável $X$:
+
+\begin{equation}
+  f_i = \frac{w_i}{\sum_{i=1}^{n}w_i}
+  (#eq:eq13)
+\end{equation}
+
+### Exemplo 3
+
+Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete 
+de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder, 
+basta aplicar \@ref(eq:eq12).
+
+\begin{equation*}
+  \overline{X} = \frac{22\times 8 + 23\times 7 + 25 \times 3 + 28 \times 1 + 
+  30 \times 1}{20} = 23,5
+\end{equation*}
+
+### Exemplo 3 no R
+
+```{r media ponderada ex3}
+X3 <- c(22,23,25,28,30)
+X3
+w3 <- c(8,7,3,1,1)
+w3
+wX3 <- w3*X3
+mediaX3 <- sum(wX3)/sum(w3)
+mediaX3
+```
+
+### Exemplo 4
+
+Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar \@ref(eq:eq12).
+
+\begin{equation*}
+  \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
+\end{equation*}
+
+### Exemplo 4 no R
+
+```{r media ponderada ex4}
+X4 <- c(4,6,8)
+X4
+w4 <- c(1,2,3)
+w4
+wX4 <- w4*X4
+mediaX4 <- sum(wX4)/sum(w4)
+round(mediaX4, digits = 1)
+```
+

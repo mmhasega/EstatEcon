@@ -1,5 +1,7 @@
 # Medidas de posição e dispersão
 
+Este tópico está baseado no material de @Sartoris2013.
+
 ## Variável Aleatória
 
 - variável aleatória (v.a.) é uma variável que está associada a uma *distribuição de probabilidade*.

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.8.11)  12 AUG 2020 16:39
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.8.11)  31 AUG 2020 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -389,7 +389,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count295
 \@thisrulewidth=\dimen168
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/07/15 v2.5i e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count296
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
@@ -467,7 +467,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip60
 \dth@everypar=\toks30
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/Us
@@ -481,7 +481,7 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box55
@@ -876,37 +876,47 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [5] [6
 
+] [7] [8
+
+]
+Underfull \hbox (badness 4254) in paragraph at lines 150--151
+\T1/lmr/m/n/10 En-gen-heiro Agrônomo pela UN-ESP/Jaboticabal, Mestrado em Econo
+-
+ []
+
+[9] [10
+
 ]
 Cap\'{\i }tulo 1.
+
+Package natbib Warning: Citation `Sartoris2013' on page 11 undefined on input l
+ine 155.
+
+Missing character: There is no ∑ in font ecrm1000!
+
+LaTeX Warning: Reference `eq:eq11' on page 11 undefined on input line 180.
+
+[11]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-48.
+90.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 149.
-[7] [8
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 191.
 
-]
-Cap\'{\i }tulo 2.
+LaTeX Warning: Reference `eq:eq11' on page 12 undefined on input line 215.
 
-LaTeX Warning: Reference `intro' on page 9 undefined on input line 162.
-
-
-LaTeX Warning: Reference `methods' on page 9 undefined on input line 162.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   {
-l.175 ...sh includegraphics{[}width=0,8\linewidth{
-                                                  ]}\{EstatEcon\_files/figur...
- 
+! You can't use `macro parameter character #' in display math mode.
+l.251     (#
+            eq:eq12) 
 Here is how much of TeX's memory you used:
- 22899 strings out of 481691
- 422422 string characters out of 5932573
- 780742 words of memory out of 5000000
- 39644 multiletter control sequences out of 15000+600000
- 600863 words of font info for 109 fonts, out of 8000000 for 9000
+ 22940 strings out of 481691
+ 423216 string characters out of 5932573
+ 782968 words of memory out of 5000000
+ 39685 multiletter control sequences out of 15000+600000
+ 609904 words of font info for 112 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  52i,6n,116p,903b,756s stack positions out of 5000i,500n,10000p,200000b,80000s
-Output written on EstatEcon.pdf (8 pages).
+
+Output written on EstatEcon.pdf (11 pages).

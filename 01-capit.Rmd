@@ -12,13 +12,13 @@ Este tópico está baseado no material de @Sartoris2013.
 
 \begin{equation}
     \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
-    (\#eq:eq11)
+    (\#eq:mediaaritmeticasimples)
 \end{equation}
 onde $i =1, ...,n$
 
 ### Exemplo 1
 
-Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \@ref(eq:eq11).
+Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \@ref(eq:mediaaritmeticasimples).
 
 \begin{equation*}
   \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
@@ -36,7 +36,7 @@ mediaX
 ### Exemplo 2
 
 Qual é a média aritmética de três provas realizadas por um aluno, cujas notas 
-foram 4,6 e 8. Para responder, basta aplicar \@ref(eq:eq11).
+foram 4,6 e 8. Para responder, basta aplicar \@ref(eq:mediaaritmeticasimples).
 
 \begin{equation*}
   \overline{X} = \frac{4+6+8}{3} = 6
@@ -53,9 +53,11 @@ mediaX2
 
 ## Média Aritmética Ponderada
 
+Na média aritmética ponderada, cada valor pode ter importância diferentes do outros valores considerados no computo. A frequência dos valores é muito comumente usada para para dar maior ou menor importância relativa entre os valores considerados no computo da média aritmética ponderada. Veja como fica a fórmula para o cálculo da média aritmética ponderada em \@ref(eq:mediaartimeticaponderada)
+
 \begin{equation}
     \overline{X} = \frac{1}{\sum_{i=1}^{n}w_i} \sum_{i=1}^{n} w_i X_i
-    (\#eq:eq12)
+    (\#eq:mediaartimeticaponderada)
 \end{equation}
 onde $w_i$ é a ponderação ou peso associado a iésimo valor de $X$.
 
@@ -70,7 +72,7 @@ Podemos escrever na forma de frequência relativa dos valores da variável $X$:
 
 Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete 
 de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder, 
-basta aplicar \@ref(eq:eq12).
+basta aplicar \@ref(eq:mediaartimeticaponderada).
 
 \begin{equation*}
   \overline{X} = \frac{22\times 8 + 23\times 7 + 25 \times 3 + 28 \times 1 + 
@@ -91,7 +93,7 @@ mediaX3
 
 ### Exemplo 4
 
-Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar \@ref(eq:eq12).
+Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar \@ref(eq:mediaartimeticaponderada).
 
 \begin{equation*}
   \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
@@ -109,9 +111,9 @@ mediaX4 <- sum(wX4)/sum(w4)
 round(mediaX4, digits = 1)
 ```
 
-## Média Geométrica
+## Média Geométrica Simples
 
-Na média geométrica, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os $n$ valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a \@ref(eq:eq14) e \@ref(eq:eq15).
+Na média geométrica simples, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os $n$ valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a \@ref(eq:eq14) e \@ref(eq:eq15).
 
 \begin{equation}
     G = \left(\prod_{i=1}^{n} X_i \right)^{\frac{1}{n}}

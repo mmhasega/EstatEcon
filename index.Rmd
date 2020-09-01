@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [estatecon.bib, book.bib, packages.bib]
-biblio-style: abnt
+biblio-style: apalike
 link-citations: yes
 description: "Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà."
 ---

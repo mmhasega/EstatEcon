@@ -5,9 +5,10 @@ Este tópico está baseado no material de @Sartoris2013.
 ## Variável Aleatória
 
 - variável aleatória (v.a.) é uma variável que está associada a uma *distribuição de probabilidade*.
+- Ou seja, cada valor da v.a. está associada a uma probabilidade.
 - O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
 
-## Média aritmética
+## Média Aritmética Simples
 
 \begin{equation}
     \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
@@ -50,11 +51,11 @@ mediaX2 <- mean(X2)
 mediaX2
 ```
 
-## Média Ponderada
+## Média Aritmética Ponderada
 
 \begin{equation}
     \overline{X} = \frac{1}{\sum_{i=1}^{n}w_i} \sum_{i=1}^{n} w_i X_i
-    (#eq:eq12)
+    (\#eq:eq12)
 \end{equation}
 onde $w_i$ é a ponderação ou peso associado a iésimo valor de $X$.
 
@@ -62,7 +63,7 @@ Podemos escrever na forma de frequência relativa dos valores da variável $X$:
 
 \begin{equation}
   f_i = \frac{w_i}{\sum_{i=1}^{n}w_i}
-  (#eq:eq13)
+  (\#eq:eq13)
 \end{equation}
 
 ### Exemplo 3
@@ -107,4 +108,64 @@ wX4 <- w4*X4
 mediaX4 <- sum(wX4)/sum(w4)
 round(mediaX4, digits = 1)
 ```
+
+## Média Geométrica
+
+Na média geométrica, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os $n$ valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a \@ref(eq:eq14) e \@ref(eq:eq15).
+
+\begin{equation}
+    G = \left(\prod_{i=1}^{n} X_i \right)^{\frac{1}{n}}
+    (\#eq:eq14)
+\end{equation}
+ou
+\begin{equation}
+    G = \sqrt[n]{X_1 \times X_2 \times \ldots \times X_n}
+    (\#eq:eq15)
+\end{equation}
+
+
+## EXemplo 5 no R
+
+```{r media geometrica ex5}
+X5 <- c(4,6,8)
+X5
+n <- length(X5)
+mediaX5 <- prod(X5)^(1/n)
+round(mediaX5, digits = 1)
+```
+
+## Média Geométrica Ponderada
+
+
+
+\begin{equation}\label{eq:eq5}
+    G = \left(\prod_{j=1}^{k} X_j^{w_j} \right)^{\frac{1}{n}}
+\end{equation}
+ou
+\begin{equation}\label{eq:eq5a}
+    G = \sqrt[n]{X_1^{w_1} \times X_2^{w_2} \times \ldots \times X_k^{w_k}}
+\end{equation}
+
+onde a $\sum_{j=1}^{k} w_j = n$ 
+
+## Exemplo 6
+
+tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
+
+\begin{equation*}
+  \sqrt[6]{4^1 \times 6^2 \times 8^3} \cong 6,5
+\end{equation*}
+
+## O exemplo 6 no R
+
+```{r medgeom, echo=TRUE}
+x6 <- c(4,6,8)
+class(x6)
+x6
+w6 <- c(1,2,3)
+w6
+G2 <- round((prod(x6^w6))^(1/sum(w6)),1)
+G2
+```
+
 

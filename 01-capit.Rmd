@@ -123,8 +123,7 @@ ou
     (\#eq:eq15)
 \end{equation}
 
-
-## EXemplo 5 no R
+### EXemplo 5 no R
 
 ```{r media geometrica ex5}
 X5 <- c(4,6,8)
@@ -136,19 +135,21 @@ round(mediaX5, digits = 1)
 
 ## Média Geométrica Ponderada
 
+Na média geométrica ponderada que podem ser calculadas através de duas fórmulas \@ref(eq:eq16) e \@ref(eq:eq17), cada valor pode ter uma importância diferente em relação aos outros valores no computo da média geométrica. Muito comumente, esta maior ou menor importância pode estar associada a frequência dos valores considerados no cálculo.
 
-
-\begin{equation}\label{eq:eq5}
+\begin{equation}
     G = \left(\prod_{j=1}^{k} X_j^{w_j} \right)^{\frac{1}{n}}
+    (\#eq:eq16)
 \end{equation}
 ou
-\begin{equation}\label{eq:eq5a}
+\begin{equation}
     G = \sqrt[n]{X_1^{w_1} \times X_2^{w_2} \times \ldots \times X_k^{w_k}}
+    (\#eq:eq17)
 \end{equation}
 
 onde a $\sum_{j=1}^{k} w_j = n$ 
 
-## Exemplo 6
+### Exemplo 6
 
 tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
@@ -156,7 +157,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
   \sqrt[6]{4^1 \times 6^2 \times 8^3} \cong 6,5
 \end{equation*}
 
-## O exemplo 6 no R
+### O exemplo 6 no R
 
 ```{r medgeom, echo=TRUE}
 x6 <- c(4,6,8)

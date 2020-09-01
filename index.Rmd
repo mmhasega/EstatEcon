@@ -14,6 +14,8 @@ description: "Trata-se do material usado nas aulas de Estatística Econômica e 
 library(formatR)
 library(knitr)
 library(ggplot2)
+library(tinytex)
+library(bibtex)
 knitr::opts_chunk$set(
 	echo = TRUE,
 	error = FALSE,

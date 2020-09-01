@@ -125,6 +125,8 @@ ou
     (\#eq:eq15)
 \end{equation}
 
+O que acontece se um dos valores de $X$ for igual a zero? E se um dos valores for negativo?
+
 ### EXemplo 5 no R
 
 ```{r media geometrica ex5}
@@ -171,4 +173,87 @@ G2 <- round((prod(x6^w6))^(1/sum(w6)),1)
 G2
 ```
 
+## Média Harmônica
 
+É o inverso da média dos inversos dos valores da variável que pode ser calculada através das fórmulas \@ref(eq:mediaharmonicasimples) e \@ref(eq:mediaharmonicasimples2).
+
+\begin{equation}
+    H = \frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}
+    (\#eq:mediaharmonicasimples)
+\end{equation}
+
+\begin{equation}
+    H = \frac{n}{\frac{1}{X_1} + \frac{1}{X_2} + \ldots + \frac{1}{X_n}}
+    (\#eq:mediaharmonicasimples2)
+\end{equation}
+
+O que acontece se um dos valores de $X$ for igual a zero?
+
+### Exemplo 7
+
+Tomando o exemplo das notas, temos:
+
+\begin{equation*}
+    H = \frac{3}{\frac{1}{4} + \frac{1}{6} + \frac{1}{8}}\cong 5,5.
+\end{equation*}
+
+## Média Harmônica Ponderada
+
+Na média harmônica ponderada, assim como na média aritmética ponderada e na média geométrica ponderada, cada valor pode ter uma importância em relação aos outros valores considerados no seu cálculo. Comumente, a frequência do valor pode associaar uma maior ou menor importância no cálculo da média harmônica ponderada que pode ser calculada através das fórmulas \@ref(eq:mediaharmonicaponderada) e \@ref(eq:mediaharmonicaponderada2)
+
+\begin{equation}
+    H = \frac{n}{\sum_{j=1}^{k}w_{j}\frac{1}{X_j}}
+    (\#eq:mediaharmonicaponderada)
+\end{equation}
+ou
+\begin{equation}
+    H = \frac{n}{w_1\frac{1}{X_1} + w_2\frac{1}{X_2} + \ldots + w_k \frac{1}{X_k}}
+    (\#eq:mediaharmonicaponderada2)
+\end{equation}
+
+onde a $\sum_{j=1}^{k} w_j = n$ 
+
+### Exemplo 8
+
+Tomando o exemplo das notas
+
+\begin{equation*}
+    H = \frac{6}{\frac{1}{4}\times 1 + \frac{1}{6}\times 2 + \frac{1}{8}\times 3}\cong 6,3.
+\end{equation*}
+
+### Observação
+
+Tanto para as médias simples como para as ponderadas, a
+média aritmética é maior do que a média geométrica e essa, por sua vez, é maior 
+que a harmônica. Isso só não vale quando todos os valores são iguais. Veja de forma esquemática em \@ref(eq:diferencaentreasmedias)
+
+\begin{equation}
+  \overline{X} \geq G \geq H
+  (\#eq:diferencaentreasmedias)
+\end{equation}
+
+### Exemplo 9
+
+O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: \\
+\vspace{0.3cm}
+As notas dos bimestres têm os mesmos pesos.
+  \begin{equation*}
+    \overline{X} = \frac{3 + 4,5 + 7 + 8,5}{4} = 23/4 = 5,75
+  \end{equation*}
+  \begin{equation*}
+    G = \sqrt[4]{3 \times 4,5 \times 7 \times 8,5} = \sqrt[4]{803,25} \cong 5,32
+  \end{equation*}
+  \begin{equation*}
+    H = \frac{4}{\frac{1}{3} +\frac{1}{4,5} +\frac{1}{7} +\frac{1}{8,5}}   \cong 4,90
+  \end{equation*}
+
+Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20\%.
+ \begin{equation*}
+    \overline{X} = 0,3\times 3 + 0,25\times 4,5 + 0,25\times 7 + 0,20 \times 8,5 = 5,475
+  \end{equation*}
+  \begin{equation*}
+    G = 3^{0,3} \times 4,5^{0,25} \times 7^{0,25} \times 8,5^{0,2} = \cong 5,05
+  \end{equation*}
+  \begin{equation*}
+    H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
+  \end{equation*}

@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sobre-o-autor.html"/>
+<link rel="prev" href="index.html"/>
 <link rel="next" href="revisão-de-literatura.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,8 +135,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
-<li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
-<li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
 <li class="chapter" data-level="1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html"><i class="fa fa-check"></i><b>1</b> Medidas de posição e dispersão</a><ul>
 <li class="chapter" data-level="1.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1</b> Variável Aleatória</a></li>
 <li class="chapter" data-level="1.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-aritmética-simples"><i class="fa fa-check"></i><b>1.2</b> Média Aritmética Simples</a><ul>
@@ -157,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-geométrica-ponderada"><i class="fa fa-check"></i><b>1.5</b> Média Geométrica Ponderada</a><ul>
 <li class="chapter" data-level="1.5.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-6"><i class="fa fa-check"></i><b>1.5.1</b> Exemplo 6</a></li>
 <li class="chapter" data-level="1.5.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#o-exemplo-6-no-r"><i class="fa fa-check"></i><b>1.5.2</b> O exemplo 6 no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-harmônica"><i class="fa fa-check"></i><b>1.6</b> Média Harmônica</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-7"><i class="fa fa-check"></i><b>1.6.1</b> Exemplo 7</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#média-harmônica-ponderada"><i class="fa fa-check"></i><b>1.7</b> Média Harmônica Ponderada</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-8"><i class="fa fa-check"></i><b>1.7.1</b> Exemplo 8</a></li>
+<li class="chapter" data-level="1.7.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#observação"><i class="fa fa-check"></i><b>1.7.2</b> Observação</a></li>
+<li class="chapter" data-level="1.7.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-9"><i class="fa fa-check"></i><b>1.7.3</b> Exemplo 9</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="revisão-de-literatura.html"><a href="revisão-de-literatura.html"><i class="fa fa-check"></i><b>2</b> Revisão de Literatura</a></li>
@@ -214,12 +220,12 @@ onde <span class="math inline">\(i =1, ...,n\)</span></p>
 </div>
 <div id="exemplo-1-no-r" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> EXemplo 1 no R</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="medidas-de-posição-e-dispersão.html#cb1-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">31</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="medidas-de-posição-e-dispersão.html#cb1-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">23</span>,<span class="dv">25</span>,<span class="dv">28</span>,<span class="dv">31</span>)</span>
 <span id="cb1-2"><a href="medidas-de-posição-e-dispersão.html#cb1-2"></a>X</span></code></pre></div>
 <pre><code>## [1] 21 23 25 28 31</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="medidas-de-posição-e-dispersão.html#cb3-1"></a>mediaX &lt;-<span class="st"> </span><span class="kw">mean</span>(X)</span>
 <span id="cb3-2"><a href="medidas-de-posição-e-dispersão.html#cb3-2"></a>mediaX</span></code></pre></div>
-<pre><code>## [1] 25,6</code></pre>
+<pre><code>## [1] 25.6</code></pre>
 </div>
 <div id="exemplo-2" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Exemplo 2</h3>
@@ -231,7 +237,7 @@ foram 4,6 e 8. Para responder, basta aplicar <a href="medidas-de-posição-e-dis
 </div>
 <div id="exemplo-2-no-r" class="section level3">
 <h3><span class="header-section-number">1.2.4</span> Exemplo 2 no R</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="medidas-de-posição-e-dispersão.html#cb5-1"></a>X2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="medidas-de-posição-e-dispersão.html#cb5-1"></a>X2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
 <span id="cb5-2"><a href="medidas-de-posição-e-dispersão.html#cb5-2"></a>X2</span></code></pre></div>
 <pre><code>## [1] 4 6 8</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="medidas-de-posição-e-dispersão.html#cb7-1"></a>mediaX2 &lt;-<span class="st"> </span><span class="kw">mean</span>(X2)</span>
@@ -264,16 +270,16 @@ basta aplicar <a href="medidas-de-posição-e-dispersão.html#eq:mediaartimetica
 </div>
 <div id="exemplo-3-no-r" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> Exemplo 3 no R</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="medidas-de-posição-e-dispersão.html#cb9-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>)</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="medidas-de-posição-e-dispersão.html#cb9-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">25</span>,<span class="dv">28</span>,<span class="dv">30</span>)</span>
 <span id="cb9-2"><a href="medidas-de-posição-e-dispersão.html#cb9-2"></a>X3</span></code></pre></div>
 <pre><code>## [1] 22 23 25 28 30</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="medidas-de-posição-e-dispersão.html#cb11-1"></a>w3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="medidas-de-posição-e-dispersão.html#cb11-1"></a>w3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
 <span id="cb11-2"><a href="medidas-de-posição-e-dispersão.html#cb11-2"></a>w3</span></code></pre></div>
 <pre><code>## [1] 8 7 3 1 1</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="medidas-de-posição-e-dispersão.html#cb13-1"></a>wX3 &lt;-<span class="st"> </span>w3 <span class="op">*</span><span class="st"> </span>X3</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="medidas-de-posição-e-dispersão.html#cb13-1"></a>wX3 &lt;-<span class="st"> </span>w3<span class="op">*</span>X3</span>
 <span id="cb13-2"><a href="medidas-de-posição-e-dispersão.html#cb13-2"></a>mediaX3 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX3)<span class="op">/</span><span class="kw">sum</span>(w3)</span>
 <span id="cb13-3"><a href="medidas-de-posição-e-dispersão.html#cb13-3"></a>mediaX3</span></code></pre></div>
-<pre><code>## [1] 23,5</code></pre>
+<pre><code>## [1] 23.5</code></pre>
 </div>
 <div id="exemplo-4" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Exemplo 4</h3>
@@ -284,16 +290,16 @@ basta aplicar <a href="medidas-de-posição-e-dispersão.html#eq:mediaartimetica
 </div>
 <div id="exemplo-4-no-r" class="section level3">
 <h3><span class="header-section-number">1.3.4</span> Exemplo 4 no R</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="medidas-de-posição-e-dispersão.html#cb15-1"></a>X4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="medidas-de-posição-e-dispersão.html#cb15-1"></a>X4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
 <span id="cb15-2"><a href="medidas-de-posição-e-dispersão.html#cb15-2"></a>X4</span></code></pre></div>
 <pre><code>## [1] 4 6 8</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="medidas-de-posição-e-dispersão.html#cb17-1"></a>w4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="medidas-de-posição-e-dispersão.html#cb17-1"></a>w4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb17-2"><a href="medidas-de-posição-e-dispersão.html#cb17-2"></a>w4</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="medidas-de-posição-e-dispersão.html#cb19-1"></a>wX4 &lt;-<span class="st"> </span>w4 <span class="op">*</span><span class="st"> </span>X4</span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="medidas-de-posição-e-dispersão.html#cb19-1"></a>wX4 &lt;-<span class="st"> </span>w4<span class="op">*</span>X4</span>
 <span id="cb19-2"><a href="medidas-de-posição-e-dispersão.html#cb19-2"></a>mediaX4 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX4)<span class="op">/</span><span class="kw">sum</span>(w4)</span>
 <span id="cb19-3"><a href="medidas-de-posição-e-dispersão.html#cb19-3"></a><span class="kw">round</span>(mediaX4, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] 6,7</code></pre>
+<pre><code>## [1] 6.7</code></pre>
 </div>
 </div>
 <div id="média-geométrica-simples" class="section level2">
@@ -308,15 +314,16 @@ ou
     G = \sqrt[n]{X_1 \times X_2 \times \ldots \times X_n}
     \tag{1.5}
 \end{equation}\]</span></p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero? E se um dos valores for negativo?</p>
 <div id="exemplo-5-no-r" class="section level3">
 <h3><span class="header-section-number">1.4.1</span> EXemplo 5 no R</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="medidas-de-posição-e-dispersão.html#cb21-1"></a>X5 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="medidas-de-posição-e-dispersão.html#cb21-1"></a>X5 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
 <span id="cb21-2"><a href="medidas-de-posição-e-dispersão.html#cb21-2"></a>X5</span></code></pre></div>
 <pre><code>## [1] 4 6 8</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="medidas-de-posição-e-dispersão.html#cb23-1"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(X5)</span>
 <span id="cb23-2"><a href="medidas-de-posição-e-dispersão.html#cb23-2"></a>mediaX5 &lt;-<span class="st"> </span><span class="kw">prod</span>(X5)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>n)</span>
 <span id="cb23-3"><a href="medidas-de-posição-e-dispersão.html#cb23-3"></a><span class="kw">round</span>(mediaX5, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] 5,8</code></pre>
+<pre><code>## [1] 5.8</code></pre>
 </div>
 </div>
 <div id="média-geométrica-ponderada" class="section level2">
@@ -341,17 +348,93 @@ ou
 </div>
 <div id="o-exemplo-6-no-r" class="section level3">
 <h3><span class="header-section-number">1.5.2</span> O exemplo 6 no R</h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="medidas-de-posição-e-dispersão.html#cb25-1"></a>x6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="medidas-de-posição-e-dispersão.html#cb25-1"></a>x6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
 <span id="cb25-2"><a href="medidas-de-posição-e-dispersão.html#cb25-2"></a><span class="kw">class</span>(x6)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="medidas-de-posição-e-dispersão.html#cb27-1"></a>x6</span></code></pre></div>
 <pre><code>## [1] 4 6 8</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="medidas-de-posição-e-dispersão.html#cb29-1"></a>w6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="medidas-de-posição-e-dispersão.html#cb29-1"></a>w6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb29-2"><a href="medidas-de-posição-e-dispersão.html#cb29-2"></a>w6</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="medidas-de-posição-e-dispersão.html#cb31-1"></a>G2 &lt;-<span class="st"> </span><span class="kw">round</span>((<span class="kw">prod</span>(x6<span class="op">^</span>w6))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sum</span>(w6)), <span class="dv">1</span>)</span>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="medidas-de-posição-e-dispersão.html#cb31-1"></a>G2 &lt;-<span class="st"> </span><span class="kw">round</span>((<span class="kw">prod</span>(x6<span class="op">^</span>w6))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sum</span>(w6)),<span class="dv">1</span>)</span>
 <span id="cb31-2"><a href="medidas-de-posição-e-dispersão.html#cb31-2"></a>G2</span></code></pre></div>
-<pre><code>## [1] 6,5</code></pre>
+<pre><code>## [1] 6.5</code></pre>
+</div>
+</div>
+<div id="média-harmônica" class="section level2">
+<h2><span class="header-section-number">1.6</span> Média Harmônica</h2>
+<p>É o inverso da média dos inversos dos valores da variável que pode ser calculada através das fórmulas <a href="medidas-de-posição-e-dispersão.html#eq:mediaharmonicasimples">(1.8)</a> e <a href="medidas-de-posição-e-dispersão.html#eq:mediaharmonicasimples2">(1.9)</a>.</p>
+<p><span class="math display" id="eq:mediaharmonicasimples">\[\begin{equation}
+    H = \frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}
+    \tag{1.8}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:mediaharmonicasimples2">\[\begin{equation}
+    H = \frac{n}{\frac{1}{X_1} + \frac{1}{X_2} + \ldots + \frac{1}{X_n}}
+    \tag{1.9}
+\end{equation}\]</span></p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero?</p>
+<div id="exemplo-7" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Exemplo 7</h3>
+<p>Tomando o exemplo das notas, temos:</p>
+<p><span class="math display">\[\begin{equation*}
+    H = \frac{3}{\frac{1}{4} + \frac{1}{6} + \frac{1}{8}}\cong 5,5.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="média-harmônica-ponderada" class="section level2">
+<h2><span class="header-section-number">1.7</span> Média Harmônica Ponderada</h2>
+<p>Na média harmônica ponderada, assim como na média aritmética ponderada e na média geométrica ponderada, cada valor pode ter uma importância em relação aos outros valores considerados no seu cálculo. Comumente, a frequência do valor pode associaar uma maior ou menor importância no cálculo da média harmônica ponderada que pode ser calculada através das fórmulas <a href="medidas-de-posição-e-dispersão.html#eq:mediaharmonicaponderada">(1.10)</a> e <a href="medidas-de-posição-e-dispersão.html#eq:mediaharmonicaponderada2">(1.11)</a></p>
+<p><span class="math display" id="eq:mediaharmonicaponderada">\[\begin{equation}
+    H = \frac{n}{\sum_{j=1}^{k}w_{j}\frac{1}{X_j}}
+    \tag{1.10}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:mediaharmonicaponderada2">\[\begin{equation}
+    H = \frac{n}{w_1\frac{1}{X_1} + w_2\frac{1}{X_2} + \ldots + w_k \frac{1}{X_k}}
+    \tag{1.11}
+\end{equation}\]</span></p>
+<p>onde a <span class="math inline">\(\sum_{j=1}^{k} w_j = n\)</span></p>
+<div id="exemplo-8" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Exemplo 8</h3>
+<p>Tomando o exemplo das notas</p>
+<p><span class="math display">\[\begin{equation*}
+    H = \frac{6}{\frac{1}{4}\times 1 + \frac{1}{6}\times 2 + \frac{1}{8}\times 3}\cong 6,3.
+\end{equation*}\]</span></p>
+</div>
+<div id="observação" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Observação</h3>
+<p>Tanto para as médias simples como para as ponderadas, a
+média aritmética é maior do que a média geométrica e essa, por sua vez, é maior
+que a harmônica. Isso só não vale quando todos os valores são iguais. Veja de forma esquemática em <a href="medidas-de-posição-e-dispersão.html#eq:diferencaentreasmedias">(1.12)</a></p>
+<p><span class="math display" id="eq:diferencaentreasmedias">\[\begin{equation}
+  \overline{X} \geq G \geq H
+  \tag{1.12}
+\end{equation}\]</span></p>
+</div>
+<div id="exemplo-9" class="section level3">
+<h3><span class="header-section-number">1.7.3</span> Exemplo 9</h3>
+<p>O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: \
+
+As notas dos bimestres têm os mesmos pesos.
+<span class="math display">\[\begin{equation*}
+    \overline{X} = \frac{3 + 4,5 + 7 + 8,5}{4} = 23/4 = 5,75
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    G = \sqrt[4]{3 \times 4,5 \times 7 \times 8,5} = \sqrt[4]{803,25} \cong 5,32
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    H = \frac{4}{\frac{1}{3} +\frac{1}{4,5} +\frac{1}{7} +\frac{1}{8,5}}   \cong 4,90
+  \end{equation*}\]</span></p>
+<p>Suponha que agora os pesos para as notas bimestrais sejam, 30%, 25%, 25% e 20%.
+<span class="math display">\[\begin{equation*}
+    \overline{X} = 0,3\times 3 + 0,25\times 4,5 + 0,25\times 7 + 0,20 \times 8,5 = 5,475
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    G = 3^{0,3} \times 4,5^{0,25} \times 7^{0,25} \times 8,5^{0,2} = \cong 5,05
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
+  \end{equation*}\]</span></p>
 
 </div>
 </div>
@@ -367,7 +450,7 @@ ou
           </div>
         </div>
       </div>
-<a href="sobre-o-autor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="revisão-de-literatura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

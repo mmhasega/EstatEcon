@@ -167,10 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-9"><i class="fa fa-check"></i><b>1.7.3</b> Exemplo 9</a></li>
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#mediana"><i class="fa fa-check"></i><b>1.8</b> Mediana</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-numérico-de-mediana"><i class="fa fa-check"></i><b>1.8.1</b> Exemplo numérico de Mediana</a></li>
+<li class="chapter" data-level="1.8.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-numérico-de-mediana-quando-o-número-de-valores-é-impar"><i class="fa fa-check"></i><b>1.8.1</b> Exemplo numérico de Mediana quando o número de valores é impar</a></li>
 <li class="chapter" data-level="1.8.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#mediana-no-r"><i class="fa fa-check"></i><b>1.8.2</b> Mediana no R</a></li>
 <li class="chapter" data-level="1.8.3" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#exemplo-numérico-de-mediana-quando-o-número-de-valores-é-par"><i class="fa fa-check"></i><b>1.8.3</b> Exemplo numérico de Mediana quando o número de valores é par</a></li>
 <li class="chapter" data-level="1.8.4" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#o-exemplo-do-número-par-de-valores-no-r"><i class="fa fa-check"></i><b>1.8.4</b> O exemplo do número par de valores no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#quartis-ou-quartiles"><i class="fa fa-check"></i><b>1.9</b> Quartis ou Quartiles</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#quartis-no-r"><i class="fa fa-check"></i><b>1.9.1</b> Quartis no R</a></li>
+<li class="chapter" data-level="1.9.2" data-path="medidas-de-posição-e-dispersão.html"><a href="medidas-de-posição-e-dispersão.html#quartis-no-r-1"><i class="fa fa-check"></i><b>1.9.2</b> Quartis no R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="revisão-de-literatura.html"><a href="revisão-de-literatura.html"><i class="fa fa-check"></i><b>2</b> Revisão de Literatura</a></li>
@@ -380,7 +384,7 @@ ou
     H = \frac{n}{\frac{1}{X_1} + \frac{1}{X_2} + \ldots + \frac{1}{X_n}}
     \tag{1.9}
 \end{equation}\]</span></p>
-<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero?</p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.</p>
 <div id="exemplo-7" class="section level3">
 <h3><span class="header-section-number">1.6.1</span> Exemplo 7</h3>
 <p>Tomando o exemplo das notas, temos:</p>
@@ -451,9 +455,38 @@ que a harmônica. Isso só não vale quando todos os valores são iguais. Veja d
 <div id="mediana" class="section level2">
 <h2><span class="header-section-number">1.8</span> Mediana</h2>
 <p>é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois
-grupos de valores de igual tamanho.</p>
-<div id="exemplo-numérico-de-mediana" class="section level3">
-<h3><span class="header-section-number">1.8.1</span> Exemplo numérico de Mediana</h3>
+grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.</p>
+<ol style="list-style-type: lower-roman">
+<li>Quando o número de valores é impar, a posiçãodo valor correspondente a mediana é obtida através de <a href="medidas-de-posição-e-dispersão.html#eq:posicaomedianaimpar">(1.13)</a>:</li>
+</ol>
+<p><span class="math display" id="eq:posicaomedianaimpar">\[\begin{equation}
+  PMediana_{impar} = \dfrac{n + 1}{2}
+  \tag{1.13}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado no cálculo.</p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Quando o número de valores é par, a posição da mediana é obtida através da média entre os dois valores centrais do conjunto de valores ordenados de menor a maior. O primeiro valor central é definido pela posição obtida através de <a href="medidas-de-posição-e-dispersão.html#eq:valor1mediaposicaomedianapar">(1.14)</a></li>
+</ol>
+<p><span class="math display" id="eq:valor1mediaposicaomedianapar">\[\begin{equation}
+  P1Mediana_{par} = \dfrac{n}{2}
+  \tag{1.14}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado para o cálculo.</p>
+<p>O segundo valor central é definido pelas posição obtida através de
+<a href="medidas-de-posição-e-dispersão.html#eq:valor2mediaposicaomedianapar">(1.15)</a></p>
+<p><span class="math display" id="eq:valor2mediaposicaomedianapar">\[\begin{equation}
+  P2Mediana_{par} = \dfrac{n}{2} + 1
+  \tag{1.15}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado para o cálculo.</p>
+<p>Assim, a mediana quando o número de valores é par é obtida através da média aritmética simples dos valores correspondentes as posições obtidas por <a href="medidas-de-posição-e-dispersão.html#eq:valor1mediaposicaomedianapar">(1.14)</a> e por
+<a href="medidas-de-posição-e-dispersão.html#eq:valor2mediaposicaomedianapar">(1.15)</a> através de <a href="medidas-de-posição-e-dispersão.html#eq:medianapar">(1.16)</a></p>
+<p><span class="math display" id="eq:medianapar">\[\begin{equation}
+  Mediana_{par} = \dfrac{ValorCentral_1 + ValorCentral_2}{2}
+  \tag{1.16}
+\end{equation}\]</span></p>
+<div id="exemplo-numérico-de-mediana-quando-o-número-de-valores-é-impar" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Exemplo numérico de Mediana quando o número de valores é impar</h3>
 <p>Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.</p>
 <p>Primeiramente ordena-se do menor para o maior.</p>
 <p>-3,-2,-1,0,1,2,3</p>
@@ -481,6 +514,57 @@ grupos de valores de igual tamanho.</p>
 <span id="cb35-2"><a href="medidas-de-posição-e-dispersão.html#cb35-2"></a>mediana2 &lt;-<span class="st"> </span><span class="kw">median</span>(v)</span>
 <span id="cb35-3"><a href="medidas-de-posição-e-dispersão.html#cb35-3"></a><span class="kw">print</span>(mediana2)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
+</div>
+</div>
+<div id="quartis-ou-quartiles" class="section level2">
+<h2><span class="header-section-number">1.9</span> Quartis ou Quartiles</h2>
+<p>são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
+de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
+dos dados (25%), a metade dos dados (50%) que coincide com a mediana, os três
+quartos dos dados (75%).</p>
+<p>Dessa forma para obter os valores que dividem o conjunto de dados ordenados de menor a maior e quatro subconjuntos de igual tamanho, é necessário definir qual é a posição desses valores. Uma vez definido as suas posições pode-se obter os valores corretamente.</p>
+<p>A posição do valor que separa o primeiro do segundo quartil é definido por <a href="medidas-de-posição-e-dispersão.html#eq:posicaoquartilum">(1.17)</a>.</p>
+<p><span class="math display" id="eq:posicaoquartilum">\[\begin{equation}
+  PQ_1 = \dfrac{(n +1)}{4}
+  \tag{1.17}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores.
+A posição do valor que separa o segundo do terceiro quartil é definido por <a href="medidas-de-posição-e-dispersão.html#eq:posicaoquartiltres">(1.18)</a>.</p>
+<p><span class="math display" id="eq:posicaoquartiltres">\[\begin{equation}
+  PQ_3 = \dfrac{3(n +1)}{4}
+  \tag{1.18}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores.</p>
+<p>Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho.</p>
+<div id="quartis-no-r" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Quartis no R</h3>
+<p>No R tem uma função específica para a obtenção dos quartis.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="medidas-de-posição-e-dispersão.html#cb37-1"></a>p &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)</span>
+<span id="cb37-2"><a href="medidas-de-posição-e-dispersão.html#cb37-2"></a><span class="kw">length</span>(p)</span></code></pre></div>
+<pre><code>## [1] 101</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="medidas-de-posição-e-dispersão.html#cb39-1"></a><span class="kw">quantile</span>(p)</span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##    0   25   50   75  100</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="medidas-de-posição-e-dispersão.html#cb41-1"></a>faixainterquant &lt;-<span class="st"> </span><span class="kw">quantile</span>(p, <span class="fl">0.75</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(p, </span>
+<span id="cb41-2"><a href="medidas-de-posição-e-dispersão.html#cb41-2"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb41-3"><a href="medidas-de-posição-e-dispersão.html#cb41-3"></a>faixainterquant</span></code></pre></div>
+<pre><code>## 75% 
+##  50</code></pre>
+</div>
+<div id="quartis-no-r-1" class="section level3">
+<h3><span class="header-section-number">1.9.2</span> Quartis no R</h3>
+<p>No R tem uma função específica para a obtenção dos quartis.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="medidas-de-posição-e-dispersão.html#cb43-1"></a>p2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</span>
+<span id="cb43-2"><a href="medidas-de-posição-e-dispersão.html#cb43-2"></a><span class="kw">length</span>(p2)</span></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="medidas-de-posição-e-dispersão.html#cb45-1"></a><span class="kw">quantile</span>(p2)</span></code></pre></div>
+<pre><code>##     0%    25%    50%    75%   100% 
+##   1,00  25,75  50,50  75,25 100,00</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="medidas-de-posição-e-dispersão.html#cb47-1"></a>faixainterquant2 &lt;-<span class="st"> </span><span class="kw">quantile</span>(p2, <span class="fl">0.75</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(p2, </span>
+<span id="cb47-2"><a href="medidas-de-posição-e-dispersão.html#cb47-2"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb47-3"><a href="medidas-de-posição-e-dispersão.html#cb47-3"></a>faixainterquant2</span></code></pre></div>
+<pre><code>##  75% 
+## 49,5</code></pre>
 
 </div>
 </div>

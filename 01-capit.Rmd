@@ -127,7 +127,17 @@ ou
 
 O que acontece se um dos valores de $X$ for igual a zero? E se um dos valores for negativo?
 
-### EXemplo 5 no R
+
+### Exemplo 5
+
+Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
+
+\begin{equation*}
+  \sqrt[3]{4 \times 6 \times 8} \cong 5,7690
+\end{equation*}
+
+
+### Exemplo 5 no R
 
 ```{r media geometrica ex5}
 X5 <- c(4,6,8)

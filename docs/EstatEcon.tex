@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-08-31}
+\date{2020-09-08}
 
 \begin{document}
 \maketitle
@@ -488,7 +488,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
     \label{eq:mediaharmonicasimples2}
 \end{equation}
 
-O que acontece se um dos valores de \(X\) for igual a zero?
+O que acontece se um dos valores de \(X\) for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.
 
 \hypertarget{exemplo-7}{%
 \subsection{Exemplo 7}\label{exemplo-7}}
@@ -540,9 +540,15 @@ que a harmônica. Isso só não vale quando todos os valores são iguais. Veja d
 \hypertarget{exemplo-9}{%
 \subsection{Exemplo 9}\label{exemplo-9}}
 
-O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: \textbackslash{}
-\vspace{0.3cm}
-As notas dos bimestres têm os mesmos pesos.
+O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: i) as notas têm o mesmo peso e; ii) as notas têm pesos diferentes.
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  As notas dos bimestres têm os mesmos pesos.
+\end{enumerate}
+
 \begin{equation*}
     \overline{X} = \frac{3 + 4,5 + 7 + 8,5}{4} = 23/4 = 5,75
   \end{equation*}
@@ -553,7 +559,14 @@ As notas dos bimestres têm os mesmos pesos.
     H = \frac{4}{\frac{1}{3} +\frac{1}{4,5} +\frac{1}{7} +\frac{1}{8,5}}   \cong 4,90
   \end{equation*}
 
-Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20\%.
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20\%.
+\end{enumerate}
+
 \begin{equation*}
     \overline{X} = 0,3\times 3 + 0,25\times 4,5 + 0,25\times 7 + 0,20 \times 8,5 = 5,475
   \end{equation*}
@@ -563,6 +576,219 @@ Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20
 \begin{equation*}
     H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
   \end{equation*}
+
+\hypertarget{mediana}{%
+\section{Mediana}\label{mediana}}
+
+é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois
+grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  Quando o número de valores é impar, a posiçãodo valor correspondente a mediana é obtida através de \eqref{eq:posicaomedianaimpar}:
+\end{enumerate}
+
+\begin{equation}
+  PMediana_{impar} = \dfrac{n + 1}{2}
+  \label{eq:posicaomedianaimpar}
+\end{equation}
+onde \(n\) é o número de valores considerado no cálculo.
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Quando o número de valores é par, a posição da mediana é obtida através da média entre os dois valores centrais do conjunto de valores ordenados de menor a maior. O primeiro valor central é definido pela posição obtida através de \eqref{eq:valor1mediaposicaomedianapar}
+\end{enumerate}
+
+\begin{equation}
+  P1Mediana_{par} = \dfrac{n}{2}
+  \label{eq:valor1mediaposicaomedianapar}
+\end{equation}
+onde \(n\) é o número de valores considerado para o cálculo.
+
+O segundo valor central é definido pelas posição obtida através de
+\eqref{eq:valor2mediaposicaomedianapar}
+
+\begin{equation}
+  P2Mediana_{par} = \dfrac{n}{2} + 1
+  \label{eq:valor2mediaposicaomedianapar}
+\end{equation}
+onde \(n\) é o número de valores considerado para o cálculo.
+
+Assim, a mediana quando o número de valores é par é obtida através da média aritmética simples dos valores correspondentes as posições obtidas por \eqref{eq:valor1mediaposicaomedianapar} e por
+\eqref{eq:valor2mediaposicaomedianapar} através de \eqref{eq:medianapar}
+
+\begin{equation}
+  Mediana_{par} = \dfrac{ValorCentral_1 + ValorCentral_2}{2}
+  \label{eq:medianapar}
+\end{equation}
+
+\hypertarget{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-impar}{%
+\subsection{Exemplo numérico de Mediana quando o número de valores é impar}\label{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-impar}}
+
+Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.
+
+Primeiramente ordena-se do menor para o maior.
+
+-3,-2,-1,0,1,2,3
+
+Como se trata de número impar de valores o valor central que divide o conjunto de valores em dois subconjuntos de igual tamanho é o valor da mediana. Neste caso é o zero.
+
+\hypertarget{mediana-no-r}{%
+\subsection{Mediana no R}\label{mediana-no-r}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{w <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{-2}\NormalTok{, }\DecValTok{-1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{mediana1 <-}\StringTok{ }\KeywordTok{median}\NormalTok{(w)}
+\KeywordTok{print}\NormalTok{(mediana1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\hypertarget{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-par}{%
+\subsection{Exemplo numérico de Mediana quando o número de valores é par}\label{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-par}}
+
+No exemplo anterior o conjunto de dados era composto por um número ímpar de valores. Neste exemplo o número de valores ordenado de menor a maior é par. Nesse caso, apesar de existir vários critérios, o mais usual é tirar a média aritmética simples entre os dois valores centrais do conjunto de valores ordenados de menor a maior. Uma vez que não existe um valor que separe dois subconjuntos de igual tamanho, a média aritmética simples destes dois valores é o valor da mediana quando o número total de valores não é impar.
+
+Sejam os valores -2,1,3,2,-3,1. Obtenha a mediana.
+
+Primeiramente ordena-se os seis valores.
+
+-3,-2,-1,1,2,3
+
+Note que trata-se de conjunto com um número par de valores.
+
+Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a média aritmética simples. Ou seja, a mediana para este conjunto com seis valores é igual a zero.
+
+\hypertarget{o-exemplo-do-nuxfamero-par-de-valores-no-r}{%
+\subsection{O exemplo do número par de valores no R}\label{o-exemplo-do-nuxfamero-par-de-valores-no-r}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{-2}\NormalTok{, }\DecValTok{-1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{mediana2 <-}\StringTok{ }\KeywordTok{median}\NormalTok{(v)}
+\KeywordTok{print}\NormalTok{(mediana2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\hypertarget{quartis-ou-quartiles}{%
+\section{Quartis ou Quartiles}\label{quartis-ou-quartiles}}
+
+são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
+de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
+dos dados (25\%), a metade dos dados (50\%) que coincide com a mediana, os três
+quartos dos dados (75\%).
+
+Dessa forma para obter os valores que dividem o conjunto de dados ordenados de menor a maior e quatro subconjuntos de igual tamanho, é necessário definir qual é a posição desses valores. Uma vez definido as suas posições pode-se obter os valores corretamente.
+
+A posição do valor que separa o primeiro do segundo quartil é definido por \eqref{eq:posicaoquartilum}.
+
+\begin{equation}
+  PQ_1 = \dfrac{(n +1)}{4}
+  \label{eq:posicaoquartilum}
+\end{equation}
+onde \(n\) é o número de valores.
+A posição do valor que separa o segundo do terceiro quartil é definido por \eqref{eq:posicaoquartiltres}.
+
+\begin{equation}
+  PQ_3 = \dfrac{3(n +1)}{4}
+  \label{eq:posicaoquartiltres}
+\end{equation}
+onde \(n\) é o número de valores.
+
+Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho.
+
+\hypertarget{quartis-no-r}{%
+\subsection{Quartis no R}\label{quartis-no-r}}
+
+No R tem uma função específica para a obtenção dos quartis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{100}\NormalTok{)}
+\KeywordTok{length}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 101
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{quantile}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   0%  25%  50%  75% 100% 
+##    0   25   50   75  100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{faixainterquant <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p, }\FloatTok{0.75}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p, }
+    \FloatTok{0.25}\NormalTok{)}
+\NormalTok{faixainterquant}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 75% 
+##  50
+\end{verbatim}
+
+\hypertarget{quartis-no-r-1}{%
+\subsection{Quartis no R}\label{quartis-no-r-1}}
+
+No R tem uma função específica para a obtenção dos quartis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{)}
+\KeywordTok{length}\NormalTok{(p2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{quantile}\NormalTok{(p2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     0%    25%    50%    75%   100% 
+##   1,00  25,75  50,50  75,25 100,00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{faixainterquant2 <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p2, }\FloatTok{0.75}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p2, }
+    \FloatTok{0.25}\NormalTok{)}
+\NormalTok{faixainterquant2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  75% 
+## 49,5
+\end{verbatim}
 
 \hypertarget{revisuxe3o-de-literatura}{%
 \chapter{Revisão de Literatura}\label{revisuxe3o-de-literatura}}

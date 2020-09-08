@@ -187,7 +187,7 @@ G2
     (\#eq:mediaharmonicasimples2)
 \end{equation}
 
-O que acontece se um dos valores de $X$ for igual a zero?
+O que acontece se um dos valores de $X$ for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.
 
 ### Exemplo 7
 
@@ -234,9 +234,10 @@ que a harmônica. Isso só não vale quando todos os valores são iguais. Veja d
 
 ### Exemplo 9
 
-O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: \\
-\vspace{0.3cm}
-As notas dos bimestres têm os mesmos pesos.
+O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: i) as notas têm o mesmo peso e; ii) as notas têm pesos diferentes. 
+
+i) As notas dos bimestres têm os mesmos pesos.
+
   \begin{equation*}
     \overline{X} = \frac{3 + 4,5 + 7 + 8,5}{4} = 23/4 = 5,75
   \end{equation*}
@@ -247,7 +248,8 @@ As notas dos bimestres têm os mesmos pesos.
     H = \frac{4}{\frac{1}{3} +\frac{1}{4,5} +\frac{1}{7} +\frac{1}{8,5}}   \cong 4,90
   \end{equation*}
 
-Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20\%.
+ii) Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20\%.
+
  \begin{equation*}
     \overline{X} = 0,3\times 3 + 0,25\times 4,5 + 0,25\times 7 + 0,20 \times 8,5 = 5,475
   \end{equation*}
@@ -257,3 +259,132 @@ Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% e 20
   \begin{equation*}
     H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
   \end{equation*}
+
+## Mediana
+
+é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois 
+grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.
+
+i) Quando o número de valores é impar, a posiçãodo valor correspondente a mediana é obtida através de \@ref(eq:posicaomedianaimpar):
+
+\begin{equation}
+  PMediana_{impar} = \dfrac{n + 1}{2}
+  (\#eq:posicaomedianaimpar)
+\end{equation}
+onde $n$ é o número de valores considerado no cálculo.
+
+ii) Quando o número de valores é par, a posição da mediana é obtida através da média entre os dois valores centrais do conjunto de valores ordenados de menor a maior. O primeiro valor central é definido pela posição obtida através de \@ref(eq:valor1mediaposicaomedianapar)
+
+\begin{equation}
+  P1Mediana_{par} = \dfrac{n}{2}
+  (\#eq:valor1mediaposicaomedianapar)
+\end{equation}
+onde $n$ é o número de valores considerado para o cálculo.
+
+O segundo valor central é definido pelas posição obtida através de
+\@ref(eq:valor2mediaposicaomedianapar)
+
+\begin{equation}
+  P2Mediana_{par} = \dfrac{n}{2} + 1
+  (\#eq:valor2mediaposicaomedianapar)
+\end{equation}
+onde $n$ é o número de valores considerado para o cálculo.
+
+Assim, a mediana quando o número de valores é par é obtida através da média aritmética simples dos valores correspondentes as posições obtidas por \@ref(eq:valor1mediaposicaomedianapar) e por 
+\@ref(eq:valor2mediaposicaomedianapar) através de \@ref(eq:medianapar)
+
+\begin{equation}
+  Mediana_{par} = \dfrac{ValorCentral_1 + ValorCentral_2}{2}
+  (\#eq:medianapar)
+\end{equation}
+
+### Exemplo numérico de Mediana quando o número de valores é impar
+
+Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.
+
+Primeiramente ordena-se do menor para o maior.
+
+-3,-2,-1,0,1,2,3
+
+Como se trata de número impar de valores o valor central que divide o conjunto de valores em dois subconjuntos de igual tamanho é o valor da mediana. Neste caso é o zero.
+
+### Mediana no R
+
+```{r mediana}
+w <- c(-3, -2, -1, 0, 1, 2, 3)
+mediana1 <- median(w)
+print(mediana1)
+```
+
+### Exemplo numérico de Mediana quando o número de valores é par
+
+No exemplo anterior o conjunto de dados era composto por um número ímpar de valores. Neste exemplo o número de valores ordenado de menor a maior é par. Nesse caso, apesar de existir vários critérios, o mais usual é tirar a média aritmética simples entre os dois valores centrais do conjunto de valores ordenados de menor a maior. Uma vez que não existe um valor que separe dois subconjuntos de igual tamanho, a média aritmética simples destes dois valores é o valor da mediana quando o número total de valores não é impar.
+
+Sejam os valores -2,1,3,2,-3,1. Obtenha a mediana.
+
+Primeiramente ordena-se os seis valores.
+
+-3,-2,-1,1,2,3
+
+Note que trata-se de conjunto com um número par de valores.
+
+Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a média aritmética simples. Ou seja, a mediana para este conjunto com seis valores é igual a zero.
+
+### O exemplo do número par de valores no R
+
+```{r mediana com numero par de valores, echo=TRUE}
+v <- c(-3, -2, -1, 1, 2, 3)
+mediana2 <- median(v)
+print(mediana2)
+```
+
+## Quartis ou Quartiles
+
+são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
+de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
+dos dados (25%), a metade dos dados (50%) que coincide com a mediana, os três 
+quartos dos dados (75%).
+
+Dessa forma para obter os valores que dividem o conjunto de dados ordenados de menor a maior e quatro subconjuntos de igual tamanho, é necessário definir qual é a posição desses valores. Uma vez definido as suas posições pode-se obter os valores corretamente.
+
+A posição do valor que separa o primeiro do segundo quartil é definido por \@ref(eq:posicaoquartilum).
+
+\begin{equation}
+  PQ_1 = \dfrac{(n +1)}{4}
+  (\#eq:posicaoquartilum)
+\end{equation}
+onde $n$ é o número de valores.
+A posição do valor que separa o segundo do terceiro quartil é definido por \@ref(eq:posicaoquartiltres).
+
+\begin{equation}
+  PQ_3 = \dfrac{3(n +1)}{4}
+  (\#eq:posicaoquartiltres)
+\end{equation}
+onde $n$ é o número de valores.
+
+Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho. 
+
+### Quartis no R
+
+No R tem uma função específica para a obtenção dos quartis.
+
+```{r quartis}
+p <- c(0:100)
+length(p)
+quantile(p)
+faixainterquant <- quantile(p,0.75) - quantile(p,0.25)
+faixainterquant
+```
+
+### Quartis no R
+
+No R tem uma função específica para a obtenção dos quartis.
+
+```{r quartis2}
+p2 <- c(1:100)
+length(p2)
+quantile(p2)
+faixainterquant2 <- quantile(p2,0.75) - quantile(p2,0.25)
+faixainterquant2
+```
+

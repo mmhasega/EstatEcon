@@ -1,6 +1,8 @@
-# Medidas de posição e dispersão
+# Medidas de posição
 
 Este tópico está baseado no material de @Sartoris2013.
+
+Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.
 
 ## Variável Aleatória
 
@@ -396,5 +398,217 @@ length(p2)
 quantile(p2)
 faixainterquant2 <- quantile(p2,0.75) - quantile(p2,0.25)
 faixainterquant2
+```
+
+## Moda
+\textbf{Moda} é o elemento de maior frequência, ou seja, que aparece o maior número de vezes. Pode haver mais de uma moda em um conjunto de valores:
+ 
+ - Unimodal
+ - Bimodal
+ - Multimodal
+ - Amodal
+
+### Moda no R
+Não existe uma função da moda para pronto uso no R. É necessário criar uma função 
+segue abaixo.
+```{r moda}
+# criando a função moda no R
+
+getmode <- function(v) {
+                        uniqv <- unique(v)
+                        uniqv[which.max(tabulate(match(v, uniqv)))]
+                        }
+z <- c(2,1,2,3,1,2,3,4,1,5,5,3,2,3)
+moda1 <- getmode(z)
+print(moda1)
+```
+
+#  Medidas de dispersão
+
+Este tópico está baseado no material de @Sartoris2013.
+
+Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
+seja, mais ou menos dispersos.
+
+## Variância
+
+a variância é a somatória dos desvios em relação a média ao quadrado, dividido pelo 
+número de observações. Ou seja,
+\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
+\end{equation*}
+\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n-1}~\text{(amostra)}
+\end{equation*}
+
+Note que a variância da amostra é um estimador não viesado da variância populacional.
+
+### Variância no R
+Aproveitando os dados de alturas de 30 pessoas:
+```{r variancia1}
+tail(X)
+varX <- round(var(X),4)
+varX
+```
+
+Note que a variância no R é a variância amostral, cujo denominador é $(n-1)$. 
+
+## Desvio Padrão
+
+É a raiz quadrada da variância. No desvio padrão, denotado como $d.p.(X)$ ou 
+$\sigma$, não tem o efeito do quadrado.
+\begin{equation*}
+  d.p.(X) \cong \sigma = \sqrt{var(X)}
+\end{equation*}
+
+### Desvio Padrão no R
+
+```{r desvio padrao1}
+tail(X)
+dpX <- round(sd(X),4)
+dpX
+```
+
+Note que, da mesma forma que a variância no R, o desvio padrão calculado no R tem como base a variância cujo numerador é $(n-1)$.
+
+### Fórmula alternativa da Variância
+
+Desenvolvendo a fórmula da definição da variância tem-se:
+\begin{align*}
+  var(X)  &= \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^2 \\
+          &= \frac{1}{n}\sum_{i=1}^{n}(X_i^2 - 2X_i\overline{X} +
+          \overline{X}^2)\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          \frac{1}{n}\sum_{i=1}^{n}2X_i\overline{X}+
+          \frac{1}{n}\sum_{i=1}^{n}\overline{X}^2\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\frac{1}{n}\sum_{i=1}^{n}X_i+
+          \frac{1}{n}n\overline{X}^2\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\overline{X}+ \overline{X}^2\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - \overline{X}^2.
+\end{align*}
+
+Em outras palavras
+
+\begin{equation*}
+  var(X) = \text{média dos quadrados} - \text{quadrado da média}.
+\end{equation*}
+
+### Exemplo de variância e desvio padrão no R
+
+Tomando o exemplo numérico da tabela 2.7 (Sartoris, 2013, p.40) sobre notas do 
+aluno A tem-se:
+
+|    Aluno A    |  notas  | $notas^2$ |
+|:--------------|:-------:|:---------:|
+| Economia      |    3    |      9    |
+| Contabilidade |    2    |      4    |
+| Administração |    4    |     16    |
+| Matemática    |    1    |      1    |
+|---------------|---------|-----------|
+| Somatória     |   10    |     30    |
+| Média         |    2,5  |     7,5   |
+
+\begin{equation*}
+  var(X) = 7,5 - (2,5)^2 = 1,25
+\end{equation*}
+\begin{equation*}
+  dp(X) = \sqrt{1,25} = 1,12
+\end{equation*}
+```{r variancia e desvio padrao}
+X3 <- c(3,2,4,1)
+mediaX3e2 <- sum(X3^2)/length(X3)
+mediaX3 <- sum(X3)/length(X3)
+varX3 <- mediaX3e2 - mediaX3^2
+varX3
+dpX3 <- round(sqrt(varX3),4)
+dpX3
+```
+
+## Covariância 
+
+pode ser estendida como uma *variância conjunta* entre duas variáveis. Ou seja,
+\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})
+\end{equation*}
+
+### Fórmula alternativa da Variância
+
+Também existe a fórmula alternativa da covariância.
+
+\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i} - \overline{X}\overline{Y}.
+\end{equation*}
+
+### Fórmula alternativa da Covariância
+
+Em outras palavras
+
+\begin{equation*}
+  cov(X,Y) = \text{média dos produtos de X e Y} - \text{produto das médias de X e Y}.
+\end{equation*}
+
+### Covariância no R
+
+Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-se
+
+|     Ano    |  Consumo(X)  |   Renda(Y)   |     (XY)    |
+|:----------:|:------------:|:------------:|:-----------:|
+|      1     |     600      |     1.000    |    600.000  |
+|      2     |     700      |     1.100    |    770.000  |
+|      3     |     800      |     1.300    |  1.040.000  |
+|      4     |     900      |     1.400    |  1.260.000  |
+|------------|--------------|--------------|-------------|
+| Somatória  |   3.000      |     4.800    |  3.670.000  |
+| Média      |     750      |     1.200    |    917.500  |
+
+### Covariância no R
+
+```{r covariancia1}
+C1<-c(600,700,800,900)
+R1<-c(1000,1100,1300,1400)
+mediaC1<-sum(C1)/length(C1)
+mediaR1<-sum(R1)/length(R1)
+mediaC1R1 <- sum(C1*R1)/length(C1)
+covC1R1 <- mediaC1R1 - mediaC1*mediaR1
+covC1R1
+cov(C1,R1)
+```
+Note que a  função covariância no R é calculada dividindo por $(n-1)$ e não por $n$.
+
+
+### Coeficiente de Correlação
+
+É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro de interpretar. Ou seja,
+
+\begin{equation*}
+ corr(X,Y) \cong \rho_{xy} = \frac{cov(X,Y)}{dp(X) \times dp(Y)}
+\end{equation*}
+onde
+\begin{equation*}
+  -1 \leq \rho \leq +1
+\end{equation*}
+
+### Correlação no R
+
+```{r correlacao}
+medC1 <- sum(C1)/length(C1)
+medR1 <- sum(R1)/length(R1)
+varC1 <- (sum((C1 - medC1)^2)) / length(C1)
+varC1
+varR1 <- (sum((R1 - medR1)^2)) / length(R1)
+varR1
+dpC1 <- abs(sqrt(varC1))
+dpR1 <- abs(sqrt(varR1))
+corrC1R1 <- round(covC1R1 / (dpC1 * dpR1),4)
+corrC1R1
+```
+### Correlação no R
+
+Ou simplesmente
+
+```{r correlacao2}
+round(cor(C1,R1),4)
 ```
 

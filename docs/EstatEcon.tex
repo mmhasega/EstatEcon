@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-09-14}
+\date{2020-09-23}
 
 \begin{document}
 \maketitle
@@ -149,10 +149,12 @@ A situação especial causada pela pandemia da COVID-19 forçou a muitos profess
 
 Professor do Departamento de Economia da Universidade Federal do Paraná. Engenheiro Agrônomo pela UNESP/Jaboticabal, Mestrado em Economia Agrária pela ESALQ/USP e Doutorado em Economia Aplicada pela ESALQ/USP, é um dos professores responsáveis pelas disciplinas de SE305 Estatística Econômica e Introdução à Econometria e SE308 Econometria ambas do curso de Economia da Universidade Federal do Paraná (UFPR).
 
-\hypertarget{medidas-de-posiuxe7uxe3o-e-dispersuxe3o}{%
-\chapter{Medidas de posição e dispersão}\label{medidas-de-posiuxe7uxe3o-e-dispersuxe3o}}
+\hypertarget{medidas-de-posiuxe7uxe3o}{%
+\chapter{Medidas de posição}\label{medidas-de-posiuxe7uxe3o}}
 
 Este tópico está baseado no material de \citet{Sartoris2013}.
+
+Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.
 
 \hypertarget{variuxe1vel-aleatuxf3ria}{%
 \section{Variável Aleatória}\label{variuxe1vel-aleatuxf3ria}}
@@ -797,6 +799,355 @@ No R tem uma função específica para a obtenção dos quartis.
 \begin{verbatim}
 ##  75% 
 ## 49,5
+\end{verbatim}
+
+\hypertarget{moda}{%
+\section{Moda}\label{moda}}
+
+\textbf{Moda} é o elemento de maior frequência, ou seja, que aparece o maior número de vezes. Pode haver mais de uma moda em um conjunto de valores:
+
+\begin{itemize}
+\tightlist
+\item
+  Unimodal
+\item
+  Bimodal
+\item
+  Multimodal
+\item
+  Amodal
+\end{itemize}
+
+\hypertarget{moda-no-r}{%
+\subsection{Moda no R}\label{moda-no-r}}
+
+Não existe uma função da moda para pronto uso no R. É necessário criar uma função
+segue abaixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# criando a função moda no R}
+
+\NormalTok{getmode <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(v) \{}
+\NormalTok{    uniqv <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(v)}
+\NormalTok{    uniqv[}\KeywordTok{which.max}\NormalTok{(}\KeywordTok{tabulate}\NormalTok{(}\KeywordTok{match}\NormalTok{(v, uniqv)))]}
+\NormalTok{\}}
+\NormalTok{z <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{moda1 <-}\StringTok{ }\KeywordTok{getmode}\NormalTok{(z)}
+\KeywordTok{print}\NormalTok{(moda1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\hypertarget{medidas-de-dispersuxe3o}{%
+\chapter{Medidas de dispersão}\label{medidas-de-dispersuxe3o}}
+
+Este tópico está baseado no material de \citet{Sartoris2013}.
+
+Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
+seja, mais ou menos dispersos.
+
+\hypertarget{variuxe2ncia}{%
+\section{Variância}\label{variuxe2ncia}}
+
+a variância é a somatória dos desvios em relação a média ao quadrado, dividido pelo
+número de observações. Ou seja,
+\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
+\end{equation*}
+\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n-1}~\text{(amostra)}
+\end{equation*}
+
+Note que a variância da amostra é um estimador não viesado da variância populacional.
+
+\hypertarget{variuxe2ncia-no-r}{%
+\subsection{Variância no R}\label{variuxe2ncia-no-r}}
+
+Aproveitando os dados de alturas de 30 pessoas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tail}\NormalTok{(X)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 21 23 25 28 31
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{varX <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{var}\NormalTok{(X), }\DecValTok{4}\NormalTok{)}
+\NormalTok{varX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15,8
+\end{verbatim}
+
+Note que a variância no R é a variância amostral, cujo denominador é \((n-1)\).
+
+\hypertarget{desvio-padruxe3o}{%
+\section{Desvio Padrão}\label{desvio-padruxe3o}}
+
+É a raiz quadrada da variância. No desvio padrão, denotado como \(d.p.(X)\) ou
+\(\sigma\), não tem o efeito do quadrado.
+\begin{equation*}
+  d.p.(X) \cong \sigma = \sqrt{var(X)}
+\end{equation*}
+
+\hypertarget{desvio-padruxe3o-no-r}{%
+\subsection{Desvio Padrão no R}\label{desvio-padruxe3o-no-r}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tail}\NormalTok{(X)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 21 23 25 28 31
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dpX <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{sd}\NormalTok{(X), }\DecValTok{4}\NormalTok{)}
+\NormalTok{dpX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3,9749
+\end{verbatim}
+
+Note que, da mesma forma que a variância no R, o desvio padrão calculado no R tem como base a variância cujo numerador é \((n-1)\).
+
+\hypertarget{fuxf3rmula-alternativa-da-variuxe2ncia}{%
+\subsection{Fórmula alternativa da Variância}\label{fuxf3rmula-alternativa-da-variuxe2ncia}}
+
+Desenvolvendo a fórmula da definição da variância tem-se:
+\begin{align*}
+  var(X)  &= \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^2 \\
+          &= \frac{1}{n}\sum_{i=1}^{n}(X_i^2 - 2X_i\overline{X} +
+          \overline{X}^2)\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          \frac{1}{n}\sum_{i=1}^{n}2X_i\overline{X}+
+          \frac{1}{n}\sum_{i=1}^{n}\overline{X}^2\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\frac{1}{n}\sum_{i=1}^{n}X_i+
+          \frac{1}{n}n\overline{X}^2\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\overline{X}+ \overline{X}^2\\
+          &= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - \overline{X}^2.
+\end{align*}
+
+Em outras palavras
+
+\begin{equation*}
+  var(X) = \text{média dos quadrados} - \text{quadrado da média}.
+\end{equation*}
+
+\hypertarget{exemplo-de-variuxe2ncia-e-desvio-padruxe3o-no-r}{%
+\subsection{Exemplo de variância e desvio padrão no R}\label{exemplo-de-variuxe2ncia-e-desvio-padruxe3o-no-r}}
+
+Tomando o exemplo numérico da tabela 2.7 (Sartoris, 2013, p.40) sobre notas do
+aluno A tem-se:
+
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+Aluno A & notas & \(notas^2\)\tabularnewline
+\midrule
+\endhead
+Economia & 3 & 9\tabularnewline
+Contabilidade & 2 & 4\tabularnewline
+Administração & 4 & 16\tabularnewline
+Matemática & 1 & 1\tabularnewline
+--------------- & --------- & -----------\tabularnewline
+Somatória & 10 & 30\tabularnewline
+Média & 2,5 & 7,5\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{equation*}
+  var(X) = 7,5 - (2,5)^2 = 1,25
+\end{equation*}
+\begin{equation*}
+  dp(X) = \sqrt{1,25} = 1,12
+\end{equation*}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{mediaX3e2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(X3}\OperatorTok{^}\DecValTok{2}\NormalTok{)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(X3)}
+\NormalTok{mediaX3 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(X3)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(X3)}
+\NormalTok{varX3 <-}\StringTok{ }\NormalTok{mediaX3e2 }\OperatorTok{-}\StringTok{ }\NormalTok{mediaX3}\OperatorTok{^}\DecValTok{2}
+\NormalTok{varX3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1,25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dpX3 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(varX3), }\DecValTok{4}\NormalTok{)}
+\NormalTok{dpX3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1,118
+\end{verbatim}
+
+\hypertarget{covariuxe2ncia}{%
+\section{Covariância}\label{covariuxe2ncia}}
+
+pode ser estendida como uma \emph{variância conjunta} entre duas variáveis. Ou seja,
+\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})
+\end{equation*}
+
+\hypertarget{fuxf3rmula-alternativa-da-variuxe2ncia-1}{%
+\subsection{Fórmula alternativa da Variância}\label{fuxf3rmula-alternativa-da-variuxe2ncia-1}}
+
+Também existe a fórmula alternativa da covariância.
+
+\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i} - \overline{X}\overline{Y}.
+\end{equation*}
+
+\hypertarget{fuxf3rmula-alternativa-da-covariuxe2ncia}{%
+\subsection{Fórmula alternativa da Covariância}\label{fuxf3rmula-alternativa-da-covariuxe2ncia}}
+
+Em outras palavras
+
+\begin{equation*}
+  cov(X,Y) = \text{média dos produtos de X e Y} - \text{produto das médias de X e Y}.
+\end{equation*}
+
+\hypertarget{covariuxe2ncia-no-r}{%
+\subsection{Covariância no R}\label{covariuxe2ncia-no-r}}
+
+Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-se
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
+\midrule
+\endhead
+1 & 600 & 1.000 & 600.000\tabularnewline
+2 & 700 & 1.100 & 770.000\tabularnewline
+3 & 800 & 1.300 & 1.040.000\tabularnewline
+4 & 900 & 1.400 & 1.260.000\tabularnewline
+------------ & -------------- & -------------- & -------------\tabularnewline
+Somatória & 3.000 & 4.800 & 3.670.000\tabularnewline
+Média & 750 & 1.200 & 917.500\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{covariuxe2ncia-no-r-1}{%
+\subsection{Covariância no R}\label{covariuxe2ncia-no-r-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{C1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{600}\NormalTok{, }\DecValTok{700}\NormalTok{, }\DecValTok{800}\NormalTok{, }\DecValTok{900}\NormalTok{)}
+\NormalTok{R1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{1100}\NormalTok{, }\DecValTok{1300}\NormalTok{, }\DecValTok{1400}\NormalTok{)}
+\NormalTok{mediaC1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(C1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
+\NormalTok{mediaR1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(R1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(R1)}
+\NormalTok{mediaC1R1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(C1 }\OperatorTok{*}\StringTok{ }\NormalTok{R1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
+\NormalTok{covC1R1 <-}\StringTok{ }\NormalTok{mediaC1R1 }\OperatorTok{-}\StringTok{ }\NormalTok{mediaC1 }\OperatorTok{*}\StringTok{ }\NormalTok{mediaR1}
+\NormalTok{covC1R1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 17500
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cov}\NormalTok{(C1, R1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23333,33
+\end{verbatim}
+
+Note que a função covariância no R é calculada dividindo por \((n-1)\) e não por \(n\).
+
+\hypertarget{coeficiente-de-correlauxe7uxe3o}{%
+\subsection{Coeficiente de Correlação}\label{coeficiente-de-correlauxe7uxe3o}}
+
+É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro de interpretar. Ou seja,
+
+\begin{equation*}
+ corr(X,Y) \cong \rho_{xy} = \frac{cov(X,Y)}{dp(X) \times dp(Y)}
+\end{equation*}
+onde
+\begin{equation*}
+  -1 \leq \rho \leq +1
+\end{equation*}
+
+\hypertarget{correlauxe7uxe3o-no-r}{%
+\subsection{Correlação no R}\label{correlauxe7uxe3o-no-r}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{medC1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(C1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
+\NormalTok{medR1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(R1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(R1)}
+\NormalTok{varC1 <-}\StringTok{ }\NormalTok{(}\KeywordTok{sum}\NormalTok{((C1 }\OperatorTok{-}\StringTok{ }\NormalTok{medC1)}\OperatorTok{^}\DecValTok{2}\NormalTok{))}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
+\NormalTok{varC1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12500
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{varR1 <-}\StringTok{ }\NormalTok{(}\KeywordTok{sum}\NormalTok{((R1 }\OperatorTok{-}\StringTok{ }\NormalTok{medR1)}\OperatorTok{^}\DecValTok{2}\NormalTok{))}\OperatorTok{/}\KeywordTok{length}\NormalTok{(R1)}
+\NormalTok{varR1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 25000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dpC1 <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(varC1))}
+\NormalTok{dpR1 <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(varR1))}
+\NormalTok{corrC1R1 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(covC1R1}\OperatorTok{/}\NormalTok{(dpC1 }\OperatorTok{*}\StringTok{ }\NormalTok{dpR1), }\DecValTok{4}\NormalTok{)}
+\NormalTok{corrC1R1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9899
+\end{verbatim}
+
+\hypertarget{correlauxe7uxe3o-no-r-1}{%
+\subsection{Correlação no R}\label{correlauxe7uxe3o-no-r-1}}
+
+Ou simplesmente
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{round}\NormalTok{(}\KeywordTok{cor}\NormalTok{(C1, R1), }\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9899
 \end{verbatim}
 
 \hypertarget{revisuxe3o-de-literatura}{%

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Notas de aulas de Estatística Econômica</title>
+  <title>CAPÍTULO 2 Medidas de dispersão | Notas de aulas de Estatística Econômica</title>
   <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Notas de aulas de Estatística Econômica" />
+  <meta property="og:title" content="CAPÍTULO 2 Medidas de dispersão | Notas de aulas de Estatística Econômica" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Notas de aulas de Estatística Econômica" />
+  <meta name="twitter:title" content="CAPÍTULO 2 Medidas de dispersão | Notas de aulas de Estatística Econômica" />
   
   <meta name="twitter:description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="sobre-o-material.html"/>
+<link rel="prev" href="medidas-de-posição.html"/>
+<link rel="next" href="revisão-de-literatura.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -228,23 +228,279 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Notas de aulas de Estatística Econômica</h1>
-<p class="author"><em>Marcos Minoru Hasegawa</em></p>
-<p class="date"><em>2020-09-23</em></p>
+<div id="medidas-de-dispersão" class="section level1">
+<h1><span class="header-section-number">CAPÍTULO 2</span> Medidas de dispersão</h1>
+<p>Este tópico está baseado no material de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Medem como os dados estão , mais ou menos próximos entre si,
+seja, mais ou menos dispersos.</p>
+<div id="variância" class="section level2">
+<h2><span class="header-section-number">2.1</span> Variância</h2>
+<p>a variância é a somatória dos desvios em relação a média ao quadrado, dividido pelo
+número de observações. Ou seja,
+<span class="math display">\[\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
+\end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n-1}~\text{(amostra)}
+\end{equation*}\]</span></p>
+<p>Note que a variância da amostra é um estimador não viesado da variância populacional.</p>
+<div id="variância-no-r" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Variância no R</h3>
+<p>Aproveitando os dados de alturas de 30 pessoas:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="medidas-de-dispersão.html#cb51-1"></a><span class="kw">tail</span>(X)</span></code></pre></div>
+<pre><code>## [1] 21 23 25 28 31</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="medidas-de-dispersão.html#cb53-1"></a>varX &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">var</span>(X), <span class="dv">4</span>)</span>
+<span id="cb53-2"><a href="medidas-de-dispersão.html#cb53-2"></a>varX</span></code></pre></div>
+<pre><code>## [1] 15,8</code></pre>
+<p>Note que a variância no R é a variância amostral, cujo denominador é <span class="math inline">\((n-1)\)</span>.</p>
 </div>
-<div id="licença" class="section level1 unnumbered">
-<h1>Licença</h1>
-<p>Como está descrito no repositório, os poucos códigos originais desenvolvidos ao longo do texto estão sob a licença <strong>GNU GPLv3</strong> .</p>
-<p>O texto e as artes gráficas elaboradas de forma original estão sob licença <strong>Creative Commons BY-NC-SA 4.0</strong>.</p>
+</div>
+<div id="desvio-padrão" class="section level2">
+<h2><span class="header-section-number">2.2</span> Desvio Padrão</h2>
+<p>É a raiz quadrada da variância. No desvio padrão, denotado como <span class="math inline">\(d.p.(X)\)</span> ou
+<span class="math inline">\(\sigma\)</span>, não tem o efeito do quadrado.
+<span class="math display">\[\begin{equation*}
+  d.p.(X) \cong \sigma = \sqrt{var(X)}
+\end{equation*}\]</span></p>
+<div id="desvio-padrão-no-r" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Desvio Padrão no R</h3>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="medidas-de-dispersão.html#cb55-1"></a><span class="kw">tail</span>(X)</span></code></pre></div>
+<pre><code>## [1] 21 23 25 28 31</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="medidas-de-dispersão.html#cb57-1"></a>dpX &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">sd</span>(X), <span class="dv">4</span>)</span>
+<span id="cb57-2"><a href="medidas-de-dispersão.html#cb57-2"></a>dpX</span></code></pre></div>
+<pre><code>## [1] 3,9749</code></pre>
+<p>Note que, da mesma forma que a variância no R, o desvio padrão calculado no R tem como base a variância cujo numerador é <span class="math inline">\((n-1)\)</span>.</p>
+</div>
+<div id="fórmula-alternativa-da-variância" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Fórmula alternativa da Variância</h3>
+<p>Desenvolvendo a fórmula da definição da variância tem-se:
+<span class="math display">\[\begin{align*}
+  var(X)  &amp;= \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^2 \\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}(X_i^2 - 2X_i\overline{X} +
+          \overline{X}^2)\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          \frac{1}{n}\sum_{i=1}^{n}2X_i\overline{X}+
+          \frac{1}{n}\sum_{i=1}^{n}\overline{X}^2\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\frac{1}{n}\sum_{i=1}^{n}X_i+
+          \frac{1}{n}n\overline{X}^2\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\overline{X}+ \overline{X}^2\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - \overline{X}^2.
+\end{align*}\]</span></p>
+<p>Em outras palavras</p>
+<p><span class="math display">\[\begin{equation*}
+  var(X) = \text{média dos quadrados} - \text{quadrado da média}.
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-de-variância-e-desvio-padrão-no-r" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Exemplo de variância e desvio padrão no R</h3>
+<p>Tomando o exemplo numérico da tabela 2.7 (Sartoris, 2013, p.40) sobre notas do
+aluno A tem-se:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Aluno A</th>
+<th align="center">notas</th>
+<th align="center"><span class="math inline">\(notas^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Economia</td>
+<td align="center">3</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td align="left">Contabilidade</td>
+<td align="center">2</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Administração</td>
+<td align="center">4</td>
+<td align="center">16</td>
+</tr>
+<tr class="even">
+<td align="left">Matemática</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">—————</td>
+<td align="center">———</td>
+<td align="center">———–</td>
+</tr>
+<tr class="even">
+<td align="left">Somatória</td>
+<td align="center">10</td>
+<td align="center">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Média</td>
+<td align="center">2,5</td>
+<td align="center">7,5</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+  var(X) = 7,5 - (2,5)^2 = 1,25
+\end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+  dp(X) = \sqrt{1,25} = 1,12
+\end{equation*}\]</span></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="medidas-de-dispersão.html#cb59-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb59-2"><a href="medidas-de-dispersão.html#cb59-2"></a>mediaX3e2 &lt;-<span class="st"> </span><span class="kw">sum</span>(X3<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="kw">length</span>(X3)</span>
+<span id="cb59-3"><a href="medidas-de-dispersão.html#cb59-3"></a>mediaX3 &lt;-<span class="st"> </span><span class="kw">sum</span>(X3)<span class="op">/</span><span class="kw">length</span>(X3)</span>
+<span id="cb59-4"><a href="medidas-de-dispersão.html#cb59-4"></a>varX3 &lt;-<span class="st"> </span>mediaX3e2 <span class="op">-</span><span class="st"> </span>mediaX3<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb59-5"><a href="medidas-de-dispersão.html#cb59-5"></a>varX3</span></code></pre></div>
+<pre><code>## [1] 1,25</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="medidas-de-dispersão.html#cb61-1"></a>dpX3 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">sqrt</span>(varX3), <span class="dv">4</span>)</span>
+<span id="cb61-2"><a href="medidas-de-dispersão.html#cb61-2"></a>dpX3</span></code></pre></div>
+<pre><code>## [1] 1,118</code></pre>
+</div>
+</div>
+<div id="covariância" class="section level2">
+<h2><span class="header-section-number">2.3</span> Covariância</h2>
+<p>pode ser estendida como uma <em>variância conjunta</em> entre duas variáveis. Ou seja,
+<span class="math display">\[\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})
+\end{equation*}\]</span></p>
+<div id="fórmula-alternativa-da-variância-1" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Fórmula alternativa da Variância</h3>
+<p>Também existe a fórmula alternativa da covariância.</p>
+<p><span class="math display">\[\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i} - \overline{X}\overline{Y}.
+\end{equation*}\]</span></p>
+</div>
+<div id="fórmula-alternativa-da-covariância" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Fórmula alternativa da Covariância</h3>
+<p>Em outras palavras</p>
+<p><span class="math display">\[\begin{equation*}
+  cov(X,Y) = \text{média dos produtos de X e Y} - \text{produto das médias de X e Y}.
+\end{equation*}\]</span></p>
+</div>
+<div id="covariância-no-r" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Covariância no R</h3>
+<p>Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-se</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Ano</th>
+<th align="center">Consumo(X)</th>
+<th align="center">Renda(Y)</th>
+<th align="center">(XY)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">600</td>
+<td align="center">1.000</td>
+<td align="center">600.000</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">700</td>
+<td align="center">1.100</td>
+<td align="center">770.000</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">800</td>
+<td align="center">1.300</td>
+<td align="center">1.040.000</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">900</td>
+<td align="center">1.400</td>
+<td align="center">1.260.000</td>
+</tr>
+<tr class="odd">
+<td align="center">————</td>
+<td align="center">————–</td>
+<td align="center">————–</td>
+<td align="center">————-</td>
+</tr>
+<tr class="even">
+<td align="center">Somatória</td>
+<td align="center">3.000</td>
+<td align="center">4.800</td>
+<td align="center">3.670.000</td>
+</tr>
+<tr class="odd">
+<td align="center">Média</td>
+<td align="center">750</td>
+<td align="center">1.200</td>
+<td align="center">917.500</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="covariância-no-r-1" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Covariância no R</h3>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="medidas-de-dispersão.html#cb63-1"></a>C1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">600</span>, <span class="dv">700</span>, <span class="dv">800</span>, <span class="dv">900</span>)</span>
+<span id="cb63-2"><a href="medidas-de-dispersão.html#cb63-2"></a>R1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">1100</span>, <span class="dv">1300</span>, <span class="dv">1400</span>)</span>
+<span id="cb63-3"><a href="medidas-de-dispersão.html#cb63-3"></a>mediaC1 &lt;-<span class="st"> </span><span class="kw">sum</span>(C1)<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb63-4"><a href="medidas-de-dispersão.html#cb63-4"></a>mediaR1 &lt;-<span class="st"> </span><span class="kw">sum</span>(R1)<span class="op">/</span><span class="kw">length</span>(R1)</span>
+<span id="cb63-5"><a href="medidas-de-dispersão.html#cb63-5"></a>mediaC1R1 &lt;-<span class="st"> </span><span class="kw">sum</span>(C1 <span class="op">*</span><span class="st"> </span>R1)<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb63-6"><a href="medidas-de-dispersão.html#cb63-6"></a>covC1R1 &lt;-<span class="st"> </span>mediaC1R1 <span class="op">-</span><span class="st"> </span>mediaC1 <span class="op">*</span><span class="st"> </span>mediaR1</span>
+<span id="cb63-7"><a href="medidas-de-dispersão.html#cb63-7"></a>covC1R1</span></code></pre></div>
+<pre><code>## [1] 17500</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="medidas-de-dispersão.html#cb65-1"></a><span class="kw">cov</span>(C1, R1)</span></code></pre></div>
+<pre><code>## [1] 23333,33</code></pre>
+<p>Note que a função covariância no R é calculada dividindo por <span class="math inline">\((n-1)\)</span> e não por <span class="math inline">\(n\)</span>.</p>
+</div>
+<div id="coeficiente-de-correlação" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> Coeficiente de Correlação</h3>
+<p>É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro de interpretar. Ou seja,</p>
+<p><span class="math display">\[\begin{equation*}
+ corr(X,Y) \cong \rho_{xy} = \frac{cov(X,Y)}{dp(X) \times dp(Y)}
+\end{equation*}\]</span>
+onde
+<span class="math display">\[\begin{equation*}
+  -1 \leq \rho \leq +1
+\end{equation*}\]</span></p>
+</div>
+<div id="correlação-no-r" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> Correlação no R</h3>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="medidas-de-dispersão.html#cb67-1"></a>medC1 &lt;-<span class="st"> </span><span class="kw">sum</span>(C1)<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb67-2"><a href="medidas-de-dispersão.html#cb67-2"></a>medR1 &lt;-<span class="st"> </span><span class="kw">sum</span>(R1)<span class="op">/</span><span class="kw">length</span>(R1)</span>
+<span id="cb67-3"><a href="medidas-de-dispersão.html#cb67-3"></a>varC1 &lt;-<span class="st"> </span>(<span class="kw">sum</span>((C1 <span class="op">-</span><span class="st"> </span>medC1)<span class="op">^</span><span class="dv">2</span>))<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb67-4"><a href="medidas-de-dispersão.html#cb67-4"></a>varC1</span></code></pre></div>
+<pre><code>## [1] 12500</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="medidas-de-dispersão.html#cb69-1"></a>varR1 &lt;-<span class="st"> </span>(<span class="kw">sum</span>((R1 <span class="op">-</span><span class="st"> </span>medR1)<span class="op">^</span><span class="dv">2</span>))<span class="op">/</span><span class="kw">length</span>(R1)</span>
+<span id="cb69-2"><a href="medidas-de-dispersão.html#cb69-2"></a>varR1</span></code></pre></div>
+<pre><code>## [1] 25000</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="medidas-de-dispersão.html#cb71-1"></a>dpC1 &lt;-<span class="st"> </span><span class="kw">abs</span>(<span class="kw">sqrt</span>(varC1))</span>
+<span id="cb71-2"><a href="medidas-de-dispersão.html#cb71-2"></a>dpR1 &lt;-<span class="st"> </span><span class="kw">abs</span>(<span class="kw">sqrt</span>(varR1))</span>
+<span id="cb71-3"><a href="medidas-de-dispersão.html#cb71-3"></a>corrC1R1 &lt;-<span class="st"> </span><span class="kw">round</span>(covC1R1<span class="op">/</span>(dpC1 <span class="op">*</span><span class="st"> </span>dpR1), <span class="dv">4</span>)</span>
+<span id="cb71-4"><a href="medidas-de-dispersão.html#cb71-4"></a>corrC1R1</span></code></pre></div>
+<pre><code>## [1] 0,9899</code></pre>
+</div>
+<div id="correlação-no-r-1" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> Correlação no R</h3>
+<p>Ou simplesmente</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="medidas-de-dispersão.html#cb73-1"></a><span class="kw">round</span>(<span class="kw">cor</span>(C1, R1), <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0,9899</code></pre>
+
+</div>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-Sartoris2013">
+<p>Sartoris, Alexandre. 2013. <em>Estatística e Introdução à Econometria</em>. 2nd ed. São Paulo: Saraiva.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="sobre-o-material.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="medidas-de-posição.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="revisão-de-literatura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

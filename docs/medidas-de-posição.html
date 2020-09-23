@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CAPÍTULO 1 Medidas de posição | Notas de aulas de Estatística Econômica</title>
+  <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="CAPÍTULO 1 Medidas de posição | Notas de aulas de Estatística Econômica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CAPÍTULO 1 Medidas de posição | Notas de aulas de Estatística Econômica" />
+  
+  <meta name="twitter:description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
+  
+
+<meta name="author" content="Marcos Minoru Hasegawa" />
+
+
+<meta name="date" content="2020-09-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sobre-o-autor.html"/>
+<link rel="next" href="medidas-de-dispersão.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notas de aulas de Estatística Econômica</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
+<li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
+<li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
+<li class="chapter" data-level="1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html"><i class="fa fa-check"></i><b>1</b> Medidas de posição</a><ul>
+<li class="chapter" data-level="1.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1</b> Variável Aleatória</a></li>
+<li class="chapter" data-level="1.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#média-aritmética-simples"><i class="fa fa-check"></i><b>1.2</b> Média Aritmética Simples</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-1"><i class="fa fa-check"></i><b>1.2.1</b> Exemplo 1</a></li>
+<li class="chapter" data-level="1.2.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-1-no-r"><i class="fa fa-check"></i><b>1.2.2</b> EXemplo 1 no R</a></li>
+<li class="chapter" data-level="1.2.3" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-2"><i class="fa fa-check"></i><b>1.2.3</b> Exemplo 2</a></li>
+<li class="chapter" data-level="1.2.4" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-2-no-r"><i class="fa fa-check"></i><b>1.2.4</b> Exemplo 2 no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#média-aritmética-ponderada"><i class="fa fa-check"></i><b>1.3</b> Média Aritmética Ponderada</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-3"><i class="fa fa-check"></i><b>1.3.1</b> Exemplo 3</a></li>
+<li class="chapter" data-level="1.3.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-3-no-r"><i class="fa fa-check"></i><b>1.3.2</b> Exemplo 3 no R</a></li>
+<li class="chapter" data-level="1.3.3" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-4"><i class="fa fa-check"></i><b>1.3.3</b> Exemplo 4</a></li>
+<li class="chapter" data-level="1.3.4" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-4-no-r"><i class="fa fa-check"></i><b>1.3.4</b> Exemplo 4 no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#média-geométrica-simples"><i class="fa fa-check"></i><b>1.4</b> Média Geométrica Simples</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-5"><i class="fa fa-check"></i><b>1.4.1</b> Exemplo 5</a></li>
+<li class="chapter" data-level="1.4.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-5-no-r"><i class="fa fa-check"></i><b>1.4.2</b> Exemplo 5 no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#média-geométrica-ponderada"><i class="fa fa-check"></i><b>1.5</b> Média Geométrica Ponderada</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-6"><i class="fa fa-check"></i><b>1.5.1</b> Exemplo 6</a></li>
+<li class="chapter" data-level="1.5.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#o-exemplo-6-no-r"><i class="fa fa-check"></i><b>1.5.2</b> O exemplo 6 no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#média-harmônica"><i class="fa fa-check"></i><b>1.6</b> Média Harmônica</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-7"><i class="fa fa-check"></i><b>1.6.1</b> Exemplo 7</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#média-harmônica-ponderada"><i class="fa fa-check"></i><b>1.7</b> Média Harmônica Ponderada</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-8"><i class="fa fa-check"></i><b>1.7.1</b> Exemplo 8</a></li>
+<li class="chapter" data-level="1.7.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#observação"><i class="fa fa-check"></i><b>1.7.2</b> Observação</a></li>
+<li class="chapter" data-level="1.7.3" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-9"><i class="fa fa-check"></i><b>1.7.3</b> Exemplo 9</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#mediana"><i class="fa fa-check"></i><b>1.8</b> Mediana</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-numérico-de-mediana-quando-o-número-de-valores-é-impar"><i class="fa fa-check"></i><b>1.8.1</b> Exemplo numérico de Mediana quando o número de valores é impar</a></li>
+<li class="chapter" data-level="1.8.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#mediana-no-r"><i class="fa fa-check"></i><b>1.8.2</b> Mediana no R</a></li>
+<li class="chapter" data-level="1.8.3" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#exemplo-numérico-de-mediana-quando-o-número-de-valores-é-par"><i class="fa fa-check"></i><b>1.8.3</b> Exemplo numérico de Mediana quando o número de valores é par</a></li>
+<li class="chapter" data-level="1.8.4" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#o-exemplo-do-número-par-de-valores-no-r"><i class="fa fa-check"></i><b>1.8.4</b> O exemplo do número par de valores no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#quartis-ou-quartiles"><i class="fa fa-check"></i><b>1.9</b> Quartis ou Quartiles</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#quartis-no-r"><i class="fa fa-check"></i><b>1.9.1</b> Quartis no R</a></li>
+<li class="chapter" data-level="1.9.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#quartis-no-r-1"><i class="fa fa-check"></i><b>1.9.2</b> Quartis no R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#moda"><i class="fa fa-check"></i><b>1.10</b> Moda</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html#moda-no-r"><i class="fa fa-check"></i><b>1.10.1</b> Moda no R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html"><i class="fa fa-check"></i><b>2</b> Medidas de dispersão</a><ul>
+<li class="chapter" data-level="2.1" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#variância"><i class="fa fa-check"></i><b>2.1</b> Variância</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#variância-no-r"><i class="fa fa-check"></i><b>2.1.1</b> Variância no R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#desvio-padrão"><i class="fa fa-check"></i><b>2.2</b> Desvio Padrão</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#desvio-padrão-no-r"><i class="fa fa-check"></i><b>2.2.1</b> Desvio Padrão no R</a></li>
+<li class="chapter" data-level="2.2.2" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#fórmula-alternativa-da-variância"><i class="fa fa-check"></i><b>2.2.2</b> Fórmula alternativa da Variância</a></li>
+<li class="chapter" data-level="2.2.3" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#exemplo-de-variância-e-desvio-padrão-no-r"><i class="fa fa-check"></i><b>2.2.3</b> Exemplo de variância e desvio padrão no R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#covariância"><i class="fa fa-check"></i><b>2.3</b> Covariância</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#fórmula-alternativa-da-variância-1"><i class="fa fa-check"></i><b>2.3.1</b> Fórmula alternativa da Variância</a></li>
+<li class="chapter" data-level="2.3.2" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#fórmula-alternativa-da-covariância"><i class="fa fa-check"></i><b>2.3.2</b> Fórmula alternativa da Covariância</a></li>
+<li class="chapter" data-level="2.3.3" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#covariância-no-r"><i class="fa fa-check"></i><b>2.3.3</b> Covariância no R</a></li>
+<li class="chapter" data-level="2.3.4" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#covariância-no-r-1"><i class="fa fa-check"></i><b>2.3.4</b> Covariância no R</a></li>
+<li class="chapter" data-level="2.3.5" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#coeficiente-de-correlação"><i class="fa fa-check"></i><b>2.3.5</b> Coeficiente de Correlação</a></li>
+<li class="chapter" data-level="2.3.6" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#correlação-no-r"><i class="fa fa-check"></i><b>2.3.6</b> Correlação no R</a></li>
+<li class="chapter" data-level="2.3.7" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html#correlação-no-r-1"><i class="fa fa-check"></i><b>2.3.7</b> Correlação no R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="revisão-de-literatura.html"><a href="revisão-de-literatura.html"><i class="fa fa-check"></i><b>3</b> Revisão de Literatura</a></li>
+<li class="chapter" data-level="4" data-path="metodologia.html"><a href="metodologia.html"><i class="fa fa-check"></i><b>4</b> Metodologia</a></li>
+<li class="chapter" data-level="5" data-path="aplicações.html"><a href="aplicações.html"><i class="fa fa-check"></i><b>5</b> Aplicações</a><ul>
+<li class="chapter" data-level="5.1" data-path="aplicações.html"><a href="aplicações.html#exemplo-um"><i class="fa fa-check"></i><b>5.1</b> Exemplo um</a></li>
+<li class="chapter" data-level="5.2" data-path="aplicações.html"><a href="aplicações.html#examplo-dois"><i class="fa fa-check"></i><b>5.2</b> Examplo dois</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>6</b> Considerações Finais</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notas de aulas de Estatística Econômica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="medidas-de-posição" class="section level1">
+<h1><span class="header-section-number">CAPÍTULO 1</span> Medidas de posição</h1>
+<p>Este tópico está baseado no material de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.</p>
+<div id="variável-aleatória" class="section level2">
+<h2><span class="header-section-number">1.1</span> Variável Aleatória</h2>
+<ul>
+<li>variável aleatória (v.a.) é uma variável que está associada a uma <em>distribuição de probabilidade</em>.</li>
+<li>Ou seja, cada valor da v.a. está associada a uma probabilidade.</li>
+<li>O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de <span class="math inline">\(1/6\)</span>.</li>
+</ul>
+</div>
+<div id="média-aritmética-simples" class="section level2">
+<h2><span class="header-section-number">1.2</span> Média Aritmética Simples</h2>
+<p><span class="math display" id="eq:mediaaritmeticasimples">\[\begin{equation}
+    \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+    \tag{1.1}
+\end{equation}\]</span>
+onde <span class="math inline">\(i =1, ...,n\)</span></p>
+<div id="exemplo-1" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Exemplo 1</h3>
+<p>Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar <a href="medidas-de-posição.html#eq:mediaaritmeticasimples">(1.1)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-1-no-r" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> EXemplo 1 no R</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="medidas-de-posição.html#cb1-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">31</span>)</span>
+<span id="cb1-2"><a href="medidas-de-posição.html#cb1-2"></a>X</span></code></pre></div>
+<pre><code>## [1] 21 23 25 28 31</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="medidas-de-posição.html#cb3-1"></a>mediaX &lt;-<span class="st"> </span><span class="kw">mean</span>(X)</span>
+<span id="cb3-2"><a href="medidas-de-posição.html#cb3-2"></a>mediaX</span></code></pre></div>
+<pre><code>## [1] 25,6</code></pre>
+</div>
+<div id="exemplo-2" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Exemplo 2</h3>
+<p>Qual é a média aritmética de três provas realizadas por um aluno, cujas notas
+foram 4,6 e 8. Para responder, basta aplicar <a href="medidas-de-posição.html#eq:mediaaritmeticasimples">(1.1)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{4+6+8}{3} = 6
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-2-no-r" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Exemplo 2 no R</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="medidas-de-posição.html#cb5-1"></a>X2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb5-2"><a href="medidas-de-posição.html#cb5-2"></a>X2</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="medidas-de-posição.html#cb7-1"></a>mediaX2 &lt;-<span class="st"> </span><span class="kw">mean</span>(X2)</span>
+<span id="cb7-2"><a href="medidas-de-posição.html#cb7-2"></a>mediaX2</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+</div>
+</div>
+<div id="média-aritmética-ponderada" class="section level2">
+<h2><span class="header-section-number">1.3</span> Média Aritmética Ponderada</h2>
+<p>Na média aritmética ponderada, cada valor pode ter importância diferentes do outros valores considerados no computo. A frequência dos valores é muito comumente usada para para dar maior ou menor importância relativa entre os valores considerados no computo da média aritmética ponderada. Veja como fica a fórmula para o cálculo da média aritmética ponderada em <a href="medidas-de-posição.html#eq:mediaartimeticaponderada">(1.2)</a></p>
+<p><span class="math display" id="eq:mediaartimeticaponderada">\[\begin{equation}
+    \overline{X} = \frac{1}{\sum_{i=1}^{n}w_i} \sum_{i=1}^{n} w_i X_i
+    \tag{1.2}
+\end{equation}\]</span>
+onde <span class="math inline">\(w_i\)</span> é a ponderação ou peso associado a iésimo valor de <span class="math inline">\(X\)</span>.</p>
+<p>Podemos escrever na forma de frequência relativa dos valores da variável <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display" id="eq:eq13">\[\begin{equation}
+  f_i = \frac{w_i}{\sum_{i=1}^{n}w_i}
+  \tag{1.3}
+\end{equation}\]</span></p>
+<div id="exemplo-3" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Exemplo 3</h3>
+<p>Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete
+de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder,
+basta aplicar <a href="medidas-de-posição.html#eq:mediaartimeticaponderada">(1.2)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{22\times 8 + 23\times 7 + 25 \times 3 + 28 \times 1 + 
+  30 \times 1}{20} = 23,5
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-3-no-r" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Exemplo 3 no R</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="medidas-de-posição.html#cb9-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>)</span>
+<span id="cb9-2"><a href="medidas-de-posição.html#cb9-2"></a>X3</span></code></pre></div>
+<pre><code>## [1] 22 23 25 28 30</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="medidas-de-posição.html#cb11-1"></a>w3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb11-2"><a href="medidas-de-posição.html#cb11-2"></a>w3</span></code></pre></div>
+<pre><code>## [1] 8 7 3 1 1</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="medidas-de-posição.html#cb13-1"></a>wX3 &lt;-<span class="st"> </span>w3 <span class="op">*</span><span class="st"> </span>X3</span>
+<span id="cb13-2"><a href="medidas-de-posição.html#cb13-2"></a>mediaX3 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX3)<span class="op">/</span><span class="kw">sum</span>(w3)</span>
+<span id="cb13-3"><a href="medidas-de-posição.html#cb13-3"></a>mediaX3</span></code></pre></div>
+<pre><code>## [1] 23,5</code></pre>
+</div>
+<div id="exemplo-4" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Exemplo 4</h3>
+<p>Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar <a href="medidas-de-posição.html#eq:mediaartimeticaponderada">(1.2)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-4-no-r" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Exemplo 4 no R</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="medidas-de-posição.html#cb15-1"></a>X4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb15-2"><a href="medidas-de-posição.html#cb15-2"></a>X4</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="medidas-de-posição.html#cb17-1"></a>w4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb17-2"><a href="medidas-de-posição.html#cb17-2"></a>w4</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="medidas-de-posição.html#cb19-1"></a>wX4 &lt;-<span class="st"> </span>w4 <span class="op">*</span><span class="st"> </span>X4</span>
+<span id="cb19-2"><a href="medidas-de-posição.html#cb19-2"></a>mediaX4 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX4)<span class="op">/</span><span class="kw">sum</span>(w4)</span>
+<span id="cb19-3"><a href="medidas-de-posição.html#cb19-3"></a><span class="kw">round</span>(mediaX4, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 6,7</code></pre>
+</div>
+</div>
+<div id="média-geométrica-simples" class="section level2">
+<h2><span class="header-section-number">1.4</span> Média Geométrica Simples</h2>
+<p>Na média geométrica simples, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os <span class="math inline">\(n\)</span> valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a <a href="medidas-de-posição.html#eq:eq14">(1.4)</a> e <a href="medidas-de-posição.html#eq:eq15">(1.5)</a>.</p>
+<p><span class="math display" id="eq:eq14">\[\begin{equation}
+    G = \left(\prod_{i=1}^{n} X_i \right)^{\frac{1}{n}}
+    \tag{1.4}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:eq15">\[\begin{equation}
+    G = \sqrt[n]{X_1 \times X_2 \times \ldots \times X_n}
+    \tag{1.5}
+\end{equation}\]</span></p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero? E se um dos valores for negativo?</p>
+<div id="exemplo-5" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Exemplo 5</h3>
+<p>Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.</p>
+<p><span class="math display">\[\begin{equation*}
+  \sqrt[3]{4 \times 6 \times 8} \cong 5,7690
+\end{equation*}\]</span></p>
+</div>
+<div id="exemplo-5-no-r" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Exemplo 5 no R</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="medidas-de-posição.html#cb21-1"></a>X5 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb21-2"><a href="medidas-de-posição.html#cb21-2"></a>X5</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="medidas-de-posição.html#cb23-1"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(X5)</span>
+<span id="cb23-2"><a href="medidas-de-posição.html#cb23-2"></a>mediaX5 &lt;-<span class="st"> </span><span class="kw">prod</span>(X5)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>n)</span>
+<span id="cb23-3"><a href="medidas-de-posição.html#cb23-3"></a><span class="kw">round</span>(mediaX5, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 5,8</code></pre>
+</div>
+</div>
+<div id="média-geométrica-ponderada" class="section level2">
+<h2><span class="header-section-number">1.5</span> Média Geométrica Ponderada</h2>
+<p>Na média geométrica ponderada que podem ser calculadas através de duas fórmulas <a href="medidas-de-posição.html#eq:eq16">(1.6)</a> e <a href="medidas-de-posição.html#eq:eq17">(1.7)</a>, cada valor pode ter uma importância diferente em relação aos outros valores no computo da média geométrica. Muito comumente, esta maior ou menor importância pode estar associada a frequência dos valores considerados no cálculo.</p>
+<p><span class="math display" id="eq:eq16">\[\begin{equation}
+    G = \left(\prod_{j=1}^{k} X_j^{w_j} \right)^{\frac{1}{n}}
+    \tag{1.6}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:eq17">\[\begin{equation}
+    G = \sqrt[n]{X_1^{w_1} \times X_2^{w_2} \times \ldots \times X_k^{w_k}}
+    \tag{1.7}
+\end{equation}\]</span></p>
+<p>onde a <span class="math inline">\(\sum_{j=1}^{k} w_j = n\)</span></p>
+<div id="exemplo-6" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Exemplo 6</h3>
+<p>tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:</p>
+<p><span class="math display">\[\begin{equation*}
+  \sqrt[6]{4^1 \times 6^2 \times 8^3} \cong 6,5
+\end{equation*}\]</span></p>
+</div>
+<div id="o-exemplo-6-no-r" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> O exemplo 6 no R</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="medidas-de-posição.html#cb25-1"></a>x6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb25-2"><a href="medidas-de-posição.html#cb25-2"></a><span class="kw">class</span>(x6)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="medidas-de-posição.html#cb27-1"></a>x6</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="medidas-de-posição.html#cb29-1"></a>w6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb29-2"><a href="medidas-de-posição.html#cb29-2"></a>w6</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="medidas-de-posição.html#cb31-1"></a>G2 &lt;-<span class="st"> </span><span class="kw">round</span>((<span class="kw">prod</span>(x6<span class="op">^</span>w6))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sum</span>(w6)), <span class="dv">1</span>)</span>
+<span id="cb31-2"><a href="medidas-de-posição.html#cb31-2"></a>G2</span></code></pre></div>
+<pre><code>## [1] 6,5</code></pre>
+</div>
+</div>
+<div id="média-harmônica" class="section level2">
+<h2><span class="header-section-number">1.6</span> Média Harmônica</h2>
+<p>É o inverso da média dos inversos dos valores da variável que pode ser calculada através das fórmulas <a href="medidas-de-posição.html#eq:mediaharmonicasimples">(1.8)</a> e <a href="medidas-de-posição.html#eq:mediaharmonicasimples2">(1.9)</a>.</p>
+<p><span class="math display" id="eq:mediaharmonicasimples">\[\begin{equation}
+    H = \frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}
+    \tag{1.8}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:mediaharmonicasimples2">\[\begin{equation}
+    H = \frac{n}{\frac{1}{X_1} + \frac{1}{X_2} + \ldots + \frac{1}{X_n}}
+    \tag{1.9}
+\end{equation}\]</span></p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.</p>
+<div id="exemplo-7" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Exemplo 7</h3>
+<p>Tomando o exemplo das notas, temos:</p>
+<p><span class="math display">\[\begin{equation*}
+    H = \frac{3}{\frac{1}{4} + \frac{1}{6} + \frac{1}{8}}\cong 5,5.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="média-harmônica-ponderada" class="section level2">
+<h2><span class="header-section-number">1.7</span> Média Harmônica Ponderada</h2>
+<p>Na média harmônica ponderada, assim como na média aritmética ponderada e na média geométrica ponderada, cada valor pode ter uma importância em relação aos outros valores considerados no seu cálculo. Comumente, a frequência do valor pode associaar uma maior ou menor importância no cálculo da média harmônica ponderada que pode ser calculada através das fórmulas <a href="medidas-de-posição.html#eq:mediaharmonicaponderada">(1.10)</a> e <a href="medidas-de-posição.html#eq:mediaharmonicaponderada2">(1.11)</a></p>
+<p><span class="math display" id="eq:mediaharmonicaponderada">\[\begin{equation}
+    H = \frac{n}{\sum_{j=1}^{k}w_{j}\frac{1}{X_j}}
+    \tag{1.10}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:mediaharmonicaponderada2">\[\begin{equation}
+    H = \frac{n}{w_1\frac{1}{X_1} + w_2\frac{1}{X_2} + \ldots + w_k \frac{1}{X_k}}
+    \tag{1.11}
+\end{equation}\]</span></p>
+<p>onde a <span class="math inline">\(\sum_{j=1}^{k} w_j = n\)</span></p>
+<div id="exemplo-8" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Exemplo 8</h3>
+<p>Tomando o exemplo das notas</p>
+<p><span class="math display">\[\begin{equation*}
+    H = \frac{6}{\frac{1}{4}\times 1 + \frac{1}{6}\times 2 + \frac{1}{8}\times 3}\cong 6,3.
+\end{equation*}\]</span></p>
+</div>
+<div id="observação" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Observação</h3>
+<p>Tanto para as médias simples como para as ponderadas, a
+média aritmética é maior do que a média geométrica e essa, por sua vez, é maior
+que a harmônica. Isso só não vale quando todos os valores são iguais. Veja de forma esquemática em <a href="medidas-de-posição.html#eq:diferencaentreasmedias">(1.12)</a></p>
+<p><span class="math display" id="eq:diferencaentreasmedias">\[\begin{equation}
+  \overline{X} \geq G \geq H
+  \tag{1.12}
+\end{equation}\]</span></p>
+</div>
+<div id="exemplo-9" class="section level3">
+<h3><span class="header-section-number">1.7.3</span> Exemplo 9</h3>
+<p>O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: i) as notas têm o mesmo peso e; ii) as notas têm pesos diferentes.</p>
+<ol style="list-style-type: lower-roman">
+<li>As notas dos bimestres têm os mesmos pesos.</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+    \overline{X} = \frac{3 + 4,5 + 7 + 8,5}{4} = 23/4 = 5,75
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    G = \sqrt[4]{3 \times 4,5 \times 7 \times 8,5} = \sqrt[4]{803,25} \cong 5,32
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    H = \frac{4}{\frac{1}{3} +\frac{1}{4,5} +\frac{1}{7} +\frac{1}{8,5}}   \cong 4,90
+  \end{equation*}\]</span></p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Suponha que agora os pesos para as notas bimestrais sejam, 30%, 25%, 25% e 20%.</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+    \overline{X} = 0,3\times 3 + 0,25\times 4,5 + 0,25\times 7 + 0,20 \times 8,5 = 5,475
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    G = 3^{0,3} \times 4,5^{0,25} \times 7^{0,25} \times 8,5^{0,2} = \cong 5,05
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
+  \end{equation*}\]</span></p>
+</div>
+</div>
+<div id="mediana" class="section level2">
+<h2><span class="header-section-number">1.8</span> Mediana</h2>
+<p>é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois
+grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.</p>
+<ol style="list-style-type: lower-roman">
+<li>Quando o número de valores é impar, a posiçãodo valor correspondente a mediana é obtida através de <a href="medidas-de-posição.html#eq:posicaomedianaimpar">(1.13)</a>:</li>
+</ol>
+<p><span class="math display" id="eq:posicaomedianaimpar">\[\begin{equation}
+  PMediana_{impar} = \dfrac{n + 1}{2}
+  \tag{1.13}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado no cálculo.</p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Quando o número de valores é par, a posição da mediana é obtida através da média entre os dois valores centrais do conjunto de valores ordenados de menor a maior. O primeiro valor central é definido pela posição obtida através de <a href="medidas-de-posição.html#eq:valor1mediaposicaomedianapar">(1.14)</a></li>
+</ol>
+<p><span class="math display" id="eq:valor1mediaposicaomedianapar">\[\begin{equation}
+  P1Mediana_{par} = \dfrac{n}{2}
+  \tag{1.14}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado para o cálculo.</p>
+<p>O segundo valor central é definido pelas posição obtida através de
+<a href="medidas-de-posição.html#eq:valor2mediaposicaomedianapar">(1.15)</a></p>
+<p><span class="math display" id="eq:valor2mediaposicaomedianapar">\[\begin{equation}
+  P2Mediana_{par} = \dfrac{n}{2} + 1
+  \tag{1.15}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado para o cálculo.</p>
+<p>Assim, a mediana quando o número de valores é par é obtida através da média aritmética simples dos valores correspondentes as posições obtidas por <a href="medidas-de-posição.html#eq:valor1mediaposicaomedianapar">(1.14)</a> e por
+<a href="medidas-de-posição.html#eq:valor2mediaposicaomedianapar">(1.15)</a> através de <a href="medidas-de-posição.html#eq:medianapar">(1.16)</a></p>
+<p><span class="math display" id="eq:medianapar">\[\begin{equation}
+  Mediana_{par} = \dfrac{ValorCentral_1 + ValorCentral_2}{2}
+  \tag{1.16}
+\end{equation}\]</span></p>
+<div id="exemplo-numérico-de-mediana-quando-o-número-de-valores-é-impar" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Exemplo numérico de Mediana quando o número de valores é impar</h3>
+<p>Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.</p>
+<p>Primeiramente ordena-se do menor para o maior.</p>
+<p>-3,-2,-1,0,1,2,3</p>
+<p>Como se trata de número impar de valores o valor central que divide o conjunto de valores em dois subconjuntos de igual tamanho é o valor da mediana. Neste caso é o zero.</p>
+</div>
+<div id="mediana-no-r" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Mediana no R</h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="medidas-de-posição.html#cb33-1"></a>w &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb33-2"><a href="medidas-de-posição.html#cb33-2"></a>mediana1 &lt;-<span class="st"> </span><span class="kw">median</span>(w)</span>
+<span id="cb33-3"><a href="medidas-de-posição.html#cb33-3"></a><span class="kw">print</span>(mediana1)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="exemplo-numérico-de-mediana-quando-o-número-de-valores-é-par" class="section level3">
+<h3><span class="header-section-number">1.8.3</span> Exemplo numérico de Mediana quando o número de valores é par</h3>
+<p>No exemplo anterior o conjunto de dados era composto por um número ímpar de valores. Neste exemplo o número de valores ordenado de menor a maior é par. Nesse caso, apesar de existir vários critérios, o mais usual é tirar a média aritmética simples entre os dois valores centrais do conjunto de valores ordenados de menor a maior. Uma vez que não existe um valor que separe dois subconjuntos de igual tamanho, a média aritmética simples destes dois valores é o valor da mediana quando o número total de valores não é impar.</p>
+<p>Sejam os valores -2,1,3,2,-3,1. Obtenha a mediana.</p>
+<p>Primeiramente ordena-se os seis valores.</p>
+<p>-3,-2,-1,1,2,3</p>
+<p>Note que trata-se de conjunto com um número par de valores.</p>
+<p>Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a média aritmética simples. Ou seja, a mediana para este conjunto com seis valores é igual a zero.</p>
+</div>
+<div id="o-exemplo-do-número-par-de-valores-no-r" class="section level3">
+<h3><span class="header-section-number">1.8.4</span> O exemplo do número par de valores no R</h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="medidas-de-posição.html#cb35-1"></a>v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb35-2"><a href="medidas-de-posição.html#cb35-2"></a>mediana2 &lt;-<span class="st"> </span><span class="kw">median</span>(v)</span>
+<span id="cb35-3"><a href="medidas-de-posição.html#cb35-3"></a><span class="kw">print</span>(mediana2)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+</div>
+</div>
+<div id="quartis-ou-quartiles" class="section level2">
+<h2><span class="header-section-number">1.9</span> Quartis ou Quartiles</h2>
+<p>são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
+de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
+dos dados (25%), a metade dos dados (50%) que coincide com a mediana, os três
+quartos dos dados (75%).</p>
+<p>Dessa forma para obter os valores que dividem o conjunto de dados ordenados de menor a maior e quatro subconjuntos de igual tamanho, é necessário definir qual é a posição desses valores. Uma vez definido as suas posições pode-se obter os valores corretamente.</p>
+<p>A posição do valor que separa o primeiro do segundo quartil é definido por <a href="medidas-de-posição.html#eq:posicaoquartilum">(1.17)</a>.</p>
+<p><span class="math display" id="eq:posicaoquartilum">\[\begin{equation}
+  PQ_1 = \dfrac{(n +1)}{4}
+  \tag{1.17}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores.
+A posição do valor que separa o segundo do terceiro quartil é definido por <a href="medidas-de-posição.html#eq:posicaoquartiltres">(1.18)</a>.</p>
+<p><span class="math display" id="eq:posicaoquartiltres">\[\begin{equation}
+  PQ_3 = \dfrac{3(n +1)}{4}
+  \tag{1.18}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores.</p>
+<p>Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho.</p>
+<div id="quartis-no-r" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Quartis no R</h3>
+<p>No R tem uma função específica para a obtenção dos quartis.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="medidas-de-posição.html#cb37-1"></a>p &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)</span>
+<span id="cb37-2"><a href="medidas-de-posição.html#cb37-2"></a><span class="kw">length</span>(p)</span></code></pre></div>
+<pre><code>## [1] 101</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="medidas-de-posição.html#cb39-1"></a><span class="kw">quantile</span>(p)</span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##    0   25   50   75  100</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="medidas-de-posição.html#cb41-1"></a>faixainterquant &lt;-<span class="st"> </span><span class="kw">quantile</span>(p, <span class="fl">0.75</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(p, </span>
+<span id="cb41-2"><a href="medidas-de-posição.html#cb41-2"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb41-3"><a href="medidas-de-posição.html#cb41-3"></a>faixainterquant</span></code></pre></div>
+<pre><code>## 75% 
+##  50</code></pre>
+</div>
+<div id="quartis-no-r-1" class="section level3">
+<h3><span class="header-section-number">1.9.2</span> Quartis no R</h3>
+<p>No R tem uma função específica para a obtenção dos quartis.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="medidas-de-posição.html#cb43-1"></a>p2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</span>
+<span id="cb43-2"><a href="medidas-de-posição.html#cb43-2"></a><span class="kw">length</span>(p2)</span></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="medidas-de-posição.html#cb45-1"></a><span class="kw">quantile</span>(p2)</span></code></pre></div>
+<pre><code>##     0%    25%    50%    75%   100% 
+##   1,00  25,75  50,50  75,25 100,00</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="medidas-de-posição.html#cb47-1"></a>faixainterquant2 &lt;-<span class="st"> </span><span class="kw">quantile</span>(p2, <span class="fl">0.75</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(p2, </span>
+<span id="cb47-2"><a href="medidas-de-posição.html#cb47-2"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb47-3"><a href="medidas-de-posição.html#cb47-3"></a>faixainterquant2</span></code></pre></div>
+<pre><code>##  75% 
+## 49,5</code></pre>
+</div>
+</div>
+<div id="moda" class="section level2">
+<h2><span class="header-section-number">1.10</span> Moda</h2>
+<p> é o elemento de maior frequência, ou seja, que aparece o maior número de vezes. Pode haver mais de uma moda em um conjunto de valores:</p>
+<ul>
+<li>Unimodal</li>
+<li>Bimodal</li>
+<li>Multimodal</li>
+<li>Amodal</li>
+</ul>
+<div id="moda-no-r" class="section level3">
+<h3><span class="header-section-number">1.10.1</span> Moda no R</h3>
+<p>Não existe uma função da moda para pronto uso no R. É necessário criar uma função
+segue abaixo.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="medidas-de-posição.html#cb49-1"></a><span class="co"># criando a função moda no R</span></span>
+<span id="cb49-2"><a href="medidas-de-posição.html#cb49-2"></a></span>
+<span id="cb49-3"><a href="medidas-de-posição.html#cb49-3"></a>getmode &lt;-<span class="st"> </span><span class="cf">function</span>(v) {</span>
+<span id="cb49-4"><a href="medidas-de-posição.html#cb49-4"></a>    uniqv &lt;-<span class="st"> </span><span class="kw">unique</span>(v)</span>
+<span id="cb49-5"><a href="medidas-de-posição.html#cb49-5"></a>    uniqv[<span class="kw">which.max</span>(<span class="kw">tabulate</span>(<span class="kw">match</span>(v, uniqv)))]</span>
+<span id="cb49-6"><a href="medidas-de-posição.html#cb49-6"></a>}</span>
+<span id="cb49-7"><a href="medidas-de-posição.html#cb49-7"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb49-8"><a href="medidas-de-posição.html#cb49-8"></a>moda1 &lt;-<span class="st"> </span><span class="kw">getmode</span>(z)</span>
+<span id="cb49-9"><a href="medidas-de-posição.html#cb49-9"></a><span class="kw">print</span>(moda1)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-Sartoris2013">
+<p>Sartoris, Alexandre. 2013. <em>Estatística e Introdução à Econometria</em>. 2nd ed. São Paulo: Saraiva.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sobre-o-autor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="medidas-de-dispersão.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EstatEcon.pdf", "EstatEcon.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

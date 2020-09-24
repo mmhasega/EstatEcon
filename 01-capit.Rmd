@@ -428,7 +428,7 @@ print(moda1)
 
 ##  Medidas de dispersão
 
-Este tópico está baseado nos materiais de@Hoffmann2006, @Morettin2013 e @Sartoris2013.
+Este tópico está baseado nos materiais de @Hoffmann2006, @Morettin2013 e @Sartoris2013.
 
 Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
 seja, mais ou menos dispersos.

@@ -1,16 +1,18 @@
-# Medidas de posição
+# Estatística Descritiva
+
+## Medidas de posição
 
 Este tópico está baseado no material de @Sartoris2013.
 
 Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.
 
-## Variável Aleatória
+### Variável Aleatória
 
 - variável aleatória (v.a.) é uma variável que está associada a uma *distribuição de probabilidade*.
 - Ou seja, cada valor da v.a. está associada a uma probabilidade.
 - O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de $1/6$.
 
-## Média Aritmética Simples
+### Média Aritmética Simples
 
 \begin{equation}
     \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
@@ -18,7 +20,7 @@ Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam
 \end{equation}
 onde $i =1, ...,n$
 
-### Exemplo 1
+**Exemplo 1**
 
 Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \@ref(eq:mediaaritmeticasimples).
 
@@ -26,7 +28,7 @@ Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em o
   \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
 \end{equation*}
 
-### EXemplo 1 no R
+**Exemplo 1 no R**
 
 ```{r media aritmetica ex1}
 X <- c(21,23,25,28,31)
@@ -35,7 +37,7 @@ mediaX <- mean(X)
 mediaX
 ```
 
-### Exemplo 2
+**Exemplo 2**
 
 Qual é a média aritmética de três provas realizadas por um aluno, cujas notas 
 foram 4,6 e 8. Para responder, basta aplicar \@ref(eq:mediaaritmeticasimples).
@@ -44,7 +46,7 @@ foram 4,6 e 8. Para responder, basta aplicar \@ref(eq:mediaaritmeticasimples).
   \overline{X} = \frac{4+6+8}{3} = 6
 \end{equation*}
 
-### Exemplo 2 no R
+**Exemplo 2 no R**
 
 ```{r media aritmetica ex2}
 X2 <- c(4,6,8)
@@ -53,7 +55,7 @@ mediaX2 <- mean(X2)
 mediaX2
 ```
 
-## Média Aritmética Ponderada
+### Média Aritmética Ponderada
 
 Na média aritmética ponderada, cada valor pode ter importância diferentes do outros valores considerados no computo. A frequência dos valores é muito comumente usada para para dar maior ou menor importância relativa entre os valores considerados no computo da média aritmética ponderada. Veja como fica a fórmula para o cálculo da média aritmética ponderada em \@ref(eq:mediaartimeticaponderada)
 
@@ -70,7 +72,7 @@ Podemos escrever na forma de frequência relativa dos valores da variável $X$:
   (\#eq:eq13)
 \end{equation}
 
-### Exemplo 3
+**Exemplo 3**
 
 Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete 
 de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder, 
@@ -81,7 +83,7 @@ basta aplicar \@ref(eq:mediaartimeticaponderada).
   30 \times 1}{20} = 23,5
 \end{equation*}
 
-### Exemplo 3 no R
+**Exemplo 3 no R**
 
 ```{r media ponderada ex3}
 X3 <- c(22,23,25,28,30)
@@ -93,7 +95,7 @@ mediaX3 <- sum(wX3)/sum(w3)
 mediaX3
 ```
 
-### Exemplo 4
+**Exemplo 4**
 
 Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar \@ref(eq:mediaartimeticaponderada).
 
@@ -101,7 +103,7 @@ Qual é a média ponderada de três provas realizadas por um aluno, cujas notas 
   \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
 \end{equation*}
 
-### Exemplo 4 no R
+**Exemplo 4 no R**
 
 ```{r media ponderada ex4}
 X4 <- c(4,6,8)
@@ -113,7 +115,7 @@ mediaX4 <- sum(wX4)/sum(w4)
 round(mediaX4, digits = 1)
 ```
 
-## Média Geométrica Simples
+### Média Geométrica Simples
 
 Na média geométrica simples, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os $n$ valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a \@ref(eq:eq14) e \@ref(eq:eq15).
 
@@ -130,7 +132,7 @@ ou
 O que acontece se um dos valores de $X$ for igual a zero? E se um dos valores for negativo?
 
 
-### Exemplo 5
+**Exemplo 5**
 
 Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
 
@@ -139,7 +141,7 @@ Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
 \end{equation*}
 
 
-### Exemplo 5 no R
+**Exemplo 5 no R**
 
 ```{r media geometrica ex5}
 X5 <- c(4,6,8)
@@ -149,7 +151,7 @@ mediaX5 <- prod(X5)^(1/n)
 round(mediaX5, digits = 1)
 ```
 
-## Média Geométrica Ponderada
+### Média Geométrica Ponderada
 
 Na média geométrica ponderada que podem ser calculadas através de duas fórmulas \@ref(eq:eq16) e \@ref(eq:eq17), cada valor pode ter uma importância diferente em relação aos outros valores no computo da média geométrica. Muito comumente, esta maior ou menor importância pode estar associada a frequência dos valores considerados no cálculo.
 
@@ -165,7 +167,7 @@ ou
 
 onde a $\sum_{j=1}^{k} w_j = n$ 
 
-### Exemplo 6
+**Exemplo 6**
 
 tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
@@ -173,7 +175,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
   \sqrt[6]{4^1 \times 6^2 \times 8^3} \cong 6,5
 \end{equation*}
 
-### O exemplo 6 no R
+**O exemplo 6 no R**
 
 ```{r medgeom, echo=TRUE}
 x6 <- c(4,6,8)
@@ -185,7 +187,7 @@ G2 <- round((prod(x6^w6))^(1/sum(w6)),1)
 G2
 ```
 
-## Média Harmônica
+### Média Harmônica
 
 É o inverso da média dos inversos dos valores da variável que pode ser calculada através das fórmulas \@ref(eq:mediaharmonicasimples) e \@ref(eq:mediaharmonicasimples2).
 
@@ -201,7 +203,7 @@ G2
 
 O que acontece se um dos valores de $X$ for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.
 
-### Exemplo 7
+**Exemplo 7**
 
 Tomando o exemplo das notas, temos:
 
@@ -209,7 +211,7 @@ Tomando o exemplo das notas, temos:
     H = \frac{3}{\frac{1}{4} + \frac{1}{6} + \frac{1}{8}}\cong 5,5.
 \end{equation*}
 
-## Média Harmônica Ponderada
+### Média Harmônica Ponderada
 
 Na média harmônica ponderada, assim como na média aritmética ponderada e na média geométrica ponderada, cada valor pode ter uma importância em relação aos outros valores considerados no seu cálculo. Comumente, a frequência do valor pode associaar uma maior ou menor importância no cálculo da média harmônica ponderada que pode ser calculada através das fórmulas \@ref(eq:mediaharmonicaponderada) e \@ref(eq:mediaharmonicaponderada2)
 
@@ -225,7 +227,7 @@ ou
 
 onde a $\sum_{j=1}^{k} w_j = n$ 
 
-### Exemplo 8
+**Exemplo 8**
 
 Tomando o exemplo das notas
 
@@ -233,7 +235,7 @@ Tomando o exemplo das notas
     H = \frac{6}{\frac{1}{4}\times 1 + \frac{1}{6}\times 2 + \frac{1}{8}\times 3}\cong 6,3.
 \end{equation*}
 
-### Observação
+**Observação**
 
 Tanto para as médias simples como para as ponderadas, a
 média aritmética é maior do que a média geométrica e essa, por sua vez, é maior 
@@ -244,7 +246,7 @@ que a harmônica. Isso só não vale quando todos os valores são iguais. Veja d
   (\#eq:diferencaentreasmedias)
 \end{equation}
 
-### Exemplo 9
+**Exemplo 9**
 
 O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: i) as notas têm o mesmo peso e; ii) as notas têm pesos diferentes. 
 
@@ -272,7 +274,7 @@ ii) Suponha que agora os pesos para as notas bimestrais sejam, 30\%, 25\%, 25\% 
     H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
   \end{equation*}
 
-## Mediana
+### Mediana
 
 é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois 
 grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.
@@ -310,7 +312,7 @@ Assim, a mediana quando o número de valores é par é obtida através da média
   (\#eq:medianapar)
 \end{equation}
 
-### Exemplo numérico de Mediana quando o número de valores é impar
+**Exemplo numérico de Mediana quando o número de valores é impar**
 
 Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.
 
@@ -320,7 +322,7 @@ Primeiramente ordena-se do menor para o maior.
 
 Como se trata de número impar de valores o valor central que divide o conjunto de valores em dois subconjuntos de igual tamanho é o valor da mediana. Neste caso é o zero.
 
-### Mediana no R
+**Mediana no R**
 
 ```{r mediana}
 w <- c(-3, -2, -1, 0, 1, 2, 3)
@@ -328,7 +330,7 @@ mediana1 <- median(w)
 print(mediana1)
 ```
 
-### Exemplo numérico de Mediana quando o número de valores é par
+**Exemplo numérico de Mediana quando o número de valores é par**
 
 No exemplo anterior o conjunto de dados era composto por um número ímpar de valores. Neste exemplo o número de valores ordenado de menor a maior é par. Nesse caso, apesar de existir vários critérios, o mais usual é tirar a média aritmética simples entre os dois valores centrais do conjunto de valores ordenados de menor a maior. Uma vez que não existe um valor que separe dois subconjuntos de igual tamanho, a média aritmética simples destes dois valores é o valor da mediana quando o número total de valores não é impar.
 
@@ -342,7 +344,7 @@ Note que trata-se de conjunto com um número par de valores.
 
 Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a média aritmética simples. Ou seja, a mediana para este conjunto com seis valores é igual a zero.
 
-### O exemplo do número par de valores no R
+**O exemplo do número par de valores no R**
 
 ```{r mediana com numero par de valores, echo=TRUE}
 v <- c(-3, -2, -1, 1, 2, 3)
@@ -350,7 +352,7 @@ mediana2 <- median(v)
 print(mediana2)
 ```
 
-## Quartis ou Quartiles
+### Quartis ou Quartiles
 
 são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
 de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
@@ -376,7 +378,7 @@ onde $n$ é o número de valores.
 
 Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho. 
 
-### Quartis no R
+**Quartis no R**
 
 No R tem uma função específica para a obtenção dos quartis.
 
@@ -388,7 +390,7 @@ faixainterquant <- quantile(p,0.75) - quantile(p,0.25)
 faixainterquant
 ```
 
-### Quartis no R
+**Quartis no R**
 
 No R tem uma função específica para a obtenção dos quartis.
 
@@ -400,7 +402,8 @@ faixainterquant2 <- quantile(p2,0.75) - quantile(p2,0.25)
 faixainterquant2
 ```
 
-## Moda
+### Moda
+
 \textbf{Moda} é o elemento de maior frequência, ou seja, que aparece o maior número de vezes. Pode haver mais de uma moda em um conjunto de valores:
  
  - Unimodal
@@ -408,7 +411,7 @@ faixainterquant2
  - Multimodal
  - Amodal
 
-### Moda no R
+**Moda no R**
 Não existe uma função da moda para pronto uso no R. É necessário criar uma função 
 segue abaixo.
 ```{r moda}
@@ -423,16 +426,17 @@ moda1 <- getmode(z)
 print(moda1)
 ```
 
-#  Medidas de dispersão
+##  Medidas de dispersão
 
 Este tópico está baseado nos materiais de @Sartoris2013 e @Morettin2013.
 
 Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
 seja, mais ou menos dispersos.
 
-## Variância
+### Variância
 
 A variância é a somatória dos quadrados dos desvios em relação a média, dividido pelo número de observações. Note que a ideia inicial de dispersão foi a distância de cada valor do conjunto dados da variável em relação à media da variável. Mas como trata-se da distância relativa de cada valor em relação a média dos valores da variável, a sua somatória sempre resulta zero. Pois os desvios em relação a médias são compostos de valores positivos e negativos por estarem acima ou abaixo da média e assim a somatória das mesmas resulta zero, sempre. Portanto, a soma dos desvios não tem utilidade como medida de dispersão. Mas se a soma for dos quadrados dos desvios, isso é resolvido. Por isso, a variância é o valor médio dos quadrados dos desvios em relação à media. Ou seja,
+
 \begin{equation*}
   var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
 \end{equation*}
@@ -444,8 +448,10 @@ A variância é a somatória dos quadrados dos desvios em relação a média, di
 Note que a variância da amostra é um estimador não viesado da variância populacional. A diferença entre variância populacional e variância amostral será apresentada mais adiante. A interpretação intuitiva da diferença entre ambas as variâncias é de que quando se trabalha com amostra, está tendo acesso a parte das informações e isso precisa ser penalizado. Note que esta penalização se dá para amostras pequenas pois se trata de subtrair uma unidade do número de observações. 
 O que acontece com a diferença entre variância populacional e a variância amostral quando i) o número de observações torna-se muito grande, tipo bem maior que 30 e; ii) o número de observações tende ao infinito.
 
-### Variância no R
+**Variância no R**
+
 Aproveitando os dados de alturas de 30 pessoas:
+
 ```{r variancia1}
 tail(X)
 varX <- round(var(X),4)
@@ -456,7 +462,7 @@ Note que a variância no R é a variância amostral, cujo denominador é $(n-1)$
 
 Em termos práticos, a variância tem uma desvantagem: a unidade do seu resultado é o quadrado da unidade original da variável. Portanto, se a variável em questão é  preço de uma mercadoria em Reais, a sua variância será Reais ao quadrado. Tal fato dificulta a sua interpretação. Por isso é apresentado o desvio padrão como medida de dispersão na sequência.
 
-## Desvio Padrão
+### Desvio Padrão
 
 É a raiz quadrada da variância. No desvio padrão, denotado como $d.p.(X)$ ou 
 $\sigma$, não tem o efeito do quadrado.
@@ -467,7 +473,7 @@ $\sigma$, não tem o efeito do quadrado.
 
 Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua variável original. Desta forma, o desvio padrão facilita a sua análise juntamente com as medidas de posição como a média aritmética simples, por exemplo.
 
-### Desvio Padrão no R
+**Desvio Padrão no R**
 
 ```{r desvio padrao1}
 tail(X)
@@ -477,7 +483,7 @@ dpX
 
 Note que, da mesma forma que a variância no R, o desvio padrão calculado no R tem como base a variância cujo numerador é $(n-1)$.
 
-### Fórmula alternativa da Variância
+**Fórmula alternativa da Variância**
 
 Desenvolvendo a fórmula da definição da variância tem-se:
 \begin{align*}
@@ -501,7 +507,7 @@ Em outras palavras
   var(X) = \text{média dos quadrados} - \text{quadrado da média}.
 \end{equation*}
 
-### Exemplo de variância e desvio padrão no R
+**Exemplo de variância e desvio padrão no R**
 
 Tomando o exemplo numérico da tabela 2.7 (Sartoris, 2013, p.40) sobre notas do 
 aluno A tem-se:
@@ -518,9 +524,11 @@ aluno A tem-se:
 \begin{equation*}
   var(X) = 7,5 - (2,5)^2 = 1,25
 \end{equation*}
+
 \begin{equation*}
   dp(X) = \sqrt{1,25} = 1,12
 \end{equation*}
+
 ```{r variancia e desvio padrao}
 X3 <- c(3,2,4,1)
 mediaX3e2 <- sum(X3^2)/length(X3)
@@ -531,8 +539,7 @@ dpX3 <- round(sqrt(varX3),4)
 dpX3
 ```
 
-
-## Histograma
+### Histograma
 
 O histograma é uma ferramenta da estatística descritiva para mostrar visualmente, de forma bastante simples, como os valores da variável estão distribuídos. Mas também permite ter uma ideia visual da dispersão do conjunto de valores. Portanto, não se trata de uma medida de dispersão. Mas deveria ser a primeira coisa a se obter das variáveis de interesse em um trabalho de pesquisa.
 
@@ -549,7 +556,7 @@ Tabela 2.1 - Altura de 30 pessoas em cm.
 | 166 | 171 | 174 | 179 | 194 |
 | 167 | 171 | 174 | 180 | 201 |
 
-### Usando o R para construir o histograma do exemplo numérico
+**Usando o R para construir o histograma do exemplo numérico**
 
 Os dados são inputados na variável X.
 
@@ -564,7 +571,7 @@ faixaX <- range(X)
 faixaX
 ```
 
-### Usando a função hist do R para elaborar o histograma de altura
+**Usando a função hist do R para elaborar o histograma de altura**
 
 ```{r histograma11, eval=FALSE, include=TRUE, tidy=FALSE}
 grafico1 <- hist( 
@@ -582,6 +589,7 @@ grafico1 <- hist(
 
 grafico1
 ```
+
 onde
 
  - **main="Histograma da Altura de 30 pessoas"** titulo do histograma 
@@ -594,7 +602,7 @@ onde
  - **breaks=5** número de classes 
  - **right=FALSE** define intervalo do tipo [a,b), se FALSE, e (a,b], se TRUE. 
 
-### Obtendo o histograma
+**Obtendo o histograma**
 
 ```{r histograma12, echo=FALSE}
 grafico1 <- hist(X,
@@ -611,7 +619,7 @@ grafico1 <- hist(X,
 
 O pacote **ggplot2** gera gráficos e histogramas melhor elaborados.
 
-## Obtendo o histograma usando uma forma alternativa
+**Obtendo o histograma usando uma forma alternativa**
 
 Agrupando essas pessoas em **classes** de 10 cm temos:
 
@@ -647,7 +655,7 @@ dataXfreq <- cbind(dataX.freq)
 dataXfreq
 ```
 
-## Diagrama de caixa (Boxplot)
+### Diagrama de caixa (Boxplot)
 
 O texto sobre o diagrama de caixa foi baseado em @Morettin2013.
 
@@ -685,7 +693,7 @@ e o resultado segue abaixo.
 boxplot(X, data = dataX, main = "Diagrama de Caixa", ylab = "cm", xlab = "altura de 30 pessoas")
 ```
 
-# Medidas de relação linear entre duas variáveis
+## Medidas de relação linear entre duas variáveis
 
 Este assunto tem como base o material de @Sartoris2013.
 
@@ -693,14 +701,14 @@ Parece um pouco estranho incluir esse tópico logo depois das medidas de dispers
 
 O coeficiente de correlação utiliza a covariância e o desvio padrão para resolver o problema de interpretação do resultado da covariância.
 
-## Covariância 
+### Covariância 
 
 pode ser estendida como uma *variância conjunta* entre duas variáveis. Ou seja,
 \begin{equation*}
   cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})
 \end{equation*}
 
-### Fórmula alternativa da Variância
+**Fórmula alternativa da Variância**
 
 Também existe a fórmula alternativa da covariância.
 
@@ -708,7 +716,7 @@ Também existe a fórmula alternativa da covariância.
   cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i} - \overline{X}\overline{Y}.
 \end{equation*}
 
-### Fórmula alternativa da Covariância
+**Fórmula alternativa da Covariância**
 
 Em outras palavras
 
@@ -716,7 +724,7 @@ Em outras palavras
   cov(X,Y) = \text{média dos produtos de X e Y} - \text{produto das médias de X e Y}.
 \end{equation*}
 
-### Covariância no R
+**Covariância no R**
 
 Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-se
 
@@ -729,7 +737,7 @@ Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-s
 | **Somatória**  |   **3.000**      |     **4.800**    |  **3.670.000**  |
 | **Média**      |     **750**      |     **1.200**    |    **917.500**  |
 
-### Covariância no R
+**Covariância no R**
 
 ```{r covariancia1}
 C1 <- c(600,700,800,900)
@@ -743,8 +751,7 @@ cov(C1,R1)
 ```
 Note que a  função covariância no R é calculada dividindo por $(n-1)$ e não por $n$.
 
-
-## Coeficiente de Correlação
+### Coeficiente de Correlação
 
 É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro a sua interpretação. Ou seja,
 
@@ -759,7 +766,7 @@ onde
 Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo a zero, significa que as duas variáveis analisadas não tem relação do tipo linear entre elas. Quando a o coeficiente de correlação é igual a -1 ou próximo de -1, tal fato indica que a existência de uma relação do tipo linear entre as duas vari
 áveis analisadas, sendo que as variações ocorrem no setido oposto. Ou seja, quando uma das variáveis aumenta de valor, a outra diminui. Quando o coeficiente de correlação é igual a +1 ou muito próximo de um positivo, tal fato indica que as duas variáveis tem uma relação do tipo linear, sendo que as variações em ambas as variáveis ocorrem no mesmo sentido. Ou seja, quando uma das variáveis aumenta de valor, a outra aumenta também. O que significa o coeficiente de correlação ser: i) exatamente igual a zero; ii) ser exatamente igual a -1 e; exatamente igual a +1?
 
-### Correlação no R
+**Correlação no R**
 
 ```{r correlacao}
 medC1 <- sum(C1)/length(C1)
@@ -773,7 +780,6 @@ dpR1 <- abs(sqrt(varR1))
 corrC1R1 <- round(covC1R1 / (dpC1 * dpR1),4)
 corrC1R1
 ```
-### Correlação no R
 
 Ou simplesmente
 

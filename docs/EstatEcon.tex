@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-09-23}
+\date{2020-09-24}
 
 \begin{document}
 \maketitle
@@ -149,15 +149,18 @@ A situação especial causada pela pandemia da COVID-19 forçou a muitos profess
 
 Professor do Departamento de Economia da Universidade Federal do Paraná. Engenheiro Agrônomo pela UNESP/Jaboticabal, Mestrado em Economia Agrária pela ESALQ/USP e Doutorado em Economia Aplicada pela ESALQ/USP, é um dos professores responsáveis pelas disciplinas de SE305 Estatística Econômica e Introdução à Econometria e SE308 Econometria ambas do curso de Economia da Universidade Federal do Paraná (UFPR).
 
+\hypertarget{estatuxedstica-descritiva}{%
+\chapter{Estatística Descritiva}\label{estatuxedstica-descritiva}}
+
 \hypertarget{medidas-de-posiuxe7uxe3o}{%
-\chapter{Medidas de posição}\label{medidas-de-posiuxe7uxe3o}}
+\section{Medidas de posição}\label{medidas-de-posiuxe7uxe3o}}
 
 Este tópico está baseado no material de \citet{Sartoris2013}.
 
 Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.
 
 \hypertarget{variuxe1vel-aleatuxf3ria}{%
-\section{Variável Aleatória}\label{variuxe1vel-aleatuxf3ria}}
+\subsection{Variável Aleatória}\label{variuxe1vel-aleatuxf3ria}}
 
 \begin{itemize}
 \tightlist
@@ -170,7 +173,7 @@ Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam
 \end{itemize}
 
 \hypertarget{muxe9dia-aritmuxe9tica-simples}{%
-\section{Média Aritmética Simples}\label{muxe9dia-aritmuxe9tica-simples}}
+\subsection{Média Aritmética Simples}\label{muxe9dia-aritmuxe9tica-simples}}
 
 \begin{equation}
     \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
@@ -178,8 +181,7 @@ Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam
 \end{equation}
 onde \(i =1, ...,n\)
 
-\hypertarget{exemplo-1}{%
-\subsection{Exemplo 1}\label{exemplo-1}}
+\textbf{Exemplo 1}
 
 Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar \eqref{eq:mediaaritmeticasimples}.
 
@@ -187,8 +189,7 @@ Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em o
   \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
 \end{equation*}
 
-\hypertarget{exemplo-1-no-r}{%
-\subsection{EXemplo 1 no R}\label{exemplo-1-no-r}}
+\textbf{Exemplo 1 no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -212,8 +213,7 @@ Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em o
 ## [1] 25,6
 \end{verbatim}
 
-\hypertarget{exemplo-2}{%
-\subsection{Exemplo 2}\label{exemplo-2}}
+\textbf{Exemplo 2}
 
 Qual é a média aritmética de três provas realizadas por um aluno, cujas notas
 foram 4,6 e 8. Para responder, basta aplicar \eqref{eq:mediaaritmeticasimples}.
@@ -222,8 +222,7 @@ foram 4,6 e 8. Para responder, basta aplicar \eqref{eq:mediaaritmeticasimples}.
   \overline{X} = \frac{4+6+8}{3} = 6
 \end{equation*}
 
-\hypertarget{exemplo-2-no-r}{%
-\subsection{Exemplo 2 no R}\label{exemplo-2-no-r}}
+\textbf{Exemplo 2 no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -248,7 +247,7 @@ foram 4,6 e 8. Para responder, basta aplicar \eqref{eq:mediaaritmeticasimples}.
 \end{verbatim}
 
 \hypertarget{muxe9dia-aritmuxe9tica-ponderada}{%
-\section{Média Aritmética Ponderada}\label{muxe9dia-aritmuxe9tica-ponderada}}
+\subsection{Média Aritmética Ponderada}\label{muxe9dia-aritmuxe9tica-ponderada}}
 
 Na média aritmética ponderada, cada valor pode ter importância diferentes do outros valores considerados no computo. A frequência dos valores é muito comumente usada para para dar maior ou menor importância relativa entre os valores considerados no computo da média aritmética ponderada. Veja como fica a fórmula para o cálculo da média aritmética ponderada em \eqref{eq:mediaartimeticaponderada}
 
@@ -265,8 +264,7 @@ Podemos escrever na forma de frequência relativa dos valores da variável \(X\)
   \label{eq:eq13}
 \end{equation}
 
-\hypertarget{exemplo-3}{%
-\subsection{Exemplo 3}\label{exemplo-3}}
+\textbf{Exemplo 3}
 
 Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete
 de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder,
@@ -277,8 +275,7 @@ basta aplicar \eqref{eq:mediaartimeticaponderada}.
   30 \times 1}{20} = 23,5
 \end{equation*}
 
-\hypertarget{exemplo-3-no-r}{%
-\subsection{Exemplo 3 no R}\label{exemplo-3-no-r}}
+\textbf{Exemplo 3 no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -314,8 +311,7 @@ basta aplicar \eqref{eq:mediaartimeticaponderada}.
 ## [1] 23,5
 \end{verbatim}
 
-\hypertarget{exemplo-4}{%
-\subsection{Exemplo 4}\label{exemplo-4}}
+\textbf{Exemplo 4}
 
 Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar \eqref{eq:mediaartimeticaponderada}.
 
@@ -323,8 +319,7 @@ Qual é a média ponderada de três provas realizadas por um aluno, cujas notas 
   \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
 \end{equation*}
 
-\hypertarget{exemplo-4-no-r}{%
-\subsection{Exemplo 4 no R}\label{exemplo-4-no-r}}
+\textbf{Exemplo 4 no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -361,7 +356,7 @@ Qual é a média ponderada de três provas realizadas por um aluno, cujas notas 
 \end{verbatim}
 
 \hypertarget{muxe9dia-geomuxe9trica-simples}{%
-\section{Média Geométrica Simples}\label{muxe9dia-geomuxe9trica-simples}}
+\subsection{Média Geométrica Simples}\label{muxe9dia-geomuxe9trica-simples}}
 
 Na média geométrica simples, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os \(n\) valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a \eqref{eq:eq14} e \eqref{eq:eq15}.
 
@@ -377,8 +372,7 @@ ou
 
 O que acontece se um dos valores de \(X\) for igual a zero? E se um dos valores for negativo?
 
-\hypertarget{exemplo-5}{%
-\subsection{Exemplo 5}\label{exemplo-5}}
+\textbf{Exemplo 5}
 
 Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
 
@@ -386,8 +380,7 @@ Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
   \sqrt[3]{4 \times 6 \times 8} \cong 5,7690
 \end{equation*}
 
-\hypertarget{exemplo-5-no-r}{%
-\subsection{Exemplo 5 no R}\label{exemplo-5-no-r}}
+\textbf{Exemplo 5 no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -413,7 +406,7 @@ Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
 \end{verbatim}
 
 \hypertarget{muxe9dia-geomuxe9trica-ponderada}{%
-\section{Média Geométrica Ponderada}\label{muxe9dia-geomuxe9trica-ponderada}}
+\subsection{Média Geométrica Ponderada}\label{muxe9dia-geomuxe9trica-ponderada}}
 
 Na média geométrica ponderada que podem ser calculadas através de duas fórmulas \eqref{eq:eq16} e \eqref{eq:eq17}, cada valor pode ter uma importância diferente em relação aos outros valores no computo da média geométrica. Muito comumente, esta maior ou menor importância pode estar associada a frequência dos valores considerados no cálculo.
 
@@ -429,8 +422,7 @@ ou
 
 onde a \(\sum_{j=1}^{k} w_j = n\)
 
-\hypertarget{exemplo-6}{%
-\subsection{Exemplo 6}\label{exemplo-6}}
+\textbf{Exemplo 6}
 
 tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
@@ -438,8 +430,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
   \sqrt[6]{4^1 \times 6^2 \times 8^3} \cong 6,5
 \end{equation*}
 
-\hypertarget{o-exemplo-6-no-r}{%
-\subsection{O exemplo 6 no R}\label{o-exemplo-6-no-r}}
+\textbf{O exemplo 6 no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -485,7 +476,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 \end{verbatim}
 
 \hypertarget{muxe9dia-harmuxf4nica}{%
-\section{Média Harmônica}\label{muxe9dia-harmuxf4nica}}
+\subsection{Média Harmônica}\label{muxe9dia-harmuxf4nica}}
 
 É o inverso da média dos inversos dos valores da variável que pode ser calculada através das fórmulas \eqref{eq:mediaharmonicasimples} e \eqref{eq:mediaharmonicasimples2}.
 
@@ -501,8 +492,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
 O que acontece se um dos valores de \(X\) for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.
 
-\hypertarget{exemplo-7}{%
-\subsection{Exemplo 7}\label{exemplo-7}}
+\textbf{Exemplo 7}
 
 Tomando o exemplo das notas, temos:
 
@@ -511,7 +501,7 @@ Tomando o exemplo das notas, temos:
 \end{equation*}
 
 \hypertarget{muxe9dia-harmuxf4nica-ponderada}{%
-\section{Média Harmônica Ponderada}\label{muxe9dia-harmuxf4nica-ponderada}}
+\subsection{Média Harmônica Ponderada}\label{muxe9dia-harmuxf4nica-ponderada}}
 
 Na média harmônica ponderada, assim como na média aritmética ponderada e na média geométrica ponderada, cada valor pode ter uma importância em relação aos outros valores considerados no seu cálculo. Comumente, a frequência do valor pode associaar uma maior ou menor importância no cálculo da média harmônica ponderada que pode ser calculada através das fórmulas \eqref{eq:mediaharmonicaponderada} e \eqref{eq:mediaharmonicaponderada2}
 
@@ -527,8 +517,7 @@ ou
 
 onde a \(\sum_{j=1}^{k} w_j = n\)
 
-\hypertarget{exemplo-8}{%
-\subsection{Exemplo 8}\label{exemplo-8}}
+\textbf{Exemplo 8}
 
 Tomando o exemplo das notas
 
@@ -536,8 +525,7 @@ Tomando o exemplo das notas
     H = \frac{6}{\frac{1}{4}\times 1 + \frac{1}{6}\times 2 + \frac{1}{8}\times 3}\cong 6,3.
 \end{equation*}
 
-\hypertarget{observauxe7uxe3o}{%
-\subsection{Observação}\label{observauxe7uxe3o}}
+\textbf{Observação}
 
 Tanto para as médias simples como para as ponderadas, a
 média aritmética é maior do que a média geométrica e essa, por sua vez, é maior
@@ -548,8 +536,7 @@ que a harmônica. Isso só não vale quando todos os valores são iguais. Veja d
   \label{eq:diferencaentreasmedias}
 \end{equation}
 
-\hypertarget{exemplo-9}{%
-\subsection{Exemplo 9}\label{exemplo-9}}
+\textbf{Exemplo 9}
 
 O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: i) as notas têm o mesmo peso e; ii) as notas têm pesos diferentes.
 
@@ -589,7 +576,7 @@ O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria 
   \end{equation*}
 
 \hypertarget{mediana}{%
-\section{Mediana}\label{mediana}}
+\subsection{Mediana}\label{mediana}}
 
 é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois
 grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.
@@ -638,8 +625,7 @@ Assim, a mediana quando o número de valores é par é obtida através da média
   \label{eq:medianapar}
 \end{equation}
 
-\hypertarget{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-impar}{%
-\subsection{Exemplo numérico de Mediana quando o número de valores é impar}\label{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-impar}}
+\textbf{Exemplo numérico de Mediana quando o número de valores é impar}
 
 Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.
 
@@ -649,8 +635,7 @@ Primeiramente ordena-se do menor para o maior.
 
 Como se trata de número impar de valores o valor central que divide o conjunto de valores em dois subconjuntos de igual tamanho é o valor da mediana. Neste caso é o zero.
 
-\hypertarget{mediana-no-r}{%
-\subsection{Mediana no R}\label{mediana-no-r}}
+\textbf{Mediana no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -664,8 +649,7 @@ Como se trata de número impar de valores o valor central que divide o conjunto 
 ## [1] 0
 \end{verbatim}
 
-\hypertarget{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-par}{%
-\subsection{Exemplo numérico de Mediana quando o número de valores é par}\label{exemplo-numuxe9rico-de-mediana-quando-o-nuxfamero-de-valores-uxe9-par}}
+\textbf{Exemplo numérico de Mediana quando o número de valores é par}
 
 No exemplo anterior o conjunto de dados era composto por um número ímpar de valores. Neste exemplo o número de valores ordenado de menor a maior é par. Nesse caso, apesar de existir vários critérios, o mais usual é tirar a média aritmética simples entre os dois valores centrais do conjunto de valores ordenados de menor a maior. Uma vez que não existe um valor que separe dois subconjuntos de igual tamanho, a média aritmética simples destes dois valores é o valor da mediana quando o número total de valores não é impar.
 
@@ -679,8 +663,7 @@ Note que trata-se de conjunto com um número par de valores.
 
 Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a média aritmética simples. Ou seja, a mediana para este conjunto com seis valores é igual a zero.
 
-\hypertarget{o-exemplo-do-nuxfamero-par-de-valores-no-r}{%
-\subsection{O exemplo do número par de valores no R}\label{o-exemplo-do-nuxfamero-par-de-valores-no-r}}
+\textbf{O exemplo do número par de valores no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -695,7 +678,7 @@ Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a mé
 \end{verbatim}
 
 \hypertarget{quartis-ou-quartiles}{%
-\section{Quartis ou Quartiles}\label{quartis-ou-quartiles}}
+\subsection{Quartis ou Quartiles}\label{quartis-ou-quartiles}}
 
 são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
 de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
@@ -721,8 +704,7 @@ onde \(n\) é o número de valores.
 
 Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho.
 
-\hypertarget{quartis-no-r}{%
-\subsection{Quartis no R}\label{quartis-no-r}}
+\textbf{Quartis no R}
 
 No R tem uma função específica para a obtenção dos quartis.
 
@@ -761,8 +743,7 @@ No R tem uma função específica para a obtenção dos quartis.
 ##  50
 \end{verbatim}
 
-\hypertarget{quartis-no-r-1}{%
-\subsection{Quartis no R}\label{quartis-no-r-1}}
+\textbf{Quartis no R}
 
 No R tem uma função específica para a obtenção dos quartis.
 
@@ -802,7 +783,7 @@ No R tem uma função específica para a obtenção dos quartis.
 \end{verbatim}
 
 \hypertarget{moda}{%
-\section{Moda}\label{moda}}
+\subsection{Moda}\label{moda}}
 
 \textbf{Moda} é o elemento de maior frequência, ou seja, que aparece o maior número de vezes. Pode haver mais de uma moda em um conjunto de valores:
 
@@ -818,9 +799,7 @@ No R tem uma função específica para a obtenção dos quartis.
   Amodal
 \end{itemize}
 
-\hypertarget{moda-no-r}{%
-\subsection{Moda no R}\label{moda-no-r}}
-
+\textbf{Moda no R}
 Não existe uma função da moda para pronto uso no R. É necessário criar uma função
 segue abaixo.
 
@@ -843,7 +822,7 @@ segue abaixo.
 \end{verbatim}
 
 \hypertarget{medidas-de-dispersuxe3o}{%
-\chapter{Medidas de dispersão}\label{medidas-de-dispersuxe3o}}
+\section{Medidas de dispersão}\label{medidas-de-dispersuxe3o}}
 
 Este tópico está baseado nos materiais de \citet{Sartoris2013} e \citet{Morettin2013}.
 
@@ -851,9 +830,10 @@ Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
 seja, mais ou menos dispersos.
 
 \hypertarget{variuxe2ncia}{%
-\section{Variância}\label{variuxe2ncia}}
+\subsection{Variância}\label{variuxe2ncia}}
 
 A variância é a somatória dos quadrados dos desvios em relação a média, dividido pelo número de observações. Note que a ideia inicial de dispersão foi a distância de cada valor do conjunto dados da variável em relação à media da variável. Mas como trata-se da distância relativa de cada valor em relação a média dos valores da variável, a sua somatória sempre resulta zero. Pois os desvios em relação a médias são compostos de valores positivos e negativos por estarem acima ou abaixo da média e assim a somatória das mesmas resulta zero, sempre. Portanto, a soma dos desvios não tem utilidade como medida de dispersão. Mas se a soma for dos quadrados dos desvios, isso é resolvido. Por isso, a variância é o valor médio dos quadrados dos desvios em relação à media. Ou seja,
+
 \begin{equation*}
   var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
 \end{equation*}
@@ -865,8 +845,7 @@ A variância é a somatória dos quadrados dos desvios em relação a média, di
 Note que a variância da amostra é um estimador não viesado da variância populacional. A diferença entre variância populacional e variância amostral será apresentada mais adiante. A interpretação intuitiva da diferença entre ambas as variâncias é de que quando se trabalha com amostra, está tendo acesso a parte das informações e isso precisa ser penalizado. Note que esta penalização se dá para amostras pequenas pois se trata de subtrair uma unidade do número de observações.
 O que acontece com a diferença entre variância populacional e a variância amostral quando i) o número de observações torna-se muito grande, tipo bem maior que 30 e; ii) o número de observações tende ao infinito.
 
-\hypertarget{variuxe2ncia-no-r}{%
-\subsection{Variância no R}\label{variuxe2ncia-no-r}}
+\textbf{Variância no R}
 
 Aproveitando os dados de alturas de 30 pessoas:
 
@@ -896,7 +875,7 @@ Note que a variância no R é a variância amostral, cujo denominador é \((n-1)
 Em termos práticos, a variância tem uma desvantagem: a unidade do seu resultado é o quadrado da unidade original da variável. Portanto, se a variável em questão é preço de uma mercadoria em Reais, a sua variância será Reais ao quadrado. Tal fato dificulta a sua interpretação. Por isso é apresentado o desvio padrão como medida de dispersão na sequência.
 
 \hypertarget{desvio-padruxe3o}{%
-\section{Desvio Padrão}\label{desvio-padruxe3o}}
+\subsection{Desvio Padrão}\label{desvio-padruxe3o}}
 
 É a raiz quadrada da variância. No desvio padrão, denotado como \(d.p.(X)\) ou
 \(\sigma\), não tem o efeito do quadrado.
@@ -907,8 +886,7 @@ Em termos práticos, a variância tem uma desvantagem: a unidade do seu resultad
 
 Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua variável original. Desta forma, o desvio padrão facilita a sua análise juntamente com as medidas de posição como a média aritmética simples, por exemplo.
 
-\hypertarget{desvio-padruxe3o-no-r}{%
-\subsection{Desvio Padrão no R}\label{desvio-padruxe3o-no-r}}
+\textbf{Desvio Padrão no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -933,8 +911,7 @@ Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua
 
 Note que, da mesma forma que a variância no R, o desvio padrão calculado no R tem como base a variância cujo numerador é \((n-1)\).
 
-\hypertarget{fuxf3rmula-alternativa-da-variuxe2ncia}{%
-\subsection{Fórmula alternativa da Variância}\label{fuxf3rmula-alternativa-da-variuxe2ncia}}
+\textbf{Fórmula alternativa da Variância}
 
 Desenvolvendo a fórmula da definição da variância tem-se:
 \begin{align*}
@@ -958,8 +935,7 @@ Em outras palavras
   var(X) = \text{média dos quadrados} - \text{quadrado da média}.
 \end{equation*}
 
-\hypertarget{exemplo-de-variuxe2ncia-e-desvio-padruxe3o-no-r}{%
-\subsection{Exemplo de variância e desvio padrão no R}\label{exemplo-de-variuxe2ncia-e-desvio-padruxe3o-no-r}}
+\textbf{Exemplo de variância e desvio padrão no R}
 
 Tomando o exemplo numérico da tabela 2.7 (Sartoris, 2013, p.40) sobre notas do
 aluno A tem-se:
@@ -981,6 +957,7 @@ Matemática & 1 & 1\tabularnewline
 \begin{equation*}
   var(X) = 7,5 - (2,5)^2 = 1,25
 \end{equation*}
+
 \begin{equation*}
   dp(X) = \sqrt{1,25} = 1,12
 \end{equation*}
@@ -1011,7 +988,7 @@ Matemática & 1 & 1\tabularnewline
 \end{verbatim}
 
 \hypertarget{histograma}{%
-\section{Histograma}\label{histograma}}
+\subsection{Histograma}\label{histograma}}
 
 O histograma é uma ferramenta da estatística descritiva para mostrar visualmente, de forma bastante simples, como os valores da variável estão distribuídos. Mas também permite ter uma ideia visual da dispersão do conjunto de valores. Portanto, não se trata de uma medida de dispersão. Mas deveria ser a primeira coisa a se obter das variáveis de interesse em um trabalho de pesquisa.
 
@@ -1031,8 +1008,7 @@ Tabela 2.1 - Altura de 30 pessoas em cm.
 \bottomrule
 \end{longtable}
 
-\hypertarget{usando-o-r-para-construir-o-histograma-do-exemplo-numuxe9rico}{%
-\subsection{Usando o R para construir o histograma do exemplo numérico}\label{usando-o-r-para-construir-o-histograma-do-exemplo-numuxe9rico}}
+\textbf{Usando o R para construir o histograma do exemplo numérico}
 
 Os dados são inputados na variável X.
 
@@ -1072,8 +1048,7 @@ Os dados são inputados na variável X.
 ## [1] 159 201
 \end{verbatim}
 
-\hypertarget{usando-a-funuxe7uxe3o-hist-do-r-para-elaborar-o-histograma-de-altura}{%
-\subsection{Usando a função hist do R para elaborar o histograma de altura}\label{usando-a-funuxe7uxe3o-hist-do-r-para-elaborar-o-histograma-de-altura}}
+\textbf{Usando a função hist do R para elaborar o histograma de altura}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1118,15 +1093,13 @@ onde
   \textbf{right=FALSE} define intervalo do tipo {[}a,b), se FALSE, e (a,b{]}, se TRUE.
 \end{itemize}
 
-\hypertarget{obtendo-o-histograma}{%
-\subsection{Obtendo o histograma}\label{obtendo-o-histograma}}
+\textbf{Obtendo o histograma}
 
 \includegraphics{EstatEcon_files/figure-latex/histograma12-1.pdf}
 
 O pacote \textbf{ggplot2} gera gráficos e histogramas melhor elaborados.
 
-\hypertarget{obtendo-o-histograma-usando-uma-forma-alternativa}{%
-\section{Obtendo o histograma usando uma forma alternativa}\label{obtendo-o-histograma-usando-uma-forma-alternativa}}
+\textbf{Obtendo o histograma usando uma forma alternativa}
 
 Agrupando essas pessoas em \textbf{classes} de 10 cm temos:
 
@@ -1202,7 +1175,7 @@ Fazendo isso no R:
 \end{verbatim}
 
 \hypertarget{diagrama-de-caixa-boxplot}{%
-\section{Diagrama de caixa (Boxplot)}\label{diagrama-de-caixa-boxplot}}
+\subsection{Diagrama de caixa (Boxplot)}\label{diagrama-de-caixa-boxplot}}
 
 O texto sobre o diagrama de caixa foi baseado em \citet{Morettin2013}.
 
@@ -1242,7 +1215,7 @@ e o resultado segue abaixo.
 \includegraphics{EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf}
 
 \hypertarget{medidas-de-relauxe7uxe3o-linear-entre-duas-variuxe1veis}{%
-\chapter{Medidas de relação linear entre duas variáveis}\label{medidas-de-relauxe7uxe3o-linear-entre-duas-variuxe1veis}}
+\section{Medidas de relação linear entre duas variáveis}\label{medidas-de-relauxe7uxe3o-linear-entre-duas-variuxe1veis}}
 
 Este assunto tem como base o material de \citet{Sartoris2013}.
 
@@ -1251,15 +1224,14 @@ Parece um pouco estranho incluir esse tópico logo depois das medidas de dispers
 O coeficiente de correlação utiliza a covariância e o desvio padrão para resolver o problema de interpretação do resultado da covariância.
 
 \hypertarget{covariuxe2ncia}{%
-\section{Covariância}\label{covariuxe2ncia}}
+\subsection{Covariância}\label{covariuxe2ncia}}
 
 pode ser estendida como uma \emph{variância conjunta} entre duas variáveis. Ou seja,
 \begin{equation*}
   cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})
 \end{equation*}
 
-\hypertarget{fuxf3rmula-alternativa-da-variuxe2ncia-1}{%
-\subsection{Fórmula alternativa da Variância}\label{fuxf3rmula-alternativa-da-variuxe2ncia-1}}
+\textbf{Fórmula alternativa da Variância}
 
 Também existe a fórmula alternativa da covariância.
 
@@ -1267,8 +1239,7 @@ Também existe a fórmula alternativa da covariância.
   cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i} - \overline{X}\overline{Y}.
 \end{equation*}
 
-\hypertarget{fuxf3rmula-alternativa-da-covariuxe2ncia}{%
-\subsection{Fórmula alternativa da Covariância}\label{fuxf3rmula-alternativa-da-covariuxe2ncia}}
+\textbf{Fórmula alternativa da Covariância}
 
 Em outras palavras
 
@@ -1276,8 +1247,7 @@ Em outras palavras
   cov(X,Y) = \text{média dos produtos de X e Y} - \text{produto das médias de X e Y}.
 \end{equation*}
 
-\hypertarget{covariuxe2ncia-no-r}{%
-\subsection{Covariância no R}\label{covariuxe2ncia-no-r}}
+\textbf{Covariância no R}
 
 Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-se
 
@@ -1295,8 +1265,7 @@ Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
 \bottomrule
 \end{longtable}
 
-\hypertarget{covariuxe2ncia-no-r-1}{%
-\subsection{Covariância no R}\label{covariuxe2ncia-no-r-1}}
+\textbf{Covariância no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1327,7 +1296,7 @@ Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
 Note que a função covariância no R é calculada dividindo por \((n-1)\) e não por \(n\).
 
 \hypertarget{coeficiente-de-correlauxe7uxe3o}{%
-\section{Coeficiente de Correlação}\label{coeficiente-de-correlauxe7uxe3o}}
+\subsection{Coeficiente de Correlação}\label{coeficiente-de-correlauxe7uxe3o}}
 
 É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro a sua interpretação. Ou seja,
 
@@ -1342,8 +1311,7 @@ onde
 Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo a zero, significa que as duas variáveis analisadas não tem relação do tipo linear entre elas. Quando a o coeficiente de correlação é igual a -1 ou próximo de -1, tal fato indica que a existência de uma relação do tipo linear entre as duas vari
 áveis analisadas, sendo que as variações ocorrem no setido oposto. Ou seja, quando uma das variáveis aumenta de valor, a outra diminui. Quando o coeficiente de correlação é igual a +1 ou muito próximo de um positivo, tal fato indica que as duas variáveis tem uma relação do tipo linear, sendo que as variações em ambas as variáveis ocorrem no mesmo sentido. Ou seja, quando uma das variáveis aumenta de valor, a outra aumenta também. O que significa o coeficiente de correlação ser: i) exatamente igual a zero; ii) ser exatamente igual a -1 e; exatamente igual a +1?
 
-\hypertarget{correlauxe7uxe3o-no-r}{%
-\subsection{Correlação no R}\label{correlauxe7uxe3o-no-r}}
+\textbf{Correlação no R}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1381,9 +1349,6 @@ Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo
 \begin{verbatim}
 ## [1] 0,9899
 \end{verbatim}
-
-\hypertarget{correlauxe7uxe3o-no-r-1}{%
-\subsection{Correlação no R}\label{correlauxe7uxe3o-no-r-1}}
 
 Ou simplesmente
 

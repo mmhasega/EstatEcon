@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CAPÍTULO 1 Estatística Descritiva | Notas de aulas de Estatística Econômica</title>
+  <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="CAPÍTULO 1 Estatística Descritiva | Notas de aulas de Estatística Econômica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CAPÍTULO 1 Estatística Descritiva | Notas de aulas de Estatística Econômica" />
+  
+  <meta name="twitter:description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
+  
+
+<meta name="author" content="Marcos Minoru Hasegawa" />
+
+
+<meta name="date" content="2020-09-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sobre-o-autor.html"/>
+<link rel="next" href="revisão-de-literatura.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notas de aulas de Estatística Econômica</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
+<li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
+<li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
+<li class="chapter" data-level="1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html"><i class="fa fa-check"></i><b>1</b> Estatística Descritiva</a><ul>
+<li class="chapter" data-level="1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-posição"><i class="fa fa-check"></i><b>1.1</b> Medidas de posição</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1.1</b> Variável Aleatória</a></li>
+<li class="chapter" data-level="1.1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-aritmética-simples"><i class="fa fa-check"></i><b>1.1.2</b> Média Aritmética Simples</a></li>
+<li class="chapter" data-level="1.1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-aritmética-ponderada"><i class="fa fa-check"></i><b>1.1.3</b> Média Aritmética Ponderada</a></li>
+<li class="chapter" data-level="1.1.4" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-geométrica-simples"><i class="fa fa-check"></i><b>1.1.4</b> Média Geométrica Simples</a></li>
+<li class="chapter" data-level="1.1.5" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-geométrica-ponderada"><i class="fa fa-check"></i><b>1.1.5</b> Média Geométrica Ponderada</a></li>
+<li class="chapter" data-level="1.1.6" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-harmônica"><i class="fa fa-check"></i><b>1.1.6</b> Média Harmônica</a></li>
+<li class="chapter" data-level="1.1.7" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-harmônica-ponderada"><i class="fa fa-check"></i><b>1.1.7</b> Média Harmônica Ponderada</a></li>
+<li class="chapter" data-level="1.1.8" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#mediana"><i class="fa fa-check"></i><b>1.1.8</b> Mediana</a></li>
+<li class="chapter" data-level="1.1.9" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#quartis-ou-quartiles"><i class="fa fa-check"></i><b>1.1.9</b> Quartis ou Quartiles</a></li>
+<li class="chapter" data-level="1.1.10" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#moda"><i class="fa fa-check"></i><b>1.1.10</b> Moda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>1.2</b> Medidas de dispersão</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variância"><i class="fa fa-check"></i><b>1.2.1</b> Variância</a></li>
+<li class="chapter" data-level="1.2.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#desvio-padrão"><i class="fa fa-check"></i><b>1.2.2</b> Desvio Padrão</a></li>
+<li class="chapter" data-level="1.2.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#histograma"><i class="fa fa-check"></i><b>1.2.3</b> Histograma</a></li>
+<li class="chapter" data-level="1.2.4" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#diagrama-de-caixa-boxplot"><i class="fa fa-check"></i><b>1.2.4</b> Diagrama de caixa (Boxplot)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-relação-linear-entre-duas-variáveis"><i class="fa fa-check"></i><b>1.3</b> Medidas de relação linear entre duas variáveis</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#covariância"><i class="fa fa-check"></i><b>1.3.1</b> Covariância</a></li>
+<li class="chapter" data-level="1.3.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#coeficiente-de-correlação"><i class="fa fa-check"></i><b>1.3.2</b> Coeficiente de Correlação</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="revisão-de-literatura.html"><a href="revisão-de-literatura.html"><i class="fa fa-check"></i><b>2</b> Revisão de Literatura</a></li>
+<li class="chapter" data-level="3" data-path="metodologia.html"><a href="metodologia.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a></li>
+<li class="chapter" data-level="4" data-path="aplicações.html"><a href="aplicações.html"><i class="fa fa-check"></i><b>4</b> Aplicações</a><ul>
+<li class="chapter" data-level="4.1" data-path="aplicações.html"><a href="aplicações.html#exemplo-um"><i class="fa fa-check"></i><b>4.1</b> Exemplo um</a></li>
+<li class="chapter" data-level="4.2" data-path="aplicações.html"><a href="aplicações.html#examplo-dois"><i class="fa fa-check"></i><b>4.2</b> Examplo dois</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notas de aulas de Estatística Econômica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="estatística-descritiva" class="section level1">
+<h1><span class="header-section-number">CAPÍTULO 1</span> Estatística Descritiva</h1>
+<div id="medidas-de-posição" class="section level2">
+<h2><span class="header-section-number">1.1</span> Medidas de posição</h2>
+<p>Este tópico está baseado no material de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.</p>
+<div id="variável-aleatória" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Variável Aleatória</h3>
+<ul>
+<li>variável aleatória (v.a.) é uma variável que está associada a uma <em>distribuição de probabilidade</em>.</li>
+<li>Ou seja, cada valor da v.a. está associada a uma probabilidade.</li>
+<li>O resultado do lançamento de uma dado, que poder ser qualquer número de 1 a 6, está associada a uma probabilidade de <span class="math inline">\(1/6\)</span>.</li>
+</ul>
+</div>
+<div id="média-aritmética-simples" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Média Aritmética Simples</h3>
+<p><span class="math display" id="eq:mediaaritmeticasimples">\[\begin{equation}
+    \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+    \tag{1.1}
+\end{equation}\]</span>
+onde <span class="math inline">\(i =1, ...,n\)</span></p>
+<p><strong>Exemplo 1</strong></p>
+<p>Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em ordem crescente, 21,23,25,28 e 31. Para responder, basta aplicar <a href="estatística-descritiva.html#eq:mediaaritmeticasimples">(1.1)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{21+23+25+28+31}{5} = 25,6
+\end{equation*}\]</span></p>
+<p><strong>Exemplo 1 no R</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="estatística-descritiva.html#cb1-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">31</span>)</span>
+<span id="cb1-2"><a href="estatística-descritiva.html#cb1-2"></a>X</span></code></pre></div>
+<pre><code>## [1] 21 23 25 28 31</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="estatística-descritiva.html#cb3-1"></a>mediaX &lt;-<span class="st"> </span><span class="kw">mean</span>(X)</span>
+<span id="cb3-2"><a href="estatística-descritiva.html#cb3-2"></a>mediaX</span></code></pre></div>
+<pre><code>## [1] 25,6</code></pre>
+<p><strong>Exemplo 2</strong></p>
+<p>Qual é a média aritmética de três provas realizadas por um aluno, cujas notas
+foram 4,6 e 8. Para responder, basta aplicar <a href="estatística-descritiva.html#eq:mediaaritmeticasimples">(1.1)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{4+6+8}{3} = 6
+\end{equation*}\]</span></p>
+<p><strong>Exemplo 2 no R</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="estatística-descritiva.html#cb5-1"></a>X2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb5-2"><a href="estatística-descritiva.html#cb5-2"></a>X2</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="estatística-descritiva.html#cb7-1"></a>mediaX2 &lt;-<span class="st"> </span><span class="kw">mean</span>(X2)</span>
+<span id="cb7-2"><a href="estatística-descritiva.html#cb7-2"></a>mediaX2</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+</div>
+<div id="média-aritmética-ponderada" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Média Aritmética Ponderada</h3>
+<p>Na média aritmética ponderada, cada valor pode ter importância diferentes do outros valores considerados no computo. A frequência dos valores é muito comumente usada para para dar maior ou menor importância relativa entre os valores considerados no computo da média aritmética ponderada. Veja como fica a fórmula para o cálculo da média aritmética ponderada em <a href="estatística-descritiva.html#eq:mediaartimeticaponderada">(1.2)</a></p>
+<p><span class="math display" id="eq:mediaartimeticaponderada">\[\begin{equation}
+    \overline{X} = \frac{1}{\sum_{i=1}^{n}w_i} \sum_{i=1}^{n} w_i X_i
+    \tag{1.2}
+\end{equation}\]</span>
+onde <span class="math inline">\(w_i\)</span> é a ponderação ou peso associado a iésimo valor de <span class="math inline">\(X\)</span>.</p>
+<p>Podemos escrever na forma de frequência relativa dos valores da variável <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display" id="eq:eq13">\[\begin{equation}
+  f_i = \frac{w_i}{\sum_{i=1}^{n}w_i}
+  \tag{1.3}
+\end{equation}\]</span></p>
+<p><strong>Exemplo 3</strong></p>
+<p>Qual é a média aritmética de um grupo de vinte alunos, oito com 22 anos, sete
+de 23 anos, três de 25 anos, um de 28 anos e um de 30 anos. Para responder,
+basta aplicar <a href="estatística-descritiva.html#eq:mediaartimeticaponderada">(1.2)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{22\times 8 + 23\times 7 + 25 \times 3 + 28 \times 1 + 
+  30 \times 1}{20} = 23,5
+\end{equation*}\]</span></p>
+<p><strong>Exemplo 3 no R</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="estatística-descritiva.html#cb9-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>)</span>
+<span id="cb9-2"><a href="estatística-descritiva.html#cb9-2"></a>X3</span></code></pre></div>
+<pre><code>## [1] 22 23 25 28 30</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="estatística-descritiva.html#cb11-1"></a>w3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb11-2"><a href="estatística-descritiva.html#cb11-2"></a>w3</span></code></pre></div>
+<pre><code>## [1] 8 7 3 1 1</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="estatística-descritiva.html#cb13-1"></a>wX3 &lt;-<span class="st"> </span>w3 <span class="op">*</span><span class="st"> </span>X3</span>
+<span id="cb13-2"><a href="estatística-descritiva.html#cb13-2"></a>mediaX3 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX3)<span class="op">/</span><span class="kw">sum</span>(w3)</span>
+<span id="cb13-3"><a href="estatística-descritiva.html#cb13-3"></a>mediaX3</span></code></pre></div>
+<pre><code>## [1] 23,5</code></pre>
+<p><strong>Exemplo 4</strong></p>
+<p>Qual é a média ponderada de três provas realizadas por um aluno, cujas notas foram 4, 6 e 8. A primeira prova tem peso igual a 1, a segunda tem peso igual a 2 e a terceira tem peso igual a 3. Para responder, basta aplicar <a href="estatística-descritiva.html#eq:mediaartimeticaponderada">(1.2)</a>.</p>
+<p><span class="math display">\[\begin{equation*}
+  \overline{X} = \frac{4 \times 1 + 6 \times 2 + 8 \times 3}{1 + 2 + 3} \cong 6,7
+\end{equation*}\]</span></p>
+<p><strong>Exemplo 4 no R</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="estatística-descritiva.html#cb15-1"></a>X4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb15-2"><a href="estatística-descritiva.html#cb15-2"></a>X4</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="estatística-descritiva.html#cb17-1"></a>w4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb17-2"><a href="estatística-descritiva.html#cb17-2"></a>w4</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="estatística-descritiva.html#cb19-1"></a>wX4 &lt;-<span class="st"> </span>w4 <span class="op">*</span><span class="st"> </span>X4</span>
+<span id="cb19-2"><a href="estatística-descritiva.html#cb19-2"></a>mediaX4 &lt;-<span class="st"> </span><span class="kw">sum</span>(wX4)<span class="op">/</span><span class="kw">sum</span>(w4)</span>
+<span id="cb19-3"><a href="estatística-descritiva.html#cb19-3"></a><span class="kw">round</span>(mediaX4, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 6,7</code></pre>
+</div>
+<div id="média-geométrica-simples" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Média Geométrica Simples</h3>
+<p>Na média geométrica simples, a forma de obter uma medida resumo ou de tendência central é multiplicar todos os <span class="math inline">\(n\)</span> valores e tirar a raiz enésima do resultado do produtório. Assim é possível ter duas fórmulas para a média geométrica a <a href="estatística-descritiva.html#eq:eq14">(1.4)</a> e <a href="estatística-descritiva.html#eq:eq15">(1.5)</a>.</p>
+<p><span class="math display" id="eq:eq14">\[\begin{equation}
+    G = \left(\prod_{i=1}^{n} X_i \right)^{\frac{1}{n}}
+    \tag{1.4}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:eq15">\[\begin{equation}
+    G = \sqrt[n]{X_1 \times X_2 \times \ldots \times X_n}
+    \tag{1.5}
+\end{equation}\]</span></p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero? E se um dos valores for negativo?</p>
+<p><strong>Exemplo 5</strong></p>
+<p>Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.</p>
+<p><span class="math display">\[\begin{equation*}
+  \sqrt[3]{4 \times 6 \times 8} \cong 5,7690
+\end{equation*}\]</span></p>
+<p><strong>Exemplo 5 no R</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="estatística-descritiva.html#cb21-1"></a>X5 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb21-2"><a href="estatística-descritiva.html#cb21-2"></a>X5</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="estatística-descritiva.html#cb23-1"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(X5)</span>
+<span id="cb23-2"><a href="estatística-descritiva.html#cb23-2"></a>mediaX5 &lt;-<span class="st"> </span><span class="kw">prod</span>(X5)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>n)</span>
+<span id="cb23-3"><a href="estatística-descritiva.html#cb23-3"></a><span class="kw">round</span>(mediaX5, <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 5,8</code></pre>
+</div>
+<div id="média-geométrica-ponderada" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Média Geométrica Ponderada</h3>
+<p>Na média geométrica ponderada que podem ser calculadas através de duas fórmulas <a href="estatística-descritiva.html#eq:eq16">(1.6)</a> e <a href="estatística-descritiva.html#eq:eq17">(1.7)</a>, cada valor pode ter uma importância diferente em relação aos outros valores no computo da média geométrica. Muito comumente, esta maior ou menor importância pode estar associada a frequência dos valores considerados no cálculo.</p>
+<p><span class="math display" id="eq:eq16">\[\begin{equation}
+    G = \left(\prod_{j=1}^{k} X_j^{w_j} \right)^{\frac{1}{n}}
+    \tag{1.6}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:eq17">\[\begin{equation}
+    G = \sqrt[n]{X_1^{w_1} \times X_2^{w_2} \times \ldots \times X_k^{w_k}}
+    \tag{1.7}
+\end{equation}\]</span></p>
+<p>onde a <span class="math inline">\(\sum_{j=1}^{k} w_j = n\)</span></p>
+<p><strong>Exemplo 6</strong></p>
+<p>tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:</p>
+<p><span class="math display">\[\begin{equation*}
+  \sqrt[6]{4^1 \times 6^2 \times 8^3} \cong 6,5
+\end{equation*}\]</span></p>
+<p><strong>O exemplo 6 no R</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="estatística-descritiva.html#cb25-1"></a>x6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb25-2"><a href="estatística-descritiva.html#cb25-2"></a><span class="kw">class</span>(x6)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="estatística-descritiva.html#cb27-1"></a>x6</span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="estatística-descritiva.html#cb29-1"></a>w6 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb29-2"><a href="estatística-descritiva.html#cb29-2"></a>w6</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="estatística-descritiva.html#cb31-1"></a>G2 &lt;-<span class="st"> </span><span class="kw">round</span>((<span class="kw">prod</span>(x6<span class="op">^</span>w6))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sum</span>(w6)), <span class="dv">1</span>)</span>
+<span id="cb31-2"><a href="estatística-descritiva.html#cb31-2"></a>G2</span></code></pre></div>
+<pre><code>## [1] 6,5</code></pre>
+</div>
+<div id="média-harmônica" class="section level3">
+<h3><span class="header-section-number">1.1.6</span> Média Harmônica</h3>
+<p>É o inverso da média dos inversos dos valores da variável que pode ser calculada através das fórmulas <a href="estatística-descritiva.html#eq:mediaharmonicasimples">(1.8)</a> e <a href="estatística-descritiva.html#eq:mediaharmonicasimples2">(1.9)</a>.</p>
+<p><span class="math display" id="eq:mediaharmonicasimples">\[\begin{equation}
+    H = \frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}
+    \tag{1.8}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:mediaharmonicasimples2">\[\begin{equation}
+    H = \frac{n}{\frac{1}{X_1} + \frac{1}{X_2} + \ldots + \frac{1}{X_n}}
+    \tag{1.9}
+\end{equation}\]</span></p>
+<p>O que acontece se um dos valores de <span class="math inline">\(X\)</span> for igual a zero? Para entender essa situação, use o conceito de limite fazendo o valor tender a zero.</p>
+<p><strong>Exemplo 7</strong></p>
+<p>Tomando o exemplo das notas, temos:</p>
+<p><span class="math display">\[\begin{equation*}
+    H = \frac{3}{\frac{1}{4} + \frac{1}{6} + \frac{1}{8}}\cong 5,5.
+\end{equation*}\]</span></p>
+</div>
+<div id="média-harmônica-ponderada" class="section level3">
+<h3><span class="header-section-number">1.1.7</span> Média Harmônica Ponderada</h3>
+<p>Na média harmônica ponderada, assim como na média aritmética ponderada e na média geométrica ponderada, cada valor pode ter uma importância em relação aos outros valores considerados no seu cálculo. Comumente, a frequência do valor pode associaar uma maior ou menor importância no cálculo da média harmônica ponderada que pode ser calculada através das fórmulas <a href="estatística-descritiva.html#eq:mediaharmonicaponderada">(1.10)</a> e <a href="estatística-descritiva.html#eq:mediaharmonicaponderada2">(1.11)</a></p>
+<p><span class="math display" id="eq:mediaharmonicaponderada">\[\begin{equation}
+    H = \frac{n}{\sum_{j=1}^{k}w_{j}\frac{1}{X_j}}
+    \tag{1.10}
+\end{equation}\]</span>
+ou
+<span class="math display" id="eq:mediaharmonicaponderada2">\[\begin{equation}
+    H = \frac{n}{w_1\frac{1}{X_1} + w_2\frac{1}{X_2} + \ldots + w_k \frac{1}{X_k}}
+    \tag{1.11}
+\end{equation}\]</span></p>
+<p>onde a <span class="math inline">\(\sum_{j=1}^{k} w_j = n\)</span></p>
+<p><strong>Exemplo 8</strong></p>
+<p>Tomando o exemplo das notas</p>
+<p><span class="math display">\[\begin{equation*}
+    H = \frac{6}{\frac{1}{4}\times 1 + \frac{1}{6}\times 2 + \frac{1}{8}\times 3}\cong 6,3.
+\end{equation*}\]</span></p>
+<p><strong>Observação</strong></p>
+<p>Tanto para as médias simples como para as ponderadas, a
+média aritmética é maior do que a média geométrica e essa, por sua vez, é maior
+que a harmônica. Isso só não vale quando todos os valores são iguais. Veja de forma esquemática em <a href="estatística-descritiva.html#eq:diferencaentreasmedias">(1.12)</a></p>
+<p><span class="math display" id="eq:diferencaentreasmedias">\[\begin{equation}
+  \overline{X} \geq G \geq H
+  \tag{1.12}
+\end{equation}\]</span></p>
+<p><strong>Exemplo 9</strong></p>
+<p>O aluno tira as seguintes notas bimestrais: 3,4,5,7 e 8,5. Determine qual seria sua média final se esta fosse calculada dos três modos, aritmética, geométirca e harmônica, em cada um dos seguintes casos: i) as notas têm o mesmo peso e; ii) as notas têm pesos diferentes.</p>
+<ol style="list-style-type: lower-roman">
+<li>As notas dos bimestres têm os mesmos pesos.</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+    \overline{X} = \frac{3 + 4,5 + 7 + 8,5}{4} = 23/4 = 5,75
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    G = \sqrt[4]{3 \times 4,5 \times 7 \times 8,5} = \sqrt[4]{803,25} \cong 5,32
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    H = \frac{4}{\frac{1}{3} +\frac{1}{4,5} +\frac{1}{7} +\frac{1}{8,5}}   \cong 4,90
+  \end{equation*}\]</span></p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Suponha que agora os pesos para as notas bimestrais sejam, 30%, 25%, 25% e 20%.</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+    \overline{X} = 0,3\times 3 + 0,25\times 4,5 + 0,25\times 7 + 0,20 \times 8,5 = 5,475
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    G = 3^{0,3} \times 4,5^{0,25} \times 7^{0,25} \times 8,5^{0,2} = \cong 5,05
+  \end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    H = \frac{1}{0,3\frac{1}{3} +0,25\frac{1}{4,5} +0,25\frac{1}{7} +0,2\frac{1}{8,5}}   \cong 4,66
+  \end{equation*}\]</span></p>
+</div>
+<div id="mediana" class="section level3">
+<h3><span class="header-section-number">1.1.8</span> Mediana</h3>
+<p>é o valor que divide um conjunto e dados ordenados ao meio, ou seja, dois
+grupos de valores de igual tamanho. Com base na definição de mediana, o valor da mediana pode ser obtida através da sua posição que proporciona duas situações: i) o número de valores é impar e ii) o número de valores é par.</p>
+<ol style="list-style-type: lower-roman">
+<li>Quando o número de valores é impar, a posiçãodo valor correspondente a mediana é obtida através de <a href="estatística-descritiva.html#eq:posicaomedianaimpar">(1.13)</a>:</li>
+</ol>
+<p><span class="math display" id="eq:posicaomedianaimpar">\[\begin{equation}
+  PMediana_{impar} = \dfrac{n + 1}{2}
+  \tag{1.13}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado no cálculo.</p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Quando o número de valores é par, a posição da mediana é obtida através da média entre os dois valores centrais do conjunto de valores ordenados de menor a maior. O primeiro valor central é definido pela posição obtida através de <a href="estatística-descritiva.html#eq:valor1mediaposicaomedianapar">(1.14)</a></li>
+</ol>
+<p><span class="math display" id="eq:valor1mediaposicaomedianapar">\[\begin{equation}
+  P1Mediana_{par} = \dfrac{n}{2}
+  \tag{1.14}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado para o cálculo.</p>
+<p>O segundo valor central é definido pelas posição obtida através de
+<a href="estatística-descritiva.html#eq:valor2mediaposicaomedianapar">(1.15)</a></p>
+<p><span class="math display" id="eq:valor2mediaposicaomedianapar">\[\begin{equation}
+  P2Mediana_{par} = \dfrac{n}{2} + 1
+  \tag{1.15}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores considerado para o cálculo.</p>
+<p>Assim, a mediana quando o número de valores é par é obtida através da média aritmética simples dos valores correspondentes as posições obtidas por <a href="estatística-descritiva.html#eq:valor1mediaposicaomedianapar">(1.14)</a> e por
+<a href="estatística-descritiva.html#eq:valor2mediaposicaomedianapar">(1.15)</a> através de <a href="estatística-descritiva.html#eq:medianapar">(1.16)</a></p>
+<p><span class="math display" id="eq:medianapar">\[\begin{equation}
+  Mediana_{par} = \dfrac{ValorCentral_1 + ValorCentral_2}{2}
+  \tag{1.16}
+\end{equation}\]</span></p>
+<p><strong>Exemplo numérico de Mediana quando o número de valores é impar</strong></p>
+<p>Seja um conjunto de valores 2,-3,1,-2,0,-1,3. Obtenha a mediana.</p>
+<p>Primeiramente ordena-se do menor para o maior.</p>
+<p>-3,-2,-1,0,1,2,3</p>
+<p>Como se trata de número impar de valores o valor central que divide o conjunto de valores em dois subconjuntos de igual tamanho é o valor da mediana. Neste caso é o zero.</p>
+<p><strong>Mediana no R</strong></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="estatística-descritiva.html#cb33-1"></a>w &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb33-2"><a href="estatística-descritiva.html#cb33-2"></a>mediana1 &lt;-<span class="st"> </span><span class="kw">median</span>(w)</span>
+<span id="cb33-3"><a href="estatística-descritiva.html#cb33-3"></a><span class="kw">print</span>(mediana1)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p><strong>Exemplo numérico de Mediana quando o número de valores é par</strong></p>
+<p>No exemplo anterior o conjunto de dados era composto por um número ímpar de valores. Neste exemplo o número de valores ordenado de menor a maior é par. Nesse caso, apesar de existir vários critérios, o mais usual é tirar a média aritmética simples entre os dois valores centrais do conjunto de valores ordenados de menor a maior. Uma vez que não existe um valor que separe dois subconjuntos de igual tamanho, a média aritmética simples destes dois valores é o valor da mediana quando o número total de valores não é impar.</p>
+<p>Sejam os valores -2,1,3,2,-3,1. Obtenha a mediana.</p>
+<p>Primeiramente ordena-se os seis valores.</p>
+<p>-3,-2,-1,1,2,3</p>
+<p>Note que trata-se de conjunto com um número par de valores.</p>
+<p>Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a média aritmética simples. Ou seja, a mediana para este conjunto com seis valores é igual a zero.</p>
+<p><strong>O exemplo do número par de valores no R</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="estatística-descritiva.html#cb35-1"></a>v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb35-2"><a href="estatística-descritiva.html#cb35-2"></a>mediana2 &lt;-<span class="st"> </span><span class="kw">median</span>(v)</span>
+<span id="cb35-3"><a href="estatística-descritiva.html#cb35-3"></a><span class="kw">print</span>(mediana2)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="quartis-ou-quartiles" class="section level3">
+<h3><span class="header-section-number">1.1.9</span> Quartis ou Quartiles</h3>
+<p>são os valores que dividem o conjunto de dados ordenados em quatro subjconjuntos
+de igual tamanho. Ou seja são valores do conjunto que definem o primeiro quarto
+dos dados (25%), a metade dos dados (50%) que coincide com a mediana, os três
+quartos dos dados (75%).</p>
+<p>Dessa forma para obter os valores que dividem o conjunto de dados ordenados de menor a maior e quatro subconjuntos de igual tamanho, é necessário definir qual é a posição desses valores. Uma vez definido as suas posições pode-se obter os valores corretamente.</p>
+<p>A posição do valor que separa o primeiro do segundo quartil é definido por <a href="estatística-descritiva.html#eq:posicaoquartilum">(1.17)</a>.</p>
+<p><span class="math display" id="eq:posicaoquartilum">\[\begin{equation}
+  PQ_1 = \dfrac{(n +1)}{4}
+  \tag{1.17}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores.
+A posição do valor que separa o segundo do terceiro quartil é definido por <a href="estatística-descritiva.html#eq:posicaoquartiltres">(1.18)</a>.</p>
+<p><span class="math display" id="eq:posicaoquartiltres">\[\begin{equation}
+  PQ_3 = \dfrac{3(n +1)}{4}
+  \tag{1.18}
+\end{equation}\]</span>
+onde <span class="math inline">\(n\)</span> é o número de valores.</p>
+<p>Note que o termo genérico é percentil. Por exemplo, o quintis são os valores que dividem o conjunto de ados ordenados de menor a maior em cinco subconjuntos de igual tamanho.</p>
+<p><strong>Quartis no R</strong></p>
+<p>No R tem uma função específica para a obtenção dos quartis.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="estatística-descritiva.html#cb37-1"></a>p &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)</span>
+<span id="cb37-2"><a href="estatística-descritiva.html#cb37-2"></a><span class="kw">length</span>(p)</span></code></pre></div>
+<pre><code>## [1] 101</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="estatística-descritiva.html#cb39-1"></a><span class="kw">quantile</span>(p)</span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##    0   25   50   75  100</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="estatística-descritiva.html#cb41-1"></a>faixainterquant &lt;-<span class="st"> </span><span class="kw">quantile</span>(p, <span class="fl">0.75</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(p, </span>
+<span id="cb41-2"><a href="estatística-descritiva.html#cb41-2"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb41-3"><a href="estatística-descritiva.html#cb41-3"></a>faixainterquant</span></code></pre></div>
+<pre><code>## 75% 
+##  50</code></pre>
+<p><strong>Quartis no R</strong></p>
+<p>No R tem uma função específica para a obtenção dos quartis.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="estatística-descritiva.html#cb43-1"></a>p2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</span>
+<span id="cb43-2"><a href="estatística-descritiva.html#cb43-2"></a><span class="kw">length</span>(p2)</span></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="estatística-descritiva.html#cb45-1"></a><span class="kw">quantile</span>(p2)</span></code></pre></div>
+<pre><code>##     0%    25%    50%    75%   100% 
+##   1,00  25,75  50,50  75,25 100,00</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="estatística-descritiva.html#cb47-1"></a>faixainterquant2 &lt;-<span class="st"> </span><span class="kw">quantile</span>(p2, <span class="fl">0.75</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(p2, </span>
+<span id="cb47-2"><a href="estatística-descritiva.html#cb47-2"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb47-3"><a href="estatística-descritiva.html#cb47-3"></a>faixainterquant2</span></code></pre></div>
+<pre><code>##  75% 
+## 49,5</code></pre>
+</div>
+<div id="moda" class="section level3">
+<h3><span class="header-section-number">1.1.10</span> Moda</h3>
+<p> é o elemento de maior frequência, ou seja, que aparece o maior número de vezes. Pode haver mais de uma moda em um conjunto de valores:</p>
+<ul>
+<li>Unimodal</li>
+<li>Bimodal</li>
+<li>Multimodal</li>
+<li>Amodal</li>
+</ul>
+<p><strong>Moda no R</strong>
+Não existe uma função da moda para pronto uso no R. É necessário criar uma função
+segue abaixo.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="estatística-descritiva.html#cb49-1"></a><span class="co"># criando a função moda no R</span></span>
+<span id="cb49-2"><a href="estatística-descritiva.html#cb49-2"></a></span>
+<span id="cb49-3"><a href="estatística-descritiva.html#cb49-3"></a>getmode &lt;-<span class="st"> </span><span class="cf">function</span>(v) {</span>
+<span id="cb49-4"><a href="estatística-descritiva.html#cb49-4"></a>    uniqv &lt;-<span class="st"> </span><span class="kw">unique</span>(v)</span>
+<span id="cb49-5"><a href="estatística-descritiva.html#cb49-5"></a>    uniqv[<span class="kw">which.max</span>(<span class="kw">tabulate</span>(<span class="kw">match</span>(v, uniqv)))]</span>
+<span id="cb49-6"><a href="estatística-descritiva.html#cb49-6"></a>}</span>
+<span id="cb49-7"><a href="estatística-descritiva.html#cb49-7"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb49-8"><a href="estatística-descritiva.html#cb49-8"></a>moda1 &lt;-<span class="st"> </span><span class="kw">getmode</span>(z)</span>
+<span id="cb49-9"><a href="estatística-descritiva.html#cb49-9"></a><span class="kw">print</span>(moda1)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+</div>
+<div id="medidas-de-dispersão" class="section level2">
+<h2><span class="header-section-number">1.2</span> Medidas de dispersão</h2>
+<p>Este tópico está baseado nos materiais de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> e <span class="citation">Morettin and Bussab (<a href="#ref-Morettin2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Medem como os dados estão , mais ou menos próximos entre si,
+seja, mais ou menos dispersos.</p>
+<div id="variância" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Variância</h3>
+<p>A variância é a somatória dos quadrados dos desvios em relação a média, dividido pelo número de observações. Note que a ideia inicial de dispersão foi a distância de cada valor do conjunto dados da variável em relação à media da variável. Mas como trata-se da distância relativa de cada valor em relação a média dos valores da variável, a sua somatória sempre resulta zero. Pois os desvios em relação a médias são compostos de valores positivos e negativos por estarem acima ou abaixo da média e assim a somatória das mesmas resulta zero, sempre. Portanto, a soma dos desvios não tem utilidade como medida de dispersão. Mas se a soma for dos quadrados dos desvios, isso é resolvido. Por isso, a variância é o valor médio dos quadrados dos desvios em relação à media. Ou seja,</p>
+<p><span class="math display">\[\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+  var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n-1}~\text{(amostra)}
+\end{equation*}\]</span></p>
+<p>Note que a variância da amostra é um estimador não viesado da variância populacional. A diferença entre variância populacional e variância amostral será apresentada mais adiante. A interpretação intuitiva da diferença entre ambas as variâncias é de que quando se trabalha com amostra, está tendo acesso a parte das informações e isso precisa ser penalizado. Note que esta penalização se dá para amostras pequenas pois se trata de subtrair uma unidade do número de observações.
+O que acontece com a diferença entre variância populacional e a variância amostral quando i) o número de observações torna-se muito grande, tipo bem maior que 30 e; ii) o número de observações tende ao infinito.</p>
+<p><strong>Variância no R</strong></p>
+<p>Aproveitando os dados de alturas de 30 pessoas:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="estatística-descritiva.html#cb51-1"></a><span class="kw">tail</span>(X)</span></code></pre></div>
+<pre><code>## [1] 21 23 25 28 31</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="estatística-descritiva.html#cb53-1"></a>varX &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">var</span>(X), <span class="dv">4</span>)</span>
+<span id="cb53-2"><a href="estatística-descritiva.html#cb53-2"></a>varX</span></code></pre></div>
+<pre><code>## [1] 15,8</code></pre>
+<p>Note que a variância no R é a variância amostral, cujo denominador é <span class="math inline">\((n-1)\)</span>.</p>
+<p>Em termos práticos, a variância tem uma desvantagem: a unidade do seu resultado é o quadrado da unidade original da variável. Portanto, se a variável em questão é preço de uma mercadoria em Reais, a sua variância será Reais ao quadrado. Tal fato dificulta a sua interpretação. Por isso é apresentado o desvio padrão como medida de dispersão na sequência.</p>
+</div>
+<div id="desvio-padrão" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Desvio Padrão</h3>
+<p>É a raiz quadrada da variância. No desvio padrão, denotado como <span class="math inline">\(d.p.(X)\)</span> ou
+<span class="math inline">\(\sigma\)</span>, não tem o efeito do quadrado.</p>
+<p><span class="math display">\[\begin{equation*}
+  d.p.(X) \cong \sigma = \sqrt{var(X)}
+\end{equation*}\]</span></p>
+<p>Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua variável original. Desta forma, o desvio padrão facilita a sua análise juntamente com as medidas de posição como a média aritmética simples, por exemplo.</p>
+<p><strong>Desvio Padrão no R</strong></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="estatística-descritiva.html#cb55-1"></a><span class="kw">tail</span>(X)</span></code></pre></div>
+<pre><code>## [1] 21 23 25 28 31</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="estatística-descritiva.html#cb57-1"></a>dpX &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">sd</span>(X), <span class="dv">4</span>)</span>
+<span id="cb57-2"><a href="estatística-descritiva.html#cb57-2"></a>dpX</span></code></pre></div>
+<pre><code>## [1] 3,9749</code></pre>
+<p>Note que, da mesma forma que a variância no R, o desvio padrão calculado no R tem como base a variância cujo numerador é <span class="math inline">\((n-1)\)</span>.</p>
+<p><strong>Fórmula alternativa da Variância</strong></p>
+<p>Desenvolvendo a fórmula da definição da variância tem-se:
+<span class="math display">\[\begin{align*}
+  var(X)  &amp;= \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^2 \\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}(X_i^2 - 2X_i\overline{X} +
+          \overline{X}^2)\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          \frac{1}{n}\sum_{i=1}^{n}2X_i\overline{X}+
+          \frac{1}{n}\sum_{i=1}^{n}\overline{X}^2\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\frac{1}{n}\sum_{i=1}^{n}X_i+
+          \frac{1}{n}n\overline{X}^2\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - 
+          2\overline{X}\overline{X}+ \overline{X}^2\\
+          &amp;= \frac{1}{n}\sum_{i=1}^{n}X_i^2 - \overline{X}^2.
+\end{align*}\]</span></p>
+<p>Em outras palavras</p>
+<p><span class="math display">\[\begin{equation*}
+  var(X) = \text{média dos quadrados} - \text{quadrado da média}.
+\end{equation*}\]</span></p>
+<p><strong>Exemplo de variância e desvio padrão no R</strong></p>
+<p>Tomando o exemplo numérico da tabela 2.7 (Sartoris, 2013, p.40) sobre notas do
+aluno A tem-se:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Aluno A</th>
+<th align="center">notas</th>
+<th align="center"><span class="math inline">\(notas^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Economia</td>
+<td align="center">3</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td align="left">Contabilidade</td>
+<td align="center">2</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Administração</td>
+<td align="center">4</td>
+<td align="center">16</td>
+</tr>
+<tr class="even">
+<td align="left">Matemática</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Somatória</strong></td>
+<td align="center"><strong>10</strong></td>
+<td align="center"><strong>30</strong></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Média</strong></td>
+<td align="center"><strong>2,5</strong></td>
+<td align="center"><strong>7,5</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+  var(X) = 7,5 - (2,5)^2 = 1,25
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+  dp(X) = \sqrt{1,25} = 1,12
+\end{equation*}\]</span></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="estatística-descritiva.html#cb59-1"></a>X3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb59-2"><a href="estatística-descritiva.html#cb59-2"></a>mediaX3e2 &lt;-<span class="st"> </span><span class="kw">sum</span>(X3<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="kw">length</span>(X3)</span>
+<span id="cb59-3"><a href="estatística-descritiva.html#cb59-3"></a>mediaX3 &lt;-<span class="st"> </span><span class="kw">sum</span>(X3)<span class="op">/</span><span class="kw">length</span>(X3)</span>
+<span id="cb59-4"><a href="estatística-descritiva.html#cb59-4"></a>varX3 &lt;-<span class="st"> </span>mediaX3e2 <span class="op">-</span><span class="st"> </span>mediaX3<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb59-5"><a href="estatística-descritiva.html#cb59-5"></a>varX3</span></code></pre></div>
+<pre><code>## [1] 1,25</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="estatística-descritiva.html#cb61-1"></a>dpX3 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">sqrt</span>(varX3), <span class="dv">4</span>)</span>
+<span id="cb61-2"><a href="estatística-descritiva.html#cb61-2"></a>dpX3</span></code></pre></div>
+<pre><code>## [1] 1,118</code></pre>
+</div>
+<div id="histograma" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Histograma</h3>
+<p>O histograma é uma ferramenta da estatística descritiva para mostrar visualmente, de forma bastante simples, como os valores da variável estão distribuídos. Mas também permite ter uma ideia visual da dispersão do conjunto de valores. Portanto, não se trata de uma medida de dispersão. Mas deveria ser a primeira coisa a se obter das variáveis de interesse em um trabalho de pesquisa.</p>
+<p>Considere a altura de 30 pessoas medidas em centímetros.</p>
+<p>Tabela 2.1 - Altura de 30 pessoas em cm.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center">159</td>
+<td align="center">168</td>
+<td align="center">172</td>
+<td align="center">175</td>
+<td align="center">181</td>
+</tr>
+<tr class="even">
+<td align="center">161</td>
+<td align="center">168</td>
+<td align="center">173</td>
+<td align="center">176</td>
+<td align="center">183</td>
+</tr>
+<tr class="odd">
+<td align="center">162</td>
+<td align="center">169</td>
+<td align="center">173</td>
+<td align="center">177</td>
+<td align="center">185</td>
+</tr>
+<tr class="even">
+<td align="center">164</td>
+<td align="center">170</td>
+<td align="center">174</td>
+<td align="center">178</td>
+<td align="center">190</td>
+</tr>
+<tr class="odd">
+<td align="center">166</td>
+<td align="center">171</td>
+<td align="center">174</td>
+<td align="center">179</td>
+<td align="center">194</td>
+</tr>
+<tr class="even">
+<td align="center">167</td>
+<td align="center">171</td>
+<td align="center">174</td>
+<td align="center">180</td>
+<td align="center">201</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usando o R para construir o histograma do exemplo numérico</strong></p>
+<p>Os dados são inputados na variável X.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="estatística-descritiva.html#cb63-1"></a>X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">159</span>, <span class="dv">161</span>, <span class="dv">162</span>, <span class="dv">164</span>, <span class="dv">166</span>, <span class="dv">167</span>, <span class="dv">168</span>, <span class="dv">168</span>, <span class="dv">169</span>, </span>
+<span id="cb63-2"><a href="estatística-descritiva.html#cb63-2"></a>    <span class="dv">170</span>, <span class="dv">171</span>, <span class="dv">171</span>, <span class="dv">172</span>, <span class="dv">173</span>, <span class="dv">173</span>, <span class="dv">174</span>, <span class="dv">174</span>, <span class="dv">174</span>, <span class="dv">175</span>, </span>
+<span id="cb63-3"><a href="estatística-descritiva.html#cb63-3"></a>    <span class="dv">176</span>, <span class="dv">177</span>, <span class="dv">178</span>, <span class="dv">179</span>, <span class="dv">180</span>, <span class="dv">181</span>, <span class="dv">183</span>, <span class="dv">185</span>, <span class="dv">190</span>, <span class="dv">194</span>, </span>
+<span id="cb63-4"><a href="estatística-descritiva.html#cb63-4"></a>    <span class="dv">201</span>)</span>
+<span id="cb63-5"><a href="estatística-descritiva.html#cb63-5"></a><span class="kw">head</span>(X)</span></code></pre></div>
+<pre><code>## [1] 159 161 162 164 166 167</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="estatística-descritiva.html#cb65-1"></a>obsX &lt;-<span class="st"> </span><span class="kw">length</span>(X)</span>
+<span id="cb65-2"><a href="estatística-descritiva.html#cb65-2"></a>obsX</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="estatística-descritiva.html#cb67-1"></a>faixaX &lt;-<span class="st"> </span><span class="kw">range</span>(X)</span>
+<span id="cb67-2"><a href="estatística-descritiva.html#cb67-2"></a>faixaX</span></code></pre></div>
+<pre><code>## [1] 159 201</code></pre>
+<p><strong>Usando a função hist do R para elaborar o histograma de altura</strong></p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="estatística-descritiva.html#cb69-1"></a>grafico1 &lt;-<span class="st"> </span><span class="kw">hist</span>( </span>
+<span id="cb69-2"><a href="estatística-descritiva.html#cb69-2"></a>                  X, </span>
+<span id="cb69-3"><a href="estatística-descritiva.html#cb69-3"></a>                  <span class="dt">main=</span><span class="st">&quot;Histograma da Altura&quot;</span>, </span>
+<span id="cb69-4"><a href="estatística-descritiva.html#cb69-4"></a>                  <span class="dt">xlab=</span><span class="st">&quot;cm&quot;</span>, </span>
+<span id="cb69-5"><a href="estatística-descritiva.html#cb69-5"></a>                  <span class="dt">ylab=</span><span class="st">&quot;frequência&quot;, </span></span>
+<span id="cb69-6"><a href="estatística-descritiva.html#cb69-6"></a><span class="st">                  border=&quot;</span>blue<span class="st">&quot;, </span></span>
+<span id="cb69-7"><a href="estatística-descritiva.html#cb69-7"></a><span class="st">                  col=&quot;</span>green<span class="st">&quot;, </span></span>
+<span id="cb69-8"><a href="estatística-descritiva.html#cb69-8"></a><span class="st">                  xlim=c(150,210), </span></span>
+<span id="cb69-9"><a href="estatística-descritiva.html#cb69-9"></a><span class="st">                  las=1, </span></span>
+<span id="cb69-10"><a href="estatística-descritiva.html#cb69-10"></a><span class="st">                  breaks=5, </span></span>
+<span id="cb69-11"><a href="estatística-descritiva.html#cb69-11"></a><span class="st">                  right=FALSE </span></span>
+<span id="cb69-12"><a href="estatística-descritiva.html#cb69-12"></a><span class="st">                ) </span></span>
+<span id="cb69-13"><a href="estatística-descritiva.html#cb69-13"></a></span>
+<span id="cb69-14"><a href="estatística-descritiva.html#cb69-14"></a><span class="st">grafico1</span></span></code></pre></div>
+<p>onde</p>
+<ul>
+<li><strong>main=“Histograma da Altura de 30 pessoas”</strong> titulo do histograma</li>
+<li><strong>xlab=“cm”</strong> rotulo do eixo horizontal</li>
+<li><strong>ylab=“frequência”</strong> rotulo do eixo vertical</li>
+<li><strong>border=“blue”</strong> cor do contorno das barras</li>
+<li><strong>col=“green”</strong> cor das barras</li>
+<li><strong>xlim=c(150,210)</strong> limite inferior e superior</li>
+<li><strong>las=1</strong> rotacao do rotulo dos numeros do eixo vertical</li>
+<li><strong>breaks=5</strong> número de classes</li>
+<li><strong>right=FALSE</strong> define intervalo do tipo [a,b), se FALSE, e (a,b], se TRUE.</li>
+</ul>
+<p><strong>Obtendo o histograma</strong></p>
+<p><img src="EstatEcon_files/figure-html/histograma12-1.png" width="384" /></p>
+<p>O pacote <strong>ggplot2</strong> gera gráficos e histogramas melhor elaborados.</p>
+<p><strong>Obtendo o histograma usando uma forma alternativa</strong></p>
+<p>Agrupando essas pessoas em <strong>classes</strong> de 10 cm temos:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">classes</th>
+<th align="center">frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">[150 ; 160[</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">[160 ; 170[</td>
+<td align="center">8</td>
+</tr>
+<tr class="odd">
+<td align="center">[170 ; 180[</td>
+<td align="center">14</td>
+</tr>
+<tr class="even">
+<td align="center">[180 ; 190[</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">[190 ; 200[</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">[200 ; 210[</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Fazendo isso no R:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="estatística-descritiva.html#cb70-1"></a>nobs &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>)</span>
+<span id="cb70-2"><a href="estatística-descritiva.html#cb70-2"></a>dataX &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(nobs, X))</span>
+<span id="cb70-3"><a href="estatística-descritiva.html#cb70-3"></a><span class="co"># transformando em data frame</span></span>
+<span id="cb70-4"><a href="estatística-descritiva.html#cb70-4"></a><span class="kw">tail</span>(dataX)</span></code></pre></div>
+<pre><code>##    nobs   X
+## 25   25 181
+## 26   26 183
+## 27   27 185
+## 28   28 190
+## 29   29 194
+## 30   30 201</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="estatística-descritiva.html#cb72-1"></a><span class="co"># mostrando as seis últimas observações</span></span>
+<span id="cb72-2"><a href="estatística-descritiva.html#cb72-2"></a>quebras &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">150</span>, <span class="dv">210</span>, <span class="dt">by =</span> <span class="dv">10</span>)</span>
+<span id="cb72-3"><a href="estatística-descritiva.html#cb72-3"></a><span class="co"># definindo os intervalos</span></span>
+<span id="cb72-4"><a href="estatística-descritiva.html#cb72-4"></a>quebras</span></code></pre></div>
+<pre><code>## [1] 150 160 170 180 190 200 210</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="estatística-descritiva.html#cb74-1"></a>dataX.cut &lt;-<span class="st"> </span><span class="kw">cut</span>(dataX<span class="op">$</span>X, quebras, <span class="dt">right =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb74-2"><a href="estatística-descritiva.html#cb74-2"></a><span class="co"># construindo as classes fechado a esq e aberto a</span></span>
+<span id="cb74-3"><a href="estatística-descritiva.html#cb74-3"></a><span class="co"># direita</span></span>
+<span id="cb74-4"><a href="estatística-descritiva.html#cb74-4"></a>dataX.freq &lt;-<span class="st"> </span><span class="kw">table</span>(dataX.cut)</span>
+<span id="cb74-5"><a href="estatística-descritiva.html#cb74-5"></a><span class="co"># obtendo a frequência para cada classe.</span></span>
+<span id="cb74-6"><a href="estatística-descritiva.html#cb74-6"></a>dataXfreq &lt;-<span class="st"> </span><span class="kw">cbind</span>(dataX.freq)</span>
+<span id="cb74-7"><a href="estatística-descritiva.html#cb74-7"></a><span class="co"># colocando os dados em colunas</span></span>
+<span id="cb74-8"><a href="estatística-descritiva.html#cb74-8"></a>dataXfreq</span></code></pre></div>
+<pre><code>##           dataX.freq
+## [150,160)          1
+## [160,170)          8
+## [170,180)         14
+## [180,190)          4
+## [190,200)          2
+## [200,210)          1</code></pre>
+</div>
+<div id="diagrama-de-caixa-boxplot" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Diagrama de caixa (Boxplot)</h3>
+<p>O texto sobre o diagrama de caixa foi baseado em <span class="citation">Morettin and Bussab (<a href="#ref-Morettin2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Boxplot ou caixa de bigode também é uma ferramenta da estatística descritva que permite visualizar a dispersão dos valores da variável em análise. O que define o diagrama de caixa são os quartis. A parte inferior e superior da caixa, são respectivamente o primeiro quartil (<span class="math inline">\(Q_1\)</span>) e o terceiro quartil (<span class="math inline">\(Q_3\)</span>). A linha que corta da caixa é a mediana ou o segundo quartil (<span class="math inline">\(Q_2\)</span>). Os bigodes que são as linhas que se estendem a partir da caixa, são calculado com base na amplitude interquartil (<span class="math inline">\(AIQ\)</span>). A amplitude interquartil é a diferença entre os valores do terceiro e do primeiro quartis. Ou seja,</p>
+<p><span class="math display">\[\begin{equation*}
+  AIQ = Q_3 - Q_1
+\end{equation*}\]</span></p>
+<p>O bigode inferior denominado <span class="math inline">\(LI\)</span> é calculado subtraindo <span class="math inline">\(1,5\times AIQ\)</span> do valor do primeiro quartil <span class="math inline">\(Q_1\)</span>. Ou seja,</p>
+<p><span class="math display">\[\begin{equation*}
+  LI = Q_1 - 1,5 \times AIQ
+\end{equation*}\]</span></p>
+<p>O bigode superior, denominado <span class="math inline">\(LS\)</span>, é calculado somando <span class="math inline">\(1,5\times AIQ\)</span> ao valor da terceiro quartil <span class="math inline">\(Q_3\)</span>. Ou seja,</p>
+<p><span class="math display">\[\begin{equation*}
+  LS = Q_1 + 1,5 \times AIQ
+\end{equation*}\]</span></p>
+<p>Os valores que forem menor que o <span class="math inline">\(LI\)</span> ou maior que o <span class="math inline">\(LS\)</span> são denominados valores discrepantes oui <em>outliers</em>. Os valores discrepantes, quando existentes, são colocados separadamente no diagrama de caixa mantendo a distancia relativa do limite inferior ou do limite superior.</p>
+<p>Toma-se o mesmo exemplo da altura de 30 pessoas para apresentar o boxplot.</p>
+<p>O código seria:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="estatística-descritiva.html#cb76-1"></a><span class="kw">boxplot</span>(X, <span class="dt">data =</span> dataX, <span class="dt">main =</span> <span class="st">&quot;Diagrama de Caixa&quot;</span>, </span>
+<span id="cb76-2"><a href="estatística-descritiva.html#cb76-2"></a>    <span class="dt">ylab =</span> <span class="st">&quot;cm&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;altura de 30 pessoas&quot;</span>)</span></code></pre></div>
+<p>e o resultado segue abaixo.</p>
+<p><img src="EstatEcon_files/figure-html/diagrama%20de%20caixa12-1.png" width="384" /></p>
+</div>
+</div>
+<div id="medidas-de-relação-linear-entre-duas-variáveis" class="section level2">
+<h2><span class="header-section-number">1.3</span> Medidas de relação linear entre duas variáveis</h2>
+<p>Este assunto tem como base o material de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Parece um pouco estranho incluir esse tópico logo depois das medidas de dispersão. Mas a variância é um caso especial da covariância que é a primeira medida de relação linear entre duas variáveis.</p>
+<p>O coeficiente de correlação utiliza a covariância e o desvio padrão para resolver o problema de interpretação do resultado da covariância.</p>
+<div id="covariância" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Covariância</h3>
+<p>pode ser estendida como uma <em>variância conjunta</em> entre duas variáveis. Ou seja,
+<span class="math display">\[\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})(Y_i - \overline{Y})
+\end{equation*}\]</span></p>
+<p><strong>Fórmula alternativa da Variância</strong></p>
+<p>Também existe a fórmula alternativa da covariância.</p>
+<p><span class="math display">\[\begin{equation*}
+  cov(X,Y) = \frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i} - \overline{X}\overline{Y}.
+\end{equation*}\]</span></p>
+<p><strong>Fórmula alternativa da Covariância</strong></p>
+<p>Em outras palavras</p>
+<p><span class="math display">\[\begin{equation*}
+  cov(X,Y) = \text{média dos produtos de X e Y} - \text{produto das médias de X e Y}.
+\end{equation*}\]</span></p>
+<p><strong>Covariância no R</strong></p>
+<p>Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-se</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Ano</th>
+<th align="center">Consumo(X)</th>
+<th align="center">Renda(Y)</th>
+<th align="center">(XY)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">600</td>
+<td align="center">1.000</td>
+<td align="center">600.000</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">700</td>
+<td align="center">1.100</td>
+<td align="center">770.000</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">800</td>
+<td align="center">1.300</td>
+<td align="center">1.040.000</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">900</td>
+<td align="center">1.400</td>
+<td align="center">1.260.000</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Somatória</strong></td>
+<td align="center"><strong>3.000</strong></td>
+<td align="center"><strong>4.800</strong></td>
+<td align="center"><strong>3.670.000</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Média</strong></td>
+<td align="center"><strong>750</strong></td>
+<td align="center"><strong>1.200</strong></td>
+<td align="center"><strong>917.500</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Covariância no R</strong></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="estatística-descritiva.html#cb77-1"></a>C1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">600</span>, <span class="dv">700</span>, <span class="dv">800</span>, <span class="dv">900</span>)</span>
+<span id="cb77-2"><a href="estatística-descritiva.html#cb77-2"></a>R1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">1100</span>, <span class="dv">1300</span>, <span class="dv">1400</span>)</span>
+<span id="cb77-3"><a href="estatística-descritiva.html#cb77-3"></a>mediaC1 &lt;-<span class="st"> </span><span class="kw">sum</span>(C1)<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb77-4"><a href="estatística-descritiva.html#cb77-4"></a>mediaR1 &lt;-<span class="st"> </span><span class="kw">sum</span>(R1)<span class="op">/</span><span class="kw">length</span>(R1)</span>
+<span id="cb77-5"><a href="estatística-descritiva.html#cb77-5"></a>mediaC1R1 &lt;-<span class="st"> </span><span class="kw">sum</span>(C1 <span class="op">*</span><span class="st"> </span>R1)<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb77-6"><a href="estatística-descritiva.html#cb77-6"></a>covC1R1 &lt;-<span class="st"> </span>mediaC1R1 <span class="op">-</span><span class="st"> </span>mediaC1 <span class="op">*</span><span class="st"> </span>mediaR1</span>
+<span id="cb77-7"><a href="estatística-descritiva.html#cb77-7"></a>covC1R1</span></code></pre></div>
+<pre><code>## [1] 17500</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="estatística-descritiva.html#cb79-1"></a><span class="kw">cov</span>(C1, R1)</span></code></pre></div>
+<pre><code>## [1] 23333,33</code></pre>
+<p>Note que a função covariância no R é calculada dividindo por <span class="math inline">\((n-1)\)</span> e não por <span class="math inline">\(n\)</span>.</p>
+</div>
+<div id="coeficiente-de-correlação" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Coeficiente de Correlação</h3>
+<p>É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro a sua interpretação. Ou seja,</p>
+<p><span class="math display">\[\begin{equation*}
+ corr(X,Y) \cong \rho_{xy} = \frac{cov(X,Y)}{dp(X) \times dp(Y)}
+\end{equation*}\]</span>
+onde
+<span class="math display">\[\begin{equation*}
+  -1 \leq \rho \leq +1
+\end{equation*}\]</span></p>
+<p>Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo a zero, significa que as duas variáveis analisadas não tem relação do tipo linear entre elas. Quando a o coeficiente de correlação é igual a -1 ou próximo de -1, tal fato indica que a existência de uma relação do tipo linear entre as duas vari
+áveis analisadas, sendo que as variações ocorrem no setido oposto. Ou seja, quando uma das variáveis aumenta de valor, a outra diminui. Quando o coeficiente de correlação é igual a +1 ou muito próximo de um positivo, tal fato indica que as duas variáveis tem uma relação do tipo linear, sendo que as variações em ambas as variáveis ocorrem no mesmo sentido. Ou seja, quando uma das variáveis aumenta de valor, a outra aumenta também. O que significa o coeficiente de correlação ser: i) exatamente igual a zero; ii) ser exatamente igual a -1 e; exatamente igual a +1?</p>
+<p><strong>Correlação no R</strong></p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="estatística-descritiva.html#cb81-1"></a>medC1 &lt;-<span class="st"> </span><span class="kw">sum</span>(C1)<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb81-2"><a href="estatística-descritiva.html#cb81-2"></a>medR1 &lt;-<span class="st"> </span><span class="kw">sum</span>(R1)<span class="op">/</span><span class="kw">length</span>(R1)</span>
+<span id="cb81-3"><a href="estatística-descritiva.html#cb81-3"></a>varC1 &lt;-<span class="st"> </span>(<span class="kw">sum</span>((C1 <span class="op">-</span><span class="st"> </span>medC1)<span class="op">^</span><span class="dv">2</span>))<span class="op">/</span><span class="kw">length</span>(C1)</span>
+<span id="cb81-4"><a href="estatística-descritiva.html#cb81-4"></a>varC1</span></code></pre></div>
+<pre><code>## [1] 12500</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="estatística-descritiva.html#cb83-1"></a>varR1 &lt;-<span class="st"> </span>(<span class="kw">sum</span>((R1 <span class="op">-</span><span class="st"> </span>medR1)<span class="op">^</span><span class="dv">2</span>))<span class="op">/</span><span class="kw">length</span>(R1)</span>
+<span id="cb83-2"><a href="estatística-descritiva.html#cb83-2"></a>varR1</span></code></pre></div>
+<pre><code>## [1] 25000</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="estatística-descritiva.html#cb85-1"></a>dpC1 &lt;-<span class="st"> </span><span class="kw">abs</span>(<span class="kw">sqrt</span>(varC1))</span>
+<span id="cb85-2"><a href="estatística-descritiva.html#cb85-2"></a>dpR1 &lt;-<span class="st"> </span><span class="kw">abs</span>(<span class="kw">sqrt</span>(varR1))</span>
+<span id="cb85-3"><a href="estatística-descritiva.html#cb85-3"></a>corrC1R1 &lt;-<span class="st"> </span><span class="kw">round</span>(covC1R1<span class="op">/</span>(dpC1 <span class="op">*</span><span class="st"> </span>dpR1), <span class="dv">4</span>)</span>
+<span id="cb85-4"><a href="estatística-descritiva.html#cb85-4"></a>corrC1R1</span></code></pre></div>
+<pre><code>## [1] 0,9899</code></pre>
+<p>Ou simplesmente</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="estatística-descritiva.html#cb87-1"></a><span class="kw">round</span>(<span class="kw">cor</span>(C1, R1), <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0,9899</code></pre>
+
+</div>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-Morettin2013">
+<p>Morettin, Pedro A., and Wilton de O. Bussab. 2013. <em>Estatística Básica</em>. 8th ed. São Paulo: Saraiva.</p>
+</div>
+<div id="ref-Sartoris2013">
+<p>Sartoris, Alexandre. 2013. <em>Estatística e Introdução à Econometria</em>. 2nd ed. São Paulo: Saraiva.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sobre-o-autor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="revisão-de-literatura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EstatEcon.pdf", "EstatEcon.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

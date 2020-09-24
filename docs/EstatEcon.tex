@@ -845,7 +845,7 @@ segue abaixo.
 \hypertarget{medidas-de-dispersuxe3o}{%
 \chapter{Medidas de dispersão}\label{medidas-de-dispersuxe3o}}
 
-Este tópico está baseado no material de \citet{Sartoris2013}.
+Este tópico está baseado nos materiais de \citet{Sartoris2013} e \citet{Morettin2013}.
 
 Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
 seja, mais ou menos dispersos.
@@ -853,16 +853,17 @@ seja, mais ou menos dispersos.
 \hypertarget{variuxe2ncia}{%
 \section{Variância}\label{variuxe2ncia}}
 
-a variância é a somatória dos desvios em relação a média ao quadrado, dividido pelo
-número de observações. Ou seja,
+A variância é a somatória dos quadrados dos desvios em relação a média, dividido pelo número de observações. Note que a ideia inicial de dispersão foi a distância de cada valor do conjunto dados da variável em relação à media da variável. Mas como trata-se da distância relativa de cada valor em relação a média dos valores da variável, a sua somatória sempre resulta zero. Pois os desvios em relação a médias são compostos de valores positivos e negativos por estarem acima ou abaixo da média e assim a somatória das mesmas resulta zero, sempre. Portanto, a soma dos desvios não tem utilidade como medida de dispersão. Mas se a soma for dos quadrados dos desvios, isso é resolvido. Por isso, a variância é o valor médio dos quadrados dos desvios em relação à media. Ou seja,
 \begin{equation*}
   var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n}~\text{(população)}
 \end{equation*}
+
 \begin{equation*}
   var(X) =\sigma^2 = \frac{\sum_{i=1}^{n}(X_i - \overline{X})^2}{n-1}~\text{(amostra)}
 \end{equation*}
 
-Note que a variância da amostra é um estimador não viesado da variância populacional.
+Note que a variância da amostra é um estimador não viesado da variância populacional. A diferença entre variância populacional e variância amostral será apresentada mais adiante. A interpretação intuitiva da diferença entre ambas as variâncias é de que quando se trabalha com amostra, está tendo acesso a parte das informações e isso precisa ser penalizado. Note que esta penalização se dá para amostras pequenas pois se trata de subtrair uma unidade do número de observações.
+O que acontece com a diferença entre variância populacional e a variância amostral quando i) o número de observações torna-se muito grande, tipo bem maior que 30 e; ii) o número de observações tende ao infinito.
 
 \hypertarget{variuxe2ncia-no-r}{%
 \subsection{Variância no R}\label{variuxe2ncia-no-r}}
@@ -892,14 +893,19 @@ Aproveitando os dados de alturas de 30 pessoas:
 
 Note que a variância no R é a variância amostral, cujo denominador é \((n-1)\).
 
+Em termos práticos, a variância tem uma desvantagem: a unidade do seu resultado é o quadrado da unidade original da variável. Portanto, se a variável em questão é preço de uma mercadoria em Reais, a sua variância será Reais ao quadrado. Tal fato dificulta a sua interpretação. Por isso é apresentado o desvio padrão como medida de dispersão na sequência.
+
 \hypertarget{desvio-padruxe3o}{%
 \section{Desvio Padrão}\label{desvio-padruxe3o}}
 
 É a raiz quadrada da variância. No desvio padrão, denotado como \(d.p.(X)\) ou
 \(\sigma\), não tem o efeito do quadrado.
+
 \begin{equation*}
   d.p.(X) \cong \sigma = \sqrt{var(X)}
 \end{equation*}
+
+Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua variável original. Desta forma, o desvio padrão facilita a sua análise juntamente com as medidas de posição como a média aritmética simples, por exemplo.
 
 \hypertarget{desvio-padruxe3o-no-r}{%
 \subsection{Desvio Padrão no R}\label{desvio-padruxe3o-no-r}}
@@ -967,9 +973,8 @@ Economia & 3 & 9\tabularnewline
 Contabilidade & 2 & 4\tabularnewline
 Administração & 4 & 16\tabularnewline
 Matemática & 1 & 1\tabularnewline
---------------- & --------- & -----------\tabularnewline
-Somatória & 10 & 30\tabularnewline
-Média & 2,5 & 7,5\tabularnewline
+\textbf{Somatória} & \textbf{10} & \textbf{30}\tabularnewline
+\textbf{Média} & \textbf{2,5} & \textbf{7,5}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -1004,6 +1009,246 @@ Média & 2,5 & 7,5\tabularnewline
 \begin{verbatim}
 ## [1] 1,118
 \end{verbatim}
+
+\hypertarget{histograma}{%
+\section{Histograma}\label{histograma}}
+
+O histograma é uma ferramenta da estatística descritiva para mostrar visualmente, de forma bastante simples, como os valores da variável estão distribuídos. Mas também permite ter uma ideia visual da dispersão do conjunto de valores. Portanto, não se trata de uma medida de dispersão. Mas deveria ser a primeira coisa a se obter das variáveis de interesse em um trabalho de pesquisa.
+
+Considere a altura de 30 pessoas medidas em centímetros.
+
+Tabela 2.1 - Altura de 30 pessoas em cm.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\endhead
+159 & 168 & 172 & 175 & 181\tabularnewline
+161 & 168 & 173 & 176 & 183\tabularnewline
+162 & 169 & 173 & 177 & 185\tabularnewline
+164 & 170 & 174 & 178 & 190\tabularnewline
+166 & 171 & 174 & 179 & 194\tabularnewline
+167 & 171 & 174 & 180 & 201\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{usando-o-r-para-construir-o-histograma-do-exemplo-numuxe9rico}{%
+\subsection{Usando o R para construir o histograma do exemplo numérico}\label{usando-o-r-para-construir-o-histograma-do-exemplo-numuxe9rico}}
+
+Os dados são inputados na variável X.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{159}\NormalTok{, }\DecValTok{161}\NormalTok{, }\DecValTok{162}\NormalTok{, }\DecValTok{164}\NormalTok{, }\DecValTok{166}\NormalTok{, }\DecValTok{167}\NormalTok{, }\DecValTok{168}\NormalTok{, }\DecValTok{168}\NormalTok{, }\DecValTok{169}\NormalTok{, }
+    \DecValTok{170}\NormalTok{, }\DecValTok{171}\NormalTok{, }\DecValTok{171}\NormalTok{, }\DecValTok{172}\NormalTok{, }\DecValTok{173}\NormalTok{, }\DecValTok{173}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DecValTok{175}\NormalTok{, }
+    \DecValTok{176}\NormalTok{, }\DecValTok{177}\NormalTok{, }\DecValTok{178}\NormalTok{, }\DecValTok{179}\NormalTok{, }\DecValTok{180}\NormalTok{, }\DecValTok{181}\NormalTok{, }\DecValTok{183}\NormalTok{, }\DecValTok{185}\NormalTok{, }\DecValTok{190}\NormalTok{, }\DecValTok{194}\NormalTok{, }
+    \DecValTok{201}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(X)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 159 161 162 164 166 167
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{obsX <-}\StringTok{ }\KeywordTok{length}\NormalTok{(X)}
+\NormalTok{obsX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 30
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{faixaX <-}\StringTok{ }\KeywordTok{range}\NormalTok{(X)}
+\NormalTok{faixaX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 159 201
+\end{verbatim}
+
+\hypertarget{usando-a-funuxe7uxe3o-hist-do-r-para-elaborar-o-histograma-de-altura}{%
+\subsection{Usando a função hist do R para elaborar o histograma de altura}\label{usando-a-funuxe7uxe3o-hist-do-r-para-elaborar-o-histograma-de-altura}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grafico1 <-}\StringTok{ }\KeywordTok{hist}\NormalTok{( }
+\NormalTok{                  X, }
+                  \DataTypeTok{main=}\StringTok{"Histograma da Altura"}\NormalTok{, }
+                  \DataTypeTok{xlab=}\StringTok{"cm"}\NormalTok{, }
+                  \DataTypeTok{ylab=}\StringTok{"frequência", }
+\StringTok{                  border="}\NormalTok{blue}\StringTok{", }
+\StringTok{                  col="}\NormalTok{green}\StringTok{", }
+\StringTok{                  xlim=c(150,210), }
+\StringTok{                  las=1, }
+\StringTok{                  breaks=5, }
+\StringTok{                  right=FALSE }
+\StringTok{                ) }
+
+\StringTok{grafico1}
+\end{Highlighting}
+\end{Shaded}
+
+onde
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{main=``Histograma da Altura de 30 pessoas''} titulo do histograma
+\item
+  \textbf{xlab=``cm''} rotulo do eixo horizontal
+\item
+  \textbf{ylab=``frequência''} rotulo do eixo vertical
+\item
+  \textbf{border=``blue''} cor do contorno das barras
+\item
+  \textbf{col=``green''} cor das barras
+\item
+  \textbf{xlim=c(150,210)} limite inferior e superior
+\item
+  \textbf{las=1} rotacao do rotulo dos numeros do eixo vertical
+\item
+  \textbf{breaks=5} número de classes
+\item
+  \textbf{right=FALSE} define intervalo do tipo {[}a,b), se FALSE, e (a,b{]}, se TRUE.
+\end{itemize}
+
+\hypertarget{obtendo-o-histograma}{%
+\subsection{Obtendo o histograma}\label{obtendo-o-histograma}}
+
+\includegraphics{EstatEcon_files/figure-latex/histograma12-1.pdf}
+
+O pacote \textbf{ggplot2} gera gráficos e histogramas melhor elaborados.
+
+\hypertarget{obtendo-o-histograma-usando-uma-forma-alternativa}{%
+\section{Obtendo o histograma usando uma forma alternativa}\label{obtendo-o-histograma-usando-uma-forma-alternativa}}
+
+Agrupando essas pessoas em \textbf{classes} de 10 cm temos:
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+classes & frequência\tabularnewline
+\midrule
+\endhead
+{[}150 ; 160{[} & 1\tabularnewline
+{[}160 ; 170{[} & 8\tabularnewline
+{[}170 ; 180{[} & 14\tabularnewline
+{[}180 ; 190{[} & 4\tabularnewline
+{[}190 ; 200{[} & 2\tabularnewline
+{[}200 ; 210{[} & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fazendo isso no R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nobs <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{30}\NormalTok{)}
+\NormalTok{dataX <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(nobs, X))}
+\CommentTok{# transformando em data frame}
+\KeywordTok{tail}\NormalTok{(dataX)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    nobs   X
+## 25   25 181
+## 26   26 183
+## 27   27 185
+## 28   28 190
+## 29   29 194
+## 30   30 201
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mostrando as seis últimas observações}
+\NormalTok{quebras <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{150}\NormalTok{, }\DecValTok{210}\NormalTok{, }\DataTypeTok{by =} \DecValTok{10}\NormalTok{)}
+\CommentTok{# definindo os intervalos}
+\NormalTok{quebras}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 150 160 170 180 190 200 210
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dataX.cut <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(dataX}\OperatorTok{$}\NormalTok{X, quebras, }\DataTypeTok{right =} \OtherTok{FALSE}\NormalTok{)}
+\CommentTok{# construindo as classes fechado a esq e aberto a}
+\CommentTok{# direita}
+\NormalTok{dataX.freq <-}\StringTok{ }\KeywordTok{table}\NormalTok{(dataX.cut)}
+\CommentTok{# obtendo a frequência para cada classe.}
+\NormalTok{dataXfreq <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(dataX.freq)}
+\CommentTok{# colocando os dados em colunas}
+\NormalTok{dataXfreq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           dataX.freq
+## [150,160)          1
+## [160,170)          8
+## [170,180)         14
+## [180,190)          4
+## [190,200)          2
+## [200,210)          1
+\end{verbatim}
+
+\hypertarget{diagrama-de-caixa-boxplot}{%
+\section{Diagrama de caixa (Boxplot)}\label{diagrama-de-caixa-boxplot}}
+
+O texto sobre o diagrama de caixa foi baseado em \citet{Morettin2013}.
+
+Boxplot ou caixa de bigode também é uma ferramenta da estatística descritva que permite visualizar a dispersão dos valores da variável em análise. O que define o diagrama de caixa são os quartis. A parte inferior e superior da caixa, são respectivamente o primeiro quartil (\(Q_1\)) e o terceiro quartil (\(Q_3\)). A linha que corta da caixa é a mediana ou o segundo quartil (\(Q_2\)). Os bigodes que são as linhas que se estendem a partir da caixa, são calculado com base na amplitude interquartil (\(AIQ\)). A amplitude interquartil é a diferença entre os valores do terceiro e do primeiro quartis. Ou seja,
+
+\begin{equation*}
+  AIQ = Q_3 - Q_1
+\end{equation*}
+
+O bigode inferior denominado \(LI\) é calculado subtraindo \(1,5\times AIQ\) do valor do primeiro quartil \(Q_1\). Ou seja,
+
+\begin{equation*}
+  LI = Q_1 - 1,5 \times AIQ
+\end{equation*}
+
+O bigode superior, denominado \(LS\), é calculado somando \(1,5\times AIQ\) ao valor da terceiro quartil \(Q_3\). Ou seja,
+
+\begin{equation*}
+  LS = Q_1 + 1,5 \times AIQ
+\end{equation*}
+
+Os valores que forem menor que o \(LI\) ou maior que o \(LS\) são denominados valores discrepantes oui \emph{outliers}. Os valores discrepantes, quando existentes, são colocados separadamente no diagrama de caixa mantendo a distancia relativa do limite inferior ou do limite superior.
+
+Toma-se o mesmo exemplo da altura de 30 pessoas para apresentar o boxplot.
+
+O código seria:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(X, }\DataTypeTok{data =}\NormalTok{ dataX, }\DataTypeTok{main =} \StringTok{"Diagrama de Caixa"}\NormalTok{, }
+    \DataTypeTok{ylab =} \StringTok{"cm"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"altura de 30 pessoas"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+e o resultado segue abaixo.
+
+\includegraphics{EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf}
+
+\hypertarget{medidas-de-relauxe7uxe3o-linear-entre-duas-variuxe1veis}{%
+\chapter{Medidas de relação linear entre duas variáveis}\label{medidas-de-relauxe7uxe3o-linear-entre-duas-variuxe1veis}}
+
+Este assunto tem como base o material de \citet{Sartoris2013}.
+
+Parece um pouco estranho incluir esse tópico logo depois das medidas de dispersão. Mas a variância é um caso especial da covariância que é a primeira medida de relação linear entre duas variáveis.
+
+O coeficiente de correlação utiliza a covariância e o desvio padrão para resolver o problema de interpretação do resultado da covariância.
 
 \hypertarget{covariuxe2ncia}{%
 \section{Covariância}\label{covariuxe2ncia}}
@@ -1045,9 +1290,8 @@ Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
 2 & 700 & 1.100 & 770.000\tabularnewline
 3 & 800 & 1.300 & 1.040.000\tabularnewline
 4 & 900 & 1.400 & 1.260.000\tabularnewline
------------- & -------------- & -------------- & -------------\tabularnewline
-Somatória & 3.000 & 4.800 & 3.670.000\tabularnewline
-Média & 750 & 1.200 & 917.500\tabularnewline
+\textbf{Somatória} & \textbf{3.000} & \textbf{4.800} & \textbf{3.670.000}\tabularnewline
+\textbf{Média} & \textbf{750} & \textbf{1.200} & \textbf{917.500}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -1083,9 +1327,9 @@ Média & 750 & 1.200 & 917.500\tabularnewline
 Note que a função covariância no R é calculada dividindo por \((n-1)\) e não por \(n\).
 
 \hypertarget{coeficiente-de-correlauxe7uxe3o}{%
-\subsection{Coeficiente de Correlação}\label{coeficiente-de-correlauxe7uxe3o}}
+\section{Coeficiente de Correlação}\label{coeficiente-de-correlauxe7uxe3o}}
 
-É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro de interpretar. Ou seja,
+É obtido dividindo a covariância pelos desvios padrões das variáveis, retirando-se o efeito dos valores de cada variável. Como as unidades das variáveis se cancelam matematicamente, o coeficiente de correlação é um número puro que varia entre -1 e +1. Essa característica o torna mais fácil e claro a sua interpretação. Ou seja,
 
 \begin{equation*}
  corr(X,Y) \cong \rho_{xy} = \frac{cov(X,Y)}{dp(X) \times dp(Y)}

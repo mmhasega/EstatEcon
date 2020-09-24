@@ -1,7 +1,27 @@
-# Aplicações
+# Variável Aleatória e Distribuição
 
-Some _significant_ applications are demonstrated in this chapter.
+## Esperança matemática
 
-## Exemplo um
+## Variável Aleatória
 
-## Examplo dois
+## Distribuição
+
+## Variável Aleatória Discreta
+
+## Distribuição Uniforme
+
+## Distribuição de Bernoulli
+
+## Distribuição Binomial
+
+## Distribuição de Poisson
+
+## Variável Aleatória Contínua
+
+## Distribuição Normal
+
+## Teorema de Tchebichev
+
+## Distribuição Estatística Conjunta para Variável aleatória Discreta
+
+## Distribuição Estatística Conjunta para Variável Aleatória Contínua

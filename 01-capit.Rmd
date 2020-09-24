@@ -428,10 +428,14 @@ print(moda1)
 
 ##  Medidas de dispersão
 
-Este tópico está baseado nos materiais de @Sartoris2013 e @Morettin2013.
+Este tópico está baseado nos materiais de@Hoffmann2006, @Morettin2013 e @Sartoris2013.
 
 Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
 seja, mais ou menos dispersos.
+
+### Amplitude
+
+A amplitude de um conjunto de valores é a diferença entre o maior elemento e o menor elemento desse conjunto.
 
 ### Variância
 
@@ -538,6 +542,10 @@ varX3
 dpX3 <- round(sqrt(varX3),4)
 dpX3
 ```
+
+### Desvio Absoluto Médio
+
+### Diferença Média
 
 ### Histograma
 

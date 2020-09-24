@@ -1,4 +1,21 @@
-# Revisão de Literatura
+# Medidas de desigualdade
 
-Aqui o estado da arte mundo afora.
+## Príncipio de Pigou-Dalton
+
+## Transferências Regressivas
+
+## Curva de Lorenz
+
+## Índice Gini
+
+## Redundância
+
+## Índice de Theil
+
+### Índice T de Theil
+
+### Índice de L de Theil
+
+## Variância dos Logaritmos
+
 

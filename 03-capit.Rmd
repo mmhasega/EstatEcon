@@ -1,3 +1,17 @@
-# Metodologia
+# Números-Índices
 
-We describe our methods in this chapter.
+## Preços Relativos
+
+## Índices Simples de Preços Agregados
+
+## Média Aritmética dos Preços Relativos
+
+## Índice de Preços de Laspeyres
+
+## Índice de Preços de Paasche
+
+## Índice de Preços de Fischer 
+
+## Índice de Preços de Marshall-Edgeworth
+
+## Deflacionamento

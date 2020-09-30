@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-09-29" />
+<meta name="date" content="2020-09-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -225,9 +225,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="medidas-de-desigualdade" class="section level1">
 <h1><span class="header-section-number">CAPÍTULO 2</span> Medidas de desigualdade</h1>
-<p>O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span></p>
+<p>O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2016" role="doc-biblioref">2016</a>)</span></p>
 <div id="príncipio-de-pigou-dalton" class="section level2">
 <h2><span class="header-section-number">2.1</span> Príncipio de Pigou-Dalton</h2>
+</div>
+<div id="transferências-regressivas" class="section level2">
+<h2><span class="header-section-number">2.2</span> Transferências Regressivas</h2>
+</div>
+<div id="curva-de-lorenz" class="section level2">
+<h2><span class="header-section-number">2.3</span> Curva de Lorenz</h2>
 <table>
 <caption><span id="tab:pessoasocupadas">TABELA 2.1: </span> Distribuição de pessoas ocupadas conforme renda obtida na atividade exercida no Brasil, de acordo com a PNAD 2003</caption>
 <colgroup>
@@ -313,13 +319,34 @@ da renda
 </tr>
 </tbody>
 </table>
-<p>Considere os dados da tabela <a href="medidas-de-desigualdade.html#tab:pessoasocupadas">2.1</a></p>
+<p>Considere os dados da tabela <a href="medidas-de-desigualdade.html#tab:pessoasocupadas">2.1</a>. Na coluna de porcentagem acumulada podemos observar que 70% da população possui 29% da renda. Os percentuais acumlados da população <span class="math inline">\(p\)</span> e da renda <span class="math inline">\(\Phi\)</span> formam um plano cartesinao <span class="math inline">\((p,\Phi)\)</span> originando a Cuirva de Lorenz.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="medidas-de-desigualdade.html#cb89-1"></a><span class="kw">library</span>(ineq)</span>
+<span id="cb89-2"><a href="medidas-de-desigualdade.html#cb89-2"></a><span class="co"># usando os valores do exemplo em porcentagem mesmo</span></span>
+<span id="cb89-3"><a href="medidas-de-desigualdade.html#cb89-3"></a>p &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb89-4"><a href="medidas-de-desigualdade.html#cb89-4"></a>r &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">10</span>, <span class="dv">16</span>, <span class="dv">13</span>, <span class="dv">19</span>, <span class="dv">13</span>)</span>
+<span id="cb89-5"><a href="medidas-de-desigualdade.html#cb89-5"></a></span>
+<span id="cb89-6"><a href="medidas-de-desigualdade.html#cb89-6"></a><span class="co"># calcula o mínimo da curva de Lorenz</span></span>
+<span id="cb89-7"><a href="medidas-de-desigualdade.html#cb89-7"></a>Lc.min &lt;-<span class="st"> </span><span class="kw">Lc</span>(r, <span class="dt">n =</span> p)</span>
+<span id="cb89-8"><a href="medidas-de-desigualdade.html#cb89-8"></a><span class="co"># Desenha a curva de Lorenz em um gráfico</span></span>
+<span id="cb89-9"><a href="medidas-de-desigualdade.html#cb89-9"></a><span class="kw">plot</span>(Lc.min)</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="EstatEcon_files/figure-html/unnamed-chunk-1-1.png" alt="Curva de Lorenz" width="384" />
+<p class="caption">
+FIGURA 2.1: Curva de Lorenz
+</p>
 </div>
-<div id="transferências-regressivas" class="section level2">
-<h2><span class="header-section-number">2.2</span> Transferências Regressivas</h2>
+<p>Considerando a curva de Lorenz abaixo que é basicamente a obtida pelo R, mas com algumas indicações, é possível obter algumas definições.</p>
+<div class="figure">
+<img src="lorenz3.png" alt="" />
+<p class="caption">A curva de Lorenz com algumas indicações</p>
 </div>
-<div id="curva-de-lorenz" class="section level2">
-<h2><span class="header-section-number">2.3</span> Curva de Lorenz</h2>
+<p>A área que corresponde a letra <span class="math inline">\(a\)</span> é denominada área de desigualdade. o seguimento de retas <span class="math inline">\(\overline{AB}\)</span> é chamado de <em>linha de perfeita igualdade</em> onde <span class="math inline">\(p=\Phi\)</span> e a área de de desigualdade é zero.</p>
+<p>Analisando o casos de máxima desigualdade:</p>
+<ul>
+<li>excluindo-se o fato de renda negativa, considere que apenas um de <span class="math inline">\(n\)</span> indíviduos receba toda a renda e os demais <span class="math inline">\(n-1\)</span> indivíduos recebam zero de renda.</li>
+<li>Neste caso a pocentagem de renda é zero até o ponto <span class="math inline">\(\dfrac{n-1}{n}\)</span> no eixo horizontal, tornando-se <span class="math inline">\(\Phi = 1\)</span> ao se incluir o último indíviduo.</li>
+<li>Neste caso, a Curva de Lorenz é dada pela poligonal <span class="math inline">\(\widehat{ABC}\)</span> e a área de desigualdade máxima é o triângulo <span class="math inline">\(ABC\)</span>.</li>
+</ul>
 </div>
 <div id="índice-gini" class="section level2">
 <h2><span class="header-section-number">2.4</span> Índice Gini</h2>
@@ -343,8 +370,8 @@ da renda
 </div>
 <h3>Referências</h3>
 <div id="refs" class="references">
-<div id="ref-Hoffmann2006">
-<p>Hoffmann, Rodolfo. 2006. <em>Estatística para Economistas</em>. 4th ed. São Paulo: Cengage Learning.</p>
+<div id="ref-Hoffmann2016">
+<p>Hoffmann, Rodolfo. 2016. <em>Análise de Regressão - Uma introdução à Econometria</em>. São Paulo: Livro Aberto da USP.</p>
 </div>
 </div>
             </section>

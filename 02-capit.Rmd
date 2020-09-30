@@ -1,6 +1,41 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Medidas de desigualdade
 
+O assunto sobre medidas de desigualdades está baseada na sua totalidade no capítulo 17 de @Hoffmann2006
+
 ## Príncipio de Pigou-Dalton
+
+
+Table: (\#tab:pessoasocupadas) Distribuição de pessoas ocupadas conforme renda obtida na atividade exercida no Brasil, de acordo com a PNAD 2003 
+
+-------------------------------------------------------------------------
+            % no estrato    % no estrato   % acumulada    % acumulada     
+  estrato   da população      da renda     da população   da renda        
+                 (%)             (%)         (100$p$)     (100$\Phi$)     
+--------- ---------------- -------------- -------------- ---------------- 
+      I         30                7             30                 7       
+
+     II         20                9             50                16       
+
+    III         20               13             70                29       
+
+     IV         10               10             80                39       
+
+      V         10               16             90                55       
+
+     VI          5               13             95                68       
+
+    VII          4               19             99                87       
+
+   VIII          1               13            100               100       
+-------------------------------------------------------------------------
+
+Considere os dados da tabela \@ref(tab:pessoasocupadas)
+
 
 ## Transferências Regressivas
 

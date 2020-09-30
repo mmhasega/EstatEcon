@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-09-24}
+\date{2020-09-29}
 
 \begin{document}
 \maketitle
@@ -1376,8 +1376,149 @@ Ou simplesmente
 \hypertarget{medidas-de-desigualdade}{%
 \chapter{Medidas de desigualdade}\label{medidas-de-desigualdade}}
 
+O assunto sobre medidas de desigualdades está baseada na sua totalidade no capítulo 17 de \citet{Hoffmann2006}
+
 \hypertarget{pruxedncipio-de-pigou-dalton}{%
 \section{Príncipio de Pigou-Dalton}\label{pruxedncipio-de-pigou-dalton}}
+
+\begin{longtable}[]{@{}rcccc@{}}
+\caption{\label{tab:pessoasocupadas} Distribuição de pessoas ocupadas conforme renda obtida na atividade exercida no Brasil, de acordo com a PNAD 2003}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.11\columnwidth}\raggedleft
+estrato\strut
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\centering
+\% no estrato
+da população
+(\%)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\% no estrato
+da renda
+(\%)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\% acumulada
+da população
+(100\(p\))\strut
+\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\centering
+\% acumulada
+da renda
+(100\(\Phi\))\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.11\columnwidth}\raggedleft
+estrato\strut
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\centering
+\% no estrato
+da população
+(\%)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\% no estrato
+da renda
+(\%)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\% acumulada
+da população
+(100\(p\))\strut
+\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\centering
+\% acumulada
+da renda
+(100\(\Phi\))\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+I\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+7\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+II\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+16\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+III\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+70\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+29\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+IV\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+80\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+39\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+16\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+90\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+55\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+VI\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+95\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+68\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+VII\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+99\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+87\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\raggedleft
+VIII\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
+100\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Considere os dados da tabela \ref{tab:pessoasocupadas}
 
 \hypertarget{transferuxeancias-regressivas}{%
 \section{Transferências Regressivas}\label{transferuxeancias-regressivas}}

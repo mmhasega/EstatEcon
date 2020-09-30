@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.23)  24 SEP 2020 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.29)  29 SEP 2020 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **EstatEcon.tex
 (./EstatEcon.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-09-06> (/Users/macbook/Library/TinyTeX/texmf-dist/te
+L3 programming layer <2020-09-24> (/Users/macbook/Library/TinyTeX/texmf-dist/te
 x/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -159,7 +159,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.st
 y
@@ -510,11 +510,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box56
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty (/Us
 ers/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-09-06 L3 programming layer (loader) 
+Package: expl3 2020-09-24 L3 programming layer (loader) 
 
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex
 .def
-File: l3backend-pdftex.def 2020-09-11 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count302
 \l__pdf_internal_box=\box57
 ))
@@ -755,11 +755,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Cap\'{\i }tulo 2.
-[35] [36
 
-]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[35] [36]
 Cap\'{\i }tulo 3.
-[37] [38
+[37
+
+] [38
 
 ]
 Cap\'{\i }tulo 4.
@@ -767,7 +770,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{variuxe1vel-a
 leatuxf3ria}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1440 ...tória}\label{variuxe1vel-aleatuxf3ria}}
+l.1581 ...tória}\label{variuxe1vel-aleatuxf3ria}}
                                                   
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -781,25 +784,25 @@ Cap\'{\i }tulo 5.
 ] [42
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1482.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1623.
 [43]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1482.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1623.
 (./EstatEcon.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1482.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1482.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1623.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1623.
 
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: 7191FDFFA006BC048E5C09D419024038;7258.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1482.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1623.
  ) 
 Here is how much of TeX's memory you used:
- 17697 strings out of 482804
- 299186 string characters out of 5954287
- 576787 words of memory out of 5000000
- 32534 multiletter control sequences out of 15000+600000
+ 17708 strings out of 482803
+ 299427 string characters out of 5954256
+ 579816 words of memory out of 5000000
+ 32545 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  44i,8n,46p,903b,877s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -825,10 +828,10 @@ pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 ></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></
 Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Use
 rs/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on EstatEcon.pdf (43 pages, 406449 bytes).
+Output written on EstatEcon.pdf (43 pages, 407721 bytes).
 PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 599 compressed objects within 6 object streams
- 194 named destinations out of 1000 (max. 500000)
+ 678 PDF objects out of 1000 (max. 8388607)
+ 603 compressed objects within 7 object streams
+ 195 named destinations out of 1000 (max. 500000)
  323 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,7 +5,7 @@ output:
 ---
 # Medidas de desigualdade
 
-O assunto sobre medidas de desigualdades está baseada na sua totalidade no capítulo 17 de @Hoffmann2006
+O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de @Hoffmann2006
 
 ## Príncipio de Pigou-Dalton
 

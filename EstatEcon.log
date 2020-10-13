@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  12 OCT 2020 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  12 OCT 2020 22:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -753,7 +753,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Cap\'{\i }tulo 2.
 [35]
-<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=509, 262.9825pt x 248.93pt
+<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=508, 262.9825pt x 248.93pt
 >
 File: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>
@@ -773,7 +773,7 @@ Underfull \hbox (badness 3417) in paragraph at lines 1548--1550
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [36]
-<lorenz3.png, id=515, 1286.8075pt x 794.97pt>
+<lorenz3.png, id=514, 1286.8075pt x 794.97pt>
 File: lorenz3.png Graphic file (type png)
 <use lorenz3.png>
 Package pdftex.def Info: lorenz3.png  used on input line 1559.
@@ -784,11 +784,11 @@ ed, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.1591 
-        <./lorenz3.png>] [39] [40
-
-]
+        <./lorenz3.png>] [39] [40]
 Cap\'{\i }tulo 3.
-[41] [42
+[41
+
+] [42
 
 ]
 Cap\'{\i }tulo 4.
@@ -796,7 +796,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{variuxe1vel-a
 leatuxf3ria}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1652 ...tória}\label{variuxe1vel-aleatuxf3ria}}
+l.1692 ...tória}\label{variuxe1vel-aleatuxf3ria}}
                                                   
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -820,10 +820,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17357 strings out of 481866
- 290095 string characters out of 5930245
- 604195 words of memory out of 5000000
- 33119 multiletter control sequences out of 15000+600000
+ 17355 strings out of 481866
+ 290060 string characters out of 5930245
+ 604248 words of memory out of 5000000
+ 33118 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  60i,8n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -851,10 +851,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></User
 s/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/m
 acbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/mac
 book/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (47 pages, 475051 bytes).
+Output written on EstatEcon.pdf (47 pages, 475969 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
- 203 named destinations out of 1000 (max. 500000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 646 compressed objects within 7 object streams
+ 202 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

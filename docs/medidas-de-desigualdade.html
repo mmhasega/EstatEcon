@@ -226,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="medidas-de-desigualdade" class="section level1">
 <h1><span class="header-section-number">CAPÍTULO 2</span> Medidas de desigualdade</h1>
-<p>O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2016" role="doc-biblioref">2016</a>)</span></p>
+<p>O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span></p>
 <div id="príncipio-de-pigou-dalton" class="section level2">
 <h2><span class="header-section-number">2.1</span> Príncipio de Pigou-Dalton</h2>
 <p>A condição de Pigou-Dalton define que as medidas de desigualdades devem ter seus valores aumentados quando há transferência regressivas de renda.
@@ -364,12 +364,41 @@ FIGURA 2.2: A curva de Lorenz com algumas indicações
 <p>Considere os dados da tabela <a href="medidas-de-desigualdade.html#tab:pessoasocupadas">2.1</a>. Seja <span class="math inline">\(p\)</span> o valor da proporção acumulada da população até certo estrato e seja <span class="math inline">\(\Phi\)</span> o valor da correspondente proporção acumulada da renda. Os pares de valores <span class="math inline">\((p,\Phi)\)</span>, para os diversos estratos, definem pontos em um sistema de eixos cartesianos como aparece na figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>. Estes pontos estão sobre a curva de Lonrez, que mostra como a porporção acumulada da renda <span class="math inline">\((\Phi)\)</span> varia em função da proporção acumulada da população <span class="math inline">\((p)\)</span>, com as pessoas ordenadas de acordo com valores crescentes da renda. A área correspondente a <span class="math inline">\(a\)</span> que está entre a reta AB e a curva de Lorenz na figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>, é denominada <strong>área de desigualdade</strong>.</p>
 <p>Para entender como ocorre a variação desta área de desigualdade, a área <span class="math inline">\(a\)</span>, primeiro considere uma situação de distribuição de renda com perfeita igualdade, ou seja, uma população em que todos recebem a mesma renda.Nesta situação, a uma população <span class="math inline">\(p\)</span> da população corresponde uma igual proporção <span class="math inline">\(\Phi\)</span> da renda total, ou seja, <span class="math inline">\(\Phi = p\)</span>. Portanto, a curva de Lorenz dessa distribuição coincide com a reta AB da figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>, denominado, por isso, de <strong>linha de perfeita igualdade</strong>. Neste caso a área de desigualdade é igual a zero.</p>
 <p>Considere agora uma outra situação, uma distribuição de renda com o máximo de desigualdade. Considerando que <strong>não</strong> existe a possibilidade de renda negativa, esse seria o caso de uma população com <span class="math inline">\(n\)</span> pessoas, em que uma delas recebe toda a renda e as <span class="math inline">\(n-1\)</span> restante receba zero de renda. Nesta situação, a proporção acumulada da renda é igual a zero até o ponto do eixo horizontal (abcissa) <span class="math inline">\(\frac{(n-1)}{n}\)</span>, tornando-se <span class="math inline">\(\Phi = 1\)</span> quando se se inclui a pessoa que recebe toda a renda. Neste caso, a curva de Lorenz passa a ser a poligonal ABC da figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>. Que é numericamente igual a 0,5 (Por quê?).</p>
-<p>Por definição, o <strong>índice de Gini (G)</strong> é uma relação entre a área de desigualdade, indicada por <span class="math inline">\(a\)</span> que aqui passaremos a denominar de <span class="math inline">\(\alpha\)</span>, e a área do triângulo ABC que é numericamente igual a 0,5, ou seja,</p>
+<p>Por definição, o <strong>índice de Gini (G)</strong> é uma relação entre a área de desigualdade, indicada por <span class="math inline">\(a\)</span> que passar a ser denominada de <span class="math inline">\(\alpha\)</span>, e a área do triângulo ABC que é numericamente igual a 0,5, ou seja,</p>
 <p><span class="math display" id="eq:Gini">\[
 G = \dfrac{\alpha}{0,5} = 2\alpha
 \tag{2.1}
 \]</span></p>
-<p>A fórmula <a href="medidas-de-desigualdade.html#eq:Gini">(2.1)</a> é uma das fórmulas de Gini que tem utilidade do ponto de vista teórico.</p>
+<p>A fórmula <a href="medidas-de-desigualdade.html#eq:Gini">(2.1)</a> é uma das fórmulas de Gini que tem utilidade do ponto de vista teórico.Uma vez que</p>
+<p><span class="math display">\[
+0 \leq \alpha \leq 0,5
+\]</span></p>
+<p>tem se que</p>
+<p><span class="math display">\[
+0 \leq G \leq 1
+\]</span></p>
+<p>Ou seja de que o índice de Gini varia entre entre zero, ausência de desigualdade, e um, máxima desigualdade.Adicionalmente, o índice de Gini é um número adimensional.</p>
+<p>Uma fórmula alternativa e mais prática do ponto de vista do cálculo do índice de Gini pode ser obitda considerando-se uma distribuição discreta.</p>
+<p>Seja uma variável aleatória discreta <span class="math inline">\(X_i\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>, cujos valores estão em ordem crescente</p>
+<p><span class="math display">\[
+X_1\leq X_2 \leq \ldots \leq X_{n-1} \leq X_n
+\]</span>
+admitindo-se que os n valores são igualmente prováveis.</p>
+<p>a proporção acumulada do número de elementos,m até o i-ésimo elemento, é</p>
+<p><span class="math display" id="eq:proporcao">\[
+p_i = \dfrac{i}{n},~\text{para}~i =1,\ldots, n
+\tag{2.2}
+\]</span></p>
+<p>A correspondente proporção acumulada de <span class="math inline">\(X\)</span>, até o i-ésimo elemento é</p>
+<p><span class="math display" id="eq:proporcaorendaacumulada">\[
+\Phi_i = \dfrac{\sum_{j=1}^{i}X_j}{\sum_{j=1}^{n}X_j} = \dfrac{1}{n\mu}\sum_{j=1}^{i}X_j
+\tag{2.3}
+\]</span>
+onde
+<span class="math display">\[
+\mu = \dfrac{1}{n}\sum_{j=1}^{n}X_j
+\]</span>
+Se <span class="math inline">\(X\)</span> representa a renda individual e se <span class="math inline">\(X_j &lt; X_{j+1}\)</span>, <span class="math inline">\(\Phi_i\)</span> representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a <span class="math inline">\(X_i\)</span>. As expressões <a href="medidas-de-desigualdade.html#eq:proporcao">(2.2)</a> e <a href="medidas-de-desigualdade.html#eq:proporcaorendaacumulada">(2.3)</a> definem as coordenadas <span class="math inline">\((p_i,\Phi_i)\)</span> com <span class="math inline">\(i=1,\ldots, n\)</span> de <span class="math inline">\(n\)</span> pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas <span class="math inline">\((p_i,\Phi_i)\)</span>.</p>
 </div>
 <div id="redundância" class="section level2">
 <h2><span class="header-section-number">2.6</span> Redundância</h2>
@@ -390,8 +419,8 @@ G = \dfrac{\alpha}{0,5} = 2\alpha
 </div>
 <h3>Referências</h3>
 <div id="refs" class="references">
-<div id="ref-Hoffmann2016">
-<p>Hoffmann, Rodolfo. 2016. <em>Análise de Regressão - Uma introdução à Econometria</em>. São Paulo: Livro Aberto da USP.</p>
+<div id="ref-Hoffmann2006">
+<p>Hoffmann, Rodolfo. 2006. <em>Estatística para Economistas</em>. 4th ed. São Paulo: Cengage Learning.</p>
 </div>
 </div>
             </section>

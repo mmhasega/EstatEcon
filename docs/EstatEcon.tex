@@ -1376,7 +1376,7 @@ Ou simplesmente
 \hypertarget{medidas-de-desigualdade}{%
 \chapter{Medidas de desigualdade}\label{medidas-de-desigualdade}}
 
-O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de \citet{Hoffmann2016}
+O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de \citet{Hoffmann2006}
 
 \hypertarget{pruxedncipio-de-pigou-dalton}{%
 \section{Príncipio de Pigou-Dalton}\label{pruxedncipio-de-pigou-dalton}}
@@ -1591,14 +1591,54 @@ Para entender como ocorre a variação desta área de desigualdade, a área \(a\
 
 Considere agora uma outra situação, uma distribuição de renda com o máximo de desigualdade. Considerando que \textbf{não} existe a possibilidade de renda negativa, esse seria o caso de uma população com \(n\) pessoas, em que uma delas recebe toda a renda e as \(n-1\) restante receba zero de renda. Nesta situação, a proporção acumulada da renda é igual a zero até o ponto do eixo horizontal (abcissa) \(\frac{(n-1)}{n}\), tornando-se \(\Phi = 1\) quando se se inclui a pessoa que recebe toda a renda. Neste caso, a curva de Lorenz passa a ser a poligonal ABC da figura \ref{fig:CurvaLorenz}. Que é numericamente igual a 0,5 (Por quê?).
 
-Por definição, o \textbf{índice de Gini (G)} é uma relação entre a área de desigualdade, indicada por \(a\) que aqui passaremos a denominar de \(\alpha\), e a área do triângulo ABC que é numericamente igual a 0,5, ou seja,
+Por definição, o \textbf{índice de Gini (G)} é uma relação entre a área de desigualdade, indicada por \(a\) que passar a ser denominada de \(\alpha\), e a área do triângulo ABC que é numericamente igual a 0,5, ou seja,
 
 \[
 G = \dfrac{\alpha}{0,5} = 2\alpha
 \label{eq:Gini}
 \]
 
-A fórmula \eqref{eq:Gini} é uma das fórmulas de Gini que tem utilidade do ponto de vista teórico.
+A fórmula \eqref{eq:Gini} é uma das fórmulas de Gini que tem utilidade do ponto de vista teórico.Uma vez que
+
+\[
+0 \leq \alpha \leq 0,5
+\]
+
+tem se que
+
+\[
+0 \leq G \leq 1
+\]
+
+Ou seja de que o índice de Gini varia entre entre zero, ausência de desigualdade, e um, máxima desigualdade.Adicionalmente, o índice de Gini é um número adimensional.
+
+Uma fórmula alternativa e mais prática do ponto de vista do cálculo do índice de Gini pode ser obitda considerando-se uma distribuição discreta.
+
+Seja uma variável aleatória discreta \(X_i\) para \(i=1,\ldots,n\), cujos valores estão em ordem crescente
+
+\[
+X_1\leq X_2 \leq \ldots \leq X_{n-1} \leq X_n
+\]
+admitindo-se que os n valores são igualmente prováveis.
+
+a proporção acumulada do número de elementos,m até o i-ésimo elemento, é
+
+\[
+p_i = \dfrac{i}{n},~\text{para}~i =1,\ldots, n
+\label{eq:proporcao}
+\]
+
+A correspondente proporção acumulada de \(X\), até o i-ésimo elemento é
+
+\[
+\Phi_i = \dfrac{\sum_{j=1}^{i}X_j}{\sum_{j=1}^{n}X_j} = \dfrac{1}{n\mu}\sum_{j=1}^{i}X_j
+\label{eq:proporcaorendaacumulada}
+\]
+onde
+\[
+\mu = \dfrac{1}{n}\sum_{j=1}^{n}X_j
+\]
+Se \(X\) representa a renda individual e se \(X_j < X_{j+1}\), \(\Phi_i\) representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a \(X_i\). As expressões \eqref{eq:proporcao} e \eqref{eq:proporcaorendaacumulada} definem as coordenadas \((p_i,\Phi_i)\) com \(i=1,\ldots, n\) de \(n\) pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas \((p_i,\Phi_i)\).
 
 \hypertarget{redunduxe2ncia}{%
 \section{Redundância}\label{redunduxe2ncia}}

@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-09-30}
+\date{2020-10-12}
 
 \begin{document}
 \maketitle
@@ -1381,8 +1381,13 @@ O assunto sobre medidas de desigualdade está baseada na sua totalidade no capí
 \hypertarget{pruxedncipio-de-pigou-dalton}{%
 \section{Príncipio de Pigou-Dalton}\label{pruxedncipio-de-pigou-dalton}}
 
-\hypertarget{transferuxeancias-regressivas}{%
-\section{Transferências Regressivas}\label{transferuxeancias-regressivas}}
+A condição de Pigou-Dalton define que as medidas de desigualdades devem ter seus valores aumentados quando há transferência regressivas de renda.
+Para entender a condicção de Pigou-Dalton, considere uma população com apenas duas pessoas cujas rendas são \(X_1\) e \(X_2\). Então, \(\mu = \frac{X_1 + X_2}{2}\). No caso de perfeita igualdade, \(X_1 = X_2 = \mu\). No caso de uma distribuição com \(X_1 \neq X_2\), uma transferência de renda do mais pobre para o mais rico, mantendo a renda média constante, aumenta o grau de desigualdade.
+
+\hypertarget{transferuxeancia-regressiva}{%
+\section{Transferência Regressiva}\label{transferuxeancia-regressiva}}
+
+Essa tranferência de renda do mais pobre para o mais rico, mantida a renda média constante, é denominada como \textbf{transferência regressiva} de renda. Portanto, uma \textbf{transferência progressiva} é a transferência de renda do mais rico para o mais pobre.
 
 \hypertarget{curva-de-lorenz}{%
 \section{Curva de Lorenz}\label{curva-de-lorenz}}
@@ -1540,13 +1545,22 @@ Considere os dados da tabela \ref{tab:pessoasocupadas}. Na coluna de porcentagem
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{EstatEcon_files/figure-latex/unnamed-chunk-1-1.pdf}
-Considerando a curva de Lorenz abaixo que é basicamente a obtida pelo R, mas com algumas indicações, é possível obter algumas definições.
+\includegraphics{EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf}
+Considerando a curva de Lorenz, figura \ref{fig:CurvaLorenz}, que é basicamente a obtida pelo R, figura \ref{fig:CurvaLorenzR}, mas com algumas indicações, é possível obter algumas definições.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"lorenz3.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{figure}
-\centering
-\includegraphics{lorenz3.png}
-\caption{A curva de Lorenz com algumas indicações}
+
+{\centering \includegraphics[width=1\linewidth]{lorenz3} 
+
+}
+
+\caption{A curva de Lorenz com algumas indicações}\label{fig:CurvaLorenz}
 \end{figure}
 
 A área que corresponde a letra \(a\) é denominada área de desigualdade. o seguimento de retas \(\overline{AB}\) é chamado de \emph{linha de perfeita igualdade} onde \(p=\Phi\) e a área de de desigualdade é zero.
@@ -1563,8 +1577,28 @@ Analisando o casos de máxima desigualdade:
   Neste caso, a Curva de Lorenz é dada pela poligonal \(\widehat{ABC}\) e a área de desigualdade máxima é o triângulo \(ABC\).
 \end{itemize}
 
+\hypertarget{discrepuxe2ncia-muxe1xima}{%
+\section{Discrepância Máxima}\label{discrepuxe2ncia-muxe1xima}}
+
+Discrepância Máxima é a maior distância entre entre a linha AB e a curva de Lorenz da figura \ref{fig:CurvaLorenz}. Portanto, a discrepância máxima é a diferença máxima entre a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de exata igualdade dada pela reta AB e a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de desigualdade entre as pessoas dessa população.
+
 \hypertarget{uxedndice-gini}{%
 \section{Índice Gini}\label{uxedndice-gini}}
+
+Considere os dados da tabela \ref{tab:pessoasocupadas}. Seja \(p\) o valor da proporção acumulada da população até certo estrato e seja \(\Phi\) o valor da correspondente proporção acumulada da renda. Os pares de valores \((p,\Phi)\), para os diversos estratos, definem pontos em um sistema de eixos cartesianos como aparece na figura \ref{fig:CurvaLorenz}. Estes pontos estão sobre a curva de Lonrez, que mostra como a porporção acumulada da renda \((\Phi)\) varia em função da proporção acumulada da população \((p)\), com as pessoas ordenadas de acordo com valores crescentes da renda. A área correspondente a \(a\) que está entre a reta AB e a curva de Lorenz na figura \ref{fig:CurvaLorenz}, é denominada \textbf{área de desigualdade}.
+
+Para entender como ocorre a variação desta área de desigualdade, a área \(a\), primeiro considere uma situação de distribuição de renda com perfeita igualdade, ou seja, uma população em que todos recebem a mesma renda.Nesta situação, a uma população \(p\) da população corresponde uma igual proporção \(\Phi\) da renda total, ou seja, \(\Phi = p\). Portanto, a curva de Lorenz dessa distribuição coincide com a reta AB da figura \ref{fig:CurvaLorenz}, denominado, por isso, de \textbf{linha de perfeita igualdade}. Neste caso a área de desigualdade é igual a zero.
+
+Considere agora uma outra situação, uma distribuição de renda com o máximo de desigualdade. Considerando que \textbf{não} existe a possibilidade de renda negativa, esse seria o caso de uma população com \(n\) pessoas, em que uma delas recebe toda a renda e as \(n-1\) restante receba zero de renda. Nesta situação, a proporção acumulada da renda é igual a zero até o ponto do eixo horizontal (abcissa) \(\frac{(n-1)}{n}\), tornando-se \(\Phi = 1\) quando se se inclui a pessoa que recebe toda a renda. Neste caso, a curva de Lorenz passa a ser a poligonal ABC da figura \ref{fig:CurvaLorenz}. Que é numericamente igual a 0,5 (Por quê?).
+
+Por definição, o \textbf{índice de Gini (G)} é uma relação entre a área de desigualdade, indicada por \(a\) que aqui passaremos a denominar de \(\alpha\), e a área do triângulo ABC que é numericamente igual a 0,5, ou seja,
+
+\[
+G = \dfrac{\alpha}{0,5} = 2\alpha
+\label{eq:Gini}
+\]
+
+A fórmula \eqref{eq:Gini} é uma das fórmulas de Gini que tem utilidade do ponto de vista teórico.
 
 \hypertarget{redunduxe2ncia}{%
 \section{Redundância}\label{redunduxe2ncia}}

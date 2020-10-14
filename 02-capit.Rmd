@@ -118,20 +118,247 @@ a proporção acumulada do número de elementos,m até o i-ésimo elemento, é
 
 \[
 p_i = \dfrac{i}{n},~\text{para}~i =1,\ldots, n
-(\#eq:proporcao)
+(\#eq:ProporcaoDaPopulacao)
 \]
 
 A correspondente proporção acumulada de $X$, até o i-ésimo elemento é
 
 \[
 \Phi_i = \dfrac{\sum_{j=1}^{i}X_j}{\sum_{j=1}^{n}X_j} = \dfrac{1}{n\mu}\sum_{j=1}^{i}X_j
-(\#eq:proporcaorendaacumulada)
+(\#eq:ProporcaoDaRendaAcumulada)
 \]
 onde
 \[
 \mu = \dfrac{1}{n}\sum_{j=1}^{n}X_j
 \]
-Se $X$ representa a renda individual e se $X_j < X_{j+1}$, $\Phi_i$ representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a $X_i$. As expressões \@ref(eq:proporcao) e \@ref(eq:proporcaorendaacumulada) definem as coordenadas $(p_i,\Phi_i)$ com $i=1,\ldots, n$ de $n$ pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas $(p_i,\Phi_i)$.
+Se $X$ representa a renda individual e se $X_j < X_{j+1}$, $\Phi_i$ representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a $X_i$. As expressões \@ref(eq:ProporcaoDaPopulacao) e \@ref(eq:ProporcaoDaRendaAcumulada) definem as coordenadas $(p_i,\Phi_i)$ com $i=1,\ldots, n$ de $n$ pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas $(p_i,\Phi_i)$.
+
+Na sequência é apresentada de forma resumida como se calcula o índice de Gini a partir dos valores de $X_i$ para $i = 1,\ldots ,n$ da variável. Na figura \@ref(fig:CurvaLorenz) a soma das áreas $a$ e $b$ totaliza a área do polígono ABC que numericamente é igual a 0,5. 
+Portanto, $a = 0,5 - b$. Ou seja, colocando na notação mais elegante,
+
+\[
+\alpha = 0,5 - \beta.
+(\#eq:alfa)
+\]
+Substituindo \@ref(eq:alfa) em \@ref(eq:Gini) obtém-se
+
+\[
+G = \dfrac{0,5 - \beta}{0,5} = 1 - 2\beta.
+(\#eq:GiniEmTermosDeBeta)
+\]
+Note que a área abaixo da "curva" de Lorenz pode ser representada, de forma aproximada, como a soma das áreas de $n$ trapézios um do lado do outro. Desta forma, a área $b$ da figura \@ref(fig:CurvaLorenz), compreendida entre a poligonal de Lorenz e o eixo das abscissas, é obtida somando-se a área dos $n$ trapézios. Ou seja, a área do i-ésimo trapézio é
+\[
+S_i = \dfrac{\Phi_{i-1} + \Phi_i}{2}\times \dfrac{1}{n}
+(\#eq:AreaDoTrapezioSi)
+\]
+onde $\Phi_{i-1}$ é a base menor do i-ésimo trapézio; $\Phi_i$ é a base maior do i-ésimo trapézio e; $1/n$ é a altura do trapézio que corresponde a pessoa da população composta por n pessoas.
+
+Note que o valor de $\Phi_0 = 0$, ou seja, o valor de $\Phi_{i-1}$ para $i=1$. Com base na fórmula \@ref(eq:AreaDoTrapezioSi) é possível obter a área corresponde a $b$ na figura \@ref(fig:CurvaLorenz) ou $\beta$ nas notações matemáticas no texto
+
+\[
+\beta = \sum_{i=1}^{n}S_i = \dfrac{1}{2n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i)
+(\#eq:AreaDoBeta)
+\]
+Substituindo \@ref(eq:AreaDoBeta) em \@ref(eq:GiniEmTermosDeBeta), obtém-se
+
+\[
+G = 1 - \dfrac{1}{n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i)
+(\#eq:GiniEmTermosDePhi)
+\]
+Considerando a fórmula \@ref(eq:ProporcaoDaRendaAcumulada) e que $\Phi_0 = 0$, se obtém o índice de Gini em termos da variável $X_i$. Ou seja,
+
+\[
+G = 1 - \dfrac{1}{n^2\mu}[(2n-1)X_1 + (2n-3)X_2 + \dots + 3X_{n-1} + 1X_n]
+(\#eq:GiniEmTermosDeXi)
+\]
+
+Na parte sobre Estatística Descritiva foi apresentada a medida de dispersão chamada Diferença Absoluta Média que é dada por
+
+\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j|
+(\#eq:DiferencaAbsolutaMedia)
+\]
+
+Trabalhando algebricamente a fórmula \@ref(eq:DiferencaAbsolutaMedia)
+
+\[
+\Delta = 2\mu - \dfrac{2}{n^2}[(2n-1)X_1 + (2n-3)X_2 + \dots + 3X_{n-1} + 1X_n]
+(\#eq:DiferencaAbsolutaMediaModificada)
+\]
+
+Se dividir \@ref(eq:DiferencaAbsolutaMediaModificada) por $2\mu$ obtém a fórmula do índice de Gini em termos da medida de dispersão Diferença Absoluta Média
+
+\[
+G = \dfrac{\Delta}{2\mu}
+(\#eq:GiniEmTermosDeDiferencaAbsolutaMedia)
+\]
+
+Tratando-se da distribuição da renda em uma população, a relação \@ref(eq:GiniEmTermosDeDiferencaAbsolutaMedia) mostra que o índice de Gini, como medida de do grau de desigualdade, apresenta a vantagem de medir diretamente as diferenças de rendal, levando em consideração diferenças entre as rendas de **todos** os pares de pessoas.
+
+Como $\Delta$ é uma medida de dispersão da distribuição, a relação \@ref(eq:GiniEmTermosDeDiferencaAbsolutaMedia) mostra que o índice de Gini é uma medida de dispersão relativa. Assim, o conceito de desigualdade de uma distribuição se confunde com o conceito de dispersão relativa.
+
+Com um desenvolvimento algébrico de $\Delta$ é possível transformar a fórmula \@ref(eq:GiniEmTermosDeDiferencaAbsolutaMedia) em
+
+\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
+(\#eq:GiniFinal)
+\]
+A relação \@ref(eq:GiniFinal) mostra que, no cálculo do índice de Gini, cada valor de $X_i$ da variável aparece poderado por $i$. Ou seja, $X_i$ aparece poderada pelo respectivo número de ordem na sequência dos valores ordenados.
+
+**Exemplo numérico**
+
+Para aplicar a fórmula do índice de Gini, utiliza-se os dados apresentados na tabela abaixo, obtidos de @Hoffmann2006.
+
+Table: (\#tab:DadosdoExemploNumericoParaGini) Valores de $X_i$, $p_i$, $\Phi_i$ e $\Phi_{i-1} + \Phi_i$ para a população hipotética de 8 elementos
+
+-----------------------------------------------------------------------------------------------------
+    $i$           $p_i$         $X_i$       $\sum_{j=1}^{n}X_j$   $\Phi_i$   $\Phi_{i-1} + \Phi_i$
+ ----------- -------------- -------------- --------------------- ---------- -----------------------
+     1          0,125             1                 1               0,02              0,02          
+
+     2          0,250             1                 2               0,04              0,06          
+
+     3          0,375             1                 3               0,06              0,10          
+
+     4          0,500             2                 5               0,10              0,16          
+
+     5          0,625             4                 9               0,18              0,28          
+     
+     6          0,750             8                17               0,34              0,52          
+     
+     7          0,875            13                30               0,60              0,94          
+     
+     8          1,000            20                50               1,00              1,60          
+-----------------------------------------------------------------------------------------------------
+
+Com essas informações é possível calcular o índice de Gini, através de \@ref(eq:GiniEmTermosDePhi)
+
+\[
+G = 1 - \dfrac{1}{n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i);
+\]
+
+através de \@ref(eq:GiniEmTermosDeDiferencaAbsolutaMedia)
+
+\[
+G = \dfrac{\Delta}{2\mu},
+\]
+onde
+\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j|
+\]
+e
+\[
+\mu = \sum_{i=1}^{n}X_i;
+\]
+e através de \@ref(eq:GiniFinal)
+
+\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
+\]
+Usando \@ref(eq:GiniEmTermosDePhi), é necessário totalizar a coluna $\Phi_{i-1} + \Phi_i$ na tabela \@ref(tab:DadosdoExemploNumericoParaGini). Ou seja,
+
+```{r somandosomadephis}
+options(OutDec = ",")
+somaphis <- c(0.02, 0.06, 0.1, 0.16, 0.28, 0.52, 0.94, 1.60)
+somasomaphis <- sum(somaphis)
+somasomaphis
+```
+
+\[
+\sum_{i+1}^{8} (\Phi_{i-1} + \Phi_i) = `r somasomaphis`
+\]
+
+Portanto
+```{r ginicomphis, echo=TRUE}
+giniphis <- 1 - 1/length(somaphis)*somasomaphis
+giniphis
+```
+
+\[
+G = 1 - \dfrac{1}{8}\times `r somasomaphis` = `r giniphis`
+\]
+
+Para aplicar a fórmula \@ref(eq:GiniEmTermosDeDiferencaAbsolutaMedia) que é a fórmula do índice de Gini em termos de diferença absoluta média, $\Delta$, é necessário calcular a diferença absoluta média com base nos dados de $X_i$ da tabela \@ref(tab:DadosdoExemploNumericoParaGini).
+
+```{r duplasomadiferencaabsoluta}
+xi <- c(1,1,1,2,4,8,13,20)
+
+XC <- matrix(xi,  nrow = length(xi), ncol = length(xi), byrow = FALSE)
+XC
+
+XL <- matrix(xi, nrow = length(xi), ncol = length(xi), byrow = TRUE)
+XL
+
+DIFX <- XC - XL
+DIFX
+
+ABSDIFX <- abs(DIFX)
+ABSDIFX
+
+iota <- matrix(1, nrow = length(xi), ncol = 1, byrow = TRUE)
+iota
+
+somacolunaABSDIFX <- t(iota) %*% ABSDIFX
+somacolunaABSDIFX
+
+somalinhasomacolunaABSDIFX <- somacolunaABSDIFX %*% iota
+somalinhasomacolunaABSDIFX
+
+obs <- length(xi)
+
+delta <- obs^(-2)*somalinhasomacolunaABSDIFX
+delta
+
+```
+
+Ou seja,
+
+\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j| = \dfrac{1}{(`r obs`)^2} \times `r somalinhasomacolunaABSDIFX` = `r delta`
+\]
+
+Com a diferença absoluta média de $X_i$ devidamente calculada, aplica-se a fórmula \@ref(eq:GiniEmTermosDeDiferencaAbsolutaMedia)
+
+```{r GiniEmDelta, echo=TRUE}
+ximedio <- sum(xi)/length(xi)
+ximedio
+
+ginidelta <- delta/(2*ximedio)
+ginidelta
+```
+
+\[
+G = \dfrac{\Delta}{2\mu} = \dfrac{`r delta`}{2 \times `r ximedio`} = `r ginidelta`
+\]
+
+Para aplicar a fórmula \@ref(eq:GiniFinal) na obtenção do índice de Gini é necessário ponderar cada valor de $X_i$ pela sua respectiva ordem $i$ e soma todos os respectivos produtos
+
+\[
+\sum_{i=1}^{n}iX_i.
+\]
+
+usando os dados da tabela \@ref(tab:DadosdoExemploNumericoParaGini)
+
+```{r GiniFinal, echo=TRUE}
+is <- matrix(1:length(xi), nrow = length(xi), ncol = 1, byrow = TRUE)
+is
+
+ixi <- t(is) * xi
+ixi
+
+somaixi <- sum(ixi)
+somaixi
+
+ginifinal <- 2/(obs^2 * ximedio)*somaixi - obs^(-1) - 1
+ginifinal
+```
+
+obtém
+
+\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{`r obs`^2 \times `r ximedio`}\times `r somaixi` - \dfrac{1}{`r obs`} - 1 = `r ginifinal`
+\]
+
 
 ## Redundância
 

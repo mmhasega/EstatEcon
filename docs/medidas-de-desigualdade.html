@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-12" />
+<meta name="date" content="2020-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -385,12 +385,12 @@ X_1\leq X_2 \leq \ldots \leq X_{n-1} \leq X_n
 \]</span>
 admitindo-se que os n valores são igualmente prováveis.</p>
 <p>a proporção acumulada do número de elementos,m até o i-ésimo elemento, é</p>
-<p><span class="math display" id="eq:proporcao">\[
+<p><span class="math display" id="eq:ProporcaoDaPopulacao">\[
 p_i = \dfrac{i}{n},~\text{para}~i =1,\ldots, n
 \tag{2.2}
 \]</span></p>
 <p>A correspondente proporção acumulada de <span class="math inline">\(X\)</span>, até o i-ésimo elemento é</p>
-<p><span class="math display" id="eq:proporcaorendaacumulada">\[
+<p><span class="math display" id="eq:ProporcaoDaRendaAcumulada">\[
 \Phi_i = \dfrac{\sum_{j=1}^{i}X_j}{\sum_{j=1}^{n}X_j} = \dfrac{1}{n\mu}\sum_{j=1}^{i}X_j
 \tag{2.3}
 \]</span>
@@ -398,7 +398,310 @@ onde
 <span class="math display">\[
 \mu = \dfrac{1}{n}\sum_{j=1}^{n}X_j
 \]</span>
-Se <span class="math inline">\(X\)</span> representa a renda individual e se <span class="math inline">\(X_j &lt; X_{j+1}\)</span>, <span class="math inline">\(\Phi_i\)</span> representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a <span class="math inline">\(X_i\)</span>. As expressões <a href="medidas-de-desigualdade.html#eq:proporcao">(2.2)</a> e <a href="medidas-de-desigualdade.html#eq:proporcaorendaacumulada">(2.3)</a> definem as coordenadas <span class="math inline">\((p_i,\Phi_i)\)</span> com <span class="math inline">\(i=1,\ldots, n\)</span> de <span class="math inline">\(n\)</span> pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas <span class="math inline">\((p_i,\Phi_i)\)</span>.</p>
+Se <span class="math inline">\(X\)</span> representa a renda individual e se <span class="math inline">\(X_j &lt; X_{j+1}\)</span>, <span class="math inline">\(\Phi_i\)</span> representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a <span class="math inline">\(X_i\)</span>. As expressões <a href="medidas-de-desigualdade.html#eq:ProporcaoDaPopulacao">(2.2)</a> e <a href="medidas-de-desigualdade.html#eq:ProporcaoDaRendaAcumulada">(2.3)</a> definem as coordenadas <span class="math inline">\((p_i,\Phi_i)\)</span> com <span class="math inline">\(i=1,\ldots, n\)</span> de <span class="math inline">\(n\)</span> pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas <span class="math inline">\((p_i,\Phi_i)\)</span>.</p>
+<p>Na sequência é apresentada de forma resumida como se calcula o índice de Gini a partir dos valores de <span class="math inline">\(X_i\)</span> para <span class="math inline">\(i = 1,\ldots ,n\)</span> da variável. Na figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a> a soma das áreas <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> totaliza a área do polígono ABC que numericamente é igual a 0,5.
+Portanto, <span class="math inline">\(a = 0,5 - b\)</span>. Ou seja, colocando na notação mais elegante,</p>
+<p><span class="math display" id="eq:alfa">\[
+\alpha = 0,5 - \beta.
+\tag{2.4}
+\]</span>
+Substituindo <a href="medidas-de-desigualdade.html#eq:alfa">(2.4)</a> em <a href="medidas-de-desigualdade.html#eq:Gini">(2.1)</a> obtém-se</p>
+<p><span class="math display" id="eq:GiniEmTermosDeBeta">\[
+G = \dfrac{0,5 - \beta}{0,5} = 1 - 2\beta.
+\tag{2.5}
+\]</span>
+Note que a área abaixo da “curva” de Lorenz pode ser representada, de forma aproximada, como a soma das áreas de <span class="math inline">\(n\)</span> trapézios um do lado do outro. Desta forma, a área <span class="math inline">\(b\)</span> da figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>, compreendida entre a poligonal de Lorenz e o eixo das abscissas, é obtida somando-se a área dos <span class="math inline">\(n\)</span> trapézios. Ou seja, a área do i-ésimo trapézio é
+<span class="math display" id="eq:AreaDoTrapezioSi">\[
+S_i = \dfrac{\Phi_{i-1} + \Phi_i}{2}\times \dfrac{1}{n}
+\tag{2.6}
+\]</span>
+onde <span class="math inline">\(\Phi_{i-1}\)</span> é a base menor do i-ésimo trapézio; <span class="math inline">\(\Phi_i\)</span> é a base maior do i-ésimo trapézio e; <span class="math inline">\(1/n\)</span> é a altura do trapézio que corresponde a pessoa da população composta por n pessoas.</p>
+<p>Note que o valor de <span class="math inline">\(\Phi_0 = 0\)</span>, ou seja, o valor de <span class="math inline">\(\Phi_{i-1}\)</span> para <span class="math inline">\(i=1\)</span>. Com base na fórmula <a href="medidas-de-desigualdade.html#eq:AreaDoTrapezioSi">(2.6)</a> é possível obter a área corresponde a <span class="math inline">\(b\)</span> na figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a> ou <span class="math inline">\(\beta\)</span> nas notações matemáticas no texto</p>
+<p><span class="math display" id="eq:AreaDoBeta">\[
+\beta = \sum_{i=1}^{n}S_i = \dfrac{1}{2n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i)
+\tag{2.7}
+\]</span>
+Substituindo <a href="medidas-de-desigualdade.html#eq:AreaDoBeta">(2.7)</a> em <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeBeta">(2.5)</a>, obtém-se</p>
+<p><span class="math display" id="eq:GiniEmTermosDePhi">\[
+G = 1 - \dfrac{1}{n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i)
+\tag{2.8}
+\]</span>
+Considerando a fórmula <a href="medidas-de-desigualdade.html#eq:ProporcaoDaRendaAcumulada">(2.3)</a> e que <span class="math inline">\(\Phi_0 = 0\)</span>, se obtém o índice de Gini em termos da variável <span class="math inline">\(X_i\)</span>. Ou seja,</p>
+<p><span class="math display" id="eq:GiniEmTermosDeXi">\[
+G = 1 - \dfrac{1}{n^2\mu}[(2n-1)X_1 + (2n-3)X_2 + \dots + 3X_{n-1} + 1X_n]
+\tag{2.9}
+\]</span></p>
+<p>Na parte sobre Estatística Descritiva foi apresentada a medida de dispersão chamada Diferença Absoluta Média que é dada por</p>
+<p><span class="math display" id="eq:DiferencaAbsolutaMedia">\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j|
+\tag{2.10}
+\]</span></p>
+<p>Trabalhando algebricamente a fórmula <a href="medidas-de-desigualdade.html#eq:DiferencaAbsolutaMedia">(2.10)</a></p>
+<p><span class="math display" id="eq:DiferencaAbsolutaMediaModificada">\[
+\Delta = 2\mu - \dfrac{2}{n^2}[(2n-1)X_1 + (2n-3)X_2 + \dots + 3X_{n-1} + 1X_n]
+\tag{2.11}
+\]</span></p>
+<p>Se dividir <a href="medidas-de-desigualdade.html#eq:DiferencaAbsolutaMediaModificada">(2.11)</a> por <span class="math inline">\(2\mu\)</span> obtém a fórmula do índice de Gini em termos da medida de dispersão Diferença Absoluta Média</p>
+<p><span class="math display" id="eq:GiniEmTermosDeDiferencaAbsolutaMedia">\[
+G = \dfrac{\Delta}{2\mu}
+\tag{2.12}
+\]</span></p>
+<p>Tratando-se da distribuição da renda em uma população, a relação <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a> mostra que o índice de Gini, como medida de do grau de desigualdade, apresenta a vantagem de medir diretamente as diferenças de rendal, levando em consideração diferenças entre as rendas de <strong>todos</strong> os pares de pessoas.</p>
+<p>Como <span class="math inline">\(\Delta\)</span> é uma medida de dispersão da distribuição, a relação <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a> mostra que o índice de Gini é uma medida de dispersão relativa. Assim, o conceito de desigualdade de uma distribuição se confunde com o conceito de dispersão relativa.</p>
+<p>Com um desenvolvimento algébrico de <span class="math inline">\(\Delta\)</span> é possível transformar a fórmula <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a> em</p>
+<p><span class="math display" id="eq:GiniFinal">\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
+\tag{2.13}
+\]</span>
+A relação <a href="medidas-de-desigualdade.html#eq:GiniFinal">(2.13)</a> mostra que, no cálculo do índice de Gini, cada valor de <span class="math inline">\(X_i\)</span> da variável aparece poderado por <span class="math inline">\(i\)</span>. Ou seja, <span class="math inline">\(X_i\)</span> aparece poderada pelo respectivo número de ordem na sequência dos valores ordenados.</p>
+<p><strong>Exemplo numérico</strong></p>
+<p>Para aplicar a fórmula do índice de Gini, utiliza-se os dados apresentados na tabela abaixo, obtidos de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>.</p>
+<table style="width:99%;">
+<caption><span id="tab:DadosdoExemploNumericoParaGini">TABELA 2.2: </span> Valores de <span class="math inline">\(X_i\)</span>, <span class="math inline">\(p_i\)</span>, <span class="math inline">\(\Phi_i\)</span> e <span class="math inline">\(\Phi_{i-1} + \Phi_i\)</span> para a população hipotética de 8 elementos</caption>
+<colgroup>
+<col width="12%" />
+<col width="15%" />
+<col width="15%" />
+<col width="22%" />
+<col width="11%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(i\)</span></th>
+<th align="center"><span class="math inline">\(p_i\)</span></th>
+<th align="center"><span class="math inline">\(X_i\)</span></th>
+<th align="center"><span class="math inline">\(\sum_{j=1}^{n}X_j\)</span></th>
+<th align="center"><span class="math inline">\(\Phi_i\)</span></th>
+<th align="center"><span class="math inline">\(\Phi_{i-1} + \Phi_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0,125</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0,02</td>
+<td align="center">0,02</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">0,250</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">0,04</td>
+<td align="center">0,06</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">0,375</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">0,06</td>
+<td align="center">0,10</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">0,500</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">0,10</td>
+<td align="center">0,16</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">0,625</td>
+<td align="center">4</td>
+<td align="center">9</td>
+<td align="center">0,18</td>
+<td align="center">0,28</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">0,750</td>
+<td align="center">8</td>
+<td align="center">17</td>
+<td align="center">0,34</td>
+<td align="center">0,52</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">0,875</td>
+<td align="center">13</td>
+<td align="center">30</td>
+<td align="center">0,60</td>
+<td align="center">0,94</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">1,000</td>
+<td align="center">20</td>
+<td align="center">50</td>
+<td align="center">1,00</td>
+<td align="center">1,60</td>
+</tr>
+</tbody>
+</table>
+<p>Com essas informações é possível calcular o índice de Gini, através de <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDePhi">(2.8)</a></p>
+<p><span class="math display">\[
+G = 1 - \dfrac{1}{n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i);
+\]</span></p>
+<p>através de <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a></p>
+<p><span class="math display">\[
+G = \dfrac{\Delta}{2\mu},
+\]</span>
+onde
+<span class="math display">\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j|
+\]</span>
+e
+<span class="math display">\[
+\mu = \sum_{i=1}^{n}X_i;
+\]</span>
+e através de <a href="medidas-de-desigualdade.html#eq:GiniFinal">(2.13)</a></p>
+<p><span class="math display">\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
+\]</span>
+Usando <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDePhi">(2.8)</a>, é necessário totalizar a coluna <span class="math inline">\(\Phi_{i-1} + \Phi_i\)</span> na tabela <a href="medidas-de-desigualdade.html#tab:DadosdoExemploNumericoParaGini">2.2</a>. Ou seja,</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="medidas-de-desigualdade.html#cb91-1"></a><span class="kw">options</span>(<span class="dt">OutDec =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb91-2"><a href="medidas-de-desigualdade.html#cb91-2"></a>somaphis &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.02</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.16</span>, <span class="fl">0.28</span>, <span class="fl">0.52</span>, <span class="fl">0.94</span>, </span>
+<span id="cb91-3"><a href="medidas-de-desigualdade.html#cb91-3"></a>    <span class="fl">1.6</span>)</span>
+<span id="cb91-4"><a href="medidas-de-desigualdade.html#cb91-4"></a>somasomaphis &lt;-<span class="st"> </span><span class="kw">sum</span>(somaphis)</span>
+<span id="cb91-5"><a href="medidas-de-desigualdade.html#cb91-5"></a>somasomaphis</span></code></pre></div>
+<pre><code>## [1] 3,68</code></pre>
+<p><span class="math display">\[
+\sum_{i+1}^{8} (\Phi_{i-1} + \Phi_i) = 3,68
+\]</span></p>
+<p>Portanto</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="medidas-de-desigualdade.html#cb93-1"></a>giniphis &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="kw">length</span>(somaphis) <span class="op">*</span><span class="st"> </span>somasomaphis</span>
+<span id="cb93-2"><a href="medidas-de-desigualdade.html#cb93-2"></a>giniphis</span></code></pre></div>
+<pre><code>## [1] 0,54</code></pre>
+<p><span class="math display">\[
+G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
+\]</span></p>
+<p>Para aplicar a fórmula <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a> que é a fórmula do índice de Gini em termos de diferença absoluta média, <span class="math inline">\(\Delta\)</span>, é necessário calcular a diferença absoluta média com base nos dados de <span class="math inline">\(X_i\)</span> da tabela <a href="medidas-de-desigualdade.html#tab:DadosdoExemploNumericoParaGini">2.2</a>.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="medidas-de-desigualdade.html#cb95-1"></a>xi &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">20</span>)</span>
+<span id="cb95-2"><a href="medidas-de-desigualdade.html#cb95-2"></a></span>
+<span id="cb95-3"><a href="medidas-de-desigualdade.html#cb95-3"></a>XC &lt;-<span class="st"> </span><span class="kw">matrix</span>(xi, <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="kw">length</span>(xi), </span>
+<span id="cb95-4"><a href="medidas-de-desigualdade.html#cb95-4"></a>    <span class="dt">byrow =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb95-5"><a href="medidas-de-desigualdade.html#cb95-5"></a>XC</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    1    1    1    1    1    1    1
+## [2,]    1    1    1    1    1    1    1    1
+## [3,]    1    1    1    1    1    1    1    1
+## [4,]    2    2    2    2    2    2    2    2
+## [5,]    4    4    4    4    4    4    4    4
+## [6,]    8    8    8    8    8    8    8    8
+## [7,]   13   13   13   13   13   13   13   13
+## [8,]   20   20   20   20   20   20   20   20</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="medidas-de-desigualdade.html#cb97-1"></a>XL &lt;-<span class="st"> </span><span class="kw">matrix</span>(xi, <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="kw">length</span>(xi), </span>
+<span id="cb97-2"><a href="medidas-de-desigualdade.html#cb97-2"></a>    <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb97-3"><a href="medidas-de-desigualdade.html#cb97-3"></a>XL</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    1    1    2    4    8   13   20
+## [2,]    1    1    1    2    4    8   13   20
+## [3,]    1    1    1    2    4    8   13   20
+## [4,]    1    1    1    2    4    8   13   20
+## [5,]    1    1    1    2    4    8   13   20
+## [6,]    1    1    1    2    4    8   13   20
+## [7,]    1    1    1    2    4    8   13   20
+## [8,]    1    1    1    2    4    8   13   20</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="medidas-de-desigualdade.html#cb99-1"></a>DIFX &lt;-<span class="st"> </span>XC <span class="op">-</span><span class="st"> </span>XL</span>
+<span id="cb99-2"><a href="medidas-de-desigualdade.html#cb99-2"></a>DIFX</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    0    0    0   -1   -3   -7  -12  -19
+## [2,]    0    0    0   -1   -3   -7  -12  -19
+## [3,]    0    0    0   -1   -3   -7  -12  -19
+## [4,]    1    1    1    0   -2   -6  -11  -18
+## [5,]    3    3    3    2    0   -4   -9  -16
+## [6,]    7    7    7    6    4    0   -5  -12
+## [7,]   12   12   12   11    9    5    0   -7
+## [8,]   19   19   19   18   16   12    7    0</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="medidas-de-desigualdade.html#cb101-1"></a>ABSDIFX &lt;-<span class="st"> </span><span class="kw">abs</span>(DIFX)</span>
+<span id="cb101-2"><a href="medidas-de-desigualdade.html#cb101-2"></a>ABSDIFX</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    0    0    0    1    3    7   12   19
+## [2,]    0    0    0    1    3    7   12   19
+## [3,]    0    0    0    1    3    7   12   19
+## [4,]    1    1    1    0    2    6   11   18
+## [5,]    3    3    3    2    0    4    9   16
+## [6,]    7    7    7    6    4    0    5   12
+## [7,]   12   12   12   11    9    5    0    7
+## [8,]   19   19   19   18   16   12    7    0</code></pre>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="medidas-de-desigualdade.html#cb103-1"></a>iota &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>, <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb103-2"><a href="medidas-de-desigualdade.html#cb103-2"></a>iota</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]    1
+## [2,]    1
+## [3,]    1
+## [4,]    1
+## [5,]    1
+## [6,]    1
+## [7,]    1
+## [8,]    1</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="medidas-de-desigualdade.html#cb105-1"></a>somacolunaABSDIFX &lt;-<span class="st"> </span><span class="kw">t</span>(iota) <span class="op">%*%</span><span class="st"> </span>ABSDIFX</span>
+<span id="cb105-2"><a href="medidas-de-desigualdade.html#cb105-2"></a>somacolunaABSDIFX</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]   42   42   42   40   40   48   68  110</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="medidas-de-desigualdade.html#cb107-1"></a>somalinhasomacolunaABSDIFX &lt;-<span class="st"> </span>somacolunaABSDIFX <span class="op">%*%</span><span class="st"> </span></span>
+<span id="cb107-2"><a href="medidas-de-desigualdade.html#cb107-2"></a><span class="st">    </span>iota</span>
+<span id="cb107-3"><a href="medidas-de-desigualdade.html#cb107-3"></a>somalinhasomacolunaABSDIFX</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]  432</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="medidas-de-desigualdade.html#cb109-1"></a>obs &lt;-<span class="st"> </span><span class="kw">length</span>(xi)</span>
+<span id="cb109-2"><a href="medidas-de-desigualdade.html#cb109-2"></a></span>
+<span id="cb109-3"><a href="medidas-de-desigualdade.html#cb109-3"></a>delta &lt;-<span class="st"> </span>obs<span class="op">^</span>(<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>somalinhasomacolunaABSDIFX</span>
+<span id="cb109-4"><a href="medidas-de-desigualdade.html#cb109-4"></a>delta</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,] 6,75</code></pre>
+<p>Ou seja,</p>
+<p><span class="math display">\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j| = \dfrac{1}{(8)^2} \times 432 = 6,75
+\]</span></p>
+<p>Com a diferença absoluta média de <span class="math inline">\(X_i\)</span> devidamente calculada, aplica-se a fórmula <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a></p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="medidas-de-desigualdade.html#cb111-1"></a>ximedio &lt;-<span class="st"> </span><span class="kw">sum</span>(xi)<span class="op">/</span><span class="kw">length</span>(xi)</span>
+<span id="cb111-2"><a href="medidas-de-desigualdade.html#cb111-2"></a>ximedio</span></code></pre></div>
+<pre><code>## [1] 6,25</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="medidas-de-desigualdade.html#cb113-1"></a>ginidelta &lt;-<span class="st"> </span>delta<span class="op">/</span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ximedio)</span>
+<span id="cb113-2"><a href="medidas-de-desigualdade.html#cb113-2"></a>ginidelta</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,] 0,54</code></pre>
+<p><span class="math display">\[
+G = \dfrac{\Delta}{2\mu} = \dfrac{6,75}{2 \times 6,25} = 0,54
+\]</span></p>
+<p>Para aplicar a fórmula <a href="medidas-de-desigualdade.html#eq:GiniFinal">(2.13)</a> na obtenção do índice de Gini é necessário ponderar cada valor de <span class="math inline">\(X_i\)</span> pela sua respectiva ordem <span class="math inline">\(i\)</span> e soma todos os respectivos produtos</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}iX_i.
+\]</span></p>
+<p>usando os dados da tabela <a href="medidas-de-desigualdade.html#tab:DadosdoExemploNumericoParaGini">2.2</a></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="medidas-de-desigualdade.html#cb115-1"></a>is &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(xi), <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="dv">1</span>, </span>
+<span id="cb115-2"><a href="medidas-de-desigualdade.html#cb115-2"></a>    <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb115-3"><a href="medidas-de-desigualdade.html#cb115-3"></a>is</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]    1
+## [2,]    2
+## [3,]    3
+## [4,]    4
+## [5,]    5
+## [6,]    6
+## [7,]    7
+## [8,]    8</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="medidas-de-desigualdade.html#cb117-1"></a>ixi &lt;-<span class="st"> </span><span class="kw">t</span>(is) <span class="op">*</span><span class="st"> </span>xi</span>
+<span id="cb117-2"><a href="medidas-de-desigualdade.html#cb117-2"></a>ixi</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    2    3    8   20   48   91  160</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="medidas-de-desigualdade.html#cb119-1"></a>somaixi &lt;-<span class="st"> </span><span class="kw">sum</span>(ixi)</span>
+<span id="cb119-2"><a href="medidas-de-desigualdade.html#cb119-2"></a>somaixi</span></code></pre></div>
+<pre><code>## [1] 333</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="medidas-de-desigualdade.html#cb121-1"></a>ginifinal &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">/</span>(obs<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ximedio) <span class="op">*</span><span class="st"> </span>somaixi <span class="op">-</span><span class="st"> </span>obs<span class="op">^</span>(<span class="op">-</span><span class="dv">1</span>) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb121-2"><a href="medidas-de-desigualdade.html#cb121-2"></a><span class="st">    </span><span class="dv">1</span></span>
+<span id="cb121-3"><a href="medidas-de-desigualdade.html#cb121-3"></a>ginifinal</span></code></pre></div>
+<pre><code>## [1] 0,54</code></pre>
+<p>obtém</p>
+<p><span class="math display">\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{8^2 \times 6,25}\times 333 - \dfrac{1}{8} - 1 = 0,54
+\]</span></p>
 </div>
 <div id="redundância" class="section level2">
 <h2><span class="header-section-number">2.6</span> Redundância</h2>

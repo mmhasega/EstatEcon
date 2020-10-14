@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-10-12}
+\date{2020-10-14}
 
 \begin{document}
 \maketitle
@@ -1625,20 +1625,542 @@ a proporção acumulada do número de elementos,m até o i-ésimo elemento, é
 
 \[
 p_i = \dfrac{i}{n},~\text{para}~i =1,\ldots, n
-\label{eq:proporcao}
+\label{eq:ProporcaoDaPopulacao}
 \]
 
 A correspondente proporção acumulada de \(X\), até o i-ésimo elemento é
 
 \[
 \Phi_i = \dfrac{\sum_{j=1}^{i}X_j}{\sum_{j=1}^{n}X_j} = \dfrac{1}{n\mu}\sum_{j=1}^{i}X_j
-\label{eq:proporcaorendaacumulada}
+\label{eq:ProporcaoDaRendaAcumulada}
 \]
 onde
 \[
 \mu = \dfrac{1}{n}\sum_{j=1}^{n}X_j
 \]
-Se \(X\) representa a renda individual e se \(X_j < X_{j+1}\), \(\Phi_i\) representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a \(X_i\). As expressões \eqref{eq:proporcao} e \eqref{eq:proporcaorendaacumulada} definem as coordenadas \((p_i,\Phi_i)\) com \(i=1,\ldots, n\) de \(n\) pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas \((p_i,\Phi_i)\).
+Se \(X\) representa a renda individual e se \(X_j < X_{j+1}\), \(\Phi_i\) representa a fração da renda total apropriada pelas pessoas com renda inferior ou igual a \(X_i\). As expressões \eqref{eq:ProporcaoDaPopulacao} e \eqref{eq:ProporcaoDaRendaAcumulada} definem as coordenadas \((p_i,\Phi_i)\) com \(i=1,\ldots, n\) de \(n\) pontos da curva de Lorenz. A rigor não existe, nesse caso, uma curva, mas uma poligonal cujos vértices são a origemdos exios e os pontos de coordenadas \((p_i,\Phi_i)\).
+
+Na sequência é apresentada de forma resumida como se calcula o índice de Gini a partir dos valores de \(X_i\) para \(i = 1,\ldots ,n\) da variável. Na figura \ref{fig:CurvaLorenz} a soma das áreas \(a\) e \(b\) totaliza a área do polígono ABC que numericamente é igual a 0,5.
+Portanto, \(a = 0,5 - b\). Ou seja, colocando na notação mais elegante,
+
+\[
+\alpha = 0,5 - \beta.
+\label{eq:alfa}
+\]
+Substituindo \eqref{eq:alfa} em \eqref{eq:Gini} obtém-se
+
+\[
+G = \dfrac{0,5 - \beta}{0,5} = 1 - 2\beta.
+\label{eq:GiniEmTermosDeBeta}
+\]
+Note que a área abaixo da ``curva'' de Lorenz pode ser representada, de forma aproximada, como a soma das áreas de \(n\) trapézios um do lado do outro. Desta forma, a área \(b\) da figura \ref{fig:CurvaLorenz}, compreendida entre a poligonal de Lorenz e o eixo das abscissas, é obtida somando-se a área dos \(n\) trapézios. Ou seja, a área do i-ésimo trapézio é
+\[
+S_i = \dfrac{\Phi_{i-1} + \Phi_i}{2}\times \dfrac{1}{n}
+\label{eq:AreaDoTrapezioSi}
+\]
+onde \(\Phi_{i-1}\) é a base menor do i-ésimo trapézio; \(\Phi_i\) é a base maior do i-ésimo trapézio e; \(1/n\) é a altura do trapézio que corresponde a pessoa da população composta por n pessoas.
+
+Note que o valor de \(\Phi_0 = 0\), ou seja, o valor de \(\Phi_{i-1}\) para \(i=1\). Com base na fórmula \eqref{eq:AreaDoTrapezioSi} é possível obter a área corresponde a \(b\) na figura \ref{fig:CurvaLorenz} ou \(\beta\) nas notações matemáticas no texto
+
+\[
+\beta = \sum_{i=1}^{n}S_i = \dfrac{1}{2n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i)
+\label{eq:AreaDoBeta}
+\]
+Substituindo \eqref{eq:AreaDoBeta} em \eqref{eq:GiniEmTermosDeBeta}, obtém-se
+
+\[
+G = 1 - \dfrac{1}{n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i)
+\label{eq:GiniEmTermosDePhi}
+\]
+Considerando a fórmula \eqref{eq:ProporcaoDaRendaAcumulada} e que \(\Phi_0 = 0\), se obtém o índice de Gini em termos da variável \(X_i\). Ou seja,
+
+\[
+G = 1 - \dfrac{1}{n^2\mu}[(2n-1)X_1 + (2n-3)X_2 + \dots + 3X_{n-1} + 1X_n]
+\label{eq:GiniEmTermosDeXi}
+\]
+
+Na parte sobre Estatística Descritiva foi apresentada a medida de dispersão chamada Diferença Absoluta Média que é dada por
+
+\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j|
+\label{eq:DiferencaAbsolutaMedia}
+\]
+
+Trabalhando algebricamente a fórmula \eqref{eq:DiferencaAbsolutaMedia}
+
+\[
+\Delta = 2\mu - \dfrac{2}{n^2}[(2n-1)X_1 + (2n-3)X_2 + \dots + 3X_{n-1} + 1X_n]
+\label{eq:DiferencaAbsolutaMediaModificada}
+\]
+
+Se dividir \eqref{eq:DiferencaAbsolutaMediaModificada} por \(2\mu\) obtém a fórmula do índice de Gini em termos da medida de dispersão Diferença Absoluta Média
+
+\[
+G = \dfrac{\Delta}{2\mu}
+\label{eq:GiniEmTermosDeDiferencaAbsolutaMedia}
+\]
+
+Tratando-se da distribuição da renda em uma população, a relação \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} mostra que o índice de Gini, como medida de do grau de desigualdade, apresenta a vantagem de medir diretamente as diferenças de rendal, levando em consideração diferenças entre as rendas de \textbf{todos} os pares de pessoas.
+
+Como \(\Delta\) é uma medida de dispersão da distribuição, a relação \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} mostra que o índice de Gini é uma medida de dispersão relativa. Assim, o conceito de desigualdade de uma distribuição se confunde com o conceito de dispersão relativa.
+
+Com um desenvolvimento algébrico de \(\Delta\) é possível transformar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} em
+
+\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
+\label{eq:GiniFinal}
+\]
+A relação \eqref{eq:GiniFinal} mostra que, no cálculo do índice de Gini, cada valor de \(X_i\) da variável aparece poderado por \(i\). Ou seja, \(X_i\) aparece poderada pelo respectivo número de ordem na sequência dos valores ordenados.
+
+\textbf{Exemplo numérico}
+
+Para aplicar a fórmula do índice de Gini, utiliza-se os dados apresentados na tabela abaixo, obtidos de \citet{Hoffmann2006}.
+
+\begin{longtable}[]{@{}cccccc@{}}
+\caption{\label{tab:DadosdoExemploNumericoParaGini} Valores de \(X_i\), \(p_i\), \(\Phi_i\) e \(\Phi_{i-1} + \Phi_i\) para a população hipotética de 8 elementos}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering
+\(i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(p_i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(X_i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\centering
+\(\sum_{j=1}^{n}X_j\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\Phi_i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
+\(\Phi_{i-1} + \Phi_i\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\centering
+\(i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(p_i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(X_i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\centering
+\(\sum_{j=1}^{n}X_j\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\Phi_i\)\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
+\(\Phi_{i-1} + \Phi_i\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,125\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,02\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,02\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,250\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,04\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,06\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,375\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,06\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,10\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,500\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,10\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,16\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,625\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,18\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,28\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,750\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,34\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,52\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0,875\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0,60\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0,94\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\centering
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+1,000\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1,00\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+1,60\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Com essas informações é possível calcular o índice de Gini, através de \eqref{eq:GiniEmTermosDePhi}
+
+\[
+G = 1 - \dfrac{1}{n}\sum_{i=1}^{n}(\Phi_{i-1} + \Phi_i);
+\]
+
+através de \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia}
+
+\[
+G = \dfrac{\Delta}{2\mu},
+\]
+onde
+\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j|
+\]
+e
+\[
+\mu = \sum_{i=1}^{n}X_i;
+\]
+e através de \eqref{eq:GiniFinal}
+
+\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
+\]
+Usando \eqref{eq:GiniEmTermosDePhi}, é necessário totalizar a coluna \(\Phi_{i-1} + \Phi_i\) na tabela \ref{tab:DadosdoExemploNumericoParaGini}. Ou seja,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{OutDec =} \StringTok{","}\NormalTok{)}
+\NormalTok{somaphis <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.02}\NormalTok{, }\FloatTok{0.06}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.16}\NormalTok{, }\FloatTok{0.28}\NormalTok{, }\FloatTok{0.52}\NormalTok{, }\FloatTok{0.94}\NormalTok{, }
+    \FloatTok{1.6}\NormalTok{)}
+\NormalTok{somasomaphis <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(somaphis)}
+\NormalTok{somasomaphis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3,68
+\end{verbatim}
+
+\[
+\sum_{i+1}^{8} (\Phi_{i-1} + \Phi_i) = \text{3,68}
+\]
+
+Portanto
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{giniphis <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\KeywordTok{length}\NormalTok{(somaphis) }\OperatorTok{*}\StringTok{ }\NormalTok{somasomaphis}
+\NormalTok{giniphis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,54
+\end{verbatim}
+
+\[
+G = 1 - \dfrac{1}{8}\times \text{3,68} = \text{0,54}
+\]
+
+Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a fórmula do índice de Gini em termos de diferença absoluta média, \(\Delta\), é necessário calcular a diferença absoluta média com base nos dados de \(X_i\) da tabela \ref{tab:DadosdoExemploNumericoParaGini}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{xi <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{20}\NormalTok{)}
+
+\NormalTok{XC <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(xi, }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \KeywordTok{length}\NormalTok{(xi), }
+    \DataTypeTok{byrow =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{XC}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    1    1    1    1    1    1    1
+## [2,]    1    1    1    1    1    1    1    1
+## [3,]    1    1    1    1    1    1    1    1
+## [4,]    2    2    2    2    2    2    2    2
+## [5,]    4    4    4    4    4    4    4    4
+## [6,]    8    8    8    8    8    8    8    8
+## [7,]   13   13   13   13   13   13   13   13
+## [8,]   20   20   20   20   20   20   20   20
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{XL <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(xi, }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \KeywordTok{length}\NormalTok{(xi), }
+    \DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{XL}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    1    1    2    4    8   13   20
+## [2,]    1    1    1    2    4    8   13   20
+## [3,]    1    1    1    2    4    8   13   20
+## [4,]    1    1    1    2    4    8   13   20
+## [5,]    1    1    1    2    4    8   13   20
+## [6,]    1    1    1    2    4    8   13   20
+## [7,]    1    1    1    2    4    8   13   20
+## [8,]    1    1    1    2    4    8   13   20
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DIFX <-}\StringTok{ }\NormalTok{XC }\OperatorTok{-}\StringTok{ }\NormalTok{XL}
+\NormalTok{DIFX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    0    0    0   -1   -3   -7  -12  -19
+## [2,]    0    0    0   -1   -3   -7  -12  -19
+## [3,]    0    0    0   -1   -3   -7  -12  -19
+## [4,]    1    1    1    0   -2   -6  -11  -18
+## [5,]    3    3    3    2    0   -4   -9  -16
+## [6,]    7    7    7    6    4    0   -5  -12
+## [7,]   12   12   12   11    9    5    0   -7
+## [8,]   19   19   19   18   16   12    7    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ABSDIFX <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(DIFX)}
+\NormalTok{ABSDIFX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    0    0    0    1    3    7   12   19
+## [2,]    0    0    0    1    3    7   12   19
+## [3,]    0    0    0    1    3    7   12   19
+## [4,]    1    1    1    0    2    6   11   18
+## [5,]    3    3    3    2    0    4    9   16
+## [6,]    7    7    7    6    4    0    5   12
+## [7,]   12   12   12   11    9    5    0    7
+## [8,]   19   19   19   18   16   12    7    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iota <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \DecValTok{1}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{iota}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,]    1
+## [2,]    1
+## [3,]    1
+## [4,]    1
+## [5,]    1
+## [6,]    1
+## [7,]    1
+## [8,]    1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{somacolunaABSDIFX <-}\StringTok{ }\KeywordTok{t}\NormalTok{(iota) }\OperatorTok{%*%}\StringTok{ }\NormalTok{ABSDIFX}
+\NormalTok{somacolunaABSDIFX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]   42   42   42   40   40   48   68  110
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{somalinhasomacolunaABSDIFX <-}\StringTok{ }\NormalTok{somacolunaABSDIFX }\OperatorTok{%*%}\StringTok{ }
+\StringTok{    }\NormalTok{iota}
+\NormalTok{somalinhasomacolunaABSDIFX}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,]  432
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{obs <-}\StringTok{ }\KeywordTok{length}\NormalTok{(xi)}
+
+\NormalTok{delta <-}\StringTok{ }\NormalTok{obs}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{somalinhasomacolunaABSDIFX}
+\NormalTok{delta}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,] 6,75
+\end{verbatim}
+
+Ou seja,
+
+\[
+\Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j| = \dfrac{1}{(\text{8})^2} \times \text{432} = \text{6,75}
+\]
+
+Com a diferença absoluta média de \(X_i\) devidamente calculada, aplica-se a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ximedio <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(xi)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(xi)}
+\NormalTok{ximedio}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6,25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ginidelta <-}\StringTok{ }\NormalTok{delta}\OperatorTok{/}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{ximedio)}
+\NormalTok{ginidelta}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,] 0,54
+\end{verbatim}
+
+\[
+G = \dfrac{\Delta}{2\mu} = \dfrac{\text{6,75}}{2 \times \text{6,25}} = \text{0,54}
+\]
+
+Para aplicar a fórmula \eqref{eq:GiniFinal} na obtenção do índice de Gini é necessário ponderar cada valor de \(X_i\) pela sua respectiva ordem \(i\) e soma todos os respectivos produtos
+
+\[
+\sum_{i=1}^{n}iX_i.
+\]
+
+usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{is <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \DecValTok{1}\NormalTok{, }
+    \DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{is}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,]    1
+## [2,]    2
+## [3,]    3
+## [4,]    4
+## [5,]    5
+## [6,]    6
+## [7,]    7
+## [8,]    8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ixi <-}\StringTok{ }\KeywordTok{t}\NormalTok{(is) }\OperatorTok{*}\StringTok{ }\NormalTok{xi}
+\NormalTok{ixi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    2    3    8   20   48   91  160
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{somaixi <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ixi)}
+\NormalTok{somaixi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ginifinal <-}\StringTok{ }\DecValTok{2}\OperatorTok{/}\NormalTok{(obs}\OperatorTok{^}\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{ximedio) }\OperatorTok{*}\StringTok{ }\NormalTok{somaixi }\OperatorTok{-}\StringTok{ }\NormalTok{obs}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\DecValTok{1}
+\NormalTok{ginifinal}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,54
+\end{verbatim}
+
+obtém
+
+\[
+G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{\text{8}^2 \times \text{6,25}}\times \text{333} - \dfrac{1}{\text{8}} - 1 = \text{0,54}
+\]
 
 \hypertarget{redunduxe2ncia}{%
 \section{Redundância}\label{redunduxe2ncia}}

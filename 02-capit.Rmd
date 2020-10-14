@@ -360,9 +360,7 @@ G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{`r obs`^
 \]
 
 
-## Redundância
-
-## Índice de Theil
+## Redundância e Índice de Theil
 
 ### Índice T de Theil
 

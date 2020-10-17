@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  14 OCT 2020 03:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  16 OCT 2020 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -783,12 +783,13 @@ Package pdftex.def Info: lorenz3.png  used on input line 1559.
 ed, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.1591 
-        <./lorenz3.png>] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48
+l.1590 
+        <./lorenz3.png>] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
+[50
 
 ]
 Cap\'{\i }tulo 3.
-[49] [50
+[51] [52
 
 ]
 Cap\'{\i }tulo 4.
@@ -796,22 +797,22 @@ pdfTeX warning (ext4): destination with the same identifier (name{variuxe1vel-a
 leatuxf3ria}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2211 ...tória}\label{variuxe1vel-aleatuxf3ria}}
+l.2331 ...tória}\label{variuxe1vel-aleatuxf3ria}}
                                                   
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[51]
+[53]
 Overfull \vbox (128.73444pt too high) has occurred while \output is active []
 
-[52]
+[54]
 Cap\'{\i }tulo 5.
-(./EstatEcon.bbl [53
+(./EstatEcon.bbl [55
 
-] [54
+] [56
 
-]) [55] (./EstatEcon.aux)
+]) [57] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
-(rerunfilecheck)             Checksum: 2FE95716F3C82331C600CC4A05AC5C70;7373.
+(rerunfilecheck)             Checksum: 08FBFCF2CE3BEA69C063AE2EEE043B7C;7373.
 
 LaTeX Warning: There were undefined references.
 
@@ -820,10 +821,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17372 strings out of 481866
- 290389 string characters out of 5930245
- 610759 words of memory out of 5000000
- 33128 multiletter control sequences out of 15000+600000
+ 17378 strings out of 481866
+ 290534 string characters out of 5930245
+ 607955 words of memory out of 5000000
+ 33132 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  60i,8n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -851,10 +852,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></User
 s/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/m
 acbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/mac
 book/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (55 pages, 492731 bytes).
+Output written on EstatEcon.pdf (57 pages, 500140 bytes).
 PDF statistics:
- 789 PDF objects out of 1000 (max. 8388607)
- 695 compressed objects within 7 object streams
- 209 named destinations out of 1000 (max. 500000)
+ 814 PDF objects out of 1000 (max. 8388607)
+ 717 compressed objects within 8 object streams
+ 211 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

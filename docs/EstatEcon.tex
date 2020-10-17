@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-10-14}
+\date{2020-10-16}
 
 \begin{document}
 \maketitle
@@ -1577,11 +1577,6 @@ Analisando o casos de máxima desigualdade:
   Neste caso, a Curva de Lorenz é dada pela poligonal \(\widehat{ABC}\) e a área de desigualdade máxima é o triângulo \(ABC\).
 \end{itemize}
 
-\hypertarget{discrepuxe2ncia-muxe1xima}{%
-\section{Discrepância Máxima}\label{discrepuxe2ncia-muxe1xima}}
-
-Discrepância Máxima é a maior distância entre entre a linha AB e a curva de Lorenz da figura \ref{fig:CurvaLorenz}. Portanto, a discrepância máxima é a diferença máxima entre a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de exata igualdade dada pela reta AB e a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de desigualdade entre as pessoas dessa população.
-
 \hypertarget{uxedndice-gini}{%
 \section{Índice Gini}\label{uxedndice-gini}}
 
@@ -2090,13 +2085,13 @@ Com a diferença absoluta média de \(X_i\) devidamente calculada, aplica-se a f
 \end{verbatim}
 
 \[
-G = \dfrac{\Delta}{2\mu} = \dfrac{\text{6,75}}{2 \times \text{6,25}} = \text{0,54}
+  G = \dfrac{\Delta}{2\mu} = \dfrac{\text{6,75}}{2 \times \text{6,25}} = \text{0,54}
 \]
 
 Para aplicar a fórmula \eqref{eq:GiniFinal} na obtenção do índice de Gini é necessário ponderar cada valor de \(X_i\) pela sua respectiva ordem \(i\) e soma todos os respectivos produtos
 
 \[
-\sum_{i=1}^{n}iX_i.
+  \sum_{i=1}^{n}iX_i.
 \]
 
 usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
@@ -2159,7 +2154,132 @@ usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
 obtém
 
 \[
-G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{\text{8}^2 \times \text{6,25}}\times \text{333} - \dfrac{1}{\text{8}} - 1 = \text{0,54}
+  G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{\text{8}^2 \times \text{6,25}}\times \text{333} - \dfrac{1}{\text{8}} - 1 = \text{0,54}
+\]
+
+\hypertarget{discrepuxe2ncia-muxe1xima}{%
+\section{Discrepância Máxima}\label{discrepuxe2ncia-muxe1xima}}
+
+Discrepância Máxima é a maior distância entre entre a linha AB e a curva de Lorenz da figura \ref{fig:CurvaLorenz}. Portanto, a discrepância máxima é a diferença máxima entre a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de exata igualdade dada pela reta AB e a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de desigualdade entre as pessoas dessa população que na figura corresponde a poligonal da curva de Lorenz. De acordo com \citet{Hoffmann2006}
+
+\[
+  D = p_h - \Phi_h
+  \label{eq:DiscrepanciaMaximaDefinicao}
+\]
+
+Portanto, o cálculo de \(D\) através de \eqref{eq:DiscrepanciaMaximaDefinicao} depende de \(h\), um número inteiro positivo. Encontrando-se \(i=h\) encontra-se a discrepância máxima \(D\).
+
+Seja uma sequência de valores ordenados em ordem crescente de uma variável discreta \(X_i\)
+
+\[
+  X_1 \leq X_2 \leq \ldots \leq X_n
+\]
+
+sendo válida pelos menos uma desigualdade.
+
+Para o cálculo da discrepância máxima, é importante entender que a mesma ocorre quando a inclinação do segmento da poligonal da curva de Lorenz passa de uma valor menor que um para um valor maior que um. De acordo com \citet{Hoffmann2006}, a inclinação do segmento da poligonal é dada por
+
+\[
+  d_i = \dfrac{X_i}{\mu}
+\]
+
+Essa mudança é identificada quando o valor de \(X_i\) ordenada em ordem crescente passa de uma valor menor que a média \(\mu\) para um valor maior que a média \(\mu\), ou seja,
+
+\[
+  X_i < \mu~~para~1 \leq i \leq h
+\]
+e
+\[
+  X_i \geq \mu~~para~h < i \leq n
+\]
+
+Nesaas condições percorre-se a sequência de valores em ordem crescente, o valor de \(p_i - \Phi_i\) aumenta até a inclusão do h-ésimo elemento.que corresponde a \eqref{eq:DiscrepanciaMaximaDefinicao}.
+
+Considerando \eqref{eq:DiscrepanciaMaximaDefinicao}, \eqref{eq:ProporcaoDaPopulacao} e \eqref{eq:ProporcaoDaRendaAcumulada} chaga-se em
+
+\[
+  D = \dfrac{h}{n} - \dfrac{1}{n\mu}\sum_{i=1}^{h}X_i
+\]
+que depois de algumas manobras algébricas torna-se
+
+\[
+  D = \dfrac{1}{n\mu}\sum_{i=1}^{h}(\mu - X_i)
+\label{eq:DiscrepanciaMaximaEmTermosDeXi}
+\]
+Na parte de estatística descritiva foi apresentado a medida de dispersão desvio absoluto médio
+
+\[
+  \delta = \dfrac{1}{n}\sum_{i=1}^{n}|X_i - \mu|
+\]
+e considerando que
+\[
+  \delta = \dfrac{1}{n}\left[ -\sum_{i=1}^{h}\left(X_i - \mu\right) + \sum_{i=h+1}^{n}\left(X_i - \mu\right)\right]
+\]
+e que
+\[
+  \sum_{i=h+1}^{n}\left(X_i - \mu\right) = -\sum_{i=1}^{h}\left(X_i - \mu\right).
+\]
+Portanto
+\[
+\delta = \dfrac{2}{n}\sum_{i=h+1}^{n}\left(X_i - \mu\right) = \dfrac{2}{n}\sum_{i=1}^{h}\left(\mu - X_i \right).
+\label{eq:DesvioAbsolutoMedioEquivalentes}
+\]
+Comparando \eqref{eq:DesvioAbsolutoMedioEquivalentes} e \eqref{eq:DiscrepanciaMaximaEmTermosDeXi} obtém-se
+
+\[
+D = \dfrac{\delta}{2\mu}.
+\label{eq:DiscrepanciaMaximaFinal}
+\]
+Se o Desvio Absoluto Médio, \(\delta\), é uma medida de dispersão da distribuição, a fórmula \eqref{eq:DiscrepanciaMaximaFinal} mostra que discrepância máxima, da mesma forma que o índice de Gini, é uma medida de dispersão relativa.
+Retomando o exemplo numérico da tabela \ref{tab:DadosdoExemploNumericoParaGini}, é possível obter o valor da sua discrepância máxima através de \eqref{eq:DiscrepanciaMaximaDefinicao}.
+
+\[
+D = p_h - \Phi_h = 0,625 - 0,180 = 0,445.
+\]
+O mesmo resultado poderia ser obtido através da fórmula \eqref{eq:DiscrepanciaMaximaFinal}. Para isso é necessário calcular o desvio absoluto médio, \(\delta\), para os valores de \(X_i\) do exemplo numérico. Ou seja,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{somadesvioabsolutomedioxi <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{abs}\NormalTok{(xi }\OperatorTok{-}\StringTok{ }\NormalTok{ximedio))}
+\NormalTok{somadesvioabsolutomedioxi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 44,5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{desvioabsolutomedioxi <-}\StringTok{ }\NormalTok{(}\KeywordTok{length}\NormalTok{(xi))}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{abs}\NormalTok{(xi }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\NormalTok{ximedio))}
+\NormalTok{desvioabsolutomedioxi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5,5625
+\end{verbatim}
+
+\[
+\delta = \dfrac{1}{n}\sum_{i=1}^{n}|X_i - \mu| = \dfrac{1}{\text{8}}\times \text{44,5} = \text{5,5625}.
+\]
+Portanto,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{discrepanciamaximaxi <-}\StringTok{ }\NormalTok{desvioabsolutomedioxi}\OperatorTok{/}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{ximedio)}
+\NormalTok{discrepanciamaximaxi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,445
+\end{verbatim}
+
+\[
+D = \dfrac{\delta}{2\mu} = \dfrac{\text{5,5625}}{2 \times \text{6,25}} = \text{0,445}.
 \]
 
 \hypertarget{redunduxe2ncia-e-uxedndice-de-theil}{%

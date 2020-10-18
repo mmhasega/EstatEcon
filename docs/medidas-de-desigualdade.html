@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-16" />
+<meta name="date" content="2020-10-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,8 +171,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-gini"><i class="fa fa-check"></i><b>2.4</b> Índice Gini</a></li>
 <li class="chapter" data-level="2.5" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#discrepância-máxima"><i class="fa fa-check"></i><b>2.5</b> Discrepância Máxima</a></li>
 <li class="chapter" data-level="2.6" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#redundância-e-índice-de-theil"><i class="fa fa-check"></i><b>2.6</b> Redundância e Índice de Theil</a><ul>
-<li class="chapter" data-level="2.6.1" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-t-de-theil"><i class="fa fa-check"></i><b>2.6.1</b> Índice T de Theil</a></li>
-<li class="chapter" data-level="2.6.2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-de-l-de-theil"><i class="fa fa-check"></i><b>2.6.2</b> Índice de L de Theil</a></li>
+<li class="chapter" data-level="2.6.1" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#teoria-da-informação"><i class="fa fa-check"></i><b>2.6.1</b> Teoria da Informação</a></li>
+<li class="chapter" data-level="2.6.2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-t-de-theil"><i class="fa fa-check"></i><b>2.6.2</b> Índice T de Theil</a></li>
+<li class="chapter" data-level="2.6.3" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-de-l-de-theil"><i class="fa fa-check"></i><b>2.6.3</b> Índice de L de Theil</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#variância-dos-logaritmos"><i class="fa fa-check"></i><b>2.7</b> Variância dos Logaritmos</a></li>
 </ul></li>
@@ -782,11 +783,39 @@ D = \dfrac{\delta}{2\mu} = \dfrac{5,5625}{2 \times 6,25} = 0,445.
 </div>
 <div id="redundância-e-índice-de-theil" class="section level2">
 <h2><span class="header-section-number">2.6</span> Redundância e Índice de Theil</h2>
+<div id="teoria-da-informação" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Teoria da Informação</h3>
+<p>Para entender melhor as medidas de desigualdades de Theil, é necessário introduzir alguns conceitos da teoria da informação.</p>
+<p>Seja <span class="math inline">\(x\)</span>, a probabilidadde de ocorrer o evento <span class="math inline">\(E\)</span>.</p>
+<ul>
+<li><p>Para <span class="math inline">\(x=1\)</span>, a mensagem <strong>evento <span class="math inline">\(E\)</span> ocorreu</strong> não tem nenhum conteúdo informativo.</p></li>
+<li><p>Para <span class="math inline">\(x \rightarrow 0\)</span>, ou seja, para valores muito pequenos de <span class="math inline">\(x\)</span>, a mensagem <strong>evento <span class="math inline">\(E\)</span> ocorreu</strong> tem alto valor informativo.</p></li>
+</ul>
+<p>A segunda situação seria, por exemplo, o caso de uma notícia que nos causas surpresa ou de um <em>furo</em> de imprensa. Quando <span class="math inline">\(x\)</span> tende a zero, o conteúdo informativo da mensagem <strong>evento <span class="math inline">\(E\)</span> ocorreu</strong> tende a infinito.</p>
+<p>Matematicamente, o conteúdo informativo da mensagem que afirma que determinado evento ocorreu é dado por</p>
+<p><span class="math display" id="eq:FormulaDoConteudoInformativo">\[
+h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
+\tag{2.18}
+\]</span></p>
+<p>De acordo com <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>, a escolha da função logarítmica é devido a propriedade de atividade do conteúdo informativo no caso de eventos independentes. Portanto, se <span class="math inline">\(E_1\)</span> e <span class="math inline">\(E_2\)</span> são dois eventos independentes com probabilidades <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>, respectivamente, a probabilidade de que ambos ocorram é <span class="math inline">\(x_1x_2\)</span>. O conteúdo informativo da mensagem de que ambos os eventos ocorreram é</p>
+<p><span class="math display">\[
+h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
+\]</span>
+Em teoria da informação, normalmente se utiliza logarítmos na base 2 ou logarítmos naturais. Desta forma:</p>
+<ul>
+<li><p>Logaritmos na base 2: o conteúdo informativo é medido em <strong>bits</strong>.</p></li>
+<li><p>Logaritmos naturais: o conteúdo informativo é medido em <strong>nits</strong>.</p></li>
+<li><p>1 bit = 0,693 nit.</p></li>
+<li><p>1 nit = 1,443 bit.</p></li>
+</ul>
+<p>Generalizando o conceito de informação, é apresentando, na sequência, como se mede o conteúdo informativo de uma <strong>mensagem sujeita a erro</strong>, ou <strong>mensagem incerta</strong>.</p>
+<p>Para isso, admita-se que a a probabilidade de chover em um determinado dia, em certo local,</p>
+</div>
 <div id="índice-t-de-theil" class="section level3">
-<h3><span class="header-section-number">2.6.1</span> Índice T de Theil</h3>
+<h3><span class="header-section-number">2.6.2</span> Índice T de Theil</h3>
 </div>
 <div id="índice-de-l-de-theil" class="section level3">
-<h3><span class="header-section-number">2.6.2</span> Índice de L de Theil</h3>
+<h3><span class="header-section-number">2.6.3</span> Índice de L de Theil</h3>
 </div>
 </div>
 <div id="variância-dos-logaritmos" class="section level2">

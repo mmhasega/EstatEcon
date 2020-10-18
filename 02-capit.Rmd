@@ -460,6 +460,44 @@ D = \dfrac{\delta}{2\mu} = \dfrac{`r desvioabsolutomedioxi`}{2 \times `r ximedio
 
 ## Redundância e Índice de Theil
 
+### Teoria da Informação
+
+Para entender melhor as medidas de desigualdades de Theil, é necessário introduzir alguns conceitos da teoria da informação. 
+
+Seja $x$, a probabilidadde de ocorrer o evento $E$.
+
+- Para $x=1$, a mensagem **evento $E$ ocorreu** não tem nenhum conteúdo informativo. 
+
+- Para $x \rightarrow 0$, ou seja, para valores muito pequenos de $x$, a mensagem **evento $E$ ocorreu** tem alto valor informativo.
+
+A segunda situação seria, por exemplo, o caso de uma notícia que nos causas surpresa ou de um *furo* de imprensa. Quando $x$ tende a zero, o conteúdo informativo da mensagem **evento $E$ ocorreu** tende a infinito.
+
+Matematicamente, o conteúdo informativo da mensagem que afirma que determinado evento ocorreu é dado por
+
+\[
+h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
+(\#eq:FormulaDoConteudoInformativo)
+\]
+
+De acordo com @Hoffmann2006, a escolha da função logarítmica é devido a propriedade de atividade do conteúdo informativo no caso de eventos independentes. Portanto, se $E_1$ e $E_2$ são dois eventos independentes com probabilidades $x_1$ e $x_2$, respectivamente, a probabilidade de que ambos ocorram é $x_1x_2$. O conteúdo informativo da mensagem de que ambos os eventos ocorreram é
+
+\[
+h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
+\]
+Em teoria da informação, normalmente se utiliza logarítmos na base 2 ou logarítmos naturais. Desta forma:
+
+- Logaritmos na base 2: o conteúdo informativo é medido em **bits**.
+
+- Logaritmos naturais: o conteúdo informativo é medido em **nits**.
+
+- 1 bit = 0,693 nit.
+
+- 1 nit = 1,443 bit.
+
+Generalizando o conceito de informação, é apresentando, na sequência, como se mede o conteúdo informativo de uma **mensagem sujeita a erro**, ou **mensagem incerta**.
+
+Para isso, admita-se que a a probabilidade de chover em um determinado dia, em certo local, 
+
 ### Índice T de Theil
 
 ### Índice de L de Theil

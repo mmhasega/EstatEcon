@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-17" />
+<meta name="date" content="2020-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -778,7 +778,7 @@ Portanto,</p>
 <span id="cb127-3"><a href="medidas-de-desigualdade.html#cb127-3"></a>discrepanciamaximaxi</span></code></pre></div>
 <pre><code>## [1] 0,445</code></pre>
 <p><span class="math display">\[
-D = \dfrac{\delta}{2\mu} = \dfrac{5,5625}{2 \times 6,25} = 0,445.
+  D = \dfrac{\delta}{2\mu} = \dfrac{5,5625}{2 \times 6,25} = 0,445.
 \]</span></p>
 </div>
 <div id="redundância-e-índice-de-theil" class="section level2">
@@ -793,13 +793,13 @@ D = \dfrac{\delta}{2\mu} = \dfrac{5,5625}{2 \times 6,25} = 0,445.
 </ul>
 <p>A segunda situação seria, por exemplo, o caso de uma notícia que nos causas surpresa ou de um <em>furo</em> de imprensa. Quando <span class="math inline">\(x\)</span> tende a zero, o conteúdo informativo da mensagem <strong>evento <span class="math inline">\(E\)</span> ocorreu</strong> tende a infinito.</p>
 <p>Matematicamente, o conteúdo informativo da mensagem que afirma que determinado evento ocorreu é dado por</p>
-<p><span class="math display" id="eq:FormulaDoConteudoInformativo">\[
-h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
-\tag{2.18}
+<p><span class="math display" id="eq:ConteudoInformativo">\[
+  h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
+  \tag{2.18}
 \]</span></p>
 <p>De acordo com <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>, a escolha da função logarítmica é devido a propriedade de atividade do conteúdo informativo no caso de eventos independentes. Portanto, se <span class="math inline">\(E_1\)</span> e <span class="math inline">\(E_2\)</span> são dois eventos independentes com probabilidades <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>, respectivamente, a probabilidade de que ambos ocorram é <span class="math inline">\(x_1x_2\)</span>. O conteúdo informativo da mensagem de que ambos os eventos ocorreram é</p>
 <p><span class="math display">\[
-h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
+  h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
 \]</span>
 Em teoria da informação, normalmente se utiliza logarítmos na base 2 ou logarítmos naturais. Desta forma:</p>
 <ul>
@@ -809,7 +809,122 @@ Em teoria da informação, normalmente se utiliza logarítmos na base 2 ou logar
 <li><p>1 nit = 1,443 bit.</p></li>
 </ul>
 <p>Generalizando o conceito de informação, é apresentando, na sequência, como se mede o conteúdo informativo de uma <strong>mensagem sujeita a erro</strong>, ou <strong>mensagem incerta</strong>.</p>
-<p>Para isso, admita-se que a a probabilidade de chover em um determinado dia, em certo local,</p>
+<p>Para isso, admita-se que a a probabilidade de chover em um determinado dia, em certo local, estabelecida com base em séries históricas, seja <span class="math inline">\(x_1 = 0,5\)</span>. Nesse caso o conteúdo da informação <strong>chove</strong> é de</p>
+<p><span class="math display">\[
+  h(x_1) = \log\dfrac{1}{0,5} =\log 2^1 = 1~\text{bit}
+\]</span>
+Suponha agora que uma previsão de tempo estabeleceu que iria chover. Suponha, também, que, com base nos resultados anteriores de tais previsões, probabilidade de que realmente shova passa a ser <span class="math inline">\(y_1 = 0,68\)</span>. De acordo com as novas suposições, o conteúdo da informação <strong>chove</strong> é</p>
+<p><span class="math display">\[
+  h(y_1) = \log\dfrac{1}{o,68} + 0,5564~\text{bit}
+\]</span></p>
+<p>O conteúdo informativo da previsão é</p>
+<p><span class="math display">\[
+  h(x_1) - h(y_1) = \log\dfrac{1}{x_1} - \log\dfrac{1}{y_1} =  1 - 0,5564 = 0,4436~\text{bit}
+\]</span>
+ou
+<span class="math display">\[
+  h(x_1) - h(y_1) = \log\dfrac{1}{x_1} - \log\dfrac{1}{y_1} = \log\dfrac{1}{x_1} + \log \left(\dfrac{1}{y_1}\right)^{-1} = \log\dfrac{y_1}{x_1} = \log\left(\dfrac{0,50}{0,68}\right)  = 0,4436~\text{bit}.
+\]</span>
+Ou seja, o conteúdo informativo <strong>chove</strong>, com base na probabilidade <span class="math inline">\(x_i\)</span> nos dados históricos e na probabilidade <span class="math inline">\(y_i\)</span> do histórico de previsões, é de 0,4436 bit.</p>
+<p>Generalizando, o coanteúdo informativo de uma mensagem sujeita a erro ou mensagem incerta, como é o caso da previsão, é dado por</p>
+<p><span class="math display" id="eq:ConteudoInformativoGeral">\[
+  \log \dfrac{y}{x}
+  \tag{2.19}
+\]</span>
+onde</p>
+<ul>
+<li><p><span class="math inline">\(x\)</span> é a probabilidade <em>ex-ante</em> ou a probabilidade de que o evento ocorra antes de recebida a mensagem;</p></li>
+<li><p><span class="math inline">\(y\)</span> é a probabilidade <em>ex-post</em> ou a probabilidade de que oevento ocorra uma vez recebida a mensagem.</p></li>
+</ul>
+<p>Na sequência é apreseantado o conceito de <em>entropia</em>.</p>
+<p><strong>Entropia de uma distribuição <span class="math inline">\(H(x)\)</span></strong></p>
+<p>Seja o universo de <span class="math inline">\(n\)</span> possíveis eventos <span class="math inline">\(E_i\)</span>, para <span class="math inline">\(i=1,\ldots ,n\)</span>, mutuamente exclusivos aos quais associa-se as probabilidades <span class="math inline">\(x_i\)</span>. Sabe-se que</p>
+<p><span class="math display">\[
+  \sum_{i}^{n} x_i = 1.
+\]</span></p>
+<p>A informação esperada de uma mensagem certa, ou seja, a esperança matemática do conteúdo informativo da mensagem <strong>ocorreu <span class="math inline">\(E_i\)</span></strong>, também denominada entropia da distribuição, é</p>
+<p><span class="math display" id="eq:InformacaoEsperadaDeUmaMensagemCerta">\[
+  H(x) = E[h(x_i)] = \sum_{i=1}^{n} x_i h(x_i) = \sum_{i=1}^{n}x_i \log\dfrac{1}{x_i} = - \sum_{i=1}^{n}x_i \log x_i
+  \tag{2.20}
+\]</span></p>
+<p>Para o caso particular de <span class="math inline">\(x_i= 0\)</span>, adota-se a definição
+<span class="math display" id="eq:CasoParticularxiIgualA0">\[
+ x\log x = 0,~~\text{se}~x = 0
+ \tag{2.21}
+\]</span>
+uma vez que
+<span class="math display">\[
+  \lim_{x\rightarrow 0}(x\log x) = 0
+\]</span>
+Para <span class="math inline">\(0 &lt; x_i \leq 1\)</span> se tem</p>
+<p><span class="math display">\[
+\dfrac{1}{x_i}\geq 1
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+\log \dfrac{1}{x_i} \geq 0.
+\]</span>
+Conclui-se que
+<span class="math display">\[
+H(x) = \sum_{i=1}^{n} x_i \log \dfrac{1}{x_i} = - \sum_{i=1}^{n} x_i \log x_i \geq 0 
+\]</span></p>
+<p><strong>Valor mínimo de <span class="math inline">\(H(x)\)</span></strong></p>
+<p>O valor mínimo de <span class="math inline">\(H(x)\)</span> ocorre quando uma das probabilidades é 1 e as demais, consequentemente, são nulas. Nesse caso <span class="math inline">\(H(x) = 0\)</span>. Ou seja, na somatória há um único <span class="math inline">\(x_i=1\)</span> e o restante <span class="math inline">\(x_i = 0\)</span>. Portanto,</p>
+<ul>
+<li><p>quando <span class="math inline">\(x=0\)</span>
+<span class="math display">\[
+  x \log x = 0
+\]</span>
+de acordo com <a href="medidas-de-desigualdade.html#eq:CasoParticularxiIgualA0">(2.21)</a>;</p></li>
+<li><p>quando <span class="math inline">\(x=1\)</span> se tem <span class="math inline">\(\log 1 = 0\)</span> e também
+<span class="math display">\[
+  x \log x = 0.
+\]</span></p></li>
+</ul>
+<p>Assim o valor mínimo do valor esperado do conteúdo informativo <span class="math inline">\(H(x)\)</span> é</p>
+<p><span class="math display">\[
+H(x) = - \sum_{i=1}^{n}x_i \log x_i = 0
+\]</span></p>
+<p><strong>Valor Máximo de <span class="math inline">\(H(x)\)</span></strong></p>
+<p>Para encontrar o valor máximo de <span class="math inline">\(H(x)\)</span> sujeito a condição de que <span class="math inline">\(\sum x_i = 1\)</span>, utiliza-se o método do multiplicador de Lagrange, escrevendo a seguinte função</p>
+<p><span class="math display">\[
+  \max H(x) = -\sum_{i=1}^{n}x_i \log x_i
+\]</span>
+sujeito a
+<span class="math display">\[
+  \sum_{i=1}^{n} x_i = 1
+\]</span>
+então
+<span class="math display" id="eq:LagrangeanoDeHx">\[
+  \mathcal{L} = -\sum_{i=1}^{n}x_i \log x_i - \lambda\left( \sum_{i=1}^{n} x_i  - 1 \right)
+  \tag{2.22}
+\]</span>
+Igualando a zero as derivadas parciais de <a href="medidas-de-desigualdade.html#eq:LagrangeanoDeHx">(2.22)</a> em relação a <span class="math inline">\(x_i\)</span> e admitindo-se que se usa os logaritmos naturais, se tem:</p>
+<p><span class="math display">\[
+  \log x_i = -(1 + \lambda),~~para~i=1,\ldots ,n
+\]</span>
+sendo que
+<span class="math display">\[
+  x_i = e^{-(1+\lambda)} = \dfrac{1}{e^{(1+\lambda)}}.
+\]</span>
+O valor máximo de <span class="math inline">\(H(x)\)</span> acontece quando todos os valores de <span class="math inline">\(x_i\)</span>, ou seja, todos as probabilidades são iguais entre si e, portanto, igual a <span class="math inline">\(\dfrac{1}{n}\)</span>. Nesse caso,</p>
+<p><span class="math display">\[
+  H(x) = \sum_{i=1}^{n} x_i \log \dfrac{1}{x_i} = \sum_{i=1}^{n} \dfrac{1}{n} \log n = n \dfrac{1}{n}\log n = \log n 
+\]</span></p>
+<p>Resumindo, o valor esperado da informação ou a entropia da distribuição <span class="math inline">\(H(x)\)</span> varia entre 0 e <span class="math inline">\(\log n\)</span>. Ou seja,</p>
+<p><span class="math display" id="eq:IntervaloDeVariacaoDeHx">\[
+  0\leq H(x) \leq \log n.
+  \tag{2.23}
+\]</span></p>
+<p>A entropia da distribuíção é máxima, ou seja, há um máximo de incerteza a respeito do que pode ocorrer, quando todos os possíveis eventos são igualmente prováveis, ou seja, quando há um máximo de <em>desordem</em> no sistema.</p>
+<p><strong>Informação de uma mensagem incerta</strong></p>
+<p>Finalmente é apresentado o conceito de informação de uma mensagem incerta. Dado o universo de <span class="math inline">\(n\)</span> possíveis eventos <span class="math inline">\(E_i\)</span>, mutuamente exclusivos, com probabilidades <span class="math inline">\(x_i\)</span>, para <span class="math inline">\(i=1, \ldots, n\)</span>, considera-se uma mensagem incerta que poderia ser uma previsão ou uma mensagem duvidosa, que transforma as probabilidades <em>a priori</em> <span class="math inline">\(x_i\)</span> em probabilidade <em>a posteori</em> <span class="math inline">\(y_i\)</span>, onde <span class="math inline">\(y_i\)</span> é a probabilidade de ocorrência do evento <span class="math inline">\(E_i\)</span> depois de recebido a mensagem. Lembrando
+<a href="medidas-de-desigualdade.html#eq:ConteudoInformativoGeral">(2.19)</a>, verifica-se que a esperança matemática do conteúdo informativo da mensagem é</p>
+<p><span class="math display" id="eq:InformacaoDeUmaMensagemIncerta">\[
+I(y:x) = \sum_{i=1}^{n} y_i \log\dfrac{y_i}{x_i}
+\tag{2.24}
+\]</span></p>
+<p>A definição <a href="medidas-de-desigualdade.html#eq:ConteudoInformativo">(2.18)</a>, do conteúdo informativo de uma mensagem certa, é somente um caso especial de <a href="medidas-de-desigualdade.html#eq:InformacaoDeUmaMensagemIncerta">(2.24)</a>, eem que uma probabilidade <em>a posteriori</em> é igual a um e todas as outras são iguais a zero, ou seja, <span class="math inline">\(y_j = 1\)</span> e <span class="math inline">\(y_i = 0\)</span> para todo <span class="math inline">\(i\neq j\)</span>.</p>
 </div>
 <div id="índice-t-de-theil" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> Índice T de Theil</h3>

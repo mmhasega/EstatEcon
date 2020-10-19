@@ -455,7 +455,7 @@ discrepanciamaximaxi
 ```
 
 \[
-D = \dfrac{\delta}{2\mu} = \dfrac{`r desvioabsolutomedioxi`}{2 \times `r ximedio`} = `r discrepanciamaximaxi`.
+  D = \dfrac{\delta}{2\mu} = \dfrac{`r desvioabsolutomedioxi`}{2 \times `r ximedio`} = `r discrepanciamaximaxi`.
 \]
 
 ## Redundância e Índice de Theil
@@ -475,14 +475,14 @@ A segunda situação seria, por exemplo, o caso de uma notícia que nos causas s
 Matematicamente, o conteúdo informativo da mensagem que afirma que determinado evento ocorreu é dado por
 
 \[
-h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
-(\#eq:FormulaDoConteudoInformativo)
+  h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
+  (\#eq:ConteudoInformativo)
 \]
 
 De acordo com @Hoffmann2006, a escolha da função logarítmica é devido a propriedade de atividade do conteúdo informativo no caso de eventos independentes. Portanto, se $E_1$ e $E_2$ são dois eventos independentes com probabilidades $x_1$ e $x_2$, respectivamente, a probabilidade de que ambos ocorram é $x_1x_2$. O conteúdo informativo da mensagem de que ambos os eventos ocorreram é
 
 \[
-h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
+  h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
 \]
 Em teoria da informação, normalmente se utiliza logarítmos na base 2 ou logarítmos naturais. Desta forma:
 
@@ -496,7 +496,154 @@ Em teoria da informação, normalmente se utiliza logarítmos na base 2 ou logar
 
 Generalizando o conceito de informação, é apresentando, na sequência, como se mede o conteúdo informativo de uma **mensagem sujeita a erro**, ou **mensagem incerta**.
 
-Para isso, admita-se que a a probabilidade de chover em um determinado dia, em certo local, 
+Para isso, admita-se que a a probabilidade de chover em um determinado dia, em certo local, estabelecida com base em séries históricas, seja $x_1 = 0,5$. Nesse caso o conteúdo da informação **chove** é de
+
+\[
+  h(x_1) = \log\dfrac{1}{0,5} =\log 2^1 = 1~\text{bit}
+\]
+Suponha agora que uma previsão de tempo estabeleceu que iria chover. Suponha, também, que, com base nos resultados anteriores de tais previsões, probabilidade de que realmente shova passa a ser $y_1 = 0,68$. De acordo com as novas suposições, o conteúdo da informação **chove** é
+
+\[
+  h(y_1) = \log\dfrac{1}{o,68} + 0,5564~\text{bit}
+\]
+
+O conteúdo informativo da previsão é
+
+\[
+  h(x_1) - h(y_1) = \log\dfrac{1}{x_1} - \log\dfrac{1}{y_1} =  1 - 0,5564 = 0,4436~\text{bit}
+\]
+ou
+\[
+  h(x_1) - h(y_1) = \log\dfrac{1}{x_1} - \log\dfrac{1}{y_1} = \log\dfrac{1}{x_1} + \log \left(\dfrac{1}{y_1}\right)^{-1} = \log\dfrac{y_1}{x_1} = \log\left(\dfrac{0,50}{0,68}\right)  = 0,4436~\text{bit}.
+\]
+Ou seja, o conteúdo informativo **chove**, com base na probabilidade $x_i$ nos dados históricos e na probabilidade $y_i$ do histórico de previsões, é de 0,4436 bit.
+
+Generalizando, o coanteúdo informativo de uma mensagem sujeita a erro ou mensagem incerta, como é o caso da previsão, é dado por
+
+\[
+  \log \dfrac{y}{x}
+  (\#eq:ConteudoInformativoGeral)
+\]
+onde 
+
+- $x$ é a probabilidade *ex-ante* ou a probabilidade de que o evento ocorra antes de recebida a mensagem;
+
+- $y$ é a probabilidade *ex-post* ou a probabilidade de que oevento ocorra uma vez recebida a mensagem.
+
+Na sequência é apreseantado o conceito de *entropia*.
+
+**Entropia de uma distribuição $H(x)$**
+
+Seja o universo de $n$ possíveis eventos $E_i$, para $i=1,\ldots ,n$, mutuamente exclusivos aos quais associa-se as probabilidades $x_i$. Sabe-se que
+
+\[
+  \sum_{i}^{n} x_i = 1.
+\]
+
+A informação esperada de uma mensagem certa, ou seja, a esperança matemática do conteúdo informativo da mensagem **ocorreu $E_i$**, também denominada entropia da distribuição, é 
+
+\[
+  H(x) = E[h(x_i)] = \sum_{i=1}^{n} x_i h(x_i) = \sum_{i=1}^{n}x_i \log\dfrac{1}{x_i} = - \sum_{i=1}^{n}x_i \log x_i
+  (\#eq:InformacaoEsperadaDeUmaMensagemCerta)
+\]
+
+Para o caso particular de $x_i= 0$, adota-se a definição
+\[
+ x\log x = 0,~~\text{se}~x = 0
+ (\#eq:CasoParticularxiIgualA0)
+\]
+uma vez que
+\[
+  \lim_{x\rightarrow 0}(x\log x) = 0
+\]
+Para $0 < x_i \leq 1$ se tem
+
+\[
+\dfrac{1}{x_i}\geq 1
+\]
+
+e
+
+\[
+\log \dfrac{1}{x_i} \geq 0.
+\]
+Conclui-se que
+\[
+H(x) = \sum_{i=1}^{n} x_i \log \dfrac{1}{x_i} = - \sum_{i=1}^{n} x_i \log x_i \geq 0 
+\]
+
+**Valor mínimo de $H(x)$**
+
+O valor mínimo de $H(x)$ ocorre quando uma das probabilidades é 1 e as demais, consequentemente, são nulas. Nesse caso $H(x) = 0$. Ou seja, na somatória há um único $x_i=1$ e o restante $x_i = 0$. Portanto,
+
+- quando $x=0$
+  \[
+    x \log x = 0
+  \]
+  de acordo com \@ref(eq:CasoParticularxiIgualA0);
+
+- quando $x=1$ se tem $\log 1 = 0$ e também
+  \[
+    x \log x = 0.
+  \]
+
+Assim o valor mínimo do valor esperado do conteúdo informativo $H(x)$ é
+
+\[
+H(x) = - \sum_{i=1}^{n}x_i \log x_i = 0
+\]
+
+**Valor Máximo de $H(x)$**
+
+Para encontrar o valor máximo de $H(x)$ sujeito a condição de que $\sum x_i = 1$, utiliza-se o método do multiplicador de Lagrange, escrevendo a seguinte função
+
+\[
+  \max H(x) = -\sum_{i=1}^{n}x_i \log x_i
+\]
+sujeito a
+\[
+  \sum_{i=1}^{n} x_i = 1
+\]
+então
+\[
+  \mathcal{L} = -\sum_{i=1}^{n}x_i \log x_i - \lambda\left( \sum_{i=1}^{n} x_i  - 1 \right)
+  (\#eq:LagrangeanoDeHx)
+\]
+Igualando a zero as derivadas parciais de \@ref(eq:LagrangeanoDeHx) em relação a $x_i$ e admitindo-se que se usa os logaritmos naturais, se tem:
+
+\[
+  \log x_i = -(1 + \lambda),~~para~i=1,\ldots ,n
+\]
+sendo que
+\[
+  x_i = e^{-(1+\lambda)} = \dfrac{1}{e^{(1+\lambda)}}.
+\]
+O valor máximo de $H(x)$ acontece quando todos os valores de $x_i$, ou seja, todos as probabilidades são iguais entre si e, portanto, igual a $\dfrac{1}{n}$. Nesse caso,
+
+\[
+  H(x) = \sum_{i=1}^{n} x_i \log \dfrac{1}{x_i} = \sum_{i=1}^{n} \dfrac{1}{n} \log n = n \dfrac{1}{n}\log n = \log n 
+\]
+
+Resumindo, o valor esperado da informação ou a entropia da distribuição $H(x)$ varia entre 0 e $\log n$. Ou seja,
+
+\[
+  0\leq H(x) \leq \log n.
+  (\#eq:IntervaloDeVariacaoDeHx)
+\]
+
+A entropia da distribuíção é máxima, ou seja, há um máximo de incerteza a respeito do que pode ocorrer, quando todos os possíveis eventos são igualmente prováveis, ou seja, quando há um máximo de *desordem* no sistema.
+
+**Informação de uma mensagem incerta**
+
+Finalmente é apresentado o conceito de informação de uma mensagem incerta. Dado o universo de $n$ possíveis eventos $E_i$, mutuamente exclusivos, com probabilidades $x_i$, para $i=1, \ldots, n$, considera-se uma mensagem incerta que poderia ser uma previsão ou uma mensagem duvidosa, que transforma as probabilidades *a priori* $x_i$ em probabilidade *a posteori* $y_i$, onde $y_i$ é a probabilidade de ocorrência do evento $E_i$ depois de recebido a mensagem. Lembrando
+\@ref(eq:ConteudoInformativoGeral), verifica-se que a esperança matemática do conteúdo informativo da mensagem é
+
+\[
+I(y:x) = \sum_{i=1}^{n} y_i \log\dfrac{y_i}{x_i}
+(\#eq:InformacaoDeUmaMensagemIncerta)
+\]
+
+A definição \@ref(eq:ConteudoInformativo), do conteúdo informativo de uma mensagem certa, é somente um caso especial de \@ref(eq:InformacaoDeUmaMensagemIncerta), eem que uma probabilidade *a posteriori* é igual a um  e todas as outras são iguais a zero,  ou seja, $y_j = 1$ e $y_i = 0$ para todo $i\neq j$. 
 
 ### Índice T de Theil
 

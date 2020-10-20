@@ -647,8 +647,111 @@ A definição \@ref(eq:ConteudoInformativo), do conteúdo informativo de uma men
 
 ### Índice T de Theil
 
+Seja uma população com $n$ pessoas em que cada uma recxebe uma fração não negativa da renda total,
+
+\[
+  y_i \geq 0,~~com~i=1,\ldots ,n.
+\]
+Se a renda média é $\mu$ e $X_i$ é a renda i-ésima pessoa,
+\[
+  y_i = \dfrac{X_i}{n\mu}.
+\]
+Obviamente,
+\[
+  \sum_{i=1}^{n} y_i = 1.
+\]
+Os valores de $y_i$ tem as mesmas propriedades que as probabilidades $x_i$ associadas a um universo de eventos $E_i$ da teoria da informação. Assim sendo, pdoe-se, com base em \@ref(eq:InformacaoEsperadaDeUmaMensagemCerta), definir a **entropia** da distribuição de renda considerada como sendo
+\[
+  H(y) = \sum_{i=1}^{n} y_i \log \dfrac{1}{y_i}.
+\]
+De acordo com \@ref(eq:IntervaloDeVariacaoDeHx), se tem
+
+\[
+  0\leq H(y) \leq \log n.
+\]
+Assim é possível definir as duas situações extremas:
+
+- o caso de perfeita igualdade na distribuição da renda,
+  \[
+    y_i = \dfrac{1}{n}~~para~i=1, \ldots, n,
+  \]
+  se tem $H(y) = \log n$;
+  
+- o caso de perfeita desigualdade na distribuição de renda,
+  \[
+    y_i = 1,~~para~i=1, \ldots, n,
+  \]
+  se tem $H(y) = 0$.
+  
+A **entropia** é, portanto, uma medida do grau de igualdade da distribuição. Mas como o objeto de análise é desigualdade, é ,muito mais interessante uma medida de desigualdade. Para isto basta subtrair a entropia do seu valor próprio máximo, $\log n$. Essa medida, denominada **Índice T de Theil** da distribuição é dada por
+
+\[
+T = \log n - H(y) = \sum_{i=1}^{n}
+(\#eq:IndiceTDeTheil)
+\]
+Para o cálculo do índice T de Theil, pode-se usar os logarítmos naturais ou os logarítmos na base 2, obtendo-se o valor de T en *nits* ou *bits*, respectivamente. Na prática, utiliza-se mais o logarítmo natural.
+
+Note que
+
+\[
+  0 \leq T \leq \log n
+  (\#eq:IntervaloDoIndiceTDeTheil)
+\]
+sendo que:
+
+- $T = 0$ corresponde ao caso de uma distribuição da renda com perfeita igualdade e;
+
+- $T = \log n$ corresponde ao caso de uma distribuição da renda com perfeita desigualdade.
+
+De \@ref(eq:IndiceTDeTheil) se tem
+
+\[
+  T = \sum_{i=1}^{n}y_i \log \dfrac{y_i}{\dfrac{1}{n}}.
+\]
+
+Comparando essa equação com \@ref(eq:InformacaoDeUmaMensagemIncerta), verifica-se que o **índice T de Theil** corresponde à esperança do valor informativo de uma mensagem incerta, em que as probabilidades *a posteriori* são as frações da renda total $y_i$ apropriadas pelas pessoas, e as probabilidades *a priori* são iguais a $1/n$, ou seja, iguais à fração da população correspondente a cada pessoa.  
+
 ### Índice de L de Theil
+
+A outra medida de desigualdade proposta por Theil, o **índice L de Theil**, corresponde à esperança do valor informativo de uma mensagem incerta, em que as probabilidades 8a posteriori* são as frações da população $1/n$  e as probabilidades *a priori* são as frações da renda $y_i$.  Ou seja,
+
+\[
+  L = \sum_{i=1}^{n}\dfrac{1}{n} \log \dfrac{\dfrac{1}{n}}{y_i} = \dfrac{1}{n}\sum_{i=1}^{n} \log \dfrac{1}{ny_i}.
+  (\#eq:IndiceLDeTheil)
+\]
+Verifica-se que o **índice L de Theil** é igual a zero no caso de pefeita igualdade
+\[
+  y_i = \dfrac{1}{n}
+\]
+para todo $i$.
+
+Basta uma das renda aproximar-se de zero para que o valor de $L$ tenda a infinito, fazendo que o índice $L$ seja inútil quando se trata de comparar distribuições de renda que incluem valores nulos.
+
+Uma vantagem importante das medidas de desigualdades de Theil na análise da distribuição de renda ou da riqueza é que, quando os dados podem ser agrupados com base em um critério qualquer, por exemplo regiões, os valores de $T$ e $L$ podem ser decompostos em uma medida de desigualdade **entre** grupos, por exemplo inter-regional, e uma média poderada das medidas de desigualdades **dentro** de grupos, por exemplo dentro das regiões.
 
 ## Variância dos Logaritmos
 
+A variância dos logaritmos das rendas é frequentemente utilizada como medida da desigualdade da distribuição da renda em uma população. Para uma população com $n$ pessoas, em que a renda da $i$-ésima pessoas aé indicada por $X_i$ para $i=1, \ldots, n$, a variância dos logaritmos das rendas é dada por
 
+\[
+V(Z) = \dfrac{1}{n} \sum_{i=1}^{n} \left( Z_i - \overline{Z} \right)^2 
+(\#eq:VarianciaDosLogaritmos)
+\]
+onde
+\[
+Z_i = \log X_i
+\]
+e
+\[
+\overline{Z} = \dfrac{1}{n}\sum_{i=1}^{n} Z_i.
+\]
+Nota-se que $V(Z)$ só e definida para $X_i \geq 0$ para $i=1, \ldots, n$.
+
+Indicando-se por $X^*$ a média geométrica dos $X_i$ , se tem
+
+\[
+V(Z) = \dfrac{1}{n} \sum_{i=1}^{n} \left( \log \dfrac{X_i}{X^*} \right)^2
+(\#eq:VarianciaDosLogaritmosComMediaGeometrica)
+\]
+
+A variância dos logaritmos, da mesmaforma que as medias $T$ e $L$ de Theill, é uma medida de desigualdade que, quando os dados podem ser agrupados segundo um critério qualquer, pode ser decomposta em um componente que corresponde à desigualdade entre os grupos e uma média podenrada das variâncias dos logarítmos dentro dos grupos.

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>CAPÍTULO 2 Medidas de desigualdade | Notas de aulas de Estatística Econômica</title>
   <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="CAPÍTULO 2 Medidas de desigualdade | Notas de aulas de Estatística Econômica" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-18" />
+<meta name="date" content="2020-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -189,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="variável-aleatória-e-distribuição.html"><a href="variável-aleatória-e-distribuição.html"><i class="fa fa-check"></i><b>4</b> Variável Aleatória e Distribuição</a><ul>
 <li class="chapter" data-level="4.1" data-path="variável-aleatória-e-distribuição.html"><a href="variável-aleatória-e-distribuição.html#esperança-matemática"><i class="fa fa-check"></i><b>4.1</b> Esperança matemática</a></li>
-<li class="chapter" data-level="4.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variável-aleatória"><i class="fa fa-check"></i><b>4.2</b> Variável Aleatória</a></li>
+<li class="chapter" data-level="4.2" data-path="variável-aleatória-e-distribuição.html"><a href="variável-aleatória-e-distribuição.html#variável-aleatória-1"><i class="fa fa-check"></i><b>4.2</b> Variável Aleatória</a></li>
 <li class="chapter" data-level="4.3" data-path="variável-aleatória-e-distribuição.html"><a href="variável-aleatória-e-distribuição.html#distribuição"><i class="fa fa-check"></i><b>4.3</b> Distribuição</a></li>
 <li class="chapter" data-level="4.4" data-path="variável-aleatória-e-distribuição.html"><a href="variável-aleatória-e-distribuição.html#variável-aleatória-discreta"><i class="fa fa-check"></i><b>4.4</b> Variável Aleatória Discreta</a></li>
 <li class="chapter" data-level="4.5" data-path="variável-aleatória-e-distribuição.html"><a href="variável-aleatória-e-distribuição.html#distribuição-uniforme"><i class="fa fa-check"></i><b>4.5</b> Distribuição Uniforme</a></li>
@@ -928,13 +928,99 @@ I(y:x) = \sum_{i=1}^{n} y_i \log\dfrac{y_i}{x_i}
 </div>
 <div id="índice-t-de-theil" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> Índice T de Theil</h3>
+<p>Seja uma população com <span class="math inline">\(n\)</span> pessoas em que cada uma recxebe uma fração não negativa da renda total,</p>
+<p><span class="math display">\[
+  y_i \geq 0,~~com~i=1,\ldots ,n.
+\]</span>
+Se a renda média é <span class="math inline">\(\mu\)</span> e <span class="math inline">\(X_i\)</span> é a renda i-ésima pessoa,
+<span class="math display">\[
+  y_i = \dfrac{X_i}{n\mu}.
+\]</span>
+Obviamente,
+<span class="math display">\[
+  \sum_{i=1}^{n} y_i = 1.
+\]</span>
+Os valores de <span class="math inline">\(y_i\)</span> tem as mesmas propriedades que as probabilidades <span class="math inline">\(x_i\)</span> associadas a um universo de eventos <span class="math inline">\(E_i\)</span> da teoria da informação. Assim sendo, pdoe-se, com base em <a href="medidas-de-desigualdade.html#eq:InformacaoEsperadaDeUmaMensagemCerta">(2.20)</a>, definir a <strong>entropia</strong> da distribuição de renda considerada como sendo
+<span class="math display">\[
+  H(y) = \sum_{i=1}^{n} y_i \log \dfrac{1}{y_i}.
+\]</span>
+De acordo com <a href="medidas-de-desigualdade.html#eq:IntervaloDeVariacaoDeHx">(2.23)</a>, se tem</p>
+<p><span class="math display">\[
+  0\leq H(y) \leq \log n.
+\]</span>
+Assim é possível definir as duas situações extremas:</p>
+<ul>
+<li><p>o caso de perfeita igualdade na distribuição da renda,
+<span class="math display">\[
+  y_i = \dfrac{1}{n}~~para~i=1, \ldots, n,
+\]</span>
+se tem <span class="math inline">\(H(y) = \log n\)</span>;</p></li>
+<li><p>o caso de perfeita desigualdade na distribuição de renda,
+<span class="math display">\[
+  y_i = 1,~~para~i=1, \ldots, n,
+\]</span>
+se tem <span class="math inline">\(H(y) = 0\)</span>.</p></li>
+</ul>
+<p>A <strong>entropia</strong> é, portanto, uma medida do grau de igualdade da distribuição. Mas como o objeto de análise é desigualdade, é ,muito mais interessante uma medida de desigualdade. Para isto basta subtrair a entropia do seu valor próprio máximo, <span class="math inline">\(\log n\)</span>. Essa medida, denominada <strong>Índice T de Theil</strong> da distribuição é dada por</p>
+<p><span class="math display" id="eq:IndiceTDeTheil">\[
+T = \log n - H(y) = \sum_{i=1}^{n}
+\tag{2.25}
+\]</span>
+Para o cálculo do índice T de Theil, pode-se usar os logarítmos naturais ou os logarítmos na base 2, obtendo-se o valor de T en <em>nits</em> ou <em>bits</em>, respectivamente. Na prática, utiliza-se mais o logarítmo natural.</p>
+<p>Note que</p>
+<p><span class="math display" id="eq:IntervaloDoIndiceTDeTheil">\[
+  0 \leq T \leq \log n
+  \tag{2.26}
+\]</span>
+sendo que:</p>
+<ul>
+<li><p><span class="math inline">\(T = 0\)</span> corresponde ao caso de uma distribuição da renda com perfeita igualdade e;</p></li>
+<li><p><span class="math inline">\(T = \log n\)</span> corresponde ao caso de uma distribuição da renda com perfeita desigualdade.</p></li>
+</ul>
+<p>De <a href="medidas-de-desigualdade.html#eq:IndiceTDeTheil">(2.25)</a> se tem</p>
+<p><span class="math display">\[
+  T = \sum_{i=1}^{n}y_i \log \dfrac{y_i}{\dfrac{1}{n}}.
+\]</span></p>
+<p>Comparando essa equação com <a href="medidas-de-desigualdade.html#eq:InformacaoDeUmaMensagemIncerta">(2.24)</a>, verifica-se que o <strong>índice T de Theil</strong> corresponde à esperança do valor informativo de uma mensagem incerta, em que as probabilidades <em>a posteriori</em> são as frações da renda total <span class="math inline">\(y_i\)</span> apropriadas pelas pessoas, e as probabilidades <em>a priori</em> são iguais a <span class="math inline">\(1/n\)</span>, ou seja, iguais à fração da população correspondente a cada pessoa.</p>
 </div>
 <div id="índice-de-l-de-theil" class="section level3">
 <h3><span class="header-section-number">2.6.3</span> Índice de L de Theil</h3>
+<p>A outra medida de desigualdade proposta por Theil, o <strong>índice L de Theil</strong>, corresponde à esperança do valor informativo de uma mensagem incerta, em que as probabilidades 8a posteriori* são as frações da população <span class="math inline">\(1/n\)</span> e as probabilidades <em>a priori</em> são as frações da renda <span class="math inline">\(y_i\)</span>. Ou seja,</p>
+<p><span class="math display" id="eq:IndiceLDeTheil">\[
+  L = \sum_{i=1}^{n}\dfrac{1}{n} \log \dfrac{\dfrac{1}{n}}{y_i} = \dfrac{1}{n}\sum_{i=1}^{n} \log \dfrac{1}{ny_i}.
+  \tag{2.27}
+\]</span>
+Verifica-se que o <strong>índice L de Theil</strong> é igual a zero no caso de pefeita igualdade
+<span class="math display">\[
+  y_i = \dfrac{1}{n}
+\]</span>
+para todo <span class="math inline">\(i\)</span>.</p>
+<p>Basta uma das renda aproximar-se de zero para que o valor de <span class="math inline">\(L\)</span> tenda a infinito, fazendo que o índice <span class="math inline">\(L\)</span> seja inútil quando se trata de comparar distribuições de renda que incluem valores nulos.</p>
+<p>Uma vantagem importante das medidas de desigualdades de Theil na análise da distribuição de renda ou da riqueza é que, quando os dados podem ser agrupados com base em um critério qualquer, por exemplo regiões, os valores de <span class="math inline">\(T\)</span> e <span class="math inline">\(L\)</span> podem ser decompostos em uma medida de desigualdade <strong>entre</strong> grupos, por exemplo inter-regional, e uma média poderada das medidas de desigualdades <strong>dentro</strong> de grupos, por exemplo dentro das regiões.</p>
 </div>
 </div>
 <div id="variância-dos-logaritmos" class="section level2">
 <h2><span class="header-section-number">2.7</span> Variância dos Logaritmos</h2>
+<p>A variância dos logaritmos das rendas é frequentemente utilizada como medida da desigualdade da distribuição da renda em uma população. Para uma população com <span class="math inline">\(n\)</span> pessoas, em que a renda da <span class="math inline">\(i\)</span>-ésima pessoas aé indicada por <span class="math inline">\(X_i\)</span> para <span class="math inline">\(i=1, \ldots, n\)</span>, a variância dos logaritmos das rendas é dada por</p>
+<p><span class="math display" id="eq:VarianciaDosLogaritmos">\[
+V(Z) = \dfrac{1}{n} \sum_{i=1}^{n} \left( Z_i - \overline{Z} \right)^2 
+\tag{2.28}
+\]</span>
+onde
+<span class="math display">\[
+Z_i = \log X_i
+\]</span>
+e
+<span class="math display">\[
+\overline{Z} = \dfrac{1}{n}\sum_{i=1}^{n} Z_i.
+\]</span>
+Nota-se que <span class="math inline">\(V(Z)\)</span> só e definida para <span class="math inline">\(X_i \geq 0\)</span> para <span class="math inline">\(i=1, \ldots, n\)</span>.</p>
+<p>Indicando-se por <span class="math inline">\(X^*\)</span> a média geométrica dos <span class="math inline">\(X_i\)</span> , se tem</p>
+<p><span class="math display" id="eq:VarianciaDosLogaritmosComMediaGeometrica">\[
+V(Z) = \dfrac{1}{n} \sum_{i=1}^{n} \left( \log \dfrac{X_i}{X^*} \right)^2
+\tag{2.29}
+\]</span></p>
+<p>A variância dos logaritmos, da mesmaforma que as medias <span class="math inline">\(T\)</span> e <span class="math inline">\(L\)</span> de Theill, é uma medida de desigualdade que, quando os dados podem ser agrupados segundo um critério qualquer, pode ser decomposta em um componente que corresponde à desigualdade entre os grupos e uma média podenrada das variâncias dos logarítmos dentro dos grupos.</p>
 
 </div>
 </div>

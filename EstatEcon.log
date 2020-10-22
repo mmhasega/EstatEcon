@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  19 OCT 2020 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  21 OCT 2020 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,7 +582,11 @@ Package: l3keys2e 2020-10-05 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_result_box=\box68
 \l__siunitx_table_number_align_skip=\skip71
 \l__siunitx_table_text_align_skip=\skip72
-) (./EstatEcon.aux)
+) (./EstatEcon.aux
+
+LaTeX Warning: Label `eq:DiferencaAbsolutaMedia' multiply defined.
+
+)
 \openout1 = `EstatEcon.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
@@ -723,107 +727,111 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 196.
-[12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25]
-<EstatEcon_files/figure-latex/histograma12-1.pdf, id=422, 276.03125pt x 246.922
+[12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
+[28] [29]
+<EstatEcon_files/figure-latex/histograma12-1.pdf, id=453, 276.03125pt x 246.922
 5pt>
 File: EstatEcon_files/figure-latex/histograma12-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/histograma12-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/histograma12-1.pdf  used 
-on input line 1109.
+on input line 1230.
 (pdftex.def)             Requested size: 276.03056pt x 246.92188pt.
-[26] [27 <./EstatEcon_files/figure-latex/histograma12-1.pdf>] [28]
-<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=449, 253.94875pt x 
+[30 <./EstatEcon_files/figure-latex/histograma12-1.pdf>] [31]
+<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=475, 253.94875pt x 
 249.93375pt>
 File: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf Graphic file (type
  pdf)
 <use EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf
-  used on input line 1226.
+  used on input line 1347.
 (pdftex.def)             Requested size: 253.95586pt x 249.94075pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[29] [30 <./EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf>] [31] [32] 
-[33] [34
+[32] [33 <./EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf>] [34] [35] 
+[36]
+Cap\'{\i }tulo 2.
+[37
 
 ]
-Cap\'{\i }tulo 2.
-[35]
-<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=503, 262.9825pt x 248.93pt
+<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=526, 262.9825pt x 248.93pt
 >
 File: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf  used 
-on input line 1548.
+on input line 1669.
 (pdftex.def)             Requested size: 262.98584pt x 248.93317pt.
 
-LaTeX Warning: Reference `fig:CurvaLorenzR' on page 36 undefined on input line 
-1549.
+LaTeX Warning: Reference `fig:CurvaLorenzR' on page 38 undefined on input line 
+1670.
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 1548--1550
+Underfull \hbox (badness 3417) in paragraph at lines 1669--1671
 [][] \T1/lmr/m/n/10 Con-si-de-rando a
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[36]
-<lorenz3.png, id=509, 1286.8075pt x 794.97pt>
+[38]
+<lorenz3.png, id=532, 1286.8075pt x 794.97pt>
 File: lorenz3.png Graphic file (type png)
 <use lorenz3.png>
-Package pdftex.def Info: lorenz3.png  used on input line 1559.
+Package pdftex.def Info: lorenz3.png  used on input line 1680.
 (pdftex.def)             Requested size: 344.98828pt x 213.12848pt.
-[37 <./EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>] [38pdfTeX warning (ext
+[39 <./EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>] [40pdfTeX warning (ext
 4): destination with the same identifier (name{figure.2.1}) has been already us
 ed, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.1590 
-        <./lorenz3.png>] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
-[50]
-Overfull \hbox (49.17578pt too wide) detected at line 2350
+l.1711 
+        <./lorenz3.png>] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+[52]
+Overfull \hbox (49.17578pt too wide) detected at line 2471
 \OML/lmm/m/it/10 h\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 ) \OMS/l
 msy/m/n/10 ^^@ \OML/lmm/m/it/10 h\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 y[]\OT1/lmr/
 m/n/10 ) = [] [] \OMS/lmsy/m/n/10 ^^@ [] [] \OT1/lmr/m/n/10 = [] [] + [] [][] =
  [] [] = [] [] = 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 4436 []\OML/lmm/m/it/10 :
  []
 
-[51] [52] [53] [54] [55] [56] [57] [58
+[53] [54] [55] [56] [57] [58] [59] [60
 
 ]
 Cap\'{\i }tulo 3.
-[59] [60
 
-]
+Underfull \vbox (badness 2126) has occurred while \output is active []
+
+[61] [62]
 Cap\'{\i }tulo 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[61]
+[63
+
+]
 Overfull \vbox (128.73444pt too high) has occurred while \output is active []
 
-[62]
+[64]
 Cap\'{\i }tulo 5.
-(./EstatEcon.bbl [63
+(./EstatEcon.bbl [65
 
-] [64
+] [66
 
-]) [65] (./EstatEcon.aux)
+]) [67] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
-(rerunfilecheck)             Checksum: 08FBFCF2CE3BEA69C063AE2EEE043B7C;7373.
+(rerunfilecheck)             Checksum: 0E24F23300492F2B6BDD25B7DCBD6FCA;7484.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 17403 strings out of 481866
- 291059 string characters out of 5930245
- 608695 words of memory out of 5000000
- 33146 multiletter control sequences out of 15000+600000
+ 17417 strings out of 481866
+ 291439 string characters out of 5930245
+ 609255 words of memory out of 5000000
+ 33156 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 60i,8n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,16n,67p,836b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{
 /Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/
 macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/mac
@@ -848,10 +856,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></User
 s/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/m
 acbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/mac
 book/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (65 pages, 522163 bytes).
+Output written on EstatEcon.pdf (67 pages, 529161 bytes).
 PDF statistics:
- 865 PDF objects out of 1000 (max. 8388607)
- 760 compressed objects within 8 object streams
- 222 named destinations out of 1000 (max. 500000)
- 333 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 786 compressed objects within 8 object streams
+ 226 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

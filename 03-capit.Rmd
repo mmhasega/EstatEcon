@@ -1,6 +1,23 @@
 # Números-Índices
 
+O conteúdo deste tópico foi elaborado com base no capítulo 16 de @Hoffmann2006 e no capítulo 11 de @Sartoris2013.
+
+
+## Introdução
+
+Os números-índices, ou simplesmente índices, são proporções estatísticas, 
+geralmente expressas em porcentagem, idealizadas para comparar as situações de 
+um conjunto de variáveis em épocas ou localidades diversas.
+
+Para quem vai fazer uso do números-índices na análise de um problema, é 
+importante saber como são obtidos. Mesmo que não seja necessário calcular um 
+novo índice, é interessante conhecer os métodos de cálculo, pois isso permite
+interpretar melhor os índices  publicados e avaliar suas limitações.
+
 ## Preços Relativos
+
+O número-índice preços relativos é a relação entre o preço de um produto em determinado período (ano ou mês, geralmente) e o preço no período escolhido como base. Esse índice se destina a acompanhar a evolução do preço de determinado produto. O preço relativo pode ser denominado também de índice relativo de preço ou número-índice simples de preço.
+
 
 ## Índices Simples de Preços Agregados
 

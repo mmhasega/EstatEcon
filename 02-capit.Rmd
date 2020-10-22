@@ -618,6 +618,9 @@ sendo que
 \[
   x_i = e^{-(1+\lambda)} = \dfrac{1}{e^{(1+\lambda)}}.
 \]
+
+Note que $\lambda$ é constante neste caso.
+
 O valor máximo de $H(x)$ acontece quando todos os valores de $x_i$, ou seja, todos as probabilidades são iguais entre si e, portanto, igual a $\dfrac{1}{n}$. Nesse caso,
 
 \[

@@ -16,6 +16,14 @@ eq:valor2mediaposicaomedianapar
 eq:medianapar
 eq:posicaoquartilum
 eq:posicaoquartiltres
+eq:DeltaEmSomaDeValoresNegativosEPositivos
+eq:IgualdadeDasSomasDosDesvios
+eq:DesvioAbsolutoMedioAlternativo
+eq:DiferencaAbsolutaMedia
+eq:DiferencaAbsolutaMediaEmDuasParcelas
+eq:DiferencaAbsolutaMediaPassoIntermediario
+eq:DiferencaAbsolutaMediaQuaseFinal
+eq:DiferencaAbsolutaMediaFinal
 tab:pessoasocupadas
 fig:CurvaLorenzR
 fig:CurvaLorenz
@@ -28,7 +36,6 @@ eq:AreaDoTrapezioSi
 eq:AreaDoBeta
 eq:GiniEmTermosDePhi
 eq:GiniEmTermosDeXi
-eq:DiferencaAbsolutaMedia
 eq:DiferencaAbsolutaMediaModificada
 eq:GiniEmTermosDeDiferencaAbsolutaMedia
 eq:GiniFinal
@@ -65,7 +72,7 @@ amplitude
 variância
 desvio-padrão
 desvio-absoluto-médio
-diferença-média
+diferença-absoluta-média
 histograma
 diagrama-de-caixa-boxplot
 medidas-de-relação-linear-entre-duas-variáveis
@@ -83,6 +90,7 @@ teoria-da-informação
 índice-de-l-de-theil
 variância-dos-logaritmos
 números-índices
+introdução
 preços-relativos
 índices-simples-de-preços-agregados
 média-aritmética-dos-preços-relativos

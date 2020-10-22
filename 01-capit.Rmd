@@ -1,8 +1,8 @@
 # Estatística Descritiva
 
-## Medidas de posição
+O conteúdo deste tópico foi elaborado com base no capitulo 2 de @Sartoris2013 e nos capítulos 4 e 5 de @Hoffmann2006.
 
-Este tópico está baseado no material de @Sartoris2013.
+## Medidas de posição
 
 Trata-se de medidas de tendência central ou resumo. Como os nomes dizem, tratam-se de medidas que tratam de resumir a massa de valores e um único número.
 
@@ -430,7 +430,7 @@ print(moda1)
 
 Este tópico está baseado nos materiais de @Hoffmann2006, @Morettin2013 e @Sartoris2013.
 
-Medem como os dados estão \textit{agrupados}, mais ou menos próximos entre si,
+As medidas de dispersão medem como os dados estão **agrupados**, mais ou menos próximos entre si,ou
 seja, mais ou menos dispersos.
 
 ### Amplitude
@@ -545,7 +545,129 @@ dpX3
 
 ### Desvio Absoluto Médio
 
-### Diferença Média
+Por definição, o desvio absoluto médio de um conjunto de dados
+\[
+  X_1, X_2, \ldots, X_n
+\]
+é a média aritmética dos valores absolutos dos desvios em relação a média de $X_i$, 
+\[
+  \delta = \dfrac{1}{n} \sum_{i=1}^{n} \left| X_i - \overline{X} \right|.
+  (\#eq:DesvioAbsolutoMedio)
+\]
+Se os valores de X estiverem em ordem crescente
+
+\[
+  X_1\leq X_2 \leq , \ldots, X_n,  
+\]
+sendo válida pelos menos uma desigualdade, e se $h$ é um inteiro positivo tal qual que
+\[
+  X_i < \overline{X}~~para~1 \leq i \leq h
+\]
+e
+\[
+  X_i \geq \overline{X}~~para~h < i \leq n, 
+\]
+temos
+\[
+  \delta = \dfrac{1}{n}\left[ - \sum_{i=1}^{h}\left( X_i - \overline{X} \right) + \sum_{i=h+1}^{n} \left( X_i - \overline{X} \right) \right] 
+(\#eq:DeltaEmSomaDeValoresNegativosEPositivos)
+\]
+Como a soma dos $n$ desvios em relação á média $\overline{X}$ é zero
+\[
+  \sum_{i=1}^{n} \left(X_i - \overline{X} \right) = 0
+\]
+segue-se que
+\[
+  \sum_{i=h+1}^{n} \left( X_i - \overline{X} \right) = - \sum_{i=1}^{h}\left( X_i - \overline{X} \right).
+  (\#eq:IgualdadeDasSomasDosDesvios)
+\]
+Substituindo \@ref(eq:IgualdadeDasSomasDosDesvios) em \@ref(eq:DeltaEmSomaDeValoresNegativosEPositivos) se tem
+
+\[
+  \delta = \dfrac{2}{n} \sum_ {i=h+1}^{n}\left( X_i - \overline{X} \right) = \dfrac{2}{n} \sum_ {i=1}^{h} \left( \overline{X} - X_i  \right)
+(\#eq:DesvioAbsolutoMedioAlternativo)
+\]
+Note que se pode economizar cálculos se optar por uma das fórmulas do desvio absoluto médio dado por \@ref(eq:DesvioAbsolutoMedioAlternativo). O desvio absoluto médio será utilizado mais adiante para definir a fórmula da discrepância máxima na seção sobre o índice de Gini.
+
+### Diferença Absoluta Média
+
+Por definição, a diferença absoluta média de um conjunto de dados
+\[
+X_1, X_2, \ldots, X_n
+\]
+é dado por
+\[
+\Delta = \dfrac{1}{n^2} \sum_{i=1}^{n} \sum_{j=1}^{n} \left| X_i - X_j \right|.
+(\#eq:DiferencaAbsolutaMedia)
+\]
+Se
+\[
+X_1 \leq X_2 \leq , \ldots, X_n
+\]
+é possível escrever os valores de $X_i -X_j$, com $i+1,\ldots, n$ e $j=1,\ldots,n$, com segue
+
+\[
+  \begin{array}{ccccc}
+    X_n - X_n         & X_n - X_{n-1}         & \cdots    & X_n - X_2       & X_n - X_1 \\
+    X_n - X_{n-1}     & X_{n-1} - X_{n-1}     & \cdots    & X_{n-1} - X_2   & X_{n-1} - X_1 \\
+    \vdots            & \vdots                & \ddots    & \vdots          & \vdots \\
+    X_n - X_2         & X_{n-1} - X_2         & \cdots    & X_2 - X_2       & X_1 - X_1 \\
+    X_n - X_1         & X_{n-1} - X_1         & \cdots    & X_2 - X_1       & X_2 - X_1 
+  \end{array}
+\]
+Coletando os termos positivos e os negativos, se tem
+\[
+  \begin{split}
+    \Delta    & = \dfrac{1}{n^2} \left[ X_1 + 3X_2 + \ldots + (2n - 3)X_{n-1} + (2n-1)X_n \right] -  \\
+              & - \dfrac{1}{n^2}\left[ X_n - 3X_{n-1} + \ldots + (2n - 3)X_2 + (2n -1)X_1 \right]
+  \end{split}
+(\#eq:DiferencaAbsolutaMediaEmDuasParcelas)
+\]
+Note que o segundo membro de \@ref(eq:DiferencaAbsolutaMediaEmDuasParcelas) (lado direito) é a soma algébrica de duas parcelas de sinais contrários, seu valor não se altera se for adicionado a cada uma das expressões entre colchetes a expressão 
+
+\[
+  \left[X_n + 3X_{n-1} + \ldots + (2n - 3)X_2 + (2n - 1)X_1  \right].
+\]
+Dessa forma se obtém
+\[
+  \begin{split}
+    \Delta    & = \dfrac{1}{n^2} 2n\left[ X_1 + X_2 + \ldots + X_+{n-1} + X_n \right] - \\
+              & - \dfrac{2}{n^2}\left[  X_n + 3X_{n_1} + \ldots + (2n-3)X_2 + (2n-1)X_1 \right].
+  \end{split}
+\]
+Como
+\[
+  \sum_{i=1}^{n}X_i = n \overline{X}
+\]
+se tem
+\[
+  \Delta = 2\overline{X} - \dfrac{2}{n^2}\left[ (2n-1)X_1 + (2n-3)X_2 + \ldots + 3X_{n-1} + X_n \right].
+  (\#eq:DiferencaAbsolutaMediaPassoIntermediario)
+\]
+Somanda e subtraindo
+
+\[
+  \sum_{i=1}^{n}X_i = n\overline{X} 
+\]
+à expressão entre colchetes em \@ref(eq:DiferencaAbsolutaMediaPassoIntermediario) se tem
+
+\[
+  \Delta = 2\overline{X} \left( 1 + \dfrac{1}{n} \right) - \dfrac{4}{n^2} \left[ nX_1 + (n-1)X_2 + \ldots + 2X_{n-1} + X_n  \right]
+\]
+ou
+\[
+  \Delta = 2\overline{X} \left( 1 + \dfrac{1}{n} \right) - \dfrac{4}{n^2} \sum_{i=1}^{n}(n-i+1)X_i.
+  (\#eq:DiferencaAbsolutaMediaQuaseFinal)
+\]
+Com mais algumas transformações algébricas de \@ref(eq:DiferencaAbsolutaMediaQuaseFinal) se tem
+
+\[
+  \Delta = \dfrac{4}{n^2} \sum_{i=1}^{n} iX_i - 2\overline{X}\left( 1 + \dfrac{1}{n} \right)
+  (\#eq:DiferencaAbsolutaMediaFinal)
+\]
+
+Note que a fórmula da diferença média absoluta será utilizada mais adiante para a obtenção da fórmula do índice de Gini.
+
 
 ### Histograma
 

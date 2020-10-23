@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-10-22}
+\date{2020-10-23}
 
 \begin{document}
 \maketitle
@@ -2968,26 +2968,742 @@ Produto 3\strut
 \bottomrule
 \end{longtable}
 
-\hypertarget{uxedndices-simples-de-preuxe7os-agregados}{%
-\section{Índices Simples de Preços Agregados}\label{uxedndices-simples-de-preuxe7os-agregados}}
+\textbf{Exemplo numérico de preço relativo no R}
+
+Carrega-se os preços dos três produtos e calcula os respectivos preços relativos tendo como base o ano de 2002.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prd1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\NormalTok{prd2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{60}\NormalTok{)}
+\NormalTok{prd3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{)}
+
+\NormalTok{iprprd1 <-}\StringTok{ }\NormalTok{prd1}\OperatorTok{/}\NormalTok{prd1[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iprprd2 <-}\StringTok{ }\NormalTok{prd2}\OperatorTok{/}\NormalTok{prd2[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iprprd3 <-}\StringTok{ }\NormalTok{prd3}\OperatorTok{/}\NormalTok{prd3[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+
+\NormalTok{ipr161 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(iprprd1, iprprd2, iprprd3)}
+\KeywordTok{rownames}\NormalTok{(ipr161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
+
+\NormalTok{ipr161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      iprprd1 iprprd2 iprprd3
+## 2001      80      50      80
+## 2002     100     100     100
+## 2003     120     200     140
+## 2004     160     300     180
+## 2005     200     600     200
+\end{verbatim}
+
+Note que na linha da ano 2002, os três preaços relativos em porcentagem são iguais a 100.
+
+O preço relativo mostra como está evoluindo o preço de cada um dos produtos. Mas quando analisa-se um conjunto de mercadorias, interessa-se em obter um único índice que nos mostre como está evoluindo o nível geral dos preços dessas mercadorias.
+
+\hypertarget{uxedndice-simples-de-preuxe7os-agregados}{%
+\section{Índice Simples de Preços Agregados}\label{uxedndice-simples-de-preuxe7os-agregados}}
+
+O índice Simples de Preços Agregados é a relação entre o somatório dos preços das mercadorias no período \(t\) e o somatório dos preços das mercadorias no período escolhido como base.
+O índice simples de preços agreagados é também chamado de índice agregativo de preços.
+Defini-se que o índice \(i\), variando de 1 a \(n\), indique as \(n\) diferentes mercadorias do conjunto considerado.
+Note que \(I_A(\mathbf{p_t}|\mathbf{p_0})\) é o valor do índice agregativo para o vetor ou conjunto de preços \(\mathbf{p_t} = {P_{it},i=1,\ldots, n}\) quando comparado ao vetor de preços do período-base, \(\mathbf{p_0} = {P_{i0},i=1,\ldots, n}\). Ou seja,
+\begin{equation}
+  I_A(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}}{\sum_{i=1}^{n}P_{i0}},
+  \label{eq:IndiceSimplesDePrecosAgregados}
+\end{equation}
+ou em porcentagem
+\begin{equation}
+  I_A^*(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}}{\sum_{i=1}^{n}P_{i0}} \cdot 100.
+  \label{eq:IndiceSimplesDePrecosAgregadosPorcentagem}
+\end{equation}
+
+\textbf{Exemplo numérico do Índice simples de preços agregados}
+
+om base nos dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}, calcula-se o índice simples de preços agregados para os três produtos em 2004, tomando 2002 como ano-base. De acordo com \eqref{eq:IndiceSimplesDePrecosAgregadosPorcentagem},
+
+\begin{equation}
+  I_A^*(\mathbf{p_4}| \mathbf{p_2}) =
+  \frac{24 + 30 + 45}{15 + 10 +25} \cdot 100 = 198.
+\end{equation}
+
+Analogamente, obtém-se os demais índices que são apresentados na tabela \ref{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002}.
+
+\begin{longtable}[]{@{}cc@{}}
+\caption{\label{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002} Índice simples de preços agregados dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_A^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_A^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+74\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+100\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+146\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+198\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+280\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+A seguir é calculado o Índice simples de preços agregados do exemplo numérico no R.
+
+\textbf{Exemplo numérico do índice simples de preços agregados no R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\NormalTok{p2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{60}\NormalTok{)}
+\NormalTok{p3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{)}
+
+\NormalTok{p161 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(p1, p2, p3)}
+\KeywordTok{rownames}\NormalTok{(p161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
+
+\NormalTok{IAp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{IAp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{IAp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{IAp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{IAp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+
+\NormalTok{ispa161 <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(IAp1p2, IAp2p2, IAp3p2, IAp4p2, IAp5p2)}
+\KeywordTok{colnames}\NormalTok{(ispa161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ISPA"}\NormalTok{)}
+
+\NormalTok{ispa161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        ISPA
+## IAp1p2   74
+## IAp2p2  100
+## IAp3p2  146
+## IAp4p2  198
+## IAp5p2  280
+\end{verbatim}
 
 \hypertarget{muxe9dia-aritmuxe9tica-dos-preuxe7os-relativos}{%
 \section{Média Aritmética dos Preços Relativos}\label{muxe9dia-aritmuxe9tica-dos-preuxe7os-relativos}}
 
+A Média Aritmétirca dos Preços Relativos é um índice geral de preços que se obtém calculando a média aritmética dos preços relativos, isto é
+
+\begin{equation}
+  I_M(\mathbf{p_t}| \mathbf{p_0}) = \frac{1}{n}
+  \sum_{i=1}^{n}\frac{P_{it}}{P_{i0}}
+  \label{eq:MediaAritmeticaPrecosRelativos}
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_M^*(\mathbf{p_t}| \mathbf{p_0}) = \frac{1}{n}
+  \sum_{i=1}^{n}\frac{P_{it}}{P_{i0}} \cdot 100.
+  \label{eq:MediaAritmeticaPrecosRelativosPorcentagem}
+\end{equation}
+
+Na tabela \ref{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002} abaixo são apresentados os valores desse índice para os dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}
+
+\begin{longtable}[]{@{}cc@{}}
+\caption{\label{tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002} Índice média aritmética dos preços relativos dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_M^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_M^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+70,0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+100,0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+153,3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+213,3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+333,3\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Note que os valores da tabela \ref{tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002} é a média aritmética dos preços relativos da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} para cada ano.
+
+Para o ano de 2003, por exemplo, foi calculada da seguinte forma:
+
+\[
+I_M^{*}(P_{2003}|P_{2002}) = \dfrac{1}{3}\times \left( 120 + 200 +140 \right) = 153,3
+\]\\
+\textbf{Exemplo numérico da média artimética dos preços realtivos no R}
+
+Como temos calculado o preço relativo para cada um dos três produtos com ano
+base 2002, é só calcular a média aritmética para cada ano.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ipr161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      iprprd1 iprprd2 iprprd3
+## 2001      80      50      80
+## 2002     100     100     100
+## 2003     120     200     140
+## 2004     160     300     180
+## 2005     200     600     200
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{maprp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{1}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{1}\NormalTok{, ])}
+\NormalTok{maprp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{2}\NormalTok{, ])}
+\NormalTok{maprp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{3}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{3}\NormalTok{, ])}
+\NormalTok{maprp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{4}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{4}\NormalTok{, ])}
+\NormalTok{maprp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{5}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{5}\NormalTok{, ])}
+
+\NormalTok{mapr161 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{rbind}\NormalTok{(maprp1p2, maprp2p2, maprp3p2, }
+\NormalTok{    maprp4p2, maprp5p2), }\DecValTok{1}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(mapr161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"MAPR"}\NormalTok{)}
+
+\NormalTok{mapr161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           MAPR
+## maprp1p2  70,0
+## maprp2p2 100,0
+## maprp3p2 153,3
+## maprp4p2 213,3
+## maprp5p2 333,3
+\end{verbatim}
+
+Considerando que a expressão \eqref{eq:IndiceSimplesDePrecosAgregados} pode ser escrita como em \eqref{eq:MediaAritmeticaPrecosRelativosAlternativo}, pode-se entender por que o índice cresceu mais na média aritmética dos preços relativos na tabela \ref{tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002} que o índice simples de preços agregados na tabela \ref{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002}.
+
+\begin{equation}
+  I_A(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}}{\sum_{i=1}^{n}P_{i0}}
+  \label{eq:MediaAritmeticaPrecosRelativosAlternativo}
+\end{equation}
+
+Tanto o índice simples de preços agregados como a média aritmética dos preços relativos são índices gerais de preços. No seus cálculos não se leva em consideração a importância econômica de cada mercadoria que é dada pelo valor monetário da quantidade vendida.
+
+Portanto, os índices simples de preços agregados bem como a média aritmética do preços relativas só devem ser usados quando não se tem disponível as informações de quantidades.Caso contrário, deve ser utilizados os índices ponderados de preço.
+
 \hypertarget{uxedndice-de-preuxe7os-de-laspeyres}{%
 \section{Índice de Preços de Laspeyres}\label{uxedndice-de-preuxe7os-de-laspeyres}}
+
+O índice de preços de Laspeyres para um conjunto de mercadorias, em um período \(t\),
+é a média ponderada dos preços relativos dessas mercadorias, utilizando, como fatores de ponderação, os valores monetários das quantidades de cada mercadoria vendidas
+no período base.
+
+\begin{equation}
+  I_L(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}Q_{i0}}{\sum_{i=1}^{n}P_{i0}}
+  \label{eq:IndicePrecoslaspeyresDefinicao}
+\end{equation}
+
+onde
+
+\begin{itemize}
+\tightlist
+\item
+  \(Q_{i0}\) é a quantidade da \(i\)-ésima mercadoria vendida no período-base e;
+\item
+  \(P_{i0}Q_{i0}\) é o valor monetário da i-ésima mercadoria ao preço do período-base.
+\end{itemize}
+
+Simplificando
+
+\begin{equation}
+  I_L(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}}
+  \label{eq:IndicePrecosLaspeyres}
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_L^*(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}}\cdot 100.
+  \label{eq:IndicePrecosLaspeyresEmPorcentagem}
+\end{equation}
+
+\textbf{Exemplo numérico de Índice de preços de Laspeyres}
+
+Com base na tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} e na fórmula \eqref{eq:IndicePrecosLaspeyresEmPorcentagem}, o índice de preços de Laspeyres para os três
+produtos, em 2004, tomando 2002 como ano-base é
+
+\begin{equation}
+  I_L^*(\mathbf{p_4}| \mathbf{p_2}) = \frac{24\cdot 4 + 30\cdot 9 +
+  45\cdot 4}{15\cdot 4 + 10\cdot 9 + 25\cdot 4}\cdot 100 =
+  \frac{546}{250}\cdot 100 = 218,4
+\end{equation}
+
+Os valores do índice de preços de Laspeyres para 2001, 2003 e 2005 podem ser obtidos
+da mesma maneira e são apresentados na tabela \ref{tab:IndiceDeLaspeyresDeTresProdutosBase2002}.
+
+\begin{longtable}[]{@{}cc@{}}
+\caption{\label{tab:IndiceDeLaspeyresDeTresProdutosBase2002} Índice de Laspeyres dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_L^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_L^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+69,2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+100,0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+156,8\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+218,4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+344,0\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textbf{Exemplo numérico de Índice de preços de Laspeyres no R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{)}
+\NormalTok{q2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{6}\NormalTok{)}
+\NormalTok{q3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{q161 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(q1, q2, q3)}
+\KeywordTok{rownames}\NormalTok{(q161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
+
+\NormalTok{q161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      q1 q2 q3
+## 2001  3  7  3
+## 2002  4  9  4
+## 2003  5  8  5
+## 2004  5  7  6
+## 2005  6  6  5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iplp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iplp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iplp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iplp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iplp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+
+\NormalTok{ipl161 <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(iplp1p2, iplp2p2, iplp3p2, iplp4p2, }
+\NormalTok{    iplp5p2)}
+\KeywordTok{colnames}\NormalTok{(ipl161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"IPL"}\NormalTok{)}
+
+\NormalTok{ipl161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           IPL
+## iplp1p2  69,2
+## iplp2p2 100,0
+## iplp3p2 156,8
+## iplp4p2 218,4
+## iplp5p2 344,0
+\end{verbatim}
+
+\textbf{Uma interpretação econômica do Índice de preços de Laspeyres}
+
+O índice de preços de Laspeyres é uma relação entre o custo de aquisição da \textbf{cesta de mercadorias} \(\mathbf{q_0}\) no período \(t\) e o custo de aquisição
+dessa mesma cesta de mercadorias no período-base.
 
 \hypertarget{uxedndice-de-preuxe7os-de-paasche}{%
 \section{Índice de Preços de Paasche}\label{uxedndice-de-preuxe7os-de-paasche}}
 
-\hypertarget{uxedndice-de-preuxe7os-de-fischer}{%
-\section{Índice de Preços de Fischer}\label{uxedndice-de-preuxe7os-de-fischer}}
+O índice de preços de Paasche para o período \(t\) pode ser interpretado como uma média
+ponderada dos preços relativos, utilizando com fatores de ponderação os valores monetários das quantidades vendidas no período \(t\), considerando os preços do período-base.
+
+\begin{equation}
+  I_P(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}Q_{it}}{\sum_{i=1}^{n}P_{i0}}
+  \label{eq:IndicePrecosPaascheDefinicao}
+\end{equation}
+
+onde
+
+\begin{itemize}
+\tightlist
+\item
+  \(Q_{it}\) é a quantidade da \(i\)-ésima mercadoria vendida no período \(t\) e;
+\item
+  \(P_{i0}Q_{it}\) é o valor monetário da i-ésima mercadoria no perído \(t\)
+  considerando o preço do período-base.
+\end{itemize}
+
+Simplificando
+\begin{equation}
+  I_P(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}
+  \label{eq:IndicePrecosPaasche}
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_P^*(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}\cdot 100.
+  \label{eq:IndicePrecosPaascheEmPorcentagem}
+\end{equation}
+
+De acordo com os dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} e a fórmula \eqref{eq:IndicePrecosPaascheEmPorcentagem}, o índice
+de preços de Paasche para os três produtos em 2004, tomando 2002 como ano-base é
+
+\begin{equation}
+  I_P^*(\mathbf{p_4}| \mathbf{p_2}) = \frac{24\cdot 5 + 30\cdot 7 +
+  45\cdot 6}{15\cdot 5 + 10\cdot 7 + 25\cdot 6}\cdot 100 =
+  \frac{600}{295}\cdot 100 = 203,4
+\end{equation}
+Os valores dos índices de preços de Paasche para os demais anos podem ser calculados na mesma forma e são apresentados na tabela \ref{tab:IndiceDePaascheDeTresProdutosBase2002}.
+
+\begin{longtable}[]{@{}cc@{}}
+\caption{\label{tab:IndiceDePaascheDeTresProdutosBase2002} Índice de Paasche dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_P^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
+\(I_P^*(P_t|P_0)\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+68,9\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+100,0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+151,8\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+203,4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
+287,3\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textbf{Exemplo numérico de índice de preços de Paasche no R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ippp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{1}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{1}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{ippp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{ippp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{3}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{3}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{ippp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{4}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{4}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{ippp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{5}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
+\StringTok{    }\NormalTok{q161[}\DecValTok{5}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+
+\NormalTok{ipp161 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{rbind}\NormalTok{(ippp1p2, ippp2p2, ippp3p2, ippp4p2, }
+\NormalTok{    ippp5p2), }\DecValTok{1}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(ipp161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"IPP"}\NormalTok{)}
+
+\NormalTok{ipp161}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           IPP
+## ippp1p2  68,9
+## ippp2p2 100,0
+## ippp3p2 151,8
+## ippp4p2 203,4
+## ippp5p2 287,3
+\end{verbatim}
+
+\textbf{Interpretação econômica do índice de preços de Paasche}
+
+O índice de preços de Paasche é uma relação entre o custo de aquisição da \textbf{da cesta de mercadorias} \(\mathbf{q_t}\) no período \(t\) com o custo de aquisição dessa mesma
+cesta de mercadorias no período-base.
+
+\textbf{Comparando os índices de preços de Laspeyres e Paasche}
+
+O método de Paasche exige mais informações do que o método de Laspeyres no cálculo
+do índice ponderado de preços.
+
+\hypertarget{uxedndice-de-preuxe7os-de-fisher}{%
+\section{Índice de Preços de Fisher}\label{uxedndice-de-preuxe7os-de-fisher}}
+
+Vimos que o método de Laspeyres e o método de Paasche entregam, em geral, resultados
+diferentes quando utilizados para avaliar a variação no nível dos preços de um conjunto
+de produtos.
+
+Para tentar superar essa divergência de resultados, foram criados índices que conduzem
+a valores intermediários entre o índice de Laspeyres e o índice de Paasche.
+
+O índice de preços de Fisher, é por definição, a média geométrica entre o índice de
+preços de Laspeyres e o índice de preços de Paasche.
+
+Ou seja,
+
+\begin{equation}
+  I_F(\mathbf{p_t}| \mathbf{p_0}) = \sqrt{I_L(\mathbf{p_t}| \mathbf{p_0}) I_P(\mathbf{p_t}| \mathbf{p_0})}=  \left( \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}} \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}\right)^{1/2}
+  \label{eq:IndicePrecosFischer}
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_F^*(\mathbf{p_t}|\mathbf{p_{o}}) = I_F(\mathbf{p_t}| \mathbf{p_0}) \cdot 100.
+  \label{eq:IndicePrecosFischerEmPorcentagem}
+\end{equation}
+
+\textbf{Exemplo numérico do Índice de preços de Fisher}
+
+Para calcular o índice de preços de Fischer de 2004, tomando como 2002 com ano-base, com base nos dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}, basta tomar os valores dos índices de preços de Laspeyres e de Paasche nas tabelas \ref{tab:IndiceDeLaspeyresDeTresProdutosBase2002} e \ref{tab:IndiceDePaascheDeTresProdutosBase2002} respectivamente.
+
+Ou seja,
+
+\begin{equation}
+  I_F^*(\mathbf{p_t}| \mathbf{p_0}) = \sqrt{218,4 \cdot 203,4} = 210,8
+\end{equation}
 
 \hypertarget{uxedndice-de-preuxe7os-de-marshall-edgeworth}{%
 \section{Índice de Preços de Marshall-Edgeworth}\label{uxedndice-de-preuxe7os-de-marshall-edgeworth}}
 
+O índice de preços de Marshall-Edgeworth pode ser interpretado como uma relação entre o custo de aquisição no período \(t\) e o custo de aquisição no período-base de uma cesta de
+mercadorias que contém, para cada produto, a média aritmética das quantidades vendidas no período -base e no período \(t\).
+
+\begin{equation}
+  I_E(\mathbf{p_t}| \mathbf{p_0}) = \frac{\sum_{i=1}^{n}P_{it}(Q_{i0} +
+  Q_{it})}{\sum_{i=1}^{n}P_{i0}(Q_{i0} + Q_{it})}
+  \label{eq:IndicePrecosMarshallEdgeworth}
+\end{equation}
+
+ou, em porcentagem.
+
+\begin{equation}
+  I_E^*(\mathbf{p_t}|\mathbf{p_{o}}) = I_E(\mathbf{p_t}| \mathbf{p_0}) \cdot 100.
+  \label{eq:IndicePrecosMarshallEdgeworthEmPorcentagem}
+\end{equation}
+
+\textbf{Exemplo numérico do índice de preços de Marshall-Edgeworth}
+
+Para calcular o índice de preços de Marshall-Edgeworth de 2004, tomando 2002 como ano base, calcula-se utilizando a fórmula \eqref{eq:IndicePrecosMarshallEdgeworthEmPorcentagem} usando os dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}
+
+\begin{equation}
+  I_E^* (\mathbf{p_t}|\mathbf{p_{o}}) =  \frac{24(4+5) + 30(9+7) + 45(4+6)}{15(4+5) + 10(9+7) + 25(4+6)} \cdot 100 = 210,3
+\end{equation}
+
 \hypertarget{deflacionamento}{%
 \section{Deflacionamento}\label{deflacionamento}}
+
+Considere dois valores monetários pagos ou recebidos em diferentes datas:
+
+\begin{itemize}
+\item
+  \(x=\)R\$120,00 recebidos em setembro e 1997 e;
+\item
+  \(y=\)R\$240,00 recebidos em setembro de 2003.
+\end{itemize}
+
+Aparentemetemente, não há a necessidade de modificar a unidade medida de nenhum dos dois valores, pois ambos estão em reais.
+
+Mas devido à inflação ou desvalorização da moeda, o real de setembro de 2003 é uma unidade de medida de valor de troca bastante diferente do real de setembro de 1997.
+
+Por isso, antes de fazer qualquer comparação ou operação aritmética envolvendo os valores de \(x\) d \(y\) é necessário fazer uniformizar a unidade de medida.
+
+Isso se faz através de um índice de preços que possa ser utilizado como uma medidada desvalorização da moeda. Essa é uma das principais aplicações dos números-índices em uma economia inflacionária.
+
+O índice de preços utilizados como medida da inflação ou desvalorização da moeda é denominada \textbf{deflator}.
+
+Os valores de \(x\) e \(y\) medidos em reais da data em que o pagamento é efetuado são denominados \textbf{valores nominais} ou \textbf{valores em moeda corrente}. Caso se trate de preços de um produto, são denominados \textbf{preços correntes}.
+
+Então, antes de fazer qualquer comparação ou operação aritmética envolvendo os valores em moeda corrente, é necessário calcular os \textbf{valores reais} ou \textbf{valores deflacionados} utilizando um \textbf{deflator}.
+
+Através da um regra de três simples,
+
+\begin{equation}
+  \frac{V_r}{V_t} = \frac{I_k}{I_t}
+\end{equation}
+
+temos
+
+\begin{equation}
+  V_r = \frac{I_k}{I_t}V_t.
+  \label{eq:ValorReal}
+\end{equation}
+
+Se, por exemplo, a inflação entre o período \(k\) e o período \(t\) tivesse sido de 100\%,
+
+\begin{equation}
+  I_t = 2I_k
+\end{equation}
+
+então
+
+\begin{equation}
+  V_r = \frac{V_t}{2}.
+\end{equation}
+
+Ou seja, o valor real, medido em moeda do ano \(k\), seria igual à metade do valor em moeda corrente.
+
+Geralmente, quando se calculam valores reais, a finalidade é apenas uniformizar a unidade de medida.
+
+Então, por facilidade de cálculo, são obtidos os valores reais medidos em moeda do período-base do deflator, isto é, em lugar de \(I_k\), considera-se \(I_0 = 100\). Nesse caso, a expressão \eqref{eq:ValorReal} fica
+
+\begin{equation}
+  V_r = \frac{V_t}{I_t}100.
+  \label{eq:ValorRealEmPorcentagem}
+\end{equation}
+
+Como exemplos de índices comumente usados em trabalhos de pesquisa em economia se tem:
+
+\begin{itemize}
+\item
+  o Índice Geral de Preços - Disponibilidade Interna (IGP-DI) é usado como deflator para preços de produtos e serviços.
+\item
+  o índice de custo de vida é o mais adequado para deflacionar salários.
+\end{itemize}
+
+\textbf{Exemplo para o cálculo de valores reais}
+
+Considere \(x=\)R\$ 120,00 o valor corrente do salário mínimo vigente em setembro de 1997 e \(y=\)R\$ 240,00 o valor corrente do salário mínimo vigente em setembro de 2003.
+
+Um deflator apropriado, nesse caso, é o \textbf{Índice Nacional de Preços ao Consumidor Restrito} (INPC) calculado pelo IBGE para medir o custo de vida das famílias cujos chefes são assalariados em sua ocupação principal e cujo rendimento monetário disponível situe-se entre 1 e 5 salários mínimos.
+
+Com base em dezembro de 1993, o INPC é igual a R\$ 1.415,18 em setembro de 1997 e igual a R\$ 2.288,16 em setembro de 2003
+
+Então, de acordo com \eqref{eq:ValorReal}, o valor deflacionado de \(y\) em reais de
+setembro de 1997 é
+
+\begin{equation}
+  V_{1997} = \frac{I_{1997}}{I_{2003}} \times V_{2003},
+\end{equation}
+
+ou seja,
+
+\begin{equation}
+  V_{1997} = \frac{1.415,18}{2.288,16} \times 240 = 148,44
+\end{equation}
+
+Alternativamente pode-se calcular o valor real de \(x\) em moeda de setembro de 2003,
+
+\begin{equation}
+  V_{2003} = \frac{I_{2003}}{I_{1997}} \times V_{1997},
+\end{equation}
+
+ou seja,
+
+\begin{equation}
+  V_{2003} = \frac{2.228,16}{1.415,18} \times 120 = 194,02.
+\end{equation}
 
 \hypertarget{variuxe1vel-aleatuxf3ria-e-distribuiuxe7uxe3o}{%
 \chapter{Variável Aleatória e Distribuição}\label{variuxe1vel-aleatuxf3ria-e-distribuiuxe7uxe3o}}

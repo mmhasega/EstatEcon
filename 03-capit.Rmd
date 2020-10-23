@@ -86,6 +86,7 @@ Carrega-se os preços dos três produtos e calcula os respectivos preços relati
 prd1 <- c(12,15,18,24,30)
 prd2 <- c(5,10,20,30,60)
 prd3 <- c(20,25,35,45,50)
+
 iprprd1 <- prd1/prd1[2]*100
 iprprd2 <- prd2/prd2[2]*100
 iprprd3 <- prd3/prd3[2]*100
@@ -118,14 +119,463 @@ ou em porcentagem
   (\#eq:IndiceSimplesDePrecosAgregadosPorcentagem)
 \end{equation}
 
+**Exemplo numérico do Índice simples de preços agregados**
+
+om base nos dados da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005), calcula-se o índice simples de preços agregados para os três produtos em 2004, tomando 2002 como ano-base. De acordo com \@ref(eq:IndiceSimplesDePrecosAgregadosPorcentagem),
+
+\begin{equation}
+  I_A^*(\mathbf{p_4}| \mathbf{p_2}) =
+  \frac{24 + 30 + 45}{15 + 10 +25} \cdot 100 = 198.
+\end{equation}
+
+Analogamente, obtém-se os demais índices que são apresentados na tabela \@ref(tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002).
+
+Table: (\#tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002) Índice simples de preços agregados dos três produtos no período 2001-2005 tomando como base o ano de 2002
+
+---------------------------
+  ano    $I_A^*(P_t|P_0)$  
+ ------ ------------------ 
+  2001          74     
+
+  2002         100     
+  
+  2003         146     
+  
+  2004         198     
+  
+  2005         280     
+---------------------------
+
+A seguir é calculado o Índice simples de preços agregados do exemplo numérico no R.
+
+**Exemplo numérico do índice simples de preços agregados no R**
+
+```{r IndiceSimplesPrecosAgregados, echo=TRUE}
+p1 <- c(12,15,18,24,30)
+p2 <- c(5,10,20,30,60)
+p3 <- c(20,25,35,45,50)
+
+p161  <- cbind(p1,p2,p3)
+rownames(p161) <- c(2001,2002,2003,2004,2005)
+
+IAp1p2 <- sum(p161[1,])/sum(p161[2,])*100
+IAp2p2 <- sum(p161[2,])/sum(p161[2,])*100
+IAp3p2 <- sum(p161[3,])/sum(p161[2,])*100
+IAp4p2 <- sum(p161[4,])/sum(p161[2,])*100
+IAp5p2 <- sum(p161[5,])/sum(p161[2,])*100
+
+ispa161 <- rbind(IAp1p2,IAp2p2,IAp3p2,IAp4p2,IAp5p2)
+colnames(ispa161) <- c("ISPA")
+
+ispa161
+```
+
 ## Média Aritmética dos Preços Relativos
+
+A Média Aritmétirca dos Preços Relativos é um índice geral de preços que se obtém calculando a média aritmética dos preços relativos, isto é
+
+\begin{equation}
+  I_M(\mathbf{p_t}| \mathbf{p_0}) = \frac{1}{n}
+  \sum_{i=1}^{n}\frac{P_{it}}{P_{i0}}
+  (\#eq:MediaAritmeticaPrecosRelativos)
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_M^*(\mathbf{p_t}| \mathbf{p_0}) = \frac{1}{n}
+  \sum_{i=1}^{n}\frac{P_{it}}{P_{i0}} \cdot 100.
+  (\#eq:MediaAritmeticaPrecosRelativosPorcentagem)
+\end{equation}
+
+Na tabela \@ref(tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002) abaixo são apresentados os valores desse índice para os dados da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005)
+
+Table: (\#tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002) Índice média aritmética dos preços relativos dos três produtos no período 2001-2005 tomando como base o ano de 2002
+
+---------------------------
+  ano    $I_M^*(P_t|P_0)$  
+ ------ ------------------ 
+  2001          70,0     
+
+  2002         100,0     
+  
+  2003         153,3     
+  
+  2004         213,3     
+  
+  2005         333,3     
+---------------------------
+
+Note que os valores da tabela \@ref(tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002) é a média aritmética dos preços relativos da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005) para cada ano.
+
+Para o ano de 2003, por exemplo, foi calculada da seguinte forma:
+
+\[
+I_M^{*}(P_{2003}|P_{2002}) = \dfrac{1}{3}\times \left( 120 + 200 +140 \right) = 153,3
+\]
+\
+**Exemplo numérico da média artimética dos preços realtivos no R**
+
+Como temos calculado o preço relativo para cada um dos três produtos com ano 
+base 2002, é só calcular a média aritmética para cada ano.
+
+```{r MediaAritmeticaPrecosRelativos, echo=TRUE}
+ipr161
+
+maprp1p2 <- sum(ipr161[1,])/length(ipr161[1,])
+maprp2p2 <- sum(ipr161[2,])/length(ipr161[2,])
+maprp3p2 <- sum(ipr161[3,])/length(ipr161[3,])
+maprp4p2 <- sum(ipr161[4,])/length(ipr161[4,])
+maprp5p2 <- sum(ipr161[5,])/length(ipr161[5,])
+
+mapr161 <- round(rbind(maprp1p2,maprp2p2,maprp3p2,maprp4p2,maprp5p2),1)
+colnames(mapr161) <- c("MAPR")
+
+mapr161
+```
+
+Considerando que a expressão \@ref(eq:IndiceSimplesDePrecosAgregados) pode ser escrita como em \@ref(eq:MediaAritmeticaPrecosRelativosAlternativo), pode-se entender por que o índice cresceu mais na média aritmética dos preços relativos na tabela \@ref(tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002) que o índice simples de preços agregados na tabela \@ref(tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002).
+
+\begin{equation}
+  I_A(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}}{\sum_{i=1}^{n}P_{i0}}
+  (\#eq:MediaAritmeticaPrecosRelativosAlternativo)
+\end{equation}
+
+Tanto o índice simples de preços agregados como a média aritmética dos preços relativos são índices gerais de preços. No seus cálculos não se leva em consideração a importância econômica de cada mercadoria que é dada pelo valor monetário da quantidade vendida.
+
+Portanto, os índices simples de preços agregados bem como a média aritmética do preços relativas só devem ser usados quando não se tem disponível as informações de quantidades.Caso contrário, deve ser utilizados os índices ponderados de preço.
 
 ## Índice de Preços de Laspeyres
 
+O índice de preços de Laspeyres para um conjunto de mercadorias, em um período $t$,
+é a média ponderada dos preços relativos dessas mercadorias, utilizando, como fatores de ponderação, os valores monetários das quantidades de cada mercadoria vendidas 
+no período base.
+
+\begin{equation}
+  I_L(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}Q_{i0}}{\sum_{i=1}^{n}P_{i0}}
+  (\#eq:IndicePrecoslaspeyresDefinicao)
+\end{equation}
+
+onde
+
+- $Q_{i0}$ é a quantidade da $i$-ésima mercadoria vendida no período-base e;
+- $P_{i0}Q_{i0}$ é o valor monetário da i-ésima mercadoria ao preço do período-base.
+
+Simplificando
+
+\begin{equation}
+  I_L(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}}
+  (\#eq:IndicePrecosLaspeyres)
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_L^*(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}}\cdot 100.
+  (\#eq:IndicePrecosLaspeyresEmPorcentagem)
+\end{equation}
+
+**Exemplo numérico de Índice de preços de Laspeyres**
+
+Com base na tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005) e na fórmula \@ref(eq:IndicePrecosLaspeyresEmPorcentagem), o índice de preços de Laspeyres para os três 
+produtos, em 2004, tomando 2002 como ano-base é
+
+\begin{equation}
+  I_L^*(\mathbf{p_4}| \mathbf{p_2}) = \frac{24\cdot 4 + 30\cdot 9 +
+  45\cdot 4}{15\cdot 4 + 10\cdot 9 + 25\cdot 4}\cdot 100 =
+  \frac{546}{250}\cdot 100 = 218,4
+\end{equation}
+
+Os valores do índice de preços de Laspeyres para 2001, 2003 e 2005 podem ser obtidos 
+da mesma maneira e são apresentados na tabela \@ref(tab:IndiceDeLaspeyresDeTresProdutosBase2002).
+
+Table: (\#tab:IndiceDeLaspeyresDeTresProdutosBase2002) Índice de Laspeyres dos três produtos no período 2001-2005 tomando como base o ano de 2002
+
+---------------------------
+  ano    $I_L^*(P_t|P_0)$  
+ ------ ------------------ 
+  2001          69,2     
+
+  2002         100,0     
+  
+  2003         156,8     
+  
+  2004         218,4     
+  
+  2005         344,0     
+---------------------------
+
+**Exemplo numérico de Índice de preços de Laspeyres no R**
+
+```{r IndicePrecosLaspeyres, echo=TRUE}
+q1 <- c(3,4,5,5,6)
+q2 <- c(7,9,8,7,6)
+q3 <- c(3,4,5,6,5)
+q161 <- cbind(q1,q2,q3)
+rownames(q161) <- c(2001,2002,2003,2004,2005)
+
+q161
+
+iplp1p2 <- sum(p161[1,]*q161[2,])/sum(p161[2,]*q161[2,])*100
+iplp2p2 <- sum(p161[2,]*q161[2,])/sum(p161[2,]*q161[2,])*100
+iplp3p2 <- sum(p161[3,]*q161[2,])/sum(p161[2,]*q161[2,])*100
+iplp4p2 <- sum(p161[4,]*q161[2,])/sum(p161[2,]*q161[2,])*100
+iplp5p2 <- sum(p161[5,]*q161[2,])/sum(p161[2,]*q161[2,])*100
+
+ipl161 <- rbind(iplp1p2,iplp2p2,iplp3p2,iplp4p2,iplp5p2)
+colnames(ipl161) <- c("IPL")
+
+ipl161
+```
+
+**Uma interpretação econômica do Índice de preços de Laspeyres**
+
+O índice de preços de Laspeyres é uma relação entre o custo de aquisição da **cesta de mercadorias** $\mathbf{q_0}$ no período $t$ e o custo de aquisição 
+dessa mesma cesta de mercadorias no período-base.
+
 ## Índice de Preços de Paasche
 
-## Índice de Preços de Fischer 
+O índice de preços de Paasche para o período $t$ pode ser interpretado como uma média 
+ponderada dos preços relativos, utilizando com fatores de ponderação os valores monetários das quantidades vendidas no período $t$, considerando os preços do período-base.
+
+\begin{equation}
+  I_P(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}Q_{it}}{\sum_{i=1}^{n}P_{i0}}
+  (\#eq:IndicePrecosPaascheDefinicao)
+\end{equation}
+
+onde
+
+- $Q_{it}$ é a quantidade da $i$-ésima mercadoria vendida no período $t$ e;
+- $P_{i0}Q_{it}$ é o valor monetário da i-ésima mercadoria no perído $t$ 
+considerando o preço do período-base.
+
+Simplificando
+\begin{equation}
+  I_P(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}
+  (\#eq:IndicePrecosPaasche)
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_P^*(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}\cdot 100.
+  (\#eq:IndicePrecosPaascheEmPorcentagem)
+\end{equation}
+
+De acordo com os dados da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005) e a fórmula \@ref(eq:IndicePrecosPaascheEmPorcentagem), o índice 
+de preços de Paasche para os três produtos em 2004, tomando 2002 como ano-base é
+
+\begin{equation}
+  I_P^*(\mathbf{p_4}| \mathbf{p_2}) = \frac{24\cdot 5 + 30\cdot 7 +
+  45\cdot 6}{15\cdot 5 + 10\cdot 7 + 25\cdot 6}\cdot 100 =
+  \frac{600}{295}\cdot 100 = 203,4
+\end{equation}
+Os valores dos índices de preços de Paasche para os demais anos podem ser calculados na mesma forma e são apresentados na tabela \@ref(tab:IndiceDePaascheDeTresProdutosBase2002).
+
+Table: (\#tab:IndiceDePaascheDeTresProdutosBase2002) Índice de Paasche dos três produtos no período 2001-2005 tomando como base o ano de 2002
+
+---------------------------
+  ano    $I_P^*(P_t|P_0)$  
+ ------ ------------------ 
+  2001          68,9     
+
+  2002         100,0     
+  
+  2003         151,8     
+  
+  2004         203,4     
+  
+  2005         287,3     
+---------------------------
+
+**Exemplo numérico de índice de preços de Paasche no R**
+
+```{r IndicePrecosPaasche, echo=TRUE}
+ippp1p2 <- sum(p161[1,]*q161[1,])/sum(p161[2,]*q161[1,])*100
+ippp2p2 <- sum(p161[2,]*q161[2,])/sum(p161[2,]*q161[2,])*100
+ippp3p2 <- sum(p161[3,]*q161[3,])/sum(p161[2,]*q161[3,])*100
+ippp4p2 <- sum(p161[4,]*q161[4,])/sum(p161[2,]*q161[4,])*100
+ippp5p2 <- sum(p161[5,]*q161[5,])/sum(p161[2,]*q161[5,])*100
+
+ipp161 <- round(rbind(ippp1p2,ippp2p2,ippp3p2,ippp4p2,ippp5p2),1)
+colnames(ipp161) <- c("IPP")
+
+ipp161
+```
+
+**Interpretação econômica do índice de preços de Paasche**
+
+O índice de preços de Paasche é uma relação entre o custo de aquisição da **da cesta de mercadorias** $\mathbf{q_t}$ no período $t$ com o custo de aquisição dessa mesma
+cesta de mercadorias no período-base.
+
+**Comparando os índices de preços de Laspeyres e Paasche**
+
+O método de Paasche exige mais informações do que o método de Laspeyres no cálculo 
+do índice ponderado de preços.
+
+## Índice de Preços de Fisher 
+
+Vimos que o método de Laspeyres e o método de Paasche entregam, em geral, resultados
+diferentes quando utilizados para avaliar a variação no nível dos preços de um conjunto
+de produtos.
+
+Para tentar superar essa divergência de resultados, foram criados índices que conduzem
+a valores intermediários entre o índice de Laspeyres e o índice de Paasche.
+
+O índice de preços de Fisher, é por definição, a média geométrica entre o índice de 
+preços de Laspeyres e o índice de preços de Paasche.
+
+Ou seja,
+
+\begin{equation}
+  I_F(\mathbf{p_t}| \mathbf{p_0}) = \sqrt{I_L(\mathbf{p_t}| \mathbf{p_0}) I_P(\mathbf{p_t}| \mathbf{p_0})}=  \left( \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}} \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}\right)^{1/2}
+  (\#eq:IndicePrecosFischer)
+\end{equation}
+
+ou, em porcentagem,
+
+\begin{equation}
+  I_F^*(\mathbf{p_t}|\mathbf{p_{o}}) = I_F(\mathbf{p_t}| \mathbf{p_0}) \cdot 100.
+  (\#eq:IndicePrecosFischerEmPorcentagem)
+\end{equation}
+
+**Exemplo numérico do Índice de preços de Fisher**
+
+Para calcular o índice de preços de Fischer de 2004, tomando como 2002 com ano-base, com base nos dados da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005), basta tomar os valores dos índices de preços de Laspeyres e de Paasche nas tabelas \@ref(tab:IndiceDeLaspeyresDeTresProdutosBase2002) e \@ref(tab:IndiceDePaascheDeTresProdutosBase2002) respectivamente.
+
+Ou seja,
+
+\begin{equation}
+  I_F^*(\mathbf{p_t}| \mathbf{p_0}) = \sqrt{218,4 \cdot 203,4} = 210,8
+\end{equation}
 
 ## Índice de Preços de Marshall-Edgeworth
 
+O índice de preços de Marshall-Edgeworth pode ser interpretado como uma relação entre o custo de aquisição no período $t$ e o custo de aquisição no período-base de uma cesta de
+mercadorias que contém, para cada produto, a média aritmética das quantidades vendidas no período -base e no período $t$.
+
+\begin{equation}
+  I_E(\mathbf{p_t}| \mathbf{p_0}) = \frac{\sum_{i=1}^{n}P_{it}(Q_{i0} +
+  Q_{it})}{\sum_{i=1}^{n}P_{i0}(Q_{i0} + Q_{it})}
+  (\#eq:IndicePrecosMarshallEdgeworth)
+\end{equation}
+
+ou, em porcentagem.
+
+\begin{equation}
+  I_E^*(\mathbf{p_t}|\mathbf{p_{o}}) = I_E(\mathbf{p_t}| \mathbf{p_0}) \cdot 100.
+  (\#eq:IndicePrecosMarshallEdgeworthEmPorcentagem)
+\end{equation}
+
+**Exemplo numérico do índice de preços de Marshall-Edgeworth**
+
+Para calcular o índice de preços de Marshall-Edgeworth de 2004, tomando 2002 como ano base,  calcula-se utilizando a fórmula \@ref(eq:IndicePrecosMarshallEdgeworthEmPorcentagem) usando os dados da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005)
+
+\begin{equation}
+  I_E^* (\mathbf{p_t}|\mathbf{p_{o}}) =  \frac{24(4+5) + 30(9+7) + 45(4+6)}{15(4+5) + 10(9+7) + 25(4+6)} \cdot 100 = 210,3
+\end{equation}
+
 ## Deflacionamento
+
+Considere dois valores monetários pagos ou recebidos em diferentes datas:
+
+- $x=$R\$120,00 recebidos em setembro e 1997 e;
+
+- $y=$R$240,00 recebidos em setembro de 2003.
+
+Aparentemetemente, não há a necessidade de modificar a unidade medida de nenhum dos dois valores, pois ambos estão em reais.
+
+Mas devido à inflação ou desvalorização da moeda, o real de setembro de 2003 é uma unidade de medida de valor de troca bastante diferente do real de setembro de 1997.
+
+Por isso, antes de fazer qualquer comparação ou operação aritmética envolvendo os valores de $x$ d $y$ é necessário fazer uniformizar a unidade de medida.
+
+Isso se faz através de um índice de preços que possa ser utilizado como uma medidada desvalorização da moeda. Essa é uma das principais aplicações dos números-índices em uma economia inflacionária.
+
+O índice de preços utilizados como medida da inflação ou desvalorização da moeda é denominada **deflator**.
+
+Os valores de $x$ e $y$ medidos em reais da data em que o pagamento é efetuado são denominados **valores nominais** ou **valores em moeda corrente**. Caso se trate de preços de um produto, são denominados **preços correntes**.
+
+Então, antes de fazer qualquer comparação ou operação aritmética envolvendo os valores em moeda corrente, é necessário calcular os **valores reais** ou **valores deflacionados** utilizando um **deflator**.
+
+Através da um regra de três simples,
+
+\begin{equation}
+  \frac{V_r}{V_t} = \frac{I_k}{I_t}
+\end{equation}
+
+temos
+
+\begin{equation}
+  V_r = \frac{I_k}{I_t}V_t.
+  (\#eq:ValorReal)
+\end{equation}
+
+Se, por exemplo, a inflação entre o período $k$ e o período $t$ tivesse sido de 100\%, 
+
+\begin{equation}
+  I_t = 2I_k
+\end{equation}
+
+então
+
+\begin{equation}
+  V_r = \frac{V_t}{2}.
+\end{equation}
+
+Ou seja, o valor real, medido em moeda do ano $k$, seria igual à metade do valor em moeda corrente.
+
+Geralmente, quando se calculam valores reais, a finalidade é apenas uniformizar a unidade de medida.
+
+Então, por facilidade de cálculo, são obtidos os valores reais medidos em moeda do período-base do deflator, isto é, em lugar de $I_k$, considera-se $I_0 = 100$. Nesse caso, a expressão \@ref(eq:ValorReal) fica
+
+\begin{equation}
+  V_r = \frac{V_t}{I_t}100.
+  (\#eq:ValorRealEmPorcentagem)
+\end{equation}
+
+Como exemplos de índices comumente usados em trabalhos de pesquisa em economia se tem:
+
+- o Índice Geral de Preços - Disponibilidade Interna (IGP-DI) é usado como deflator para preços de produtos e serviços.
+
+- o índice de custo de vida é o mais adequado para deflacionar salários.
+
+**Exemplo para o cálculo de valores reais**
+
+Considere $x=$R\$ 120,00 o valor corrente do salário mínimo vigente em setembro de 1997 e $y=$R\$ 240,00 o valor corrente do salário mínimo vigente em setembro de 2003.
+
+Um deflator apropriado, nesse caso, é o **Índice Nacional de Preços ao Consumidor Restrito** (INPC) calculado pelo IBGE para medir o custo de vida das famílias cujos chefes são assalariados em sua ocupação principal e cujo rendimento monetário disponível situe-se entre 1 e 5  salários mínimos.
+
+Com base em dezembro de 1993, o INPC é igual a R\$ 1.415,18 em setembro de 1997 e igual a R\$ 2.288,16 em setembro de 2003
+
+Então, de acordo com \@ref(eq:ValorReal), o valor deflacionado de $y$ em reais de
+setembro de 1997 é
+
+\begin{equation}
+  V_{1997} = \frac{I_{1997}}{I_{2003}} \times V_{2003},
+\end{equation}
+
+ou seja,
+
+\begin{equation}
+  V_{1997} = \frac{1.415,18}{2.288,16} \times 240 = 148,44
+\end{equation}
+
+Alternativamente pode-se calcular o valor real de $x$ em moeda de setembro de 2003,
+
+\begin{equation}
+  V_{2003} = \frac{I_{2003}}{I_{1997}} \times V_{1997},
+\end{equation}
+
+ou seja,
+
+\begin{equation}
+  V_{2003} = \frac{2.228,16}{1.415,18} \times 120 = 194,02.
+\end{equation}
+

@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-22" />
+<meta name="date" content="2020-10-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,6 +135,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
+<li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
+<li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
 <li class="chapter" data-level="1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html"><i class="fa fa-check"></i><b>1</b> Estatística Descritiva</a><ul>
 <li class="chapter" data-level="1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-posição"><i class="fa fa-check"></i><b>1.1</b> Medidas de posição</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1.1</b> Variável Aleatória</a></li>
@@ -182,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="números-índices.html"><a href="números-índices.html#média-aritmética-dos-preços-relativos"><i class="fa fa-check"></i><b>3.4</b> Média Aritmética dos Preços Relativos</a></li>
 <li class="chapter" data-level="3.5" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-laspeyres"><i class="fa fa-check"></i><b>3.5</b> Índice de Preços de Laspeyres</a></li>
 <li class="chapter" data-level="3.6" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-paasche"><i class="fa fa-check"></i><b>3.6</b> Índice de Preços de Paasche</a></li>
-<li class="chapter" data-level="3.7" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-fischer"><i class="fa fa-check"></i><b>3.7</b> Índice de Preços de Fischer</a></li>
+<li class="chapter" data-level="3.7" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-fisher"><i class="fa fa-check"></i><b>3.7</b> Índice de Preços de Fisher</a></li>
 <li class="chapter" data-level="3.8" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-marshall-edgeworth"><i class="fa fa-check"></i><b>3.8</b> Índice de Preços de Marshall-Edgeworth</a></li>
 <li class="chapter" data-level="3.9" data-path="números-índices.html"><a href="números-índices.html#deflacionamento"><i class="fa fa-check"></i><b>3.9</b> Deflacionamento</a></li>
 </ul></li>
@@ -379,17 +381,18 @@ interpretar melhor os índices publicados e avaliar suas limitações.</p>
 </table>
 <p><strong>Exemplo numérico de preço relativo no R</strong></p>
 <p>Carrega-se os preços dos três produtos e calcula os respectivos preços relativos tendo como base o ano de 2002.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="números-índices.html#cb1-1"></a>prd1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">18</span>,<span class="dv">24</span>,<span class="dv">30</span>)</span>
-<span id="cb1-2"><a href="números-índices.html#cb1-2"></a>prd2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">60</span>)</span>
-<span id="cb1-3"><a href="números-índices.html#cb1-3"></a>prd3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">35</span>,<span class="dv">45</span>,<span class="dv">50</span>)</span>
-<span id="cb1-4"><a href="números-índices.html#cb1-4"></a>iprprd1 &lt;-<span class="st"> </span>prd1<span class="op">/</span>prd1[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span></span>
-<span id="cb1-5"><a href="números-índices.html#cb1-5"></a>iprprd2 &lt;-<span class="st"> </span>prd2<span class="op">/</span>prd2[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span></span>
-<span id="cb1-6"><a href="números-índices.html#cb1-6"></a>iprprd3 &lt;-<span class="st"> </span>prd3<span class="op">/</span>prd3[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span></span>
-<span id="cb1-7"><a href="números-índices.html#cb1-7"></a></span>
-<span id="cb1-8"><a href="números-índices.html#cb1-8"></a>ipr161 &lt;-<span class="st"> </span><span class="kw">cbind</span>(iprprd1,iprprd2,iprprd3)</span>
-<span id="cb1-9"><a href="números-índices.html#cb1-9"></a><span class="kw">rownames</span>(ipr161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2001</span>,<span class="dv">2002</span>,<span class="dv">2003</span>,<span class="dv">2004</span>,<span class="dv">2005</span>)</span>
-<span id="cb1-10"><a href="números-índices.html#cb1-10"></a></span>
-<span id="cb1-11"><a href="números-índices.html#cb1-11"></a>ipr161</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="números-índices.html#cb129-1"></a>prd1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">24</span>, <span class="dv">30</span>)</span>
+<span id="cb129-2"><a href="números-índices.html#cb129-2"></a>prd2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">60</span>)</span>
+<span id="cb129-3"><a href="números-índices.html#cb129-3"></a>prd3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">45</span>, <span class="dv">50</span>)</span>
+<span id="cb129-4"><a href="números-índices.html#cb129-4"></a></span>
+<span id="cb129-5"><a href="números-índices.html#cb129-5"></a>iprprd1 &lt;-<span class="st"> </span>prd1<span class="op">/</span>prd1[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb129-6"><a href="números-índices.html#cb129-6"></a>iprprd2 &lt;-<span class="st"> </span>prd2<span class="op">/</span>prd2[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb129-7"><a href="números-índices.html#cb129-7"></a>iprprd3 &lt;-<span class="st"> </span>prd3<span class="op">/</span>prd3[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb129-8"><a href="números-índices.html#cb129-8"></a></span>
+<span id="cb129-9"><a href="números-índices.html#cb129-9"></a>ipr161 &lt;-<span class="st"> </span><span class="kw">cbind</span>(iprprd1, iprprd2, iprprd3)</span>
+<span id="cb129-10"><a href="números-índices.html#cb129-10"></a><span class="kw">rownames</span>(ipr161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2001</span>, <span class="dv">2002</span>, <span class="dv">2003</span>, <span class="dv">2004</span>, <span class="dv">2005</span>)</span>
+<span id="cb129-11"><a href="números-índices.html#cb129-11"></a></span>
+<span id="cb129-12"><a href="números-índices.html#cb129-12"></a>ipr161</span></code></pre></div>
 <pre><code>##      iprprd1 iprprd2 iprprd3
 ## 2001      80      50      80
 ## 2002     100     100     100
@@ -416,24 +419,487 @@ ou em porcentagem
   \frac{\sum_{i=1}^{n}P_{it}}{\sum_{i=1}^{n}P_{i0}} \cdot 100.
   \tag{3.4}
 \end{equation}\]</span></p>
+<p><strong>Exemplo numérico do Índice simples de preços agregados</strong></p>
+<p>om base nos dados da tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a>, calcula-se o índice simples de preços agregados para os três produtos em 2004, tomando 2002 como ano-base. De acordo com <a href="números-índices.html#eq:IndiceSimplesDePrecosAgregadosPorcentagem">(3.4)</a>,</p>
+<p><span class="math display">\[\begin{equation}
+  I_A^*(\mathbf{p_4}| \mathbf{p_2}) =
+  \frac{24 + 30 + 45}{15 + 10 +25} \cdot 100 = 198.
+\end{equation}\]</span></p>
+<p>Analogamente, obtém-se os demais índices que são apresentados na tabela <a href="números-índices.html#tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002">3.3</a>.</p>
+<table style="width:38%;">
+<caption><span id="tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002">TABELA 3.3: </span> Índice simples de preços agregados dos três produtos no período 2001-2005 tomando como base o ano de 2002</caption>
+<colgroup>
+<col width="9%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">ano</th>
+<th align="center"><span class="math inline">\(I_A^*(P_t|P_0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2001</td>
+<td align="center">74</td>
+</tr>
+<tr class="even">
+<td align="center">2002</td>
+<td align="center">100</td>
+</tr>
+<tr class="odd">
+<td align="center">2003</td>
+<td align="center">146</td>
+</tr>
+<tr class="even">
+<td align="center">2004</td>
+<td align="center">198</td>
+</tr>
+<tr class="odd">
+<td align="center">2005</td>
+<td align="center">280</td>
+</tr>
+</tbody>
+</table>
+<p>A seguir é calculado o Índice simples de preços agregados do exemplo numérico no R.</p>
+<p><strong>Exemplo numérico do índice simples de preços agregados no R</strong></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="números-índices.html#cb131-1"></a>p1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">24</span>, <span class="dv">30</span>)</span>
+<span id="cb131-2"><a href="números-índices.html#cb131-2"></a>p2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">60</span>)</span>
+<span id="cb131-3"><a href="números-índices.html#cb131-3"></a>p3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">45</span>, <span class="dv">50</span>)</span>
+<span id="cb131-4"><a href="números-índices.html#cb131-4"></a></span>
+<span id="cb131-5"><a href="números-índices.html#cb131-5"></a>p161 &lt;-<span class="st"> </span><span class="kw">cbind</span>(p1, p2, p3)</span>
+<span id="cb131-6"><a href="números-índices.html#cb131-6"></a><span class="kw">rownames</span>(p161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2001</span>, <span class="dv">2002</span>, <span class="dv">2003</span>, <span class="dv">2004</span>, <span class="dv">2005</span>)</span>
+<span id="cb131-7"><a href="números-índices.html#cb131-7"></a></span>
+<span id="cb131-8"><a href="números-índices.html#cb131-8"></a>IAp1p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">1</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb131-9"><a href="números-índices.html#cb131-9"></a>IAp2p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb131-10"><a href="números-índices.html#cb131-10"></a>IAp3p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">3</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb131-11"><a href="números-índices.html#cb131-11"></a>IAp4p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">4</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb131-12"><a href="números-índices.html#cb131-12"></a>IAp5p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">5</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb131-13"><a href="números-índices.html#cb131-13"></a></span>
+<span id="cb131-14"><a href="números-índices.html#cb131-14"></a>ispa161 &lt;-<span class="st"> </span><span class="kw">rbind</span>(IAp1p2, IAp2p2, IAp3p2, IAp4p2, IAp5p2)</span>
+<span id="cb131-15"><a href="números-índices.html#cb131-15"></a><span class="kw">colnames</span>(ispa161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ISPA&quot;</span>)</span>
+<span id="cb131-16"><a href="números-índices.html#cb131-16"></a></span>
+<span id="cb131-17"><a href="números-índices.html#cb131-17"></a>ispa161</span></code></pre></div>
+<pre><code>##        ISPA
+## IAp1p2   74
+## IAp2p2  100
+## IAp3p2  146
+## IAp4p2  198
+## IAp5p2  280</code></pre>
 </div>
 <div id="média-aritmética-dos-preços-relativos" class="section level2">
 <h2><span class="header-section-number">3.4</span> Média Aritmética dos Preços Relativos</h2>
+<p>A Média Aritmétirca dos Preços Relativos é um índice geral de preços que se obtém calculando a média aritmética dos preços relativos, isto é</p>
+<p><span class="math display" id="eq:MediaAritmeticaPrecosRelativos">\[\begin{equation}
+  I_M(\mathbf{p_t}| \mathbf{p_0}) = \frac{1}{n}
+  \sum_{i=1}^{n}\frac{P_{it}}{P_{i0}}
+  \tag{3.5}
+\end{equation}\]</span></p>
+<p>ou, em porcentagem,</p>
+<p><span class="math display" id="eq:MediaAritmeticaPrecosRelativosPorcentagem">\[\begin{equation}
+  I_M^*(\mathbf{p_t}| \mathbf{p_0}) = \frac{1}{n}
+  \sum_{i=1}^{n}\frac{P_{it}}{P_{i0}} \cdot 100.
+  \tag{3.6}
+\end{equation}\]</span></p>
+<p>Na tabela <a href="números-índices.html#tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002">3.3</a> abaixo são apresentados os valores desse índice para os dados da tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a></p>
+<table style="width:38%;">
+<caption><span id="tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002">TABELA 3.4: </span> Índice média aritmética dos preços relativos dos três produtos no período 2001-2005 tomando como base o ano de 2002</caption>
+<colgroup>
+<col width="9%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">ano</th>
+<th align="center"><span class="math inline">\(I_M^*(P_t|P_0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2001</td>
+<td align="center">70,0</td>
+</tr>
+<tr class="even">
+<td align="center">2002</td>
+<td align="center">100,0</td>
+</tr>
+<tr class="odd">
+<td align="center">2003</td>
+<td align="center">153,3</td>
+</tr>
+<tr class="even">
+<td align="center">2004</td>
+<td align="center">213,3</td>
+</tr>
+<tr class="odd">
+<td align="center">2005</td>
+<td align="center">333,3</td>
+</tr>
+</tbody>
+</table>
+<p>Note que os valores da tabela <a href="números-índices.html#tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002">3.4</a> é a média aritmética dos preços relativos da tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a> para cada ano.</p>
+<p>Para o ano de 2003, por exemplo, foi calculada da seguinte forma:</p>
+<p><span class="math display">\[
+I_M^{*}(P_{2003}|P_{2002}) = \dfrac{1}{3}\times \left( 120 + 200 +140 \right) = 153,3
+\]</span><br />
+<strong>Exemplo numérico da média artimética dos preços realtivos no R</strong></p>
+<p>Como temos calculado o preço relativo para cada um dos três produtos com ano
+base 2002, é só calcular a média aritmética para cada ano.</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="números-índices.html#cb133-1"></a>ipr161</span></code></pre></div>
+<pre><code>##      iprprd1 iprprd2 iprprd3
+## 2001      80      50      80
+## 2002     100     100     100
+## 2003     120     200     140
+## 2004     160     300     180
+## 2005     200     600     200</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="números-índices.html#cb135-1"></a>maprp1p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(ipr161[<span class="dv">1</span>, ])<span class="op">/</span><span class="kw">length</span>(ipr161[<span class="dv">1</span>, ])</span>
+<span id="cb135-2"><a href="números-índices.html#cb135-2"></a>maprp2p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(ipr161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">length</span>(ipr161[<span class="dv">2</span>, ])</span>
+<span id="cb135-3"><a href="números-índices.html#cb135-3"></a>maprp3p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(ipr161[<span class="dv">3</span>, ])<span class="op">/</span><span class="kw">length</span>(ipr161[<span class="dv">3</span>, ])</span>
+<span id="cb135-4"><a href="números-índices.html#cb135-4"></a>maprp4p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(ipr161[<span class="dv">4</span>, ])<span class="op">/</span><span class="kw">length</span>(ipr161[<span class="dv">4</span>, ])</span>
+<span id="cb135-5"><a href="números-índices.html#cb135-5"></a>maprp5p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(ipr161[<span class="dv">5</span>, ])<span class="op">/</span><span class="kw">length</span>(ipr161[<span class="dv">5</span>, ])</span>
+<span id="cb135-6"><a href="números-índices.html#cb135-6"></a></span>
+<span id="cb135-7"><a href="números-índices.html#cb135-7"></a>mapr161 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rbind</span>(maprp1p2, maprp2p2, maprp3p2, </span>
+<span id="cb135-8"><a href="números-índices.html#cb135-8"></a>    maprp4p2, maprp5p2), <span class="dv">1</span>)</span>
+<span id="cb135-9"><a href="números-índices.html#cb135-9"></a><span class="kw">colnames</span>(mapr161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;MAPR&quot;</span>)</span>
+<span id="cb135-10"><a href="números-índices.html#cb135-10"></a></span>
+<span id="cb135-11"><a href="números-índices.html#cb135-11"></a>mapr161</span></code></pre></div>
+<pre><code>##           MAPR
+## maprp1p2  70,0
+## maprp2p2 100,0
+## maprp3p2 153,3
+## maprp4p2 213,3
+## maprp5p2 333,3</code></pre>
+<p>Considerando que a expressão <a href="números-índices.html#eq:IndiceSimplesDePrecosAgregados">(3.3)</a> pode ser escrita como em <a href="números-índices.html#eq:MediaAritmeticaPrecosRelativosAlternativo">(3.7)</a>, pode-se entender por que o índice cresceu mais na média aritmética dos preços relativos na tabela <a href="números-índices.html#tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002">3.4</a> que o índice simples de preços agregados na tabela <a href="números-índices.html#tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002">3.3</a>.</p>
+<p><span class="math display" id="eq:MediaAritmeticaPrecosRelativosAlternativo">\[\begin{equation}
+  I_A(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}}{\sum_{i=1}^{n}P_{i0}}
+  \tag{3.7}
+\end{equation}\]</span></p>
+<p>Tanto o índice simples de preços agregados como a média aritmética dos preços relativos são índices gerais de preços. No seus cálculos não se leva em consideração a importância econômica de cada mercadoria que é dada pelo valor monetário da quantidade vendida.</p>
+<p>Portanto, os índices simples de preços agregados bem como a média aritmética do preços relativas só devem ser usados quando não se tem disponível as informações de quantidades.Caso contrário, deve ser utilizados os índices ponderados de preço.</p>
 </div>
 <div id="índice-de-preços-de-laspeyres" class="section level2">
 <h2><span class="header-section-number">3.5</span> Índice de Preços de Laspeyres</h2>
+<p>O índice de preços de Laspeyres para um conjunto de mercadorias, em um período <span class="math inline">\(t\)</span>,
+é a média ponderada dos preços relativos dessas mercadorias, utilizando, como fatores de ponderação, os valores monetários das quantidades de cada mercadoria vendidas
+no período base.</p>
+<p><span class="math display" id="eq:IndicePrecoslaspeyresDefinicao">\[\begin{equation}
+  I_L(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}Q_{i0}}{\sum_{i=1}^{n}P_{i0}}
+  \tag{3.8}
+\end{equation}\]</span></p>
+<p>onde</p>
+<ul>
+<li><span class="math inline">\(Q_{i0}\)</span> é a quantidade da <span class="math inline">\(i\)</span>-ésima mercadoria vendida no período-base e;</li>
+<li><span class="math inline">\(P_{i0}Q_{i0}\)</span> é o valor monetário da i-ésima mercadoria ao preço do período-base.</li>
+</ul>
+<p>Simplificando</p>
+<p><span class="math display" id="eq:IndicePrecosLaspeyres">\[\begin{equation}
+  I_L(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}}
+  \tag{3.9}
+\end{equation}\]</span></p>
+<p>ou, em porcentagem,</p>
+<p><span class="math display" id="eq:IndicePrecosLaspeyresEmPorcentagem">\[\begin{equation}
+  I_L^*(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}}\cdot 100.
+  \tag{3.10}
+\end{equation}\]</span></p>
+<p><strong>Exemplo numérico de Índice de preços de Laspeyres</strong></p>
+<p>Com base na tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a> e na fórmula <a href="números-índices.html#eq:IndicePrecosLaspeyresEmPorcentagem">(3.10)</a>, o índice de preços de Laspeyres para os três
+produtos, em 2004, tomando 2002 como ano-base é</p>
+<p><span class="math display">\[\begin{equation}
+  I_L^*(\mathbf{p_4}| \mathbf{p_2}) = \frac{24\cdot 4 + 30\cdot 9 +
+  45\cdot 4}{15\cdot 4 + 10\cdot 9 + 25\cdot 4}\cdot 100 =
+  \frac{546}{250}\cdot 100 = 218,4
+\end{equation}\]</span></p>
+<p>Os valores do índice de preços de Laspeyres para 2001, 2003 e 2005 podem ser obtidos
+da mesma maneira e são apresentados na tabela <a href="números-índices.html#tab:IndiceDeLaspeyresDeTresProdutosBase2002">3.5</a>.</p>
+<table style="width:38%;">
+<caption><span id="tab:IndiceDeLaspeyresDeTresProdutosBase2002">TABELA 3.5: </span> Índice de Laspeyres dos três produtos no período 2001-2005 tomando como base o ano de 2002</caption>
+<colgroup>
+<col width="9%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">ano</th>
+<th align="center"><span class="math inline">\(I_L^*(P_t|P_0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2001</td>
+<td align="center">69,2</td>
+</tr>
+<tr class="even">
+<td align="center">2002</td>
+<td align="center">100,0</td>
+</tr>
+<tr class="odd">
+<td align="center">2003</td>
+<td align="center">156,8</td>
+</tr>
+<tr class="even">
+<td align="center">2004</td>
+<td align="center">218,4</td>
+</tr>
+<tr class="odd">
+<td align="center">2005</td>
+<td align="center">344,0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplo numérico de Índice de preços de Laspeyres no R</strong></p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="números-índices.html#cb137-1"></a>q1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb137-2"><a href="números-índices.html#cb137-2"></a>q2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">6</span>)</span>
+<span id="cb137-3"><a href="números-índices.html#cb137-3"></a>q3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>)</span>
+<span id="cb137-4"><a href="números-índices.html#cb137-4"></a>q161 &lt;-<span class="st"> </span><span class="kw">cbind</span>(q1, q2, q3)</span>
+<span id="cb137-5"><a href="números-índices.html#cb137-5"></a><span class="kw">rownames</span>(q161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2001</span>, <span class="dv">2002</span>, <span class="dv">2003</span>, <span class="dv">2004</span>, <span class="dv">2005</span>)</span>
+<span id="cb137-6"><a href="números-índices.html#cb137-6"></a></span>
+<span id="cb137-7"><a href="números-índices.html#cb137-7"></a>q161</span></code></pre></div>
+<pre><code>##      q1 q2 q3
+## 2001  3  7  3
+## 2002  4  9  4
+## 2003  5  8  5
+## 2004  5  7  6
+## 2005  6  6  5</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="números-índices.html#cb139-1"></a>iplp1p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">1</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb139-2"><a href="números-índices.html#cb139-2"></a><span class="st">    </span>q161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb139-3"><a href="números-índices.html#cb139-3"></a>iplp2p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb139-4"><a href="números-índices.html#cb139-4"></a><span class="st">    </span>q161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb139-5"><a href="números-índices.html#cb139-5"></a>iplp3p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">3</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb139-6"><a href="números-índices.html#cb139-6"></a><span class="st">    </span>q161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb139-7"><a href="números-índices.html#cb139-7"></a>iplp4p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">4</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb139-8"><a href="números-índices.html#cb139-8"></a><span class="st">    </span>q161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb139-9"><a href="números-índices.html#cb139-9"></a>iplp5p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">5</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb139-10"><a href="números-índices.html#cb139-10"></a><span class="st">    </span>q161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb139-11"><a href="números-índices.html#cb139-11"></a></span>
+<span id="cb139-12"><a href="números-índices.html#cb139-12"></a>ipl161 &lt;-<span class="st"> </span><span class="kw">rbind</span>(iplp1p2, iplp2p2, iplp3p2, iplp4p2, </span>
+<span id="cb139-13"><a href="números-índices.html#cb139-13"></a>    iplp5p2)</span>
+<span id="cb139-14"><a href="números-índices.html#cb139-14"></a><span class="kw">colnames</span>(ipl161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;IPL&quot;</span>)</span>
+<span id="cb139-15"><a href="números-índices.html#cb139-15"></a></span>
+<span id="cb139-16"><a href="números-índices.html#cb139-16"></a>ipl161</span></code></pre></div>
+<pre><code>##           IPL
+## iplp1p2  69,2
+## iplp2p2 100,0
+## iplp3p2 156,8
+## iplp4p2 218,4
+## iplp5p2 344,0</code></pre>
+<p><strong>Uma interpretação econômica do Índice de preços de Laspeyres</strong></p>
+<p>O índice de preços de Laspeyres é uma relação entre o custo de aquisição da <strong>cesta de mercadorias</strong> <span class="math inline">\(\mathbf{q_0}\)</span> no período <span class="math inline">\(t\)</span> e o custo de aquisição
+dessa mesma cesta de mercadorias no período-base.</p>
 </div>
 <div id="índice-de-preços-de-paasche" class="section level2">
 <h2><span class="header-section-number">3.6</span> Índice de Preços de Paasche</h2>
+<p>O índice de preços de Paasche para o período <span class="math inline">\(t\)</span> pode ser interpretado como uma média
+ponderada dos preços relativos, utilizando com fatores de ponderação os valores monetários das quantidades vendidas no período <span class="math inline">\(t\)</span>, considerando os preços do período-base.</p>
+<p><span class="math display" id="eq:IndicePrecosPaascheDefinicao">\[\begin{equation}
+  I_P(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}\left(\frac{P_{it}}{P_{i0}}\right)P_{i0}Q_{it}}{\sum_{i=1}^{n}P_{i0}}
+  \tag{3.11}
+\end{equation}\]</span></p>
+<p>onde</p>
+<ul>
+<li><span class="math inline">\(Q_{it}\)</span> é a quantidade da <span class="math inline">\(i\)</span>-ésima mercadoria vendida no período <span class="math inline">\(t\)</span> e;</li>
+<li><span class="math inline">\(P_{i0}Q_{it}\)</span> é o valor monetário da i-ésima mercadoria no perído <span class="math inline">\(t\)</span>
+considerando o preço do período-base.</li>
+</ul>
+<p>Simplificando
+<span class="math display" id="eq:IndicePrecosPaasche">\[\begin{equation}
+  I_P(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}
+  \tag{3.12}
+\end{equation}\]</span></p>
+<p>ou, em porcentagem,</p>
+<p><span class="math display" id="eq:IndicePrecosPaascheEmPorcentagem">\[\begin{equation}
+  I_P^*(\mathbf{p_t}| \mathbf{p_0}) = 
+  \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}\cdot 100.
+  \tag{3.13}
+\end{equation}\]</span></p>
+<p>De acordo com os dados da tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a> e a fórmula <a href="números-índices.html#eq:IndicePrecosPaascheEmPorcentagem">(3.13)</a>, o índice
+de preços de Paasche para os três produtos em 2004, tomando 2002 como ano-base é</p>
+<p><span class="math display">\[\begin{equation}
+  I_P^*(\mathbf{p_4}| \mathbf{p_2}) = \frac{24\cdot 5 + 30\cdot 7 +
+  45\cdot 6}{15\cdot 5 + 10\cdot 7 + 25\cdot 6}\cdot 100 =
+  \frac{600}{295}\cdot 100 = 203,4
+\end{equation}\]</span>
+Os valores dos índices de preços de Paasche para os demais anos podem ser calculados na mesma forma e são apresentados na tabela <a href="números-índices.html#tab:IndiceDePaascheDeTresProdutosBase2002">3.6</a>.</p>
+<table style="width:38%;">
+<caption><span id="tab:IndiceDePaascheDeTresProdutosBase2002">TABELA 3.6: </span> Índice de Paasche dos três produtos no período 2001-2005 tomando como base o ano de 2002</caption>
+<colgroup>
+<col width="9%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">ano</th>
+<th align="center"><span class="math inline">\(I_P^*(P_t|P_0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2001</td>
+<td align="center">68,9</td>
+</tr>
+<tr class="even">
+<td align="center">2002</td>
+<td align="center">100,0</td>
+</tr>
+<tr class="odd">
+<td align="center">2003</td>
+<td align="center">151,8</td>
+</tr>
+<tr class="even">
+<td align="center">2004</td>
+<td align="center">203,4</td>
+</tr>
+<tr class="odd">
+<td align="center">2005</td>
+<td align="center">287,3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplo numérico de índice de preços de Paasche no R</strong></p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="números-índices.html#cb141-1"></a>ippp1p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">1</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">1</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb141-2"><a href="números-índices.html#cb141-2"></a><span class="st">    </span>q161[<span class="dv">1</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb141-3"><a href="números-índices.html#cb141-3"></a>ippp2p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">2</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb141-4"><a href="números-índices.html#cb141-4"></a><span class="st">    </span>q161[<span class="dv">2</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb141-5"><a href="números-índices.html#cb141-5"></a>ippp3p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">3</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">3</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb141-6"><a href="números-índices.html#cb141-6"></a><span class="st">    </span>q161[<span class="dv">3</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb141-7"><a href="números-índices.html#cb141-7"></a>ippp4p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">4</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">4</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb141-8"><a href="números-índices.html#cb141-8"></a><span class="st">    </span>q161[<span class="dv">4</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb141-9"><a href="números-índices.html#cb141-9"></a>ippp5p2 &lt;-<span class="st"> </span><span class="kw">sum</span>(p161[<span class="dv">5</span>, ] <span class="op">*</span><span class="st"> </span>q161[<span class="dv">5</span>, ])<span class="op">/</span><span class="kw">sum</span>(p161[<span class="dv">2</span>, ] <span class="op">*</span><span class="st"> </span></span>
+<span id="cb141-10"><a href="números-índices.html#cb141-10"></a><span class="st">    </span>q161[<span class="dv">5</span>, ]) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></span>
+<span id="cb141-11"><a href="números-índices.html#cb141-11"></a></span>
+<span id="cb141-12"><a href="números-índices.html#cb141-12"></a>ipp161 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rbind</span>(ippp1p2, ippp2p2, ippp3p2, ippp4p2, </span>
+<span id="cb141-13"><a href="números-índices.html#cb141-13"></a>    ippp5p2), <span class="dv">1</span>)</span>
+<span id="cb141-14"><a href="números-índices.html#cb141-14"></a><span class="kw">colnames</span>(ipp161) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;IPP&quot;</span>)</span>
+<span id="cb141-15"><a href="números-índices.html#cb141-15"></a></span>
+<span id="cb141-16"><a href="números-índices.html#cb141-16"></a>ipp161</span></code></pre></div>
+<pre><code>##           IPP
+## ippp1p2  68,9
+## ippp2p2 100,0
+## ippp3p2 151,8
+## ippp4p2 203,4
+## ippp5p2 287,3</code></pre>
+<p><strong>Interpretação econômica do índice de preços de Paasche</strong></p>
+<p>O índice de preços de Paasche é uma relação entre o custo de aquisição da <strong>da cesta de mercadorias</strong> <span class="math inline">\(\mathbf{q_t}\)</span> no período <span class="math inline">\(t\)</span> com o custo de aquisição dessa mesma
+cesta de mercadorias no período-base.</p>
+<p><strong>Comparando os índices de preços de Laspeyres e Paasche</strong></p>
+<p>O método de Paasche exige mais informações do que o método de Laspeyres no cálculo
+do índice ponderado de preços.</p>
 </div>
-<div id="índice-de-preços-de-fischer" class="section level2">
-<h2><span class="header-section-number">3.7</span> Índice de Preços de Fischer</h2>
+<div id="índice-de-preços-de-fisher" class="section level2">
+<h2><span class="header-section-number">3.7</span> Índice de Preços de Fisher</h2>
+<p>Vimos que o método de Laspeyres e o método de Paasche entregam, em geral, resultados
+diferentes quando utilizados para avaliar a variação no nível dos preços de um conjunto
+de produtos.</p>
+<p>Para tentar superar essa divergência de resultados, foram criados índices que conduzem
+a valores intermediários entre o índice de Laspeyres e o índice de Paasche.</p>
+<p>O índice de preços de Fisher, é por definição, a média geométrica entre o índice de
+preços de Laspeyres e o índice de preços de Paasche.</p>
+<p>Ou seja,</p>
+<p><span class="math display" id="eq:IndicePrecosFischer">\[\begin{equation}
+  I_F(\mathbf{p_t}| \mathbf{p_0}) = \sqrt{I_L(\mathbf{p_t}| \mathbf{p_0}) I_P(\mathbf{p_t}| \mathbf{p_0})}=  \left( \frac{\sum_{i=1}^{n}P_{it}Q_{i0}}{\sum_{i=1}^{n}P_{i0}Q_{i0}} \frac{\sum_{i=1}^{n}P_{it}Q_{it}}{\sum_{i=1}^{n}P_{i0}Q_{it}}\right)^{1/2}
+  \tag{3.14}
+\end{equation}\]</span></p>
+<p>ou, em porcentagem,</p>
+<p><span class="math display" id="eq:IndicePrecosFischerEmPorcentagem">\[\begin{equation}
+  I_F^*(\mathbf{p_t}|\mathbf{p_{o}}) = I_F(\mathbf{p_t}| \mathbf{p_0}) \cdot 100.
+  \tag{3.15}
+\end{equation}\]</span></p>
+<p><strong>Exemplo numérico do Índice de preços de Fisher</strong></p>
+<p>Para calcular o índice de preços de Fischer de 2004, tomando como 2002 com ano-base, com base nos dados da tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a>, basta tomar os valores dos índices de preços de Laspeyres e de Paasche nas tabelas <a href="números-índices.html#tab:IndiceDeLaspeyresDeTresProdutosBase2002">3.5</a> e <a href="números-índices.html#tab:IndiceDePaascheDeTresProdutosBase2002">3.6</a> respectivamente.</p>
+<p>Ou seja,</p>
+<p><span class="math display">\[\begin{equation}
+  I_F^*(\mathbf{p_t}| \mathbf{p_0}) = \sqrt{218,4 \cdot 203,4} = 210,8
+\end{equation}\]</span></p>
 </div>
 <div id="índice-de-preços-de-marshall-edgeworth" class="section level2">
 <h2><span class="header-section-number">3.8</span> Índice de Preços de Marshall-Edgeworth</h2>
+<p>O índice de preços de Marshall-Edgeworth pode ser interpretado como uma relação entre o custo de aquisição no período <span class="math inline">\(t\)</span> e o custo de aquisição no período-base de uma cesta de
+mercadorias que contém, para cada produto, a média aritmética das quantidades vendidas no período -base e no período <span class="math inline">\(t\)</span>.</p>
+<p><span class="math display" id="eq:IndicePrecosMarshallEdgeworth">\[\begin{equation}
+  I_E(\mathbf{p_t}| \mathbf{p_0}) = \frac{\sum_{i=1}^{n}P_{it}(Q_{i0} +
+  Q_{it})}{\sum_{i=1}^{n}P_{i0}(Q_{i0} + Q_{it})}
+  \tag{3.16}
+\end{equation}\]</span></p>
+<p>ou, em porcentagem.</p>
+<p><span class="math display" id="eq:IndicePrecosMarshallEdgeworthEmPorcentagem">\[\begin{equation}
+  I_E^*(\mathbf{p_t}|\mathbf{p_{o}}) = I_E(\mathbf{p_t}| \mathbf{p_0}) \cdot 100.
+  \tag{3.17}
+\end{equation}\]</span></p>
+<p><strong>Exemplo numérico do índice de preços de Marshall-Edgeworth</strong></p>
+<p>Para calcular o índice de preços de Marshall-Edgeworth de 2004, tomando 2002 como ano base, calcula-se utilizando a fórmula <a href="números-índices.html#eq:IndicePrecosMarshallEdgeworthEmPorcentagem">(3.17)</a> usando os dados da tabela <a href="números-índices.html#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005">3.1</a></p>
+<p><span class="math display">\[\begin{equation}
+  I_E^* (\mathbf{p_t}|\mathbf{p_{o}}) =  \frac{24(4+5) + 30(9+7) + 45(4+6)}{15(4+5) + 10(9+7) + 25(4+6)} \cdot 100 = 210,3
+\end{equation}\]</span></p>
 </div>
 <div id="deflacionamento" class="section level2">
 <h2><span class="header-section-number">3.9</span> Deflacionamento</h2>
+<p>Considere dois valores monetários pagos ou recebidos em diferentes datas:</p>
+<ul>
+<li><p><span class="math inline">\(x=\)</span>R$120,00 recebidos em setembro e 1997 e;</p></li>
+<li><p><span class="math inline">\(y=\)</span>R$240,00 recebidos em setembro de 2003.</p></li>
+</ul>
+<p>Aparentemetemente, não há a necessidade de modificar a unidade medida de nenhum dos dois valores, pois ambos estão em reais.</p>
+<p>Mas devido à inflação ou desvalorização da moeda, o real de setembro de 2003 é uma unidade de medida de valor de troca bastante diferente do real de setembro de 1997.</p>
+<p>Por isso, antes de fazer qualquer comparação ou operação aritmética envolvendo os valores de <span class="math inline">\(x\)</span> d <span class="math inline">\(y\)</span> é necessário fazer uniformizar a unidade de medida.</p>
+<p>Isso se faz através de um índice de preços que possa ser utilizado como uma medidada desvalorização da moeda. Essa é uma das principais aplicações dos números-índices em uma economia inflacionária.</p>
+<p>O índice de preços utilizados como medida da inflação ou desvalorização da moeda é denominada <strong>deflator</strong>.</p>
+<p>Os valores de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> medidos em reais da data em que o pagamento é efetuado são denominados <strong>valores nominais</strong> ou <strong>valores em moeda corrente</strong>. Caso se trate de preços de um produto, são denominados <strong>preços correntes</strong>.</p>
+<p>Então, antes de fazer qualquer comparação ou operação aritmética envolvendo os valores em moeda corrente, é necessário calcular os <strong>valores reais</strong> ou <strong>valores deflacionados</strong> utilizando um <strong>deflator</strong>.</p>
+<p>Através da um regra de três simples,</p>
+<p><span class="math display">\[\begin{equation}
+  \frac{V_r}{V_t} = \frac{I_k}{I_t}
+\end{equation}\]</span></p>
+<p>temos</p>
+<p><span class="math display" id="eq:ValorReal">\[\begin{equation}
+  V_r = \frac{I_k}{I_t}V_t.
+  \tag{3.18}
+\end{equation}\]</span></p>
+<p>Se, por exemplo, a inflação entre o período <span class="math inline">\(k\)</span> e o período <span class="math inline">\(t\)</span> tivesse sido de 100%,</p>
+<p><span class="math display">\[\begin{equation}
+  I_t = 2I_k
+\end{equation}\]</span></p>
+<p>então</p>
+<p><span class="math display">\[\begin{equation}
+  V_r = \frac{V_t}{2}.
+\end{equation}\]</span></p>
+<p>Ou seja, o valor real, medido em moeda do ano <span class="math inline">\(k\)</span>, seria igual à metade do valor em moeda corrente.</p>
+<p>Geralmente, quando se calculam valores reais, a finalidade é apenas uniformizar a unidade de medida.</p>
+<p>Então, por facilidade de cálculo, são obtidos os valores reais medidos em moeda do período-base do deflator, isto é, em lugar de <span class="math inline">\(I_k\)</span>, considera-se <span class="math inline">\(I_0 = 100\)</span>. Nesse caso, a expressão <a href="números-índices.html#eq:ValorReal">(3.18)</a> fica</p>
+<p><span class="math display" id="eq:ValorRealEmPorcentagem">\[\begin{equation}
+  V_r = \frac{V_t}{I_t}100.
+  \tag{3.19}
+\end{equation}\]</span></p>
+<p>Como exemplos de índices comumente usados em trabalhos de pesquisa em economia se tem:</p>
+<ul>
+<li><p>o Índice Geral de Preços - Disponibilidade Interna (IGP-DI) é usado como deflator para preços de produtos e serviços.</p></li>
+<li><p>o índice de custo de vida é o mais adequado para deflacionar salários.</p></li>
+</ul>
+<p><strong>Exemplo para o cálculo de valores reais</strong></p>
+<p>Considere <span class="math inline">\(x=\)</span>R$ 120,00 o valor corrente do salário mínimo vigente em setembro de 1997 e <span class="math inline">\(y=\)</span>R$ 240,00 o valor corrente do salário mínimo vigente em setembro de 2003.</p>
+<p>Um deflator apropriado, nesse caso, é o <strong>Índice Nacional de Preços ao Consumidor Restrito</strong> (INPC) calculado pelo IBGE para medir o custo de vida das famílias cujos chefes são assalariados em sua ocupação principal e cujo rendimento monetário disponível situe-se entre 1 e 5 salários mínimos.</p>
+<p>Com base em dezembro de 1993, o INPC é igual a R$ 1.415,18 em setembro de 1997 e igual a R$ 2.288,16 em setembro de 2003</p>
+<p>Então, de acordo com <a href="números-índices.html#eq:ValorReal">(3.18)</a>, o valor deflacionado de <span class="math inline">\(y\)</span> em reais de
+setembro de 1997 é</p>
+<p><span class="math display">\[\begin{equation}
+  V_{1997} = \frac{I_{1997}}{I_{2003}} \times V_{2003},
+\end{equation}\]</span></p>
+<p>ou seja,</p>
+<p><span class="math display">\[\begin{equation}
+  V_{1997} = \frac{1.415,18}{2.288,16} \times 240 = 148,44
+\end{equation}\]</span></p>
+<p>Alternativamente pode-se calcular o valor real de <span class="math inline">\(x\)</span> em moeda de setembro de 2003,</p>
+<p><span class="math display">\[\begin{equation}
+  V_{2003} = \frac{I_{2003}}{I_{1997}} \times V_{1997},
+\end{equation}\]</span></p>
+<p>ou seja,</p>
+<p><span class="math display">\[\begin{equation}
+  V_{2003} = \frac{2.228,16}{1.415,18} \times 120 = 194,02.
+\end{equation}\]</span></p>
 
 </div>
 </div>

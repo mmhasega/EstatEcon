@@ -55,6 +55,10 @@ eq:IntervaloDoIndiceTDeTheil
 eq:IndiceLDeTheil
 eq:VarianciaDosLogaritmos
 eq:VarianciaDosLogaritmosComMediaGeometrica
+eq:IndicePrecoRelativo
+eq:IndicePrecoRelativoPorcentagem
+tab:DadosPrecosQuantidadesDeTresProdutos2001a2005
+tab:PrecosRelativosDosTresProdutosBase2002
 estatística-descritiva
 medidas-de-posição
 variável-aleatória
@@ -114,3 +118,6 @@ teorema-de-tchebichev
 distribuição-estatística-conjunta-para-variável-aleatória-discreta
 distribuição-estatística-conjunta-para-variável-aleatória-contínua
 considerações-finais
+eq:IndiceSimplesDePrecosAgregados
+eq:IndiceSimplesDePrecosAgregadosPorcentagem
+índice-simples-de-preços-agregados

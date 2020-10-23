@@ -18,8 +18,105 @@ interpretar melhor os índices  publicados e avaliar suas limitações.
 
 O número-índice preços relativos é a relação entre o preço de um produto em determinado período (ano ou mês, geralmente) e o preço no período escolhido como base. Esse índice se destina a acompanhar a evolução do preço de determinado produto. O preço relativo pode ser denominado também de índice relativo de preço ou número-índice simples de preço.
 
+Se $P_0$ é o preço da mercadoria no período-base e $P_t$ é o preço em um período $t$, o preço relativo da mercadoria no ano $t$ é dado por
 
-## Índices Simples de Preços Agregados
+\begin{equation}
+  I(P_t| P_0) = \frac{P_t}{P_0}.
+  (\#eq:IndicePrecoRelativo)
+\end{equation}
+
+Usualmente, o valor do índice é dado em porcentagem, calculando-se
+
+\begin{equation}
+  I^*(P_t| P_0) = \frac{P_t}{P_0}\cdot 100.
+  (\#eq:IndicePrecoRelativoPorcentagem)
+\end{equation}
+
+**Exemplo numérico de índice relativo**
+
+Seja os dados da tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005) abaixo
+
+Table: (\#tab:DadosPrecosQuantidadesDeTresProdutos2001a2005) dados hipotético de preços e quantidades para três produtos no período de 2001 a 2005
+
+--------------------------------------------------------------------------
+  ano    $P_{1t}$   $Q_{1t}$   $P_{2t}$   $Q_{2t}$   $P_{3t}$   $Q_{3t}$
+ ------ ---------- ---------- ---------- ---------- ---------- ----------
+  2001      12         3           5         7          20          3     
+
+  2002      15         4          10         9          25          4    
+
+  2003      18         5          20         8          35          5    
+
+  2004      24         5          30         7          45          6    
+
+  2005      30         6          60         6          50          5   
+--------------------------------------------------------------------------
+Fonte: @Hoffmann2006.
+
+Tomando com base o ano 2002, o preço relativo do produto 1 em 2004, de acordo com
+\@ref(eq:IndicePrecoRelativoPorcentagem) é
+
+\begin{equation}
+    I*(P_t| P_0) = \frac{24}{15}\cdot 100 = 160.
+\end{equation}
+
+Com base na tabela \@ref(tab:DadosPrecosQuantidadesDeTresProdutos2001a2005), os demais preços relativos podem ser calculados, tomando como base o ano de 2002, que são apresentados na tabela \@ref(tab:PrecosRelativosDosTresProdutosBase2002).
+
+Table: (\#tab:PrecosRelativosDosTresProdutosBase2002) Preços relativos dos três produtos no período de 2001 a 2005, tomando como base o ano de 2002
+
+--------------------------------------------
+  ano    Produto 1   Produto 2   Produto 3  
+ ------ ----------- ----------- ----------- 
+  2001       80         50          80      
+
+  2002      100        100         100      
+  
+  2003      120        200         140      
+
+  2004      160        300         180      
+
+  2005      200        600         200      
+--------------------------------------------
+
+**Exemplo numérico de preço relativo no R**
+
+Carrega-se os preços dos três produtos e calcula os respectivos preços relativos tendo como base o ano de 2002.
+
+```{r PrecoRelativo, echo=TRUE}
+prd1 <- c(12,15,18,24,30)
+prd2 <- c(5,10,20,30,60)
+prd3 <- c(20,25,35,45,50)
+iprprd1 <- prd1/prd1[2]*100
+iprprd2 <- prd2/prd2[2]*100
+iprprd3 <- prd3/prd3[2]*100
+
+ipr161 <- cbind(iprprd1,iprprd2,iprprd3)
+rownames(ipr161) <- c(2001,2002,2003,2004,2005)
+
+ipr161
+```
+
+Note que na linha da ano 2002, os três preaços relativos em porcentagem são iguais a 100.
+
+O preço relativo mostra como está evoluindo o preço de cada um dos produtos. Mas quando analisa-se um conjunto de mercadorias, interessa-se em obter um único índice que nos mostre como está evoluindo o nível geral dos preços dessas mercadorias.
+
+## Índice Simples de Preços Agregados
+
+O índice Simples de Preços Agregados é a relação entre o somatório dos preços das mercadorias no período $t$ e o somatório dos preços das mercadorias no período escolhido como base.
+O índice simples de preços agreagados é também chamado de índice agregativo de preços.
+Defini-se que o índice $i$, variando de 1 a $n$, indique as $n$ diferentes mercadorias do conjunto considerado.
+Note que $I_A(\mathbf{p_t}|\mathbf{p_0})$ é o valor do índice agregativo para o vetor ou conjunto de preços $\mathbf{p_t} = {P_{it},i=1,\ldots, n}$ quando comparado ao vetor de preços do período-base, $\mathbf{p_0} = {P_{i0},i=1,\ldots, n}$. Ou seja,
+\begin{equation}
+  I_A(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}}{\sum_{i=1}^{n}P_{i0}},
+  (\#eq:IndiceSimplesDePrecosAgregados)
+\end{equation}
+ou em porcentagem
+\begin{equation}
+  I_A^*(\mathbf{p_t}| \mathbf{p_0}) =
+  \frac{\sum_{i=1}^{n}P_{it}}{\sum_{i=1}^{n}P_{i0}} \cdot 100.
+  (\#eq:IndiceSimplesDePrecosAgregadosPorcentagem)
+\end{equation}
 
 ## Média Aritmética dos Preços Relativos
 

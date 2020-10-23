@@ -120,7 +120,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-10-21}
+\date{2020-10-22}
 
 \begin{document}
 \maketitle
@@ -2748,6 +2748,225 @@ interpretar melhor os índices publicados e avaliar suas limitações.
 \section{Preços Relativos}\label{preuxe7os-relativos}}
 
 O número-índice preços relativos é a relação entre o preço de um produto em determinado período (ano ou mês, geralmente) e o preço no período escolhido como base. Esse índice se destina a acompanhar a evolução do preço de determinado produto. O preço relativo pode ser denominado também de índice relativo de preço ou número-índice simples de preço.
+
+Se \(P_0\) é o preço da mercadoria no período-base e \(P_t\) é o preço em um período \(t\), o preço relativo da mercadoria no ano \(t\) é dado por
+
+\begin{equation}
+  I(P_t| P_0) = \frac{P_t}{P_0}.
+  \label{eq:IndicePrecoRelativo}
+\end{equation}
+
+Usualmente, o valor do índice é dado em porcentagem, calculando-se
+
+\begin{equation}
+  I^*(P_t| P_0) = \frac{P_t}{P_0}\cdot 100.
+  \label{eq:IndicePrecoRelativoPorcentagem}
+\end{equation}
+
+\textbf{Exemplo numérico de índice relativo}
+
+Seja os dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} abaixo
+
+\begin{longtable}[]{@{}ccccccc@{}}
+\caption{\label{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} dados hipotético de preços e quantidades para três produtos no período de 2001 a 2005}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(P_{1t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(Q_{1t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(P_{2t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(Q_{2t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(P_{3t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(Q_{3t}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(P_{1t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(Q_{1t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(P_{2t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(Q_{2t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(P_{3t}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\(Q_{3t}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+35\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+5\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+45\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+6\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+60\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+5\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: \citet{Hoffmann2006}.
+
+Tomando com base o ano 2002, o preço relativo do produto 1 em 2004, de acordo com
+\eqref{eq:IndicePrecoRelativoPorcentagem} é
+
+\begin{equation}
+    I*(P_t| P_0) = \frac{24}{15}\cdot 100 = 160.
+\end{equation}
+
+Com base na tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}, os demais preços relativos podem ser calculados, tomando como base o ano de 2002, que são apresentados na tabela \ref{tab:PrecosRelativosDosTresProdutosBase2002}.
+
+\begin{longtable}[]{@{}cccc@{}}
+\caption{\label{tab:PrecosRelativosDosTresProdutosBase2002} Preços relativos dos três produtos no período de 2001 a 2005, tomando como base o ano de 2002}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Produto 1\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Produto 2\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\centering
+Produto 3\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+ano\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Produto 1\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+Produto 2\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\centering
+Produto 3\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2001\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+80\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
+80\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2002\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
+100\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2003\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+120\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+200\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
+140\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2004\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+160\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+300\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
+180\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+200\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+600\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
+200\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
 \hypertarget{uxedndices-simples-de-preuxe7os-agregados}{%
 \section{Índices Simples de Preços Agregados}\label{uxedndices-simples-de-preuxe7os-agregados}}

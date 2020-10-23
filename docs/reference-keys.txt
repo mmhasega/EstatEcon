@@ -16,6 +16,7 @@ eq:valor2mediaposicaomedianapar
 eq:medianapar
 eq:posicaoquartilum
 eq:posicaoquartiltres
+eq:DesvioAbsolutoMedio
 eq:DeltaEmSomaDeValoresNegativosEPositivos
 eq:IgualdadeDasSomasDosDesvios
 eq:DesvioAbsolutoMedioAlternativo
@@ -47,6 +48,7 @@ eq:DiscrepanciaMaximaFinal
 eq:ConteudoInformativo
 eq:ConteudoInformativoGeral
 eq:InformacaoEsperadaDeUmaMensagemCerta
+eq:CasoParticularxiIgualA0
 eq:LagrangeanoDeHx
 eq:IntervaloDeVariacaoDeHx
 eq:InformacaoDeUmaMensagemIncerta
@@ -59,6 +61,8 @@ eq:IndicePrecoRelativo
 eq:IndicePrecoRelativoPorcentagem
 tab:DadosPrecosQuantidadesDeTresProdutos2001a2005
 tab:PrecosRelativosDosTresProdutosBase2002
+eq:IndiceSimplesDePrecosAgregados
+eq:IndiceSimplesDePrecosAgregadosPorcentagem
 tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002
 eq:MediaAritmeticaPrecosRelativos
 eq:MediaAritmeticaPrecosRelativosPorcentagem
@@ -69,6 +73,7 @@ eq:IndicePrecosLaspeyres
 eq:IndicePrecosLaspeyresEmPorcentagem
 tab:IndiceDeLaspeyresDeTresProdutosBase2002
 eq:IndicePrecosPaascheDefinicao
+eq:IndicePrecosPaasche
 eq:IndicePrecosPaascheEmPorcentagem
 tab:IndiceDePaascheDeTresProdutosBase2002
 eq:IndicePrecosFischer

@@ -1,27 +1,262 @@
-# Variável Aleatória e Distribuição
+# Variável Aleatória Discreta
+
+A associação de cada um dos valores de uma variável a uma probabilidade 
+correspondente de ocorrer corresponde a uma **distribuição de 
+probabilidade**.
+
+Essa distribuição de probabilidade pode ser de uma variável aleatória discreta
+ou de uma variável aleatória contínua. No capítulo 03 do @Sartoris2013 apresenta-se
+a distribuições de probabilidade de variáveis aleatórias discretas. 
 
 ## Esperança matemática
 
-## Variável Aleatória
+Quando se calcula uma média do que **pode** acontecer com a variável,
+baseada em sua distribuição de probabilidade, está obtendo-se um valor médio esperado.
+Ou seja, a **esperança matemática**, ou, simplesmente, **esperança**.
 
-## Distribuição
+A esperança de uma variável aleatória discreta $X$, denotada $E(X)$, é definida como
+
+\[
+  E(X) = X_1P(X_1) + X_2P(X_2) + \ldots + X_nP(X_n) = \sum_{i=1}^{n}X_iP(X_i)
+\]
+
+A probabilidade aqui tem o mesmo papel da frequência relativa.
+
+Note que,
+
+- quando se fala em frequência relativa, usualmente refere-se a 
+  uma quantidade obtida.
+- quando se fala em probabilidade, nos remete a ideia de proporções em que 
+  a variável pode assumir determinado valor.
+
+### Função de Probabilidade
+
+$P(X)$ é a função que associa o valor de $X$ à sua probabilidade, que é chamada 
+de **função de probabilidade**. É representada como $f(X)$. 
+Desta forma pode-se escrever:
+
+\[
+E(X) = \sum_ {i=1}^{n}X_i f(X_i)~~para~i=1,\ldots,n.
+\]
+
+### Função distribuição acumulada
+
+A função que fornece a probabilidade acumulada dado o valor de $X$ é a 
+**função distribuição acumulada** ou, simplesmente, função distribuição, 
+representada por $F(X)$.
+
+\[
+F(X_k) = \sum_{i=1}^{k} f(X_i)~~para~i=1, \ldots,n
+\] 
+
+**Exemplo numérico sobre Função de Probabilidade (Sartoris, 2013, pg.55)**
+
+Este exemplo numérico bem básico é sobre probabilidade que está na página 55 de 
+@Sartoris2013.
+Num sorteio de números inteiros de 1 a 5, a probabilidade de um número ser sorteado é proporcional a esse número. Qual é a probabilidade de cada número ser sorteado?
+
+**Resposta**: Se considerarmos que a $P(1)$ é igual a $1A$, onde $A$ é uma constante desconhecida, temos:
+
+$P(1)=A$
+
+$P(2)=2A$
+
+$P(3)=3A$
+
+$P(4)=4A$
+
+$P(5)=5A$.
+
+Sendo os eventos mutuamente exclusivos,a soma de todas as probabilidades tem de ser igual a 1. Portanto,
+
+$P(1) + P(2) + P(3) + P(4) + P(5) = 1$
+
+$A + 2A + 3A + 4A + 5A = 1$
+
+$15A = 1$
+
+$A = \dfrac{1}{15}$.
+
+### Esperanças, Variâncias e Covariâncias
+
+Note que
+
+\begin{align}
+  E[aX + b] &= aE(X) + b \\
+  E[X + Y] &= E(X) + E(Y) \\
+  Var(X) &= E[X - E(X)]^2 = E(X^2) - [E(X)]^2 \\
+  Cov(X,Y) &= E[X - E(X)][Y - E(Y)] = E(XY) - E(X)E(Y)
+\end{align}
+
+**Exemplo Numérico sobre Esperança e Variância (Sartoris, 2013, p.56)**
+
+Este exemplo numérico é o 3.1.2 do @Sartoris2013 que está na página 56.
+Uma ação comprada por R\$10,00 pode assumir, após 30 dias, os seguintes valores:
+R\$5,00 com 20\% de probabilidade; R\$10,00 com 30\% de probabilidade; R\$16,00 com 25\% de probabilidade ou R\$20,00 com 25\% de probabilidade. Determine o valor esperado da ação e sua variância.
+
+**Resposta**: O valor esperado da ação é
+
+\begin{align}
+  E(X) &= 5 \times 0,2 + 10 \times 0,3 + 16 \times 0,25 + 20 \times 0,25 \\
+  E(X) &= 1 + 3 + 4 + 5 = 13
+\end{align}
+
+omo o preço da ação foi de R\$ 10,00, o lucro médio esperado dessa ação é de R\$3,00.
+
+Para calcular a variância pela forma alternativa, é necessário calcular somente $E(X^2)$ uma vez que $E(X)$ já foi calculado.
+
+\begin{align}
+  E(X^2) &= (5)^2 \times 0,2 + (10)^2 \times 0,3 + (16)^2 \times 0,25 + (20)^2 \times 0,25 \\
+  E(X^2) &= 25 \times 0,2 + 100 \times 0,3 + 256 \times 0,25 + 400 \times 0,25 \\
+  E(X^2) &= 5 + 30 + 64 + 100 \\
+  E(X^2) &= 199.
+\end{align}
+
+Assim,
+
+\begin{align}
+  Var(X) &= E(X^2) - [E(X)]^2\\
+  Var(X) &= 199 - 13^2 \\
+  Var(X) &= 30.
+\end{align}
+
+Note que, ao medir a dispersão dos possíveis valores da ação, a variância é uma medida do risco da ação.
 
 ## Variável Aleatória Discreta
 
+Quando os valores da variável são específicas, ou seja, não pode assumir qualquer valor dentro do conjunto dos números reais.
+
 ## Distribuição Uniforme
+
+Na **distribuição uniforme** todos os elementos têm a mesma probabilidade de ocorrer.
+
+Exemplo: obter um número de 1 a 6, lançando um dado não viciado. A probabilidade de obter qualquer um dos seis números é de $1/6$.
+
+**Exemplo numérico sobre Distribuição Uniforme (Sartoris, 2013, p.57)**
+
+Este exemplo numérico sobre distribuição uniforme está na página 57 de @Sartoris2013.
+
+Joga-se um dado uma única vez. Qual o valor esperado do número obtido? E sua variância?
+
+**Resposta**: O valor esperado é
+
+\begin{align}
+  E(X) &= 1 \times \dfrac{1}{6} + 2 \times \dfrac{1}{6} + 3\times \dfrac{1}{6} + 4\times \dfrac{1}{6} + 5\times \dfrac{1}{6} + 6\times \dfrac{1}{6}\\
+  E(X) &= 3,5.
+\end{align}
+
+Para calcular a variância pela forma alternativa é necessário $E(X^2)$.
+
+\begin{align}
+  E(X^2) &= (1)^2\dfrac{1}{6} + (2)^2\dfrac{1}{6} + (3)^2\dfrac{1}{6} + (4)^2\dfrac{1}{6} + (5)^2\dfrac{1}{6} + (6)^2\dfrac{1}{6} \\
+  E(X^2) &= 1\dfrac{1}{6} + 4\dfrac{1}{6} + 9\dfrac{1}{6} + 16\dfrac{1}{6} + 25\dfrac{1}{6} + 36\dfrac{1}{6} \\
+  E(X^2) &=\dfrac{91}{6}.
+\end{align}
+
+Desta forma a variância é
+
+\begin{align}
+  Var(X) &= E(X^2) - [E(X)]^2\\
+  Var(X) &= \dfrac{91}{6} - \left( \dfrac{21}{6} \right)^2\\
+  Var(X) &= \dfrac{105}{36}\\
+  Var(X) &\cong 2,92 
+\end{align}
 
 ## Distribuição de Bernoulli
 
+A **distribuição de Bernoulli** caracteriza-se pela existência de apenas dois eventos, mutuamente exclusivos, denominados **sucesso** e **fracasso**, num experimento que é realizado uma única vez.
+
+Se a probabilidade de **sucesso** é $p$, a probabilidade de **fracasso** é $(1-p)$, uma vez que só existem esses dois eventos e eles são mutuamente exclusivos.
+
+**Exemplos de distribuição de Bernoulli**
+
+- **lançamento de uma moeda uma única vez**. Se o resultado cara é o sucesso, associado a uma probabilidade $p=1/2$, então o resultado coroa é o fracasso associado a uma probabilidade $(1-p)=1/2$.
+
+- **lançamento de um dado uma única vez**. Se o número escolhido é três, então o resultado 3 é o sucesso, associado a uma probabilidade $p=1/6$ e qualquer um dos outros cinco números é o fracasso, associado aum probabilidade $(1-p) = 5/6$.
+
+**Exemplo numérico sobre distribuição de Bernoulli (Sartoris, 2013, p.58)**
+
+Este exemplo numérico sobre distribuição de Bernoulli está na página 58 de @Sartoris2013.
+
+No caso da cara ou coroa, atribuindo o valor 1 para o sucesso e 0 para o fracasso, dtermine a média e a variância do resultado após uma jogada.
+
+**Resposta**: A média é
+
+\begin{align}
+  E(X) &= 1 \times \dfrac{1}{2} + 0 \times \dfrac{1}{2}\\
+  E(X) &= \dfrac{1}{2}\\
+  E(X) &=0,5
+\end{align}
+
+E a variância
+
+\begin{align}
+  E(X^2) &= 1^2 \times \dfrac{1}{2} + 0^2 \times \dfrac{1}{2}\\
+  E(X^2) &= \dfrac{1}{2}\\
+  E(X^2) &= 0,5
+\end{align}
+
+\begin{align}
+  Var &= E(X^2) - [E(X)]^2\\
+  Var &= 0,5 - (0,5)^2\\
+  Var &= 0,25.
+\end{align}
+
+**Outro exemplo numérico sobre distribuição de Bernoulli (Sartoris, 2013, p.59)**
+
+No caso do dado, em que se aposta em um único número, atribuindo o valor 1 para o sucesso e 0 para o fracasso, determine a média e a variância do resultado após uma jogada.
+
+**Resposta**: A média é
+
+\begin{align}
+  E(X) &= 1 \times \dfrac{1}{6} + 0 \times \dfrac{5}{6}\\
+  E(X) &= \dfrac{1}{6}
+\end{align}
+
+E a variância
+
+\begin{align}
+  E(X^2) &= 1^2 \times \dfrac{1}{6} + 0^2 \times \dfrac{5}{6}\\
+  E(X^2) &= \dfrac{1}{6}
+\end{align}
+
+\begin{align}
+  Var &= E(X^2) - [E(X)]^2\\
+  Var &= \dfrac{1}{6} - \left(\dfrac{1}{6}\right)^2\\
+  Var &= \dfrac{5}{36}
+\end{align}
+
+**Média e Variância da Distribuição de Bernoulli**
+
+Pelos exemplos numéricos apresentado, verifica-se que numa distribuição de Bernoulli:
+
+\begin{align}
+  E(X) &= p \\
+  Var(X) &= p(1-p)
+\end{align}
+
 ## Distribuição Binomial
+
+A **distribuição Binomial** é a generalização da distribuição de Bernoulli. Ou seja,
+há um sucesso com probabilidade $p$ e um fracasso com probabilidade $(1-p)$. Mas o número de experimentos ou jogadas pode ser qualquer um.
+
+Retomemos o exemplo da cara ou coroa, mas agora com três jogadas ou experimentos.
+
+Associa-se cara a uma letra $C$ e uma coroa a uma letra $K$ para facilitar a 
+visualização.
+
+| jogada 1 | jogada 2 | jogada 3 |
+|:--------:|:--------:|:--------:|
+| C | C | C |
+| C | C | K |
+| C | K | C |
+| C | K | K |
+| K | C | C |
+| K | C | K |
+| K | K | C |
+| K | K | K |
+
 
 ## Distribuição de Poisson
 
-## Variável Aleatória Contínua
 
-## Distribuição Normal
-
-## Teorema de Tchebichev
-
-## Distribuição Estatística Conjunta para Variável aleatória Discreta
-
-## Distribuição Estatística Conjunta para Variável Aleatória Contínua

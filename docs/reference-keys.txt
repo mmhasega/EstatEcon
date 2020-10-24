@@ -16,11 +16,9 @@ eq:valor2mediaposicaomedianapar
 eq:medianapar
 eq:posicaoquartilum
 eq:posicaoquartiltres
-eq:DesvioAbsolutoMedio
 eq:DeltaEmSomaDeValoresNegativosEPositivos
 eq:IgualdadeDasSomasDosDesvios
 eq:DesvioAbsolutoMedioAlternativo
-eq:DiferencaAbsolutaMedia
 eq:DiferencaAbsolutaMediaEmDuasParcelas
 eq:DiferencaAbsolutaMediaPassoIntermediario
 eq:DiferencaAbsolutaMediaQuaseFinal
@@ -37,6 +35,7 @@ eq:AreaDoTrapezioSi
 eq:AreaDoBeta
 eq:GiniEmTermosDePhi
 eq:GiniEmTermosDeXi
+eq:DiferencaAbsolutaMedia
 eq:DiferencaAbsolutaMediaModificada
 eq:GiniEmTermosDeDiferencaAbsolutaMedia
 eq:GiniFinal
@@ -48,7 +47,6 @@ eq:DiscrepanciaMaximaFinal
 eq:ConteudoInformativo
 eq:ConteudoInformativoGeral
 eq:InformacaoEsperadaDeUmaMensagemCerta
-eq:CasoParticularxiIgualA0
 eq:LagrangeanoDeHx
 eq:IntervaloDeVariacaoDeHx
 eq:InformacaoDeUmaMensagemIncerta
@@ -61,8 +59,6 @@ eq:IndicePrecoRelativo
 eq:IndicePrecoRelativoPorcentagem
 tab:DadosPrecosQuantidadesDeTresProdutos2001a2005
 tab:PrecosRelativosDosTresProdutosBase2002
-eq:IndiceSimplesDePrecosAgregados
-eq:IndiceSimplesDePrecosAgregadosPorcentagem
 tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002
 eq:MediaAritmeticaPrecosRelativos
 eq:MediaAritmeticaPrecosRelativosPorcentagem
@@ -73,7 +69,6 @@ eq:IndicePrecosLaspeyres
 eq:IndicePrecosLaspeyresEmPorcentagem
 tab:IndiceDeLaspeyresDeTresProdutosBase2002
 eq:IndicePrecosPaascheDefinicao
-eq:IndicePrecosPaasche
 eq:IndicePrecosPaascheEmPorcentagem
 tab:IndiceDePaascheDeTresProdutosBase2002
 eq:IndicePrecosFischer
@@ -126,11 +121,12 @@ média-aritmética-dos-preços-relativos
 índice-de-preços-de-fisher
 índice-de-preços-de-marshall-edgeworth
 deflacionamento
-variável-aleatória-e-distribuição
-esperança-matemática
-variável-aleatória-1
-distribuição
 variável-aleatória-discreta
+esperança-matemática
+função-de-probabilidade
+função-distribuição-acumulada
+esperanças-variâncias-e-covariâncias
+variável-aleatória-discreta-1
 distribuição-uniforme
 distribuição-de-bernoulli
 distribuição-binomial
@@ -138,6 +134,4 @@ distribuição-de-poisson
 variável-aleatória-contínua
 distribuição-normal
 teorema-de-tchebichev
-distribuição-estatística-conjunta-para-variável-aleatória-discreta
-distribuição-estatística-conjunta-para-variável-aleatória-contínua
-considerações-finais
+distribuição-de-variáveis-aleátórias-conjunta

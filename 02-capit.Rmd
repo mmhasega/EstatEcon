@@ -53,9 +53,9 @@ p <- c(30,20,20,10,10,5,4,1)
 r <- c(7,9,13,10,16,13,19,13)
 
 # calcula o mínimo da curva de Lorenz
-Lc.min <- Lc(r, n = p)
+Lcmin <- Lc(r, n = p)
 # Desenha a curva de Lorenz em um gráfico
-plot(Lc.min)
+plot(Lcmin)
 ```
 Considerando a curva de Lorenz, figura \@ref(fig:CurvaLorenz), que é basicamente a obtida pelo R, figura \@ref(fig:CurvaLorenzR), mas com algumas indicações, é possível obter algumas definições.
 

@@ -1,3 +1,6 @@
-# Considerações Finais
+# Variável Aleatória Contínua
 
-Terminado um excelente livro digital.
+## Distribuição Normal
+
+## Teorema de Tchebichev
+

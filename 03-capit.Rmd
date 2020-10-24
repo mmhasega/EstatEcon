@@ -2,7 +2,6 @@
 
 O conteúdo deste tópico foi elaborado com base no capítulo 16 de @Hoffmann2006 e no capítulo 11 de @Sartoris2013.
 
-
 ## Introdução
 
 Os números-índices, ou simplesmente índices, são proporções estatísticas, 

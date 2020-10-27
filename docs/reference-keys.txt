@@ -130,7 +130,12 @@ variável-aleatória-discreta-1
 distribuição-uniforme
 distribuição-de-bernoulli
 distribuição-binomial
+média-e-variância-da-distribuição-binomial
+distribuição-binomial-usando-o-r
 distribuição-de-poisson
+média-e-a-variância-da-distribuição-de-poisson
+a-função-de-probabilidade-da-distribuição-de-poisson
+distribuição-de-poisson-usando-o-r
 variável-aleatória-contínua
 distribuição-normal
 teorema-de-tchebichev

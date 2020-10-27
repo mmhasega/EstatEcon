@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  23 OCT 2020 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  26 OCT 2020 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,24 +585,24 @@ Package: l3keys2e 2020-10-05 LaTeX2e option processing using LaTeX3 keys
 ) (./EstatEcon.aux)
 \openout1 = `EstatEcon.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
 
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base
 .sty
@@ -615,7 +615,7 @@ fg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 125.
+Package hyperref Info: Link coloring OFF on input line 126.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -627,9 +627,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count327
 )
-LaTeX Info: Redefining \ref on input line 125.
-LaTeX Info: Redefining \pageref on input line 125.
-LaTeX Info: Redefining \nameref on input line 125.
+LaTeX Info: Redefining \ref on input line 126.
+LaTeX Info: Redefining \pageref on input line 126.
+LaTeX Info: Redefining \nameref on input line 126.
 (./EstatEcon.out) (./EstatEcon.out)
 \@outlinefile=\write4
 \openout4 = `EstatEcon.out'.
@@ -640,57 +640,57 @@ ons.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-25.
+26.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-25.
+26.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-125.
+126.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-125.
+126.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 125.
+(Font)              <10> on input line 126.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 125.
+(Font)              <7> on input line 126.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 125.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 125
+(Font)              <5> on input line 126.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 126
 .
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 125
+LaTeX Font Info:    Trying to load font information for U+msb on input line 126
 .
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-125.
+126.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-125.
+126.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 127.
+(Font)              <12> on input line 128.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 127.
+(Font)              <8> on input line 128.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 127.
+(Font)              <6> on input line 128.
 [1
 
 
@@ -712,17 +712,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-68.
+69.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [11]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-95.
+96.
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 196.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 197.
 [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
 [28] [29]
 <EstatEcon_files/figure-latex/histograma12-1.pdf, id=433, 276.03125pt x 246.922
@@ -730,7 +730,7 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 File: EstatEcon_files/figure-latex/histograma12-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/histograma12-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/histograma12-1.pdf  used 
-on input line 1229.
+on input line 1230.
 (pdftex.def)             Requested size: 276.03056pt x 246.92188pt.
 [30 <./EstatEcon_files/figure-latex/histograma12-1.pdf>] [31]
 <EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=455, 253.94875pt x 
@@ -739,7 +739,7 @@ File: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf Graphic file (type
  pdf)
 <use EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf
-  used on input line 1346.
+  used on input line 1347.
 (pdftex.def)             Requested size: 253.95586pt x 249.94075pt.
 [32] [33 <./EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf>] [34] [35] 
 [36]
@@ -752,14 +752,14 @@ Cap\'{\i }tulo 2.
 File: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf  used 
-on input line 1668.
+on input line 1669.
 (pdftex.def)             Requested size: 262.98584pt x 248.93317pt.
 
 LaTeX Warning: Reference `fig:CurvaLorenzR' on page 38 undefined on input line 
-1669.
+1670.
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 1668--1670
+Underfull \hbox (badness 3417) in paragraph at lines 1669--1671
 [][] \T1/lmr/m/n/10 Con-si-de-rando a
  []
 
@@ -770,17 +770,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <lorenz3.png, id=512, 1286.8075pt x 794.97pt>
 File: lorenz3.png Graphic file (type png)
 <use lorenz3.png>
-Package pdftex.def Info: lorenz3.png  used on input line 1679.
+Package pdftex.def Info: lorenz3.png  used on input line 1680.
 (pdftex.def)             Requested size: 344.98828pt x 213.12848pt.
 [39 <./EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>] [40pdfTeX warning (ext
 4): destination with the same identifier (name{figure.2.1}) has been already us
 ed, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.1710 
+l.1711 
         <./lorenz3.png>] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
 [52]
-Overfull \hbox (49.17578pt too wide) detected at line 2470
+Overfull \hbox (49.17578pt too wide) detected at line 2471
 \OML/lmm/m/it/10 h\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 ) \OMS/l
 msy/m/n/10 ^^@ \OML/lmm/m/it/10 h\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 y[]\OT1/lmr/
 m/n/10 ) = [] [] \OMS/lmsy/m/n/10 ^^@ [] [] \OT1/lmr/m/n/10 = [] [] + [] [][] =
@@ -792,17 +792,17 @@ m/n/10 ) = [] [] \OMS/lmsy/m/n/10 ^^@ [] [] \OT1/lmr/m/n/10 = [] [] + [] [][] =
 ]
 Cap\'{\i }tulo 3.
 [61]
-Overfull \hbox (2.99063pt too wide) in alignment at lines 2769--2788
+Overfull \hbox (2.99063pt too wide) in alignment at lines 2770--2789
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (2.99063pt too wide) in alignment at lines 2788--2806
+Overfull \hbox (2.99063pt too wide) in alignment at lines 2789--2807
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (2.99063pt too wide) in alignment at lines 2806--2883
+Overfull \hbox (2.99063pt too wide) in alignment at lines 2807--2884
  [] [] [] [] [] [] [] 
  []
 
@@ -810,23 +810,26 @@ Overfull \hbox (2.99063pt too wide) in alignment at lines 2806--2883
 
 ]
 Cap\'{\i }tulo 4.
-[77] [78] [79] [80] [81] [82] [83] [84
+[77] [78] [79] [80] [81] [82]
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94
 
 ]
 Cap\'{\i }tulo 5.
-[85] [86
+[95] [96
 
 ]
 Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [87]
+(./EstatEcon.bbl [97]
 Overfull \hbox (11.42834pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 88 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁTÓ
+\T1/lmr/m/n/10 98 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁTÓ
 RIAS CONJUNTA
  []
 
-[88
+[98
 
-]) [89] (./EstatEcon.aux)
+]) [99] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: DE5F8DCAC8EF9CA77E57FB09490FD544;6449.
 
@@ -834,10 +837,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17543 strings out of 481866
- 293501 string characters out of 5930245
- 613015 words of memory out of 5000000
- 33183 multiletter control sequences out of 15000+600000
+ 17568 strings out of 481866
+ 294169 string characters out of 5930245
+ 613418 words of memory out of 5000000
+ 33188 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  60i,16n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -866,10 +869,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users
 cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbo
 ok/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook
 /Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (89 pages, 598571 bytes).
+Output written on EstatEcon.pdf (99 pages, 617383 bytes).
 PDF statistics:
- 1114 PDF objects out of 1200 (max. 8388607)
- 982 compressed objects within 10 object streams
- 325 named destinations out of 1000 (max. 500000)
+ 1187 PDF objects out of 1200 (max. 8388607)
+ 1044 compressed objects within 11 object streams
+ 345 named destinations out of 1000 (max. 500000)
  309 words of extra memory for PDF output out of 10000 (max. 10000000)
 

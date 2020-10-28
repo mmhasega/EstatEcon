@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  26 OCT 2020 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  27 OCT 2020 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -725,7 +725,7 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 197.
 [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
 [28] [29]
-<EstatEcon_files/figure-latex/histograma12-1.pdf, id=433, 276.03125pt x 246.922
+<EstatEcon_files/figure-latex/histograma12-1.pdf, id=438, 276.03125pt x 246.922
 5pt>
 File: EstatEcon_files/figure-latex/histograma12-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/histograma12-1.pdf>
@@ -733,7 +733,7 @@ Package pdftex.def Info: EstatEcon_files/figure-latex/histograma12-1.pdf  used
 on input line 1230.
 (pdftex.def)             Requested size: 276.03056pt x 246.92188pt.
 [30 <./EstatEcon_files/figure-latex/histograma12-1.pdf>] [31]
-<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=455, 253.94875pt x 
+<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=460, 253.94875pt x 
 249.93375pt>
 File: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf Graphic file (type
  pdf)
@@ -747,7 +747,7 @@ Cap\'{\i }tulo 2.
 [37
 
 ]
-<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=506, 262.9825pt x 248.93pt
+<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=511, 262.9825pt x 248.93pt
 >
 File: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>
@@ -767,7 +767,7 @@ Underfull \hbox (badness 3417) in paragraph at lines 1669--1671
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [38]
-<lorenz3.png, id=512, 1286.8075pt x 794.97pt>
+<lorenz3.png, id=517, 1286.8075pt x 794.97pt>
 File: lorenz3.png Graphic file (type png)
 <use lorenz3.png>
 Package pdftex.def Info: lorenz3.png  used on input line 1680.
@@ -817,30 +817,43 @@ Underfull \vbox (badness 1038) has occurred while \output is active []
 
 ]
 Cap\'{\i }tulo 5.
-[95] [96
+[95]
+<EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf, id=1026, 279.
+0425pt x 277.035pt>
+File: EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf Graphic f
+ile (type pdf)
+<use EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/DistribuicaoUniformeConti
+nua-1.pdf  used on input line 4620.
+(pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[96] [97 <./EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>] [
+98
 
 ]
 Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [97]
-Overfull \hbox (11.42834pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 98 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁTÓ
-RIAS CONJUNTA
+(./EstatEcon.bbl [99]
+Overfull \hbox (16.42834pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 100 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+ÓRIAS CONJUNTA
  []
 
-[98
+[100
 
-]) [99] (./EstatEcon.aux)
+]) [101] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
-(rerunfilecheck)             Checksum: DE5F8DCAC8EF9CA77E57FB09490FD544;6449.
+(rerunfilecheck)             Checksum: E646BDAC0809864B41F4AF086F1C3F6D;6631.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17568 strings out of 481866
- 294169 string characters out of 5930245
- 613418 words of memory out of 5000000
- 33188 multiletter control sequences out of 15000+600000
+ 17580 strings out of 481866
+ 294667 string characters out of 5930245
+ 613474 words of memory out of 5000000
+ 33195 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  60i,16n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -869,10 +882,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users
 cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbo
 ok/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook
 /Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (99 pages, 617383 bytes).
+Output written on EstatEcon.pdf (101 pages, 626596 bytes).
 PDF statistics:
- 1187 PDF objects out of 1200 (max. 8388607)
- 1044 compressed objects within 11 object streams
- 345 named destinations out of 1000 (max. 500000)
- 309 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1214 PDF objects out of 1440 (max. 8388607)
+ 1066 compressed objects within 11 object streams
+ 349 named destinations out of 1000 (max. 500000)
+ 322 words of extra memory for PDF output out of 10000 (max. 10000000)
 

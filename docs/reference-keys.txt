@@ -137,6 +137,7 @@ média-e-a-variância-da-distribuição-de-poisson
 a-função-de-probabilidade-da-distribuição-de-poisson
 distribuição-de-poisson-usando-o-r
 variável-aleatória-contínua
+distribuições-contínuas
 distribuição-normal
 teorema-de-tchebichev
 distribuição-de-variáveis-aleátórias-conjunta

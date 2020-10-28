@@ -1,5 +1,51 @@
 # Variável Aleatória Contínua
 
+## Distribuições contínuas
+
+Para entender a diferença entre variável aleatória discreta e a variável aleatória contínua  é necessário tentar definir cada uma delas:
+
+- Variável Aleatório Discreta: é caracterizado por assumir valores específicos. Exemplo: número de clientes que entram na loja, número de mortes, etc.
+
+- Variável Aleatória Contínua:é caracterizado por assumir qualquer valor no domínio dos número reais. Por isso entre os valores 2 e 3, por exemplo, pode existir infinitos valores para uma variável aleatória contínua. Exemplo: peso, altura, preço de commodities, temperatura, quantidade de chuva,etc. 
+
+@Sartoris2013 exemplica as duas situações de variáveis discretas e contínuas usando o exemplo de relógio digital e de relógio analógico considerando somente a hora como valor da variável. No caso do relógio digital a mudança de valor ocorre de forma discreta, diferentemente da situação do relógio analógico que a mudança de horas é de forma gradual.
+
+Para o caso discreto é possível calcular a probabidade para os valores específicos. Por isso 
+\[
+P(2<x<3) \neq P(2\leq x \leq 3) \neq P(2 < x \leq 3) \neq P(2\leq x < 3)
+\]
+
+Já para o caso contínuo não é possível calcular a probabilidade para um valor específico da variável. Inclusive, no limite, a probilidade de um valor específico para uma variável aleatória contínua é igual zero. Portanto,
+
+\[
+P(2<x<3) = P(2\leq x \leq 3) = P(2 < x \leq 3) = P(2\leq x < 3)
+\]
+
+A situação do exemplo do relógio analógico do @Sartoris2013, como a mudança de hora ocorre de forma gradual e a probabilidade é igual para qualquer valor da hora, trata-se de uma distribuição de probabilidade uniforme contínua. Grafico gerado usando a função `gglot` do pacote  `ggplot2`
+
+```{r DistribuicaoUniformeContinua, echo=TRUE}
+library(ggplot2)
+
+hora <- c(1,2,3,4,5,6,7,8,9,10,11,12)
+prob <- c(1/12,1/12,1/12,1/12,1/12,1/12,1/12,1/12,1/12,1/12,1/12,1/12)
+horaanalogica <- as.data.frame(cbind(hora, prob))
+horaanalogica
+
+ggplot(horaanalogica, aes(hora, prob)) +
+  geom_line() +
+  xlim(0,13) + ylim(0,0.20) +
+  scale_x_continuous(breaks = seq(1,12, by = 1))
+```
+
+
+Nesta situação, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição pode obter a área abaixo da curva desta função através da integral definida da função para o intervalo de valores em questão.
+
+NO exemplo da relógio analógico a probabilidade da hora estar entre 2 e 3 é a área da curva ou reta da distribuição uniforme contínua cujo valor constante da probabilidade é $1/12$ O intervalo entre 2 e 3 proporciona um intervalo equivalente a unidade, uma vez que intervalo pode ser calculado entre a diferença entre o valor final e o valor inicial. Dessa forma:
+
+\[
+P(2 < x < 3) = \dfrac{1}{12} \times \left( 3 - 2 \right) = \dfrac{1}{12}
+\]
+
 ## Distribuição Normal
 
 ## Teorema de Tchebichev

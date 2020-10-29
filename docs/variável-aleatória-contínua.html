@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-27" />
+<meta name="date" content="2020-10-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -240,10 +240,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">CAPÍTULO 5</span> Variável Aleatória Contínua</h1>
 <div id="distribuições-contínuas" class="section level2">
 <h2><span class="header-section-number">5.1</span> Distribuições contínuas</h2>
-<p>Para entender a diferença entre variável aleatória discreta e a variável aleatória contínua é necessário tentar definir cada uma delas:</p>
+<p>Para entender a diferença entre variável aleatória discreta e a variável aleatória contínua é necessário definir cada uma delas:</p>
 <ul>
-<li><p>Variável Aleatório Discreta: é caracterizado por assumir valores específicos. Exemplo: número de clientes que entram na loja, número de mortes, etc.</p></li>
-<li><p>Variável Aleatória Contínua:é caracterizado por assumir qualquer valor no domínio dos número reais. Por isso entre os valores 2 e 3, por exemplo, pode existir infinitos valores para uma variável aleatória contínua. Exemplo: peso, altura, preço de commodities, temperatura, quantidade de chuva,etc.</p></li>
+<li><p>Variável Aleatório Discreta: assume valores específicos. Exemplo: número de clientes que entram na loja, número de mortes, número de nascimentos, etc.</p></li>
+<li><p>Variável Aleatória Contínua: assume qualquer valor no domínio dos número reais. Por isso entre os valores 2 e 3, por exemplo, pode existir infinitos valores para uma variável aleatória contínua. Exemplo: peso, altura, preço de commodities, temperatura, quantidade de chuva em milímetros, etc.</p></li>
 </ul>
 <p><span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> exemplica as duas situações de variáveis discretas e contínuas usando o exemplo de relógio digital e de relógio analógico considerando somente a hora como valor da variável. No caso do relógio digital a mudança de valor ocorre de forma discreta, diferentemente da situação do relógio analógico que a mudança de horas é de forma gradual.</p>
 <p>Para o caso discreto é possível calcular a probabidade para os valores específicos. Por isso
@@ -254,7 +254,7 @@ P(2&lt;x&lt;3) \neq P(2\leq x \leq 3) \neq P(2 &lt; x \leq 3) \neq P(2\leq x &lt
 <p><span class="math display">\[
 P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3)
 \]</span></p>
-<p>A situação do exemplo do relógio analógico do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, como a mudança de hora ocorre de forma gradual e a probabilidade é igual para qualquer valor da hora, trata-se de uma distribuição de probabilidade uniforme contínua. Grafico gerado usando a função <code>gglot</code> do pacote <code>ggplot2</code></p>
+<p>A situação do exemplo do relógio analógico do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, como a mudança de hora ocorre de forma gradual e a probabilidade é igual para qualquer valor da hora, trata-se de uma distribuição de probabilidade uniforme contínua. Grafico gerado usando a função <code>gglot</code> do pacote <code>ggplot2</code>.</p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="variável-aleatória-contínua.html#cb173-1"></a><span class="kw">library</span>(ggplot2)</span>
 <span id="cb173-2"><a href="variável-aleatória-contínua.html#cb173-2"></a></span>
 <span id="cb173-3"><a href="variável-aleatória-contínua.html#cb173-3"></a>hora &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>)</span>
@@ -279,11 +279,22 @@ P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3)
 <span id="cb175-2"><a href="variável-aleatória-contínua.html#cb175-2"></a><span class="st">    </span><span class="kw">xlim</span>(<span class="dv">0</span>, <span class="dv">13</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylim</span>(<span class="dv">0</span>, <span class="fl">0.2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, </span>
 <span id="cb175-3"><a href="variável-aleatória-contínua.html#cb175-3"></a>    <span class="dv">12</span>, <span class="dt">by =</span> <span class="dv">1</span>))</span></code></pre></div>
 <p><img src="EstatEcon_files/figure-html/DistribuicaoUniformeContinua-1.png" width="384" /></p>
-<p>Nesta situação, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição pode obter a área abaixo da curva desta função através da integral definida da função para o intervalo de valores em questão.</p>
-<p>NO exemplo da relógio analógico a probabilidade da hora estar entre 2 e 3 é a área da curva ou reta da distribuição uniforme contínua cujo valor constante da probabilidade é <span class="math inline">\(1/12\)</span> O intervalo entre 2 e 3 proporciona um intervalo equivalente a unidade, uma vez que intervalo pode ser calculado entre a diferença entre o valor final e o valor inicial. Dessa forma:</p>
+<p>Nesta situação, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de <strong>função densidade de probabilidade</strong> (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.</p>
+<p>Note que para <span class="math inline">\(f(x)\)</span> ser função densidade de probabilidade, precisa atender as seguintes propriedades definidas pela teoria da probabilidade:</p>
+<ul>
+<li>a soma das probabilidades para todo os valores definidos da variável <span class="math inline">\(x\)</span> dever ser igual a 1.</li>
+<li>a probabilidade obtida através de <span class="math inline">\(f(x)\)</span> não pode ser negativa.</li>
+</ul>
+<p>No exemplo da relógio analógico a probabilidade da hora estar entre 2 e 3 é a área da curva ou reta da distribuição uniforme contínua cujo valor constante da probabilidade é <span class="math inline">\(1/12\)</span>. O intervalo entre 2 e 3 proporciona um intervalo equivalente a unidade, uma vez que intervalo pode ser calculado entre a diferença entre o valor final e o valor inicial. Dessa forma:</p>
 <p><span class="math display">\[
-P(2 &lt; x &lt; 3) = \dfrac{1}{12} \times \left( 3 - 2 \right) = \dfrac{1}{12}
+P(2 &lt; x &lt; 3) = \dfrac{1}{12} \times \left( 3 - 2 \right) = \dfrac{1}{12},
+\]</span>
+ou seja,
+<span class="math display">\[
+P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3) = \dfrac{1}{12}
 \]</span></p>
+<p><strong>Exemplo numérico sobre função densidade de probabilidade</strong></p>
+<p>Exemplo 4.1.3 da página 79 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada a função desnidade de probabilidade da variável aleatória contínua</p>
 </div>
 <div id="distribuição-normal" class="section level2">
 <h2><span class="header-section-number">5.2</span> Distribuição Normal</h2>

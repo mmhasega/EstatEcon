@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  27 OCT 2020 22:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  28 OCT 2020 22:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,11 +830,11 @@ nua-1.pdf  used on input line 4620.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [96] [97 <./EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>] [
-98
+98]
+Cap\'{\i }tulo 6.
+(./EstatEcon.bbl [99
 
 ]
-Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [99]
 Overfull \hbox (16.42834pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10 100 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
 ÓRIAS CONJUNTA
@@ -882,10 +882,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users
 cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbo
 ok/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook
 /Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (101 pages, 626596 bytes).
+Output written on EstatEcon.pdf (101 pages, 627653 bytes).
 PDF statistics:
- 1214 PDF objects out of 1440 (max. 8388607)
- 1066 compressed objects within 11 object streams
+ 1216 PDF objects out of 1440 (max. 8388607)
+ 1068 compressed objects within 11 object streams
  349 named destinations out of 1000 (max. 500000)
  322 words of extra memory for PDF output out of 10000 (max. 10000000)
 

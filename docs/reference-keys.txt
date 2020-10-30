@@ -138,6 +138,7 @@ a-função-de-probabilidade-da-distribuição-de-poisson
 distribuição-de-poisson-usando-o-r
 variável-aleatória-contínua
 distribuições-contínuas
+função-de-distribuição-de-variáveis-contínuas
 distribuição-normal
 teorema-de-tchebichev
 distribuição-de-variáveis-aleátórias-conjunta

@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-28" />
+<meta name="date" content="2020-10-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -210,7 +210,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html"><i class="fa fa-check"></i><b>5</b> Variável Aleatória Contínua</a><ul>
-<li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a></li>
+<li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#função-de-distribuição-de-variáveis-contínuas"><i class="fa fa-check"></i><b>5.1.1</b> Função de distribuição de variáveis contínuas</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuição-normal"><i class="fa fa-check"></i><b>5.2</b> Distribuição Normal</a></li>
 <li class="chapter" data-level="5.3" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#teorema-de-tchebichev"><i class="fa fa-check"></i><b>5.3</b> Teorema de Tchebichev</a></li>
 </ul></li>
@@ -294,7 +296,210 @@ ou seja,
 P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3) = \dfrac{1}{12}
 \]</span></p>
 <p><strong>Exemplo numérico sobre função densidade de probabilidade</strong></p>
-<p>Exemplo 4.1.3 da página 79 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada a função desnidade de probabilidade da variável aleatória contínua</p>
+<p>Exemplo 4.1.3 da página 79 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada a função densidade de probabilidade da variável aleatória contínua mostrada a seguir</p>
+<p><span class="math display">\[
+  f(x) = 
+    \begin{cases}
+      Ax~~0\leq x \leq 3\\
+      0,~~X&lt;0~\text{ou}~x&gt;3\\
+    \end{cases}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Determine o valor de A.</li>
+</ol>
+<p><strong>Resposta</strong>: Dado que <span class="math inline">\(f(x) = Ax\)</span></p>
+<p><span class="math display">\[
+  f(3) = 3A
+\]</span>
+para <span class="math inline">\(x = 3\)</span> e
+<span class="math display">\[
+  f(0)  = 0
+\]</span>
+para <span class="math inline">\(x=0\)</span></p>
+<p>Graficamente seria um triângulo de de base 3 e altura de 3A. Como a função definida de modo que
+<span class="math display">\[
+  f(x) \geq 0
+\]</span>
+ou seja resulte valores não-negativos, basta igualar a área a 1, pois a soma das probabilidades para todos os valores definidos para a variável <span class="math inline">\(x\)</span> deve ser igual a 1. Portanto a probabilidade é a área correspondente ao triangulo de base 3 e altura 3A. Ou seja,
+<span class="math display">\[
+  \dfrac{3A \times 3}{2} = 1
+\]</span>
+e
+por isso
+<span class="math display">\[
+  A = \dfrac{2}{9}
+\]</span>
+Ou seja,
+<span class="math display">\[
+  f(x) = 3x
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Determine a probabilidade de que <span class="math inline">\(x\)</span> esteja entre 2 e 3.</li>
+</ol>
+<p>Para <span class="math inline">\(x=2\)</span> se tem
+<span class="math display">\[
+  f(2) = 2\times \dfrac{2}{9} = \dfrac{4}{9}
+\]</span>
+e para <span class="math inline">\(x=3\)</span>
+<span class="math display">\[
+f(3) = 3 \times \dfrac{2}{9} = \dfrac{2}{3}
+\]</span>
+A área correspondente a probababilidade de <span class="math inline">\(x\)</span> estar entre 2 e 3 pode ser obtida subtraindo a área do triângulo maior que seria com <span class="math inline">\(x\)</span> entre 0 e 3 e o triângulo menor com <span class="math inline">\(x\)</span> entre 2 e 3. Ou seja, a área do triangulo maior é calculado como</p>
+<p><span class="math display">\[
+  \text{triângulo menor} = 3\times \dfrac{2}{3} \times \dfrac{1}{2} = 1
+\]</span></p>
+<p>e a área do triângulo menor é calculado como</p>
+<p><span class="math display">\[
+  \text{triângulo menor} = 2\times \dfrac{4}{9} \times \dfrac{1}{2} = \dfrac{4}{9}.
+\]</span>
+Assim a diferença das áreas do triângulo maior e do triângulo menor é igual a <span class="math inline">\(5/9\)</span>. Ou seja,</p>
+<p><span class="math display">\[
+  P(2&lt;x&lt;3) = 1 - \dfrac{4}{9} = \dfrac{5}{9}
+\]</span></p>
+<p><strong>Segundo exemplo númerico sobre função densidade de probabilidade</strong></p>
+<p>Exemplo 4.1.4 da página 80 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada da f.d.p. ded uma variável aleatória contínua,</p>
+<p><span class="math display">\[
+  f(x) = 
+    \begin{cases}
+      Ax^2~~0\leq x \leq 1\\
+      0,~~X&lt;0~\text{ou}~x&gt;1\\
+    \end{cases}
+  \]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Determine o valor da constante A.
+Note que a função já não é mais do tipo linear e por isso não é necessário utilizar a integral da função em questão para calcular a probabilidade. Considerando novamente que a soma das probabilidades para todos os valores definidos para a variável <span class="math inline">\(x\)</span> deve ser igual a um, se tem</li>
+</ol>
+<p><span class="math display">\[
+\int_{-\infty}^{+\infty} f(x)\text{d}x = 1
+\]</span>
+Para este exemplo, a função <span class="math inline">\(f(x)\)</span> só está definido para os valores entre 0 e 1, sendo que para valores de <span class="math inline">\(x\)</span> menor que 0 e valores de <span class="math inline">\(x\)</span> maior que 1 a função <span class="math inline">\(f(x)\)</span> assume valor igual a zero. Portanto,</p>
+<p><span class="math display">\[
+\int_{0}^{1} Ax^2\text{d}x = 1
+\]</span>
+Como A é constante, pode-se colocar para fora da integral</p>
+<p><span class="math display">\[
+  A\int_{0}^{1} x^2\text{d}x = 1
+\]</span>
+Calculando a integral definida
+<span class="math display">\[
+  A\left[ \dfrac{x^3}{3} \right]_{0}^{1} = 1
+\]</span>
+Avaliando para os valores 1 e 0 e depois realizando a diferença
+<span class="math display">\[
+  A\left[ \dfrac{1}{3} - \dfrac{0}{3} \right]_{0}^{1} = 1
+\]</span>
+Ou seja,
+<span class="math display">\[
+  A = 3.
+\]</span>
+Ou seja a função é</p>
+<p><span class="math display">\[
+  f(x) = 3x^2.
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Dtermine a probabilidade de que <span class="math inline">\(x\)</span> esteja entre 0,5 e 1.</li>
+</ol>
+<p>Primeiramente verifica-se que tanto 0,5 como 1 são valores que estão dentro do intervalo de <span class="math inline">\(x\)</span> definido para a função em questão. Por exemplo, se um dos limites fosse igual a 2, consideraria <span class="math inline">\(x=1\)</span> pois <span class="math inline">\(f(x)=0\)</span> para <span class="math inline">\(x&gt;1\)</span>. Por isso basta calcular a integral da função para os valores de <span class="math inline">\(x\)</span> entre 0,5 e 1. Ou seja,</p>
+<p><span class="math display">\[
+  P(0,5\leq x \leq 1) = \int_{0,5}^{1} 3x^3\text{d}x 
+\]</span>
+<span class="math display">\[
+  P(0,5\leq x \leq 1) = \left[ \frac{3x^3}{3}  \right]_{0,5}^{1}
+\]</span>
+<span class="math display">\[
+  P(0,5\leq x \leq 1) = 1^3 - 0,5^3 = 1 - 0,125 = 0,875.
+\]</span>
+Resumindo, para que uma função qualquer seja uma função densidade de probabilidade precisa atender duas condições:</p>
+<p><span class="math display">\[
+  \int_{-\infty}^{+\infty} f(x) \text{d}x = 1
+\]</span>
+e
+<span class="math display">\[
+  f(x) \geq 0~~\text{para todos os valores de}~x
+\]</span></p>
+<p><strong>Exemplo numérico sobre a distribuição exponencial</strong></p>
+<p>O exemplo 4.1.5 da página 82 de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> é uma simples aplicação para a distribuição exponencial. Dada a f.d.p. da varíável aleatória contínua <span class="math inline">\(x\)</span>
+<span class="math display">\[
+  f(x) =
+    \begin{cases}
+      Ae^{-\alpha x},~~\text{para }~x\geq 0 \\
+      0,~~\text{para }~~x&lt;0
+    \end{cases}
+\]</span>
+a) Determine o valor de A.
+Então como foi informado no anunciado do exemplo numérico, essa distribuição especial é conhecida com distribuição exponencial. Como</p>
+<p><span class="math display">\[
+  \int_{-\infty}^{+\infty} f(x) \text{d}x = 1
+\]</span></p>
+<p>e a função assume valores iguais a zero para valores negativos de <span class="math inline">\(x\)</span>, se tem</p>
+<p><span class="math display">\[
+  \int_ {0}^{+\infty} A e^{-\alpha x} = 1.
+\]</span>
+Como A é constante, pode-se colocar par fora da integral
+<span class="math display">\[
+  A\int_{0}^{+\infty} e^{-\alpha x}\text{d}x = 1
+\]</span>
+e sabendo que a integral da função é um pouco diferente, considerando que há um <span class="math inline">\(\alpha\)</span> multiplicando <span class="math inline">\(x\)</span>, temos</p>
+<p><span class="math display">\[
+  A\left[ \dfrac{e^{-\alpha x}}{-\alpha} \right]_{0}^{+\infty} = 1
+\]</span></p>
+<p><span class="math display">\[
+  A\left[0  - \left(-\dfrac{1}{\alpha}\right)\right] = 1
+\]</span>
+Portanto,</p>
+<p><span class="math display">\[
+A = \alpha
+\]</span></p>
+<div id="função-de-distribuição-de-variáveis-contínuas" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Função de distribuição de variáveis contínuas</h3>
+<p>A semelhança do caso das variáveis discretas, a <strong>função de distribuição acumulada </strong> ou <strong>função de distribuição</strong> <span class="math inline">\(F(x)\)</span> é a soma da probabilidades de todos os valores possíveis que a variável <span class="math inline">\(x\)</span> pode assumir até o valor de <span class="math inline">\(x\)</span> propriamente dito. Isso é feito através da integral da seguinte forma</p>
+<p><span class="math display">\[
+  F(x) = \int_{-\infty}^{x} f(t) \text{d}t.
+\]</span></p>
+<p>Portanto, matematicamente,<span class="math inline">\(f(x)\)</span> é a derivda da função <span class="math inline">\(F(x)\)</span>
+<span class="math display">\[
+  f(x) = \dfrac{\text{d}F(x)}{\text{d}x}.
+\]</span></p>
+<p><strong>Exemplo numérico da função de distribuição</strong></p>
+<p>O exemplo 4.2.1 da página 83 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, trata-se da obtenção da função distribuição exponencial através da sua respectiva função densidade de probabilidade. Dada a função f.d.p.da dsitribuição exponencial, determine a função de distribuição correspondente.</p>
+<p><span class="math display">\[
+  f(x) = 
+  \begin{cases}
+    e^{-x},~~\text{para }~ x \geq 0\\
+    0,~~\text{para } x&lt; 0
+  \end{cases}
+\]</span>
+Dado que a função só é definido para <span class="math inline">\(x\geq 0\)</span>, o limite de integração inferior é zero.</p>
+<p><span class="math display">\[
+  F(x) = \int_{0}^{+\infty} f(t)\text{d}t
+\]</span>
+substituindo a f.d.p.
+<span class="math display">\[
+  F(x) = \int_{0}^{+\infty} e^{-t}\text{d}t
+\]</span>
+lembrando a integral de <span class="math inline">\(e^{-x}\)</span> e que todo número elevado a zero é igual a um
+<span class="math display">\[
+F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
+\]</span>
+Assim,
+<span class="math display">\[
+F(x) = -e^{-x} + e^{0}
+\]</span>
+e
+<span class="math display">\[
+F(x) = 1 - e^{-x}
+\]</span>
+Portanto a função distribuição é dada por</p>
+<p><span class="math display">\[
+  F(x) =
+  \begin{cases}
+    1 - e^{-x},~~\text{para } x\geq 0 \\
+    0,~~\text{para } x\leq 0
+  \end{cases}
+\]</span></p>
+<p><strong>Segundo Exemplo numérico sobre função de distrubuição</strong></p>
+<p>Exemplo 4.2.2 da página 84 de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+</div>
 </div>
 <div id="distribuição-normal" class="section level2">
 <h2><span class="header-section-number">5.2</span> Distribuição Normal</h2>

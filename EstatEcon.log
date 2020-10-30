@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  28 OCT 2020 22:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  30 OCT 2020 00:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,19 +830,19 @@ nua-1.pdf  used on input line 4620.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [96] [97 <./EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>] [
-98]
+98] [99] [100] [101] [102]
 Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [99
+(./EstatEcon.bbl [103
 
 ]
 Overfull \hbox (16.42834pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 100 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+\T1/lmr/m/n/10 104 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
 ÓRIAS CONJUNTA
  []
 
-[100
+[104
 
-]) [101] (./EstatEcon.aux)
+]) [105] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: E646BDAC0809864B41F4AF086F1C3F6D;6631.
 
@@ -850,10 +850,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17580 strings out of 481866
- 294667 string characters out of 5930245
- 613474 words of memory out of 5000000
- 33195 multiletter control sequences out of 15000+600000
+ 17591 strings out of 481866
+ 294867 string characters out of 5930245
+ 613564 words of memory out of 5000000
+ 33196 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  60i,16n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -882,10 +882,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users
 cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbo
 ok/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook
 /Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (101 pages, 627653 bytes).
+Output written on EstatEcon.pdf (105 pages, 638062 bytes).
 PDF statistics:
- 1216 PDF objects out of 1440 (max. 8388607)
- 1068 compressed objects within 11 object streams
- 349 named destinations out of 1000 (max. 500000)
+ 1248 PDF objects out of 1440 (max. 8388607)
+ 1096 compressed objects within 11 object streams
+ 359 named destinations out of 1000 (max. 500000)
  322 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4729,8 +4729,8 @@ Exemplo 4.1.4 da página 80 do \citet{Sartoris2013}. Dada da f.d.p. ded uma vari
 \[
   f(x) = 
     \begin{cases}
-      Ax^2~~0\leq x \leq 1\\
-      0,~~X<0~\text{ou}~x>1\\
+      Ax^2~~\text{para }~0\leq x \leq 1\\
+      0,~~\text{para }~x<0~\text{ou}~x>1\\
     \end{cases}
   \]
 
@@ -4901,10 +4901,231 @@ Portanto a função distribuição é dada por
 
 \textbf{Segundo Exemplo numérico sobre função de distrubuição}
 
-Exemplo 4.2.2 da página 84 de \citet{Sartoris2013}.
+Exemplo 4.2.2 da página 84 de \citet{Sartoris2013}. Seja a função distribuição
+
+\[
+  F(x) = 
+  \begin{cases}
+    0,5(x^3 + 1),~~\text{para } -1\leq x \leq 1\\
+    0,~~\text{para }x < -1\\
+    1, x > 1
+  \end{cases}
+\]
+determine a função densidade de probabilidade correspondente.
+
+Resposta:
+
+A função densidade de probabilidade é dado por
+
+\[
+  f(x) = \dfrac{\text{d}F(x)}{\text{d}x}
+\]
+
+\[
+  f(x) = \dfrac{\text{d}(0,5 x^2  + 1)}{\text{d}x}
+\]
+
+\[
+  f(x) = 3 \times 0,5x^2 + 0
+\]
+
+\[
+  f(x) = 1,5 x^2 
+\]
+
+Portanto, a função densidade de probabilidade é:
+
+\[
+  f(x) = 
+  \begin{cases}
+    1,5x^2,~~\text{para } -1\leq x \leq 1\\
+    0,~~\text{para }x < -1 ou x > 1
+  \end{cases}
+\]
+A função distribuição \(F(x)\), assim como a função densidade, deve atender dois requisitos:
+
+\begin{itemize}
+\tightlist
+\item
+  não pode ser negativa e deve ser menor ou igual a 1.
+\end{itemize}
+
+\[
+  0\leq F(x) \leq 1
+\],
+
+\begin{itemize}
+\tightlist
+\item
+  a soma das probabilidades de todos os valores da variável é igual a 1.
+\end{itemize}
+
+\[
+  \lim_{x \rightarrow \infty} F(x) = 1
+\].
+
+Estes requisitos são atendidos pelas funções distribuições \(F(x)\) dos exemplos numéricos anteriores.
+
+\hypertarget{esperanuxe7a-e-variuxe2ncia-de-variuxe1veis-aleatuxf3rias-contuxednuas}{%
+\subsection{Esperança e variância de variáveis aleatórias contínuas}\label{esperanuxe7a-e-variuxe2ncia-de-variuxe1veis-aleatuxf3rias-contuxednuas}}
+
+A esperança matemática para uma variável aleatória contínua é a soma contínua de todos os valores da variável com sua respectivas probabilidades. Uma soma contínua é a integral e, por sua vez, a probabilidade é encontrada pela função densidade de probabilidade. Dessa forma, matematicamente a esperança é
+
+\[
+  E(x) = \int_{-\infty}^{+\infty} x f(x)~\text{d}x. 
+\]
+A variância por sua vez,
+
+\[
+  Var(x) = E[x - E(x)]^2
+\]
+
+ou simplesmente
+
+\[
+  Var(x) = E[x - \mu]^2
+\]
+onde \(\mu\) é igual a média de \(x\). Em termos de integral fica
+
+\[
+  Var(x) = \int_{-\infty}^{+\infty} (x- \mu)^2 \text{d}x
+\]
+Alternativamente
+\[
+  Var(x) = E(x^2) - [E(x)]^2 
+\]
+que em termos de integral fica
+\[
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+\]
+
+\textbf{Exemplo numérico sobre esperança e variância}
+
+Exemplo 4.3.1. da página 85 do \citet{Sartoris2013}. Seja a f.d.p.
+
+\[
+  f(x) = 
+    \begin{cases}
+      3x^2~~\text{para }~0\leq x \leq 1\\
+      0,~~\text{para }~x<0~\text{ou}~x>1\\
+    \end{cases}
+  \]
+a) Calcule o valor médio de \(x\).
+
+Resposta:
+
+Como a média pode ser calculada através de \(E(x)\)
+\[
+  E(x) = \int_{-\infty}^{+\infty} x f(x)~\text{d}x.
+\]
+se tem
+\[
+  E(x) = \int_{0}^{1}x3x^2\text{d}x
+\]
+\[
+  E(x) = 3\int_{0}^{1}x^3\text{d}x
+\]
+Calculando-se a integral
+\[
+  E(x) = 3\left[ \dfrac{x^4}{4}\right]_{0}^{1}
+\]
+
+\[
+  E(x) = 3 \times \dfrac{1^4}{4}
+\]
+
+\[
+  E(x) = \dfrac{3}{4} = 0,75
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Calcule a variância de \(x\).
+\end{enumerate}
+
+Resposta:
+
+Tomando a fórmula da variância alternativa
+
+\[
+  Var(x) = E(x^2) - [E(x)]^2 
+\]
+
+que em termos de integral é
+
+\[
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+\]
+verifica-se que só falta só calcular \(E(x^2)\) para poder calcular a variância de \(x\). Ou seja,
+
+\[
+  E(x^2) = \int_{0}^{1} X^23x^2 \text{d}x 
+\]
+
+\[
+  E(x^2) = 3\int_{0}^{1} x^4  \text{d}x 
+\]
+calculando a integral
+\[
+  E(x^2) = 3\left[ \dfrac{x^5}{5} \right]_{0}^{1}
+\]
+
+\[
+  E(x^2) = 3 \times \dfrac{1}{5}
+\]
+
+\[
+  E(x^2) = \dfrac{3}{5} = 0,6.
+\]
+Assim a variância é
+
+\[
+  Var(x) = E(x^2) - [E(x)]^2
+\]
+
+\[
+  Var(x) = 0,6 - (0,75)^2 = 0,6 - 0,5625
+\]
+
+\[
+  Var(x) = 0,0375
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Calcule o desvio padrão de \(x\).
+\end{enumerate}
+
+\[
+dp(x) = \sqrt{0,0375}
+\]
+
+\[
+dp(x) \approx 0,194
+\]
 
 \hypertarget{distribuiuxe7uxe3o-normal}{%
 \section{Distribuição Normal}\label{distribuiuxe7uxe3o-normal}}
+
+Para entender a distribuição normal, tome a distribuição binomial com uma probabilidade \(p\) igual 0,5 e \(n\) tendendo ao infinito. Graficamente exemplifica-se com \(n=1,2,3,5,10\).
+
+\includegraphics{EstatEcon_files/figure-latex/graficobinomial1-1.pdf}
+
+\includegraphics{EstatEcon_files/figure-latex/graficobinomial2-1.pdf}
+
+\includegraphics{EstatEcon_files/figure-latex/graficobinomial3-1.pdf}
+
+\includegraphics{EstatEcon_files/figure-latex/graficobinomia5-1.pdf}
+
+\includegraphics{EstatEcon_files/figure-latex/graficobinomial10-1.pdf}
+
+Note que a medida que \(n\) aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal.
 
 \hypertarget{teorema-de-tchebichev}{%
 \section{Teorema de Tchebichev}\label{teorema-de-tchebichev}}

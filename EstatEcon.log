@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.12)  30 OCT 2020 00:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  30 OCT 2020 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **EstatEcon.tex
 (./EstatEcon.tex
-LaTeX2e <2020-10-01> patch level 1
-L3 programming layer <2020-10-05> xparse <2020-03-03> (/Users/macbook/Library/T
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03> (/Users/macbook/Library/T
 inyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -358,9 +358,9 @@ y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/10/06 3.50 The Babel package
+Package: babel 2020/10/27 3.51 The Babel package
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/10/06 3.50 Babel common definitions
+File: babel.def 2020/10/27 3.51 Babel common definitions
 \babel@savecnt=\count285
 \U@D=\dimen173
 \l@babelnohyphens=\language4
@@ -513,7 +513,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box58
 ) (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty (/Us
 ers/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-10-05 L3 programming layer (loader) 
+Package: expl3 2020-10-27 L3 programming layer (loader) 
 
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex
 .def
@@ -523,7 +523,7 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 ))
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.s
 ty
-Package: xparse 2020-10-05 L3 Experimental document command parser
+Package: xparse 2020-10-27 L3 Experimental document command parser
 
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-g
 eneric.tex))
@@ -540,7 +540,7 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 )
 (/Users/macbook/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys
 2e.sty
-Package: l3keys2e 2020-10-05 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2020-10-27 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box62
 \l__siunitx_tmp_dim=\dimen198
@@ -830,19 +830,73 @@ nua-1.pdf  used on input line 4620.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [96] [97 <./EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>] [
-98] [99] [100] [101] [102]
+98] [99] [100] [101] [102] [103] [104] [105]
+<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=1097, 279.0425pt x 280
+.04625pt>
+File: EstatEcon_files/figure-latex/graficobinomial1-1.pdf Graphic file (type pd
+f)
+<use EstatEcon_files/figure-latex/graficobinomial1-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial1-1.pdf  u
+sed on input line 5118.
+(pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
+<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=1098, 279.0425pt x 280
+.04625pt>
+File: EstatEcon_files/figure-latex/graficobinomial2-1.pdf Graphic file (type pd
+f)
+<use EstatEcon_files/figure-latex/graficobinomial2-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial2-1.pdf  u
+sed on input line 5120.
+(pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
+[106 <./EstatEcon_files/figure-latex/graficobinomial1-1.pdf>]
+<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=1112, 279.0425pt x 280
+.04625pt>
+File: EstatEcon_files/figure-latex/graficobinomial3-1.pdf Graphic file (type pd
+f)
+<use EstatEcon_files/figure-latex/graficobinomial3-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial3-1.pdf  u
+sed on input line 5122.
+(pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[107 <./EstatEcon_files/figure-latex/graficobinomial2-1.pdf>]
+<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1125, 279.0425pt x 280.
+04625pt>
+File: EstatEcon_files/figure-latex/graficobinomia5-1.pdf Graphic file (type pdf
+)
+<use EstatEcon_files/figure-latex/graficobinomia5-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomia5-1.pdf  us
+ed on input line 5124.
+(pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[108 <./EstatEcon_files/figure-latex/graficobinomial3-1.pdf>]
+<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1137, 279.0425pt x 28
+0.04625pt>
+File: EstatEcon_files/figure-latex/graficobinomial10-1.pdf Graphic file (type p
+df)
+<use EstatEcon_files/figure-latex/graficobinomial10-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial10-1.pdf  
+used on input line 5126.
+(pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[109 <./EstatEcon_files/figure-latex/graficobinomia5-1.pdf>] [110 <./EstatEcon_
+files/figure-latex/graficobinomial10-1.pdf>]
 Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [103
+(./EstatEcon.bbl [111
 
 ]
 Overfull \hbox (16.42834pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 104 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+\T1/lmr/m/n/10 112 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
 ÓRIAS CONJUNTA
  []
 
-[104
+[112
 
-]) [105] (./EstatEcon.aux)
+]) [113] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: E646BDAC0809864B41F4AF086F1C3F6D;6631.
 
@@ -850,13 +904,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17591 strings out of 481866
- 294867 string characters out of 5930245
- 613564 words of memory out of 5000000
- 33196 multiletter control sequences out of 15000+600000
+ 17638 strings out of 481446
+ 296771 string characters out of 5919951
+ 617521 words of memory out of 5000000
+ 33648 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 60i,16n,67p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,16n,73p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Use
 rs/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/
 macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/macbook
@@ -882,10 +936,10 @@ sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users
 cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbo
 ok/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook
 /Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (105 pages, 638062 bytes).
+Output written on EstatEcon.pdf (113 pages, 668646 bytes).
 PDF statistics:
- 1248 PDF objects out of 1440 (max. 8388607)
- 1096 compressed objects within 11 object streams
- 359 named destinations out of 1000 (max. 500000)
- 322 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1332 PDF objects out of 1440 (max. 8388607)
+ 1156 compressed objects within 12 object streams
+ 371 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 

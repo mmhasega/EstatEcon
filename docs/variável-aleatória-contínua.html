@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html"><i class="fa fa-check"></i><b>5</b> Variável Aleatória Contínua</a><ul>
 <li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#função-de-distribuição-de-variáveis-contínuas"><i class="fa fa-check"></i><b>5.1.1</b> Função de distribuição de variáveis contínuas</a></li>
+<li class="chapter" data-level="5.1.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#esperança-e-variância-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>5.1.2</b> Esperança e variância de variáveis aleatórias contínuas</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuição-normal"><i class="fa fa-check"></i><b>5.2</b> Distribuição Normal</a></li>
 <li class="chapter" data-level="5.3" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#teorema-de-tchebichev"><i class="fa fa-check"></i><b>5.3</b> Teorema de Tchebichev</a></li>
@@ -361,8 +362,8 @@ Assim a diferença das áreas do triângulo maior e do triângulo menor é igual
 <p><span class="math display">\[
   f(x) = 
     \begin{cases}
-      Ax^2~~0\leq x \leq 1\\
-      0,~~X&lt;0~\text{ou}~x&gt;1\\
+      Ax^2~~\text{para }~0\leq x \leq 1\\
+      0,~~\text{para }~x&lt;0~\text{ou}~x&gt;1\\
     \end{cases}
   \]</span></p>
 <ol style="list-style-type: lower-alpha">
@@ -498,11 +499,170 @@ Portanto a função distribuição é dada por</p>
   \end{cases}
 \]</span></p>
 <p><strong>Segundo Exemplo numérico sobre função de distrubuição</strong></p>
-<p>Exemplo 4.2.2 da página 84 de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Exemplo 4.2.2 da página 84 de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a função distribuição</p>
+<p><span class="math display">\[
+  F(x) = 
+  \begin{cases}
+    0,5(x^3 + 1),~~\text{para } -1\leq x \leq 1\\
+    0,~~\text{para }x &lt; -1\\
+    1, x &gt; 1
+  \end{cases}
+\]</span>
+determine a função densidade de probabilidade correspondente.</p>
+<p>Resposta:</p>
+<p>A função densidade de probabilidade é dado por</p>
+<p><span class="math display">\[
+  f(x) = \dfrac{\text{d}F(x)}{\text{d}x}
+\]</span></p>
+<p><span class="math display">\[
+  f(x) = \dfrac{\text{d}(0,5 x^2  + 1)}{\text{d}x}
+\]</span></p>
+<p><span class="math display">\[
+  f(x) = 3 \times 0,5x^2 + 0
+\]</span></p>
+<p><span class="math display">\[
+  f(x) = 1,5 x^2 
+\]</span></p>
+<p>Portanto, a função densidade de probabilidade é:</p>
+<p><span class="math display">\[
+  f(x) = 
+  \begin{cases}
+    1,5x^2,~~\text{para } -1\leq x \leq 1\\
+    0,~~\text{para }x &lt; -1 ou x &gt; 1
+  \end{cases}
+\]</span>
+A função distribuição <span class="math inline">\(F(x)\)</span>, assim como a função densidade, deve atender dois requisitos:</p>
+<ul>
+<li>não pode ser negativa e deve ser menor ou igual a 1.</li>
+</ul>
+<p><span class="math display">\[
+  0\leq F(x) \leq 1
+\]</span>,</p>
+<ul>
+<li>a soma das probabilidades de todos os valores da variável é igual a 1.</li>
+</ul>
+<p><span class="math display">\[
+  \lim_{x \rightarrow \infty} F(x) = 1
+\]</span>.</p>
+<p>Estes requisitos são atendidos pelas funções distribuições <span class="math inline">\(F(x)\)</span> dos exemplos numéricos anteriores.</p>
+</div>
+<div id="esperança-e-variância-de-variáveis-aleatórias-contínuas" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Esperança e variância de variáveis aleatórias contínuas</h3>
+<p>A esperança matemática para uma variável aleatória contínua é a soma contínua de todos os valores da variável com sua respectivas probabilidades. Uma soma contínua é a integral e, por sua vez, a probabilidade é encontrada pela função densidade de probabilidade. Dessa forma, matematicamente a esperança é</p>
+<p><span class="math display">\[
+  E(x) = \int_{-\infty}^{+\infty} x f(x)~\text{d}x. 
+\]</span>
+A variância por sua vez,</p>
+<p><span class="math display">\[
+  Var(x) = E[x - E(x)]^2
+\]</span></p>
+<p>ou simplesmente</p>
+<p><span class="math display">\[
+  Var(x) = E[x - \mu]^2
+\]</span>
+onde <span class="math inline">\(\mu\)</span> é igual a média de <span class="math inline">\(x\)</span>. Em termos de integral fica</p>
+<p><span class="math display">\[
+  Var(x) = \int_{-\infty}^{+\infty} (x- \mu)^2 \text{d}x
+\]</span>
+Alternativamente
+<span class="math display">\[
+  Var(x) = E(x^2) - [E(x)]^2 
+\]</span>
+que em termos de integral fica
+<span class="math display">\[
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+\]</span></p>
+<p><strong>Exemplo numérico sobre esperança e variância</strong></p>
+<p>Exemplo 4.3.1. da página 85 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a f.d.p.</p>
+<p><span class="math display">\[
+  f(x) = 
+    \begin{cases}
+      3x^2~~\text{para }~0\leq x \leq 1\\
+      0,~~\text{para }~x&lt;0~\text{ou}~x&gt;1\\
+    \end{cases}
+  \]</span>
+a) Calcule o valor médio de <span class="math inline">\(x\)</span>.</p>
+<p>Resposta:</p>
+<p>Como a média pode ser calculada através de <span class="math inline">\(E(x)\)</span>
+<span class="math display">\[
+  E(x) = \int_{-\infty}^{+\infty} x f(x)~\text{d}x.
+\]</span>
+se tem
+<span class="math display">\[
+  E(x) = \int_{0}^{1}x3x^2\text{d}x
+\]</span>
+<span class="math display">\[
+  E(x) = 3\int_{0}^{1}x^3\text{d}x
+\]</span>
+Calculando-se a integral
+<span class="math display">\[
+  E(x) = 3\left[ \dfrac{x^4}{4}\right]_{0}^{1}
+\]</span></p>
+<p><span class="math display">\[
+  E(x) = 3 \times \dfrac{1^4}{4}
+\]</span></p>
+<p><span class="math display">\[
+  E(x) = \dfrac{3}{4} = 0,75
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Calcule a variância de <span class="math inline">\(x\)</span>.</li>
+</ol>
+<p>Resposta:</p>
+<p>Tomando a fórmula da variância alternativa</p>
+<p><span class="math display">\[
+  Var(x) = E(x^2) - [E(x)]^2 
+\]</span></p>
+<p>que em termos de integral é</p>
+<p><span class="math display">\[
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+\]</span>
+verifica-se que só falta só calcular <span class="math inline">\(E(x^2)\)</span> para poder calcular a variância de <span class="math inline">\(x\)</span>. Ou seja,</p>
+<p><span class="math display">\[
+  E(x^2) = \int_{0}^{1} X^23x^2 \text{d}x 
+\]</span></p>
+<p><span class="math display">\[
+  E(x^2) = 3\int_{0}^{1} x^4  \text{d}x 
+\]</span>
+calculando a integral
+<span class="math display">\[
+  E(x^2) = 3\left[ \dfrac{x^5}{5} \right]_{0}^{1}
+\]</span></p>
+<p><span class="math display">\[
+  E(x^2) = 3 \times \dfrac{1}{5}
+\]</span></p>
+<p><span class="math display">\[
+  E(x^2) = \dfrac{3}{5} = 0,6.
+\]</span>
+Assim a variância é</p>
+<p><span class="math display">\[
+  Var(x) = E(x^2) - [E(x)]^2
+\]</span></p>
+<p><span class="math display">\[
+  Var(x) = 0,6 - (0,75)^2 = 0,6 - 0,5625
+\]</span></p>
+<p><span class="math display">\[
+  Var(x) = 0,0375
+\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Calcule o desvio padrão de <span class="math inline">\(x\)</span>.</li>
+</ol>
+<p><span class="math display">\[
+dp(x) = \sqrt{0,0375}
+\]</span></p>
+<p><span class="math display">\[
+dp(x) \approx 0,194
+\]</span></p>
 </div>
 </div>
 <div id="distribuição-normal" class="section level2">
 <h2><span class="header-section-number">5.2</span> Distribuição Normal</h2>
+<p>Para entender a distribuição normal, tome a distribuição binomial com uma probabilidade <span class="math inline">\(p\)</span> igual 0,5 e <span class="math inline">\(n\)</span> tendendo ao infinito. Graficamente exemplifica-se com <span class="math inline">\(n=1,2,3,5,10\)</span>.</p>
+<p><img src="EstatEcon_files/figure-html/graficobinomial1-1.png" width="384" /></p>
+<p><img src="EstatEcon_files/figure-html/graficobinomial2-1.png" width="384" /></p>
+<p><img src="EstatEcon_files/figure-html/graficobinomial3-1.png" width="384" /></p>
+<p><img src="EstatEcon_files/figure-html/graficobinomia5-1.png" width="384" /></p>
+<p><img src="EstatEcon_files/figure-html/graficobinomial10-1.png" width="384" /></p>
+<p>Note que a medida que <span class="math inline">\(n\)</span> aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal.</p>
 </div>
 <div id="teorema-de-tchebichev" class="section level2">
 <h2><span class="header-section-number">5.3</span> Teorema de Tchebichev</h2>

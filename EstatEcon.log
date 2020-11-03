@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  30 OCT 2020 23:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  3 NOV 2020 02:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,79 +824,165 @@ File: EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf Graphic f
 ile (type pdf)
 <use EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/DistribuicaoUniformeConti
-nua-1.pdf  used on input line 4620.
+nua-1.pdf  used on input line 4622.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[96] [97 <./EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>] [
-98] [99] [100] [101] [102] [103] [104] [105]
-<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=1097, 279.0425pt x 280
+[96] [97pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.5.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.4636 \end{itemize}
+                     <./EstatEcon_files/figure-latex/DistribuicaoUniformeContin
+ua-1.pdf>] [98] [99] [100] [101] [102] [103] [104] [105]
+<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=1099, 279.0425pt x 280
 .04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial1-1.pdf Graphic file (type pd
 f)
 <use EstatEcon_files/figure-latex/graficobinomial1-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial1-1.pdf  u
-sed on input line 5118.
+sed on input line 5122.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
-<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=1098, 279.0425pt x 280
+
+Underfull \vbox (badness 4819) has occurred while \output is active []
+
+[106]
+<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=1106, 279.0425pt x 280
 .04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial2-1.pdf Graphic file (type pd
 f)
 <use EstatEcon_files/figure-latex/graficobinomial2-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial2-1.pdf  u
-sed on input line 5120.
+sed on input line 5124.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
-[106 <./EstatEcon_files/figure-latex/graficobinomial1-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=1112, 279.0425pt x 280
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[107 <./EstatEcon_files/figure-latex/graficobinomial1-1.pdf>]
+<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=1118, 279.0425pt x 280
 .04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial3-1.pdf Graphic file (type pd
 f)
 <use EstatEcon_files/figure-latex/graficobinomial3-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial3-1.pdf  u
-sed on input line 5122.
+sed on input line 5126.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[107 <./EstatEcon_files/figure-latex/graficobinomial2-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1125, 279.0425pt x 280.
+[108 <./EstatEcon_files/figure-latex/graficobinomial2-1.pdf>]
+<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1131, 279.0425pt x 280.
 04625pt>
 File: EstatEcon_files/figure-latex/graficobinomia5-1.pdf Graphic file (type pdf
 )
 <use EstatEcon_files/figure-latex/graficobinomia5-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomia5-1.pdf  us
-ed on input line 5124.
+ed on input line 5128.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[108 <./EstatEcon_files/figure-latex/graficobinomial3-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1137, 279.0425pt x 28
+<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1132, 279.0425pt x 28
 0.04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial10-1.pdf Graphic file (type p
 df)
 <use EstatEcon_files/figure-latex/graficobinomial10-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial10-1.pdf  
-used on input line 5126.
+used on input line 5132.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[109 <./EstatEcon_files/figure-latex/graficobinomia5-1.pdf>] [110 <./EstatEcon_
-files/figure-latex/graficobinomial10-1.pdf>]
+[109 <./EstatEcon_files/figure-latex/graficobinomial3-1.pdf>]
+<EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf, id=1147, 283.0575pt x 
+277.035pt>
+File: EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf Graphic file (type
+ pdf)
+<use EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf
+  used on input line 5140.
+(pdftex.def)             Requested size: 283.0568pt x 277.03432pt.
+[110 <./EstatEcon_files/figure-latex/graficobinomia5-1.pdf>] [111pdfTeX warning
+ (ext4): destination with the same identifier (name{figure.5.2}) has been alrea
+dy used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.5160 
+        <./EstatEcon_files/figure-latex/graficobinomial10-1.pdf>] [112pdfTeX wa
+rning (ext4): destination with the same identifier (name{figure.5.3}) has been 
+already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.5160 
+        <./EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf>] [113]
+
+LaTeX Warning: Reference `fig:ExemploDistribuicaoNormalPadronizada1' on page 11
+4 undefined on input line 5218.
+
+<EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf, id=1
+189, 279.0425pt x 277.035pt>
+File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf 
+Graphic file (type pdf)
+<use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
+Padronizada1-1.pdf  used on input line 5220.
+(pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[114]
+<EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf, id=1
+195, 279.0425pt x 277.035pt>
+File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf 
+Graphic file (type pdf)
+<use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
+Padronizada2-1.pdf  used on input line 5239.
+(pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
+[115 <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pd
+f>] [116pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.5247 \]
+          <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2
+-1.pdf>] [117]
+<EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf, id=1
+231, 279.0425pt x 277.035pt>
+File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf 
+Graphic file (type pdf)
+<use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
+Padronizada3-1.pdf  used on input line 5372.
+(pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
+[118] [119pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.5.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.5378 \[
+          <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3
+-1.pdf>] [120] [121]
+
+LaTeX Warning: Reference `fig:ExemploDistribuicaoNormalPadronizada4' on page 12
+2 undefined on input line 5513.
+
+<EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf, id=1
+260, 279.0425pt x 277.035pt>
+File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf 
+Graphic file (type pdf)
+<use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf>
+Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
+Padronizada4-1.pdf  used on input line 5515.
+(pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
+[122 <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pd
+f>] [123] [124]
 Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [111
+(./EstatEcon.bbl [125
 
 ]
 Overfull \hbox (16.42834pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 112 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+\T1/lmr/m/n/10 126 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
 ÓRIAS CONJUNTA
  []
 
-[112
+[126
 
-]) [113] (./EstatEcon.aux)
+]) [127] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: E646BDAC0809864B41F4AF086F1C3F6D;6631.
 
@@ -904,15 +990,15 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17638 strings out of 481446
- 296771 string characters out of 5919951
- 617521 words of memory out of 5000000
- 33648 multiletter control sequences out of 15000+600000
+ 17696 strings out of 481446
+ 299346 string characters out of 5919951
+ 617950 words of memory out of 5000000
+ 33682 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  66i,16n,73p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Use
-rs/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/
+{/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{
+/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/
 macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/macbook
 /Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/macbook/Li
 brary/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/macbook/Libra
@@ -931,15 +1017,16 @@ m/lmr5.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr
 7.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.p
 fb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb>
 </Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></U
-sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users
-/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/ma
-cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbo
-ok/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook
-/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (113 pages, 668646 bytes).
+sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users
+/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/mac
+book/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/macboo
+k/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbook/L
+ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook/Lib
+rary/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on EstatEcon.pdf (127 pages, 723408 bytes).
 PDF statistics:
- 1332 PDF objects out of 1440 (max. 8388607)
- 1156 compressed objects within 12 object streams
- 371 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1463 PDF objects out of 1728 (max. 8388607)
+ 1256 compressed objects within 13 object streams
+ 390 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

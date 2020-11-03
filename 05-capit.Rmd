@@ -23,7 +23,7 @@ P(2<x<3) = P(2\leq x \leq 3) = P(2 < x \leq 3) = P(2\leq x < 3)
 
 A situação do exemplo do relógio analógico do @Sartoris2013, como a mudança de hora ocorre de forma gradual e a probabilidade é igual para qualquer valor da hora, trata-se de uma distribuição de probabilidade uniforme contínua. Grafico gerado usando a função `gglot` do pacote  `ggplot2`.
 
-```{r DistribuicaoUniformeContinua, echo=TRUE}
+```{r DistribuicaoUniformeContinua, echo=TRUE, fig.cap = "Um exemplo de distribuição uniforme Contínua."}
 library(ggplot2)
 
 hora <- c(1,2,3,4,5,6,7,8,9,10,11,12)
@@ -38,7 +38,7 @@ ggplot(horaanalogica, aes(hora, prob)) +
 ```
 
 
-Nesta situação, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de **função densidade de probabilidade** (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.
+Nesta situação apresentada na figura \@ref(fig:DistribuicaoUniformeContinua), matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de **função densidade de probabilidade** (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.
 
 Note que para $f(x)$ ser função densidade de probabilidade, precisa atender as seguintes propriedades definidas pela teoria da probabilidade:
 
@@ -477,14 +477,14 @@ dp(x) = \sqrt{0,0375}
 \]
 
 \[
-dp(x) \approx 0,194
+dp(x) \cong 0,194
 \]
 
 ## Distribuição Normal
 
 Para entender a distribuição normal, tome a distribuição binomial com uma probabilidade $p$ igual 0,5 e $n$ tendendo ao infinito. Graficamente exemplifica-se com $n=1,2,3,5,10$. 
 
-```{r graficobinomial1, echo=FALSE}
+```{r graficobinomial1, echo=FALSE, message=FALSE}
 library(dplyr)
 library(ggplot2)
 
@@ -499,7 +499,7 @@ ggplot(aes(x = factor(heads), y = pmf)) +
     vjust = 0
   ) +
   labs(title = "Probabilidade de X = x sucessos",
-       subtitle = "b(1;0,5)",
+       subtitle = "x=1 ; p=0,5",
        x = "Successos (x)",
        y = "probabilidade") 
 ```
@@ -519,7 +519,7 @@ ggplot(aes(x = factor(heads), y = pmf)) +
     vjust = 0
   ) +
   labs(title = "Probabilidade de X = x sucessos",
-       subtitle = "b(2;0,5)",
+       subtitle = "x=2 ; p=0,5",
        x = "Successos (x)",
        y = "probabilidade") 
 ```
@@ -539,7 +539,7 @@ ggplot(aes(x = factor(heads), y = pmf)) +
     vjust = 0
   ) +
   labs(title = "Probabilidade de X = x sucessos",
-       subtitle = "b(3;0,5)",
+       subtitle = "x=3 ; p=0,5",
        x = "Successos (x)",
        y = "probabilidade") 
 ```
@@ -559,12 +559,12 @@ ggplot(aes(x = factor(heads), y = pmf)) +
     vjust = 0
   ) +
   labs(title = "Probabilidade de X = x sucessos",
-       subtitle = "b(5;0,5)",
+       subtitle = "x=5 ; p=0,5",
        x = "Successos (x)",
        y = "probabilidade") 
 ```
 
-```{r graficobinomial10, echo=FALSE}
+```{r graficobinomial10, echo=FALSE, fig.cap = "Da distribuição Binamial para a Distribuição Normal"}
 library(dplyr)
 library(ggplot2)
 
@@ -579,12 +579,399 @@ ggplot(aes(x = factor(heads), y = pmf)) +
     vjust = 0
   ) +
   labs(title = "Probabilidade de X = x sucessos",
-       subtitle = "b(10;0,5)",
+       subtitle = "x=10 ; p=0,5",
        x = "Successos (x)",
        y = "probabilidade") 
 ```
 
-Note que a medida que $n$ aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal.
+Note na figura \@ref(fig:graficobinomial10) que a medida que $n$ aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal. Se no limite $n$ tende ao infinito, a distribuição binomial perde o aspecto discreto na foma de "escada" e passa a ter um formato e aspecto de distribuição normal, figura \@ref(fig:DistribuicaoNormal0), que é a referência para uma distribuição de variável aleatória contínua.
+
+```{r DistribuicaoNormal0, echo=FALSE, fig.cap = "A distribuição Normal"}
+library(ggplot2)
+
+dnormal1 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) + 
+  stat_function(fun = dnorm) +
+  scale_x_continuous(name = "x") + 
+  scale_y_continuous(name = "Probabilidade f(x)")
+
+dnormal1
+```
+
+Essa distribuição de probabilidade é conhecida com **normal** ou **gaussiana** e a sua função densidade de probabilidade é dada por:
+
+\[
+  f(x) = \dfrac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{(x-\mu)^2}{2\sigma^2}}
+  (\#eq:fdpNormal)
+\]
+
+onde $\mu$ é a média e $\sigma$ é o desvio padrão da variável $x$. Se a variável $x$ tem distribuição normal ou é normalmente distribuída, é usual escrever com notação matemática da seguinte forma
+
+\[
+  x \sim N(\mu,\sigma)
+\]
+
+e deve ser lida da seguinte forma: *$x$ segue uma distribuição normal com média $\mu$ e desvio padrão $\sigma$*. Em vez de desvio padrão essa notação matemática pode ter a variância $\sigma^2$ no lugar do desvio padrão $\sigma$.
+
+Na função densidade de probabilidade da distribuição normal \@ref(eq:fdpNormal) os parâmetros média $\mu$ e desvio padrão $\sigma$ definem uma família de distribuições normais para a variável $x$. 
+
+O parâmetro média $\mu$ determina a posição da curva em relação à origem, enquanto o desvio padrão $\sigma$ determina se a curva será mais **"gorda"**, ou seja, mais dispersa com maior desvio padrão, ou mais **"magra"**, ou seja mais concentrada com um desvio padrão menor.
+
+O cálculo das probabilidades sob uma distribuição normal é bastante trabalhosa, uma vez que não existe uma função cuja derivada é $e^{-x^2}$ e, por isso, o cálculo é feito por métodos numéricos. Por isso, tabela-se os valores das integrais da distribuição normal padronizada, ou seja, a distribuição normal com média $\mu$ igual a zero e desvio padrão $\sigma$ igual a zero. 
+
+\[
+  \mu = 0
+\]
+
+e
+
+\[
+  \sigma = 1
+\]
+
+As variáveis normalmente distribuídas com média $\mu$ diferente de zero e desvio padrão $\sigma$ diferente de um
+
+\[
+  \mu \neq 0
+\]
+
+e
+
+\[
+  \sigma \neq 1
+\]
+
+podem ter os valores das probabilidades obtidas das tabelas de valores para uma distribuição normal padronizada, padronizando a variável $x$, por exemplo, da seguinte forma
+
+\[
+  z = \dfrac{x - \mu}{\sigma}
+\]
+
+onde a variável $z$ tem distribuição normal com média $\mu$ igual a zero e desvio padrão $\sigma$ igual a 1. Ou seja possui um distribuição normal padronizada para a qual pode-se usar os valores calculados e disponibilizados em tabelas que se encontram no apêndice da maioria dos livros de estatística e econometria. Na tabela com os valores da distribuição normal padronizada, usualmente denota-se a variável normal padronizada como $z$. Outro detalhe da tabela da dstribuição normal padronizada é a disponibilidade dos valores das probabilidades para a metade da distribuição, ou seja, para os valores positivos de $z$ pelo fato da distribuição normal ser simétrica. Portanto,
+\[
+  P(0 < z < 1,23) = P(-1,23 < z < 0).
+\]
+Dessa forma, o maior valor de probabilidade encontrada na tabela para uma distribuição normal padronizada usualmente é aproximadamente igual a  0,5. Claro, existem tabelas que podem apresentar os valores para toda a distribuição e nestes casos o maior valor será aproximadamente igual a 1, pois os valores são em termos de função distribuição de probabilidade $F(z)$.
+Usando o R, a probabilidade de $z$ estar entre zero e 1,23 é calculada através da função `pnorm` que entrega o valor de $F(z)$.
+
+```{r}
+p0z1.23 <- round(pnorm(1.23, mean = 0, sd = 1) - pnorm(0, mean = 0, sd = 1),4)
+p0z1.23
+```
+Ou seja 
+
+\[
+  P(0 < z < 1,23) = F(1,23) - F(0) \cong `r p0z1.23`.
+\]
+
+Graficamente, usando o pacote `ggplot2`, fica mais fácil de visulizar a probabilidade de $z$ estar entre zero e 1,23 que de é de `r p0z1.23` na figura \@ref(fig:ExemploDistribuicaoNormalPadronizada1) que corresponde à área colorida.
+
+```{r ExemploDistribuicaoNormalPadronizada1, echo=FALSE, fig.cap = "Probabilidade z entre zero e 1,23"}
+library(ggplot2)
+
+m = 0
+std = 1
+
+ggplot(data.frame(x = c(-3, 3)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std), xlim = c(0, 1.23),
+                  geom = "area", fill = "#84CA72", alpha = .2) +
+    scale_y_continuous(name = "f(x)", breaks = seq(0,1,0.1)) +
+    scale_x_continuous(name = "z", breaks = c(-2,0,1.23,2))
+```
+Note que o valor `r p0z1.23` é o valor encontrado diretamente na tabela que apresenta valores de probabilidade somente para metade da distribuição, neste caso para $0<z<+\infty$.
+
+Quando os valores de $z$ são maiores que zero, se tem uma outra situação que comumente aparece nos exercícios. Seja a probabilidade de $z$ estar entre 0,27 e 1,43. Ou seja,
+
+\[
+  P(0,27 < z < 1,43) 
+\]
+
+Note que a probabiliade corresponde à área que está abaixo da curva da função densidade de probabilidade para $z$ entre 0,27 e 1,43. Ou seja, a integral de $f(z)$ entre 0,27 e 1,43. Usando-se a função distribuição de probabilidade $F(z)$ corresponde a diferença entre $F(1,43)$ e $F(,27)$
+
+\[
+  P(0,27 < z < 1,43) = F(1,43) - F(0,27)
+\]
+
+Na figura \@ref(fig:ExemploDistribuicaoNormalPadronizada2) fica claro o por quê da diferença entre $F(z)$. Note que aqui a ideia é válida tanto para a metade da distribuição como para a distribuição completa incluindo a parte em que $z<0$.
+
+```{r ExemploDistribuicaoNormalPadronizada2, echo=FALSE, fig.cap = "Probabilidade z entre 0,27 e 1,43"}
+library(ggplot2)
+
+m = 0
+std = 1
+
+ggplot(data.frame(x = c(-3, 3)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std), xlim = c(0.27, 1.43),
+                  geom = "area", fill = "#84CA72", alpha = .2) +
+    scale_y_continuous(name = "f(x)", breaks = seq(0,1,0.1)) +
+    scale_x_continuous(name = "z", breaks = c(-2,0.27,1.43,2))
+```
+
+Para a situação em que se tem os valores das probabilidades tabulados somente para metade da distribuição se tem
+
+\[
+  P(0,27 < z < 1,43) = P(0 < z < 1,43) - P(0 < z < 0,27),
+\]
+ou seja,
+\[
+  P(0,27 < z < 1,43) = [F(1,43) - F(0)] - [F(0,27) - F(0)].
+\]
+
+Usando o R, a probabilidade de $z$ estar entre 0,27 e 1,43 pode ser calculada da seguinte forma
+
+```{r}
+
+# Calculo de F(1,43) - F(0)
+
+p2 <- round(pnorm(1.43, mean = 0, sd = 1, lower.tail = T) - pnorm(0, mean = 0, sd = 1, lower.tail = T),4)
+
+p2
+
+# Calculo de F(0,27) - F(0)
+
+p1 <- round(pnorm(0.27, mean = 0, sd = 1, lower.tail = T) - pnorm(0, mean = 0, sd = 1, lower.tail = T),4)
+
+p1
+
+# Calculo de P(0,27 <  z <  1,43)
+
+p027z143 <- p2 - p1
+
+p027z143
+```
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = `r p2` - `r p1` = `r p027z143`.
+\]
+
+Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos
+
+\[
+  P(0,27 < z < 1,43) = F(1,43) - F(0,27)
+\]
+
+Usando o R, o cálculo da probabilidade de $z$ estar entre 0,27 e 1,43 é simplesmente
+
+```{r}
+p027z143r <- round(pnorm(1.43, mean = 0, sd = 1, lower.tail = TRUE) - pnorm(0.27, mean = 0, sd = 1, lower.tail = TRUE) ,4)
+
+# Calculo de F(1,43)
+
+p2r <- round(pnorm(1.43, mean = 0, sd = 1, lower.tail = T),4)
+
+p2r
+
+# Calculo de F(0,27)
+
+p1r <- round(pnorm(0.27, mean = 0, sd = 1, lower.tail = T),4)
+
+p1r
+
+# Calculo de P(0,27 <  z <  1,43)
+
+p027z143r <- p2r - p1r
+
+
+p027z143r
+```
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = `r p2r` - `r p1r` = `r p027z143r`.
+\]
+
+Uma outra situação bastante comum nos exercícios é quando o limite inferior do intervalo é negativo e valor do limite superior é positivo. Considere o cálculo da probabilidade de $z$ estar entre -1,38 e 0,97. Na figura \@ref(fig:ExemploDistribuicaoNormalPadronizada3) fica mais fácil visualizar qual a área a ser calculada que corresponde a probabilidade solicitada.
+
+```{r ExemploDistribuicaoNormalPadronizada3, echo=FALSE, fig.cap = "Probabilidade z entre -1,38 e 0,97"}
+library(ggplot2)
+
+m = 0
+std = 1
+
+ggplot(data.frame(x = c(-3, 3)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std), xlim = c(-1.38, 0.97),
+                  geom = "area", fill = "#84CA72", alpha = .2) +
+    scale_y_continuous(name = "f(x)", breaks = seq(0,1,0.1)) +
+    scale_x_continuous(name = "z", breaks = c(-2,-1.38,0,0.97,2))
+```
+
+Considerando a situação em que a tabela tem apenas metade dos valores de probabilidade para a distribuição normal padronizada, o cálculo é
+
+\[
+  P( -1,38 < z < 0,97) = P (-1,38 < z < 0) + P(0 < z < 0,97).
+\]
+Como a distribuição normal é simétrica, pode-se escrever
+\[
+  P( -1,38 < z < 0,97) = P (0 < z < 1,38) + P(0 < z < 0,97)
+\]
+ou 
+\[
+  P( -1,38 < z < 0,97) = [F(1,38) - F(0)] +[F(0,97) - F(0)]
+\]
+
+Usando o R, a probabilidade de $z$ estar entre 0,27 e 1,43 pode ser calculada da seguinte forma
+
+```{r}
+
+# Calculo de F(1,38) - F(0)
+
+pf138f0 <- round(pnorm(1.38, mean = 0, sd = 1, lower.tail = T) - pnorm(0, mean = 0, sd = 1, lower.tail = T),4)
+
+pf138f0
+
+# Calculo de F(0,97) - F(0)
+
+pf097f0 <- round(pnorm(0.97, mean = 0, sd = 1, lower.tail = T) - pnorm(0, mean = 0, sd = 1, lower.tail = T),4)
+
+pf097f0
+
+# Calculo de P(1,38 <  z <  0,97)
+
+p138z097 <- pf138f0 + pf097f0
+
+p138z097 
+```
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = `r pf138f0` - `r pf097f0` = `r p138z097`.
+\]
+
+Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos, calcula-se
+
+\[
+  P(-0,38 < z < 0,97) = F(0,97) - F(-1,38).
+\]
+
+Por que o valor de $F(0,97)$ é maior que $F(-1,38)$ e nesta situação se calcula a diferença e não a soma?
+
+Usando o R, o cálculo da probabilidade de $z$ estar entre -1,38 e 0,97 é simplesmente
+
+```{r}
+p138z097r <- round(pnorm(-1.38, mean = 0, sd = 1, lower.tail = TRUE) - pnorm(0.97, mean = 0, sd = 1, lower.tail = TRUE) ,4)
+
+# Calculo de F(-1,38)
+
+pf138r <- round(pnorm(-1.38, mean = 0, sd = 1, lower.tail = T),4)
+
+pf138r
+
+# Calculo de F(0,97)
+
+pf097r <- round(pnorm(0.97, mean = 0, sd = 1, lower.tail = T),4)
+
+pf097r
+
+# Calculo de P(-1,38 <  z <  0,97)
+
+p138z097r <- pf097r - pf138r
+
+
+p138z097r
+```
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = `r pf097r` - `r pf138r` = `r p138z097r`.
+\]
+
+Uma outra situação bastante interessante e comum nos exercícios sobre a aplicação de distribuição normal padronizada é quando se pede o cálculo da probabilidade de $z$ ser maior que um determinado valor. Nestas situações, a palavra chave é **pelo menos**. Considere a situação na qual se pede o cálculo da probabilidade de que $z$ seja maior que 2,22. Ou seja,
+
+\[
+P(z > 2,22)
+\]
+
+Na figura \@ref(fig:ExemploDistribuicaoNormalPadronizada4) fica claro onde fica a área correspondente a probabilidade solicitada.
+
+```{r ExemploDistribuicaoNormalPadronizada4, echo=FALSE, fig.cap = "Probabilidade z ser maior que 2,22"}
+library(ggplot2)
+
+m = 0
+std = 1
+
+ggplot(data.frame(x = c(-3, 3)), aes(x = x)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std)) + 
+    stat_function(fun = dnorm, args = list(mean = m, sd = std), xlim = c(2.22,3),
+                  geom = "area", fill = "#84CA72", alpha = .2) +
+    scale_y_continuous(name = "f(x)", breaks = seq(0,1,0.1)) +
+    scale_x_continuous(name = "z", breaks = c(-3,0,2.22,3))
+```
+Dessa forma, o cálculo considerando a disponibilidade da metade dos valores da distribuição normal padronizada é
+
+\[
+P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - [F(2,22) - F(0)]
+\]
+Usando o R, o cálculo é
+
+```{r}
+
+f222 <- round(pnorm(2.22, mean = 0, sd = 1, lower.tail = T),4)
+f222
+
+f0 <- round(pnorm(0, mean = 0, sd = 1, lower.tail = T), 4)
+f0
+
+pf222f0 <- f222 - f0
+
+pf222f0
+
+pz222 <- 0.5 - pf222f0
+
+pz222
+```
+
+Portanto,
+
+\[
+P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - `r pf222f0` = `r pz222`. 
+\]
+
+Alternativamente se tem os valores da probabilidade para a distribuição completa ou se está usando o R para os cálculos
+
+\[
+P(z >2,22) = 1 - F(2,22)
+\]
+
+Usando o R para o cálculo,
+
+```{r}
+pz222r <- 1 - round(pnorm(2.22, mean = 0, sd = 1, lower.tail = T), 4)
+
+pz222r
+```
+
+Como nem todas as variáveis com distribuição normal tem $\mu=0$ e $\sigma = 1$, deve-se padronizá-las para usar os valores da tabela com a distribuição normal padronizada. Seja a variável $x$ com distribuição normal com $\mu\neq0$ e $\sigma \neq 1$. A transformação de $x$ para que se torne padronizada é
+
+\[
+  z = \dfrac{x - \mu}{\sigma}
+  (\#eq:PadronizacaoNormal)
+\]
+onde $z$ é a variável $x$ transformada. 
+
+**Prova**:
+
+Como $\sigma$ e $\mu$ são constantes
+
+\[
+E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) = \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
+\]
+
+Pois a soma do desvios em relação à media $\mu$ é sempre zero.
+
+Aplicando a definição de variância em $z$ sabendo-se que $E(z)=0$ e $E[x-\mu]^2 = \sigma^2$ ou $dp(x) = \sigma$
+
+\[
+  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
+\]
+
+Assim , através de \@ref(eq:PadronizacaoNormal), pode-se padronizar qualquer variável que segue uma distribuição normale que tenha $\mu\neq 0$ e $\sigma \neq 1$.
 
 ## Teorema de Tchebichev
 

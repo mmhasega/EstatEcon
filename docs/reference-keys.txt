@@ -77,6 +77,15 @@ eq:IndicePrecosMarshallEdgeworth
 eq:IndicePrecosMarshallEdgeworthEmPorcentagem
 eq:ValorReal
 eq:ValorRealEmPorcentagem
+fig:DistribuicaoUniformeContinua
+fig:graficobinomial10
+fig:DistribuicaoNormal0
+eq:fdpNormal
+fig:ExemploDistribuicaoNormalPadronizada1
+fig:ExemploDistribuicaoNormalPadronizada2
+fig:ExemploDistribuicaoNormalPadronizada3
+fig:ExemploDistribuicaoNormalPadronizada4
+eq:PadronizacaoNormal
 estatística-descritiva
 medidas-de-posição
 variável-aleatória

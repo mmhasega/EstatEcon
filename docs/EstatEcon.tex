@@ -121,7 +121,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-10-30}
+\date{2020-11-03}
 
 \begin{document}
 \maketitle
@@ -4617,9 +4617,13 @@ A situação do exemplo do relógio analógico do \citet{Sartoris2013}, como a m
 \end{Highlighting}
 \end{Shaded}
 
+\begin{figure}
+\centering
 \includegraphics{EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf}
+\caption{\label{fig:DistribuicaoUniformeContinua}Um exemplo de distribuição uniforme Contínua.}
+\end{figure}
 
-Nesta situação, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de \textbf{função densidade de probabilidade} (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.
+Nesta situação apresentada na figura \ref{fig:DistribuicaoUniformeContinua}, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de \textbf{função densidade de probabilidade} (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.
 
 Note que para \(f(x)\) ser função densidade de probabilidade, precisa atender as seguintes propriedades definidas pela teoria da probabilidade:
 
@@ -5107,7 +5111,7 @@ dp(x) = \sqrt{0,0375}
 \]
 
 \[
-dp(x) \approx 0,194
+dp(x) \cong 0,194
 \]
 
 \hypertarget{distribuiuxe7uxe3o-normal}{%
@@ -5123,9 +5127,499 @@ Para entender a distribuição normal, tome a distribuição binomial com uma pr
 
 \includegraphics{EstatEcon_files/figure-latex/graficobinomia5-1.pdf}
 
+\begin{figure}
+\centering
 \includegraphics{EstatEcon_files/figure-latex/graficobinomial10-1.pdf}
+\caption{\label{fig:graficobinomial10}Da distribuição Binamial para a Distribuição Normal}
+\end{figure}
 
-Note que a medida que \(n\) aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal.
+Note na figura \ref{fig:graficobinomial10} que a medida que \(n\) aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal. Se no limite \(n\) tende ao infinito, a distribuição binomial perde o aspecto discreto na foma de ``escada'' e passa a ter um formato e aspecto de distribuição normal, figura \ref{fig:DistribuicaoNormal0}, que é a referência para uma distribuição de variável aleatória contínua.
+
+\begin{figure}
+\centering
+\includegraphics{EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf}
+\caption{\label{fig:DistribuicaoNormal0}A distribuição Normal}
+\end{figure}
+
+Essa distribuição de probabilidade é conhecida com \textbf{normal} ou \textbf{gaussiana} e a sua função densidade de probabilidade é dada por:
+
+\[
+  f(x) = \dfrac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{(x-\mu)^2}{2\sigma^2}}
+  \label{eq:fdpNormal}
+\]
+
+onde \(\mu\) é a média e \(\sigma\) é o desvio padrão da variável \(x\). Se a variável \(x\) tem distribuição normal ou é normalmente distribuída, é usual escrever com notação matemática da seguinte forma
+
+\[
+  x \sim N(\mu,\sigma)
+\]
+
+e deve ser lida da seguinte forma: \emph{\(x\) segue uma distribuição normal com média \(\mu\) e desvio padrão \(\sigma\)}. Em vez de desvio padrão essa notação matemática pode ter a variância \(\sigma^2\) no lugar do desvio padrão \(\sigma\).
+
+Na função densidade de probabilidade da distribuição normal \eqref{eq:fdpNormal} os parâmetros média \(\mu\) e desvio padrão \(\sigma\) definem uma família de distribuições normais para a variável \(x\).
+
+O parâmetro média \(\mu\) determina a posição da curva em relação à origem, enquanto o desvio padrão \(\sigma\) determina se a curva será mais \textbf{``gorda''}, ou seja, mais dispersa com maior desvio padrão, ou mais \textbf{``magra''}, ou seja mais concentrada com um desvio padrão menor.
+
+O cálculo das probabilidades sob uma distribuição normal é bastante trabalhosa, uma vez que não existe uma função cuja derivada é \(e^{-x^2}\) e, por isso, o cálculo é feito por métodos numéricos. Por isso, tabela-se os valores das integrais da distribuição normal padronizada, ou seja, a distribuição normal com média \(\mu\) igual a zero e desvio padrão \(\sigma\) igual a zero.
+
+\[
+  \mu = 0
+\]
+
+e
+
+\[
+  \sigma = 1
+\]
+
+As variáveis normalmente distribuídas com média \(\mu\) diferente de zero e desvio padrão \(\sigma\) diferente de um
+
+\[
+  \mu \neq 0
+\]
+
+e
+
+\[
+  \sigma \neq 1
+\]
+
+podem ter os valores das probabilidades obtidas das tabelas de valores para uma distribuição normal padronizada, padronizando a variável \(x\), por exemplo, da seguinte forma
+
+\[
+  z = \dfrac{x - \mu}{\sigma}
+\]
+
+onde a variável \(z\) tem distribuição normal com média \(\mu\) igual a zero e desvio padrão \(\sigma\) igual a 1. Ou seja possui um distribuição normal padronizada para a qual pode-se usar os valores calculados e disponibilizados em tabelas que se encontram no apêndice da maioria dos livros de estatística e econometria. Na tabela com os valores da distribuição normal padronizada, usualmente denota-se a variável normal padronizada como \(z\). Outro detalhe da tabela da dstribuição normal padronizada é a disponibilidade dos valores das probabilidades para a metade da distribuição, ou seja, para os valores positivos de \(z\) pelo fato da distribuição normal ser simétrica. Portanto,
+\[
+  P(0 < z < 1,23) = P(-1,23 < z < 0).
+\]
+Dessa forma, o maior valor de probabilidade encontrada na tabela para uma distribuição normal padronizada usualmente é aproximadamente igual a 0,5. Claro, existem tabelas que podem apresentar os valores para toda a distribuição e nestes casos o maior valor será aproximadamente igual a 1, pois os valores são em termos de função distribuição de probabilidade \(F(z)\).
+Usando o R, a probabilidade de \(z\) estar entre zero e 1,23 é calculada através da função \texttt{pnorm} que entrega o valor de \(F(z)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p0z1}\FloatTok{.23}\NormalTok{ <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.23}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }
+    \DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p0z1}\FloatTok{.23}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,3907
+\end{verbatim}
+
+Ou seja
+
+\[
+  P(0 < z < 1,23) = F(1,23) - F(0) \cong \text{0,3907}.
+\]
+
+Graficamente, usando o pacote \texttt{ggplot2}, fica mais fácil de visulizar a probabilidade de \(z\) estar entre zero e 1,23 que de é de \text{0,3907} na figura \ref{fig:ExemploDistribuicaoNormalPadronizada1} que corresponde à área colorida.
+
+\includegraphics{EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf}
+Note que o valor \text{0,3907} é o valor encontrado diretamente na tabela que apresenta valores de probabilidade somente para metade da distribuição, neste caso para \(0<z<+\infty\).
+
+Quando os valores de \(z\) são maiores que zero, se tem uma outra situação que comumente aparece nos exercícios. Seja a probabilidade de \(z\) estar entre 0,27 e 1,43. Ou seja,
+
+\[
+  P(0,27 < z < 1,43) 
+\]
+
+Note que a probabiliade corresponde à área que está abaixo da curva da função densidade de probabilidade para \(z\) entre 0,27 e 1,43. Ou seja, a integral de \(f(z)\) entre 0,27 e 1,43. Usando-se a função distribuição de probabilidade \(F(z)\) corresponde a diferença entre \(F(1,43)\) e \(F(,27)\)
+
+\[
+  P(0,27 < z < 1,43) = F(1,43) - F(0,27)
+\]
+
+Na figura \ref{fig:ExemploDistribuicaoNormalPadronizada2} fica claro o por quê da diferença entre \(F(z)\). Note que aqui a ideia é válida tanto para a metade da distribuição como para a distribuição completa incluindo a parte em que \(z<0\).
+
+\begin{figure}
+\centering
+\includegraphics{EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf}
+\caption{\label{fig:ExemploDistribuicaoNormalPadronizada2}Probabilidade z entre 0,27 e 1,43}
+\end{figure}
+
+Para a situação em que se tem os valores das probabilidades tabulados somente para metade da distribuição se tem
+
+\[
+  P(0,27 < z < 1,43) = P(0 < z < 1,43) - P(0 < z < 0,27),
+\]
+ou seja,
+\[
+  P(0,27 < z < 1,43) = [F(1,43) - F(0)] - [F(0,27) - F(0)].
+\]
+
+Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada da seguinte forma
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(1,43) - F(0)}
+
+\NormalTok{p2 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,4236
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(0,27) - F(0)}
+
+\NormalTok{p1 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{p1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,1064
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de P(0,27 < z < 1,43)}
+
+\NormalTok{p027z143 <-}\StringTok{ }\NormalTok{p2 }\OperatorTok{-}\StringTok{ }\NormalTok{p1}
+
+\NormalTok{p027z143}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,3172
+\end{verbatim}
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = \text{0,4236} - \text{0,1064} = \text{0,3172}.
+\]
+
+Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos
+
+\[
+  P(0,27 < z < 1,43) = F(1,43) - F(0,27)
+\]
+
+Usando o R, o cálculo da probabilidade de \(z\) estar entre 0,27 e 1,43 é simplesmente
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p027z143r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{), }
+    \DecValTok{4}\NormalTok{)}
+
+\CommentTok{# Calculo de F(1,43)}
+
+\NormalTok{p2r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+
+\NormalTok{p2r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9236
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(0,27)}
+
+\NormalTok{p1r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+
+\NormalTok{p1r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,6064
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de P(0,27 < z < 1,43)}
+
+\NormalTok{p027z143r <-}\StringTok{ }\NormalTok{p2r }\OperatorTok{-}\StringTok{ }\NormalTok{p1r}
+
+
+\NormalTok{p027z143r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,3172
+\end{verbatim}
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = \text{0,9236} - \text{0,6064} = \text{0,3172}.
+\]
+
+Uma outra situação bastante comum nos exercícios é quando o limite inferior do intervalo é negativo e valor do limite superior é positivo. Considere o cálculo da probabilidade de \(z\) estar entre -1,38 e 0,97. Na figura \ref{fig:ExemploDistribuicaoNormalPadronizada3} fica mais fácil visualizar qual a área a ser calculada que corresponde a probabilidade solicitada.
+
+\begin{figure}
+\centering
+\includegraphics{EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf}
+\caption{\label{fig:ExemploDistribuicaoNormalPadronizada3}Probabilidade z entre -1,38 e 0,97}
+\end{figure}
+
+Considerando a situação em que a tabela tem apenas metade dos valores de probabilidade para a distribuição normal padronizada, o cálculo é
+
+\[
+  P( -1,38 < z < 0,97) = P (-1,38 < z < 0) + P(0 < z < 0,97).
+\]
+Como a distribuição normal é simétrica, pode-se escrever
+\[
+  P( -1,38 < z < 0,97) = P (0 < z < 1,38) + P(0 < z < 0,97)
+\]
+ou
+\[
+  P( -1,38 < z < 0,97) = [F(1,38) - F(0)] +[F(0,97) - F(0)]
+\]
+
+Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada da seguinte forma
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(1,38) - F(0)}
+
+\NormalTok{pf138f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.38}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{pf138f0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,4162
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(0,97) - F(0)}
+
+\NormalTok{pf097f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{pf097f0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,334
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de P(1,38 < z < 0,97)}
+
+\NormalTok{p138z097 <-}\StringTok{ }\NormalTok{pf138f0 }\OperatorTok{+}\StringTok{ }\NormalTok{pf097f0}
+
+\NormalTok{p138z097}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,7502
+\end{verbatim}
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = \text{0,4162} - \text{0,334} = \text{0,7502}.
+\]
+
+Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos, calcula-se
+
+\[
+  P(-0,38 < z < 0,97) = F(0,97) - F(-1,38).
+\]
+
+Por que o valor de \(F(0,97)\) é maior que \(F(-1,38)\) e nesta situação se calcula a diferença e não a soma?
+
+Usando o R, o cálculo da probabilidade de \(z\) estar entre -1,38 e 0,97 é simplesmente
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p138z097r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\OperatorTok{-}\FloatTok{1.38}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{), }
+    \DecValTok{4}\NormalTok{)}
+
+\CommentTok{# Calculo de F(-1,38)}
+
+\NormalTok{pf138r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\OperatorTok{-}\FloatTok{1.38}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+
+\NormalTok{pf138r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,0838
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(0,97)}
+
+\NormalTok{pf097r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+
+\NormalTok{pf097r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,834
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de P(-1,38 < z < 0,97)}
+
+\NormalTok{p138z097r <-}\StringTok{ }\NormalTok{pf097r }\OperatorTok{-}\StringTok{ }\NormalTok{pf138r}
+
+
+\NormalTok{p138z097r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,7502
+\end{verbatim}
+
+Portanto,
+
+\[
+  P(0,27 < z < 1,43) = \text{0,834} - \text{0,0838} = \text{0,7502}.
+\]
+
+Uma outra situação bastante interessante e comum nos exercícios sobre a aplicação de distribuição normal padronizada é quando se pede o cálculo da probabilidade de \(z\) ser maior que um determinado valor. Nestas situações, a palavra chave é \textbf{pelo menos}. Considere a situação na qual se pede o cálculo da probabilidade de que \(z\) seja maior que 2,22. Ou seja,
+
+\[
+P(z > 2,22)
+\]
+
+Na figura \ref{fig:ExemploDistribuicaoNormalPadronizada4} fica claro onde fica a área correspondente a probabilidade solicitada.
+
+\includegraphics{EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf}
+Dessa forma, o cálculo considerando a disponibilidade da metade dos valores da distribuição normal padronizada é
+
+\[
+P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - [F(2,22) - F(0)]
+\]
+Usando o R, o cálculo é
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f222 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{2.22}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+\NormalTok{f222}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9868
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+\NormalTok{f0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pf222f0 <-}\StringTok{ }\NormalTok{f222 }\OperatorTok{-}\StringTok{ }\NormalTok{f0}
+
+\NormalTok{pf222f0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,4868
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pz222 <-}\StringTok{ }\FloatTok{0.5} \OperatorTok{-}\StringTok{ }\NormalTok{pf222f0}
+
+\NormalTok{pz222}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,0132
+\end{verbatim}
+
+Portanto,
+
+\[
+P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - \text{0,4868} = \text{0,0132}. 
+\]
+
+Alternativamente se tem os valores da probabilidade para a distribuição completa ou se está usando o R para os cálculos
+
+\[
+P(z >2,22) = 1 - F(2,22)
+\]
+
+Usando o R para o cálculo,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pz222r <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{2.22}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+    \DecValTok{4}\NormalTok{)}
+
+\NormalTok{pz222r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,0132
+\end{verbatim}
+
+Como nem todas as variáveis com distribuição normal tem \(\mu=0\) e \(\sigma = 1\), deve-se padronizá-las para usar os valores da tabela com a distribuição normal padronizada. Seja a variável \(x\) com distribuição normal com \(\mu\neq0\) e \(\sigma \neq 1\). A transformação de \(x\) para que se torne padronizada é
+
+\[
+  z = \dfrac{x - \mu}{\sigma}
+  \label{eq:PadronizacaoNormal}
+\]
+onde \(z\) é a variável \(x\) transformada.
+
+\textbf{Prova}:
+
+Como \(\sigma\) e \(\mu\) são constantes
+
+\[
+E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) = \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
+\]
+
+Pois a soma do desvios em relação à media \(\mu\) é sempre zero.
+
+Aplicando a definição de variância em \(z\) sabendo-se que \(E(z)=0\) e \(E[x-\mu]^2 = \sigma^2\) ou \(dp(x) = \sigma\)
+
+\[
+  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
+\]
+
+Assim , através de \eqref{eq:PadronizacaoNormal}, pode-se padronizar qualquer variável que segue uma distribuição normale que tenha \(\mu\neq 0\) e \(\sigma \neq 1\).
 
 \hypertarget{teorema-de-tchebichev}{%
 \section{Teorema de Tchebichev}\label{teorema-de-tchebichev}}

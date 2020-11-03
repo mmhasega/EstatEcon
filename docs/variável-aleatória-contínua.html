@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-10-30" />
+<meta name="date" content="2020-11-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,8 +281,13 @@ P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3)
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="variável-aleatória-contínua.html#cb175-1"></a><span class="kw">ggplot</span>(horaanalogica, <span class="kw">aes</span>(hora, prob)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
 <span id="cb175-2"><a href="variável-aleatória-contínua.html#cb175-2"></a><span class="st">    </span><span class="kw">xlim</span>(<span class="dv">0</span>, <span class="dv">13</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylim</span>(<span class="dv">0</span>, <span class="fl">0.2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, </span>
 <span id="cb175-3"><a href="variável-aleatória-contínua.html#cb175-3"></a>    <span class="dv">12</span>, <span class="dt">by =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="EstatEcon_files/figure-html/DistribuicaoUniformeContinua-1.png" width="384" /></p>
-<p>Nesta situação, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de <strong>função densidade de probabilidade</strong> (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.</p>
+<div class="figure"><span id="fig:DistribuicaoUniformeContinua"></span>
+<img src="EstatEcon_files/figure-html/DistribuicaoUniformeContinua-1.png" alt="Um exemplo de distribuição uniforme Contínua." width="384" />
+<p class="caption">
+FIGURA 5.1: Um exemplo de distribuição uniforme Contínua.
+</p>
+</div>
+<p>Nesta situação apresentada na figura <a href="variável-aleatória-contínua.html#fig:DistribuicaoUniformeContinua">5.1</a>, matematicamamente faz sentido calcular a probabilidade para um intervalo de valores da variável e não para valores específicos com é no caso da variável aleatória discreta. Dessa forma com a função de probabilidade da distribuição, denominada de <strong>função densidade de probabilidade</strong> (f.d.p.), pode-se obter a probabilidade obtendo a área abaixo da curva desta função. Matematicamente, a probabilidade pode ser obtida através da integral definida desta função para o intervalo de valores em questão.</p>
 <p>Note que para <span class="math inline">\(f(x)\)</span> ser função densidade de probabilidade, precisa atender as seguintes propriedades definidas pela teoria da probabilidade:</p>
 <ul>
 <li>a soma das probabilidades para todo os valores definidos da variável <span class="math inline">\(x\)</span> dever ser igual a 1.</li>
@@ -650,7 +655,7 @@ Assim a variância é</p>
 dp(x) = \sqrt{0,0375}
 \]</span></p>
 <p><span class="math display">\[
-dp(x) \approx 0,194
+dp(x) \cong 0,194
 \]</span></p>
 </div>
 </div>
@@ -661,8 +666,297 @@ dp(x) \approx 0,194
 <p><img src="EstatEcon_files/figure-html/graficobinomial2-1.png" width="384" /></p>
 <p><img src="EstatEcon_files/figure-html/graficobinomial3-1.png" width="384" /></p>
 <p><img src="EstatEcon_files/figure-html/graficobinomia5-1.png" width="384" /></p>
-<p><img src="EstatEcon_files/figure-html/graficobinomial10-1.png" width="384" /></p>
-<p>Note que a medida que <span class="math inline">\(n\)</span> aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal.</p>
+<div class="figure"><span id="fig:graficobinomial10"></span>
+<img src="EstatEcon_files/figure-html/graficobinomial10-1.png" alt="Da distribuição Binamial para a Distribuição Normal" width="384" />
+<p class="caption">
+FIGURA 5.2: Da distribuição Binamial para a Distribuição Normal
+</p>
+</div>
+<p>Note na figura <a href="variável-aleatória-contínua.html#fig:graficobinomial10">5.2</a> que a medida que <span class="math inline">\(n\)</span> aumenta a distribuição binomial assume um formato que é a de uma típica distribuição normal. Se no limite <span class="math inline">\(n\)</span> tende ao infinito, a distribuição binomial perde o aspecto discreto na foma de “escada” e passa a ter um formato e aspecto de distribuição normal, figura <a href="variável-aleatória-contínua.html#fig:DistribuicaoNormal0">5.3</a>, que é a referência para uma distribuição de variável aleatória contínua.</p>
+<div class="figure"><span id="fig:DistribuicaoNormal0"></span>
+<img src="EstatEcon_files/figure-html/DistribuicaoNormal0-1.png" alt="A distribuição Normal" width="384" />
+<p class="caption">
+FIGURA 5.3: A distribuição Normal
+</p>
+</div>
+<p>Essa distribuição de probabilidade é conhecida com <strong>normal</strong> ou <strong>gaussiana</strong> e a sua função densidade de probabilidade é dada por:</p>
+<p><span class="math display" id="eq:fdpNormal">\[
+  f(x) = \dfrac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{(x-\mu)^2}{2\sigma^2}}
+  \tag{5.1}
+\]</span></p>
+<p>onde <span class="math inline">\(\mu\)</span> é a média e <span class="math inline">\(\sigma\)</span> é o desvio padrão da variável <span class="math inline">\(x\)</span>. Se a variável <span class="math inline">\(x\)</span> tem distribuição normal ou é normalmente distribuída, é usual escrever com notação matemática da seguinte forma</p>
+<p><span class="math display">\[
+  x \sim N(\mu,\sigma)
+\]</span></p>
+<p>e deve ser lida da seguinte forma: <em><span class="math inline">\(x\)</span> segue uma distribuição normal com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span></em>. Em vez de desvio padrão essa notação matemática pode ter a variância <span class="math inline">\(\sigma^2\)</span> no lugar do desvio padrão <span class="math inline">\(\sigma\)</span>.</p>
+<p>Na função densidade de probabilidade da distribuição normal <a href="variável-aleatória-contínua.html#eq:fdpNormal">(5.1)</a> os parâmetros média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span> definem uma família de distribuições normais para a variável <span class="math inline">\(x\)</span>.</p>
+<p>O parâmetro média <span class="math inline">\(\mu\)</span> determina a posição da curva em relação à origem, enquanto o desvio padrão <span class="math inline">\(\sigma\)</span> determina se a curva será mais <strong>“gorda”</strong>, ou seja, mais dispersa com maior desvio padrão, ou mais <strong>“magra”</strong>, ou seja mais concentrada com um desvio padrão menor.</p>
+<p>O cálculo das probabilidades sob uma distribuição normal é bastante trabalhosa, uma vez que não existe uma função cuja derivada é <span class="math inline">\(e^{-x^2}\)</span> e, por isso, o cálculo é feito por métodos numéricos. Por isso, tabela-se os valores das integrais da distribuição normal padronizada, ou seja, a distribuição normal com média <span class="math inline">\(\mu\)</span> igual a zero e desvio padrão <span class="math inline">\(\sigma\)</span> igual a zero.</p>
+<p><span class="math display">\[
+  \mu = 0
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+  \sigma = 1
+\]</span></p>
+<p>As variáveis normalmente distribuídas com média <span class="math inline">\(\mu\)</span> diferente de zero e desvio padrão <span class="math inline">\(\sigma\)</span> diferente de um</p>
+<p><span class="math display">\[
+  \mu \neq 0
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+  \sigma \neq 1
+\]</span></p>
+<p>podem ter os valores das probabilidades obtidas das tabelas de valores para uma distribuição normal padronizada, padronizando a variável <span class="math inline">\(x\)</span>, por exemplo, da seguinte forma</p>
+<p><span class="math display">\[
+  z = \dfrac{x - \mu}{\sigma}
+\]</span></p>
+<p>onde a variável <span class="math inline">\(z\)</span> tem distribuição normal com média <span class="math inline">\(\mu\)</span> igual a zero e desvio padrão <span class="math inline">\(\sigma\)</span> igual a 1. Ou seja possui um distribuição normal padronizada para a qual pode-se usar os valores calculados e disponibilizados em tabelas que se encontram no apêndice da maioria dos livros de estatística e econometria. Na tabela com os valores da distribuição normal padronizada, usualmente denota-se a variável normal padronizada como <span class="math inline">\(z\)</span>. Outro detalhe da tabela da dstribuição normal padronizada é a disponibilidade dos valores das probabilidades para a metade da distribuição, ou seja, para os valores positivos de <span class="math inline">\(z\)</span> pelo fato da distribuição normal ser simétrica. Portanto,
+<span class="math display">\[
+  P(0 &lt; z &lt; 1,23) = P(-1,23 &lt; z &lt; 0).
+\]</span>
+Dessa forma, o maior valor de probabilidade encontrada na tabela para uma distribuição normal padronizada usualmente é aproximadamente igual a 0,5. Claro, existem tabelas que podem apresentar os valores para toda a distribuição e nestes casos o maior valor será aproximadamente igual a 1, pois os valores são em termos de função distribuição de probabilidade <span class="math inline">\(F(z)\)</span>.
+Usando o R, a probabilidade de <span class="math inline">\(z\)</span> estar entre zero e 1,23 é calculada através da função <code>pnorm</code> que entrega o valor de <span class="math inline">\(F(z)\)</span>.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="variável-aleatória-contínua.html#cb176-1"></a>p0z1<span class="fl">.23</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.23</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">0</span>, </span>
+<span id="cb176-2"><a href="variável-aleatória-contínua.html#cb176-2"></a>    <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>), <span class="dv">4</span>)</span>
+<span id="cb176-3"><a href="variável-aleatória-contínua.html#cb176-3"></a>p0z1<span class="fl">.23</span></span></code></pre></div>
+<pre><code>## [1] 0,3907</code></pre>
+<p>Ou seja</p>
+<p><span class="math display">\[
+  P(0 &lt; z &lt; 1,23) = F(1,23) - F(0) \cong 0,3907.
+\]</span></p>
+<p>Graficamente, usando o pacote <code>ggplot2</code>, fica mais fácil de visulizar a probabilidade de <span class="math inline">\(z\)</span> estar entre zero e 1,23 que de é de 0,3907 na figura <a href="variável-aleatória-contínua.html#fig:ExemploDistribuicaoNormalPadronizada1">5.4</a> que corresponde à área colorida.</p>
+<div class="figure"><span id="fig:ExemploDistribuicaoNormalPadronizada1"></span>
+<img src="EstatEcon_files/figure-html/ExemploDistribuicaoNormalPadronizada1-1.png" alt="Probabilidade z entre zero e 1,23" width="384" />
+<p class="caption">
+FIGURA 5.4: Probabilidade z entre zero e 1,23
+</p>
+</div>
+<p>Note que o valor 0,3907 é o valor encontrado diretamente na tabela que apresenta valores de probabilidade somente para metade da distribuição, neste caso para <span class="math inline">\(0&lt;z&lt;+\infty\)</span>.</p>
+<p>Quando os valores de <span class="math inline">\(z\)</span> são maiores que zero, se tem uma outra situação que comumente aparece nos exercícios. Seja a probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43. Ou seja,</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) 
+\]</span></p>
+<p>Note que a probabiliade corresponde à área que está abaixo da curva da função densidade de probabilidade para <span class="math inline">\(z\)</span> entre 0,27 e 1,43. Ou seja, a integral de <span class="math inline">\(f(z)\)</span> entre 0,27 e 1,43. Usando-se a função distribuição de probabilidade <span class="math inline">\(F(z)\)</span> corresponde a diferença entre <span class="math inline">\(F(1,43)\)</span> e <span class="math inline">\(F(,27)\)</span></p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = F(1,43) - F(0,27)
+\]</span></p>
+<p>Na figura <a href="variável-aleatória-contínua.html#fig:ExemploDistribuicaoNormalPadronizada2">5.5</a> fica claro o por quê da diferença entre <span class="math inline">\(F(z)\)</span>. Note que aqui a ideia é válida tanto para a metade da distribuição como para a distribuição completa incluindo a parte em que <span class="math inline">\(z&lt;0\)</span>.</p>
+<div class="figure"><span id="fig:ExemploDistribuicaoNormalPadronizada2"></span>
+<img src="EstatEcon_files/figure-html/ExemploDistribuicaoNormalPadronizada2-1.png" alt="Probabilidade z entre 0,27 e 1,43" width="384" />
+<p class="caption">
+FIGURA 5.5: Probabilidade z entre 0,27 e 1,43
+</p>
+</div>
+<p>Para a situação em que se tem os valores das probabilidades tabulados somente para metade da distribuição se tem</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = P(0 &lt; z &lt; 1,43) - P(0 &lt; z &lt; 0,27),
+\]</span>
+ou seja,
+<span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = [F(1,43) - F(0)] - [F(0,27) - F(0)].
+\]</span></p>
+<p>Usando o R, a probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43 pode ser calculada da seguinte forma</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="variável-aleatória-contínua.html#cb178-1"></a><span class="co"># Calculo de F(1,43) - F(0)</span></span>
+<span id="cb178-2"><a href="variável-aleatória-contínua.html#cb178-2"></a></span>
+<span id="cb178-3"><a href="variável-aleatória-contínua.html#cb178-3"></a>p2 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.43</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb178-4"><a href="variável-aleatória-contínua.html#cb178-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb178-5"><a href="variável-aleatória-contínua.html#cb178-5"></a></span>
+<span id="cb178-6"><a href="variável-aleatória-contínua.html#cb178-6"></a>p2</span></code></pre></div>
+<pre><code>## [1] 0,4236</code></pre>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="variável-aleatória-contínua.html#cb180-1"></a><span class="co"># Calculo de F(0,27) - F(0)</span></span>
+<span id="cb180-2"><a href="variável-aleatória-contínua.html#cb180-2"></a></span>
+<span id="cb180-3"><a href="variável-aleatória-contínua.html#cb180-3"></a>p1 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.27</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb180-4"><a href="variável-aleatória-contínua.html#cb180-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb180-5"><a href="variável-aleatória-contínua.html#cb180-5"></a></span>
+<span id="cb180-6"><a href="variável-aleatória-contínua.html#cb180-6"></a>p1</span></code></pre></div>
+<pre><code>## [1] 0,1064</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="variável-aleatória-contínua.html#cb182-1"></a><span class="co"># Calculo de P(0,27 &lt; z &lt; 1,43)</span></span>
+<span id="cb182-2"><a href="variável-aleatória-contínua.html#cb182-2"></a></span>
+<span id="cb182-3"><a href="variável-aleatória-contínua.html#cb182-3"></a>p027z143 &lt;-<span class="st"> </span>p2 <span class="op">-</span><span class="st"> </span>p1</span>
+<span id="cb182-4"><a href="variável-aleatória-contínua.html#cb182-4"></a></span>
+<span id="cb182-5"><a href="variável-aleatória-contínua.html#cb182-5"></a>p027z143</span></code></pre></div>
+<pre><code>## [1] 0,3172</code></pre>
+<p>Portanto,</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = 0,4236 - 0,1064 = 0,3172.
+\]</span></p>
+<p>Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = F(1,43) - F(0,27)
+\]</span></p>
+<p>Usando o R, o cálculo da probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43 é simplesmente</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="variável-aleatória-contínua.html#cb184-1"></a>p027z143r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.43</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb184-2"><a href="variável-aleatória-contínua.html#cb184-2"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="fl">0.27</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>), </span>
+<span id="cb184-3"><a href="variável-aleatória-contínua.html#cb184-3"></a>    <span class="dv">4</span>)</span>
+<span id="cb184-4"><a href="variável-aleatória-contínua.html#cb184-4"></a></span>
+<span id="cb184-5"><a href="variável-aleatória-contínua.html#cb184-5"></a><span class="co"># Calculo de F(1,43)</span></span>
+<span id="cb184-6"><a href="variável-aleatória-contínua.html#cb184-6"></a></span>
+<span id="cb184-7"><a href="variável-aleatória-contínua.html#cb184-7"></a>p2r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.43</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb184-8"><a href="variável-aleatória-contínua.html#cb184-8"></a>    <span class="dv">4</span>)</span>
+<span id="cb184-9"><a href="variável-aleatória-contínua.html#cb184-9"></a></span>
+<span id="cb184-10"><a href="variável-aleatória-contínua.html#cb184-10"></a>p2r</span></code></pre></div>
+<pre><code>## [1] 0,9236</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="variável-aleatória-contínua.html#cb186-1"></a><span class="co"># Calculo de F(0,27)</span></span>
+<span id="cb186-2"><a href="variável-aleatória-contínua.html#cb186-2"></a></span>
+<span id="cb186-3"><a href="variável-aleatória-contínua.html#cb186-3"></a>p1r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.27</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb186-4"><a href="variável-aleatória-contínua.html#cb186-4"></a>    <span class="dv">4</span>)</span>
+<span id="cb186-5"><a href="variável-aleatória-contínua.html#cb186-5"></a></span>
+<span id="cb186-6"><a href="variável-aleatória-contínua.html#cb186-6"></a>p1r</span></code></pre></div>
+<pre><code>## [1] 0,6064</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="variável-aleatória-contínua.html#cb188-1"></a><span class="co"># Calculo de P(0,27 &lt; z &lt; 1,43)</span></span>
+<span id="cb188-2"><a href="variável-aleatória-contínua.html#cb188-2"></a></span>
+<span id="cb188-3"><a href="variável-aleatória-contínua.html#cb188-3"></a>p027z143r &lt;-<span class="st"> </span>p2r <span class="op">-</span><span class="st"> </span>p1r</span>
+<span id="cb188-4"><a href="variável-aleatória-contínua.html#cb188-4"></a></span>
+<span id="cb188-5"><a href="variável-aleatória-contínua.html#cb188-5"></a></span>
+<span id="cb188-6"><a href="variável-aleatória-contínua.html#cb188-6"></a>p027z143r</span></code></pre></div>
+<pre><code>## [1] 0,3172</code></pre>
+<p>Portanto,</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = 0,9236 - 0,6064 = 0,3172.
+\]</span></p>
+<p>Uma outra situação bastante comum nos exercícios é quando o limite inferior do intervalo é negativo e valor do limite superior é positivo. Considere o cálculo da probabilidade de <span class="math inline">\(z\)</span> estar entre -1,38 e 0,97. Na figura <a href="variável-aleatória-contínua.html#fig:ExemploDistribuicaoNormalPadronizada3">5.6</a> fica mais fácil visualizar qual a área a ser calculada que corresponde a probabilidade solicitada.</p>
+<div class="figure"><span id="fig:ExemploDistribuicaoNormalPadronizada3"></span>
+<img src="EstatEcon_files/figure-html/ExemploDistribuicaoNormalPadronizada3-1.png" alt="Probabilidade z entre -1,38 e 0,97" width="384" />
+<p class="caption">
+FIGURA 5.6: Probabilidade z entre -1,38 e 0,97
+</p>
+</div>
+<p>Considerando a situação em que a tabela tem apenas metade dos valores de probabilidade para a distribuição normal padronizada, o cálculo é</p>
+<p><span class="math display">\[
+  P( -1,38 &lt; z &lt; 0,97) = P (-1,38 &lt; z &lt; 0) + P(0 &lt; z &lt; 0,97).
+\]</span>
+Como a distribuição normal é simétrica, pode-se escrever
+<span class="math display">\[
+  P( -1,38 &lt; z &lt; 0,97) = P (0 &lt; z &lt; 1,38) + P(0 &lt; z &lt; 0,97)
+\]</span>
+ou
+<span class="math display">\[
+  P( -1,38 &lt; z &lt; 0,97) = [F(1,38) - F(0)] +[F(0,97) - F(0)]
+\]</span></p>
+<p>Usando o R, a probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43 pode ser calculada da seguinte forma</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="variável-aleatória-contínua.html#cb190-1"></a><span class="co"># Calculo de F(1,38) - F(0)</span></span>
+<span id="cb190-2"><a href="variável-aleatória-contínua.html#cb190-2"></a></span>
+<span id="cb190-3"><a href="variável-aleatória-contínua.html#cb190-3"></a>pf138f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.38</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb190-4"><a href="variável-aleatória-contínua.html#cb190-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb190-5"><a href="variável-aleatória-contínua.html#cb190-5"></a></span>
+<span id="cb190-6"><a href="variável-aleatória-contínua.html#cb190-6"></a>pf138f0</span></code></pre></div>
+<pre><code>## [1] 0,4162</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="variável-aleatória-contínua.html#cb192-1"></a><span class="co"># Calculo de F(0,97) - F(0)</span></span>
+<span id="cb192-2"><a href="variável-aleatória-contínua.html#cb192-2"></a></span>
+<span id="cb192-3"><a href="variável-aleatória-contínua.html#cb192-3"></a>pf097f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.97</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb192-4"><a href="variável-aleatória-contínua.html#cb192-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb192-5"><a href="variável-aleatória-contínua.html#cb192-5"></a></span>
+<span id="cb192-6"><a href="variável-aleatória-contínua.html#cb192-6"></a>pf097f0</span></code></pre></div>
+<pre><code>## [1] 0,334</code></pre>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="variável-aleatória-contínua.html#cb194-1"></a><span class="co"># Calculo de P(1,38 &lt; z &lt; 0,97)</span></span>
+<span id="cb194-2"><a href="variável-aleatória-contínua.html#cb194-2"></a></span>
+<span id="cb194-3"><a href="variável-aleatória-contínua.html#cb194-3"></a>p138z097 &lt;-<span class="st"> </span>pf138f0 <span class="op">+</span><span class="st"> </span>pf097f0</span>
+<span id="cb194-4"><a href="variável-aleatória-contínua.html#cb194-4"></a></span>
+<span id="cb194-5"><a href="variável-aleatória-contínua.html#cb194-5"></a>p138z097</span></code></pre></div>
+<pre><code>## [1] 0,7502</code></pre>
+<p>Portanto,</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = 0,4162 - 0,334 = 0,7502.
+\]</span></p>
+<p>Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos, calcula-se</p>
+<p><span class="math display">\[
+  P(-0,38 &lt; z &lt; 0,97) = F(0,97) - F(-1,38).
+\]</span></p>
+<p>Por que o valor de <span class="math inline">\(F(0,97)\)</span> é maior que <span class="math inline">\(F(-1,38)\)</span> e nesta situação se calcula a diferença e não a soma?</p>
+<p>Usando o R, o cálculo da probabilidade de <span class="math inline">\(z\)</span> estar entre -1,38 e 0,97 é simplesmente</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="variável-aleatória-contínua.html#cb196-1"></a>p138z097r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="op">-</span><span class="fl">1.38</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb196-2"><a href="variável-aleatória-contínua.html#cb196-2"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="fl">0.97</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>), </span>
+<span id="cb196-3"><a href="variável-aleatória-contínua.html#cb196-3"></a>    <span class="dv">4</span>)</span>
+<span id="cb196-4"><a href="variável-aleatória-contínua.html#cb196-4"></a></span>
+<span id="cb196-5"><a href="variável-aleatória-contínua.html#cb196-5"></a><span class="co"># Calculo de F(-1,38)</span></span>
+<span id="cb196-6"><a href="variável-aleatória-contínua.html#cb196-6"></a></span>
+<span id="cb196-7"><a href="variável-aleatória-contínua.html#cb196-7"></a>pf138r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="op">-</span><span class="fl">1.38</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb196-8"><a href="variável-aleatória-contínua.html#cb196-8"></a>    <span class="dv">4</span>)</span>
+<span id="cb196-9"><a href="variável-aleatória-contínua.html#cb196-9"></a></span>
+<span id="cb196-10"><a href="variável-aleatória-contínua.html#cb196-10"></a>pf138r</span></code></pre></div>
+<pre><code>## [1] 0,0838</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="variável-aleatória-contínua.html#cb198-1"></a><span class="co"># Calculo de F(0,97)</span></span>
+<span id="cb198-2"><a href="variável-aleatória-contínua.html#cb198-2"></a></span>
+<span id="cb198-3"><a href="variável-aleatória-contínua.html#cb198-3"></a>pf097r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.97</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb198-4"><a href="variável-aleatória-contínua.html#cb198-4"></a>    <span class="dv">4</span>)</span>
+<span id="cb198-5"><a href="variável-aleatória-contínua.html#cb198-5"></a></span>
+<span id="cb198-6"><a href="variável-aleatória-contínua.html#cb198-6"></a>pf097r</span></code></pre></div>
+<pre><code>## [1] 0,834</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="variável-aleatória-contínua.html#cb200-1"></a><span class="co"># Calculo de P(-1,38 &lt; z &lt; 0,97)</span></span>
+<span id="cb200-2"><a href="variável-aleatória-contínua.html#cb200-2"></a></span>
+<span id="cb200-3"><a href="variável-aleatória-contínua.html#cb200-3"></a>p138z097r &lt;-<span class="st"> </span>pf097r <span class="op">-</span><span class="st"> </span>pf138r</span>
+<span id="cb200-4"><a href="variável-aleatória-contínua.html#cb200-4"></a></span>
+<span id="cb200-5"><a href="variável-aleatória-contínua.html#cb200-5"></a></span>
+<span id="cb200-6"><a href="variável-aleatória-contínua.html#cb200-6"></a>p138z097r</span></code></pre></div>
+<pre><code>## [1] 0,7502</code></pre>
+<p>Portanto,</p>
+<p><span class="math display">\[
+  P(0,27 &lt; z &lt; 1,43) = 0,834 - 0,0838 = 0,7502.
+\]</span></p>
+<p>Uma outra situação bastante interessante e comum nos exercícios sobre a aplicação de distribuição normal padronizada é quando se pede o cálculo da probabilidade de <span class="math inline">\(z\)</span> ser maior que um determinado valor. Nestas situações, a palavra chave é <strong>pelo menos</strong>. Considere a situação na qual se pede o cálculo da probabilidade de que <span class="math inline">\(z\)</span> seja maior que 2,22. Ou seja,</p>
+<p><span class="math display">\[
+P(z &gt; 2,22)
+\]</span></p>
+<p>Na figura <a href="variável-aleatória-contínua.html#fig:ExemploDistribuicaoNormalPadronizada4">5.7</a> fica claro onde fica a área correspondente a probabilidade solicitada.</p>
+<div class="figure"><span id="fig:ExemploDistribuicaoNormalPadronizada4"></span>
+<img src="EstatEcon_files/figure-html/ExemploDistribuicaoNormalPadronizada4-1.png" alt="Probabilidade z ser maior que 2,22" width="384" />
+<p class="caption">
+FIGURA 5.7: Probabilidade z ser maior que 2,22
+</p>
+</div>
+<p>Dessa forma, o cálculo considerando a disponibilidade da metade dos valores da distribuição normal padronizada é</p>
+<p><span class="math display">\[
+P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - [F(2,22) - F(0)]
+\]</span>
+Usando o R, o cálculo é</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="variável-aleatória-contínua.html#cb202-1"></a>f222 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">2.22</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb202-2"><a href="variável-aleatória-contínua.html#cb202-2"></a>    <span class="dv">4</span>)</span>
+<span id="cb202-3"><a href="variável-aleatória-contínua.html#cb202-3"></a>f222</span></code></pre></div>
+<pre><code>## [1] 0,9868</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="variável-aleatória-contínua.html#cb204-1"></a>f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb204-2"><a href="variável-aleatória-contínua.html#cb204-2"></a>    <span class="dv">4</span>)</span>
+<span id="cb204-3"><a href="variável-aleatória-contínua.html#cb204-3"></a>f0</span></code></pre></div>
+<pre><code>## [1] 0,5</code></pre>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="variável-aleatória-contínua.html#cb206-1"></a>pf222f0 &lt;-<span class="st"> </span>f222 <span class="op">-</span><span class="st"> </span>f0</span>
+<span id="cb206-2"><a href="variável-aleatória-contínua.html#cb206-2"></a></span>
+<span id="cb206-3"><a href="variável-aleatória-contínua.html#cb206-3"></a>pf222f0</span></code></pre></div>
+<pre><code>## [1] 0,4868</code></pre>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="variável-aleatória-contínua.html#cb208-1"></a>pz222 &lt;-<span class="st"> </span><span class="fl">0.5</span> <span class="op">-</span><span class="st"> </span>pf222f0</span>
+<span id="cb208-2"><a href="variável-aleatória-contínua.html#cb208-2"></a></span>
+<span id="cb208-3"><a href="variável-aleatória-contínua.html#cb208-3"></a>pz222</span></code></pre></div>
+<pre><code>## [1] 0,0132</code></pre>
+<p>Portanto,</p>
+<p><span class="math display">\[
+P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - 0,4868 = 0,0132. 
+\]</span></p>
+<p>Alternativamente se tem os valores da probabilidade para a distribuição completa ou se está usando o R para os cálculos</p>
+<p><span class="math display">\[
+P(z &gt;2,22) = 1 - F(2,22)
+\]</span></p>
+<p>Usando o R para o cálculo,</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="variável-aleatória-contínua.html#cb210-1"></a>pz222r &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">2.22</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
+<span id="cb210-2"><a href="variável-aleatória-contínua.html#cb210-2"></a>    <span class="dv">4</span>)</span>
+<span id="cb210-3"><a href="variável-aleatória-contínua.html#cb210-3"></a></span>
+<span id="cb210-4"><a href="variável-aleatória-contínua.html#cb210-4"></a>pz222r</span></code></pre></div>
+<pre><code>## [1] 0,0132</code></pre>
+<p>Como nem todas as variáveis com distribuição normal tem <span class="math inline">\(\mu=0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, deve-se padronizá-las para usar os valores da tabela com a distribuição normal padronizada. Seja a variável <span class="math inline">\(x\)</span> com distribuição normal com <span class="math inline">\(\mu\neq0\)</span> e <span class="math inline">\(\sigma \neq 1\)</span>. A transformação de <span class="math inline">\(x\)</span> para que se torne padronizada é</p>
+<p><span class="math display" id="eq:PadronizacaoNormal">\[
+  z = \dfrac{x - \mu}{\sigma}
+  \tag{5.2}
+\]</span>
+onde <span class="math inline">\(z\)</span> é a variável <span class="math inline">\(x\)</span> transformada.</p>
+<p><strong>Prova</strong>:</p>
+<p>Como <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\mu\)</span> são constantes</p>
+<p><span class="math display">\[
+E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) = \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
+\]</span></p>
+<p>Pois a soma do desvios em relação à media <span class="math inline">\(\mu\)</span> é sempre zero.</p>
+<p>Aplicando a definição de variância em <span class="math inline">\(z\)</span> sabendo-se que <span class="math inline">\(E(z)=0\)</span> e <span class="math inline">\(E[x-\mu]^2 = \sigma^2\)</span> ou <span class="math inline">\(dp(x) = \sigma\)</span></p>
+<p><span class="math display">\[
+  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
+\]</span></p>
+<p>Assim , através de <a href="variável-aleatória-contínua.html#eq:PadronizacaoNormal">(5.2)</a>, pode-se padronizar qualquer variável que segue uma distribuição normale que tenha <span class="math inline">\(\mu\neq 0\)</span> e <span class="math inline">\(\sigma \neq 1\)</span>.</p>
 </div>
 <div id="teorema-de-tchebichev" class="section level2">
 <h2><span class="header-section-number">5.3</span> Teorema de Tchebichev</h2>

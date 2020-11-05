@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  3 NOV 2020 02:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  5 NOV 2020 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -725,7 +725,7 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 197.
 [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
 [28] [29]
-<EstatEcon_files/figure-latex/histograma12-1.pdf, id=438, 276.03125pt x 246.922
+<EstatEcon_files/figure-latex/histograma12-1.pdf, id=443, 276.03125pt x 246.922
 5pt>
 File: EstatEcon_files/figure-latex/histograma12-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/histograma12-1.pdf>
@@ -733,7 +733,7 @@ Package pdftex.def Info: EstatEcon_files/figure-latex/histograma12-1.pdf  used
 on input line 1230.
 (pdftex.def)             Requested size: 276.03056pt x 246.92188pt.
 [30 <./EstatEcon_files/figure-latex/histograma12-1.pdf>] [31]
-<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=460, 253.94875pt x 
+<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=465, 253.94875pt x 
 249.93375pt>
 File: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf Graphic file (type
  pdf)
@@ -747,7 +747,7 @@ Cap\'{\i }tulo 2.
 [37
 
 ]
-<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=511, 262.9825pt x 248.93pt
+<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=516, 262.9825pt x 248.93pt
 >
 File: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>
@@ -767,7 +767,7 @@ Underfull \hbox (badness 3417) in paragraph at lines 1669--1671
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [38]
-<lorenz3.png, id=517, 1286.8075pt x 794.97pt>
+<lorenz3.png, id=522, 1286.8075pt x 794.97pt>
 File: lorenz3.png Graphic file (type png)
 <use lorenz3.png>
 Package pdftex.def Info: lorenz3.png  used on input line 1680.
@@ -818,7 +818,7 @@ Underfull \vbox (badness 1038) has occurred while \output is active []
 ]
 Cap\'{\i }tulo 5.
 [95]
-<EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf, id=1026, 279.
+<EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf, id=1031, 279.
 0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf Graphic f
 ile (type pdf)
@@ -833,7 +833,7 @@ e.5.1}) has been already used, duplicate ignored
 l.4636 \end{itemize}
                      <./EstatEcon_files/figure-latex/DistribuicaoUniformeContin
 ua-1.pdf>] [98] [99] [100] [101] [102] [103] [104] [105]
-<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=1099, 279.0425pt x 280
+<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=1104, 279.0425pt x 280
 .04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial1-1.pdf Graphic file (type pd
 f)
@@ -845,7 +845,7 @@ sed on input line 5122.
 Underfull \vbox (badness 4819) has occurred while \output is active []
 
 [106]
-<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=1106, 279.0425pt x 280
+<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=1111, 279.0425pt x 280
 .04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial2-1.pdf Graphic file (type pd
 f)
@@ -857,7 +857,7 @@ sed on input line 5124.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [107 <./EstatEcon_files/figure-latex/graficobinomial1-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=1118, 279.0425pt x 280
+<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=1124, 279.0425pt x 280
 .04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial3-1.pdf Graphic file (type pd
 f)
@@ -869,7 +869,7 @@ sed on input line 5126.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [108 <./EstatEcon_files/figure-latex/graficobinomial2-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1131, 279.0425pt x 280.
+<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1136, 279.0425pt x 280.
 04625pt>
 File: EstatEcon_files/figure-latex/graficobinomia5-1.pdf Graphic file (type pdf
 )
@@ -877,7 +877,7 @@ File: EstatEcon_files/figure-latex/graficobinomia5-1.pdf Graphic file (type pdf
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomia5-1.pdf  us
 ed on input line 5128.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
-<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1132, 279.0425pt x 28
+<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1137, 279.0425pt x 28
 0.04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial10-1.pdf Graphic file (type p
 df)
@@ -889,7 +889,7 @@ used on input line 5132.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [109 <./EstatEcon_files/figure-latex/graficobinomial3-1.pdf>]
-<EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf, id=1147, 283.0575pt x 
+<EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf, id=1152, 283.0575pt x 
 277.035pt>
 File: EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf Graphic file (type
  pdf)
@@ -915,7 +915,7 @@ LaTeX Warning: Reference `fig:ExemploDistribuicaoNormalPadronizada1' on page 11
 4 undefined on input line 5218.
 
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf, id=1
-189, 279.0425pt x 277.035pt>
+194, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf>
@@ -927,7 +927,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [114]
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf, id=1
-195, 279.0425pt x 277.035pt>
+200, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf>
@@ -943,7 +943,7 @@ l.5247 \]
           <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2
 -1.pdf>] [117]
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf, id=1
-231, 279.0425pt x 277.035pt>
+236, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf>
@@ -962,7 +962,7 @@ LaTeX Warning: Reference `fig:ExemploDistribuicaoNormalPadronizada4' on page 12
 2 undefined on input line 5513.
 
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf, id=1
-260, 279.0425pt x 277.035pt>
+266, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf>
@@ -970,30 +970,30 @@ Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
 Padronizada4-1.pdf  used on input line 5515.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
 [122 <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pd
-f>] [123] [124]
-Cap\'{\i }tulo 6.
-(./EstatEcon.bbl [125
+f>] [123] [124] [125] [126] [127] [128
 
 ]
+Cap\'{\i }tulo 6.
+(./EstatEcon.bbl [129]
 Overfull \hbox (16.42834pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 126 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+\T1/lmr/m/n/10 130 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
 ÓRIAS CONJUNTA
  []
 
-[126
+[130
 
-]) [127] (./EstatEcon.aux)
+]) [131] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
-(rerunfilecheck)             Checksum: E646BDAC0809864B41F4AF086F1C3F6D;6631.
+(rerunfilecheck)             Checksum: E389035CBE28959F7AD7C009B07CD02A;6841.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17696 strings out of 481446
- 299346 string characters out of 5919951
- 617950 words of memory out of 5000000
- 33682 multiletter control sequences out of 15000+600000
+ 17707 strings out of 481446
+ 299660 string characters out of 5919951
+ 618119 words of memory out of 5000000
+ 33685 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  66i,16n,73p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1023,10 +1023,10 @@ book/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/macboo
 k/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbook/L
 ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook/Lib
 rary/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (127 pages, 723408 bytes).
+Output written on EstatEcon.pdf (131 pages, 730813 bytes).
 PDF statistics:
- 1463 PDF objects out of 1728 (max. 8388607)
- 1256 compressed objects within 13 object streams
- 390 named destinations out of 1000 (max. 500000)
- 372 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1494 PDF objects out of 1728 (max. 8388607)
+ 1283 compressed objects within 13 object streams
+ 398 named destinations out of 1000 (max. 500000)
+ 380 words of extra memory for PDF output out of 10000 (max. 10000000)
 

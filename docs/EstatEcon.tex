@@ -121,7 +121,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-11-03}
+\date{2020-11-05}
 
 \begin{document}
 \maketitle
@@ -5601,7 +5601,7 @@ Como nem todas as variáveis com distribuição normal tem \(\mu=0\) e \(\sigma 
   z = \dfrac{x - \mu}{\sigma}
   \label{eq:PadronizacaoNormal}
 \]
-onde \(z\) é a variável \(x\) transformada.
+onde \(z\), com \(\mu = 0\) e \(\sigma = 1\), é a variável \(x\) transformada.
 
 \textbf{Prova}:
 
@@ -5619,10 +5619,178 @@ Aplicando a definição de variância em \(z\) sabendo-se que \(E(z)=0\) e \(E[x
   Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
 \]
 
-Assim , através de \eqref{eq:PadronizacaoNormal}, pode-se padronizar qualquer variável que segue uma distribuição normale que tenha \(\mu\neq 0\) e \(\sigma \neq 1\).
+Assim , através de \eqref{eq:PadronizacaoNormal}, pode-se padronizar qualquer variável que segue uma distribuição normal e que tenha \(\mu\neq 0\) e \(\sigma \neq 1\).
+
+\textbf{Exemplo numérico sobre a padronização}
+
+Exemplo 4.4.1 da página 93 do \citet{Sartoris2013}. O faturamento mensal de uma loja segue uma distribuição normal com média R\$20.000,00 e desvio padrão R\$4.000,00. Calcule a probabilidade de que, em determinado mês, o faturamento eseteja entre R\$19.000,00 e R\$25.000,00.
+
+\textbf{Resposta}:
+
+A variável em questão, faturamento mensal, é normal mas não é padronizada. Por isso, é necessário padronizar os valores antes de utilizar a tabela, cujos valores são para uma distribuição normal padronizada com \(\mu=0\) e \(\sigma =1\).
+Para 19.000
+
+\[
+  z_1 = \dfrac{x_1 -\mu}{\sigma} = \dfrac{19.000 - 20.000}{4.000} = -0,25
+\]
+e para 25.000
+\[
+  z_2 = \dfrac{x_2 - \mu}{\sigma} = \dfrac{25.000-20.000}{4.000} = 1,25.
+\]
+Portanto
+\[
+  P(19.000 < x <25.000) = P(-0,25 < z < 1,25)
+\]
+Como a distribuição normal é simétrica
+\[
+  P(19.000 < x <25.000) = P(-0,25 < z < 0) + P(0 < z < 1,25)
+\]
+\[
+  P(19.000 < x <25.000) = P(0,< z < 0,25) + P(0 < z < 1,25)
+\]
+Se a tabela apresenta valores para a distribuição completa
+\[
+  P(19.000 < x <25.000) = [F(0,25) - F(0)]  + [F(1,25) - F(0)]
+\]
+ou se a tabela só apresenta valores para a metade da dstribuição
+\[
+  P(19.000 < x <25.000) = F(0,25)  + F(1,25)].
+\]
+Mas para qualquer um dos dois caminhos
+
+\[
+  P(19.000 < x <25.000) = F(0,25)  +  F(1,25)
+\]
+
+Usando o R para os cálculos intermediários, se tem
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(1,25) - F(0)}
+
+\NormalTok{pf125f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.25}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{pf125f0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,3944
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de F(0,25) - F(0)}
+
+\NormalTok{pf025f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.25}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
+\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{pf025f0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,0987
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Calculo de P(-0,25 < z < 1,25)}
+
+\NormalTok{p025z125 <-}\StringTok{ }\NormalTok{pf025f0 }\OperatorTok{+}\StringTok{ }\NormalTok{pf125f0}
+
+\NormalTok{p025z125}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0,4931
+\end{verbatim}
+
+Ou seja,
+
+\[
+  P(19.000 < x <25.000) = F(0,25)  +  F(1,25) = \text{0,0987} + \text{0,3944}
+\]
+
+\[
+  P(19.000 < x <25.000) = \text{0,4931}.
+\]
 
 \hypertarget{teorema-de-tchebichev}{%
 \section{Teorema de Tchebichev}\label{teorema-de-tchebichev}}
+
+Se a função densidade de uma variável aleatória é conhecida, pode-se conhecer sua média e variância. Por outro lado, se são conhecidas somente a média e a variância de uma variável aleatória, não é possível conhecer a sua respectiva função densidade de probabilidade. Mas é possível definir um limite para uma distribuição de probabilidade qualquer, seja discreta ou acontínua, que é dado pelo teorema de Tchebichev.
+
+\textbf{Teorema de Tchebichev}
+
+seja uma variável aleatória \(x\) com média \(\mu\) e desvio padrão \(\sigma\). A probabilidade de que a variável \(x\) esteja acima ou abaixo da média que não supere, em módulo, \(k\) desvio padrão, é maior ou pelo menos igual a \(1 - 1/k^2\). Ou seja,
+
+\[
+  P(|x - \mu| <k\sigma) \geq 1-\dfrac{1}{k^2}.
+\]
+Consequentemente, a probabilidade de que a variável \(x\) esteja acima ou abaixo da média supere ou seja igual, em módulo, a \(k\) desvio padrão é menor ou pelo menos igual a \(1/k^2\). Ou seja,
+\[
+  P(|x-\mu| \geq k\sigma) \leq \dfrac{1}{k^2}
+\]
+Essas duas relações dão um limite universal ao desvio \(|x-\mu|\) em termos de \(\sigma\).
+
+Assumindo, por exemplo, que \(k = 2\), se tem
+
+\[
+  P(|x - \mu| <2\sigma) \geq 1-\dfrac{1}{2^2}
+\]
+
+\[
+  P(|x - \mu| <2\sigma) \geq 0,75 = 75\%
+\]
+ou
+\[
+  P(|x-\mu| \geq 2\sigma) \leq \dfrac{1}{2^2}
+\]
+
+\[
+  P(|x-\mu| \geq 2\sigma) \leq 0,25 = 25\%
+\]
+
+\textbf{Exemplo numérico sobre teorema de Tchebichev}
+
+Exemplo 4.6.1 na página 96 do \citet{Sartoris2013}. Seja uma variável aleatória contínua \(x\) com média 50 e desvio padrão 10. Calcule a probabilidade mínima de que \(x\) esteja entre 35 e 65.
+
+\textbf{Resposta}:
+
+Note que a diferença em módulo tanto do valor do limite inferior 35
+
+\[
+  |x - \mu| = |35 - 50| = 15
+\]
+como a diferença em módulo do valor do limite superior 65
+
+\[
+  |x - \mu| = |65 - 50| = 15
+\]
+são iguais a 15. Dividindo a diferença em módulo pelo desvio padrão,
+\[
+  \dfrac{|x - \mu|}{\sigma} = \dfrac{15}{10} = 1,5
+\]
+
+obtém-se o valor de \(k\) do teorema de Tchebichev que neste caso é 1,5.Portanto, usando a relação do Teorema de Tchebichev
+
+\[
+  P(35 < x < 65) = P(|x - \mu| < 1,5 \sigma)  \geq 1 - \dfrac{1}{1,5^2}
+\]
+
+\[
+  P(35 < x < 65) = P(|x - \mu| < 1,5 \sigma) \geq 0,6656 = 55,56\%
+\]
+Ou seja, de forma aproximada, a probabilidade de \(x\) estar entre 35 e 65 é pelo menos igual a 55,56\%.
+
+\hypertarget{momentos-de-uma-distribuiuxe7uxe3o}{%
+\section{Momentos de uma distribuição}\label{momentos-de-uma-distribuiuxe7uxe3o}}
+
+\hypertarget{posiuxe7uxe3o-da-muxe9dia-da-mediana-e-da-moda-numa-distribuiuxe7uxe3o-assimuxe9trica}{%
+\subsection{Posição da média, da mediana e da moda numa distribuição assimétrica}\label{posiuxe7uxe3o-da-muxe9dia-da-mediana-e-da-moda-numa-distribuiuxe7uxe3o-assimuxe9trica}}
 
 \hypertarget{distribuiuxe7uxe3o-de-variuxe1veis-aleuxe1tuxf3rias-conjunta}{%
 \chapter{Distribuição de variáveis aleátórias conjunta}\label{distribuiuxe7uxe3o-de-variuxe1veis-aleuxe1tuxf3rias-conjunta}}

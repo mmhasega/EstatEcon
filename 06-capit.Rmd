@@ -1,2 +1,172 @@
 # Distribuição de variáveis aleátórias conjunta
 
+**Probabilidade conjunta** é a probabilidade que se refere a duas ou mais variáveis aleatórias simultaneamente.
+
+A distribuição de probabilidade de um vetor $(X,Y)$ com duas variáveis, por exemplo,m seria o caso bidimensional. Como o material sobre este assunto é baseado em @Sartoris2013, a apresentação da distribuição de variáveis aleatórias conjuntas será o caso bidimensional.
+
+As variáveis da distribuição de probabilidade conjunta podem ser discretas ou contínuas.
+
+## Distribuição conjunta de variáveis aleatórias discretas
+
+Com base em @Sartoris2013, é apresentado o assunto da seção através da apresentação de um exemplo numérico prático.
+
+Seja um time de volei que vai dispoutar um campeonato muito equilibrado, em que a probabilidade de ganhar ou perder uma partida é de 0,5. O técnico pede ao estatístico da equipe que faça uma análise das probabilidades das três primeiras partidas consideradas vitais para o restante do campeonato. Em particular, a vitória na primeira partida é considerada decisiva pela comissão técnica.
+
+O estátistico define duas variáveis, $X$ e $Y$, sendo que
+
+- $X$ é o número de vitórias obtidas nos três primeiros jogos e;
+
+- $Y$ é igual a 1, caso ocorra vitória no primeiro jogo e zero, caso ocorra o contrário.
+
+Por enquanto considera-se que $X$ e $Y$ são variáveis independentes.
+
+Como são três jogos com dois resultados possíveis, vitória ou derrota com 0,5 de probabilidade cada um, existem oito possibilidades entre os três primeiros jogos em análise. Na tabela \@ref(tab:ResultadosProvaveisEmTresPartidas) abaixo é apresentado os valores de $X$ e $Y$ de acordo com os resultados possíveis.
+
+Table: (\#tab:ResultadosProvaveisEmTresPartidas) Resultados prováveis em três partidas, considerando vitória (V) ou derrota(D) como resultado possível de cada partida com 0,5 de probabilidade
+
+----------------------------------------------------------------------------------
+        resultados                   X                           Y
+        possíveis
+ ------------------------ -------------------------- ----------------------------
+          VVV                         3                           1
+
+          VVD                         2                           1
+
+          VDV                         2                           1
+
+          VDD                         1                           1
+
+          DVV                         2                           0
+
+          DDV                         1                           0
+
+          DVD                         1                           0
+
+          DDD                         0                           0
+----------------------------------------------------------------------------------
+Fonte: @Sartoris2013.
+
+Onde o resultado possível nos três primeiros jogos definido como VDV significa que o time teve vitória na primeira e na terceira partidas e derrota na segunda partida. Esse mesmo resultado VDV define que $X=2$ e $Y=1$ lembrando que $X$ é o número de vitórias entre as três partidas e $Y$ é igual a 1 se o time conseguiu vitória na primeira partida e zero se não conseguiu ganhar a primeira partida.
+
+Na sequência o estatístico constrói uma tabela que apresenta as probabilidades conjuntas de $x$ e $Y$ cujo preenchimento é feito com base na tabela \@ref(tab:ProbabilidadesConjuntasDeXeY)
+
+Table: (\#tab:ProbabilidadesConjuntasDeXeY) Probabilidades conjuntas de $X$ e $Y$
+
+-------------------------------------------------------
+              X=0        X=1        X=2        X=3
+ --------- ---------- ---------- ---------- ----------
+  **Y=0**     1/8        2/8        1/8         0
+
+  **Y=1**      0         1/8        2/8        1/8
+-------------------------------------------------------
+
+Com base na tabela \@ref(tab:ProbabilidadesConjuntasDeXeY) é possível obter a probabilidade para um resultado com duas vitórias sendo que uma das duas vitórias foi na primeira partida:
+
+\[
+  P(X=2~\text{ e }~Y=1) = 2/8
+\]
+Ou seja em oito resultados possíveis há duas combinações possíveis com resultado.
+
+Veja que se o time ganha as três partidas $X=3$, não é possível que $Y=0$ e por isso
+
+\[
+  P(X=3~\text{ e }~Y=0 ) = 0
+\]
+
+O inverso também é válido. Ou seja, se o time não ganhou nenhuma das três partidas, não é possivel que $Y=1$ e por isso
+
+\[
+  P(X=0~\text{ e }~Y=1) = 0
+\]
+
+Ainda com base na tabela \@ref(tab:ProbabilidadesConjuntasDeXeY) é possível obter probabilidades só para valores de $X$ e probabilidades só para valores de $Y$. Ou seja, para obter a probabilidade de $X=1$ é ncessário somar todas as probabilidades conjuntas que tem $X=1$ 
+\[
+  P(X = 1) = P(X=1~\text{ e }~Y=0) + P(X=1~\text{ e }~Y=1) = 2/8 + 1/8 = 3/8.
+\]
+Na tabela \@ref(tab:ProbabilidadesConjuntasDeXeY), $P(X = 1)$ é obtida somando os valores da coluna para $X=1$.
+Também é possível obter o valor da probabilidade de $Y=1$ que é simplesmente a soma de todos as probabilidades conjuntas que tem $Y=1$
+\[
+  P(Y=1) = P(X=0~\text{ e }~Y=1) + P(X=1~\text{ e }~Y=1) +P(X=2~\text{ e }~Y=1) + P(X=3~\text{ e }~Y=1)
+\]
+ou seja,
+\[
+  P(Y=1) = 0 + 1/8 +2/8 + 1/8 = 1/2
+\]
+Na tabela \@ref(tab:ProbabilidadesConjuntasDeXeY), $P(Y=1)$ é obtida somando os valores da linha para $Y=1$.
+Assim, usando este raciocínio, é possível agregar mais uma linha e mais uma coluna com as probabilidades marginais de $X$ e de $Y$. As probabilidades marginais de $X$ são as somas de cada uma das colunas da tabela \@ref(tab:ProbabilidadesConjuntasDeXeY). As  probabilidades marginais de $Y$ são as somas de cada uma das linhas da tabela \@ref(tab:ProbabilidadesConjuntasDeXeY). Desta forma se obtém a tabela \@ref(tab:ProbabilidadesMarginaisDeXeY).
+
+Table: (\#tab:ProbabilidadesMarginaisDeXeY) Probabilidades marginais de $X$ e $Y$
+
+------------------------------------------------------------------
+              X=0        X=1        X=2        X=3        P(Y)
+ --------- ---------- ---------- ---------- ---------- ----------
+  **Y=0**     1/8        2/8        1/8         0         **1/2**
+
+  **Y=1**      0         1/8        2/8        1/8        **1/2**
+  
+  **P(X)**  **1/8**     **3/8**   **3/8**     **1/8**      **1**
+------------------------------------------------------------------
+
+Com base na tabela \@ref(tab:ProbabilidadesMarginaisDeXeY) é possível calcular a probabilidade condicional, embora não possa ser obtida diretamente da fonte.
+
+Suponha a seguinte pergunta com base neste exemplo numérico prático: qual é probabilidade de time ganhar apenas uma partida entre as três dado que essa partida ocorre na primeira partida? Em notação matemática seria
+
+\[
+  P(X=1|Y=1) = \text{??}
+\]
+
+Lembrando das aulas de teoria da probabilidade, a probabilidade condicional e dada da seguinte forma:
+
+\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]
+
+onde $P (X=x~\cap~Y=y)$ é a probabilidade conjunta entre $X=x$ e $Y=y$ e $P(Y=y)$ é a probabilidade marginal de $Y=y$.
+
+Assim, podemos calcular a probabilidade condicional $P(X=1|Y=1)$
+
+\[
+  P(X=1|Y=1) = \dfrac{P (X=1~\cap~Y=1)}{P(Y=1)} = \dfrac{1/8}{1/2} = 1/4
+\]
+
+Dado que $Y=1$, só existe quatro possibilidades para essa situação, dos quais apenas uma situação tem $X=1$.
+
+Note que o contrário também é possível obter. Ou seja considere a probabilidade condicional da seguinte forma:
+
+\[
+  P(Y=y|X=x) = \dfrac{P (Y=y~\cap~X=x)}{P(X=x)}.
+\]
+
+Com base no exemplo do time de volei, qual é probabilidade condicional de que o time não vença na primeira partida dado que o time ganhe duas entre as três partidas?
+
+\[
+  P(Y=0|X=2) = \dfrac{P (Y=0~\cap~X=2)}{P(X=2)}.
+\]
+Consultando a tabela \@ref(tab:ProbabilidadesMarginaisDeXeY) se tem
+
+\[
+  P(Y=0|X=2) = \dfrac{P (Y=0~\cap~X=2)}{P(X=2)} = \dfrac{1/8}{3/8} = 1/3
+\]
+
+Agora sabendo calcular a probabilidade condicional é possível verificar se as variáveis são independentes ou não. Para isso toma-se as situações de probabilidade conjunta igual a zero na tabela \@ref(tab:ProbabilidadesMarginaisDeXeY). Note que se o time ganha as três partidas, não há possbilidade da variável $Y$ assumir o valor 0. Veja o outro valor zero. Quando o time não ganha nenhuma das três primeiras partidas não é possível a variável $Y$ assumir valor igual a 1. A variável $Y$ sendo igual a 1 necessariamente o time tem que ter ganho a primeira partida.Por isso as variáveis $X$ e $Y$ do exemplo do time de volei não são independentes.
+
+Então uma forma de verificar se as variáveis são independentes ou não é verificar se a probabilidade condicional é igual a probabilidade marginal. Ou seja,
+
+\[
+P(X=x|Y=y) = P(X=x)
+\]
+ou
+\[
+P(Y=y|X=x) = P(Y=y)
+\]
+Caso as probabilidades condicionais não sejam iguais a sua respectiva probabilidade marginal, então as duas variáveis $X$ e $Y$ não são independentes. Com base na tabela \@ref(tab:ProbabilidadesMarginaisDeXeY), toma-se, por exemplo,
+a probabilidade conjunta para $X=1$ e $Y=1$
+\[
+  P(X=1|Y=1) =1/4
+\]
+e a probabilidade marginal $X=1$
+\[
+  p(X=1) = 3/8
+\]
+são diferentes. Portanto $X$ e $Y$ não são independentes. Basta somente um par de valores de $X$ e $Y$ apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Note que a probabilidade marginal é denominada também de probabilidade incondicional. Portanto, se a probabilidade condicional for igual a probabilidade incondicional, as variáveis são independentes.
+

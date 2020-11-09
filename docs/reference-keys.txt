@@ -75,6 +75,9 @@ fig:ExemploDistribuicaoNormalPadronizada2
 fig:ExemploDistribuicaoNormalPadronizada3
 fig:ExemploDistribuicaoNormalPadronizada4
 eq:PadronizacaoNormal
+tab:ResultadosProvaveisEmTresPartidas
+tab:ProbabilidadesConjuntasDeXeY
+tab:ProbabilidadesMarginaisDeXeY
 estatística-descritiva
 medidas-de-posição
 variável-aleatória
@@ -143,3 +146,7 @@ teorema-de-tchebichev
 momentos-de-uma-distribuição
 posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica
 distribuição-de-variáveis-aleátórias-conjunta
+distribuição-conjunta-de-variáveis-aleatórias-discretas
+estimadores
+teste-de-hipóste
+regressão-linear

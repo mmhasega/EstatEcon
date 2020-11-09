@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-05" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="variável-aleatória-contínua.html"/>
-<link rel="next" href="referências.html"/>
+<link rel="next" href="estimadores.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -220,7 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica"><i class="fa fa-check"></i><b>5.4.1</b> Posição da média, da mediana e da moda numa distribuição assimétrica</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a></li>
+<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a><ul>
+<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição conjunta de variáveis aleatórias discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a></li>
+<li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
+<li class="chapter" data-level="9" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>9</b> Regressão Linear</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -244,7 +249,245 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="distribuição-de-variáveis-aleátórias-conjunta" class="section level1">
 <h1><span class="header-section-number">CAPÍTULO 6</span> Distribuição de variáveis aleátórias conjunta</h1>
+<p><strong>Probabilidade conjunta</strong> é a probabilidade que se refere a duas ou mais variáveis aleatórias simultaneamente.</p>
+<p>A distribuição de probabilidade de um vetor <span class="math inline">\((X,Y)\)</span> com duas variáveis, por exemplo,m seria o caso bidimensional. Como o material sobre este assunto é baseado em <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, a apresentação da distribuição de variáveis aleatórias conjuntas será o caso bidimensional.</p>
+<p>As variáveis da distribuição de probabilidade conjunta podem ser discretas ou contínuas.</p>
+<div id="distribuição-conjunta-de-variáveis-aleatórias-discretas" class="section level2">
+<h2><span class="header-section-number">6.1</span> Distribuição conjunta de variáveis aleatórias discretas</h2>
+<p>Com base em <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, é apresentado o assunto da seção através da apresentação de um exemplo numérico prático.</p>
+<p>Seja um time de volei que vai dispoutar um campeonato muito equilibrado, em que a probabilidade de ganhar ou perder uma partida é de 0,5. O técnico pede ao estatístico da equipe que faça uma análise das probabilidades das três primeiras partidas consideradas vitais para o restante do campeonato. Em particular, a vitória na primeira partida é considerada decisiva pela comissão técnica.</p>
+<p>O estátistico define duas variáveis, <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, sendo que</p>
+<ul>
+<li><p><span class="math inline">\(X\)</span> é o número de vitórias obtidas nos três primeiros jogos e;</p></li>
+<li><p><span class="math inline">\(Y\)</span> é igual a 1, caso ocorra vitória no primeiro jogo e zero, caso ocorra o contrário.</p></li>
+</ul>
+<p>Por enquanto considera-se que <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são variáveis independentes.</p>
+<p>Como são três jogos com dois resultados possíveis, vitória ou derrota com 0,5 de probabilidade cada um, existem oito possibilidades entre os três primeiros jogos em análise. Na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ResultadosProvaveisEmTresPartidas">6.1</a> abaixo é apresentado os valores de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> de acordo com os resultados possíveis.</p>
+<table style="width:99%;">
+<caption><span id="tab:ResultadosProvaveisEmTresPartidas">TABELA 6.1: </span> Resultados prováveis em três partidas, considerando vitória (V) ou derrota(D) como resultado possível de cada partida com 0,5 de probabilidade</caption>
+<colgroup>
+<col width="30%" />
+<col width="32%" />
+<col width="35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">resultados
+possíveis</th>
+<th align="center">X</th>
+<th align="center">Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">VVV</td>
+<td align="center">3</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">VVD</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">VDV</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">VDD</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">DVV</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">DDV</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">DVD</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">DDD</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Onde o resultado possível nos três primeiros jogos definido como VDV significa que o time teve vitória na primeira e na terceira partidas e derrota na segunda partida. Esse mesmo resultado VDV define que <span class="math inline">\(X=2\)</span> e <span class="math inline">\(Y=1\)</span> lembrando que <span class="math inline">\(X\)</span> é o número de vitórias entre as três partidas e <span class="math inline">\(Y\)</span> é igual a 1 se o time conseguiu vitória na primeira partida e zero se não conseguiu ganhar a primeira partida.</p>
+<p>Na sequência o estatístico constrói uma tabela que apresenta as probabilidades conjuntas de <span class="math inline">\(x\)</span> e <span class="math inline">\(Y\)</span> cujo preenchimento é feito com base na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a></p>
+<table style="width:75%;">
+<caption><span id="tab:ProbabilidadesConjuntasDeXeY">TABELA 6.2: </span> Probabilidades conjuntas de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span></caption>
+<colgroup>
+<col width="13%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">X=0</th>
+<th align="center">X=1</th>
+<th align="center">X=2</th>
+<th align="center">X=3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Y=0</strong></td>
+<td align="center">1/8</td>
+<td align="center">2/8</td>
+<td align="center">1/8</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td><strong>Y=1</strong></td>
+<td align="center">0</td>
+<td align="center">1/8</td>
+<td align="center">2/8</td>
+<td align="center">1/8</td>
+</tr>
+</tbody>
+</table>
+<p>Com base na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a> é possível obter a probabilidade para um resultado com duas vitórias sendo que uma das duas vitórias foi na primeira partida:</p>
+<p><span class="math display">\[
+  P(X=2~\text{ e }~Y=1) = 2/8
+\]</span>
+Ou seja em oito resultados possíveis há duas combinações possíveis com resultado.</p>
+<p>Veja que se o time ganha as três partidas <span class="math inline">\(X=3\)</span>, não é possível que <span class="math inline">\(Y=0\)</span> e por isso</p>
+<p><span class="math display">\[
+  P(X=3~\text{ e }~Y=0 ) = 0
+\]</span></p>
+<p>O inverso também é válido. Ou seja, se o time não ganhou nenhuma das três partidas, não é possivel que <span class="math inline">\(Y=1\)</span> e por isso</p>
+<p><span class="math display">\[
+  P(X=0~\text{ e }~Y=1) = 0
+\]</span></p>
+<p>Ainda com base na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a> é possível obter probabilidades só para valores de <span class="math inline">\(X\)</span> e probabilidades só para valores de <span class="math inline">\(Y\)</span>. Ou seja, para obter a probabilidade de <span class="math inline">\(X=1\)</span> é ncessário somar todas as probabilidades conjuntas que tem <span class="math inline">\(X=1\)</span>
+<span class="math display">\[
+  P(X = 1) = P(X=1~\text{ e }~Y=0) + P(X=1~\text{ e }~Y=1) = 2/8 + 1/8 = 3/8.
+\]</span>
+Na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a>, <span class="math inline">\(P(X = 1)\)</span> é obtida somando os valores da coluna para <span class="math inline">\(X=1\)</span>.
+Também é possível obter o valor da probabilidade de <span class="math inline">\(Y=1\)</span> que é simplesmente a soma de todos as probabilidades conjuntas que tem <span class="math inline">\(Y=1\)</span>
+<span class="math display">\[
+  P(Y=1) = P(X=0~\text{ e }~Y=1) + P(X=1~\text{ e }~Y=1) +P(X=2~\text{ e }~Y=1) + P(X=3~\text{ e }~Y=1)
+\]</span>
+ou seja,
+<span class="math display">\[
+  P(Y=1) = 0 + 1/8 +2/8 + 1/8 = 1/2
+\]</span>
+Na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a>, <span class="math inline">\(P(Y=1)\)</span> é obtida somando os valores da linha para <span class="math inline">\(Y=1\)</span>.
+Assim, usando este raciocínio, é possível agregar mais uma linha e mais uma coluna com as probabilidades marginais de <span class="math inline">\(X\)</span> e de <span class="math inline">\(Y\)</span>. As probabilidades marginais de <span class="math inline">\(X\)</span> são as somas de cada uma das colunas da tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a>. As probabilidades marginais de <span class="math inline">\(Y\)</span> são as somas de cada uma das linhas da tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesConjuntasDeXeY">6.2</a>. Desta forma se obtém a tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesMarginaisDeXeY">6.3</a>.</p>
+<table style="width:90%;">
+<caption><span id="tab:ProbabilidadesMarginaisDeXeY">TABELA 6.3: </span> Probabilidades marginais de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span></caption>
+<colgroup>
+<col width="13%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">X=0</th>
+<th align="center">X=1</th>
+<th align="center">X=2</th>
+<th align="center">X=3</th>
+<th align="center">P(Y)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Y=0</strong></td>
+<td align="center">1/8</td>
+<td align="center">2/8</td>
+<td align="center">1/8</td>
+<td align="center">0</td>
+<td align="center"><strong>1/2</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Y=1</strong></td>
+<td align="center">0</td>
+<td align="center">1/8</td>
+<td align="center">2/8</td>
+<td align="center">1/8</td>
+<td align="center"><strong>1/2</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>P(X)</strong></td>
+<td align="center"><strong>1/8</strong></td>
+<td align="center"><strong>3/8</strong></td>
+<td align="center"><strong>3/8</strong></td>
+<td align="center"><strong>1/8</strong></td>
+<td align="center"><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Com base na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesMarginaisDeXeY">6.3</a> é possível calcular a probabilidade condicional, embora não possa ser obtida diretamente da fonte.</p>
+<p>Suponha a seguinte pergunta com base neste exemplo numérico prático: qual é probabilidade de time ganhar apenas uma partida entre as três dado que essa partida ocorre na primeira partida? Em notação matemática seria</p>
+<p><span class="math display">\[
+  P(X=1|Y=1) = \text{??}
+\]</span></p>
+<p>Lembrando das aulas de teoria da probabilidade, a probabilidade condicional e dada da seguinte forma:</p>
+<p><span class="math display">\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]</span></p>
+<p>onde <span class="math inline">\(P (X=x~\cap~Y=y)\)</span> é a probabilidade conjunta entre <span class="math inline">\(X=x\)</span> e <span class="math inline">\(Y=y\)</span> e <span class="math inline">\(P(Y=y)\)</span> é a probabilidade marginal de <span class="math inline">\(Y=y\)</span>.</p>
+<p>Assim, podemos calcular a probabilidade condicional <span class="math inline">\(P(X=1|Y=1)\)</span></p>
+<p><span class="math display">\[
+  P(X=1|Y=1) = \dfrac{P (X=1~\cap~Y=1)}{P(Y=1)} = \dfrac{1/8}{1/2} = 1/4
+\]</span></p>
+<p>Dado que <span class="math inline">\(Y=1\)</span>, só existe quatro possibilidades para essa situação, dos quais apenas uma situação tem <span class="math inline">\(X=1\)</span>.</p>
+<p>Note que o contrário também é possível obter. Ou seja considere a probabilidade condicional da seguinte forma:</p>
+<p><span class="math display">\[
+  P(Y=y|X=x) = \dfrac{P (Y=y~\cap~X=x)}{P(X=x)}.
+\]</span></p>
+<p>Com base no exemplo do time de volei, qual é probabilidade condicional de que o time não vença na primeira partida dado que o time ganhe duas entre as três partidas?</p>
+<p><span class="math display">\[
+  P(Y=0|X=2) = \dfrac{P (Y=0~\cap~X=2)}{P(X=2)}.
+\]</span>
+Consultando a tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesMarginaisDeXeY">6.3</a> se tem</p>
+<p><span class="math display">\[
+  P(Y=0|X=2) = \dfrac{P (Y=0~\cap~X=2)}{P(X=2)} = \dfrac{1/8}{3/8} = 1/3
+\]</span></p>
+<p>Agora sabendo calcular a probabilidade condicional é possível verificar se as variáveis são independentes ou não. Para isso toma-se as situações de probabilidade conjunta igual a zero na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesMarginaisDeXeY">6.3</a>. Note que se o time ganha as três partidas, não há possbilidade da variável <span class="math inline">\(Y\)</span> assumir o valor 0. Veja o outro valor zero. Quando o time não ganha nenhuma das três primeiras partidas não é possível a variável <span class="math inline">\(Y\)</span> assumir valor igual a 1. A variável <span class="math inline">\(Y\)</span> sendo igual a 1 necessariamente o time tem que ter ganho a primeira partida.Por isso as variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> do exemplo do time de volei não são independentes.</p>
+<p>Então uma forma de verificar se as variáveis são independentes ou não é verificar se a probabilidade condicional é igual a probabilidade marginal. Ou seja,</p>
+<p><span class="math display">\[
+P(X=x|Y=y) = P(X=x)
+\]</span>
+ou
+<span class="math display">\[
+P(Y=y|X=x) = P(Y=y)
+\]</span>
+Caso as probabilidades condicionais não sejam iguais a sua respectiva probabilidade marginal, então as duas variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são independentes. Com base na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesMarginaisDeXeY">6.3</a>, toma-se, por exemplo,
+a probabilidade conjunta para <span class="math inline">\(X=1\)</span> e <span class="math inline">\(Y=1\)</span>
+<span class="math display">\[
+  P(X=1|Y=1) =1/4
+\]</span>
+e a probabilidade marginal <span class="math inline">\(X=1\)</span>
+<span class="math display">\[
+  p(X=1) = 3/8
+\]</span>
+são diferentes. Portanto <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são independentes. Basta somente um par de valores de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Note que a probabilidade marginal é denominada também de probabilidade incondicional. Portanto, se a probabilidade condicional for igual a probabilidade incondicional, as variáveis são independentes.</p>
 
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-Sartoris2013">
+<p>Sartoris, Alexandre. 2013. <em>Estatística e Introdução à Econometria</em>. 2nd ed. São Paulo: Saraiva.</p>
+</div>
 </div>
             </section>
 
@@ -252,7 +495,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="variável-aleatória-contínua.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referências.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="estimadores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

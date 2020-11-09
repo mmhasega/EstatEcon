@@ -141,12 +141,12 @@ a) Determine o valor da constante A.
 Note que a função já não é mais do tipo linear e por isso não é necessário utilizar a integral da função em questão para calcular a probabilidade. Considerando novamente que a soma das probabilidades para todos os valores definidos para a variável $x$ deve ser igual a um, se tem
 
 \[
-\int_{-\infty}^{+\infty} f(x)\text{d}x = 1
+  \int_{-\infty}^{+\infty} f(x)\text{d}x = 1
 \]
 Para este exemplo, a função $f(x)$ só está definido para os valores entre 0 e 1, sendo que para valores de $x$ menor que 0 e valores de $x$ maior que 1 a função $f(x)$ assume valor igual a zero. Portanto,
 
 \[
-\int_{0}^{1} Ax^2\text{d}x = 1
+  \int_{0}^{1} Ax^2\text{d}x = 1
 \]
 Como A é constante, pode-se colocar para fora da integral
 
@@ -270,15 +270,15 @@ substituindo a f.d.p.
 \]
 lembrando a integral de $e^{-x}$ e que todo número elevado a zero é igual a um
 \[
-F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
+  F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
 \]
 Assim,
 \[
-F(x) = -e^{-x} + e^{0}
+  F(x) = -e^{-x} + e^{0}
 \]
 e
 \[
-F(x) = 1 - e^{-x}
+  F(x) = 1 - e^{-x}
 \]
 Portanto a função distribuição é dada por
 
@@ -433,7 +433,8 @@ Tomando a fórmula da variância alternativa
 que em termos de integral é
 
 \[
-  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x -
+  \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
 \]
 verifica-se que só falta só calcular $E(x^2)$ para poder calcular a variância de $x$. Ou seja,
 
@@ -906,7 +907,7 @@ ggplot(data.frame(x = c(-3, 3)), aes(x = x)) +
 Dessa forma, o cálculo considerando a disponibilidade da metade dos valores da distribuição normal padronizada é
 
 \[
-P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - [F(2,22) - F(0)]
+  P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - [F(2,22) - F(0)]
 \]
 Usando o R, o cálculo é
 
@@ -930,13 +931,13 @@ pz222
 Portanto,
 
 \[
-P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - `r pf222f0` = `r pz222`. 
+  P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - `r pf222f0` = `r pz222`. 
 \]
 
 Alternativamente se tem os valores da probabilidade para a distribuição completa ou se está usando o R para os cálculos
 
 \[
-P(z >2,22) = 1 - F(2,22)
+  P(z >2,22) = 1 - F(2,22)
 \]
 
 Usando o R para o cálculo,
@@ -960,7 +961,8 @@ onde $z$, com $\mu = 0$ e $\sigma = 1$, é a variável $x$ transformada.
 Como $\sigma$ e $\mu$ são constantes
 
 \[
-E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) = \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
+  E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) =
+  \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
 \]
 
 Pois a soma do desvios em relação à media $\mu$ é sempre zero.
@@ -968,7 +970,8 @@ Pois a soma do desvios em relação à media $\mu$ é sempre zero.
 Aplicando a definição de variância em $z$ sabendo-se que $E(z)=0$ e $E[x-\mu]^2 = \sigma^2$ ou $dp(x) = \sigma$
 
 \[
-  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
+  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =
+  \dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
 \]
 
 Assim , através de \@ref(eq:PadronizacaoNormal), pode-se padronizar qualquer variável que segue uma distribuição normal e que tenha $\mu\neq 0$ e $\sigma \neq 1$.
@@ -1115,5 +1118,96 @@ Ou seja, de forma aproximada, a probabilidade de $x$ estar entre 35 e 65 é pelo
 
 ## Momentos de uma distribuição
 
+O **momento de uma distribuição** de uma variável aleatória $x$ de ordem $k$, em relação à média $M_k$ é
+
+\[
+  M_k = E(x - \mu)^k
+\]
+
+Como já foi visto anteriormente que a somatória dos desvios é sempre igual a zero, o primeiro momento em relação à média também é sempre igual a zero. Ou seja,
+
+\[
+  M_1 = E(x _ \mu)^1 = E(x) - \mu = \mu - \mu = 0
+\]
+
+Já segundo momento em relação à média é a variância
+
+\[
+  M_2 = E(x - \mu)^2 = \sigma^2
+\]
+
+O terceiro momento em relação à média
+
+\[
+  M_3 = E(x - \mu)^3 
+\]
+
+entrega o grau de simetria da distribuição. Por exemplo, uma distribuição simétrica como a distribuição normal tem 
+
+\[
+M_3 = 0.
+\]
+
+Com $M_3$ é possível definir um coeficiente de assimetria
+
+\[
+  \alpha_3 = \dfrac{M_3}{\sigma^3}
+\]
+
+que é tão maior em módulo quanto mais assimétrica for a distribuição analisada.
+
+O quarto momento em relação à média
+
+\[
+  M_4 = E(x - \mu)^4 
+\]
+
+entrega o **grau de achatamento** de uma distribuição e por isso está relacionado com a **curtose**.
+
+- Se uma distribuição é muito achatada, ela é dita **platicúrtica**.
+- Se uma distribuição é mais pontiaguda, ela é dita **leptocúrtica**
+- Se a distribuição se asemelha a distribuição normal, ela é dita **mesocúrtica**.
+
+Com $M_4$ define-se o coeficiente de curtose
+
+\[
+  \alpha_4 = \dfrac{M_4}{\alpha_4}
+\]
+que define
+
+- Se $\alpha_4 = 3$, a distribuição é normal, portanto mesocúrtica.
+- Se $\alpha_4 > 3$, a distribuição é leptocúrtica.
+- Se $\alpha_4 < 3$, a distribuição é platicúrtica.
+
+Os momentos podem ser definidos em relação à origem. O momento de uma distribuição em relação à origem de ordem $k$ em torno da origem é dado por
+
+\[
+  M_k^{'} = E(x)^k
+\]
+Assim
+
+- para $k=1$, o momento em torno da origem de ordem 1 é a própria média.
+- para $k=2$, o momento em torno da origem de ordem 2 é a média dos quadrados.
+
 
 ### Posição da média, da mediana e da moda numa distribuição assimétrica
+
+Dado que foi apresentado o conceito de assimestria, é possível realizar uma rápida discussão sobre o impacto da assimetria sobre a posição da média, da mediana e da moda numa distribuição. 
+
+- Se a distribuição é simétrica, ou seja, com a cauda esquerda fosse a imagem da cauda direita em um espelho e vice-versa,
+
+\[
+  \overline{X} = \text{Mediana} = \text{Moda}.
+\]
+
+- Se a distribuição é assimétrica á direita, ou seja, cauda maior no lado direito, 
+\[
+  \overline{X} > \text{Mediana} > \text{Moda}.
+\]
+
+- Se a distribuição é assimétrica à esquerda, ou seja, cauda maior no lado esquerdo,
+
+\[
+  \overline{X} < \text{Mediana} < \text{Moda}.
+\]
+

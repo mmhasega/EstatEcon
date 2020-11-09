@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-05" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,7 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica"><i class="fa fa-check"></i><b>5.4.1</b> Posição da média, da mediana e da moda numa distribuição assimétrica</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a></li>
+<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a><ul>
+<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição conjunta de variáveis aleatórias discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a></li>
+<li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
+<li class="chapter" data-level="9" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>9</b> Regressão Linear</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -379,11 +384,11 @@ Assim a diferença das áreas do triângulo maior e do triângulo menor é igual
 Note que a função já não é mais do tipo linear e por isso não é necessário utilizar a integral da função em questão para calcular a probabilidade. Considerando novamente que a soma das probabilidades para todos os valores definidos para a variável <span class="math inline">\(x\)</span> deve ser igual a um, se tem</li>
 </ol>
 <p><span class="math display">\[
-\int_{-\infty}^{+\infty} f(x)\text{d}x = 1
+  \int_{-\infty}^{+\infty} f(x)\text{d}x = 1
 \]</span>
 Para este exemplo, a função <span class="math inline">\(f(x)\)</span> só está definido para os valores entre 0 e 1, sendo que para valores de <span class="math inline">\(x\)</span> menor que 0 e valores de <span class="math inline">\(x\)</span> maior que 1 a função <span class="math inline">\(f(x)\)</span> assume valor igual a zero. Portanto,</p>
 <p><span class="math display">\[
-\int_{0}^{1} Ax^2\text{d}x = 1
+  \int_{0}^{1} Ax^2\text{d}x = 1
 \]</span>
 Como A é constante, pode-se colocar para fora da integral</p>
 <p><span class="math display">\[
@@ -488,15 +493,15 @@ substituindo a f.d.p.
 \]</span>
 lembrando a integral de <span class="math inline">\(e^{-x}\)</span> e que todo número elevado a zero é igual a um
 <span class="math display">\[
-F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
+  F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
 \]</span>
 Assim,
 <span class="math display">\[
-F(x) = -e^{-x} + e^{0}
+  F(x) = -e^{-x} + e^{0}
 \]</span>
 e
 <span class="math display">\[
-F(x) = 1 - e^{-x}
+  F(x) = 1 - e^{-x}
 \]</span>
 Portanto a função distribuição é dada por</p>
 <p><span class="math display">\[
@@ -622,7 +627,8 @@ Calculando-se a integral
 \]</span></p>
 <p>que em termos de integral é</p>
 <p><span class="math display">\[
-  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x -
+  \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
 \]</span>
 verifica-se que só falta só calcular <span class="math inline">\(E(x^2)\)</span> para poder calcular a variância de <span class="math inline">\(x\)</span>. Ou seja,</p>
 <p><span class="math display">\[
@@ -910,7 +916,7 @@ FIGURA 5.7: Probabilidade z ser maior que 2,22
 </div>
 <p>Dessa forma, o cálculo considerando a disponibilidade da metade dos valores da distribuição normal padronizada é</p>
 <p><span class="math display">\[
-P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - [F(2,22) - F(0)]
+  P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - [F(2,22) - F(0)]
 \]</span>
 Usando o R, o cálculo é</p>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="variável-aleatória-contínua.html#cb202-1"></a>f222 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">2.22</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
@@ -931,11 +937,11 @@ Usando o R, o cálculo é</p>
 <pre><code>## [1] 0,0132</code></pre>
 <p>Portanto,</p>
 <p><span class="math display">\[
-P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - 0,4868 = 0,0132. 
+  P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - 0,4868 = 0,0132. 
 \]</span></p>
 <p>Alternativamente se tem os valores da probabilidade para a distribuição completa ou se está usando o R para os cálculos</p>
 <p><span class="math display">\[
-P(z &gt;2,22) = 1 - F(2,22)
+  P(z &gt;2,22) = 1 - F(2,22)
 \]</span></p>
 <p>Usando o R para o cálculo,</p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="variável-aleatória-contínua.html#cb210-1"></a>pz222r &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">2.22</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
@@ -952,12 +958,14 @@ onde <span class="math inline">\(z\)</span>, com <span class="math inline">\(\mu
 <p><strong>Prova</strong>:</p>
 <p>Como <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\mu\)</span> são constantes</p>
 <p><span class="math display">\[
-E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) = \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
+  E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) =
+  \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
 \]</span></p>
 <p>Pois a soma do desvios em relação à media <span class="math inline">\(\mu\)</span> é sempre zero.</p>
 <p>Aplicando a definição de variância em <span class="math inline">\(z\)</span> sabendo-se que <span class="math inline">\(E(z)=0\)</span> e <span class="math inline">\(E[x-\mu]^2 = \sigma^2\)</span> ou <span class="math inline">\(dp(x) = \sigma\)</span></p>
 <p><span class="math display">\[
-  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
+  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =
+  \dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
 \]</span></p>
 <p>Assim , através de <a href="variável-aleatória-contínua.html#eq:PadronizacaoNormal">(5.2)</a>, pode-se padronizar qualquer variável que segue uma distribuição normal e que tenha <span class="math inline">\(\mu\neq 0\)</span> e <span class="math inline">\(\sigma \neq 1\)</span>.</p>
 <p><strong>Exemplo numérico sobre a padronização</strong></p>
@@ -1077,8 +1085,79 @@ Ou seja, de forma aproximada, a probabilidade de <span class="math inline">\(x\)
 </div>
 <div id="momentos-de-uma-distribuição" class="section level2">
 <h2><span class="header-section-number">5.4</span> Momentos de uma distribuição</h2>
+<p>O <strong>momento de uma distribuição</strong> de uma variável aleatória <span class="math inline">\(x\)</span> de ordem <span class="math inline">\(k\)</span>, em relação à média <span class="math inline">\(M_k\)</span> é</p>
+<p><span class="math display">\[
+  M_k = E(x - \mu)^k
+\]</span></p>
+<p>Como já foi visto anteriormente que a somatória dos desvios é sempre igual a zero, o primeiro momento em relação à média também é sempre igual a zero. Ou seja,</p>
+<p><span class="math display">\[
+  M_1 = E(x _ \mu)^1 = E(x) - \mu = \mu - \mu = 0
+\]</span></p>
+<p>Já segundo momento em relação à média é a variância</p>
+<p><span class="math display">\[
+  M_2 = E(x - \mu)^2 = \sigma^2
+\]</span></p>
+<p>O terceiro momento em relação à média</p>
+<p><span class="math display">\[
+  M_3 = E(x - \mu)^3 
+\]</span></p>
+<p>entrega o grau de simetria da distribuição. Por exemplo, uma distribuição simétrica como a distribuição normal tem</p>
+<p><span class="math display">\[
+M_3 = 0.
+\]</span></p>
+<p>Com <span class="math inline">\(M_3\)</span> é possível definir um coeficiente de assimetria</p>
+<p><span class="math display">\[
+  \alpha_3 = \dfrac{M_3}{\sigma^3}
+\]</span></p>
+<p>que é tão maior em módulo quanto mais assimétrica for a distribuição analisada.</p>
+<p>O quarto momento em relação à média</p>
+<p><span class="math display">\[
+  M_4 = E(x - \mu)^4 
+\]</span></p>
+<p>entrega o <strong>grau de achatamento</strong> de uma distribuição e por isso está relacionado com a <strong>curtose</strong>.</p>
+<ul>
+<li>Se uma distribuição é muito achatada, ela é dita <strong>platicúrtica</strong>.</li>
+<li>Se uma distribuição é mais pontiaguda, ela é dita <strong>leptocúrtica</strong></li>
+<li>Se a distribuição se asemelha a distribuição normal, ela é dita <strong>mesocúrtica</strong>.</li>
+</ul>
+<p>Com <span class="math inline">\(M_4\)</span> define-se o coeficiente de curtose</p>
+<p><span class="math display">\[
+  \alpha_4 = \dfrac{M_4}{\alpha_4}
+\]</span>
+que define</p>
+<ul>
+<li>Se <span class="math inline">\(\alpha_4 = 3\)</span>, a distribuição é normal, portanto mesocúrtica.</li>
+<li>Se <span class="math inline">\(\alpha_4 &gt; 3\)</span>, a distribuição é leptocúrtica.</li>
+<li>Se <span class="math inline">\(\alpha_4 &lt; 3\)</span>, a distribuição é platicúrtica.</li>
+</ul>
+<p>Os momentos podem ser definidos em relação à origem. O momento de uma distribuição em relação à origem de ordem <span class="math inline">\(k\)</span> em torno da origem é dado por</p>
+<p><span class="math display">\[
+  M_k^{&#39;} = E(x)^k
+\]</span>
+Assim</p>
+<ul>
+<li>para <span class="math inline">\(k=1\)</span>, o momento em torno da origem de ordem 1 é a própria média.</li>
+<li>para <span class="math inline">\(k=2\)</span>, o momento em torno da origem de ordem 2 é a média dos quadrados.</li>
+</ul>
 <div id="posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Posição da média, da mediana e da moda numa distribuição assimétrica</h3>
+<p>Dado que foi apresentado o conceito de assimestria, é possível realizar uma rápida discussão sobre o impacto da assimetria sobre a posição da média, da mediana e da moda numa distribuição.</p>
+<ul>
+<li>Se a distribuição é simétrica, ou seja, com a cauda esquerda fosse a imagem da cauda direita em um espelho e vice-versa,</li>
+</ul>
+<p><span class="math display">\[
+  \overline{X} = \text{Mediana} = \text{Moda}.
+\]</span></p>
+<ul>
+<li><p>Se a distribuição é assimétrica á direita, ou seja, cauda maior no lado direito,
+<span class="math display">\[
+\overline{X} &gt; \text{Mediana} &gt; \text{Moda}.
+\]</span></p></li>
+<li><p>Se a distribuição é assimétrica à esquerda, ou seja, cauda maior no lado esquerdo,</p></li>
+</ul>
+<p><span class="math display">\[
+  \overline{X} &lt; \text{Mediana} &lt; \text{Moda}.
+\]</span></p>
 
 </div>
 </div>

@@ -121,7 +121,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-11-05}
+\date{2020-11-09}
 
 \begin{document}
 \maketitle
@@ -4747,12 +4747,12 @@ Exemplo 4.1.4 da página 80 do \citet{Sartoris2013}. Dada da f.d.p. ded uma vari
 \end{enumerate}
 
 \[
-\int_{-\infty}^{+\infty} f(x)\text{d}x = 1
+  \int_{-\infty}^{+\infty} f(x)\text{d}x = 1
 \]
 Para este exemplo, a função \(f(x)\) só está definido para os valores entre 0 e 1, sendo que para valores de \(x\) menor que 0 e valores de \(x\) maior que 1 a função \(f(x)\) assume valor igual a zero. Portanto,
 
 \[
-\int_{0}^{1} Ax^2\text{d}x = 1
+  \int_{0}^{1} Ax^2\text{d}x = 1
 \]
 Como A é constante, pode-se colocar para fora da integral
 
@@ -4883,15 +4883,15 @@ substituindo a f.d.p.
 \]
 lembrando a integral de \(e^{-x}\) e que todo número elevado a zero é igual a um
 \[
-F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
+  F(x) = \left[ -e^{-t}  \right]_{0}^{x}.
 \]
 Assim,
 \[
-F(x) = -e^{-x} + e^{0}
+  F(x) = -e^{-x} + e^{0}
 \]
 e
 \[
-F(x) = 1 - e^{-x}
+  F(x) = 1 - e^{-x}
 \]
 Portanto a função distribuição é dada por
 
@@ -5061,7 +5061,8 @@ Tomando a fórmula da variância alternativa
 que em termos de integral é
 
 \[
-  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
+  Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x -
+  \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
 \]
 verifica-se que só falta só calcular \(E(x^2)\) para poder calcular a variância de \(x\). Ou seja,
 
@@ -5516,7 +5517,7 @@ Na figura \ref{fig:ExemploDistribuicaoNormalPadronizada4} fica claro onde fica a
 Dessa forma, o cálculo considerando a disponibilidade da metade dos valores da distribuição normal padronizada é
 
 \[
-P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - [F(2,22) - F(0)]
+  P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - [F(2,22) - F(0)]
 \]
 Usando o R, o cálculo é
 
@@ -5571,13 +5572,13 @@ Usando o R, o cálculo é
 Portanto,
 
 \[
-P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - \text{0,4868} = \text{0,0132}. 
+  P(z>2,22) = 0,5 - P(0 < z < 2,22) = 0,5 - \text{0,4868} = \text{0,0132}. 
 \]
 
 Alternativamente se tem os valores da probabilidade para a distribuição completa ou se está usando o R para os cálculos
 
 \[
-P(z >2,22) = 1 - F(2,22)
+  P(z >2,22) = 1 - F(2,22)
 \]
 
 Usando o R para o cálculo,
@@ -5608,7 +5609,8 @@ onde \(z\), com \(\mu = 0\) e \(\sigma = 1\), é a variável \(x\) transformada.
 Como \(\sigma\) e \(\mu\) são constantes
 
 \[
-E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) = \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
+  E(z) = \sum_{i=1}^{n} \left(\dfrac{x - \mu}{\sigma}\right) =
+  \dfrac{1}{\sigma}\sum_{i=1}^{n}(x - \mu) = \dfrac{1}{\sigma}\times 0 = 0
 \]
 
 Pois a soma do desvios em relação à media \(\mu\) é sempre zero.
@@ -5616,7 +5618,8 @@ Pois a soma do desvios em relação à media \(\mu\) é sempre zero.
 Aplicando a definição de variância em \(z\) sabendo-se que \(E(z)=0\) e \(E[x-\mu]^2 = \sigma^2\) ou \(dp(x) = \sigma\)
 
 \[
-  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =\dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
+  Var(z) = E[z - E(z)]^2 = E\left[\dfrac{x-\mu}{\sigma}\right]^2 =
+  \dfrac{1}{\sigma^2} E[x - \mu]^2 = \dfrac{1}{\sigma^2}\times \sigma^2 = 1.
 \]
 
 Assim , através de \eqref{eq:PadronizacaoNormal}, pode-se padronizar qualquer variável que segue uma distribuição normal e que tenha \(\mu\neq 0\) e \(\sigma \neq 1\).
@@ -5789,12 +5792,479 @@ Ou seja, de forma aproximada, a probabilidade de \(x\) estar entre 35 e 65 é pe
 \hypertarget{momentos-de-uma-distribuiuxe7uxe3o}{%
 \section{Momentos de uma distribuição}\label{momentos-de-uma-distribuiuxe7uxe3o}}
 
+O \textbf{momento de uma distribuição} de uma variável aleatória \(x\) de ordem \(k\), em relação à média \(M_k\) é
+
+\[
+  M_k = E(x - \mu)^k
+\]
+
+Como já foi visto anteriormente que a somatória dos desvios é sempre igual a zero, o primeiro momento em relação à média também é sempre igual a zero. Ou seja,
+
+\[
+  M_1 = E(x _ \mu)^1 = E(x) - \mu = \mu - \mu = 0
+\]
+
+Já segundo momento em relação à média é a variância
+
+\[
+  M_2 = E(x - \mu)^2 = \sigma^2
+\]
+
+O terceiro momento em relação à média
+
+\[
+  M_3 = E(x - \mu)^3 
+\]
+
+entrega o grau de simetria da distribuição. Por exemplo, uma distribuição simétrica como a distribuição normal tem
+
+\[
+M_3 = 0.
+\]
+
+Com \(M_3\) é possível definir um coeficiente de assimetria
+
+\[
+  \alpha_3 = \dfrac{M_3}{\sigma^3}
+\]
+
+que é tão maior em módulo quanto mais assimétrica for a distribuição analisada.
+
+O quarto momento em relação à média
+
+\[
+  M_4 = E(x - \mu)^4 
+\]
+
+entrega o \textbf{grau de achatamento} de uma distribuição e por isso está relacionado com a \textbf{curtose}.
+
+\begin{itemize}
+\tightlist
+\item
+  Se uma distribuição é muito achatada, ela é dita \textbf{platicúrtica}.
+\item
+  Se uma distribuição é mais pontiaguda, ela é dita \textbf{leptocúrtica}
+\item
+  Se a distribuição se asemelha a distribuição normal, ela é dita \textbf{mesocúrtica}.
+\end{itemize}
+
+Com \(M_4\) define-se o coeficiente de curtose
+
+\[
+  \alpha_4 = \dfrac{M_4}{\alpha_4}
+\]
+que define
+
+\begin{itemize}
+\tightlist
+\item
+  Se \(\alpha_4 = 3\), a distribuição é normal, portanto mesocúrtica.
+\item
+  Se \(\alpha_4 > 3\), a distribuição é leptocúrtica.
+\item
+  Se \(\alpha_4 < 3\), a distribuição é platicúrtica.
+\end{itemize}
+
+Os momentos podem ser definidos em relação à origem. O momento de uma distribuição em relação à origem de ordem \(k\) em torno da origem é dado por
+
+\[
+  M_k^{'} = E(x)^k
+\]
+Assim
+
+\begin{itemize}
+\tightlist
+\item
+  para \(k=1\), o momento em torno da origem de ordem 1 é a própria média.
+\item
+  para \(k=2\), o momento em torno da origem de ordem 2 é a média dos quadrados.
+\end{itemize}
+
 \hypertarget{posiuxe7uxe3o-da-muxe9dia-da-mediana-e-da-moda-numa-distribuiuxe7uxe3o-assimuxe9trica}{%
 \subsection{Posição da média, da mediana e da moda numa distribuição assimétrica}\label{posiuxe7uxe3o-da-muxe9dia-da-mediana-e-da-moda-numa-distribuiuxe7uxe3o-assimuxe9trica}}
+
+Dado que foi apresentado o conceito de assimestria, é possível realizar uma rápida discussão sobre o impacto da assimetria sobre a posição da média, da mediana e da moda numa distribuição.
+
+\begin{itemize}
+\tightlist
+\item
+  Se a distribuição é simétrica, ou seja, com a cauda esquerda fosse a imagem da cauda direita em um espelho e vice-versa,
+\end{itemize}
+
+\[
+  \overline{X} = \text{Mediana} = \text{Moda}.
+\]
+
+\begin{itemize}
+\item
+  Se a distribuição é assimétrica á direita, ou seja, cauda maior no lado direito,
+  \[
+  \overline{X} > \text{Mediana} > \text{Moda}.
+  \]
+\item
+  Se a distribuição é assimétrica à esquerda, ou seja, cauda maior no lado esquerdo,
+\end{itemize}
+
+\[
+  \overline{X} < \text{Mediana} < \text{Moda}.
+\]
 
 \hypertarget{distribuiuxe7uxe3o-de-variuxe1veis-aleuxe1tuxf3rias-conjunta}{%
 \chapter{Distribuição de variáveis aleátórias conjunta}\label{distribuiuxe7uxe3o-de-variuxe1veis-aleuxe1tuxf3rias-conjunta}}
 
-  \bibliography{estatecon.bib,book.bib,packages.bib}
+\textbf{Probabilidade conjunta} é a probabilidade que se refere a duas ou mais variáveis aleatórias simultaneamente.
+
+A distribuição de probabilidade de um vetor \((X,Y)\) com duas variáveis, por exemplo,m seria o caso bidimensional. Como o material sobre este assunto é baseado em \citet{Sartoris2013}, a apresentação da distribuição de variáveis aleatórias conjuntas será o caso bidimensional.
+
+As variáveis da distribuição de probabilidade conjunta podem ser discretas ou contínuas.
+
+\hypertarget{distribuiuxe7uxe3o-conjunta-de-variuxe1veis-aleatuxf3rias-discretas}{%
+\section{Distribuição conjunta de variáveis aleatórias discretas}\label{distribuiuxe7uxe3o-conjunta-de-variuxe1veis-aleatuxf3rias-discretas}}
+
+Com base em \citet{Sartoris2013}, é apresentado o assunto da seção através da apresentação de um exemplo numérico prático.
+
+Seja um time de volei que vai dispoutar um campeonato muito equilibrado, em que a probabilidade de ganhar ou perder uma partida é de 0,5. O técnico pede ao estatístico da equipe que faça uma análise das probabilidades das três primeiras partidas consideradas vitais para o restante do campeonato. Em particular, a vitória na primeira partida é considerada decisiva pela comissão técnica.
+
+O estátistico define duas variáveis, \(X\) e \(Y\), sendo que
+
+\begin{itemize}
+\item
+  \(X\) é o número de vitórias obtidas nos três primeiros jogos e;
+\item
+  \(Y\) é igual a 1, caso ocorra vitória no primeiro jogo e zero, caso ocorra o contrário.
+\end{itemize}
+
+Por enquanto considera-se que \(X\) e \(Y\) são variáveis independentes.
+
+Como são três jogos com dois resultados possíveis, vitória ou derrota com 0,5 de probabilidade cada um, existem oito possibilidades entre os três primeiros jogos em análise. Na tabela \ref{tab:ResultadosProvaveisEmTresPartidas} abaixo é apresentado os valores de \(X\) e \(Y\) de acordo com os resultados possíveis.
+
+\begin{longtable}[]{@{}ccc@{}}
+\caption{\label{tab:ResultadosProvaveisEmTresPartidas} Resultados prováveis em três partidas, considerando vitória (V) ou derrota(D) como resultado possível de cada partida com 0,5 de probabilidade}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.28\columnwidth}\centering
+resultados
+possíveis\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\centering
+X\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\centering
+Y\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.28\columnwidth}\centering
+resultados
+possíveis\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\centering
+X\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\centering
+Y\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.28\columnwidth}\centering
+VVV\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+VVD\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+VDV\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+VDD\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+DVV\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+DDV\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+DVD\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\centering
+DDD\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: \citet{Sartoris2013}.
+
+Onde o resultado possível nos três primeiros jogos definido como VDV significa que o time teve vitória na primeira e na terceira partidas e derrota na segunda partida. Esse mesmo resultado VDV define que \(X=2\) e \(Y=1\) lembrando que \(X\) é o número de vitórias entre as três partidas e \(Y\) é igual a 1 se o time conseguiu vitória na primeira partida e zero se não conseguiu ganhar a primeira partida.
+
+Na sequência o estatístico constrói uma tabela que apresenta as probabilidades conjuntas de \(x\) e \(Y\) cujo preenchimento é feito com base na tabela \ref{tab:ProbabilidadesConjuntasDeXeY}
+
+\begin{longtable}[]{@{}lcccc@{}}
+\caption{\label{tab:ProbabilidadesConjuntasDeXeY} Probabilidades conjuntas de \(X\) e \(Y\)}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=0\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=1\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=2\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=3\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=0\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=1\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=2\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=3\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\raggedright
+\textbf{Y=0}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+2/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright
+\textbf{Y=1}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+2/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Com base na tabela \ref{tab:ProbabilidadesConjuntasDeXeY} é possível obter a probabilidade para um resultado com duas vitórias sendo que uma das duas vitórias foi na primeira partida:
+
+\[
+  P(X=2~\text{ e }~Y=1) = 2/8
+\]
+Ou seja em oito resultados possíveis há duas combinações possíveis com resultado.
+
+Veja que se o time ganha as três partidas \(X=3\), não é possível que \(Y=0\) e por isso
+
+\[
+  P(X=3~\text{ e }~Y=0 ) = 0
+\]
+
+O inverso também é válido. Ou seja, se o time não ganhou nenhuma das três partidas, não é possivel que \(Y=1\) e por isso
+
+\[
+  P(X=0~\text{ e }~Y=1) = 0
+\]
+
+Ainda com base na tabela \ref{tab:ProbabilidadesConjuntasDeXeY} é possível obter probabilidades só para valores de \(X\) e probabilidades só para valores de \(Y\). Ou seja, para obter a probabilidade de \(X=1\) é ncessário somar todas as probabilidades conjuntas que tem \(X=1\)
+\[
+  P(X = 1) = P(X=1~\text{ e }~Y=0) + P(X=1~\text{ e }~Y=1) = 2/8 + 1/8 = 3/8.
+\]
+Na tabela \ref{tab:ProbabilidadesConjuntasDeXeY}, \(P(X = 1)\) é obtida somando os valores da coluna para \(X=1\).
+Também é possível obter o valor da probabilidade de \(Y=1\) que é simplesmente a soma de todos as probabilidades conjuntas que tem \(Y=1\)
+\[
+  P(Y=1) = P(X=0~\text{ e }~Y=1) + P(X=1~\text{ e }~Y=1) +P(X=2~\text{ e }~Y=1) + P(X=3~\text{ e }~Y=1)
+\]
+ou seja,
+\[
+  P(Y=1) = 0 + 1/8 +2/8 + 1/8 = 1/2
+\]
+Na tabela \ref{tab:ProbabilidadesConjuntasDeXeY}, \(P(Y=1)\) é obtida somando os valores da linha para \(Y=1\).
+Assim, usando este raciocínio, é possível agregar mais uma linha e mais uma coluna com as probabilidades marginais de \(X\) e de \(Y\). As probabilidades marginais de \(X\) são as somas de cada uma das colunas da tabela \ref{tab:ProbabilidadesConjuntasDeXeY}. As probabilidades marginais de \(Y\) são as somas de cada uma das linhas da tabela \ref{tab:ProbabilidadesConjuntasDeXeY}. Desta forma se obtém a tabela \ref{tab:ProbabilidadesMarginaisDeXeY}.
+
+\begin{longtable}[]{@{}lccccc@{}}
+\caption{\label{tab:ProbabilidadesMarginaisDeXeY} Probabilidades marginais de \(X\) e \(Y\)}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=0\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=1\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=2\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=3\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+P(Y)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=0\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=1\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=2\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+X=3\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+P(Y)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\raggedright
+\textbf{Y=0}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+2/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{1/2}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright
+\textbf{Y=1}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+2/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+1/8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{1/2}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\raggedright
+\textbf{P(X)}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{1/8}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{3/8}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{3/8}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{1/8}\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\textbf{1}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Com base na tabela \ref{tab:ProbabilidadesMarginaisDeXeY} é possível calcular a probabilidade condicional, embora não possa ser obtida diretamente da fonte.
+
+Suponha a seguinte pergunta com base neste exemplo numérico prático: qual é probabilidade de time ganhar apenas uma partida entre as três dado que essa partida ocorre na primeira partida? Em notação matemática seria
+
+\[
+  P(X=1|Y=1) = \text{??}
+\]
+
+Lembrando das aulas de teoria da probabilidade, a probabilidade condicional e dada da seguinte forma:
+
+\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]
+
+onde \(P (X=x~\cap~Y=y)\) é a probabilidade conjunta entre \(X=x\) e \(Y=y\) e \(P(Y=y)\) é a probabilidade marginal de \(Y=y\).
+
+Assim, podemos calcular a probabilidade condicional \(P(X=1|Y=1)\)
+
+\[
+  P(X=1|Y=1) = \dfrac{P (X=1~\cap~Y=1)}{P(Y=1)} = \dfrac{1/8}{1/2} = 1/4
+\]
+
+Dado que \(Y=1\), só existe quatro possibilidades para essa situação, dos quais apenas uma situação tem \(X=1\).
+
+Note que o contrário também é possível obter. Ou seja considere a probabilidade condicional da seguinte forma:
+
+\[
+  P(Y=y|X=x) = \dfrac{P (Y=y~\cap~X=x)}{P(X=x)}.
+\]
+
+Com base no exemplo do time de volei, qual é probabilidade condicional de que o time não vença na primeira partida dado que o time ganhe duas entre as três partidas?
+
+\[
+  P(Y=0|X=2) = \dfrac{P (Y=0~\cap~X=2)}{P(X=2)}.
+\]
+Consultando a tabela \ref{tab:ProbabilidadesMarginaisDeXeY} se tem
+
+\[
+  P(Y=0|X=2) = \dfrac{P (Y=0~\cap~X=2)}{P(X=2)} = \dfrac{1/8}{3/8} = 1/3
+\]
+
+Agora sabendo calcular a probabilidade condicional é possível verificar se as variáveis são independentes ou não. Para isso toma-se as situações de probabilidade conjunta igual a zero na tabela \ref{tab:ProbabilidadesMarginaisDeXeY}. Note que se o time ganha as três partidas, não há possbilidade da variável \(Y\) assumir o valor 0. Veja o outro valor zero. Quando o time não ganha nenhuma das três primeiras partidas não é possível a variável \(Y\) assumir valor igual a 1. A variável \(Y\) sendo igual a 1 necessariamente o time tem que ter ganho a primeira partida.Por isso as variáveis \(X\) e \(Y\) do exemplo do time de volei não são independentes.
+
+Então uma forma de verificar se as variáveis são independentes ou não é verificar se a probabilidade condicional é igual a probabilidade marginal. Ou seja,
+
+\[
+P(X=x|Y=y) = P(X=x)
+\]
+ou
+\[
+P(Y=y|X=x) = P(Y=y)
+\]
+Caso as probabilidades condicionais não sejam iguais a sua respectiva probabilidade marginal, então as duas variáveis \(X\) e \(Y\) não são independentes. Com base na tabela \ref{tab:ProbabilidadesMarginaisDeXeY}, toma-se, por exemplo,
+a probabilidade conjunta para \(X=1\) e \(Y=1\)
+\[
+  P(X=1|Y=1) =1/4
+\]
+e a probabilidade marginal \(X=1\)
+\[
+  p(X=1) = 3/8
+\]
+são diferentes. Portanto \(X\) e \(Y\) não são independentes. Basta somente um par de valores de \(X\) e \(Y\) apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Note que a probabilidade marginal é denominada também de probabilidade incondicional. Portanto, se a probabilidade condicional for igual a probabilidade incondicional, as variáveis são independentes.
+
+\hypertarget{estimadores}{%
+\chapter{Estimadores}\label{estimadores}}
+
+\hypertarget{teste-de-hipuxf3ste}{%
+\chapter{Teste de hipóste}\label{teste-de-hipuxf3ste}}
+
+\hypertarget{regressuxe3o-linear}{%
+\chapter{Regressão Linear}\label{regressuxe3o-linear}}
+
+  \bibliography{estatecon.bib,packages.bib}
 
 \end{document}

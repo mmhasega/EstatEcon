@@ -121,7 +121,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-11-09}
+\date{2020-11-10}
 
 \begin{document}
 \maketitle
@@ -2652,7 +2652,7 @@ Assim é possível definir as duas situações extremas:
 A \textbf{entropia} é, portanto, uma medida do grau de igualdade da distribuição. Mas como o objeto de análise é desigualdade, é ,muito mais interessante uma medida de desigualdade. Para isto basta subtrair a entropia do seu valor próprio máximo, \(\log n\). Essa medida, denominada \textbf{Índice T de Theil} da distribuição é dada por
 
 \[
-T = \log n - H(y) = \sum_{i=1}^{n}
+T = \log n - H(y) = \sum_{i=1}^{n}y_i \log n y_i
 \label{eq:IndiceTDeTheil}
 \]
 Para o cálculo do índice T de Theil, pode-se usar os logarítmos naturais ou os logarítmos na base 2, obtendo-se o valor de T en \emph{nits} ou \emph{bits}, respectivamente. Na prática, utiliza-se mais o logarítmo natural.
@@ -6254,7 +6254,248 @@ e a probabilidade marginal \(X=1\)
 \[
   p(X=1) = 3/8
 \]
-são diferentes. Portanto \(X\) e \(Y\) não são independentes. Basta somente um par de valores de \(X\) e \(Y\) apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Note que a probabilidade marginal é denominada também de probabilidade incondicional. Portanto, se a probabilidade condicional for igual a probabilidade incondicional, as variáveis são independentes.
+são diferentes. Portanto \(X\) e \(Y\) não são independentes. Basta somente um par de valores de \(X\) e \(Y\) apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Para verificar se as variáveis são independentes, é necessário verificar se todos o pares possíveis tem probabilidade condicional igual a probabilidade incondicional. Note que a probabilidade marginal é denominada também de probabilidade incondicional.
+
+Ou seja, basta somente uma situação com
+
+\[
+  P(X=x | Y=y) \neq P(X=x)
+\]
+
+para que \(X\) e \(Y\) seja dependentes.
+
+\hypertarget{covariuxe2ncia-e-correlauxe7uxe3o-no-contexto-da-distribuiuxe7uxe3o-de-probabilidade-conjunta}{%
+\subsection{Covariância e correlação no contexto da distribuição de probabilidade conjunta}\label{covariuxe2ncia-e-correlauxe7uxe3o-no-contexto-da-distribuiuxe7uxe3o-de-probabilidade-conjunta}}
+
+O cálculo do valor esperado bem como da variância de variáveis distribuídas conjutamente não é problema pois é possível obter as probabilidades marginais facilmente a partir das probabilidades conjuntas. O que há de novo, mas nem tanto, é sobre o cálculo da covariância e da correlação, que é apresentado na forma de exemplo numérico a seguir.
+
+\textbf{Exemplo numérico sobre covariância e correlação para a distribuição conjunta}
+
+Exemplo 5.1.1 da página 112 do \citet{Sartoris2013}. Calcule com base nos dados do exemplo numérico sobre o time de volei:
+
+\begin{itemize}
+\tightlist
+\item
+  o valor esperado de \(X\) e \(Y\);
+\item
+  as variâncias de \(X\) e \(Y\);
+\item
+  a covariância entre \(X\) e \(Y\);
+\item
+  a correlação entre \(X\) e \(Y\).
+\end{itemize}
+
+Para calcular \(E(X)\) utiliza-se as probabilidades marginais de \(X\) que estão na tabela \ref{tab:ProbabilidadesMarginaisDeXeY}
+
+\[
+E(X) = \sum_{i=1}^{n}P(X_i)X_i
+\]
+
+\[
+E(X) =  P(X_1)\times X_1 + P(X_2)\times X_2 + P(X_3)\times X_3 + P(X_4)\times X_4
+\]
+
+Portanto,
+
+\[
+E(X) =  1/8\times 0 + 3/8\times 1  + 3/8\times 2 + 1/8\times 3 = 12/8 = 1,5
+\]
+
+A esperança matemática de \(x\) do exemplo numérico é 1,5.
+
+Para \(Y\)
+
+\[
+  E(Y) = \frac{1}{2}\times 0 + \frac{1}{2} \times 1 = 0,5
+\]
+
+Para calular a variância de \(X\) usando a fórmula alternativa
+
+\[
+Var(X) = E(X^2) - [E(X)]^2
+\]
+
+Assim só está faltando calcular a esperança do quadrdado de \(X\)
+
+\[
+E(X^2) = \sum_{i=1}^{n} P(X_i) \times X_i^2 = P(X_1)\times X_1^{2} + \ldots + P(X_n)\times X_{n}^{2}
+\]
+
+Protanto,
+
+\[
+E(X^2) = \frac{1}{8}\times 0^{2} + \frac{3}{8} \times 1^2 + \frac{3}{8} \times 2^{2} + \frac{1}{8} \times 3^2 = \frac{24}{8} = 3
+\]
+Com \(E(X)\) e \(E(X^2)\)
+
+\[
+  Var(X) = E(X^2) - [E(X)]^2 = 3 - (1,5)^2 = 3 - 2,25 = 0,75.
+\]
+
+Para a variância de \(Y\) é necessário calcular \(E(Y^2)\)
+
+\[
+  E(Y^2) = \frac{1}{2}\times 0^2 + \frac{1}{2} \times 1^2 = 0,5
+\]
+
+Assim,
+
+\[
+ Var(Y) = E(Y^2) - [E(Y )]^2 = 0,5 - (0,5)^2 = 0,5 - 0,25 = 0,25
+\]
+
+Para calcular a covariancia entre \(X\) e \(Y\), com base na fórmula alternativa,
+\[
+  Cov(XY) = E(XY) - E(X)E(Y)
+\]
+
+é necessário calcular o produto entre \(X\) e \(Y\) que segue na tabela \ref{tab:ProdutoEntreXeY}.
+
+\begin{longtable}[]{@{}ccc@{}}
+\caption{\label{tab:ProdutoEntreXeY} Produto entre \(X\) e \(Y\)}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.20\columnwidth}\centering
+X\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
+Y\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
+XY\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.20\columnwidth}\centering
+X\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
+Y\strut
+\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
+XY\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.20\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Com base nos resultados de \(XY\) apresentados na tabela \ref{tab:ProdutoEntreXeY}, é possível obter as seguintes probabilidades
+
+\[
+  P(XY=0) = \frac{4}{8}
+\]
+
+\[
+  P(XY = 1) = \frac{1}{8}
+\]
+
+\[
+  P(XY = 2) = \frac{2}{8}
+\]
+
+\[
+  P(XY = 3) = \frac{1}{8}.
+\]
+
+Assim
+
+\[
+  E(XY) = \sum_{i=1}^{n} P(X_iY_i) \times XY
+\]
+
+\[
+  E(XY) = \frac{4}{8} \times 0 + \frac{1}{8}\times 1 + \frac{2}{8} \times 2 + \frac{1}{8} \times 3 = \frac{8}{8} = 1
+\]
+
+como já se tem calculado \(E(X)\) e \(E(Y)\)
+
+\[
+  Cov(XY) = E(XY) - E(X)E(Y) = 1 - (1,5)(0,5) = 1 - 0,75 = 0,25
+\]
+
+Para o cálculo da correlação se tem todas as partes da sua fórmula calculadas
+
+\[
+  corr(XY) = \rho_{XY} = \dfrac{Cov(X,Y)}{\sqrt{Var(X) \times Var(Y)}} 
+\]
+
+Portanto
+
+\[
+  \rho_XY = \dfrac{0,25}{\sqrt{0,75 \times 0,25}} \cong 0,5774
+\]
+
+\hypertarget{esperanuxe7a-condicionada}{%
+\subsection{Esperança condicionada}\label{esperanuxe7a-condicionada}}
+
+A esperança condicionada é similar a esperança marginal ou incondicional sendo que as probabilidades associadas a variável em questão é a probabilidade condicionada que precisa ser previamente calculada, dado que é necessário ter a probabiliade conjunta e a probabilidade marginal ou incondicional para o seu cálculo. Ou seja se é probabilidade de \(X\) dado \(Y\)
+
+\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]
+
+para poder calcular a esperança condicionada de \(X\) dado \(Y\)
+
+\[
+  E(X_i|Y_i) = \sum_{i=1}^{n} P(X_i| Y_i) \times X_i.
+\]
+
+\textbf{Exemplo numérico sobre a probabilidade condicional}
+
+Exemplo 5.1.2 da página 113 do \citet{Sartoris2013}
 
 \hypertarget{estimadores}{%
 \chapter{Estimadores}\label{estimadores}}

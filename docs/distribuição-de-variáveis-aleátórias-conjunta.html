@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2020-11-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -221,7 +221,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a><ul>
-<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição conjunta de variáveis aleatórias discretas</a></li>
+<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição conjunta de variáveis aleatórias discretas</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.1.1</b> Covariância e correlação no contexto da distribuição de probabilidade conjunta</a></li>
+<li class="chapter" data-level="6.1.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#esperança-condicionada"><i class="fa fa-check"></i><b>6.1.2</b> Esperança condicionada</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a></li>
 <li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
@@ -479,8 +482,172 @@ e a probabilidade marginal <span class="math inline">\(X=1\)</span>
 <span class="math display">\[
   p(X=1) = 3/8
 \]</span>
-são diferentes. Portanto <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são independentes. Basta somente um par de valores de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Note que a probabilidade marginal é denominada também de probabilidade incondicional. Portanto, se a probabilidade condicional for igual a probabilidade incondicional, as variáveis são independentes.</p>
+são diferentes. Portanto <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são independentes. Basta somente um par de valores de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> apresentar essa diferença para poder concluir que as variáveis são dependentes uma da outra. Para verificar se as variáveis são independentes, é necessário verificar se todos o pares possíveis tem probabilidade condicional igual a probabilidade incondicional. Note que a probabilidade marginal é denominada também de probabilidade incondicional.</p>
+<p>Ou seja, basta somente uma situação com</p>
+<p><span class="math display">\[
+  P(X=x | Y=y) \neq P(X=x)
+\]</span></p>
+<p>para que <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> seja dependentes.</p>
+<div id="covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Covariância e correlação no contexto da distribuição de probabilidade conjunta</h3>
+<p>O cálculo do valor esperado bem como da variância de variáveis distribuídas conjutamente não é problema pois é possível obter as probabilidades marginais facilmente a partir das probabilidades conjuntas. O que há de novo, mas nem tanto, é sobre o cálculo da covariância e da correlação, que é apresentado na forma de exemplo numérico a seguir.</p>
+<p><strong>Exemplo numérico sobre covariância e correlação para a distribuição conjunta</strong></p>
+<p>Exemplo 5.1.1 da página 112 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Calcule com base nos dados do exemplo numérico sobre o time de volei:</p>
+<ul>
+<li>o valor esperado de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>;</li>
+<li>as variâncias de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>;</li>
+<li>a covariância entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>;</li>
+<li>a correlação entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.</li>
+</ul>
+<p>Para calcular <span class="math inline">\(E(X)\)</span> utiliza-se as probabilidades marginais de <span class="math inline">\(X\)</span> que estão na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProbabilidadesMarginaisDeXeY">6.3</a></p>
+<p><span class="math display">\[
+E(X) = \sum_{i=1}^{n}P(X_i)X_i
+\]</span></p>
+<p><span class="math display">\[
+E(X) =  P(X_1)\times X_1 + P(X_2)\times X_2 + P(X_3)\times X_3 + P(X_4)\times X_4
+\]</span></p>
+<p>Portanto,</p>
+<p><span class="math display">\[
+E(X) =  1/8\times 0 + 3/8\times 1  + 3/8\times 2 + 1/8\times 3 = 12/8 = 1,5
+\]</span></p>
+<p>A esperança matemática de <span class="math inline">\(x\)</span> do exemplo numérico é 1,5.</p>
+<p>Para <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+  E(Y) = \frac{1}{2}\times 0 + \frac{1}{2} \times 1 = 0,5
+\]</span></p>
+<p>Para calular a variância de <span class="math inline">\(X\)</span> usando a fórmula alternativa</p>
+<p><span class="math display">\[
+Var(X) = E(X^2) - [E(X)]^2
+\]</span></p>
+<p>Assim só está faltando calcular a esperança do quadrdado de <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[
+E(X^2) = \sum_{i=1}^{n} P(X_i) \times X_i^2 = P(X_1)\times X_1^{2} + \ldots + P(X_n)\times X_{n}^{2}
+\]</span></p>
+<p>Protanto,</p>
+<p><span class="math display">\[
+E(X^2) = \frac{1}{8}\times 0^{2} + \frac{3}{8} \times 1^2 + \frac{3}{8} \times 2^{2} + \frac{1}{8} \times 3^2 = \frac{24}{8} = 3
+\]</span>
+Com <span class="math inline">\(E(X)\)</span> e <span class="math inline">\(E(X^2)\)</span></p>
+<p><span class="math display">\[
+  Var(X) = E(X^2) - [E(X)]^2 = 3 - (1,5)^2 = 3 - 2,25 = 0,75.
+\]</span></p>
+<p>Para a variância de <span class="math inline">\(Y\)</span> é necessário calcular <span class="math inline">\(E(Y^2)\)</span></p>
+<p><span class="math display">\[
+  E(Y^2) = \frac{1}{2}\times 0^2 + \frac{1}{2} \times 1^2 = 0,5
+\]</span></p>
+<p>Assim,</p>
+<p><span class="math display">\[
+ Var(Y) = E(Y^2) - [E(Y )]^2 = 0,5 - (0,5)^2 = 0,5 - 0,25 = 0,25
+\]</span></p>
+<p>Para calcular a covariancia entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, com base na fórmula alternativa,
+<span class="math display">\[
+  Cov(XY) = E(XY) - E(X)E(Y)
+\]</span></p>
+<p>é necessário calcular o produto entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> que segue na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProdutoEntreXeY">6.4</a>.</p>
+<table style="width:67%;">
+<caption><span id="tab:ProdutoEntreXeY">TABELA 6.4: </span> Produto entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span></caption>
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">X</th>
+<th align="center">Y</th>
+<th align="center">XY</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>Com base nos resultados de <span class="math inline">\(XY\)</span> apresentados na tabela <a href="distribuição-de-variáveis-aleátórias-conjunta.html#tab:ProdutoEntreXeY">6.4</a>, é possível obter as seguintes probabilidades</p>
+<p><span class="math display">\[
+  P(XY=0) = \frac{4}{8}
+\]</span></p>
+<p><span class="math display">\[
+  P(XY = 1) = \frac{1}{8}
+\]</span></p>
+<p><span class="math display">\[
+  P(XY = 2) = \frac{2}{8}
+\]</span></p>
+<p><span class="math display">\[
+  P(XY = 3) = \frac{1}{8}.
+\]</span></p>
+<p>Assim</p>
+<p><span class="math display">\[
+  E(XY) = \sum_{i=1}^{n} P(X_iY_i) \times XY
+\]</span></p>
+<p><span class="math display">\[
+  E(XY) = \frac{4}{8} \times 0 + \frac{1}{8}\times 1 + \frac{2}{8} \times 2 + \frac{1}{8} \times 3 = \frac{8}{8} = 1
+\]</span></p>
+<p>como já se tem calculado <span class="math inline">\(E(X)\)</span> e <span class="math inline">\(E(Y)\)</span></p>
+<p><span class="math display">\[
+  Cov(XY) = E(XY) - E(X)E(Y) = 1 - (1,5)(0,5) = 1 - 0,75 = 0,25
+\]</span></p>
+<p>Para o cálculo da correlação se tem todas as partes da sua fórmula calculadas</p>
+<p><span class="math display">\[
+  corr(XY) = \rho_{XY} = \dfrac{Cov(X,Y)}{\sqrt{Var(X) \times Var(Y)}} 
+\]</span></p>
+<p>Portanto</p>
+<p><span class="math display">\[
+  \rho_XY = \dfrac{0,25}{\sqrt{0,75 \times 0,25}} \cong 0,5774
+\]</span></p>
+</div>
+<div id="esperança-condicionada" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Esperança condicionada</h3>
+<p>A esperança condicionada é similar a esperança marginal ou incondicional sendo que as probabilidades associadas a variável em questão é a probabilidade condicionada que precisa ser previamente calculada, dado que é necessário ter a probabiliade conjunta e a probabilidade marginal ou incondicional para o seu cálculo. Ou seja se é probabilidade de <span class="math inline">\(X\)</span> dado <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]</span></p>
+<p>para poder calcular a esperança condicionada de <span class="math inline">\(X\)</span> dado <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+  E(X_i|Y_i) = \sum_{i=1}^{n} P(X_i| Y_i) \times X_i.
+\]</span></p>
+<p><strong>Exemplo numérico sobre a probabilidade condicional</strong></p>
+<p>Exemplo 5.1.2 da página 113 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span></p>
 
+</div>
 </div>
 </div>
 <h3>Referências</h3>

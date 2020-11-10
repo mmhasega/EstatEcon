@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2020-11-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -221,7 +221,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a><ul>
-<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição conjunta de variáveis aleatórias discretas</a></li>
+<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição conjunta de variáveis aleatórias discretas</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.1.1</b> Covariância e correlação no contexto da distribuição de probabilidade conjunta</a></li>
+<li class="chapter" data-level="6.1.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#esperança-condicionada"><i class="fa fa-check"></i><b>6.1.2</b> Esperança condicionada</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a></li>
 <li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
@@ -987,7 +990,7 @@ se tem <span class="math inline">\(H(y) = 0\)</span>.</p></li>
 </ul>
 <p>A <strong>entropia</strong> é, portanto, uma medida do grau de igualdade da distribuição. Mas como o objeto de análise é desigualdade, é ,muito mais interessante uma medida de desigualdade. Para isto basta subtrair a entropia do seu valor próprio máximo, <span class="math inline">\(\log n\)</span>. Essa medida, denominada <strong>Índice T de Theil</strong> da distribuição é dada por</p>
 <p><span class="math display" id="eq:IndiceTDeTheil">\[
-T = \log n - H(y) = \sum_{i=1}^{n}
+T = \log n - H(y) = \sum_{i=1}^{n}y_i \log n y_i
 \tag{2.25}
 \]</span>
 Para o cálculo do índice T de Theil, pode-se usar os logarítmos naturais ou os logarítmos na base 2, obtendo-se o valor de T en <em>nits</em> ou <em>bits</em>, respectivamente. Na prática, utiliza-se mais o logarítmo natural.</p>

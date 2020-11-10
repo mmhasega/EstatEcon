@@ -689,7 +689,7 @@ Assim é possível definir as duas situações extremas:
 A **entropia** é, portanto, uma medida do grau de igualdade da distribuição. Mas como o objeto de análise é desigualdade, é ,muito mais interessante uma medida de desigualdade. Para isto basta subtrair a entropia do seu valor próprio máximo, $\log n$. Essa medida, denominada **Índice T de Theil** da distribuição é dada por
 
 \[
-T = \log n - H(y) = \sum_{i=1}^{n}
+T = \log n - H(y) = \sum_{i=1}^{n}y_i \log n y_i
 (\#eq:IndiceTDeTheil)
 \]
 Para o cálculo do índice T de Theil, pode-se usar os logarítmos naturais ou os logarítmos na base 2, obtendo-se o valor de T en *nits* ou *bits*, respectivamente. Na prática, utiliza-se mais o logarítmo natural.

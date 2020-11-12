@@ -336,12 +336,114 @@ A esperança condicionada é similar a esperança marginal ou incondicional send
 para poder calcular a esperança condicionada de $X$ dado $Y$
 
 \[
-  E(X_i|Y_i) = \sum_{i=1}^{n} P(X_i| Y_i) \times X_i.
+  E(X_i|Y=c) = \sum_{i=1}^{n} P(X_i| Y=c) \times X_i.
 \]
 
 **Exemplo numérico sobre a probabilidade condicional**
 
-Exemplo 5.1.2 da página 113 do @Sartoris2013 
+Exemplo 5.1.2 da página 113 do @Sartoris2013. Seja as variáveis aleatórias $X$ e $Y$ definidas no exemplo sobre o time de volei, determine $E(X|Y=0)$.
 
+**Resposta**:
+
+Para o cálculo da esperança condicionada são necessárias as probabilidades condicionais para todos os valores de $X$. Pois
+
+\[
+  E(X|Y=0) = \sum_{i=1}^{n} P(X_i|Y=0) \times X_i
+\]
+As probabilidades condicionais são
+\[
+  P((X=0|Y=0) = \dfrac{P(X=0~\text{e}~Y=0)}{P(Y=0)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+\[
+  P((X=1|Y=0) = \dfrac{P(X=1~\text{e}~Y=0)}{P(Y=0)} \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
+\]
+
+\[
+  P((X=2|Y=0) = \dfrac{P(X=2~\text{e}~Y=0)}{P(Y=0)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+\[
+  P((X=3|Y=0) = \dfrac{P(X=3~\text{e}~Y=0)}{P(Y=0)} \dfrac{0}{\dfrac{1}{2}}= 0
+\]
+
+Com essas probabilidades condicionais calcula-se a esperança de $X$ condicionada a $Y=0$
+
+\[
+  E(X|Y=0) = \frac{1}{4}\times 0 + \frac{1}{2} \times 1 + \frac{1}{4}\times 2 + 0 \times 3 = 1
+\]
+Portanto a $E(X|Y=0) = 1$.
+
+### Lei das Expectativas Iteradas
+
+A lei das expectativas iteradas diz que o valor esperados das esperanças condicionais é igual a esperança incondicional. Ou seja,
+
+\[
+  E[E(X|Y)] = E(X)
+  (\#eq:ExpectativasIteradas)
+\]
+
+**Exemplo sobre a Lei das Expectativas Iteradas**
+
+O Exemplo 5.1.3 da página 114 do @Sartoris2013 tem o objetivo de aplicar a lei das expectativas iteradas através de \@ref(eq:ExpectativasIteradas). Seja as variáveis $X$ e $Y$ do exemplo sobre o time de volei, determine $E[E(X|Y)]$.
+
+**Resposta**:
+
+Note que o cálculo da esperança das esperanças condicionais é necessário os todos as esperanças condicionais de $X$ e as respectivas probabilidades de $Y$. Como já foi calculado $E(X|Y=0)$ no exemplo numérico anterior, fica faltando $E(X|Y=1)$, uma vez que os valores de $Y$ são zero e um. Ou seja,
+
+Para o cálculo da esperança condicionada de #$X$ dado que $Y=1$ são necessárias as probabilidades condicionais para todos os valores de $X$. Pois
+
+\[
+  E(X|Y=1) = \sum_{i=1}^{n} P(X_i|Y=1) \times X_i
+\]
+sendo que 
+
+\[
+  P(X|Y=1) = \dfrac{P(X~\text{e}~Y=0)}{P(Y=0)}.
+\]
+
+As probabilidades condicionais são
+\[
+  P((X=0|Y=1) = \dfrac{P(X=0~\text{e}~Y=1)}{P(Y=1)} \dfrac{0}{\dfrac{1}{2}}= 0
+\]
+
+\[
+  P((X=1|Y=1) = \dfrac{P(X=1~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+\[
+  P((X=2|Y=1) = \dfrac{P(X=2~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
+\]
+
+\[
+  P((X=3|Y=1) = \dfrac{P(X=3~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+Com essas probabilidades condicionais calcula-se a esperança de $X$ condicionada a $Y=1$
+
+\[
+  E(X|Y=1) = 0 + \frac{1}{4} \times 1 + \frac{1}{2}\times 2 + \dfrac{1}{3} \times 3 = 2
+\]
+Portanto a $E(X|Y=1) = 2$.
+
+O valor de $E[E(X|Y)]$ é calculado da seguinte forma
+
+\[
+  E[E(X|Y)] = \sum_{j=1}^{k} P(Y_j)\times E(X|Y_j)
+\]
+onde $j=1,\ldots,k$. Assim sendo, para o exemplo numérico fica
+
+\[
+  E[E(X|Y)] = P(Y=0) \times E(X|Y=0) + P(Y=1) \times E(X|Y=1)
+\]
+colocando os valores calculados
+\[
+  E[E(X|Y)] = \dfrac{1}{2} \times 1 + \frac{1}{2} \times 2 = 1,5 
+\]
+Note que $E(X)$ calculando anteriormente é, de fato, 1,5. Portanto confirma-se através do exemplo numérico que
+
+\[
+  E[E(X|Y)] = E(X).
+\]
 
 

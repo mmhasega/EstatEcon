@@ -90,6 +90,7 @@ tab:ResultadosProvaveisEmTresPartidas
 tab:ProbabilidadesConjuntasDeXeY
 tab:ProbabilidadesMarginaisDeXeY
 tab:ProdutoEntreXeY
+eq:ExpectativasIteradas
 estatística-descritiva
 medidas-de-posição
 variável-aleatória
@@ -161,6 +162,7 @@ distribuição-de-variáveis-aleátórias-conjunta
 distribuição-conjunta-de-variáveis-aleatórias-discretas
 covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta
 esperança-condicionada
+lei-das-expectativas-iteradas
 estimadores
 teste-de-hipóste
 regressão-linear

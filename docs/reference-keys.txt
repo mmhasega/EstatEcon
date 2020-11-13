@@ -159,10 +159,13 @@ teorema-de-tchebichev
 momentos-de-uma-distribuição
 posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica
 distribuição-de-variáveis-aleátórias-conjunta
-distribuição-conjunta-de-variáveis-aleatórias-discretas
+distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-discretas
 covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta
 esperança-condicionada
 lei-das-expectativas-iteradas
+variância-condicionada
+decomposição-da-variância
+distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas
 estimadores
 teste-de-hipóste
 regressão-linear

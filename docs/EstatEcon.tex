@@ -121,7 +121,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-11-12}
+\date{2020-11-13}
 
 \begin{document}
 \maketitle
@@ -5918,8 +5918,8 @@ A distribuição de probabilidade de um vetor \((X,Y)\) com duas variáveis, por
 
 As variáveis da distribuição de probabilidade conjunta podem ser discretas ou contínuas.
 
-\hypertarget{distribuiuxe7uxe3o-conjunta-de-variuxe1veis-aleatuxf3rias-discretas}{%
-\section{Distribuição conjunta de variáveis aleatórias discretas}\label{distribuiuxe7uxe3o-conjunta-de-variuxe1veis-aleatuxf3rias-discretas}}
+\hypertarget{distribuiuxe7uxe3o-de-probabilidade-conjunta-de-variuxe1veis-aleatuxf3rias-discretas}{%
+\section{Distribuição de probabilidade conjunta de variáveis aleatórias discretas}\label{distribuiuxe7uxe3o-de-probabilidade-conjunta-de-variuxe1veis-aleatuxf3rias-discretas}}
 
 Com base em \citet{Sartoris2013}, é apresentado o assunto da seção através da apresentação de um exemplo numérico prático.
 
@@ -6493,7 +6493,7 @@ para poder calcular a esperança condicionada de \(X\) dado \(Y\)
   E(X_i|Y=c) = \sum_{i=1}^{n} P(X_i| Y=c) \times X_i.
 \]
 
-\textbf{Exemplo numérico sobre a probabilidade condicional}
+\textbf{Exemplo numérico sobre Esperança condicional}
 
 Exemplo 5.1.2 da página 113 do \citet{Sartoris2013}. Seja as variáveis aleatórias \(X\) e \(Y\) definidas no exemplo sobre o time de volei, determine \(E(X|Y=0)\).
 
@@ -6506,19 +6506,19 @@ Para o cálculo da esperança condicionada são necessárias as probabilidades c
 \]
 As probabilidades condicionais são
 \[
-  P((X=0|Y=0) = \dfrac{P(X=0~\text{e}~Y=0)}{P(Y=0)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+  P((X=0|Y=0) = \dfrac{P(X=0~\text{e}~Y=0)}{P(Y=0)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
 \]
 
 \[
-  P((X=1|Y=0) = \dfrac{P(X=1~\text{e}~Y=0)}{P(Y=0)} \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
+  P((X=1|Y=0) = \dfrac{P(X=1~\text{e}~Y=0)}{P(Y=0)}= \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
 \]
 
 \[
-  P((X=2|Y=0) = \dfrac{P(X=2~\text{e}~Y=0)}{P(Y=0)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+  P((X=2|Y=0) = \dfrac{P(X=2~\text{e}~Y=0)}{P(Y=0)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
 \]
 
 \[
-  P((X=3|Y=0) = \dfrac{P(X=3~\text{e}~Y=0)}{P(Y=0)} \dfrac{0}{\dfrac{1}{2}}= 0
+  P((X=3|Y=0) = \dfrac{P(X=3~\text{e}~Y=0)}{P(Y=0)}= \dfrac{0}{\dfrac{1}{2}}= 0
 \]
 
 Com essas probabilidades condicionais calcula-se a esperança de \(X\) condicionada a \(Y=0\)
@@ -6559,19 +6559,19 @@ sendo que
 
 As probabilidades condicionais são
 \[
-  P((X=0|Y=1) = \dfrac{P(X=0~\text{e}~Y=1)}{P(Y=1)} \dfrac{0}{\dfrac{1}{2}}= 0
+  P((X=0|Y=1) = \dfrac{P(X=0~\text{e}~Y=1)}{P(Y=1)}= \dfrac{0}{\dfrac{1}{2}}= 0
 \]
 
 \[
-  P((X=1|Y=1) = \dfrac{P(X=1~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+  P((X=1|Y=1) = \dfrac{P(X=1~\text{e}~Y=1)}{P(Y=1)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
 \]
 
 \[
-  P((X=2|Y=1) = \dfrac{P(X=2~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
+  P((X=2|Y=1) = \dfrac{P(X=2~\text{e}~Y=1)}{P(Y=1)}= \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
 \]
 
 \[
-  P((X=3|Y=1) = \dfrac{P(X=3~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+  P((X=3|Y=1) = \dfrac{P(X=3~\text{e}~Y=1)}{P(Y=1)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
 \]
 
 Com essas probabilidades condicionais calcula-se a esperança de \(X\) condicionada a \(Y=1\)
@@ -6600,6 +6600,300 @@ Note que \(E(X)\) calculando anteriormente é, de fato, 1,5. Portanto confirma-s
 \[
   E[E(X|Y)] = E(X).
 \]
+
+\hypertarget{variuxe2ncia-condicionada}{%
+\subsection{Variância condicionada}\label{variuxe2ncia-condicionada}}
+
+A variância condicional como o próprio nome diz é a variância de uma variável condicionada ao valor de uma outra variável. Por isso o seu cálculo necessíta a probabilidade condicional e a esperança condicionada. Neste caso, além da esperança condicional da variável em si, é necessário calcular a esperança condicional da variável elevada ao quadrado. Ou seja,
+
+\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]
+
+para calcular a esperança condicionada de \(X\) dado \(Y\)
+
+\[
+  E(X_i|Y=c) = \sum_{i=1}^{n} P(X_i| Y=c) \times X_i.
+\]
+
+e a esperança condicionada de \(X^2\) dado \(Y\)
+
+\[
+  E(X_i^2|Y=c) = \sum_{i=1}^{n} P(X_i| Y=c) \times X_i^2.
+\]
+para então calcular
+
+\[
+  Var(X|Y=c) = E(X^2|Y=c) - [E(X|Y=c)]^2.
+\]
+
+\textbf{Exemplo sobre a variância condicionada}
+
+Exemplo 5.1.4 da página 114 do \citet{Sartoris2013}. Com base nas variáveis do exemplo do time de volei, calcule \(Var(Y|X=1)\).
+
+\textbf{Resposta}:
+
+É necessário calcular \(P(Y=0|X=1)\) e \(P(Y=1|X=1)\)
+
+\[
+  P(Y=0|X=1) = \dfrac{P(Y=0~\cap~X=1)}{P(X=1)} = \dfrac{\dfrac{2}{8}}{\dfrac{3}{8}}=\dfrac{2}{3}
+\]
+e
+\[
+  P(Y=1|X=1) = \dfrac{P(Y=1~\cap~X=1)}{P(X=1)} = \dfrac{\dfrac{1}{8}}{\dfrac{3}{8}}=\dfrac{1}{3}.
+\]
+Assim
+\[
+  E(Y|X=1) = P(Y=0|X=1) \times 0 + P(Y=1|X=1) \times 1
+\]
+
+\[
+  E(Y|X=1) = \dfrac{2}{3} \times 0 + \dfrac{1}{3} \times 1 = \dfrac{1}{3}.
+\]
+Para \(Y^2\)
+\[
+  E(Y^2|X=1) = P(Y=0|X=1) \times 0^2 + P(Y=1|X=1) \times 1^2
+\]
+
+\[
+  E(Y|X=1) = \dfrac{2}{3} \times 0^2 + \dfrac{1}{3} \times 1^2 = \dfrac{1}{3}.
+\]
+
+Portanto,
+
+\[
+  Var(Y|X=1) = E(Y^2|X=1) - [E(Y|X=1)]^2
+\]
+
+\[
+  Var(Y|X=1) = \dfrac{1}{3} - [\dfrac{1}{3}]^2 
+\]
+
+\[
+  Var(Y|X=1) = \dfrac{1}{3} - \dfrac{1}{9} = \dfrac{2}{9} 
+\]
+
+\textbf{Outro exemplo numérico sobre variância condicionada}
+
+Exemplo 5.1.5 na página 114 do \citet{Sartoris2013}. Sejam as variáveis \(X\) e \(Y\) do exemplo numérico do time de volei. Calcule \(Var(X|Y=0)\) e \(Var(X|Y=1)\).
+
+\textbf{Resposta}:
+
+É necessário calcular
+
+\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}
+\]
+
+para poder calcular a esperança condicionada de \(X\) dado \(Y\)
+
+\[
+  E(X_i|Y=c) = \sum_{i=1}^{n} P(X_i| Y=c) \times X_i.
+\]
+
+e a esperança condicionada de \(X^2\) dado \(Y\)
+
+\[
+  E(X_i^2|Y=c) = \sum_{i=1}^{n} P(X_i| Y=c) \times X_i^2.
+\]
+para então calcular
+
+\[
+  Var(X|Y=c) = E(X^2|Y=c) - [E(X|Y=c)]^2.
+\]
+Já estão calculados
+
+\[
+  P((X=0|Y=0) = \dfrac{P(X=0~\text{e}~Y=0)}{P(Y=0)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+\[
+  P((X=1|Y=0) = \dfrac{P(X=1~\text{e}~Y=0)}{P(Y=0)}= \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
+\]
+
+\[
+  P((X=2|Y=0) = \dfrac{P(X=2~\text{e}~Y=0)}{P(Y=0)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+\[
+  P((X=3|Y=0) = \dfrac{P(X=3~\text{e}~Y=0)}{P(Y=0)}= \dfrac{0}{\dfrac{1}{2}}= 0
+\]
+e
+\[
+  P((X=0|Y=1) = \dfrac{P(X=0~\text{e}~Y=1)}{P(Y=1)}= \dfrac{0}{\dfrac{1}{2}}= 0
+\]
+
+\[
+  P((X=1|Y=1) = \dfrac{P(X=1~\text{e}~Y=1)}{P(Y=1)}= \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}
+\]
+
+\[
+  P((X=2|Y=1) = \dfrac{P(X=2~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{2}{8}}{\dfrac{1}{2}}= \dfrac{1}{2}
+\]
+
+\[
+  P((X=3|Y=1) = \dfrac{P(X=3~\text{e}~Y=1)}{P(Y=1)} \dfrac{\dfrac{1}{8}}{\dfrac{1}{2}}= \dfrac{1}{4}.
+\]
+
+Também já estão calculados
+
+\[
+  E(X|Y=0) = \frac{1}{4}\times 0 + \frac{1}{2} \times 1 + \frac{1}{4}\times 2 + 0 \times 3 = 1
+\]
+e
+\[
+  E(X|Y=1) = 0 + \frac{1}{4} \times 1 + \frac{1}{2}\times 2 + \dfrac{1}{3} \times 3 = 2.
+\]
+Faltam ser calculadas as \(E(X^2|Y=0)\) e \(E(X^2|Y=1)\).
+
+\begin{multline}
+  E(X^2|Y=0) = P(X=0|Y=0) \times 0^2 + P(X=1|Y=0)\times 1^2 +\\
+  P(X=2|Y=0) \times 2^2 + P(X=3|Y=0) \times 3^2
+\end{multline}
+\[
+  E(X^2|Y=0) = \dfrac{1}{4} \times 0^2 + \dfrac{1}{2}\times 1^2 +
+  \dfrac{1}{4} \times 2^2 + 0 \times 3^2 = 1,5.
+\]
+e
+\begin{multline}
+  E(X^2|Y=1) = P(X=0|Y=1) \times 0^2 + P(X=1|Y=1)\times 1^2 +\\
+  P(X=2|Y=1) \times 2^2 + P(X=3|Y=1) \times 3^2
+\end{multline}
+\[
+  E(X^2|Y=1) = 0 \times 0^2 + \dfrac{1}{4}\times 1^2 +
+  \dfrac{1}{2} \times 2^2 + \dfrac{1}{4} \times 3^2 = 4,5.
+\]
+
+Portanto, as variâncias condicionadas são
+
+\[
+  Var(X|Y=0) = E(X^2|Y=0) - [E(X|Y=0)]^2 = 1,5 - 1^2 = 0,5.
+\]
+
+\[
+  Var(X|Y=1) = E(X^2|Y=1) - [E(X|Y=1)]^2 = 4,5 - 2^2 = 0,5.
+\]
+Note que a variância condicional é sempre ou quase sempre menor do que a variância incondicional, ou seja,
+
+\[
+  Var(X|Y) \leq Var(X)
+\]
+e
+\[
+  Var(Y|X) \leq Var(Y).
+\]
+
+Por outro lado, Esperança condicional pode ser menor ou maior ou igual a esperança incondicional. Ou seja,
+
+\[
+  E(X|Y) >=<E(X)
+\]
+e
+\[
+  E(Y|X) >=<E(Y)
+\]
+
+Para entender essas relações, toma-se o exemplo do time de volei.
+
+Se é garantido que o primeiro jogo vitória, ou seja, dado que \(Y=1\), o número de vitórias esperado aumenta.Ao contrário, se o primeiro jogo é, com certeza, derrota, o número de vitórias esperado diminui.
+
+No caso da variância, condicional ou não, é uma media de dispersão. O fato do resultado do primeiro jogo ser dado, seja o resultado qual for, diminui o núero de resultados possíveis. Por isso, a variância condicional ser quase sempre menor.
+
+Se as variáveis \(X\) e \(Y\) forem independentes, isso significa
+
+\[
+  P(X|Y) = P(X)
+\]
+e
+\[
+  E(X|Y) = E(X)
+\]
+e
+\[
+  Var(X|Y) = Var(X).
+\]
+Obviamente, também
+
+\[
+  P(Y|X)= P(Y)
+\]
+e
+\[
+  E(Y|X) = E(Y)
+\]
+e
+\[
+  Var(Y|X) = Var(Y).
+\]
+
+\hypertarget{decomposiuxe7uxe3o-da-variuxe2ncia}{%
+\subsection{Decomposição da Variância}\label{decomposiuxe7uxe3o-da-variuxe2ncia}}
+
+A decomposição da variância entrega uma relação interessante
+
+\[
+  Var(X) = Var[E(X|Y)] + E[Var(X|Y)]
+\]
+
+\textbf{Exemplo sobre a decomposição da variância}
+
+Exemplo 5.1.6 da página 115 do \citet{Sartoris2013}. Tomando o exemplo do time de volei, calcule \(E[Var(X|Y)]\) e \(Var[E(X|Y)]\)
+
+\textbf{Resposta}:
+
+\[
+  E[Var(X|Y)] = Var(X|Y=0) \times P(Y=0) + Var(X|Y=1) \times P(Y=1)
+\]
+
+\[
+  E[Var(X|Y)] = 0,5 \times 0,5 + 0,5 \times 0,5
+\]
+
+\[
+  E[Var(X|Y)] = 0,5.
+\]
+
+No caso da \(Var[E(X|Y)]\) é necessário calcular \(E\{[E(X|Y)]^2\}\), pois
+
+\[
+  Var[E(X|Y)] = E\{[E(X|Y)]^2\} - \{E[E(X|Y)]\}^2
+\]
+
+Então,
+
+\[
+  E\{[E(X|Y)]^2\} = E[E(X|Y=0)]^2\times P(Y=0) + E[E(X|Y=1)]^2\times P(Y=1) 
+\]
+
+\[
+  E\{[E(X|Y)]^2\} = 1^2\times 0,5 + 2^2\times 0,5 
+\]
+
+\[
+  E\{[E(X|Y)]^2\} = 2,5 
+\]
+Portanto,
+
+\[
+  Var[E(X|Y)] = E\{[E(X|Y)]^2\} - \{E[E(X|Y)]\}^2 
+\]
+
+\[
+  Var[E(X|Y)] = 2,5 - (1,5)^2 
+\]
+
+\[
+  Var[E(X|Y)] = 2,5 - 2,25 
+\]
+
+\[
+  Var[E(X|Y)] = 0,25
+\]
+
+\hypertarget{distribuiuxe7uxe3o-de-probabilidade-conjunta-de-variuxe1veis-aleatuxf3rias-contuxednuas}{%
+\section{Distribuição de probabilidade conjunta de variáveis aleatórias contínuas}\label{distribuiuxe7uxe3o-de-probabilidade-conjunta-de-variuxe1veis-aleatuxf3rias-contuxednuas}}
+
+Se as variáveis aleatórias forem contínuas, o procedimento é similar a da situação com uma variável. Neste caso haverá duas integrais no caso de duas variáveis.
 
 \hypertarget{estimadores}{%
 \chapter{Estimadores}\label{estimadores}}

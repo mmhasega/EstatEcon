@@ -6895,6 +6895,345 @@ Portanto,
 
 Se as variáveis aleatórias forem contínuas, o procedimento é similar a da situação com uma variável. Neste caso haverá duas integrais no caso de duas variáveis.
 
+\hypertarget{funuxe7uxe3o-densidade-de-probabilidade-conjunta}{%
+\subsection{Função densidade de probabilidade conjunta}\label{funuxe7uxe3o-densidade-de-probabilidade-conjunta}}
+
+Define-se uma função densidade de probabilidade (f.d.p.) conjunta \(f(x,y)\) de tal forma que a probabilidade de \(x\) estar entre os valores \(a\) e \(b\) e de \(y\) estar entre \(c\) e \(d\) é dada por:
+
+\[
+  P(a < x < b ~\text{ e }~ c < y < d) = \int_{c}^{d}\int_{a}^{b}f(x,y)~\text{d}x \text{d}y
+  \label{eq:FdpConjunta}
+\]
+Ou seja, a função densidade probabilidade conjunta, assim como a distribuição de probabilidade conjunta discreta, entrega a probabilidade para os intervalos definidos entre as duas ou mais variáveis.
+
+Diferentemente da situação das variáveis aleatórias discretas, no caso de uma ou mais variáveis aleatórias contínuas a probabilidade só pode ser calculada para um intervalo pois,
+
+\[
+  P(X=x_0~~\text{e}~~Y=y_0) = 0,
+\]
+mesmo que \(X=x_0\) e \(Y=y_0\) sejam eventos possíveis.
+
+A função desnidade de probabilidade conjunta deve seguir as mesmas propriedades da f.d.p. para uma variável, ou seja,
+
+\begin{itemize}
+\item
+  não pode ser negativa e;
+
+  \[
+    f(x,y) \geq 0
+  \]
+\item
+  a soma de todas as probabilidades tem de ser igual a 1.
+\end{itemize}
+
+\[
+  \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)~\text{d}x \text{d}y = 1.
+\]
+
+\textbf{Exemplo numérico sobre a f.d.p. contínua e conjunta}
+
+Exemplo 5.2.1 da página 118 do \citet{Sartoris2013}. seja a função
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      Axy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+Calcule o valor de \(A\) para que \(f(x,y)\) seja uma função densidade de probabilidade.
+
+\textbf{Resposta}:
+
+Para que \(f(x,y)\) seja uma f.d.p., deve atender a
+
+\[
+  \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)~\text{d}x \text{d}y = 1.
+\]
+No caso específico do exemplo numérico, sabendo que tanto \(x\) como \(y\) variam entre zero e um se tem
+
+\[
+  \int_{0}^{1}\int_{0}^{1}f(x,y)~\text{d}x \text{d}y = 1
+\]
+
+\[
+  \int_{0}^{1}\int_{0}^{1}Axy ~\text{d}x \text{d}y = 1
+\]
+
+\[
+  \int_{0}^{1}Ay\int_{0}^{1}x~\text{d}x \text{d}y = 1
+\]
+a regra de integração para uma função como a do exemplo numérico é de somar 1 a potência da variável para a qual está sendo integrada e dividir pelo resultado da soma da potência.
+\[
+  \int_{0}^{1}Ay\left[ \dfrac{x^2}{2} \right]_{0}^{1} \text{d}y = 1
+\]
+assim se calcula a diferença para \(x=1\) e \(x=0\)
+\[
+  \int_{0}^{1}Ay\left[ \dfrac{1^2}{2} - \dfrac{0^2}{2} \right] \text{d}y = 1
+\]
+e obtém=se a diferença
+\[
+  \int_{0}^{1}Ay\dfrac{1}{2} \text{d}y = 1.
+\]
+
+Como \(A\) e \(1/2\) são constantes, coloca-se para fora da integral
+
+\[
+  \dfrac{A}{2}\int_{0}^{1}y~\text{d}y = 1
+\]
+
+a integral para a variável \(y\) fica
+
+\[
+  \dfrac{A}{2}\left[ \dfrac{y^2}{2} \right]_{0}^{1}~\text{d}y = 1
+\]
+
+Calcula-se para \(y=1\) e \(y=0\)
+\[
+  \dfrac{A}{2}\left[  \dfrac{1^2}{2} - \dfrac{0^2}{2} \right] = 1
+\]
+
+e obtém-se a diferença
+
+\[
+  \dfrac{A}{2}\dfrac{1}{2} = 1
+\]
+
+\[
+  \dfrac{A}{4} = 1
+\]
+Portanto
+
+\[
+  A=4
+\]
+Assim a função \(f(x,y)\) do exemplo numérico fica
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+\textbf{Outro exemplo numérico sobre a função densidade de probabilidade conjunta}
+
+Exemplo 5.2.2 da página 119 do \citet{Sartoris2013}. Dada a f.d.p. do exemplo numérico anterior
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+Calcule a probabilidade de \(x\) estar entre 0,2 e 0,4 e de \(y\) estar entre 0,6 e 0,8.
+
+\textbf{Resposta}:
+
+A probabilidade conjunta é dada diretamente pela integral da função densidade de probabilidade
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}\int_{0,2}^{0,4}f(x,y)~\text{d}x \text{d}y
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}\int_{0,2}^{0,4}4xy~\text{d}x \text{d}y
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}4y\int_{0,2}^{0,4}x~\text{d}x \text{d}y
+\]
+integrando para \(x\)
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}4y\left[\dfrac{x^2}{2} \right]_{0,2}^{0,4}~\text{d}y
+\]
+calculando para \(x=0,2\) e \(x=0,4\)
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}4y\left[\dfrac{(0,4)^2}{2} - \dfrac{(0,2)^2}{2} \right]~\text{d}y
+\]
+calculando a diferença para intervalo
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}4y\left[0,08 - 0,04 \right]~\text{d}y
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}0,24y~\text{d}y
+\]
+Como 0,24 é constante, coloca-se para fora da integral
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = 0,24\int_{0,6}^{0,8}y~\text{d}y
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = 0,24\left[  \dfrac{y^2}{2}\right]_{0,6}^{0,8}
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = 0,24\left[  \dfrac{(0,8)^2}{2} - \dfrac{(0,6)^2}{2}\right]
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = 0,24\left[  \dfrac{0,64}{2} - \dfrac{0,36}{2}\right]
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = 0,24\times 0,14
+\]
+
+\[
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = 0,0336
+\]
+
+\hypertarget{funuxe7uxe3o-densidade-de-probabilidade-marginal}{%
+\subsection{Função densidade de probabilidade marginal}\label{funuxe7uxe3o-densidade-de-probabilidade-marginal}}
+
+Para variáveis aleatórias discretas, a distribuição marginal de \(x\) é encontrada somando-se as probabilidades para todos os valores de \(y\), e vice-versa.
+
+No caso de variáveis aleatórias contínuas, a função densidade de probabilidade marginal de \(x\), denominada de \(g(x)\), é encontrada de forma análoga, ou seja, intengrando-se \(f(x,y)\) em \(y\).
+
+De maneira geral, a f.d.p. marginal de \(x\) pode ser encontrada da seguinte forma,
+
+\[
+  g(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y
+\]
+
+\textbf{Exemplo numérico sobre função densidade de probabilidade marginal}
+
+Exemplo 5.2.3 da página 120 do \citet{Sartoris2013}. Seja a função densidade de probabilidade conjunta do exemplo numérico anterior, calcule as f.d.p. marginais de \(x\) e de \(y\).
+
+\textbf{Resposta}:
+
+Como se encontra a f.d.p. marginal de \(x\) integrando \(f(x,y)\) em \(y\)
+
+\[
+  g(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y
+\]
+
+no caso do exemplo numérico é
+
+\[
+  g(x) = \int_{0}^{1} 4xy~ \text{d}y.
+\]
+Ou seja,
+
+\[
+  g(x) = 4x\int_{0}^{1} y~ \text{d}y
+\]
+
+\[
+  g(x) = 4x\left[ \dfrac{y^2}{2} \right]_{0}^{1}
+\]
+
+\[
+  g(x) = 4x\dfrac{1}{2}
+\]
+
+\[
+  g(x) = 2x
+\]
+
+De forma análoga, a f.d.p. marginal de \(y\), denotada como \(h(y)\) é a integral de \(f(x,y)\) em \(x\)
+\[
+hg(y) = \int_{-\infty}^{+\infty} f(x,y) \text{d}x
+\]
+Assim, para o exemplo numérico fica
+
+\[
+  h(y) = \int_{0}^{1} 4xy~ \text{d}x.
+\]
+
+\[
+  h(y) = 4y\int_{0}^{1} x~ \text{d}x
+\]
+
+\[
+  h(y) = 4y\left[ \dfrac{x^2}{2} \right]_{0}^{1}
+\]
+
+\[
+  h(y) = 4y\dfrac{1}{2}
+\]
+
+\[
+  h(y) = 2y
+\]
+
+\textbf{Outro exemplo numérico sobre a f.d.p. marginal}
+
+Exemplo 5.2.4 da página 121 do \citet{Sartoris2013}. Seja a f.d.p. conjunta apresentada anteriormente
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+calcule a probabilidade de \(x\) estar entre 0,3 e 0,7.
+
+\textbf{Resposta}:
+
+Note que é necessário integrar a f.d.p. conjunta em \(y\) nos seus limites definidos para a função, para obter a f.d.p. marginal de \(x\) o que permite calcular a probabilidade somente de \(x\). No exemplo numérico anterior já foi calculado o \(g(x)\) que é
+
+\[
+  g(x) = \int_{0}^{1} 4xy~ \text{d}y = 2x
+\]
+
+Portanto,
+
+\[
+  P(0,3 < x < 0,7) = \int_{0,3}^{0,7}2x \text{d}x
+\]
+
+\[
+  P(0,3 < x < 0,7) = \left[ x^2 \right]_{0,3}^{0,7} = 0,7^2 - 0,3^2
+\]
+
+\[
+  P(0,3 < x < 0,7) = 0,48 - 0,09
+\]
+
+\[
+  P(0,3 < x < 0,7) = 0,4.
+\]
+
+\hypertarget{probabilidade-condicional}{%
+\subsection{Probabilidade condicional}\label{probabilidade-condicional}}
+
+A probabilidade condicional conjunta definido no contexto discreto é
+
+\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}.
+\]
+A \(P(X=x~\cap~Y=y)\) corresponde a probabilidade conjunta, que no contexto contínuo corresponde a probabilidade conjunta dada pela função \(f(x,y)\).
+
+A \(P(Y=y)\) corresponde a probabilidade marginal, que no contexto contínuo corresponde a probabilidade marginal dada pela função \(h(y)\).
+
+Portanto a probabilidade condicional no contexto contínuo, denotado como \(f_{x|y}\)\} pode ser definido da seguinte forma
+
+\[
+  f_{x|y} = \dfrac{f(x,y)}{h(y)}
+\]
+
+Ou seja, a f.d.p. condicional de \(x\) dado \(y\).
+
+De forma análoga, a f.d.p. condicional de \(y\) dado \(x\), denotado como \(f_{y|x}\) pode ser definido como
+
+\[
+  f_{y|x} = \dfrac{f(x,y)}{g(x)}
+\]
+onde \(g(x)\) é f.d.p. marginal de \(x\).
+
+\textbf{Exemplo numérico sobre probabilidade marginal}
+
+Exemplo 5.2.5 da página 121 do \citet{Sartoris2013}.
+
 \hypertarget{estimadores}{%
 \chapter{Estimadores}\label{estimadores}}
 

@@ -228,7 +228,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.4" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#variância-condicionada"><i class="fa fa-check"></i><b>6.1.4</b> Variância condicionada</a></li>
 <li class="chapter" data-level="6.1.5" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#decomposição-da-variância"><i class="fa fa-check"></i><b>6.1.5</b> Decomposição da Variância</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>6.2</b> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</a></li>
+<li class="chapter" data-level="6.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>6.2</b> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#função-densidade-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.2.1</b> Função densidade de probabilidade conjunta</a></li>
+<li class="chapter" data-level="6.2.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#função-densidade-de-probabilidade-marginal"><i class="fa fa-check"></i><b>6.2.2</b> Função densidade de probabilidade marginal</a></li>
+<li class="chapter" data-level="6.2.3" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#probabilidade-condicional"><i class="fa fa-check"></i><b>6.2.3</b> Probabilidade condicional</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a></li>
 <li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
@@ -953,7 +957,260 @@ Portanto,</p>
 <div id="distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas" class="section level2">
 <h2><span class="header-section-number">6.2</span> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</h2>
 <p>Se as variáveis aleatórias forem contínuas, o procedimento é similar a da situação com uma variável. Neste caso haverá duas integrais no caso de duas variáveis.</p>
+<div id="função-densidade-de-probabilidade-conjunta" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Função densidade de probabilidade conjunta</h3>
+<p>Define-se uma função densidade de probabilidade (f.d.p.) conjunta <span class="math inline">\(f(x,y)\)</span> de tal forma que a probabilidade de <span class="math inline">\(x\)</span> estar entre os valores <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> e de <span class="math inline">\(y\)</span> estar entre <span class="math inline">\(c\)</span> e <span class="math inline">\(d\)</span> é dada por:</p>
+<p><span class="math display" id="eq:FdpConjunta">\[
+  P(a &lt; x &lt; b ~\text{ e }~ c &lt; y &lt; d) = \int_{c}^{d}\int_{a}^{b}f(x,y)~\text{d}x \text{d}y
+  \tag{6.2}
+\]</span>
+Ou seja, a função densidade probabilidade conjunta, assim como a distribuição de probabilidade conjunta discreta, entrega a probabilidade para os intervalos definidos entre as duas ou mais variáveis.</p>
+<p>Diferentemente da situação das variáveis aleatórias discretas, no caso de uma ou mais variáveis aleatórias contínuas a probabilidade só pode ser calculada para um intervalo pois,</p>
+<p><span class="math display">\[
+  P(X=x_0~~\text{e}~~Y=y_0) = 0,
+\]</span>
+mesmo que <span class="math inline">\(X=x_0\)</span> e <span class="math inline">\(Y=y_0\)</span> sejam eventos possíveis.</p>
+<p>A função desnidade de probabilidade conjunta deve seguir as mesmas propriedades da f.d.p. para uma variável, ou seja,</p>
+<ul>
+<li><p>não pode ser negativa e;</p>
+<p><span class="math display">\[
+  f(x,y) \geq 0
+\]</span></p></li>
+<li><p>a soma de todas as probabilidades tem de ser igual a 1.</p></li>
+</ul>
+<p><span class="math display">\[
+  \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)~\text{d}x \text{d}y = 1.
+\]</span></p>
+<p><strong>Exemplo numérico sobre a f.d.p. contínua e conjunta</strong></p>
+<p>Exemplo 5.2.1 da página 118 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. seja a função</p>
+<p><span class="math display">\[\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      Axy,~~\text{para}~~0 &lt; x &lt; 1~~\text{e}~~0 &lt; y &lt; 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}\]</span>
+Calcule o valor de <span class="math inline">\(A\)</span> para que <span class="math inline">\(f(x,y)\)</span> seja uma função densidade de probabilidade.</p>
+<p><strong>Resposta</strong>:</p>
+<p>Para que <span class="math inline">\(f(x,y)\)</span> seja uma f.d.p., deve atender a</p>
+<p><span class="math display">\[
+  \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)~\text{d}x \text{d}y = 1.
+\]</span>
+No caso específico do exemplo numérico, sabendo que tanto <span class="math inline">\(x\)</span> como <span class="math inline">\(y\)</span> variam entre zero e um se tem</p>
+<p><span class="math display">\[
+  \int_{0}^{1}\int_{0}^{1}f(x,y)~\text{d}x \text{d}y = 1
+\]</span></p>
+<p><span class="math display">\[
+  \int_{0}^{1}\int_{0}^{1}Axy ~\text{d}x \text{d}y = 1
+\]</span></p>
+<p><span class="math display">\[
+  \int_{0}^{1}Ay\int_{0}^{1}x~\text{d}x \text{d}y = 1
+\]</span>
+a regra de integração para uma função como a do exemplo numérico é de somar 1 a potência da variável para a qual está sendo integrada e dividir pelo resultado da soma da potência.
+<span class="math display">\[
+  \int_{0}^{1}Ay\left[ \dfrac{x^2}{2} \right]_{0}^{1} \text{d}y = 1
+\]</span>
+assim se calcula a diferença para <span class="math inline">\(x=1\)</span> e <span class="math inline">\(x=0\)</span>
+<span class="math display">\[
+  \int_{0}^{1}Ay\left[ \dfrac{1^2}{2} - \dfrac{0^2}{2} \right] \text{d}y = 1
+\]</span>
+e obtém=se a diferença
+<span class="math display">\[
+  \int_{0}^{1}Ay\dfrac{1}{2} \text{d}y = 1.
+\]</span></p>
+<p>Como <span class="math inline">\(A\)</span> e <span class="math inline">\(1/2\)</span> são constantes, coloca-se para fora da integral</p>
+<p><span class="math display">\[
+  \dfrac{A}{2}\int_{0}^{1}y~\text{d}y = 1
+\]</span></p>
+<p>a integral para a variável <span class="math inline">\(y\)</span> fica</p>
+<p><span class="math display">\[
+  \dfrac{A}{2}\left[ \dfrac{y^2}{2} \right]_{0}^{1}~\text{d}y = 1
+\]</span></p>
+<p>Calcula-se para <span class="math inline">\(y=1\)</span> e <span class="math inline">\(y=0\)</span>
+<span class="math display">\[
+  \dfrac{A}{2}\left[  \dfrac{1^2}{2} - \dfrac{0^2}{2} \right] = 1
+\]</span></p>
+<p>e obtém-se a diferença</p>
+<p><span class="math display">\[
+  \dfrac{A}{2}\dfrac{1}{2} = 1
+\]</span></p>
+<p><span class="math display">\[
+  \dfrac{A}{4} = 1
+\]</span>
+Portanto</p>
+<p><span class="math display">\[
+  A=4
+\]</span>
+Assim a função <span class="math inline">\(f(x,y)\)</span> do exemplo numérico fica</p>
+<p><span class="math display">\[\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 &lt; x &lt; 1~~\text{e}~~0 &lt; y &lt; 1 \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}\]</span></p>
+<p><strong>Outro exemplo numérico sobre a função densidade de probabilidade conjunta</strong></p>
+<p>Exemplo 5.2.2 da página 119 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada a f.d.p. do exemplo numérico anterior</p>
+<p><span class="math display">\[\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 &lt; x &lt; 1~~\text{e}~~0 &lt; y &lt; 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}\]</span></p>
+<p>Calcule a probabilidade de <span class="math inline">\(x\)</span> estar entre 0,2 e 0,4 e de <span class="math inline">\(y\)</span> estar entre 0,6 e 0,8.</p>
+<p><strong>Resposta</strong>:</p>
+<p>A probabilidade conjunta é dada diretamente pela integral da função densidade de probabilidade</p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}\int_{0,2}^{0,4}f(x,y)~\text{d}x \text{d}y
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}\int_{0,2}^{0,4}4xy~\text{d}x \text{d}y
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}4y\int_{0,2}^{0,4}x~\text{d}x \text{d}y
+\]</span>
+integrando para <span class="math inline">\(x\)</span>
+<span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}4y\left[\dfrac{x^2}{2} \right]_{0,2}^{0,4}~\text{d}y
+\]</span>
+calculando para <span class="math inline">\(x=0,2\)</span> e <span class="math inline">\(x=0,4\)</span>
+<span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}4y\left[\dfrac{(0,4)^2}{2} - \dfrac{(0,2)^2}{2} \right]~\text{d}y
+\]</span>
+calculando a diferença para intervalo
+<span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}4y\left[0,08 - 0,04 \right]~\text{d}y
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}0,24y~\text{d}y
+\]</span>
+Como 0,24 é constante, coloca-se para fora da integral
+<span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = 0,24\int_{0,6}^{0,8}y~\text{d}y
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = 0,24\left[  \dfrac{y^2}{2}\right]_{0,6}^{0,8}
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = 0,24\left[  \dfrac{(0,8)^2}{2} - \dfrac{(0,6)^2}{2}\right]
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = 0,24\left[  \dfrac{0,64}{2} - \dfrac{0,36}{2}\right]
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = 0,24\times 0,14
+\]</span></p>
+<p><span class="math display">\[
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = 0,0336
+\]</span></p>
+</div>
+<div id="função-densidade-de-probabilidade-marginal" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Função densidade de probabilidade marginal</h3>
+<p>Para variáveis aleatórias discretas, a distribuição marginal de <span class="math inline">\(x\)</span> é encontrada somando-se as probabilidades para todos os valores de <span class="math inline">\(y\)</span>, e vice-versa.</p>
+<p>No caso de variáveis aleatórias contínuas, a função densidade de probabilidade marginal de <span class="math inline">\(x\)</span>, denominada de <span class="math inline">\(g(x)\)</span>, é encontrada de forma análoga, ou seja, intengrando-se <span class="math inline">\(f(x,y)\)</span> em <span class="math inline">\(y\)</span>.</p>
+<p>De maneira geral, a f.d.p. marginal de <span class="math inline">\(x\)</span> pode ser encontrada da seguinte forma,</p>
+<p><span class="math display">\[
+  g(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y
+\]</span></p>
+<p><strong>Exemplo numérico sobre função densidade de probabilidade marginal</strong></p>
+<p>Exemplo 5.2.3 da página 120 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a função densidade de probabilidade conjunta do exemplo numérico anterior, calcule as f.d.p. marginais de <span class="math inline">\(x\)</span> e de <span class="math inline">\(y\)</span>.</p>
+<p><strong>Resposta</strong>:</p>
+<p>Como se encontra a f.d.p. marginal de <span class="math inline">\(x\)</span> integrando <span class="math inline">\(f(x,y)\)</span> em <span class="math inline">\(y\)</span></p>
+<p><span class="math display">\[
+  g(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y
+\]</span></p>
+<p>no caso do exemplo numérico é</p>
+<p><span class="math display">\[
+  g(x) = \int_{0}^{1} 4xy~ \text{d}y.
+\]</span>
+Ou seja,</p>
+<p><span class="math display">\[
+  g(x) = 4x\int_{0}^{1} y~ \text{d}y
+\]</span></p>
+<p><span class="math display">\[
+  g(x) = 4x\left[ \dfrac{y^2}{2} \right]_{0}^{1}
+\]</span></p>
+<p><span class="math display">\[
+  g(x) = 4x\dfrac{1}{2}
+\]</span></p>
+<p><span class="math display">\[
+  g(x) = 2x
+\]</span></p>
+<p>De forma análoga, a f.d.p. marginal de <span class="math inline">\(y\)</span>, denotada como <span class="math inline">\(h(y)\)</span> é a integral de <span class="math inline">\(f(x,y)\)</span> em <span class="math inline">\(x\)</span>
+<span class="math display">\[
+hg(y) = \int_{-\infty}^{+\infty} f(x,y) \text{d}x
+\]</span>
+Assim, para o exemplo numérico fica</p>
+<p><span class="math display">\[
+  h(y) = \int_{0}^{1} 4xy~ \text{d}x.
+\]</span></p>
+<p><span class="math display">\[
+  h(y) = 4y\int_{0}^{1} x~ \text{d}x
+\]</span></p>
+<p><span class="math display">\[
+  h(y) = 4y\left[ \dfrac{x^2}{2} \right]_{0}^{1}
+\]</span></p>
+<p><span class="math display">\[
+  h(y) = 4y\dfrac{1}{2}
+\]</span></p>
+<p><span class="math display">\[
+  h(y) = 2y
+\]</span></p>
+<p><strong>Outro exemplo numérico sobre a f.d.p. marginal</strong></p>
+<p>Exemplo 5.2.4 da página 121 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a f.d.p. conjunta apresentada anteriormente</p>
+<p><span class="math display">\[\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 &lt; x &lt; 1~~\text{e}~~0 &lt; y &lt; 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}\]</span>
+calcule a probabilidade de <span class="math inline">\(x\)</span> estar entre 0,3 e 0,7.</p>
+<p><strong>Resposta</strong>:</p>
+<p>Note que é necessário integrar a f.d.p. conjunta em <span class="math inline">\(y\)</span> nos seus limites definidos para a função, para obter a f.d.p. marginal de <span class="math inline">\(x\)</span> o que permite calcular a probabilidade somente de <span class="math inline">\(x\)</span>. No exemplo numérico anterior já foi calculado o <span class="math inline">\(g(x)\)</span> que é</p>
+<p><span class="math display">\[
+  g(x) = \int_{0}^{1} 4xy~ \text{d}y = 2x
+\]</span></p>
+<p>Portanto,</p>
+<p><span class="math display">\[
+  P(0,3 &lt; x &lt; 0,7) = \int_{0,3}^{0,7}2x \text{d}x
+\]</span></p>
+<p><span class="math display">\[
+  P(0,3 &lt; x &lt; 0,7) = \left[ x^2 \right]_{0,3}^{0,7} = 0,7^2 - 0,3^2
+\]</span></p>
+<p><span class="math display">\[
+  P(0,3 &lt; x &lt; 0,7) = 0,48 - 0,09
+\]</span></p>
+<p><span class="math display">\[
+  P(0,3 &lt; x &lt; 0,7) = 0,4.
+\]</span></p>
+</div>
+<div id="probabilidade-condicional" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Probabilidade condicional</h3>
+<p>A probabilidade condicional conjunta definido no contexto discreto é</p>
+<p><span class="math display">\[
+  P(X=x|Y=y) = \dfrac{P (X=x~\cap~Y=y)}{P(Y=y)}.
+\]</span>
+A <span class="math inline">\(P(X=x~\cap~Y=y)\)</span> corresponde a probabilidade conjunta, que no contexto contínuo corresponde a probabilidade conjunta dada pela função <span class="math inline">\(f(x,y)\)</span>.</p>
+<p>A <span class="math inline">\(P(Y=y)\)</span> corresponde a probabilidade marginal, que no contexto contínuo corresponde a probabilidade marginal dada pela função <span class="math inline">\(h(y)\)</span>.</p>
+<p>Portanto a probabilidade condicional no contexto contínuo, denotado como <span class="math inline">\(f_{x|y}\)</span>} pode ser definido da seguinte forma</p>
+<p><span class="math display">\[
+  f_{x|y} = \dfrac{f(x,y)}{h(y)}
+\]</span></p>
+<p>Ou seja, a f.d.p. condicional de <span class="math inline">\(x\)</span> dado <span class="math inline">\(y\)</span>.</p>
+<p>De forma análoga, a f.d.p. condicional de <span class="math inline">\(y\)</span> dado <span class="math inline">\(x\)</span>, denotado como <span class="math inline">\(f_{y|x}\)</span> pode ser definido como</p>
+<p><span class="math display">\[
+  f_{y|x} = \dfrac{f(x,y)}{g(x)}
+\]</span>
+onde <span class="math inline">\(g(x)\)</span> é f.d.p. marginal de <span class="math inline">\(x\)</span>.</p>
+<p><strong>Exemplo numérico sobre probabilidade marginal</strong></p>
+<p>Exemplo 5.2.5 da página 121 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>.</p>
 
+</div>
 </div>
 </div>
 <h3>Referências</h3>

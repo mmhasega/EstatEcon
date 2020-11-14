@@ -2,13 +2,10 @@ eq:mediaaritmeticasimples
 eq:mediaartimeticaponderada
 eq:eq13
 eq:eq14
-eq:eq15
 eq:eq16
-eq:eq17
 eq:mediaharmonicasimples
 eq:mediaharmonicasimples2
 eq:mediaharmonicaponderada
-eq:mediaharmonicaponderada2
 eq:diferencaentreasmedias
 eq:posicaomedianaimpar
 eq:valor1mediaposicaomedianapar
@@ -16,12 +13,7 @@ eq:valor2mediaposicaomedianapar
 eq:medianapar
 eq:posicaoquartilum
 eq:posicaoquartiltres
-eq:DeltaEmSomaDeValoresNegativosEPositivos
-eq:IgualdadeDasSomasDosDesvios
 eq:DesvioAbsolutoMedioAlternativo
-eq:DiferencaAbsolutaMediaEmDuasParcelas
-eq:DiferencaAbsolutaMediaPassoIntermediario
-eq:DiferencaAbsolutaMediaQuaseFinal
 eq:DiferencaAbsolutaMediaFinal
 tab:pessoasocupadas
 fig:CurvaLorenzR
@@ -31,7 +23,6 @@ eq:ProporcaoDaPopulacao
 eq:ProporcaoDaRendaAcumulada
 eq:alfa
 eq:GiniEmTermosDeBeta
-eq:AreaDoTrapezioSi
 eq:AreaDoBeta
 eq:GiniEmTermosDePhi
 eq:GiniEmTermosDeXi
@@ -42,12 +33,10 @@ eq:GiniFinal
 tab:DadosdoExemploNumericoParaGini
 eq:DiscrepanciaMaximaDefinicao
 eq:DiscrepanciaMaximaEmTermosDeXi
-eq:DesvioAbsolutoMedioEquivalentes
 eq:DiscrepanciaMaximaFinal
 eq:ConteudoInformativo
 eq:ConteudoInformativoGeral
 eq:InformacaoEsperadaDeUmaMensagemCerta
-eq:LagrangeanoDeHx
 eq:IntervaloDeVariacaoDeHx
 eq:InformacaoDeUmaMensagemIncerta
 eq:IndiceTDeTheil
@@ -91,6 +80,7 @@ tab:ProbabilidadesConjuntasDeXeY
 tab:ProbabilidadesMarginaisDeXeY
 tab:ProdutoEntreXeY
 eq:ExpectativasIteradas
+eq:FdpConjunta
 estatística-descritiva
 medidas-de-posição
 variável-aleatória
@@ -166,6 +156,9 @@ lei-das-expectativas-iteradas
 variância-condicionada
 decomposição-da-variância
 distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas
+função-densidade-de-probabilidade-conjunta
+função-densidade-de-probabilidade-marginal
+probabilidade-condicional
 estimadores
 teste-de-hipóste
 regressão-linear

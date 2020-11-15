@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  15 NOV 2020 02:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1129,21 +1129,57 @@ Overfull \hbox (16.42834pt too wide) has occurred while \output is active
 ÓRIAS CONJUNTA
  []
 
-[154
+[154]
+Overfull \hbox (136.70212pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.2.  DISTRIBUIÇÃO DE PROBABILIDADE CONJUNTA DE VARIÁVEIS ALEAT
+ÓRIAS CONTÍNUAS \T1/lmr/m/n/10 155
+ []
 
-]
+[155]
+Overfull \hbox (16.42834pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 156 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+ÓRIAS CONJUNTA
+ []
+
+[156]
+Overfull \hbox (136.70212pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.2.  DISTRIBUIÇÃO DE PROBABILIDADE CONJUNTA DE VARIÁVEIS ALEAT
+ÓRIAS CONTÍNUAS \T1/lmr/m/n/10 157
+ []
+
+[157]
+Overfull \hbox (16.42834pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 158 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+ÓRIAS CONJUNTA
+ []
+
+[158]
+Overfull \hbox (136.70212pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.2.  DISTRIBUIÇÃO DE PROBABILIDADE CONJUNTA DE VARIÁVEIS ALEAT
+ÓRIAS CONTÍNUAS \T1/lmr/m/n/10 159
+ []
+
+[159]
+Overfull \hbox (16.42834pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 160 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+ÓRIAS CONJUNTA
+ []
+
+[160]
 Cap\'{\i }tulo 7.
-[155] [156
+[161
+
+] [162
 
 ]
 Cap\'{\i }tulo 8.
-[157] [158
+[163] [164
 
 ]
 Cap\'{\i }tulo 9.
-(./EstatEcon.bbl [159] [160
+(./EstatEcon.bbl [165] [166
 
-]) [161] (./EstatEcon.aux)
+]) [167] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: 01D31828F28032666CA614CA57981A96;8102.
 
@@ -1151,17 +1187,17 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17993 strings out of 481446
- 305215 string characters out of 5919951
- 621862 words of memory out of 5000000
- 33897 multiletter control sequences out of 15000+600000
+ 18019 strings out of 481446
+ 305612 string characters out of 5919951
+ 622184 words of memory out of 5000000
+ 33901 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  66i,16n,73p,836b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{
-/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/
-macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/macbook
-/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/macbook/Li
+{/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{
+/Users/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Us
+ers/macbook/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/mac
+book/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/macbook/Li
 brary/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/macbook/Libra
 ry/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/macbook/Library/Tin
 yTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/macbook/Library/TinyTe
@@ -1169,25 +1205,26 @@ X/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/macbook/Library/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmbx7.pfb></Users/macbook/Library/TinyTeX/texmf
 -dist/fonts/type1/public/lm/lmex10.pfb></Users/macbook/Library/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmmi10.pfb></Users/macbook/Library/TinyTeX/texmf-dist/
-fonts/type1/public/lm/lmmi5.pfb></Users/macbook/Library/TinyTeX/texmf-dist/font
-s/type1/public/lm/lmmi7.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/ty
-pe1/public/lm/lmr10.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/
-public/lm/lmr12.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/publ
-ic/lm/lmr17.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/l
-m/lmr5.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr
-7.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.p
-fb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb>
-</Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></U
-sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users
-/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/mac
-book/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/macboo
-k/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbook/L
-ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook/Lib
-rary/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (161 pages, 786216 bytes).
+fonts/type1/public/lm/lmmi12.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fon
+ts/type1/public/lm/lmmi5.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/t
+ype1/public/lm/lmmi7.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1
+/public/lm/lmr10.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/pub
+lic/lm/lmr12.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/
+lm/lmr17.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/l
+mr5.pfb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.p
+fb></Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
+</Users/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></U
+sers/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></User
+s/macbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/ma
+cbook/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/macboo
+k/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/macbook/L
+ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbook/Libr
+ary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook/Librar
+y/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on EstatEcon.pdf (167 pages, 803213 bytes).
 PDF statistics:
- 1738 PDF objects out of 2073 (max. 8388607)
- 1495 compressed objects within 15 object streams
- 464 named destinations out of 1000 (max. 500000)
+ 1800 PDF objects out of 2073 (max. 8388607)
+ 1549 compressed objects within 16 object streams
+ 486 named destinations out of 1000 (max. 500000)
  420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

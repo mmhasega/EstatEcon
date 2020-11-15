@@ -1054,7 +1054,7 @@ A $P(X=x~\cap~Y=y)$ corresponde a probabilidade conjunta, que no contexto contí
 
 A $P(Y=y)$ corresponde a probabilidade marginal, que no contexto contínuo corresponde a probabilidade marginal dada pela função $h(y)$.
 
-Portanto a probabilidade condicional no contexto contínuo, denotado como $f_{x|y}$} pode ser definido da seguinte forma
+Portanto a probabilidade condicional no contexto contínuo, denotado como $f_{x|y}$ pode ser definido da seguinte forma
 
 \[
   f_{x|y} = \dfrac{f(x,y)}{h(y)}
@@ -1072,6 +1072,371 @@ onde $g(x)$ é f.d.p. marginal de $x$.
 **Exemplo numérico sobre probabilidade marginal**
 
 Exemplo 5.2.5 da página 121 do @Sartoris2013.
+
+Seja a f.d.p. dos exemplos numéricos anteriores
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+calcule a f.d.p. condicional de $x$ e $y$.
+
+**Resposta**:
+
+No caso da f.d.p. condicional de $x$ dado $y$ é necessário calcular
+
+\[
+  f_{x|y} = \dfrac{f(x,y)}{h(y)}
+\]
+e já estão disponíveis $f(x,y)$ 
+
+\[
+  f(x,y) = 4xy
+\]
+para $0 < x <1$ e $0 < y < 1$, dado pelo exemplo corrente, e a f.d.p. marginal de $y$,
+
+\[
+  h(y) = 2y
+\]
+que foi calculada no exemplo numérico anterior para $0 < y < 1$.
+
+Portanto,
+\[
+  f_{x|y} = \dfrac{f(x,y)}{h(y)} = \dfrac{4xy}{2y}
+\]
+
+\[
+  f_{x|y} = 2x
+\]
+De forma análoga, a f.d.p. condicianal de $y$ dado $x$
+\[
+  f_{y|x} = \dfrac{f(x,y)}{g(x)}
+\]
+Note que já estão disponíveis as partes necessárias para o cálculo de $f_{y|x}$
+
+\[
+  f_{y|x} = \dfrac{f(x,y)}{g(x)} = \frac{4xy}{2x}
+\]
+
+\[
+  f_{y|x} = 2y
+\]
+
+**Verificação da independência de duas variáveis**
+
+Note que quando ocorre
+
+\[
+  f_{x|y} = g(x)
+\]
+e
+\[
+  f_{y|x} = h(y)
+\]
+ou seja, as f.d.p. condicionais são iguais a f.d.p. incondicionais ou marginais, pode-se concluir que as variáveis são independentes.
+
+Dessa forma, é valido afirmar que
+
+\[
+  f(x,y) = g(x) \times h(y).
+  (\#eq:IgualdadeParaVariaveisIndependentes)
+\]
+
+Note que no último exemplo numérico, verifca-se que
+
+\[
+  f(x,y) = g(x) \times h(y) = 2x \times 2y = 4xy
+\]
+
+A igualdade \@ref(eq:IgualdadeParaVariaveisIndependentes) é válida sempre que as variáveis forem independentes. Uma demonstração dessa igualdade é apresentada no apêndice do capítulo 5 de @Sartoris2013. 
+
+Do ponto de vista matemático, é possível verificar se as variáveis em uma função densidade de probabilidade conjunta são independentes, é verificar se é possível ser fatorada em funções para cada variável separadamente. Ou seja, o produto de uma função só para $x$ e de uma função só para $y$, como se obteve no último exemplo numérico.
+
+### Esperança matemática de $x$
+
+Para o cálculo da esperança matemática de $x$, a semelhança da esperança matemática para uma única variável, é possível realizar diretamente através de um f.d.p. conjunta $f(x,y)$, ou através de uma f.d.p. marginal de $x$
+\[
+  g(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y,
+\]
+
+Partindo-se da f.d.p. conjunta, obtém-se $E(x)$ calculando
+
+\[
+  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x)~\text{d}x\text{d}y.
+\]
+Já partindo de uma f.d.p. marginal de $x$, obtém=se calculando
+
+\[
+  E(x) = \int_{-\infty}^{+\infty} x~g(x)~\text{d}x.
+\]
+
+**Exemplo numérico sobre o valor esperado de uma váriável a partir de uma f.d.p. conjunta**
+
+Exemplo 5.2.6 da página 122 do @Sartoris2013. Seja a f.d.p. conjunta dos exemplos numéricos anteriores,
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+calcule $E(x)$.
+
+**Resposta**:
+
+Partindo da f.d.p. conjunta, é necessário calcular
+
+\[
+  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x)~\text{d}x\text{d}y
+\]
+
+\[
+  E(x) = \int_{0}^{1} \int_{0}^{1} x~4xy~\text{d}x\text{d}y
+\]
+
+\[
+  E(x) = 4\int_{0}^{1} \int_{0}^{1} x^2y~\text{d}x\text{d}y
+\]
+
+\[
+  E(x) = 4\int_{0}^{1}y \int_{0}^{1} x^2~\text{d}x\text{d}y
+\]
+
+\[
+  E(x) = 4\int_{0}^{1}y \left[ \dfrac{x^3}{3} \right]_{0}^{1}~\text{d}y
+\]
+
+\[
+  E(x) = \dfrac{4}{3}\int_{0}^{1}y~\text{d}y
+\]
+
+\[
+  E(x) = \dfrac{4}{3}\left[ \dfrac{y^2}{2} \right]_{0}^{1}~\text{d}y
+\]
+
+\[
+  E(x) = \dfrac{4}{3}\times \dfrac{1}{2}
+\]
+
+\[
+  E(x) = \dfrac{2}{3}
+\]
+
+Partindo da f.d.p. marginal $g(x)$ 
+\[
+  g(x) = 2x
+\]
+é necessário calcular
+\[
+  E(x) = \int_{-\infty}^{+\infty} x~g(x)~\text{d}x.
+\]
+
+\[
+  E(x) = \int_{0}^{1} x~2x~\text{d}x.
+\]
+
+\[
+  E(x) = 2\int_{0}^{1} x^2~\text{d}x.
+\]
+
+\[
+  E(x) = 2\left[ \dfrac{x^3}{3} \right]_{0}^{1}
+\]
+
+\[
+  E(x) = 2 \times \frac{1}{3}
+\]
+
+\[
+  E(x) = \frac{2}{3}
+\]
+que é o mesmo valor do cálculo partindo da f.d.p. conjunta.
+
+Note que o cálculo para $E(y)$ é similar ao cálculo de $E(x)$, tanto a partir da f.d.p. conjunta como a partir da f.d.p. marginal de $y$. Ou seja,
+
+\[
+  E(y) = \dfrac{2}{3}.
+\]
+A verificação é deixada como exercício.
+
+### Variância de $x$
+
+Assim como a esperança matemática de $x$, a variância de $x$ também pode ser obtida através da f.d.p. conjunta $f(x,y)$ de $x$ e $y$, ou através da f.d.p. marginal de $x$, denotada como $g(x)$. A semelhança da variância para uma única variável, pode-se usar a fórmula da definição
+
+\[
+  Var(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty}[x - E(x)]^2~f(x,y) ~\text{d}x \text{d}y
+\]
+ou a versão alternativa
+\[
+  Var(x) = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x^2~f(x,y)~\text{d}x\text{d}y - \left[ \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}x~f(x,y)~\text{d}x \text{d}y \right]^2
+\]
+que, apesar das integrais, é a velha e conhecida média dos quadrados menos o quadrado da média.
+
+Partindo da f.d.p. marginal $g(x)$, pode-se usar a fórmula da definição
+
+\[
+  Var(x) = \int_{-\infty}^{+\infty}[X - E(x)]^2~g(x) ~\text{d}x
+\]
+ou a versão alternativa
+\[
+  Var(x) = \int_{-\infty}^{+\infty} x^2~g(x)~\text{d}x - \left[ \int_{-\infty}^{+\infty}x~g(x)~\text{d}x \right]^2
+\]
+
+**Exemplo sobre a variância de $x$**
+
+Exemplo 5.2.7 da página 127 do @Sartoris2013. Seja a f.d.p. conjunta dos exemplos numéricos anteriores
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+calcule $Var(x)$.
+
+**Resposta**:
+
+Como já foi calculado a esperança de $x$ utilizando a f.d.p. marginal de $x$
+\[
+  E(x) = \int_{-\infty}^{+\infty} x~g(x)~\text{d}x = \dfrac{2}{3}
+\]
+e usando a fórmula alternativa da variância
+
+\[
+  Var(x) = \int_{-\infty}^{+\infty} x^2~g(x)~\text{d}x - \left[ \int_{-\infty}^{+\infty}x~g(x)~\text{d}x \right]^2
+\]
+
+\[
+  Var(x) = \int_{0}^{1} x^2~g(x)~\text{d}x - \left[ \dfrac{2}{3}\right]^2
+\]
+e falta calcular a esperança dos quadrados, a semelhaça do cálculo da variância de uma única variável.
+
+\[
+  Var(x) = \int_{0}^{1} x^2~2x~\text{d}x - \left[ \dfrac{4}{9}\right]
+\]
+
+\[
+  Var(x) = 2\int_{0}^{1} x^3~\text{d}x - \left[ \dfrac{4}{9}\right]
+\]
+
+\[
+  Var(x) = 2\left[ \dfrac{x^4}{4} \right]_{0}^{1} - \left[ \dfrac{4}{9}\right]
+\]
+
+\[
+  Var(x) = \dfrac{1}{2} - \dfrac{4}{9}
+\]
+
+\[
+  Var(x) = \dfrac{2-1}{18}
+\]
+
+\[
+  Var(x) = \dfrac{1}{18}
+\]
+
+A variância de $y$ é deixado como exercício.
+
+### Covariância entre $x$ e $y$ 
+
+Lembrando que a covariância apresentada na parte de estísticas descritivas é dado por
+
+\[
+  cov(x,y) = E[x - E(x)][y - E(y)] = E(xy) - E(x)E(y).
+\]
+
+Em termos de f.d.p. conjunta fica da seguinte forma considerando a definição de covariância
+
+\[
+  Cov(x,y) = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}[x - E(x)][y - E(y)]~f(x,y)~\text{d}x\text{d}y 
+\]
+e a forma alternativa
+\[
+  Cov(x,y) = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}~xy~f(x,y)~\text{d}x\text{d}y - \int_{-\infty}^{+\infty}x~g(x)~\text{d}x \int_{-\infty}^{+\infty}y~h(y)~\text{d}y
+\]
+
+
+**Exemplo numérico sobre a covariância entre $x$ e $y$**
+
+Exemplo 5.2.8 da página 124 do @Sartoris2013. Seja a f.d.p. conjunta dos exemplos numéricos anteriores
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      4xy,~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+calcule a covariância entre $x$ e $y$.
+
+**Resposta**:
+
+Como já foram calculadas as médias de $x$ e de $y$, utiliza-se a forma alternativa da covariância. Assim só falta calcular $E(xy)$.
+
+\[
+  Cov(x,y) = \int_{0}^{1}\int_{0}^{1}~xy~4xy~\text{d}x\text{d}y - \dfrac{2}{3}\times \dfrac{2}{3}
+\]
+
+\[
+  Cov(x,y) = 4\int_{0}^{1}y^2\int_{0}^{1}~x^2~\text{d}x\text{d}y - \dfrac{4}{9}
+\]
+
+\[
+  Cov(x,y) = 4\int_{0}^{1}y^2\left[ \dfrac{x^3}{3} \right]_{0}^{1}~\text{d}y - \dfrac{4}{9}
+\]
+
+\[
+  Cov(x,y) = 4\int_{0}^{1}y^2\left[ \dfrac{1}{3} \right]~\text{d}y - \dfrac{4}{9}
+\]
+
+\[
+  Cov(x,y) = \dfrac{4}{3}\int_{0}^{1}y^2~\text{d}y - \dfrac{2}{3}\times \dfrac{2}{3}
+\]
+
+\[
+  Cov(x,y) = \dfrac{4}{3}\left[ \dfrac{y^3}{3} \right]_{0}^{1} - \dfrac{4}{9}
+\]
+
+\[
+  Cov(x,y) = \dfrac{4}{9} - \dfrac{4}{9}
+\]
+
+\[
+  Cov(x,y) = 0
+\]
+
+Note que já era esperado que a covariância fosse igual a zero, uma vez que verificou-se que as variáveis $x$ e $y$ do exemplo númerico desenvolvido são independentes.
+
+**Um outro exemplo numérico sobre f.d.p. conjunta**
+
+Exemplo 5.2.9 da página 125 do @Sartoris2013. Seja a função 
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      B\left( x^2 + y^2 \right),~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+a) Calcule o valor da constatne $B$, de modo que função seja f.d.p. conjunta;
+b) Calcule as f.d.p. marginais de $x$ e $y$;
+c) Calcule as f.d.p. condicionais de $x$ e $y$;
+d) Verifique se $x$ e $y$ são variáveis independentes;
+e) Calcule $P(x <0,5|y=0,5)$;
+
+**Respostas**:
 
 
 

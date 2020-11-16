@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-15" />
+<meta name="date" content="2020-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1493,6 +1493,126 @@ e a forma alternativa
 <li>Calcule <span class="math inline">\(P(x &lt;0,5|y=0,5)\)</span>;</li>
 </ol>
 <p><strong>Respostas</strong>:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Para ser uma função f.d.p. precisa atender a seguinte condição</li>
+</ol>
+<p><span class="math display">\[
+  \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)~\text{d}x\text{d}y = 1
+\]</span></p>
+<p>como <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> variam entre zero e um é possível definir os limites das integrais</p>
+<p><span class="math display">\[
+  \int_{0}^{1}\int_{0}^{1}f(x,y)~\text{d}x\text{d}y = 1
+\]</span>
+incluindo a função dada
+<span class="math display">\[
+  \int_{0}^{1}\int_{0}^{1}B(x^2 + y^2)~\text{d}x\text{d}y = 1
+\]</span>
+Como <span class="math inline">\(B\)</span> é constante
+<span class="math display">\[
+  B\int_{0}^{1}\int_{0}^{1}(x^2 + y^2)~\text{d}x\text{d}y = 1
+\]</span>
+lembre-se que <span class="math inline">\(x^0 = 1\)</span>
+<span class="math display">\[
+  B\int_{0}^{1}\int_{0}^{1}(x^2 + y^2)~\text{d}x\text{d}y = 1
+\]</span></p>
+<p><span class="math display">\[
+  B\int_{0}^{1} \left[ \dfrac{x^3}{3} + y^2x \right]_{0}^{1}~\text{d}y = 1
+\]</span></p>
+<p><span class="math display">\[
+  B\int_{0}^{1} \left[ \dfrac{1}{3} + y^2 \right]~\text{d}y = 1
+\]</span></p>
+<p><span class="math display">\[
+  B\left[ \dfrac{1}{3}y + \dfrac{y^3}{3} \right]_{0}^{1} = 1
+\]</span></p>
+<p><span class="math display">\[
+  B\left[ \dfrac{1}{3} + \dfrac{1}{3} \right] = 1
+\]</span></p>
+<p><span class="math display">\[
+  B\times \dfrac{2}{3} = 1
+\]</span></p>
+<p><span class="math display">\[
+  B = \dfrac{3}{2}
+\]</span></p>
+<p>Portanto, a f.d.p. conjunta deste exemplo numérico fica
+<span class="math display">\[
+  f(x,y) = \int_{0}^{1}\int_{0}^{1}\dfrac{3}{2}(x^2 + y^2)~\text{d}x\text{d}y
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Para obter a f.d.p. marginal de <span class="math inline">\(x\)</span> , <span class="math inline">\(g(x)\)</span>, é necessário integrar <span class="math inline">\(f(x,y)\)</span> em <span class="math inline">\(y\)</span>. Ou seja,</li>
+</ol>
+<p><span class="math display">\[
+  g(x) = \int_{0}^{1}\dfrac{3}{2}(x^2 + y^2)~\text{d}y
+\]</span>
+lembrando que <span class="math inline">\(y^0=1\)</span>
+<span class="math display">\[
+  g(x) = \dfrac{3}{2}\left[ x^2y + \dfrac{y^3}{3} \right]_{0}^{1}~\text{d}y
+\]</span></p>
+<p><span class="math display">\[
+  g(x) = \dfrac{3}{2}\left[ x^2 + \dfrac{1}{3} \right]
+\]</span>
+Procede-se de forma similar para obter a f.d.p. marginal de <span class="math inline">\(y\)</span>, <span class="math inline">\(h(y)\)</span>, ou seja, integrando <span class="math inline">\(f(x,y)\)</span> em <span class="math inline">\(x\)</span></p>
+<p><span class="math display">\[
+  h(y) = \int_{0}^{1}\dfrac{3}{2}(x^2 + y^2)~\text{d}x
+\]</span>
+lembrando que <span class="math inline">\(x^0 = 1\)</span>
+<span class="math display">\[
+  h(y) = \dfrac{3}{2}\left[ \dfrac{x^3}{3}+ y^2x \right]_{0}^{1}
+\]</span></p>
+<p><span class="math display">\[
+  h(y) = \dfrac{3}{2}\left[ \dfrac{1}{3}+ y^2 \right]
+\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Como se tem <span class="math inline">\(f(x,y)\)</span> e já foram calculadas as f.d.p. marginais de <span class="math inline">\(x\)</span> e de <span class="math inline">\(y\)</span>, fica fácil obter as f.d.p. condicionais de <span class="math inline">\(x\)</span> e de <span class="math inline">\(y\)</span>.</li>
+</ol>
+<p>Para <span class="math inline">\(f_{x|y}\)</span></p>
+<p><span class="math display">\[
+  f_{x|y} = \dfrac{f(x,y)}{h(y)} = \dfrac{\dfrac{3}{2}(x^2 + y^2)}{\dfrac{3}{2}\left( \dfrac{1}{3} + y^2 \right)}
+\]</span></p>
+<p><span class="math display">\[
+  f_{x|y} = \dfrac{(x^2 + y^2)}{\left( \dfrac{1}{3} + y^2 \right)}
+\]</span></p>
+<p>e para <span class="math inline">\(f_{y|x}\)</span></p>
+<p><span class="math display">\[
+  f_{y|x} = \dfrac{f(x,y)}{g(x)} = \dfrac{\dfrac{3}{2}(x^2 + y^2)}{\dfrac{3}{2}\left(x^2 + \dfrac{1}{3} \right)}
+\]</span></p>
+<p><span class="math display">\[
+  f_{y|x} = \dfrac{(x^2 + y^2)}{\left(x^2 + \dfrac{1}{3} \right)}
+\]</span></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Como</li>
+</ol>
+<p><span class="math display">\[
+  f_{x|y} \neq g(x)
+\]</span>
+e</p>
+<p><span class="math display">\[
+  f_{y|x} \neq h(y)
+\]</span></p>
+<p>conclui-se que as variáveis <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> neste exemplo numérico não são independentes.</p>
+<p>Mas, com resolução de (b) e de (c), já seria possível verificar que a função <span class="math inline">\((x^2 + y^2)\)</span> não é fatorável de modo a obter uma função só de <span class="math inline">\(x\)</span> ou outra só de <span class="math inline">\(y\)</span>.</p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Como se trata de uma probabilidade condiciional, é necessário fazer uso da f.d.p. condicional de <span class="math inline">\(x\)</span> dado <span class="math inline">\(y=0,5\)</span>. A <span class="math inline">\(f_{x|y}\)</span> é</li>
+</ol>
+<p><span class="math display">\[
+  f_{x|y} = \dfrac{(x^2 + y^2)}{\left( \dfrac{1}{3} + y^2 \right)}
+\]</span></p>
+<p>fazendo <span class="math inline">\(y=1/2\)</span> a <span class="math inline">\(f_{x|y}\)</span> fica</p>
+<p><span class="math display">\[
+  f_{x|y} = \dfrac{x^2 + \left( \dfrac{1}{2}\right)^2}{ \dfrac{1}{3} + \left( \dfrac{1}{2} \right)^2} =  \dfrac{x^2 + \dfrac{1}{4}}{ \dfrac{1}{3} + \dfrac{1}{4}} = \dfrac{x^2 + \dfrac{1}{4}}{ \dfrac{7}{12}}
+\]</span></p>
+<p><span class="math display">\[
+  f_{x|y} = \dfrac{12}{7}\left(x^2 + \dfrac{1}{4}\right)
+\]</span></p>
+<p>Agora falta definir que <span class="math inline">\(x&lt;0,5\)</span>. uma vez que já e dado que <span class="math inline">\(y=0,5\)</span>. Assim,</p>
+<p><span class="math display">\[
+P(x&lt;0,5~|~y=0,5) = \dfrac{12}{7} \int_{0}^{0,5}\left(x^2 + \dfrac{1}{4}\right)~\text{d}x = \dfrac{12}{7} \left[\dfrac{x^3}{3} + \dfrac{1}{4}x  \right]_{0}^{0,5} =  \dfrac{12}{7} \left[\dfrac{1}{24} + \dfrac{1}{8} \right] 
+\]</span></p>
+<p><span class="math display">\[
+P(x&lt;0,5~|~y=0,5) = \left[\dfrac{1}{14} + \dfrac{3}{14} \right] 
+\]</span></p>
+<p><span class="math display">\[
+P(x&lt;0,5~|~y=0,5) = \dfrac{2}{7} \cong 0,2857 
+\]</span></p>
 
 </div>
 </div>

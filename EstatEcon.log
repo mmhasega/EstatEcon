@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  15 NOV 2020 02:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  16 NOV 2020 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1166,20 +1166,52 @@ Overfull \hbox (16.42834pt too wide) has occurred while \output is active
  []
 
 [160]
-Cap\'{\i }tulo 7.
-[161
+Overfull \hbox (136.70212pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.2.  DISTRIBUIÇÃO DE PROBABILIDADE CONJUNTA DE VARIÁVEIS ALEAT
+ÓRIAS CONTÍNUAS \T1/lmr/m/n/10 161
+ []
 
-] [162
+[161]
+Overfull \hbox (16.42834pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 162 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+ÓRIAS CONJUNTA
+ []
+
+[162]
+Overfull \hbox (10.6801pt too wide) detected at line 7779
+\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x < \OT1/lmr/m/n/10 0\OML/l
+mm/m/it/10 ; \OT1/lmr/m/n/10 5 \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 y \OT1/lmr/m
+/n/10 = 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 5) = [] [][] []  []\OML/lmm/m/it/10
+ x \OT1/lmr/m/n/10 = [] [][] = [] []
+ []
+
+
+Overfull \hbox (136.70212pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.2.  DISTRIBUIÇÃO DE PROBABILIDADE CONJUNTA DE VARIÁVEIS ALEAT
+ÓRIAS CONTÍNUAS \T1/lmr/m/n/10 163
+ []
+
+[163]
+Overfull \hbox (16.42834pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 164 \T1/lmr/m/sl/10 CAPÍTULO 6.  DISTRIBUIÇÃO DE VARIÁVEIS ALEÁT
+ÓRIAS CONJUNTA
+ []
+
+[164]
+Cap\'{\i }tulo 7.
+[165
+
+] [166
 
 ]
 Cap\'{\i }tulo 8.
-[163] [164
+[167] [168
 
 ]
 Cap\'{\i }tulo 9.
-(./EstatEcon.bbl [165] [166
+(./EstatEcon.bbl [169] [170
 
-]) [167] (./EstatEcon.aux)
+]) [171] (./EstatEcon.aux)
 Package rerunfilecheck Info: File `EstatEcon.out' has not changed.
 (rerunfilecheck)             Checksum: 01D31828F28032666CA614CA57981A96;8102.
 
@@ -1187,8 +1219,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18019 strings out of 481446
- 305612 string characters out of 5919951
+ 18028 strings out of 481446
+ 305679 string characters out of 5919951
  622184 words of memory out of 5000000
  33901 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
@@ -1221,10 +1253,10 @@ k/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/macbook/L
 ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbook/Libr
 ary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook/Librar
 y/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (167 pages, 803213 bytes).
+Output written on EstatEcon.pdf (171 pages, 810686 bytes).
 PDF statistics:
- 1800 PDF objects out of 2073 (max. 8388607)
- 1549 compressed objects within 16 object streams
- 486 named destinations out of 1000 (max. 500000)
+ 1824 PDF objects out of 2073 (max. 8388607)
+ 1569 compressed objects within 16 object streams
+ 495 named destinations out of 1000 (max. 500000)
  420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

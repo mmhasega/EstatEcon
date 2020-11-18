@@ -846,7 +846,7 @@ p138z097
 Portanto,
 
 \[
-  P(0,27 < z < 1,43) = `r pf138f0` - `r pf097f0` = `r p138z097`.
+  P(0,27 < z < 1,43) = `r pf138f0` + `r pf097f0` = `r p138z097`.
 \]
 
 Alternativamente, se tem os valores das probabilidades para a distribuição completa na tabela ou se está usando o R para os cálculos, calcula-se
@@ -1176,7 +1176,7 @@ entrega o **grau de achatamento** de uma distribuição e por isso está relacio
 Com $M_4$ define-se o coeficiente de curtose
 
 \[
-  \alpha_4 = \dfrac{M_4}{\alpha_4}
+  \alpha_4 = \dfrac{M_4}{\sigma^4}
 \]
 que define
 
@@ -1207,7 +1207,7 @@ Dado que foi apresentado o conceito de assimestria, é possível realizar uma r�
 
 - Se a distribuição é assimétrica á direita, ou seja, cauda maior no lado direito, 
 \[
-  \overline{X} > \text{Mediana} > \text{Moda}.
+   \text{Moda} < \text{Mediana} < \overline{X}.
 \]
 
 - Se a distribuição é assimétrica à esquerda, ou seja, cauda maior no lado esquerdo,

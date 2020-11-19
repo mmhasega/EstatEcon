@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-18" />
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,7 +237,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-entre-x-e-y"><i class="fa fa-check"></i><b>6.2.6</b> Covariância entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a></li>
+<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a><ul>
+<li class="chapter" data-level="7.1" data-path="estimadores.html"><a href="estimadores.html#introdução-1"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
 <li class="chapter" data-level="9" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>9</b> Regressão Linear</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
@@ -1612,6 +1614,42 @@ P(x&lt;0,5~|~y=0,5) = \left[\dfrac{1}{14} + \dfrac{3}{14} \right]
 \]</span></p>
 <p><span class="math display">\[
 P(x&lt;0,5~|~y=0,5) = \dfrac{2}{7} \cong 0,2857 
+\]</span></p>
+<p><strong>Exemplo sobre esperança condicional</strong></p>
+<p>Exemplo 5.2.10 da página 126 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a f.d.p. conjunta do exemplo numérico</p>
+<p><span class="math display">\[\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      \dfrac{3}{2}\left( x^2 + y^2 \right),~~\text{para}~~0 &lt; x &lt; 1~~\text{e}~~0 &lt; y &lt; 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}\]</span></p>
+<p>Calcule <span class="math inline">\(E(x|y=0,5)\)</span>.</p>
+<p><strong>Resposta</strong>:</p>
+<p>Do exemplo numérico anterior sabe-se que</p>
+<p><span class="math display">\[
+  f_{x|y} = 0,5 = \dfrac{12}{7}\left( x^2 + \dfrac{1}{4}  \right)
+\]</span></p>
+<p>A esperança condicional de <span class="math inline">\(x\)</span> é dada por:</p>
+<p><span class="math display">\[
+  E(x|y=y_0) = \int_{-\infty}^{+\infty}x~f_{x|y} \text{d}x
+\]</span></p>
+<p>Dessa forma</p>
+<p><span class="math display">\[
+  E(x|y=0,5) = \dfrac{12}{7}\int_{0}^{1}x\left( x^2 + \dfrac{1}{4} \right)\text{d}x
+\]</span></p>
+<p><span class="math display">\[
+  E(x|y=0,5) = \dfrac{12}{7}\int_{0}^{1}\left( x^3 + \dfrac{1}{4}x \right)\text{d}x
+\]</span></p>
+<p><span class="math display">\[
+  E(x|y=0,5) = \dfrac{12}{7}\left( \dfrac{x^4}{4} + \dfrac{x^2}{8} \right)_{0}^{1}
+\]</span></p>
+<p><span class="math display">\[
+  E(x|y=0,5) = \dfrac{12}{7}\left( \dfrac{1}{4} + \dfrac{1}{8} \right)
+\]</span></p>
+<p><span class="math display">\[
+  E(x|y=0,5) = \dfrac{9}{14}
 \]</span></p>
 
 </div>

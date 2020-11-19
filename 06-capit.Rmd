@@ -1586,5 +1586,54 @@ P(x<0,5~|~y=0,5) = \left[\dfrac{1}{14} + \dfrac{3}{14} \right]
 P(x<0,5~|~y=0,5) = \dfrac{2}{7} \cong 0,2857 
 \]
 
+**Exemplo sobre esperança condicional**
 
+Exemplo 5.2.10 da página 126 do @Sartoris2013. Seja a f.d.p. conjunta do exemplo numérico
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      \dfrac{3}{2}\left( x^2 + y^2 \right),~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+Calcule $E(x|y=0,5)$.
+
+**Resposta**: 
+
+Do exemplo numérico anterior sabe-se que 
+
+\[
+  f_{x|y} = 0,5 = \dfrac{12}{7}\left( x^2 + \dfrac{1}{4}  \right)
+\]
+
+A esperança condicional de $x$ é dada por:
+
+\[
+  E(x|y=y_0) = \int_{-\infty}^{+\infty}x~f_{x|y} \text{d}x
+\]
+
+Dessa forma
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\int_{0}^{1}x\left( x^2 + \dfrac{1}{4} \right)\text{d}x
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\int_{0}^{1}\left( x^3 + \dfrac{1}{4}x \right)\text{d}x
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\left( \dfrac{x^4}{4} + \dfrac{x^2}{8} \right)_{0}^{1}
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\left( \dfrac{1}{4} + \dfrac{1}{8} \right)
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{9}{14}
+\]
 

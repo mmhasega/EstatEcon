@@ -175,5 +175,6 @@ esperança-matemática-de-x
 variância-de-x
 covariância-entre-x-e-y
 estimadores
+introdução-1
 teste-de-hipóste
 regressão-linear

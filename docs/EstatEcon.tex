@@ -121,7 +121,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-11-18}
+\date{2020-11-19}
 
 \begin{document}
 \maketitle
@@ -7786,8 +7786,84 @@ P(x<0,5~|~y=0,5) = \left[\dfrac{1}{14} + \dfrac{3}{14} \right]
 P(x<0,5~|~y=0,5) = \dfrac{2}{7} \cong 0,2857 
 \]
 
+\textbf{Exemplo sobre esperança condicional}
+
+Exemplo 5.2.10 da página 126 do \citet{Sartoris2013}. Seja a f.d.p. conjunta do exemplo numérico
+
+\begin{equation}
+  f(x,y) = 
+    \begin{cases}
+      \dfrac{3}{2}\left( x^2 + y^2 \right),~~\text{para}~~0 < x < 1~~\text{e}~~0 < y < 1 \\
+      \\
+      0, ~~\text{para os demais valores}
+    \end{cases}
+\end{equation}
+
+Calcule \(E(x|y=0,5)\).
+
+\textbf{Resposta}:
+
+Do exemplo numérico anterior sabe-se que
+
+\[
+  f_{x|y} = 0,5 = \dfrac{12}{7}\left( x^2 + \dfrac{1}{4}  \right)
+\]
+
+A esperança condicional de \(x\) é dada por:
+
+\[
+  E(x|y=y_0) = \int_{-\infty}^{+\infty}x~f_{x|y} \text{d}x
+\]
+
+Dessa forma
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\int_{0}^{1}x\left( x^2 + \dfrac{1}{4} \right)\text{d}x
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\int_{0}^{1}\left( x^3 + \dfrac{1}{4}x \right)\text{d}x
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\left( \dfrac{x^4}{4} + \dfrac{x^2}{8} \right)_{0}^{1}
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{12}{7}\left( \dfrac{1}{4} + \dfrac{1}{8} \right)
+\]
+
+\[
+  E(x|y=0,5) = \dfrac{9}{14}
+\]
+
 \hypertarget{estimadores}{%
 \chapter{Estimadores}\label{estimadores}}
+
+O conteúdo sobre estimadores é baseado no capítulo 6 do \citet{Sartoris2013}.
+
+\hypertarget{introduuxe7uxe3o-1}{%
+\section{Introdução}\label{introduuxe7uxe3o-1}}
+
+\textbf{Inferência Estatística} ou \textbf{Estatística inferencial} é a parte da Estatística que faz inferência usadas para a descrição de uma população. Exemplos:
+
+\begin{itemize}
+\tightlist
+\item
+  colherada pra provar um molho que está sendo preparado;
+\item
+  coleta de sangue para realizar vários exames do sangue;
+\item
+  pesquisa de intenção de votos em uma cidade.
+\end{itemize}
+
+\textbf{População e Amostra}
+
+O todo é denominado \textbf{população} e a parte é denominada \textbf{amostra}. Por isso, a \textbf{inferência estastística} trata de, a partir da amostra, obter informações sobre a população.
+
+Quando o tamanho da amostra é muito pequeno em relação ao tamanho da população, se diz que a população é \textbf{infinita}.
+
+Um exemplo seria a amostra de três mil eleitores para a pesquisa de intenção de votos na capital do Estado de São Paulo que tem atualmente um pouco mais de oito milhões e quatrocentos mils eleitores.
 
 \hypertarget{teste-de-hipuxf3ste}{%
 \chapter{Teste de hipóste}\label{teste-de-hipuxf3ste}}

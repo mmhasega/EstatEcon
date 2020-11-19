@@ -1,1 +1,21 @@
 # Estimadores
+
+O conteúdo sobre estimadores é baseado no capítulo 6 do @Sartoris2013.
+
+## Introdução
+
+**Inferência Estatística** ou **Estatística inferencial** é a parte da Estatística que faz inferência usadas para a descrição de uma população. Exemplos:
+
+- colherada pra provar um molho que está sendo preparado;
+- coleta de sangue para realizar vários exames do sangue;
+- pesquisa de intenção de votos em uma cidade.
+
+**População e Amostra**
+
+O todo é denominado **população** e a parte é denominada **amostra**. Por isso, a **inferência estastística** trata de, a partir da amostra, obter informações sobre a população.
+
+Quando o tamanho da amostra é muito pequeno em relação ao tamanho da população, se diz que a população é **infinita**. 
+
+Um exemplo seria a amostra de três mil eleitores para a pesquisa de intenção de votos na capital do Estado de São Paulo que tem atualmente um pouco mais de oito milhões e quatrocentos mils eleitores.
+
+

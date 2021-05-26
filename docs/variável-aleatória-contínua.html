@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>CAPÍTULO 5 Variável Aleatória Contínua | Notas de aulas de Estatística Econômica</title>
   <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="CAPÍTULO 5 Variável Aleatória Contínua | Notas de aulas de Estatística Econômica" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2021-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="variável-aleatória-discreta.html"/>
 <link rel="next" href="distribuição-de-variáveis-aleátórias-conjunta.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +120,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -139,8 +162,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
 <li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
-<li class="chapter" data-level="1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html"><i class="fa fa-check"></i><b>1</b> Estatística Descritiva</a><ul>
-<li class="chapter" data-level="1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-posição"><i class="fa fa-check"></i><b>1.1</b> Medidas de posição</a><ul>
+<li class="chapter" data-level="1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html"><i class="fa fa-check"></i><b>1</b> Estatística Descritiva</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-posição"><i class="fa fa-check"></i><b>1.1</b> Medidas de posição</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1.1</b> Variável Aleatória</a></li>
 <li class="chapter" data-level="1.1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-aritmética-simples"><i class="fa fa-check"></i><b>1.1.2</b> Média Aritmética Simples</a></li>
 <li class="chapter" data-level="1.1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-aritmética-ponderada"><i class="fa fa-check"></i><b>1.1.3</b> Média Aritmética Ponderada</a></li>
@@ -152,7 +177,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.9" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#quartis-ou-quartiles"><i class="fa fa-check"></i><b>1.1.9</b> Quartis ou Quartiles</a></li>
 <li class="chapter" data-level="1.1.10" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#moda"><i class="fa fa-check"></i><b>1.1.10</b> Moda</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>1.2</b> Medidas de dispersão</a><ul>
+<li class="chapter" data-level="1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>1.2</b> Medidas de dispersão</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#amplitude"><i class="fa fa-check"></i><b>1.2.1</b> Amplitude</a></li>
 <li class="chapter" data-level="1.2.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variância"><i class="fa fa-check"></i><b>1.2.2</b> Variância</a></li>
 <li class="chapter" data-level="1.2.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#desvio-padrão"><i class="fa fa-check"></i><b>1.2.3</b> Desvio Padrão</a></li>
@@ -161,25 +187,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.6" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#histograma"><i class="fa fa-check"></i><b>1.2.6</b> Histograma</a></li>
 <li class="chapter" data-level="1.2.7" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#diagrama-de-caixa-boxplot"><i class="fa fa-check"></i><b>1.2.7</b> Diagrama de caixa (Boxplot)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-relação-linear-entre-duas-variáveis"><i class="fa fa-check"></i><b>1.3</b> Medidas de relação linear entre duas variáveis</a><ul>
+<li class="chapter" data-level="1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-relação-linear-entre-duas-variáveis"><i class="fa fa-check"></i><b>1.3</b> Medidas de relação linear entre duas variáveis</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#covariância"><i class="fa fa-check"></i><b>1.3.1</b> Covariância</a></li>
 <li class="chapter" data-level="1.3.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#coeficiente-de-correlação"><i class="fa fa-check"></i><b>1.3.2</b> Coeficiente de Correlação</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html"><i class="fa fa-check"></i><b>2</b> Medidas de desigualdade</a><ul>
+<li class="chapter" data-level="2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html"><i class="fa fa-check"></i><b>2</b> Medidas de desigualdade</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#príncipio-de-pigou-dalton"><i class="fa fa-check"></i><b>2.1</b> Príncipio de Pigou-Dalton</a></li>
 <li class="chapter" data-level="2.2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#transferência-regressiva"><i class="fa fa-check"></i><b>2.2</b> Transferência Regressiva</a></li>
 <li class="chapter" data-level="2.3" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#curva-de-lorenz"><i class="fa fa-check"></i><b>2.3</b> Curva de Lorenz</a></li>
 <li class="chapter" data-level="2.4" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-gini"><i class="fa fa-check"></i><b>2.4</b> Índice Gini</a></li>
 <li class="chapter" data-level="2.5" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#discrepância-máxima"><i class="fa fa-check"></i><b>2.5</b> Discrepância Máxima</a></li>
-<li class="chapter" data-level="2.6" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#redundância-e-índice-de-theil"><i class="fa fa-check"></i><b>2.6</b> Redundância e Índice de Theil</a><ul>
+<li class="chapter" data-level="2.6" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#redundância-e-índice-de-theil"><i class="fa fa-check"></i><b>2.6</b> Redundância e Índice de Theil</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#teoria-da-informação"><i class="fa fa-check"></i><b>2.6.1</b> Teoria da Informação</a></li>
 <li class="chapter" data-level="2.6.2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-t-de-theil"><i class="fa fa-check"></i><b>2.6.2</b> Índice T de Theil</a></li>
 <li class="chapter" data-level="2.6.3" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-de-l-de-theil"><i class="fa fa-check"></i><b>2.6.3</b> Índice de L de Theil</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#variância-dos-logaritmos"><i class="fa fa-check"></i><b>2.7</b> Variância dos Logaritmos</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>3</b> Números-Índices</a><ul>
+<li class="chapter" data-level="3" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>3</b> Números-Índices</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="números-índices.html"><a href="números-índices.html#introdução"><i class="fa fa-check"></i><b>3.1</b> Introdução</a></li>
 <li class="chapter" data-level="3.2" data-path="números-índices.html"><a href="números-índices.html#preços-relativos"><i class="fa fa-check"></i><b>3.2</b> Preços Relativos</a></li>
 <li class="chapter" data-level="3.3" data-path="números-índices.html"><a href="números-índices.html#índice-simples-de-preços-agregados"><i class="fa fa-check"></i><b>3.3</b> Índice Simples de Preços Agregados</a></li>
@@ -190,8 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-marshall-edgeworth"><i class="fa fa-check"></i><b>3.8</b> Índice de Preços de Marshall-Edgeworth</a></li>
 <li class="chapter" data-level="3.9" data-path="números-índices.html"><a href="números-índices.html#deflacionamento"><i class="fa fa-check"></i><b>3.9</b> Deflacionamento</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html"><i class="fa fa-check"></i><b>4</b> Variável Aleatória Discreta</a><ul>
-<li class="chapter" data-level="4.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#esperança-matemática"><i class="fa fa-check"></i><b>4.1</b> Esperança matemática</a><ul>
+<li class="chapter" data-level="4" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html"><i class="fa fa-check"></i><b>4</b> Variável Aleatória Discreta</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#esperança-matemática"><i class="fa fa-check"></i><b>4.1</b> Esperança matemática</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#função-de-probabilidade"><i class="fa fa-check"></i><b>4.1.1</b> Função de Probabilidade</a></li>
 <li class="chapter" data-level="4.1.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#função-distribuição-acumulada"><i class="fa fa-check"></i><b>4.1.2</b> Função distribuição acumulada</a></li>
 <li class="chapter" data-level="4.1.3" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#esperanças-variâncias-e-covariâncias"><i class="fa fa-check"></i><b>4.1.3</b> Esperanças, Variâncias e Covariâncias</a></li>
@@ -199,36 +231,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#variável-aleatória-discreta-1"><i class="fa fa-check"></i><b>4.2</b> Variável Aleatória Discreta</a></li>
 <li class="chapter" data-level="4.3" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-uniforme"><i class="fa fa-check"></i><b>4.3</b> Distribuição Uniforme</a></li>
 <li class="chapter" data-level="4.4" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-bernoulli"><i class="fa fa-check"></i><b>4.4</b> Distribuição de Bernoulli</a></li>
-<li class="chapter" data-level="4.5" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-binomial"><i class="fa fa-check"></i><b>4.5</b> Distribuição Binomial</a><ul>
+<li class="chapter" data-level="4.5" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-binomial"><i class="fa fa-check"></i><b>4.5</b> Distribuição Binomial</a>
+<ul>
 <li class="chapter" data-level="4.5.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#média-e-variância-da-distribuição-binomial"><i class="fa fa-check"></i><b>4.5.1</b> Média e Variância da distribuição binomial</a></li>
 <li class="chapter" data-level="4.5.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-binomial-usando-o-r"><i class="fa fa-check"></i><b>4.5.2</b> Distribuição Binomial usando o R</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6</b> Distribuição de Poisson</a><ul>
+<li class="chapter" data-level="4.6" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6</b> Distribuição de Poisson</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#média-e-a-variância-da-distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Média e a Variância da Distribuição de Poisson</a></li>
 <li class="chapter" data-level="4.6.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#a-função-de-probabilidade-da-distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6.2</b> A função de probabilidade da distribuição de Poisson</a></li>
 <li class="chapter" data-level="4.6.3" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-poisson-usando-o-r"><i class="fa fa-check"></i><b>4.6.3</b> Distribuição de Poisson usando o R</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html"><i class="fa fa-check"></i><b>5</b> Variável Aleatória Contínua</a><ul>
-<li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a><ul>
+<li class="chapter" data-level="5" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html"><i class="fa fa-check"></i><b>5</b> Variável Aleatória Contínua</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#função-de-distribuição-de-variáveis-contínuas"><i class="fa fa-check"></i><b>5.1.1</b> Função de distribuição de variáveis contínuas</a></li>
 <li class="chapter" data-level="5.1.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#esperança-e-variância-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>5.1.2</b> Esperança e variância de variáveis aleatórias contínuas</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuição-normal"><i class="fa fa-check"></i><b>5.2</b> Distribuição Normal</a></li>
 <li class="chapter" data-level="5.3" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#teorema-de-tchebichev"><i class="fa fa-check"></i><b>5.3</b> Teorema de Tchebichev</a></li>
-<li class="chapter" data-level="5.4" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#momentos-de-uma-distribuição"><i class="fa fa-check"></i><b>5.4</b> Momentos de uma distribuição</a><ul>
+<li class="chapter" data-level="5.4" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#momentos-de-uma-distribuição"><i class="fa fa-check"></i><b>5.4</b> Momentos de uma distribuição</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica"><i class="fa fa-check"></i><b>5.4.1</b> Posição da média, da mediana e da moda numa distribuição assimétrica</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a><ul>
-<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição de probabilidade conjunta de variáveis aleatórias discretas</a><ul>
+<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição de probabilidade conjunta de variáveis aleatórias discretas</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.1.1</b> Covariância e correlação no contexto da distribuição de probabilidade conjunta</a></li>
 <li class="chapter" data-level="6.1.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#esperança-condicionada"><i class="fa fa-check"></i><b>6.1.2</b> Esperança condicionada</a></li>
 <li class="chapter" data-level="6.1.3" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#lei-das-expectativas-iteradas"><i class="fa fa-check"></i><b>6.1.3</b> Lei das Expectativas Iteradas</a></li>
 <li class="chapter" data-level="6.1.4" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#variância-condicionada"><i class="fa fa-check"></i><b>6.1.4</b> Variância condicionada</a></li>
 <li class="chapter" data-level="6.1.5" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#decomposição-da-variância"><i class="fa fa-check"></i><b>6.1.5</b> Decomposição da Variância</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>6.2</b> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</a><ul>
+<li class="chapter" data-level="6.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>6.2</b> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#função-densidade-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.2.1</b> Função densidade de probabilidade conjunta</a></li>
 <li class="chapter" data-level="6.2.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#função-densidade-de-probabilidade-marginal"><i class="fa fa-check"></i><b>6.2.2</b> Função densidade de probabilidade marginal</a></li>
 <li class="chapter" data-level="6.2.3" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#probabilidade-condicional"><i class="fa fa-check"></i><b>6.2.3</b> Probabilidade condicional</a></li>
@@ -237,7 +277,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-entre-x-e-y"><i class="fa fa-check"></i><b>6.2.6</b> Covariância entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a><ul>
+<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="estimadores.html"><a href="estimadores.html#introdução-1"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
@@ -263,16 +304,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="variável-aleatória-contínua" class="section level1">
+<div id="variável-aleatória-contínua" class="section level1" number="5">
 <h1><span class="header-section-number">CAPÍTULO 5</span> Variável Aleatória Contínua</h1>
-<div id="distribuições-contínuas" class="section level2">
+<div id="distribuições-contínuas" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Distribuições contínuas</h2>
 <p>Para entender a diferença entre variável aleatória discreta e a variável aleatória contínua é necessário definir cada uma delas:</p>
 <ul>
 <li><p>Variável Aleatório Discreta: assume valores específicos. Exemplo: número de clientes que entram na loja, número de mortes, número de nascimentos, etc.</p></li>
 <li><p>Variável Aleatória Contínua: assume qualquer valor no domínio dos número reais. Por isso entre os valores 2 e 3, por exemplo, pode existir infinitos valores para uma variável aleatória contínua. Exemplo: peso, altura, preço de commodities, temperatura, quantidade de chuva em milímetros, etc.</p></li>
 </ul>
-<p><span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> exemplica as duas situações de variáveis discretas e contínuas usando o exemplo de relógio digital e de relógio analógico considerando somente a hora como valor da variável. No caso do relógio digital a mudança de valor ocorre de forma discreta, diferentemente da situação do relógio analógico que a mudança de horas é de forma gradual.</p>
+<p><span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> exemplica as duas situações de variáveis discretas e contínuas usando o exemplo de relógio digital e de relógio analógico considerando somente a hora como valor da variável. No caso do relógio digital a mudança de valor ocorre de forma discreta, diferentemente da situação do relógio analógico que a mudança de horas é de forma gradual.</p>
 <p>Para o caso discreto é possível calcular a probabidade para os valores específicos. Por isso
 <span class="math display">\[
 P(2&lt;x&lt;3) \neq P(2\leq x \leq 3) \neq P(2 &lt; x \leq 3) \neq P(2\leq x &lt; 3)
@@ -281,14 +322,14 @@ P(2&lt;x&lt;3) \neq P(2\leq x \leq 3) \neq P(2 &lt; x \leq 3) \neq P(2\leq x &lt
 <p><span class="math display">\[
 P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3)
 \]</span></p>
-<p>A situação do exemplo do relógio analógico do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, como a mudança de hora ocorre de forma gradual e a probabilidade é igual para qualquer valor da hora, trata-se de uma distribuição de probabilidade uniforme contínua. Grafico gerado usando a função <code>gglot</code> do pacote <code>ggplot2</code>.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="variável-aleatória-contínua.html#cb173-1"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb173-2"><a href="variável-aleatória-contínua.html#cb173-2"></a></span>
-<span id="cb173-3"><a href="variável-aleatória-contínua.html#cb173-3"></a>hora &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>)</span>
-<span id="cb173-4"><a href="variável-aleatória-contínua.html#cb173-4"></a>prob &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, </span>
-<span id="cb173-5"><a href="variável-aleatória-contínua.html#cb173-5"></a>    <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>)</span>
-<span id="cb173-6"><a href="variável-aleatória-contínua.html#cb173-6"></a>horaanalogica &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(hora, prob))</span>
-<span id="cb173-7"><a href="variável-aleatória-contínua.html#cb173-7"></a>horaanalogica</span></code></pre></div>
+<p>A situação do exemplo do relógio analógico do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, como a mudança de hora ocorre de forma gradual e a probabilidade é igual para qualquer valor da hora, trata-se de uma distribuição de probabilidade uniforme contínua. Grafico gerado usando a função <code>gglot</code> do pacote <code>ggplot2</code>.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="variável-aleatória-contínua.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb173-2"><a href="variável-aleatória-contínua.html#cb173-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-3"><a href="variável-aleatória-contínua.html#cb173-3" aria-hidden="true" tabindex="-1"></a>hora <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>)</span>
+<span id="cb173-4"><a href="variável-aleatória-contínua.html#cb173-4" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, </span>
+<span id="cb173-5"><a href="variável-aleatória-contínua.html#cb173-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>)</span>
+<span id="cb173-6"><a href="variável-aleatória-contínua.html#cb173-6" aria-hidden="true" tabindex="-1"></a>horaanalogica <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(hora, prob))</span>
+<span id="cb173-7"><a href="variável-aleatória-contínua.html#cb173-7" aria-hidden="true" tabindex="-1"></a>horaanalogica</span></code></pre></div>
 <pre><code>##    hora       prob
 ## 1     1 0,08333333
 ## 2     2 0,08333333
@@ -302,9 +343,9 @@ P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3)
 ## 10   10 0,08333333
 ## 11   11 0,08333333
 ## 12   12 0,08333333</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="variável-aleatória-contínua.html#cb175-1"></a><span class="kw">ggplot</span>(horaanalogica, <span class="kw">aes</span>(hora, prob)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb175-2"><a href="variável-aleatória-contínua.html#cb175-2"></a><span class="st">    </span><span class="kw">xlim</span>(<span class="dv">0</span>, <span class="dv">13</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylim</span>(<span class="dv">0</span>, <span class="fl">0.2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, </span>
-<span id="cb175-3"><a href="variável-aleatória-contínua.html#cb175-3"></a>    <span class="dv">12</span>, <span class="dt">by =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="variável-aleatória-contínua.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(horaanalogica, <span class="fu">aes</span>(hora, prob)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb175-2"><a href="variável-aleatória-contínua.html#cb175-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">13</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, </span>
+<span id="cb175-3"><a href="variável-aleatória-contínua.html#cb175-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">12</span>, <span class="at">by =</span> <span class="dv">1</span>))</span></code></pre></div>
 <div class="figure"><span id="fig:DistribuicaoUniformeContinua"></span>
 <img src="EstatEcon_files/figure-html/DistribuicaoUniformeContinua-1.png" alt="Um exemplo de distribuição uniforme Contínua." width="384" />
 <p class="caption">
@@ -326,7 +367,7 @@ ou seja,
 P(2&lt;x&lt;3) = P(2\leq x \leq 3) = P(2 &lt; x \leq 3) = P(2\leq x &lt; 3) = \dfrac{1}{12}
 \]</span></p>
 <p><strong>Exemplo numérico sobre função densidade de probabilidade</strong></p>
-<p>Exemplo 4.1.3 da página 79 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada a função densidade de probabilidade da variável aleatória contínua mostrada a seguir</p>
+<p>Exemplo 4.1.3 da página 79 do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada a função densidade de probabilidade da variável aleatória contínua mostrada a seguir</p>
 <p><span class="math display">\[
   f(x) = 
     \begin{cases}
@@ -387,7 +428,7 @@ Assim a diferença das áreas do triângulo maior e do triângulo menor é igual
   P(2&lt;x&lt;3) = 1 - \dfrac{4}{9} = \dfrac{5}{9}
 \]</span></p>
 <p><strong>Segundo exemplo númerico sobre função densidade de probabilidade</strong></p>
-<p>Exemplo 4.1.4 da página 80 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada da f.d.p. ded uma variável aleatória contínua,</p>
+<p>Exemplo 4.1.4 da página 80 do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Dada da f.d.p. ded uma variável aleatória contínua,</p>
 <p><span class="math display">\[
   f(x) = 
     \begin{cases}
@@ -448,7 +489,7 @@ e
   f(x) \geq 0~~\text{para todos os valores de}~x
 \]</span></p>
 <p><strong>Exemplo numérico sobre a distribuição exponencial</strong></p>
-<p>O exemplo 4.1.5 da página 82 de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> é uma simples aplicação para a distribuição exponencial. Dada a f.d.p. da varíável aleatória contínua <span class="math inline">\(x\)</span>
+<p>O exemplo 4.1.5 da página 82 de <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span> é uma simples aplicação para a distribuição exponencial. Dada a f.d.p. da varíável aleatória contínua <span class="math inline">\(x\)</span>
 <span class="math display">\[
   f(x) =
     \begin{cases}
@@ -480,7 +521,7 @@ Portanto,</p>
 <p><span class="math display">\[
 A = \alpha
 \]</span></p>
-<div id="função-de-distribuição-de-variáveis-contínuas" class="section level3">
+<div id="função-de-distribuição-de-variáveis-contínuas" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Função de distribuição de variáveis contínuas</h3>
 <p>A semelhança do caso das variáveis discretas, a <strong>função de distribuição acumulada </strong> ou <strong>função de distribuição</strong> <span class="math inline">\(F(x)\)</span> é a soma da probabilidades de todos os valores possíveis que a variável <span class="math inline">\(x\)</span> pode assumir até o valor de <span class="math inline">\(x\)</span> propriamente dito. Isso é feito através da integral da seguinte forma</p>
 <p><span class="math display">\[
@@ -491,7 +532,7 @@ A = \alpha
   f(x) = \dfrac{\text{d}F(x)}{\text{d}x}.
 \]</span></p>
 <p><strong>Exemplo numérico da função de distribuição</strong></p>
-<p>O exemplo 4.2.1 da página 83 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, trata-se da obtenção da função distribuição exponencial através da sua respectiva função densidade de probabilidade. Dada a função f.d.p.da dsitribuição exponencial, determine a função de distribuição correspondente.</p>
+<p>O exemplo 4.2.1 da página 83 do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>, trata-se da obtenção da função distribuição exponencial através da sua respectiva função densidade de probabilidade. Dada a função f.d.p.da dsitribuição exponencial, determine a função de distribuição correspondente.</p>
 <p><span class="math display">\[
   f(x) = 
   \begin{cases}
@@ -528,7 +569,7 @@ Portanto a função distribuição é dada por</p>
   \end{cases}
 \]</span></p>
 <p><strong>Segundo Exemplo numérico sobre função de distrubuição</strong></p>
-<p>Exemplo 4.2.2 da página 84 de <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a função distribuição</p>
+<p>Exemplo 4.2.2 da página 84 de <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a função distribuição</p>
 <p><span class="math display">\[
   F(x) = 
   \begin{cases}
@@ -575,7 +616,7 @@ A função distribuição <span class="math inline">\(F(x)\)</span>, assim como 
 \]</span>.</p>
 <p>Estes requisitos são atendidos pelas funções distribuições <span class="math inline">\(F(x)\)</span> dos exemplos numéricos anteriores.</p>
 </div>
-<div id="esperança-e-variância-de-variáveis-aleatórias-contínuas" class="section level3">
+<div id="esperança-e-variância-de-variáveis-aleatórias-contínuas" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Esperança e variância de variáveis aleatórias contínuas</h3>
 <p>A esperança matemática para uma variável aleatória contínua é a soma contínua de todos os valores da variável com sua respectivas probabilidades. Uma soma contínua é a integral e, por sua vez, a probabilidade é encontrada pela função densidade de probabilidade. Dessa forma, matematicamente a esperança é</p>
 <p><span class="math display">\[
@@ -602,7 +643,7 @@ que em termos de integral fica
   Var(x) = \int_{-\infty}^{+\infty} x^2 f(x)\text{d}x - \left[\int_{-\infty}^{+\infty} xf(x) \text{d}x \right]^2
 \]</span></p>
 <p><strong>Exemplo numérico sobre esperança e variância</strong></p>
-<p>Exemplo 4.3.1. da página 85 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a f.d.p.</p>
+<p>Exemplo 4.3.1. da página 85 do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja a f.d.p.</p>
 <p><span class="math display">\[
   f(x) = 
     \begin{cases}
@@ -684,7 +725,7 @@ dp(x) \cong 0,194
 \]</span></p>
 </div>
 </div>
-<div id="distribuição-normal" class="section level2">
+<div id="distribuição-normal" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Distribuição Normal</h2>
 <p>Para entender a distribuição normal, tome a distribuição binomial com uma probabilidade <span class="math inline">\(p\)</span> igual 0,5 e <span class="math inline">\(n\)</span> tendendo ao infinito. Graficamente exemplifica-se com <span class="math inline">\(n=1,2,3,5,10\)</span>.</p>
 <p><img src="EstatEcon_files/figure-html/graficobinomial1-1.png" width="384" /></p>
@@ -742,9 +783,9 @@ FIGURA 5.3: A distribuição Normal
 \]</span>
 Dessa forma, o maior valor de probabilidade encontrada na tabela para uma distribuição normal padronizada usualmente é aproximadamente igual a 0,5. Claro, existem tabelas que podem apresentar os valores para toda a distribuição e nestes casos o maior valor será aproximadamente igual a 1, pois os valores são em termos de função distribuição de probabilidade <span class="math inline">\(F(z)\)</span>.
 Usando o R, a probabilidade de <span class="math inline">\(z\)</span> estar entre zero e 1,23 é calculada através da função <code>pnorm</code> que entrega o valor de <span class="math inline">\(F(z)\)</span>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="variável-aleatória-contínua.html#cb176-1"></a>p0z1<span class="fl">.23</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.23</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">0</span>, </span>
-<span id="cb176-2"><a href="variável-aleatória-contínua.html#cb176-2"></a>    <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>), <span class="dv">4</span>)</span>
-<span id="cb176-3"><a href="variável-aleatória-contínua.html#cb176-3"></a>p0z1<span class="fl">.23</span></span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="variável-aleatória-contínua.html#cb176-1" aria-hidden="true" tabindex="-1"></a>p0z1<span class="fl">.23</span> <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">1.23</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">0</span>, </span>
+<span id="cb176-2"><a href="variável-aleatória-contínua.html#cb176-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>), <span class="dv">4</span>)</span>
+<span id="cb176-3"><a href="variável-aleatória-contínua.html#cb176-3" aria-hidden="true" tabindex="-1"></a>p0z1<span class="fl">.23</span></span></code></pre></div>
 <pre><code>## [1] 0,3907</code></pre>
 <p>Ou seja</p>
 <p><span class="math display">\[
@@ -782,25 +823,25 @@ ou seja,
   P(0,27 &lt; z &lt; 1,43) = [F(1,43) - F(0)] - [F(0,27) - F(0)].
 \]</span></p>
 <p>Usando o R, a probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43 pode ser calculada da seguinte forma</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="variável-aleatória-contínua.html#cb178-1"></a><span class="co"># Calculo de F(1,43) - F(0)</span></span>
-<span id="cb178-2"><a href="variável-aleatória-contínua.html#cb178-2"></a></span>
-<span id="cb178-3"><a href="variável-aleatória-contínua.html#cb178-3"></a>p2 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.43</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb178-4"><a href="variável-aleatória-contínua.html#cb178-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
-<span id="cb178-5"><a href="variável-aleatória-contínua.html#cb178-5"></a></span>
-<span id="cb178-6"><a href="variável-aleatória-contínua.html#cb178-6"></a>p2</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="variável-aleatória-contínua.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(1,43) - F(0)</span></span>
+<span id="cb178-2"><a href="variável-aleatória-contínua.html#cb178-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-3"><a href="variável-aleatória-contínua.html#cb178-3" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">1.43</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T) <span class="sc">-</span> </span>
+<span id="cb178-4"><a href="variável-aleatória-contínua.html#cb178-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb178-5"><a href="variável-aleatória-contínua.html#cb178-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-6"><a href="variável-aleatória-contínua.html#cb178-6" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div>
 <pre><code>## [1] 0,4236</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="variável-aleatória-contínua.html#cb180-1"></a><span class="co"># Calculo de F(0,27) - F(0)</span></span>
-<span id="cb180-2"><a href="variável-aleatória-contínua.html#cb180-2"></a></span>
-<span id="cb180-3"><a href="variável-aleatória-contínua.html#cb180-3"></a>p1 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.27</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb180-4"><a href="variável-aleatória-contínua.html#cb180-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
-<span id="cb180-5"><a href="variável-aleatória-contínua.html#cb180-5"></a></span>
-<span id="cb180-6"><a href="variável-aleatória-contínua.html#cb180-6"></a>p1</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="variável-aleatória-contínua.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(0,27) - F(0)</span></span>
+<span id="cb180-2"><a href="variável-aleatória-contínua.html#cb180-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-3"><a href="variável-aleatória-contínua.html#cb180-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">0.27</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T) <span class="sc">-</span> </span>
+<span id="cb180-4"><a href="variável-aleatória-contínua.html#cb180-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb180-5"><a href="variável-aleatória-contínua.html#cb180-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-6"><a href="variável-aleatória-contínua.html#cb180-6" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
 <pre><code>## [1] 0,1064</code></pre>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="variável-aleatória-contínua.html#cb182-1"></a><span class="co"># Calculo de P(0,27 &lt; z &lt; 1,43)</span></span>
-<span id="cb182-2"><a href="variável-aleatória-contínua.html#cb182-2"></a></span>
-<span id="cb182-3"><a href="variável-aleatória-contínua.html#cb182-3"></a>p027z143 &lt;-<span class="st"> </span>p2 <span class="op">-</span><span class="st"> </span>p1</span>
-<span id="cb182-4"><a href="variável-aleatória-contínua.html#cb182-4"></a></span>
-<span id="cb182-5"><a href="variável-aleatória-contínua.html#cb182-5"></a>p027z143</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="variável-aleatória-contínua.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de P(0,27 &lt; z &lt; 1,43)</span></span>
+<span id="cb182-2"><a href="variável-aleatória-contínua.html#cb182-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb182-3"><a href="variável-aleatória-contínua.html#cb182-3" aria-hidden="true" tabindex="-1"></a>p027z143 <span class="ot">&lt;-</span> p2 <span class="sc">-</span> p1</span>
+<span id="cb182-4"><a href="variável-aleatória-contínua.html#cb182-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb182-5"><a href="variável-aleatória-contínua.html#cb182-5" aria-hidden="true" tabindex="-1"></a>p027z143</span></code></pre></div>
 <pre><code>## [1] 0,3172</code></pre>
 <p>Portanto,</p>
 <p><span class="math display">\[
@@ -811,30 +852,30 @@ ou seja,
   P(0,27 &lt; z &lt; 1,43) = F(1,43) - F(0,27)
 \]</span></p>
 <p>Usando o R, o cálculo da probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43 é simplesmente</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="variável-aleatória-contínua.html#cb184-1"></a>p027z143r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.43</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb184-2"><a href="variável-aleatória-contínua.html#cb184-2"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="fl">0.27</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>), </span>
-<span id="cb184-3"><a href="variável-aleatória-contínua.html#cb184-3"></a>    <span class="dv">4</span>)</span>
-<span id="cb184-4"><a href="variável-aleatória-contínua.html#cb184-4"></a></span>
-<span id="cb184-5"><a href="variável-aleatória-contínua.html#cb184-5"></a><span class="co"># Calculo de F(1,43)</span></span>
-<span id="cb184-6"><a href="variável-aleatória-contínua.html#cb184-6"></a></span>
-<span id="cb184-7"><a href="variável-aleatória-contínua.html#cb184-7"></a>p2r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.43</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb184-8"><a href="variável-aleatória-contínua.html#cb184-8"></a>    <span class="dv">4</span>)</span>
-<span id="cb184-9"><a href="variável-aleatória-contínua.html#cb184-9"></a></span>
-<span id="cb184-10"><a href="variável-aleatória-contínua.html#cb184-10"></a>p2r</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="variável-aleatória-contínua.html#cb184-1" aria-hidden="true" tabindex="-1"></a>p027z143r <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">1.43</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> </span>
+<span id="cb184-2"><a href="variável-aleatória-contínua.html#cb184-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="fl">0.27</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb184-3"><a href="variável-aleatória-contínua.html#cb184-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb184-4"><a href="variável-aleatória-contínua.html#cb184-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-5"><a href="variável-aleatória-contínua.html#cb184-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(1,43)</span></span>
+<span id="cb184-6"><a href="variável-aleatória-contínua.html#cb184-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-7"><a href="variável-aleatória-contínua.html#cb184-7" aria-hidden="true" tabindex="-1"></a>p2r <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">1.43</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb184-8"><a href="variável-aleatória-contínua.html#cb184-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb184-9"><a href="variável-aleatória-contínua.html#cb184-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-10"><a href="variável-aleatória-contínua.html#cb184-10" aria-hidden="true" tabindex="-1"></a>p2r</span></code></pre></div>
 <pre><code>## [1] 0,9236</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="variável-aleatória-contínua.html#cb186-1"></a><span class="co"># Calculo de F(0,27)</span></span>
-<span id="cb186-2"><a href="variável-aleatória-contínua.html#cb186-2"></a></span>
-<span id="cb186-3"><a href="variável-aleatória-contínua.html#cb186-3"></a>p1r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.27</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb186-4"><a href="variável-aleatória-contínua.html#cb186-4"></a>    <span class="dv">4</span>)</span>
-<span id="cb186-5"><a href="variável-aleatória-contínua.html#cb186-5"></a></span>
-<span id="cb186-6"><a href="variável-aleatória-contínua.html#cb186-6"></a>p1r</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="variável-aleatória-contínua.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(0,27)</span></span>
+<span id="cb186-2"><a href="variável-aleatória-contínua.html#cb186-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-3"><a href="variável-aleatória-contínua.html#cb186-3" aria-hidden="true" tabindex="-1"></a>p1r <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">0.27</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb186-4"><a href="variável-aleatória-contínua.html#cb186-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb186-5"><a href="variável-aleatória-contínua.html#cb186-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-6"><a href="variável-aleatória-contínua.html#cb186-6" aria-hidden="true" tabindex="-1"></a>p1r</span></code></pre></div>
 <pre><code>## [1] 0,6064</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="variável-aleatória-contínua.html#cb188-1"></a><span class="co"># Calculo de P(0,27 &lt; z &lt; 1,43)</span></span>
-<span id="cb188-2"><a href="variável-aleatória-contínua.html#cb188-2"></a></span>
-<span id="cb188-3"><a href="variável-aleatória-contínua.html#cb188-3"></a>p027z143r &lt;-<span class="st"> </span>p2r <span class="op">-</span><span class="st"> </span>p1r</span>
-<span id="cb188-4"><a href="variável-aleatória-contínua.html#cb188-4"></a></span>
-<span id="cb188-5"><a href="variável-aleatória-contínua.html#cb188-5"></a></span>
-<span id="cb188-6"><a href="variável-aleatória-contínua.html#cb188-6"></a>p027z143r</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="variável-aleatória-contínua.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de P(0,27 &lt; z &lt; 1,43)</span></span>
+<span id="cb188-2"><a href="variável-aleatória-contínua.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="variável-aleatória-contínua.html#cb188-3" aria-hidden="true" tabindex="-1"></a>p027z143r <span class="ot">&lt;-</span> p2r <span class="sc">-</span> p1r</span>
+<span id="cb188-4"><a href="variável-aleatória-contínua.html#cb188-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-5"><a href="variável-aleatória-contínua.html#cb188-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-6"><a href="variável-aleatória-contínua.html#cb188-6" aria-hidden="true" tabindex="-1"></a>p027z143r</span></code></pre></div>
 <pre><code>## [1] 0,3172</code></pre>
 <p>Portanto,</p>
 <p><span class="math display">\[
@@ -860,25 +901,25 @@ ou
   P( -1,38 &lt; z &lt; 0,97) = [F(1,38) - F(0)] +[F(0,97) - F(0)]
 \]</span></p>
 <p>Usando o R, a probabilidade de <span class="math inline">\(z\)</span> estar entre 0,27 e 1,43 pode ser calculada da seguinte forma</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="variável-aleatória-contínua.html#cb190-1"></a><span class="co"># Calculo de F(1,38) - F(0)</span></span>
-<span id="cb190-2"><a href="variável-aleatória-contínua.html#cb190-2"></a></span>
-<span id="cb190-3"><a href="variável-aleatória-contínua.html#cb190-3"></a>pf138f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.38</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb190-4"><a href="variável-aleatória-contínua.html#cb190-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
-<span id="cb190-5"><a href="variável-aleatória-contínua.html#cb190-5"></a></span>
-<span id="cb190-6"><a href="variável-aleatória-contínua.html#cb190-6"></a>pf138f0</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="variável-aleatória-contínua.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(1,38) - F(0)</span></span>
+<span id="cb190-2"><a href="variável-aleatória-contínua.html#cb190-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-3"><a href="variável-aleatória-contínua.html#cb190-3" aria-hidden="true" tabindex="-1"></a>pf138f0 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">1.38</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T) <span class="sc">-</span> </span>
+<span id="cb190-4"><a href="variável-aleatória-contínua.html#cb190-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb190-5"><a href="variável-aleatória-contínua.html#cb190-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-6"><a href="variável-aleatória-contínua.html#cb190-6" aria-hidden="true" tabindex="-1"></a>pf138f0</span></code></pre></div>
 <pre><code>## [1] 0,4162</code></pre>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="variável-aleatória-contínua.html#cb192-1"></a><span class="co"># Calculo de F(0,97) - F(0)</span></span>
-<span id="cb192-2"><a href="variável-aleatória-contínua.html#cb192-2"></a></span>
-<span id="cb192-3"><a href="variável-aleatória-contínua.html#cb192-3"></a>pf097f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.97</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb192-4"><a href="variável-aleatória-contínua.html#cb192-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
-<span id="cb192-5"><a href="variável-aleatória-contínua.html#cb192-5"></a></span>
-<span id="cb192-6"><a href="variável-aleatória-contínua.html#cb192-6"></a>pf097f0</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="variável-aleatória-contínua.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(0,97) - F(0)</span></span>
+<span id="cb192-2"><a href="variável-aleatória-contínua.html#cb192-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb192-3"><a href="variável-aleatória-contínua.html#cb192-3" aria-hidden="true" tabindex="-1"></a>pf097f0 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">0.97</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T) <span class="sc">-</span> </span>
+<span id="cb192-4"><a href="variável-aleatória-contínua.html#cb192-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb192-5"><a href="variável-aleatória-contínua.html#cb192-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb192-6"><a href="variável-aleatória-contínua.html#cb192-6" aria-hidden="true" tabindex="-1"></a>pf097f0</span></code></pre></div>
 <pre><code>## [1] 0,334</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="variável-aleatória-contínua.html#cb194-1"></a><span class="co"># Calculo de P(1,38 &lt; z &lt; 0,97)</span></span>
-<span id="cb194-2"><a href="variável-aleatória-contínua.html#cb194-2"></a></span>
-<span id="cb194-3"><a href="variável-aleatória-contínua.html#cb194-3"></a>p138z097 &lt;-<span class="st"> </span>pf138f0 <span class="op">+</span><span class="st"> </span>pf097f0</span>
-<span id="cb194-4"><a href="variável-aleatória-contínua.html#cb194-4"></a></span>
-<span id="cb194-5"><a href="variável-aleatória-contínua.html#cb194-5"></a>p138z097</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="variável-aleatória-contínua.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de P(1,38 &lt; z &lt; 0,97)</span></span>
+<span id="cb194-2"><a href="variável-aleatória-contínua.html#cb194-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-3"><a href="variável-aleatória-contínua.html#cb194-3" aria-hidden="true" tabindex="-1"></a>p138z097 <span class="ot">&lt;-</span> pf138f0 <span class="sc">+</span> pf097f0</span>
+<span id="cb194-4"><a href="variável-aleatória-contínua.html#cb194-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-5"><a href="variável-aleatória-contínua.html#cb194-5" aria-hidden="true" tabindex="-1"></a>p138z097</span></code></pre></div>
 <pre><code>## [1] 0,7502</code></pre>
 <p>Portanto,</p>
 <p><span class="math display">\[
@@ -890,30 +931,30 @@ ou
 \]</span></p>
 <p>Por que o valor de <span class="math inline">\(F(0,97)\)</span> é maior que <span class="math inline">\(F(-1,38)\)</span> e nesta situação se calcula a diferença e não a soma?</p>
 <p>Usando o R, o cálculo da probabilidade de <span class="math inline">\(z\)</span> estar entre -1,38 e 0,97 é simplesmente</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="variável-aleatória-contínua.html#cb196-1"></a>p138z097r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="op">-</span><span class="fl">1.38</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb196-2"><a href="variável-aleatória-contínua.html#cb196-2"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="fl">0.97</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>), </span>
-<span id="cb196-3"><a href="variável-aleatória-contínua.html#cb196-3"></a>    <span class="dv">4</span>)</span>
-<span id="cb196-4"><a href="variável-aleatória-contínua.html#cb196-4"></a></span>
-<span id="cb196-5"><a href="variável-aleatória-contínua.html#cb196-5"></a><span class="co"># Calculo de F(-1,38)</span></span>
-<span id="cb196-6"><a href="variável-aleatória-contínua.html#cb196-6"></a></span>
-<span id="cb196-7"><a href="variável-aleatória-contínua.html#cb196-7"></a>pf138r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="op">-</span><span class="fl">1.38</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb196-8"><a href="variável-aleatória-contínua.html#cb196-8"></a>    <span class="dv">4</span>)</span>
-<span id="cb196-9"><a href="variável-aleatória-contínua.html#cb196-9"></a></span>
-<span id="cb196-10"><a href="variável-aleatória-contínua.html#cb196-10"></a>pf138r</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="variável-aleatória-contínua.html#cb196-1" aria-hidden="true" tabindex="-1"></a>p138z097r <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.38</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> </span>
+<span id="cb196-2"><a href="variável-aleatória-contínua.html#cb196-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="fl">0.97</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb196-3"><a href="variável-aleatória-contínua.html#cb196-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb196-4"><a href="variável-aleatória-contínua.html#cb196-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-5"><a href="variável-aleatória-contínua.html#cb196-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(-1,38)</span></span>
+<span id="cb196-6"><a href="variável-aleatória-contínua.html#cb196-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-7"><a href="variável-aleatória-contínua.html#cb196-7" aria-hidden="true" tabindex="-1"></a>pf138r <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.38</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb196-8"><a href="variável-aleatória-contínua.html#cb196-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb196-9"><a href="variável-aleatória-contínua.html#cb196-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-10"><a href="variável-aleatória-contínua.html#cb196-10" aria-hidden="true" tabindex="-1"></a>pf138r</span></code></pre></div>
 <pre><code>## [1] 0,0838</code></pre>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="variável-aleatória-contínua.html#cb198-1"></a><span class="co"># Calculo de F(0,97)</span></span>
-<span id="cb198-2"><a href="variável-aleatória-contínua.html#cb198-2"></a></span>
-<span id="cb198-3"><a href="variável-aleatória-contínua.html#cb198-3"></a>pf097r &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.97</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb198-4"><a href="variável-aleatória-contínua.html#cb198-4"></a>    <span class="dv">4</span>)</span>
-<span id="cb198-5"><a href="variável-aleatória-contínua.html#cb198-5"></a></span>
-<span id="cb198-6"><a href="variável-aleatória-contínua.html#cb198-6"></a>pf097r</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="variável-aleatória-contínua.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(0,97)</span></span>
+<span id="cb198-2"><a href="variável-aleatória-contínua.html#cb198-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-3"><a href="variável-aleatória-contínua.html#cb198-3" aria-hidden="true" tabindex="-1"></a>pf097r <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">0.97</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb198-4"><a href="variável-aleatória-contínua.html#cb198-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb198-5"><a href="variável-aleatória-contínua.html#cb198-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-6"><a href="variável-aleatória-contínua.html#cb198-6" aria-hidden="true" tabindex="-1"></a>pf097r</span></code></pre></div>
 <pre><code>## [1] 0,834</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="variável-aleatória-contínua.html#cb200-1"></a><span class="co"># Calculo de P(-1,38 &lt; z &lt; 0,97)</span></span>
-<span id="cb200-2"><a href="variável-aleatória-contínua.html#cb200-2"></a></span>
-<span id="cb200-3"><a href="variável-aleatória-contínua.html#cb200-3"></a>p138z097r &lt;-<span class="st"> </span>pf097r <span class="op">-</span><span class="st"> </span>pf138r</span>
-<span id="cb200-4"><a href="variável-aleatória-contínua.html#cb200-4"></a></span>
-<span id="cb200-5"><a href="variável-aleatória-contínua.html#cb200-5"></a></span>
-<span id="cb200-6"><a href="variável-aleatória-contínua.html#cb200-6"></a>p138z097r</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="variável-aleatória-contínua.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de P(-1,38 &lt; z &lt; 0,97)</span></span>
+<span id="cb200-2"><a href="variável-aleatória-contínua.html#cb200-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-3"><a href="variável-aleatória-contínua.html#cb200-3" aria-hidden="true" tabindex="-1"></a>p138z097r <span class="ot">&lt;-</span> pf097r <span class="sc">-</span> pf138r</span>
+<span id="cb200-4"><a href="variável-aleatória-contínua.html#cb200-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-5"><a href="variável-aleatória-contínua.html#cb200-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-6"><a href="variável-aleatória-contínua.html#cb200-6" aria-hidden="true" tabindex="-1"></a>p138z097r</span></code></pre></div>
 <pre><code>## [1] 0,7502</code></pre>
 <p>Portanto,</p>
 <p><span class="math display">\[
@@ -935,21 +976,21 @@ FIGURA 5.7: Probabilidade z ser maior que 2,22
   P(z&gt;2,22) = 0,5 - P(0 &lt; z &lt; 2,22) = 0,5 - [F(2,22) - F(0)]
 \]</span>
 Usando o R, o cálculo é</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="variável-aleatória-contínua.html#cb202-1"></a>f222 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">2.22</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb202-2"><a href="variável-aleatória-contínua.html#cb202-2"></a>    <span class="dv">4</span>)</span>
-<span id="cb202-3"><a href="variável-aleatória-contínua.html#cb202-3"></a>f222</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="variável-aleatória-contínua.html#cb202-1" aria-hidden="true" tabindex="-1"></a>f222 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">2.22</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb202-2"><a href="variável-aleatória-contínua.html#cb202-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb202-3"><a href="variável-aleatória-contínua.html#cb202-3" aria-hidden="true" tabindex="-1"></a>f222</span></code></pre></div>
 <pre><code>## [1] 0,9868</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="variável-aleatória-contínua.html#cb204-1"></a>f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb204-2"><a href="variável-aleatória-contínua.html#cb204-2"></a>    <span class="dv">4</span>)</span>
-<span id="cb204-3"><a href="variável-aleatória-contínua.html#cb204-3"></a>f0</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="variável-aleatória-contínua.html#cb204-1" aria-hidden="true" tabindex="-1"></a>f0 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb204-2"><a href="variável-aleatória-contínua.html#cb204-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb204-3"><a href="variável-aleatória-contínua.html#cb204-3" aria-hidden="true" tabindex="-1"></a>f0</span></code></pre></div>
 <pre><code>## [1] 0,5</code></pre>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="variável-aleatória-contínua.html#cb206-1"></a>pf222f0 &lt;-<span class="st"> </span>f222 <span class="op">-</span><span class="st"> </span>f0</span>
-<span id="cb206-2"><a href="variável-aleatória-contínua.html#cb206-2"></a></span>
-<span id="cb206-3"><a href="variável-aleatória-contínua.html#cb206-3"></a>pf222f0</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="variável-aleatória-contínua.html#cb206-1" aria-hidden="true" tabindex="-1"></a>pf222f0 <span class="ot">&lt;-</span> f222 <span class="sc">-</span> f0</span>
+<span id="cb206-2"><a href="variável-aleatória-contínua.html#cb206-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-3"><a href="variável-aleatória-contínua.html#cb206-3" aria-hidden="true" tabindex="-1"></a>pf222f0</span></code></pre></div>
 <pre><code>## [1] 0,4868</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="variável-aleatória-contínua.html#cb208-1"></a>pz222 &lt;-<span class="st"> </span><span class="fl">0.5</span> <span class="op">-</span><span class="st"> </span>pf222f0</span>
-<span id="cb208-2"><a href="variável-aleatória-contínua.html#cb208-2"></a></span>
-<span id="cb208-3"><a href="variável-aleatória-contínua.html#cb208-3"></a>pz222</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="variável-aleatória-contínua.html#cb208-1" aria-hidden="true" tabindex="-1"></a>pz222 <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">-</span> pf222f0</span>
+<span id="cb208-2"><a href="variável-aleatória-contínua.html#cb208-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-3"><a href="variável-aleatória-contínua.html#cb208-3" aria-hidden="true" tabindex="-1"></a>pz222</span></code></pre></div>
 <pre><code>## [1] 0,0132</code></pre>
 <p>Portanto,</p>
 <p><span class="math display">\[
@@ -960,10 +1001,10 @@ Usando o R, o cálculo é</p>
   P(z &gt;2,22) = 1 - F(2,22)
 \]</span></p>
 <p>Usando o R para o cálculo,</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="variável-aleatória-contínua.html#cb210-1"></a>pz222r &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">2.22</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), </span>
-<span id="cb210-2"><a href="variável-aleatória-contínua.html#cb210-2"></a>    <span class="dv">4</span>)</span>
-<span id="cb210-3"><a href="variável-aleatória-contínua.html#cb210-3"></a></span>
-<span id="cb210-4"><a href="variável-aleatória-contínua.html#cb210-4"></a>pz222r</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="variável-aleatória-contínua.html#cb210-1" aria-hidden="true" tabindex="-1"></a>pz222r <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">2.22</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), </span>
+<span id="cb210-2"><a href="variável-aleatória-contínua.html#cb210-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>)</span>
+<span id="cb210-3"><a href="variável-aleatória-contínua.html#cb210-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-4"><a href="variável-aleatória-contínua.html#cb210-4" aria-hidden="true" tabindex="-1"></a>pz222r</span></code></pre></div>
 <pre><code>## [1] 0,0132</code></pre>
 <p>Como nem todas as variáveis com distribuição normal tem <span class="math inline">\(\mu=0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, deve-se padronizá-las para usar os valores da tabela com a distribuição normal padronizada. Seja a variável <span class="math inline">\(x\)</span> com distribuição normal com <span class="math inline">\(\mu\neq0\)</span> e <span class="math inline">\(\sigma \neq 1\)</span>. A transformação de <span class="math inline">\(x\)</span> para que se torne padronizada é</p>
 <p><span class="math display" id="eq:PadronizacaoNormal">\[
@@ -985,7 +1026,7 @@ onde <span class="math inline">\(z\)</span>, com <span class="math inline">\(\mu
 \]</span></p>
 <p>Assim , através de <a href="variável-aleatória-contínua.html#eq:PadronizacaoNormal">(5.2)</a>, pode-se padronizar qualquer variável que segue uma distribuição normal e que tenha <span class="math inline">\(\mu\neq 0\)</span> e <span class="math inline">\(\sigma \neq 1\)</span>.</p>
 <p><strong>Exemplo numérico sobre a padronização</strong></p>
-<p>Exemplo 4.4.1 da página 93 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. O faturamento mensal de uma loja segue uma distribuição normal com média R$20.000,00 e desvio padrão R$4.000,00. Calcule a probabilidade de que, em determinado mês, o faturamento eseteja entre R$19.000,00 e R$25.000,00.</p>
+<p>Exemplo 4.4.1 da página 93 do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. O faturamento mensal de uma loja segue uma distribuição normal com média R$20.000,00 e desvio padrão R$4.000,00. Calcule a probabilidade de que, em determinado mês, o faturamento eseteja entre R$19.000,00 e R$25.000,00.</p>
 <p><strong>Resposta</strong>:</p>
 <p>A variável em questão, faturamento mensal, é normal mas não é padronizada. Por isso, é necessário padronizar os valores antes de utilizar a tabela, cujos valores são para uma distribuição normal padronizada com <span class="math inline">\(\mu=0\)</span> e <span class="math inline">\(\sigma =1\)</span>.
 Para 19.000</p>
@@ -1020,25 +1061,25 @@ Mas para qualquer um dos dois caminhos</p>
   P(19.000 &lt; x &lt;25.000) = F(0,25)  +  F(1,25)
 \]</span></p>
 <p>Usando o R para os cálculos intermediários, se tem</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="variável-aleatória-contínua.html#cb212-1"></a><span class="co"># Calculo de F(1,25) - F(0)</span></span>
-<span id="cb212-2"><a href="variável-aleatória-contínua.html#cb212-2"></a></span>
-<span id="cb212-3"><a href="variável-aleatória-contínua.html#cb212-3"></a>pf125f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">1.25</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb212-4"><a href="variável-aleatória-contínua.html#cb212-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
-<span id="cb212-5"><a href="variável-aleatória-contínua.html#cb212-5"></a></span>
-<span id="cb212-6"><a href="variável-aleatória-contínua.html#cb212-6"></a>pf125f0</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="variável-aleatória-contínua.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(1,25) - F(0)</span></span>
+<span id="cb212-2"><a href="variável-aleatória-contínua.html#cb212-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-3"><a href="variável-aleatória-contínua.html#cb212-3" aria-hidden="true" tabindex="-1"></a>pf125f0 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T) <span class="sc">-</span> </span>
+<span id="cb212-4"><a href="variável-aleatória-contínua.html#cb212-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb212-5"><a href="variável-aleatória-contínua.html#cb212-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-6"><a href="variável-aleatória-contínua.html#cb212-6" aria-hidden="true" tabindex="-1"></a>pf125f0</span></code></pre></div>
 <pre><code>## [1] 0,3944</code></pre>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="variável-aleatória-contínua.html#cb214-1"></a><span class="co"># Calculo de F(0,25) - F(0)</span></span>
-<span id="cb214-2"><a href="variável-aleatória-contínua.html#cb214-2"></a></span>
-<span id="cb214-3"><a href="variável-aleatória-contínua.html#cb214-3"></a>pf025f0 &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="fl">0.25</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb214-4"><a href="variável-aleatória-contínua.html#cb214-4"></a><span class="st">    </span><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> T), <span class="dv">4</span>)</span>
-<span id="cb214-5"><a href="variável-aleatória-contínua.html#cb214-5"></a></span>
-<span id="cb214-6"><a href="variável-aleatória-contínua.html#cb214-6"></a>pf025f0</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="variável-aleatória-contínua.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de F(0,25) - F(0)</span></span>
+<span id="cb214-2"><a href="variável-aleatória-contínua.html#cb214-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-3"><a href="variável-aleatória-contínua.html#cb214-3" aria-hidden="true" tabindex="-1"></a>pf025f0 <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fl">0.25</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T) <span class="sc">-</span> </span>
+<span id="cb214-4"><a href="variável-aleatória-contínua.html#cb214-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> T), <span class="dv">4</span>)</span>
+<span id="cb214-5"><a href="variável-aleatória-contínua.html#cb214-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-6"><a href="variável-aleatória-contínua.html#cb214-6" aria-hidden="true" tabindex="-1"></a>pf025f0</span></code></pre></div>
 <pre><code>## [1] 0,0987</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="variável-aleatória-contínua.html#cb216-1"></a><span class="co"># Calculo de P(-0,25 &lt; z &lt; 1,25)</span></span>
-<span id="cb216-2"><a href="variável-aleatória-contínua.html#cb216-2"></a></span>
-<span id="cb216-3"><a href="variável-aleatória-contínua.html#cb216-3"></a>p025z125 &lt;-<span class="st"> </span>pf025f0 <span class="op">+</span><span class="st"> </span>pf125f0</span>
-<span id="cb216-4"><a href="variável-aleatória-contínua.html#cb216-4"></a></span>
-<span id="cb216-5"><a href="variável-aleatória-contínua.html#cb216-5"></a>p025z125</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="variável-aleatória-contínua.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo de P(-0,25 &lt; z &lt; 1,25)</span></span>
+<span id="cb216-2"><a href="variável-aleatória-contínua.html#cb216-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-3"><a href="variável-aleatória-contínua.html#cb216-3" aria-hidden="true" tabindex="-1"></a>p025z125 <span class="ot">&lt;-</span> pf025f0 <span class="sc">+</span> pf125f0</span>
+<span id="cb216-4"><a href="variável-aleatória-contínua.html#cb216-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-5"><a href="variável-aleatória-contínua.html#cb216-5" aria-hidden="true" tabindex="-1"></a>p025z125</span></code></pre></div>
 <pre><code>## [1] 0,4931</code></pre>
 <p>Ou seja,</p>
 <p><span class="math display">\[
@@ -1048,7 +1089,7 @@ Mas para qualquer um dos dois caminhos</p>
   P(19.000 &lt; x &lt;25.000) = 0,4931.
 \]</span></p>
 </div>
-<div id="teorema-de-tchebichev" class="section level2">
+<div id="teorema-de-tchebichev" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Teorema de Tchebichev</h2>
 <p>Se a função densidade de uma variável aleatória é conhecida, pode-se conhecer sua média e variância. Por outro lado, se são conhecidas somente a média e a variância de uma variável aleatória, não é possível conhecer a sua respectiva função densidade de probabilidade. Mas é possível definir um limite para uma distribuição de probabilidade qualquer, seja discreta ou acontínua, que é dado pelo teorema de Tchebichev.</p>
 <p><strong>Teorema de Tchebichev</strong></p>
@@ -1076,7 +1117,7 @@ ou
   P(|x-\mu| \geq 2\sigma) \leq 0,25 = 25\%
 \]</span></p>
 <p><strong>Exemplo numérico sobre teorema de Tchebichev</strong></p>
-<p>Exemplo 4.6.1 na página 96 do <span class="citation">Sartoris (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja uma variável aleatória contínua <span class="math inline">\(x\)</span> com média 50 e desvio padrão 10. Calcule a probabilidade mínima de que <span class="math inline">\(x\)</span> esteja entre 35 e 65.</p>
+<p>Exemplo 4.6.1 na página 96 do <span class="citation"><a href="#ref-Sartoris2013" role="doc-biblioref">Sartoris</a> (<a href="#ref-Sartoris2013" role="doc-biblioref">2013</a>)</span>. Seja uma variável aleatória contínua <span class="math inline">\(x\)</span> com média 50 e desvio padrão 10. Calcule a probabilidade mínima de que <span class="math inline">\(x\)</span> esteja entre 35 e 65.</p>
 <p><strong>Resposta</strong>:</p>
 <p>Note que a diferença em módulo tanto do valor do limite inferior 35</p>
 <p><span class="math display">\[
@@ -1099,7 +1140,7 @@ são iguais a 15. Dividindo a diferença em módulo pelo desvio padrão,
 \]</span>
 Ou seja, de forma aproximada, a probabilidade de <span class="math inline">\(x\)</span> estar entre 35 e 65 é pelo menos igual a 55,56%.</p>
 </div>
-<div id="momentos-de-uma-distribuição" class="section level2">
+<div id="momentos-de-uma-distribuição" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Momentos de uma distribuição</h2>
 <p>O <strong>momento de uma distribuição</strong> de uma variável aleatória <span class="math inline">\(x\)</span> de ordem <span class="math inline">\(k\)</span>, em relação à média <span class="math inline">\(M_k\)</span> é</p>
 <p><span class="math display">\[
@@ -1155,7 +1196,7 @@ Assim</p>
 <li>para <span class="math inline">\(k=1\)</span>, o momento em torno da origem de ordem 1 é a própria média.</li>
 <li>para <span class="math inline">\(k=2\)</span>, o momento em torno da origem de ordem 2 é a média dos quadrados.</li>
 </ul>
-<div id="posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica" class="section level3">
+<div id="posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica" class="section level3" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Posição da média, da mediana e da moda numa distribuição assimétrica</h3>
 <p>Dado que foi apresentado o conceito de assimestria, é possível realizar uma rápida discussão sobre o impacto da assimetria sobre a posição da média, da mediana e da moda numa distribuição.</p>
 <ul>
@@ -1179,9 +1220,9 @@ Assim</p>
 </div>
 </div>
 <h3>Referências</h3>
-<div id="refs" class="references">
-<div id="ref-Sartoris2013">
-<p>Sartoris, Alexandre. 2013. <em>Estatística e Introdução à Econometria</em>. 2nd ed. São Paulo: Saraiva.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Sartoris2013" class="csl-entry">
+Sartoris, Alexandre. 2013. <em><span class="nocase">Estat<span class="nocase">í</span>stica e Introdu<span class="nocase">ç</span><span class="nocase">ã</span>o <span class="nocase">à</span> Econometria</span></em>. 2nd ed. S<span>ã</span>o Paulo: Saraiva.
 </div>
 </div>
             </section>
@@ -1213,6 +1254,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

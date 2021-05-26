@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>CAPÍTULO 2 Medidas de desigualdade | Notas de aulas de Estatística Econômica</title>
   <meta name="description" content="Trata-se do material usado nas aulas de Estatística Econômica e Introdução à Econometria SE305 do curso de Economia da Universidade Federal do Paranà." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="CAPÍTULO 2 Medidas de desigualdade | Notas de aulas de Estatística Econômica" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Marcos Minoru Hasegawa" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2021-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="estatística-descritiva.html"/>
 <link rel="next" href="números-índices.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,6 +120,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -139,8 +162,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Licença</a></li>
 <li class="chapter" data-level="" data-path="sobre-o-material.html"><a href="sobre-o-material.html"><i class="fa fa-check"></i>Sobre o material</a></li>
 <li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
-<li class="chapter" data-level="1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html"><i class="fa fa-check"></i><b>1</b> Estatística Descritiva</a><ul>
-<li class="chapter" data-level="1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-posição"><i class="fa fa-check"></i><b>1.1</b> Medidas de posição</a><ul>
+<li class="chapter" data-level="1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html"><i class="fa fa-check"></i><b>1</b> Estatística Descritiva</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-posição"><i class="fa fa-check"></i><b>1.1</b> Medidas de posição</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variável-aleatória"><i class="fa fa-check"></i><b>1.1.1</b> Variável Aleatória</a></li>
 <li class="chapter" data-level="1.1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-aritmética-simples"><i class="fa fa-check"></i><b>1.1.2</b> Média Aritmética Simples</a></li>
 <li class="chapter" data-level="1.1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#média-aritmética-ponderada"><i class="fa fa-check"></i><b>1.1.3</b> Média Aritmética Ponderada</a></li>
@@ -152,7 +177,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.9" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#quartis-ou-quartiles"><i class="fa fa-check"></i><b>1.1.9</b> Quartis ou Quartiles</a></li>
 <li class="chapter" data-level="1.1.10" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#moda"><i class="fa fa-check"></i><b>1.1.10</b> Moda</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>1.2</b> Medidas de dispersão</a><ul>
+<li class="chapter" data-level="1.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>1.2</b> Medidas de dispersão</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#amplitude"><i class="fa fa-check"></i><b>1.2.1</b> Amplitude</a></li>
 <li class="chapter" data-level="1.2.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#variância"><i class="fa fa-check"></i><b>1.2.2</b> Variância</a></li>
 <li class="chapter" data-level="1.2.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#desvio-padrão"><i class="fa fa-check"></i><b>1.2.3</b> Desvio Padrão</a></li>
@@ -161,25 +187,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.6" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#histograma"><i class="fa fa-check"></i><b>1.2.6</b> Histograma</a></li>
 <li class="chapter" data-level="1.2.7" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#diagrama-de-caixa-boxplot"><i class="fa fa-check"></i><b>1.2.7</b> Diagrama de caixa (Boxplot)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-relação-linear-entre-duas-variáveis"><i class="fa fa-check"></i><b>1.3</b> Medidas de relação linear entre duas variáveis</a><ul>
+<li class="chapter" data-level="1.3" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#medidas-de-relação-linear-entre-duas-variáveis"><i class="fa fa-check"></i><b>1.3</b> Medidas de relação linear entre duas variáveis</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#covariância"><i class="fa fa-check"></i><b>1.3.1</b> Covariância</a></li>
 <li class="chapter" data-level="1.3.2" data-path="estatística-descritiva.html"><a href="estatística-descritiva.html#coeficiente-de-correlação"><i class="fa fa-check"></i><b>1.3.2</b> Coeficiente de Correlação</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html"><i class="fa fa-check"></i><b>2</b> Medidas de desigualdade</a><ul>
+<li class="chapter" data-level="2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html"><i class="fa fa-check"></i><b>2</b> Medidas de desigualdade</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#príncipio-de-pigou-dalton"><i class="fa fa-check"></i><b>2.1</b> Príncipio de Pigou-Dalton</a></li>
 <li class="chapter" data-level="2.2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#transferência-regressiva"><i class="fa fa-check"></i><b>2.2</b> Transferência Regressiva</a></li>
 <li class="chapter" data-level="2.3" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#curva-de-lorenz"><i class="fa fa-check"></i><b>2.3</b> Curva de Lorenz</a></li>
 <li class="chapter" data-level="2.4" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-gini"><i class="fa fa-check"></i><b>2.4</b> Índice Gini</a></li>
 <li class="chapter" data-level="2.5" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#discrepância-máxima"><i class="fa fa-check"></i><b>2.5</b> Discrepância Máxima</a></li>
-<li class="chapter" data-level="2.6" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#redundância-e-índice-de-theil"><i class="fa fa-check"></i><b>2.6</b> Redundância e Índice de Theil</a><ul>
+<li class="chapter" data-level="2.6" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#redundância-e-índice-de-theil"><i class="fa fa-check"></i><b>2.6</b> Redundância e Índice de Theil</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#teoria-da-informação"><i class="fa fa-check"></i><b>2.6.1</b> Teoria da Informação</a></li>
 <li class="chapter" data-level="2.6.2" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-t-de-theil"><i class="fa fa-check"></i><b>2.6.2</b> Índice T de Theil</a></li>
 <li class="chapter" data-level="2.6.3" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#índice-de-l-de-theil"><i class="fa fa-check"></i><b>2.6.3</b> Índice de L de Theil</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="medidas-de-desigualdade.html"><a href="medidas-de-desigualdade.html#variância-dos-logaritmos"><i class="fa fa-check"></i><b>2.7</b> Variância dos Logaritmos</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>3</b> Números-Índices</a><ul>
+<li class="chapter" data-level="3" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>3</b> Números-Índices</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="números-índices.html"><a href="números-índices.html#introdução"><i class="fa fa-check"></i><b>3.1</b> Introdução</a></li>
 <li class="chapter" data-level="3.2" data-path="números-índices.html"><a href="números-índices.html#preços-relativos"><i class="fa fa-check"></i><b>3.2</b> Preços Relativos</a></li>
 <li class="chapter" data-level="3.3" data-path="números-índices.html"><a href="números-índices.html#índice-simples-de-preços-agregados"><i class="fa fa-check"></i><b>3.3</b> Índice Simples de Preços Agregados</a></li>
@@ -190,8 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8" data-path="números-índices.html"><a href="números-índices.html#índice-de-preços-de-marshall-edgeworth"><i class="fa fa-check"></i><b>3.8</b> Índice de Preços de Marshall-Edgeworth</a></li>
 <li class="chapter" data-level="3.9" data-path="números-índices.html"><a href="números-índices.html#deflacionamento"><i class="fa fa-check"></i><b>3.9</b> Deflacionamento</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html"><i class="fa fa-check"></i><b>4</b> Variável Aleatória Discreta</a><ul>
-<li class="chapter" data-level="4.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#esperança-matemática"><i class="fa fa-check"></i><b>4.1</b> Esperança matemática</a><ul>
+<li class="chapter" data-level="4" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html"><i class="fa fa-check"></i><b>4</b> Variável Aleatória Discreta</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#esperança-matemática"><i class="fa fa-check"></i><b>4.1</b> Esperança matemática</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#função-de-probabilidade"><i class="fa fa-check"></i><b>4.1.1</b> Função de Probabilidade</a></li>
 <li class="chapter" data-level="4.1.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#função-distribuição-acumulada"><i class="fa fa-check"></i><b>4.1.2</b> Função distribuição acumulada</a></li>
 <li class="chapter" data-level="4.1.3" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#esperanças-variâncias-e-covariâncias"><i class="fa fa-check"></i><b>4.1.3</b> Esperanças, Variâncias e Covariâncias</a></li>
@@ -199,36 +231,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#variável-aleatória-discreta-1"><i class="fa fa-check"></i><b>4.2</b> Variável Aleatória Discreta</a></li>
 <li class="chapter" data-level="4.3" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-uniforme"><i class="fa fa-check"></i><b>4.3</b> Distribuição Uniforme</a></li>
 <li class="chapter" data-level="4.4" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-bernoulli"><i class="fa fa-check"></i><b>4.4</b> Distribuição de Bernoulli</a></li>
-<li class="chapter" data-level="4.5" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-binomial"><i class="fa fa-check"></i><b>4.5</b> Distribuição Binomial</a><ul>
+<li class="chapter" data-level="4.5" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-binomial"><i class="fa fa-check"></i><b>4.5</b> Distribuição Binomial</a>
+<ul>
 <li class="chapter" data-level="4.5.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#média-e-variância-da-distribuição-binomial"><i class="fa fa-check"></i><b>4.5.1</b> Média e Variância da distribuição binomial</a></li>
 <li class="chapter" data-level="4.5.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-binomial-usando-o-r"><i class="fa fa-check"></i><b>4.5.2</b> Distribuição Binomial usando o R</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6</b> Distribuição de Poisson</a><ul>
+<li class="chapter" data-level="4.6" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6</b> Distribuição de Poisson</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#média-e-a-variância-da-distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6.1</b> Média e a Variância da Distribuição de Poisson</a></li>
 <li class="chapter" data-level="4.6.2" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#a-função-de-probabilidade-da-distribuição-de-poisson"><i class="fa fa-check"></i><b>4.6.2</b> A função de probabilidade da distribuição de Poisson</a></li>
 <li class="chapter" data-level="4.6.3" data-path="variável-aleatória-discreta.html"><a href="variável-aleatória-discreta.html#distribuição-de-poisson-usando-o-r"><i class="fa fa-check"></i><b>4.6.3</b> Distribuição de Poisson usando o R</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html"><i class="fa fa-check"></i><b>5</b> Variável Aleatória Contínua</a><ul>
-<li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a><ul>
+<li class="chapter" data-level="5" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html"><i class="fa fa-check"></i><b>5</b> Variável Aleatória Contínua</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuições-contínuas"><i class="fa fa-check"></i><b>5.1</b> Distribuições contínuas</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#função-de-distribuição-de-variáveis-contínuas"><i class="fa fa-check"></i><b>5.1.1</b> Função de distribuição de variáveis contínuas</a></li>
 <li class="chapter" data-level="5.1.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#esperança-e-variância-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>5.1.2</b> Esperança e variância de variáveis aleatórias contínuas</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#distribuição-normal"><i class="fa fa-check"></i><b>5.2</b> Distribuição Normal</a></li>
 <li class="chapter" data-level="5.3" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#teorema-de-tchebichev"><i class="fa fa-check"></i><b>5.3</b> Teorema de Tchebichev</a></li>
-<li class="chapter" data-level="5.4" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#momentos-de-uma-distribuição"><i class="fa fa-check"></i><b>5.4</b> Momentos de uma distribuição</a><ul>
+<li class="chapter" data-level="5.4" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#momentos-de-uma-distribuição"><i class="fa fa-check"></i><b>5.4</b> Momentos de uma distribuição</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="variável-aleatória-contínua.html"><a href="variável-aleatória-contínua.html#posição-da-média-da-mediana-e-da-moda-numa-distribuição-assimétrica"><i class="fa fa-check"></i><b>5.4.1</b> Posição da média, da mediana e da moda numa distribuição assimétrica</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a><ul>
-<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição de probabilidade conjunta de variáveis aleatórias discretas</a><ul>
+<li class="chapter" data-level="6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html"><i class="fa fa-check"></i><b>6</b> Distribuição de variáveis aleátórias conjunta</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-discretas"><i class="fa fa-check"></i><b>6.1</b> Distribuição de probabilidade conjunta de variáveis aleatórias discretas</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-e-correlação-no-contexto-da-distribuição-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.1.1</b> Covariância e correlação no contexto da distribuição de probabilidade conjunta</a></li>
 <li class="chapter" data-level="6.1.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#esperança-condicionada"><i class="fa fa-check"></i><b>6.1.2</b> Esperança condicionada</a></li>
 <li class="chapter" data-level="6.1.3" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#lei-das-expectativas-iteradas"><i class="fa fa-check"></i><b>6.1.3</b> Lei das Expectativas Iteradas</a></li>
 <li class="chapter" data-level="6.1.4" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#variância-condicionada"><i class="fa fa-check"></i><b>6.1.4</b> Variância condicionada</a></li>
 <li class="chapter" data-level="6.1.5" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#decomposição-da-variância"><i class="fa fa-check"></i><b>6.1.5</b> Decomposição da Variância</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>6.2</b> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</a><ul>
+<li class="chapter" data-level="6.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#distribuição-de-probabilidade-conjunta-de-variáveis-aleatórias-contínuas"><i class="fa fa-check"></i><b>6.2</b> Distribuição de probabilidade conjunta de variáveis aleatórias contínuas</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#função-densidade-de-probabilidade-conjunta"><i class="fa fa-check"></i><b>6.2.1</b> Função densidade de probabilidade conjunta</a></li>
 <li class="chapter" data-level="6.2.2" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#função-densidade-de-probabilidade-marginal"><i class="fa fa-check"></i><b>6.2.2</b> Função densidade de probabilidade marginal</a></li>
 <li class="chapter" data-level="6.2.3" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#probabilidade-condicional"><i class="fa fa-check"></i><b>6.2.3</b> Probabilidade condicional</a></li>
@@ -237,7 +277,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.6" data-path="distribuição-de-variáveis-aleátórias-conjunta.html"><a href="distribuição-de-variáveis-aleátórias-conjunta.html#covariância-entre-x-e-y"><i class="fa fa-check"></i><b>6.2.6</b> Covariância entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a><ul>
+<li class="chapter" data-level="7" data-path="estimadores.html"><a href="estimadores.html"><i class="fa fa-check"></i><b>7</b> Estimadores</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="estimadores.html"><a href="estimadores.html#introdução-1"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="teste-de-hipóste.html"><a href="teste-de-hipóste.html"><i class="fa fa-check"></i><b>8</b> Teste de hipóste</a></li>
@@ -263,19 +304,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="medidas-de-desigualdade" class="section level1">
+<div id="medidas-de-desigualdade" class="section level1" number="2">
 <h1><span class="header-section-number">CAPÍTULO 2</span> Medidas de desigualdade</h1>
-<p>O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span></p>
-<div id="príncipio-de-pigou-dalton" class="section level2">
+<p>O assunto sobre medidas de desigualdade está baseada na sua totalidade no capítulo 17 de <span class="citation"><a href="#ref-Hoffmann2006" role="doc-biblioref">Hoffmann</a> (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span></p>
+<div id="príncipio-de-pigou-dalton" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Príncipio de Pigou-Dalton</h2>
 <p>A condição de Pigou-Dalton define que as medidas de desigualdades devem ter seus valores aumentados quando há transferência regressivas de renda.
 Para entender a condicção de Pigou-Dalton, considere uma população com apenas duas pessoas cujas rendas são <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>. Então, <span class="math inline">\(\mu = \frac{X_1 + X_2}{2}\)</span>. No caso de perfeita igualdade, <span class="math inline">\(X_1 = X_2 = \mu\)</span>. No caso de uma distribuição com <span class="math inline">\(X_1 \neq X_2\)</span>, uma transferência de renda do mais pobre para o mais rico, mantendo a renda média constante, aumenta o grau de desigualdade.</p>
 </div>
-<div id="transferência-regressiva" class="section level2">
+<div id="transferência-regressiva" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Transferência Regressiva</h2>
 <p>Essa tranferência de renda do mais pobre para o mais rico, mantida a renda média constante, é denominada como <strong>transferência regressiva</strong> de renda. Portanto, uma <strong>transferência progressiva</strong> é a transferência de renda do mais rico para o mais pobre.</p>
 </div>
-<div id="curva-de-lorenz" class="section level2">
+<div id="curva-de-lorenz" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Curva de Lorenz</h2>
 <table>
 <caption><span id="tab:pessoasocupadas">TABELA 2.1: </span> Distribuição de pessoas ocupadas conforme renda obtida na atividade exercida no Brasil, de acordo com a PNAD 2003</caption>
@@ -363,15 +404,16 @@ da renda
 </tbody>
 </table>
 <p>Considere os dados da tabela <a href="medidas-de-desigualdade.html#tab:pessoasocupadas">2.1</a>. Na coluna de porcentagem acumulada podemos observar que 70% da população possui 29% da renda. Os percentuais acumlados da população <span class="math inline">\(p\)</span> e da renda <span class="math inline">\(\Phi\)</span> formam um plano cartesinao <span class="math inline">\((p,\Phi)\)</span> originando a Cuirva de Lorenz.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="medidas-de-desigualdade.html#cb89-1"></a><span class="kw">library</span>(ineq)</span>
-<span id="cb89-2"><a href="medidas-de-desigualdade.html#cb89-2"></a><span class="co"># usando os valores do exemplo em porcentagem mesmo</span></span>
-<span id="cb89-3"><a href="medidas-de-desigualdade.html#cb89-3"></a>p &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
-<span id="cb89-4"><a href="medidas-de-desigualdade.html#cb89-4"></a>r &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">10</span>, <span class="dv">16</span>, <span class="dv">13</span>, <span class="dv">19</span>, <span class="dv">13</span>)</span>
-<span id="cb89-5"><a href="medidas-de-desigualdade.html#cb89-5"></a></span>
-<span id="cb89-6"><a href="medidas-de-desigualdade.html#cb89-6"></a><span class="co"># calcula o mínimo da curva de Lorenz</span></span>
-<span id="cb89-7"><a href="medidas-de-desigualdade.html#cb89-7"></a>Lcmin &lt;-<span class="st"> </span><span class="kw">Lc</span>(r, <span class="dt">n =</span> p)</span>
-<span id="cb89-8"><a href="medidas-de-desigualdade.html#cb89-8"></a><span class="co"># Desenha a curva de Lorenz em um gráfico</span></span>
-<span id="cb89-9"><a href="medidas-de-desigualdade.html#cb89-9"></a><span class="kw">plot</span>(Lcmin)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="medidas-de-desigualdade.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ineq)</span>
+<span id="cb89-2"><a href="medidas-de-desigualdade.html#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="co"># usando os valores do exemplo em porcentagem</span></span>
+<span id="cb89-3"><a href="medidas-de-desigualdade.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mesmo</span></span>
+<span id="cb89-4"><a href="medidas-de-desigualdade.html#cb89-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
+<span id="cb89-5"><a href="medidas-de-desigualdade.html#cb89-5" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">10</span>, <span class="dv">16</span>, <span class="dv">13</span>, <span class="dv">19</span>, <span class="dv">13</span>)</span>
+<span id="cb89-6"><a href="medidas-de-desigualdade.html#cb89-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-7"><a href="medidas-de-desigualdade.html#cb89-7" aria-hidden="true" tabindex="-1"></a><span class="co"># calcula o mínimo da curva de Lorenz</span></span>
+<span id="cb89-8"><a href="medidas-de-desigualdade.html#cb89-8" aria-hidden="true" tabindex="-1"></a>Lcmin <span class="ot">&lt;-</span> <span class="fu">Lc</span>(r, <span class="at">n =</span> p)</span>
+<span id="cb89-9"><a href="medidas-de-desigualdade.html#cb89-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Desenha a curva de Lorenz em um gráfico</span></span>
+<span id="cb89-10"><a href="medidas-de-desigualdade.html#cb89-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Lcmin)</span></code></pre></div>
 <div class="figure"><span id="fig:CurvaLorenzR"></span>
 <img src="EstatEcon_files/figure-html/CurvaLorenzR-1.png" alt="Curva de Lorenz" width="384" />
 <p class="caption">
@@ -379,7 +421,7 @@ FIGURA 2.1: Curva de Lorenz
 </p>
 </div>
 <p>Considerando a curva de Lorenz, figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>, que é basicamente a obtida pelo R, figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenzR">2.1</a>, mas com algumas indicações, é possível obter algumas definições.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="medidas-de-desigualdade.html#cb90-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;lorenz3.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="medidas-de-desigualdade.html#cb90-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;lorenz3.png&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:CurvaLorenz"></span>
 <img src="lorenz3.png" alt="A curva de Lorenz com algumas indicações" width="100%" />
 <p class="caption">
@@ -394,7 +436,7 @@ FIGURA 2.2: A curva de Lorenz com algumas indicações
 <li>Neste caso, a Curva de Lorenz é dada pela poligonal <span class="math inline">\(\widehat{ABC}\)</span> e a área de desigualdade máxima é o triângulo <span class="math inline">\(ABC\)</span>.</li>
 </ul>
 </div>
-<div id="índice-gini" class="section level2">
+<div id="índice-gini" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Índice Gini</h2>
 <p>Considere os dados da tabela <a href="medidas-de-desigualdade.html#tab:pessoasocupadas">2.1</a>. Seja <span class="math inline">\(p\)</span> o valor da proporção acumulada da população até certo estrato e seja <span class="math inline">\(\Phi\)</span> o valor da correspondente proporção acumulada da renda. Os pares de valores <span class="math inline">\((p,\Phi)\)</span>, para os diversos estratos, definem pontos em um sistema de eixos cartesianos como aparece na figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>. Estes pontos estão sobre a curva de Lonrez, que mostra como a porporção acumulada da renda <span class="math inline">\((\Phi)\)</span> varia em função da proporção acumulada da população <span class="math inline">\((p)\)</span>, com as pessoas ordenadas de acordo com valores crescentes da renda. A área correspondente a <span class="math inline">\(a\)</span> que está entre a reta AB e a curva de Lorenz na figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>, é denominada <strong>área de desigualdade</strong>.</p>
 <p>Para entender como ocorre a variação desta área de desigualdade, a área <span class="math inline">\(a\)</span>, primeiro considere uma situação de distribuição de renda com perfeita igualdade, ou seja, uma população em que todos recebem a mesma renda.Nesta situação, a uma população <span class="math inline">\(p\)</span> da população corresponde uma igual proporção <span class="math inline">\(\Phi\)</span> da renda total, ou seja, <span class="math inline">\(\Phi = p\)</span>. Portanto, a curva de Lorenz dessa distribuição coincide com a reta AB da figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>, denominado, por isso, de <strong>linha de perfeita igualdade</strong>. Neste caso a área de desigualdade é igual a zero.</p>
@@ -490,7 +532,7 @@ G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
 \]</span>
 A relação <a href="medidas-de-desigualdade.html#eq:GiniFinal">(2.13)</a> mostra que, no cálculo do índice de Gini, cada valor de <span class="math inline">\(X_i\)</span> da variável aparece poderado por <span class="math inline">\(i\)</span>. Ou seja, <span class="math inline">\(X_i\)</span> aparece poderada pelo respectivo número de ordem na sequência dos valores ordenados.</p>
 <p><strong>Exemplo numérico</strong></p>
-<p>Para aplicar a fórmula do índice de Gini, utiliza-se os dados apresentados na tabela abaixo, obtidos de <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>.</p>
+<p>Para aplicar a fórmula do índice de Gini, utiliza-se os dados apresentados na tabela abaixo, obtidos de <span class="citation"><a href="#ref-Hoffmann2006" role="doc-biblioref">Hoffmann</a> (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>.</p>
 <table style="width:99%;">
 <caption><span id="tab:DadosdoExemploNumericoParaGini">TABELA 2.2: </span> Valores de <span class="math inline">\(X_i\)</span>, <span class="math inline">\(p_i\)</span>, <span class="math inline">\(\Phi_i\)</span> e <span class="math inline">\(\Phi_{i-1} + \Phi_i\)</span> para a população hipotética de 8 elementos</caption>
 <colgroup>
@@ -599,28 +641,28 @@ e através de <a href="medidas-de-desigualdade.html#eq:GiniFinal">(2.13)</a></p>
 G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1
 \]</span>
 Usando <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDePhi">(2.8)</a>, é necessário totalizar a coluna <span class="math inline">\(\Phi_{i-1} + \Phi_i\)</span> na tabela <a href="medidas-de-desigualdade.html#tab:DadosdoExemploNumericoParaGini">2.2</a>. Ou seja,</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="medidas-de-desigualdade.html#cb91-1"></a><span class="kw">options</span>(<span class="dt">OutDec =</span> <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb91-2"><a href="medidas-de-desigualdade.html#cb91-2"></a>somaphis &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.02</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.16</span>, <span class="fl">0.28</span>, <span class="fl">0.52</span>, <span class="fl">0.94</span>, </span>
-<span id="cb91-3"><a href="medidas-de-desigualdade.html#cb91-3"></a>    <span class="fl">1.6</span>)</span>
-<span id="cb91-4"><a href="medidas-de-desigualdade.html#cb91-4"></a>somasomaphis &lt;-<span class="st"> </span><span class="kw">sum</span>(somaphis)</span>
-<span id="cb91-5"><a href="medidas-de-desigualdade.html#cb91-5"></a>somasomaphis</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="medidas-de-desigualdade.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">OutDec =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb91-2"><a href="medidas-de-desigualdade.html#cb91-2" aria-hidden="true" tabindex="-1"></a>somaphis <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.16</span>, <span class="fl">0.28</span>, <span class="fl">0.52</span>, <span class="fl">0.94</span>, </span>
+<span id="cb91-3"><a href="medidas-de-desigualdade.html#cb91-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.6</span>)</span>
+<span id="cb91-4"><a href="medidas-de-desigualdade.html#cb91-4" aria-hidden="true" tabindex="-1"></a>somasomaphis <span class="ot">&lt;-</span> <span class="fu">sum</span>(somaphis)</span>
+<span id="cb91-5"><a href="medidas-de-desigualdade.html#cb91-5" aria-hidden="true" tabindex="-1"></a>somasomaphis</span></code></pre></div>
 <pre><code>## [1] 3,68</code></pre>
 <p><span class="math display">\[
 \sum_{i+1}^{8} (\Phi_{i-1} + \Phi_i) = 3,68
 \]</span></p>
 <p>Portanto</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="medidas-de-desigualdade.html#cb93-1"></a>giniphis &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="kw">length</span>(somaphis) <span class="op">*</span><span class="st"> </span>somasomaphis</span>
-<span id="cb93-2"><a href="medidas-de-desigualdade.html#cb93-2"></a>giniphis</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="medidas-de-desigualdade.html#cb93-1" aria-hidden="true" tabindex="-1"></a>giniphis <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(somaphis) <span class="sc">*</span> somasomaphis</span>
+<span id="cb93-2"><a href="medidas-de-desigualdade.html#cb93-2" aria-hidden="true" tabindex="-1"></a>giniphis</span></code></pre></div>
 <pre><code>## [1] 0,54</code></pre>
 <p><span class="math display">\[
 G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 \]</span></p>
 <p>Para aplicar a fórmula <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a> que é a fórmula do índice de Gini em termos de diferença absoluta média, <span class="math inline">\(\Delta\)</span>, é necessário calcular a diferença absoluta média com base nos dados de <span class="math inline">\(X_i\)</span> da tabela <a href="medidas-de-desigualdade.html#tab:DadosdoExemploNumericoParaGini">2.2</a>.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="medidas-de-desigualdade.html#cb95-1"></a>xi &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">20</span>)</span>
-<span id="cb95-2"><a href="medidas-de-desigualdade.html#cb95-2"></a></span>
-<span id="cb95-3"><a href="medidas-de-desigualdade.html#cb95-3"></a>XC &lt;-<span class="st"> </span><span class="kw">matrix</span>(xi, <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="kw">length</span>(xi), </span>
-<span id="cb95-4"><a href="medidas-de-desigualdade.html#cb95-4"></a>    <span class="dt">byrow =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb95-5"><a href="medidas-de-desigualdade.html#cb95-5"></a>XC</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="medidas-de-desigualdade.html#cb95-1" aria-hidden="true" tabindex="-1"></a>xi <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">20</span>)</span>
+<span id="cb95-2"><a href="medidas-de-desigualdade.html#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="medidas-de-desigualdade.html#cb95-3" aria-hidden="true" tabindex="-1"></a>XC <span class="ot">&lt;-</span> <span class="fu">matrix</span>(xi, <span class="at">nrow =</span> <span class="fu">length</span>(xi), <span class="at">ncol =</span> <span class="fu">length</span>(xi), </span>
+<span id="cb95-4"><a href="medidas-de-desigualdade.html#cb95-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb95-5"><a href="medidas-de-desigualdade.html#cb95-5" aria-hidden="true" tabindex="-1"></a>XC</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    1    1    1    1    1    1    1    1
 ## [2,]    1    1    1    1    1    1    1    1
@@ -630,9 +672,9 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 ## [6,]    8    8    8    8    8    8    8    8
 ## [7,]   13   13   13   13   13   13   13   13
 ## [8,]   20   20   20   20   20   20   20   20</code></pre>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="medidas-de-desigualdade.html#cb97-1"></a>XL &lt;-<span class="st"> </span><span class="kw">matrix</span>(xi, <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="kw">length</span>(xi), </span>
-<span id="cb97-2"><a href="medidas-de-desigualdade.html#cb97-2"></a>    <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb97-3"><a href="medidas-de-desigualdade.html#cb97-3"></a>XL</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="medidas-de-desigualdade.html#cb97-1" aria-hidden="true" tabindex="-1"></a>XL <span class="ot">&lt;-</span> <span class="fu">matrix</span>(xi, <span class="at">nrow =</span> <span class="fu">length</span>(xi), <span class="at">ncol =</span> <span class="fu">length</span>(xi), </span>
+<span id="cb97-2"><a href="medidas-de-desigualdade.html#cb97-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb97-3"><a href="medidas-de-desigualdade.html#cb97-3" aria-hidden="true" tabindex="-1"></a>XL</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    1    1    1    2    4    8   13   20
 ## [2,]    1    1    1    2    4    8   13   20
@@ -642,8 +684,8 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 ## [6,]    1    1    1    2    4    8   13   20
 ## [7,]    1    1    1    2    4    8   13   20
 ## [8,]    1    1    1    2    4    8   13   20</code></pre>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="medidas-de-desigualdade.html#cb99-1"></a>DIFX &lt;-<span class="st"> </span>XC <span class="op">-</span><span class="st"> </span>XL</span>
-<span id="cb99-2"><a href="medidas-de-desigualdade.html#cb99-2"></a>DIFX</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="medidas-de-desigualdade.html#cb99-1" aria-hidden="true" tabindex="-1"></a>DIFX <span class="ot">&lt;-</span> XC <span class="sc">-</span> XL</span>
+<span id="cb99-2"><a href="medidas-de-desigualdade.html#cb99-2" aria-hidden="true" tabindex="-1"></a>DIFX</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    0    0    0   -1   -3   -7  -12  -19
 ## [2,]    0    0    0   -1   -3   -7  -12  -19
@@ -653,8 +695,8 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 ## [6,]    7    7    7    6    4    0   -5  -12
 ## [7,]   12   12   12   11    9    5    0   -7
 ## [8,]   19   19   19   18   16   12    7    0</code></pre>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="medidas-de-desigualdade.html#cb101-1"></a>ABSDIFX &lt;-<span class="st"> </span><span class="kw">abs</span>(DIFX)</span>
-<span id="cb101-2"><a href="medidas-de-desigualdade.html#cb101-2"></a>ABSDIFX</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="medidas-de-desigualdade.html#cb101-1" aria-hidden="true" tabindex="-1"></a>ABSDIFX <span class="ot">&lt;-</span> <span class="fu">abs</span>(DIFX)</span>
+<span id="cb101-2"><a href="medidas-de-desigualdade.html#cb101-2" aria-hidden="true" tabindex="-1"></a>ABSDIFX</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    0    0    0    1    3    7   12   19
 ## [2,]    0    0    0    1    3    7   12   19
@@ -664,8 +706,8 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 ## [6,]    7    7    7    6    4    0    5   12
 ## [7,]   12   12   12   11    9    5    0    7
 ## [8,]   19   19   19   18   16   12    7    0</code></pre>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="medidas-de-desigualdade.html#cb103-1"></a>iota &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>, <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb103-2"><a href="medidas-de-desigualdade.html#cb103-2"></a>iota</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="medidas-de-desigualdade.html#cb103-1" aria-hidden="true" tabindex="-1"></a>iota <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> <span class="fu">length</span>(xi), <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb103-2"><a href="medidas-de-desigualdade.html#cb103-2" aria-hidden="true" tabindex="-1"></a>iota</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    1
 ## [2,]    1
@@ -675,19 +717,19 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 ## [6,]    1
 ## [7,]    1
 ## [8,]    1</code></pre>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="medidas-de-desigualdade.html#cb105-1"></a>somacolunaABSDIFX &lt;-<span class="st"> </span><span class="kw">t</span>(iota) <span class="op">%*%</span><span class="st"> </span>ABSDIFX</span>
-<span id="cb105-2"><a href="medidas-de-desigualdade.html#cb105-2"></a>somacolunaABSDIFX</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="medidas-de-desigualdade.html#cb105-1" aria-hidden="true" tabindex="-1"></a>somacolunaABSDIFX <span class="ot">&lt;-</span> <span class="fu">t</span>(iota) <span class="sc">%*%</span> ABSDIFX</span>
+<span id="cb105-2"><a href="medidas-de-desigualdade.html#cb105-2" aria-hidden="true" tabindex="-1"></a>somacolunaABSDIFX</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]   42   42   42   40   40   48   68  110</code></pre>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="medidas-de-desigualdade.html#cb107-1"></a>somalinhasomacolunaABSDIFX &lt;-<span class="st"> </span>somacolunaABSDIFX <span class="op">%*%</span><span class="st"> </span></span>
-<span id="cb107-2"><a href="medidas-de-desigualdade.html#cb107-2"></a><span class="st">    </span>iota</span>
-<span id="cb107-3"><a href="medidas-de-desigualdade.html#cb107-3"></a>somalinhasomacolunaABSDIFX</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="medidas-de-desigualdade.html#cb107-1" aria-hidden="true" tabindex="-1"></a>somalinhasomacolunaABSDIFX <span class="ot">&lt;-</span> somacolunaABSDIFX <span class="sc">%*%</span> </span>
+<span id="cb107-2"><a href="medidas-de-desigualdade.html#cb107-2" aria-hidden="true" tabindex="-1"></a>    iota</span>
+<span id="cb107-3"><a href="medidas-de-desigualdade.html#cb107-3" aria-hidden="true" tabindex="-1"></a>somalinhasomacolunaABSDIFX</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]  432</code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="medidas-de-desigualdade.html#cb109-1"></a>obs &lt;-<span class="st"> </span><span class="kw">length</span>(xi)</span>
-<span id="cb109-2"><a href="medidas-de-desigualdade.html#cb109-2"></a></span>
-<span id="cb109-3"><a href="medidas-de-desigualdade.html#cb109-3"></a>delta &lt;-<span class="st"> </span>obs<span class="op">^</span>(<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>somalinhasomacolunaABSDIFX</span>
-<span id="cb109-4"><a href="medidas-de-desigualdade.html#cb109-4"></a>delta</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="medidas-de-desigualdade.html#cb109-1" aria-hidden="true" tabindex="-1"></a>obs <span class="ot">&lt;-</span> <span class="fu">length</span>(xi)</span>
+<span id="cb109-2"><a href="medidas-de-desigualdade.html#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-3"><a href="medidas-de-desigualdade.html#cb109-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> obs<span class="sc">^</span>(<span class="sc">-</span><span class="dv">2</span>) <span class="sc">*</span> somalinhasomacolunaABSDIFX</span>
+<span id="cb109-4"><a href="medidas-de-desigualdade.html#cb109-4" aria-hidden="true" tabindex="-1"></a>delta</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,] 6,75</code></pre>
 <p>Ou seja,</p>
@@ -695,11 +737,11 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 \Delta = \dfrac{1}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}|X_i - X_j| = \dfrac{1}{(8)^2} \times 432 = 6,75
 \]</span></p>
 <p>Com a diferença absoluta média de <span class="math inline">\(X_i\)</span> devidamente calculada, aplica-se a fórmula <a href="medidas-de-desigualdade.html#eq:GiniEmTermosDeDiferencaAbsolutaMedia">(2.12)</a></p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="medidas-de-desigualdade.html#cb111-1"></a>ximedio &lt;-<span class="st"> </span><span class="kw">sum</span>(xi)<span class="op">/</span><span class="kw">length</span>(xi)</span>
-<span id="cb111-2"><a href="medidas-de-desigualdade.html#cb111-2"></a>ximedio</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="medidas-de-desigualdade.html#cb111-1" aria-hidden="true" tabindex="-1"></a>ximedio <span class="ot">&lt;-</span> <span class="fu">sum</span>(xi)<span class="sc">/</span><span class="fu">length</span>(xi)</span>
+<span id="cb111-2"><a href="medidas-de-desigualdade.html#cb111-2" aria-hidden="true" tabindex="-1"></a>ximedio</span></code></pre></div>
 <pre><code>## [1] 6,25</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="medidas-de-desigualdade.html#cb113-1"></a>ginidelta &lt;-<span class="st"> </span>delta<span class="op">/</span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ximedio)</span>
-<span id="cb113-2"><a href="medidas-de-desigualdade.html#cb113-2"></a>ginidelta</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="medidas-de-desigualdade.html#cb113-1" aria-hidden="true" tabindex="-1"></a>ginidelta <span class="ot">&lt;-</span> delta<span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> ximedio)</span>
+<span id="cb113-2"><a href="medidas-de-desigualdade.html#cb113-2" aria-hidden="true" tabindex="-1"></a>ginidelta</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,] 0,54</code></pre>
 <p><span class="math display">\[
@@ -710,9 +752,9 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
   \sum_{i=1}^{n}iX_i.
 \]</span></p>
 <p>usando os dados da tabela <a href="medidas-de-desigualdade.html#tab:DadosdoExemploNumericoParaGini">2.2</a></p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="medidas-de-desigualdade.html#cb115-1"></a>is &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(xi), <span class="dt">nrow =</span> <span class="kw">length</span>(xi), <span class="dt">ncol =</span> <span class="dv">1</span>, </span>
-<span id="cb115-2"><a href="medidas-de-desigualdade.html#cb115-2"></a>    <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb115-3"><a href="medidas-de-desigualdade.html#cb115-3"></a>is</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="medidas-de-desigualdade.html#cb115-1" aria-hidden="true" tabindex="-1"></a>is <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(xi), <span class="at">nrow =</span> <span class="fu">length</span>(xi), <span class="at">ncol =</span> <span class="dv">1</span>, </span>
+<span id="cb115-2"><a href="medidas-de-desigualdade.html#cb115-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb115-3"><a href="medidas-de-desigualdade.html#cb115-3" aria-hidden="true" tabindex="-1"></a>is</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    1
 ## [2,]    2
@@ -722,25 +764,25 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
 ## [6,]    6
 ## [7,]    7
 ## [8,]    8</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="medidas-de-desigualdade.html#cb117-1"></a>ixi &lt;-<span class="st"> </span><span class="kw">t</span>(is) <span class="op">*</span><span class="st"> </span>xi</span>
-<span id="cb117-2"><a href="medidas-de-desigualdade.html#cb117-2"></a>ixi</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="medidas-de-desigualdade.html#cb117-1" aria-hidden="true" tabindex="-1"></a>ixi <span class="ot">&lt;-</span> <span class="fu">t</span>(is) <span class="sc">*</span> xi</span>
+<span id="cb117-2"><a href="medidas-de-desigualdade.html#cb117-2" aria-hidden="true" tabindex="-1"></a>ixi</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    1    2    3    8   20   48   91  160</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="medidas-de-desigualdade.html#cb119-1"></a>somaixi &lt;-<span class="st"> </span><span class="kw">sum</span>(ixi)</span>
-<span id="cb119-2"><a href="medidas-de-desigualdade.html#cb119-2"></a>somaixi</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="medidas-de-desigualdade.html#cb119-1" aria-hidden="true" tabindex="-1"></a>somaixi <span class="ot">&lt;-</span> <span class="fu">sum</span>(ixi)</span>
+<span id="cb119-2"><a href="medidas-de-desigualdade.html#cb119-2" aria-hidden="true" tabindex="-1"></a>somaixi</span></code></pre></div>
 <pre><code>## [1] 333</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="medidas-de-desigualdade.html#cb121-1"></a>ginifinal &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">/</span>(obs<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ximedio) <span class="op">*</span><span class="st"> </span>somaixi <span class="op">-</span><span class="st"> </span>obs<span class="op">^</span>(<span class="op">-</span><span class="dv">1</span>) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb121-2"><a href="medidas-de-desigualdade.html#cb121-2"></a><span class="st">    </span><span class="dv">1</span></span>
-<span id="cb121-3"><a href="medidas-de-desigualdade.html#cb121-3"></a>ginifinal</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="medidas-de-desigualdade.html#cb121-1" aria-hidden="true" tabindex="-1"></a>ginifinal <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">/</span>(obs<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> ximedio) <span class="sc">*</span> somaixi <span class="sc">-</span> obs<span class="sc">^</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">-</span> </span>
+<span id="cb121-2"><a href="medidas-de-desigualdade.html#cb121-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span></span>
+<span id="cb121-3"><a href="medidas-de-desigualdade.html#cb121-3" aria-hidden="true" tabindex="-1"></a>ginifinal</span></code></pre></div>
 <pre><code>## [1] 0,54</code></pre>
 <p>obtém</p>
 <p><span class="math display">\[
   G = \dfrac{2}{n^2\mu}\sum_{i=1}^{n} iX_i - \dfrac{1}{n} - 1 = \dfrac{2}{8^2 \times 6,25}\times 333 - \dfrac{1}{8} - 1 = 0,54
 \]</span></p>
 </div>
-<div id="discrepância-máxima" class="section level2">
+<div id="discrepância-máxima" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Discrepância Máxima</h2>
-<p>Discrepância Máxima é a maior distância entre entre a linha AB e a curva de Lorenz da figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>. Portanto, a discrepância máxima é a diferença máxima entre a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de exata igualdade dada pela reta AB e a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de desigualdade entre as pessoas dessa população que na figura corresponde a poligonal da curva de Lorenz. De acordo com <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span></p>
+<p>Discrepância Máxima é a maior distância entre entre a linha AB e a curva de Lorenz da figura <a href="medidas-de-desigualdade.html#fig:CurvaLorenz">2.2</a>. Portanto, a discrepância máxima é a diferença máxima entre a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de exata igualdade dada pela reta AB e a relação da porcentagem acumulada da população e a sua respectiva porcentagem acumulada da renda numa situação de desigualdade entre as pessoas dessa população que na figura corresponde a poligonal da curva de Lorenz. De acordo com <span class="citation"><a href="#ref-Hoffmann2006" role="doc-biblioref">Hoffmann</a> (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span></p>
 <p><span class="math display" id="eq:DiscrepanciaMaximaDefinicao">\[
   D = p_h - \Phi_h
   \tag{2.14}
@@ -751,7 +793,7 @@ G = 1 - \dfrac{1}{8}\times 3,68 = 0,54
   X_1 \leq X_2 \leq \ldots \leq X_n
 \]</span></p>
 <p>sendo válida pelos menos uma desigualdade.</p>
-<p>Para o cálculo da discrepância máxima, é importante entender que a mesma ocorre quando a inclinação do segmento da poligonal da curva de Lorenz passa de uma valor menor que um para um valor maior que um. De acordo com <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>, a inclinação do segmento da poligonal é dada por</p>
+<p>Para o cálculo da discrepância máxima, é importante entender que a mesma ocorre quando a inclinação do segmento da poligonal da curva de Lorenz passa de uma valor menor que um para um valor maior que um. De acordo com <span class="citation"><a href="#ref-Hoffmann2006" role="doc-biblioref">Hoffmann</a> (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>, a inclinação do segmento da poligonal é dada por</p>
 <p><span class="math display">\[
   d_i = \dfrac{X_i}{\mu}
 \]</span></p>
@@ -801,28 +843,28 @@ Retomando o exemplo numérico da tabela <a href="medidas-de-desigualdade.html#ta
 D = p_h - \Phi_h = 0,625 - 0,180 = 0,445.
 \]</span>
 O mesmo resultado poderia ser obtido através da fórmula <a href="medidas-de-desigualdade.html#eq:DiscrepanciaMaximaFinal">(2.17)</a>. Para isso é necessário calcular o desvio absoluto médio, <span class="math inline">\(\delta\)</span>, para os valores de <span class="math inline">\(X_i\)</span> do exemplo numérico. Ou seja,</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="medidas-de-desigualdade.html#cb123-1"></a>somadesvioabsolutomedioxi &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">abs</span>(xi <span class="op">-</span><span class="st"> </span>ximedio))</span>
-<span id="cb123-2"><a href="medidas-de-desigualdade.html#cb123-2"></a>somadesvioabsolutomedioxi</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="medidas-de-desigualdade.html#cb123-1" aria-hidden="true" tabindex="-1"></a>somadesvioabsolutomedioxi <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">abs</span>(xi <span class="sc">-</span> ximedio))</span>
+<span id="cb123-2"><a href="medidas-de-desigualdade.html#cb123-2" aria-hidden="true" tabindex="-1"></a>somadesvioabsolutomedioxi</span></code></pre></div>
 <pre><code>## [1] 44,5</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="medidas-de-desigualdade.html#cb125-1"></a>desvioabsolutomedioxi &lt;-<span class="st"> </span>(<span class="kw">length</span>(xi))<span class="op">^</span>(<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">abs</span>(xi <span class="op">-</span><span class="st"> </span></span>
-<span id="cb125-2"><a href="medidas-de-desigualdade.html#cb125-2"></a><span class="st">    </span>ximedio))</span>
-<span id="cb125-3"><a href="medidas-de-desigualdade.html#cb125-3"></a>desvioabsolutomedioxi</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="medidas-de-desigualdade.html#cb125-1" aria-hidden="true" tabindex="-1"></a>desvioabsolutomedioxi <span class="ot">&lt;-</span> (<span class="fu">length</span>(xi))<span class="sc">^</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sum</span>(<span class="fu">abs</span>(xi <span class="sc">-</span> </span>
+<span id="cb125-2"><a href="medidas-de-desigualdade.html#cb125-2" aria-hidden="true" tabindex="-1"></a>    ximedio))</span>
+<span id="cb125-3"><a href="medidas-de-desigualdade.html#cb125-3" aria-hidden="true" tabindex="-1"></a>desvioabsolutomedioxi</span></code></pre></div>
 <pre><code>## [1] 5,5625</code></pre>
 <p><span class="math display">\[
 \delta = \dfrac{1}{n}\sum_{i=1}^{n}|X_i - \mu| = \dfrac{1}{8}\times 44,5 = 5,5625.
 \]</span>
 Portanto,</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="medidas-de-desigualdade.html#cb127-1"></a>discrepanciamaximaxi &lt;-<span class="st"> </span>desvioabsolutomedioxi<span class="op">/</span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span></span>
-<span id="cb127-2"><a href="medidas-de-desigualdade.html#cb127-2"></a><span class="st">    </span>ximedio)</span>
-<span id="cb127-3"><a href="medidas-de-desigualdade.html#cb127-3"></a>discrepanciamaximaxi</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="medidas-de-desigualdade.html#cb127-1" aria-hidden="true" tabindex="-1"></a>discrepanciamaximaxi <span class="ot">&lt;-</span> desvioabsolutomedioxi<span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> </span>
+<span id="cb127-2"><a href="medidas-de-desigualdade.html#cb127-2" aria-hidden="true" tabindex="-1"></a>    ximedio)</span>
+<span id="cb127-3"><a href="medidas-de-desigualdade.html#cb127-3" aria-hidden="true" tabindex="-1"></a>discrepanciamaximaxi</span></code></pre></div>
 <pre><code>## [1] 0,445</code></pre>
 <p><span class="math display">\[
   D = \dfrac{\delta}{2\mu} = \dfrac{5,5625}{2 \times 6,25} = 0,445.
 \]</span></p>
 </div>
-<div id="redundância-e-índice-de-theil" class="section level2">
+<div id="redundância-e-índice-de-theil" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Redundância e Índice de Theil</h2>
-<div id="teoria-da-informação" class="section level3">
+<div id="teoria-da-informação" class="section level3" number="2.6.1">
 <h3><span class="header-section-number">2.6.1</span> Teoria da Informação</h3>
 <p>Para entender melhor as medidas de desigualdades de Theil, é necessário introduzir alguns conceitos da teoria da informação.</p>
 <p>Seja <span class="math inline">\(x\)</span>, a probabilidadde de ocorrer o evento <span class="math inline">\(E\)</span>.</p>
@@ -836,7 +878,7 @@ Portanto,</p>
   h(x) = \log \dfrac{1}{x} = \log x^{-1} = - \log x
   \tag{2.18}
 \]</span></p>
-<p>De acordo com <span class="citation">Hoffmann (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>, a escolha da função logarítmica é devido a propriedade de atividade do conteúdo informativo no caso de eventos independentes. Portanto, se <span class="math inline">\(E_1\)</span> e <span class="math inline">\(E_2\)</span> são dois eventos independentes com probabilidades <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>, respectivamente, a probabilidade de que ambos ocorram é <span class="math inline">\(x_1x_2\)</span>. O conteúdo informativo da mensagem de que ambos os eventos ocorreram é</p>
+<p>De acordo com <span class="citation"><a href="#ref-Hoffmann2006" role="doc-biblioref">Hoffmann</a> (<a href="#ref-Hoffmann2006" role="doc-biblioref">2006</a>)</span>, a escolha da função logarítmica é devido a propriedade de atividade do conteúdo informativo no caso de eventos independentes. Portanto, se <span class="math inline">\(E_1\)</span> e <span class="math inline">\(E_2\)</span> são dois eventos independentes com probabilidades <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>, respectivamente, a probabilidade de que ambos ocorram é <span class="math inline">\(x_1x_2\)</span>. O conteúdo informativo da mensagem de que ambos os eventos ocorreram é</p>
 <p><span class="math display">\[
   h(x_1x_2) = \log \dfrac{1}{x_1x_2} = \log\dfrac{1}{x_1} + \log \dfrac{1}{x_2} = h(x_1) + h(x_2)
 \]</span>
@@ -966,7 +1008,7 @@ I(y:x) = \sum_{i=1}^{n} y_i \log\dfrac{y_i}{x_i}
 \]</span></p>
 <p>A definição <a href="medidas-de-desigualdade.html#eq:ConteudoInformativo">(2.18)</a>, do conteúdo informativo de uma mensagem certa, é somente um caso especial de <a href="medidas-de-desigualdade.html#eq:InformacaoDeUmaMensagemIncerta">(2.24)</a>, eem que uma probabilidade <em>a posteriori</em> é igual a um e todas as outras são iguais a zero, ou seja, <span class="math inline">\(y_j = 1\)</span> e <span class="math inline">\(y_i = 0\)</span> para todo <span class="math inline">\(i\neq j\)</span>.</p>
 </div>
-<div id="índice-t-de-theil" class="section level3">
+<div id="índice-t-de-theil" class="section level3" number="2.6.2">
 <h3><span class="header-section-number">2.6.2</span> Índice T de Theil</h3>
 <p>Seja uma população com <span class="math inline">\(n\)</span> pessoas em que cada uma recxebe uma fração não negativa da renda total,</p>
 <p><span class="math display">\[
@@ -1023,7 +1065,7 @@ sendo que:</p>
 \]</span></p>
 <p>Comparando essa equação com <a href="medidas-de-desigualdade.html#eq:InformacaoDeUmaMensagemIncerta">(2.24)</a>, verifica-se que o <strong>índice T de Theil</strong> corresponde à esperança do valor informativo de uma mensagem incerta, em que as probabilidades <em>a posteriori</em> são as frações da renda total <span class="math inline">\(y_i\)</span> apropriadas pelas pessoas, e as probabilidades <em>a priori</em> são iguais a <span class="math inline">\(1/n\)</span>, ou seja, iguais à fração da população correspondente a cada pessoa.</p>
 </div>
-<div id="índice-de-l-de-theil" class="section level3">
+<div id="índice-de-l-de-theil" class="section level3" number="2.6.3">
 <h3><span class="header-section-number">2.6.3</span> Índice de L de Theil</h3>
 <p>A outra medida de desigualdade proposta por Theil, o <strong>índice L de Theil</strong>, corresponde à esperança do valor informativo de uma mensagem incerta, em que as probabilidades 8a posteriori* são as frações da população <span class="math inline">\(1/n\)</span> e as probabilidades <em>a priori</em> são as frações da renda <span class="math inline">\(y_i\)</span>. Ou seja,</p>
 <p><span class="math display" id="eq:IndiceLDeTheil">\[
@@ -1039,7 +1081,7 @@ para todo <span class="math inline">\(i\)</span>.</p>
 <p>Uma vantagem importante das medidas de desigualdades de Theil na análise da distribuição de renda ou da riqueza é que, quando os dados podem ser agrupados com base em um critério qualquer, por exemplo regiões, os valores de <span class="math inline">\(T\)</span> e <span class="math inline">\(L\)</span> podem ser decompostos em uma medida de desigualdade <strong>entre</strong> grupos, por exemplo inter-regional, e uma média poderada das medidas de desigualdades <strong>dentro</strong> de grupos, por exemplo dentro das regiões.</p>
 </div>
 </div>
-<div id="variância-dos-logaritmos" class="section level2">
+<div id="variância-dos-logaritmos" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Variância dos Logaritmos</h2>
 <p>A variância dos logaritmos das rendas é frequentemente utilizada como medida da desigualdade da distribuição da renda em uma população. Para uma população com <span class="math inline">\(n\)</span> pessoas, em que a renda da <span class="math inline">\(i\)</span>-ésima pessoas aé indicada por <span class="math inline">\(X_i\)</span> para <span class="math inline">\(i=1, \ldots, n\)</span>, a variância dos logaritmos das rendas é dada por</p>
 <p><span class="math display" id="eq:VarianciaDosLogaritmos">\[
@@ -1065,9 +1107,9 @@ V(Z) = \dfrac{1}{n} \sum_{i=1}^{n} \left( \log \dfrac{X_i}{X^*} \right)^2
 </div>
 </div>
 <h3>Referências</h3>
-<div id="refs" class="references">
-<div id="ref-Hoffmann2006">
-<p>Hoffmann, Rodolfo. 2006. <em>Estatística para Economistas</em>. 4th ed. São Paulo: Cengage Learning.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Hoffmann2006" class="csl-entry">
+Hoffmann, Rodolfo. 2006. <em><span class="nocase">Estat<span class="nocase">í</span>stica para Economistas</span></em>. 4th ed. S<span>ã</span>o Paulo: Cengage Learning.
 </div>
 </div>
             </section>
@@ -1099,6 +1141,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

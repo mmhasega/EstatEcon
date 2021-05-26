@@ -4,8 +4,8 @@
 %
 \documentclass[
 ]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -81,7 +81,8 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -90,7 +91,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -116,12 +117,15 @@
 \usepackage{graphics,graphicx,import,color,float}
 \usepackage{url,booktabs,siunitx}
 \usepackage{xcolor}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2020-11-19}
+\date{2021-05-26}
 
 \begin{document}
 \maketitle
@@ -194,7 +198,7 @@ Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em o
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{31}\NormalTok{)}
+\NormalTok{X }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{31}\NormalTok{)}
 \NormalTok{X}
 \end{Highlighting}
 \end{Shaded}
@@ -205,7 +209,7 @@ Qual é a média aritmética de um grupo de cinco pessoas cujas idades são em o
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mediaX <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(X)}
+\NormalTok{mediaX }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(X)}
 \NormalTok{mediaX}
 \end{Highlighting}
 \end{Shaded}
@@ -227,7 +231,7 @@ foram 4,6 e 8. Para responder, basta aplicar \eqref{eq:mediaaritmeticasimples}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
+\NormalTok{X2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
 \NormalTok{X2}
 \end{Highlighting}
 \end{Shaded}
@@ -238,7 +242,7 @@ foram 4,6 e 8. Para responder, basta aplicar \eqref{eq:mediaaritmeticasimples}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mediaX2 <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(X2)}
+\NormalTok{mediaX2 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(X2)}
 \NormalTok{mediaX2}
 \end{Highlighting}
 \end{Shaded}
@@ -280,7 +284,7 @@ basta aplicar \eqref{eq:mediaartimeticaponderada}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\NormalTok{X3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{30}\NormalTok{)}
 \NormalTok{X3}
 \end{Highlighting}
 \end{Shaded}
@@ -291,7 +295,7 @@ basta aplicar \eqref{eq:mediaartimeticaponderada}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{w3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{w3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
 \NormalTok{w3}
 \end{Highlighting}
 \end{Shaded}
@@ -302,8 +306,8 @@ basta aplicar \eqref{eq:mediaartimeticaponderada}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{wX3 <-}\StringTok{ }\NormalTok{w3 }\OperatorTok{*}\StringTok{ }\NormalTok{X3}
-\NormalTok{mediaX3 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(wX3)}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(w3)}
+\NormalTok{wX3 }\OtherTok{\textless{}{-}}\NormalTok{ w3 }\SpecialCharTok{*}\NormalTok{ X3}
+\NormalTok{mediaX3 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(wX3)}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(w3)}
 \NormalTok{mediaX3}
 \end{Highlighting}
 \end{Shaded}
@@ -324,7 +328,7 @@ Qual é a média ponderada de três provas realizadas por um aluno, cujas notas 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X4 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
+\NormalTok{X4 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
 \NormalTok{X4}
 \end{Highlighting}
 \end{Shaded}
@@ -335,7 +339,7 @@ Qual é a média ponderada de três provas realizadas por um aluno, cujas notas 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{w4 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{w4 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
 \NormalTok{w4}
 \end{Highlighting}
 \end{Shaded}
@@ -346,9 +350,9 @@ Qual é a média ponderada de três provas realizadas por um aluno, cujas notas 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{wX4 <-}\StringTok{ }\NormalTok{w4 }\OperatorTok{*}\StringTok{ }\NormalTok{X4}
-\NormalTok{mediaX4 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(wX4)}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(w4)}
-\KeywordTok{round}\NormalTok{(mediaX4, }\DataTypeTok{digits =} \DecValTok{1}\NormalTok{)}
+\NormalTok{wX4 }\OtherTok{\textless{}{-}}\NormalTok{ w4 }\SpecialCharTok{*}\NormalTok{ X4}
+\NormalTok{mediaX4 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(wX4)}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(w4)}
+\FunctionTok{round}\NormalTok{(mediaX4, }\AttributeTok{digits =} \DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -385,7 +389,7 @@ Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X5 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
+\NormalTok{X5 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
 \NormalTok{X5}
 \end{Highlighting}
 \end{Shaded}
@@ -396,9 +400,9 @@ Sejam três valores 4, 6 e 8. Calcule a média geométrica simples.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{n <-}\StringTok{ }\KeywordTok{length}\NormalTok{(X5)}
-\NormalTok{mediaX5 <-}\StringTok{ }\KeywordTok{prod}\NormalTok{(X5)}\OperatorTok{^}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{n)}
-\KeywordTok{round}\NormalTok{(mediaX5, }\DataTypeTok{digits =} \DecValTok{1}\NormalTok{)}
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(X5)}
+\NormalTok{mediaX5 }\OtherTok{\textless{}{-}} \FunctionTok{prod}\NormalTok{(X5)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n)}
+\FunctionTok{round}\NormalTok{(mediaX5, }\AttributeTok{digits =} \DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -435,8 +439,8 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x6 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
-\KeywordTok{class}\NormalTok{(x6)}
+\NormalTok{x6 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
+\FunctionTok{class}\NormalTok{(x6)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -456,7 +460,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{w6 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{w6 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
 \NormalTok{w6}
 \end{Highlighting}
 \end{Shaded}
@@ -467,7 +471,7 @@ tomando os valores do exemplo 5 e ponderando por 1,2 e 3, temos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{G2 <-}\StringTok{ }\KeywordTok{round}\NormalTok{((}\KeywordTok{prod}\NormalTok{(x6}\OperatorTok{^}\NormalTok{w6))}\OperatorTok{^}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(w6)), }\DecValTok{1}\NormalTok{)}
+\NormalTok{G2 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{((}\FunctionTok{prod}\NormalTok{(x6}\SpecialCharTok{\^{}}\NormalTok{w6))}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(w6)), }\DecValTok{1}\NormalTok{)}
 \NormalTok{G2}
 \end{Highlighting}
 \end{Shaded}
@@ -640,9 +644,9 @@ Como se trata de número impar de valores o valor central que divide o conjunto 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{w <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{-2}\NormalTok{, }\DecValTok{-1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
-\NormalTok{mediana1 <-}\StringTok{ }\KeywordTok{median}\NormalTok{(w)}
-\KeywordTok{print}\NormalTok{(mediana1)}
+\NormalTok{w }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{mediana1 }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(w)}
+\FunctionTok{print}\NormalTok{(mediana1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -668,9 +672,9 @@ Dessa forma, toma-se os dois valores centrais que são -1 e 1 e calcula-se a mé
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{-2}\NormalTok{, }\DecValTok{-1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
-\NormalTok{mediana2 <-}\StringTok{ }\KeywordTok{median}\NormalTok{(v)}
-\KeywordTok{print}\NormalTok{(mediana2)}
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{mediana2 }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(v)}
+\FunctionTok{print}\NormalTok{(mediana2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -711,8 +715,8 @@ No R tem uma função específica para a obtenção dos quartis.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{100}\NormalTok{)}
-\KeywordTok{length}\NormalTok{(p)}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{100}\NormalTok{)}
+\FunctionTok{length}\NormalTok{(p)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -722,7 +726,7 @@ No R tem uma função específica para a obtenção dos quartis.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{quantile}\NormalTok{(p)}
+\FunctionTok{quantile}\NormalTok{(p)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -733,7 +737,7 @@ No R tem uma função específica para a obtenção dos quartis.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{faixainterquant <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p, }\FloatTok{0.75}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p, }
+\NormalTok{faixainterquant }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(p, }\FloatTok{0.75}\NormalTok{) }\SpecialCharTok{{-}} \FunctionTok{quantile}\NormalTok{(p, }
     \FloatTok{0.25}\NormalTok{)}
 \NormalTok{faixainterquant}
 \end{Highlighting}
@@ -750,8 +754,8 @@ No R tem uma função específica para a obtenção dos quartis.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{)}
-\KeywordTok{length}\NormalTok{(p2)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{)}
+\FunctionTok{length}\NormalTok{(p2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -761,7 +765,7 @@ No R tem uma função específica para a obtenção dos quartis.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{quantile}\NormalTok{(p2)}
+\FunctionTok{quantile}\NormalTok{(p2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -772,7 +776,7 @@ No R tem uma função específica para a obtenção dos quartis.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{faixainterquant2 <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p2, }\FloatTok{0.75}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(p2, }
+\NormalTok{faixainterquant2 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(p2, }\FloatTok{0.75}\NormalTok{) }\SpecialCharTok{{-}} \FunctionTok{quantile}\NormalTok{(p2, }
     \FloatTok{0.25}\NormalTok{)}
 \NormalTok{faixainterquant2}
 \end{Highlighting}
@@ -806,15 +810,15 @@ segue abaixo.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# criando a função moda no R}
+\CommentTok{\# criando a função moda no R}
 
-\NormalTok{getmode <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(v) \{}
-\NormalTok{    uniqv <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(v)}
-\NormalTok{    uniqv[}\KeywordTok{which.max}\NormalTok{(}\KeywordTok{tabulate}\NormalTok{(}\KeywordTok{match}\NormalTok{(v, uniqv)))]}
+\NormalTok{getmode }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
+\NormalTok{    uniqv }\OtherTok{\textless{}{-}} \FunctionTok{unique}\NormalTok{(v)}
+\NormalTok{    uniqv[}\FunctionTok{which.max}\NormalTok{(}\FunctionTok{tabulate}\NormalTok{(}\FunctionTok{match}\NormalTok{(v, uniqv)))]}
 \NormalTok{\}}
-\NormalTok{z <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
-\NormalTok{moda1 <-}\StringTok{ }\KeywordTok{getmode}\NormalTok{(z)}
-\KeywordTok{print}\NormalTok{(moda1)}
+\NormalTok{z }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{moda1 }\OtherTok{\textless{}{-}} \FunctionTok{getmode}\NormalTok{(z)}
+\FunctionTok{print}\NormalTok{(moda1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -857,7 +861,7 @@ Aproveitando os dados de alturas de 30 pessoas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{tail}\NormalTok{(X)}
+\FunctionTok{tail}\NormalTok{(X)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -867,7 +871,7 @@ Aproveitando os dados de alturas de 30 pessoas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{varX <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{var}\NormalTok{(X), }\DecValTok{4}\NormalTok{)}
+\NormalTok{varX }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{var}\NormalTok{(X), }\DecValTok{4}\NormalTok{)}
 \NormalTok{varX}
 \end{Highlighting}
 \end{Shaded}
@@ -896,7 +900,7 @@ Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{tail}\NormalTok{(X)}
+\FunctionTok{tail}\NormalTok{(X)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -906,7 +910,7 @@ Portanto, a sua interpretação é clara e direta por ter a mesma unidade da sua
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dpX <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{sd}\NormalTok{(X), }\DecValTok{4}\NormalTok{)}
+\NormalTok{dpX }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{sd}\NormalTok{(X), }\DecValTok{4}\NormalTok{)}
 \NormalTok{dpX}
 \end{Highlighting}
 \end{Shaded}
@@ -948,15 +952,15 @@ aluno A tem-se:
 
 \begin{longtable}[]{@{}lcc@{}}
 \toprule
-Aluno A & notas & \(notas^2\)\tabularnewline
+Aluno A & notas & \(notas^2\) \\
 \midrule
 \endhead
-Economia & 3 & 9\tabularnewline
-Contabilidade & 2 & 4\tabularnewline
-Administração & 4 & 16\tabularnewline
-Matemática & 1 & 1\tabularnewline
-\textbf{Somatória} & \textbf{10} & \textbf{30}\tabularnewline
-\textbf{Média} & \textbf{2,5} & \textbf{7,5}\tabularnewline
+Economia & 3 & 9 \\
+Contabilidade & 2 & 4 \\
+Administração & 4 & 16 \\
+Matemática & 1 & 1 \\
+\textbf{Somatória} & \textbf{10} & \textbf{30} \\
+\textbf{Média} & \textbf{2,5} & \textbf{7,5} \\
 \bottomrule
 \end{longtable}
 
@@ -970,10 +974,10 @@ Matemática & 1 & 1\tabularnewline
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{)}
-\NormalTok{mediaX3e2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(X3}\OperatorTok{^}\DecValTok{2}\NormalTok{)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(X3)}
-\NormalTok{mediaX3 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(X3)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(X3)}
-\NormalTok{varX3 <-}\StringTok{ }\NormalTok{mediaX3e2 }\OperatorTok{-}\StringTok{ }\NormalTok{mediaX3}\OperatorTok{^}\DecValTok{2}
+\NormalTok{X3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{mediaX3e2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(X3}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(X3)}
+\NormalTok{mediaX3 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(X3)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(X3)}
+\NormalTok{varX3 }\OtherTok{\textless{}{-}}\NormalTok{ mediaX3e2 }\SpecialCharTok{{-}}\NormalTok{ mediaX3}\SpecialCharTok{\^{}}\DecValTok{2}
 \NormalTok{varX3}
 \end{Highlighting}
 \end{Shaded}
@@ -984,7 +988,7 @@ Matemática & 1 & 1\tabularnewline
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dpX3 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(varX3), }\DecValTok{4}\NormalTok{)}
+\NormalTok{dpX3 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(varX3), }\DecValTok{4}\NormalTok{)}
 \NormalTok{dpX3}
 \end{Highlighting}
 \end{Shaded}
@@ -1130,13 +1134,15 @@ Tabela 2.1 - Altura de 30 pessoas em cm.
 
 \begin{longtable}[]{@{}ccccc@{}}
 \toprule
+& & & & \\
+\midrule
 \endhead
-159 & 168 & 172 & 175 & 181\tabularnewline
-161 & 168 & 173 & 176 & 183\tabularnewline
-162 & 169 & 173 & 177 & 185\tabularnewline
-164 & 170 & 174 & 178 & 190\tabularnewline
-166 & 171 & 174 & 179 & 194\tabularnewline
-167 & 171 & 174 & 180 & 201\tabularnewline
+159 & 168 & 172 & 175 & 181 \\
+161 & 168 & 173 & 176 & 183 \\
+162 & 169 & 173 & 177 & 185 \\
+164 & 170 & 174 & 178 & 190 \\
+166 & 171 & 174 & 179 & 194 \\
+167 & 171 & 174 & 180 & 201 \\
 \bottomrule
 \end{longtable}
 
@@ -1146,11 +1152,11 @@ Os dados são inputados na variável X.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{X <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{159}\NormalTok{, }\DecValTok{161}\NormalTok{, }\DecValTok{162}\NormalTok{, }\DecValTok{164}\NormalTok{, }\DecValTok{166}\NormalTok{, }\DecValTok{167}\NormalTok{, }\DecValTok{168}\NormalTok{, }\DecValTok{168}\NormalTok{, }\DecValTok{169}\NormalTok{, }
+\NormalTok{X }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{159}\NormalTok{, }\DecValTok{161}\NormalTok{, }\DecValTok{162}\NormalTok{, }\DecValTok{164}\NormalTok{, }\DecValTok{166}\NormalTok{, }\DecValTok{167}\NormalTok{, }\DecValTok{168}\NormalTok{, }\DecValTok{168}\NormalTok{, }\DecValTok{169}\NormalTok{, }
     \DecValTok{170}\NormalTok{, }\DecValTok{171}\NormalTok{, }\DecValTok{171}\NormalTok{, }\DecValTok{172}\NormalTok{, }\DecValTok{173}\NormalTok{, }\DecValTok{173}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DecValTok{174}\NormalTok{, }\DecValTok{175}\NormalTok{, }
     \DecValTok{176}\NormalTok{, }\DecValTok{177}\NormalTok{, }\DecValTok{178}\NormalTok{, }\DecValTok{179}\NormalTok{, }\DecValTok{180}\NormalTok{, }\DecValTok{181}\NormalTok{, }\DecValTok{183}\NormalTok{, }\DecValTok{185}\NormalTok{, }\DecValTok{190}\NormalTok{, }\DecValTok{194}\NormalTok{, }
     \DecValTok{201}\NormalTok{)}
-\KeywordTok{head}\NormalTok{(X)}
+\FunctionTok{head}\NormalTok{(X)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1160,7 +1166,7 @@ Os dados são inputados na variável X.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{obsX <-}\StringTok{ }\KeywordTok{length}\NormalTok{(X)}
+\NormalTok{obsX }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(X)}
 \NormalTok{obsX}
 \end{Highlighting}
 \end{Shaded}
@@ -1171,7 +1177,7 @@ Os dados são inputados na variável X.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{faixaX <-}\StringTok{ }\KeywordTok{range}\NormalTok{(X)}
+\NormalTok{faixaX }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(X)}
 \NormalTok{faixaX}
 \end{Highlighting}
 \end{Shaded}
@@ -1184,20 +1190,20 @@ Os dados são inputados na variável X.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{grafico1 <-}\StringTok{ }\KeywordTok{hist}\NormalTok{( }
+\NormalTok{grafico1 }\OtherTok{\textless{}{-}} \FunctionTok{hist}\NormalTok{( }
 \NormalTok{                  X, }
-                  \DataTypeTok{main=}\StringTok{"Histograma da Altura"}\NormalTok{, }
-                  \DataTypeTok{xlab=}\StringTok{"cm"}\NormalTok{, }
-                  \DataTypeTok{ylab=}\StringTok{"frequência", }
-\StringTok{                  border="}\NormalTok{blue}\StringTok{", }
-\StringTok{                  col="}\NormalTok{green}\StringTok{", }
-\StringTok{                  xlim=c(150,210), }
-\StringTok{                  las=1, }
-\StringTok{                  breaks=5, }
-\StringTok{                  right=FALSE }
-\StringTok{                ) }
+                  \AttributeTok{main=}\StringTok{"Histograma da Altura"}\NormalTok{, }
+                  \AttributeTok{xlab=}\StringTok{"cm"}\NormalTok{, }
+                  \AttributeTok{ylab=}\StringTok{"frequência"}\NormalTok{, }
+                  \AttributeTok{border=}\StringTok{"blue"}\NormalTok{, }
+                  \AttributeTok{col=}\StringTok{"green"}\NormalTok{, }
+                  \AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{150}\NormalTok{,}\DecValTok{210}\NormalTok{), }
+                  \AttributeTok{las=}\DecValTok{1}\NormalTok{, }
+                  \AttributeTok{breaks=}\DecValTok{5}\NormalTok{, }
+                  \AttributeTok{right=}\ConstantTok{FALSE} 
+\NormalTok{                ) }
 
-\StringTok{grafico1}
+\NormalTok{grafico1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1237,15 +1243,15 @@ Agrupando essas pessoas em \textbf{classes} de 10 cm temos:
 
 \begin{longtable}[]{@{}cc@{}}
 \toprule
-classes & frequência\tabularnewline
+classes & frequência \\
 \midrule
 \endhead
-{[}150 ; 160{[} & 1\tabularnewline
-{[}160 ; 170{[} & 8\tabularnewline
-{[}170 ; 180{[} & 14\tabularnewline
-{[}180 ; 190{[} & 4\tabularnewline
-{[}190 ; 200{[} & 2\tabularnewline
-{[}200 ; 210{[} & 1\tabularnewline
+{[}150 ; 160{[} & 1 \\
+{[}160 ; 170{[} & 8 \\
+{[}170 ; 180{[} & 14 \\
+{[}180 ; 190{[} & 4 \\
+{[}190 ; 200{[} & 2 \\
+{[}200 ; 210{[} & 1 \\
 \bottomrule
 \end{longtable}
 
@@ -1253,10 +1259,10 @@ Fazendo isso no R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{nobs <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{30}\NormalTok{)}
-\NormalTok{dataX <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(nobs, X))}
-\CommentTok{# transformando em data frame}
-\KeywordTok{tail}\NormalTok{(dataX)}
+\NormalTok{nobs }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{30}\NormalTok{)}
+\NormalTok{dataX }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(nobs, X))}
+\CommentTok{\# transformando em data frame}
+\FunctionTok{tail}\NormalTok{(dataX)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1272,9 +1278,9 @@ Fazendo isso no R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# mostrando as seis últimas observações}
-\NormalTok{quebras <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{150}\NormalTok{, }\DecValTok{210}\NormalTok{, }\DataTypeTok{by =} \DecValTok{10}\NormalTok{)}
-\CommentTok{# definindo os intervalos}
+\CommentTok{\# mostrando as seis últimas observações}
+\NormalTok{quebras }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{150}\NormalTok{, }\DecValTok{210}\NormalTok{, }\AttributeTok{by =} \DecValTok{10}\NormalTok{)}
+\CommentTok{\# definindo os intervalos}
 \NormalTok{quebras}
 \end{Highlighting}
 \end{Shaded}
@@ -1285,13 +1291,13 @@ Fazendo isso no R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dataX.cut <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(dataX}\OperatorTok{$}\NormalTok{X, quebras, }\DataTypeTok{right =} \OtherTok{FALSE}\NormalTok{)}
-\CommentTok{# construindo as classes fechado a esq e aberto a}
-\CommentTok{# direita}
-\NormalTok{dataX.freq <-}\StringTok{ }\KeywordTok{table}\NormalTok{(dataX.cut)}
-\CommentTok{# obtendo a frequência para cada classe.}
-\NormalTok{dataXfreq <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(dataX.freq)}
-\CommentTok{# colocando os dados em colunas}
+\NormalTok{dataX.cut }\OtherTok{\textless{}{-}} \FunctionTok{cut}\NormalTok{(dataX}\SpecialCharTok{$}\NormalTok{X, quebras, }\AttributeTok{right =} \ConstantTok{FALSE}\NormalTok{)}
+\CommentTok{\# construindo as classes fechado a esq e aberto a}
+\CommentTok{\# direita}
+\NormalTok{dataX.freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(dataX.cut)}
+\CommentTok{\# obtendo a frequência para cada classe.}
+\NormalTok{dataXfreq }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(dataX.freq)}
+\CommentTok{\# colocando os dados em colunas}
 \NormalTok{dataXfreq}
 \end{Highlighting}
 \end{Shaded}
@@ -1337,8 +1343,8 @@ O código seria:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{boxplot}\NormalTok{(X, }\DataTypeTok{data =}\NormalTok{ dataX, }\DataTypeTok{main =} \StringTok{"Diagrama de Caixa"}\NormalTok{, }
-    \DataTypeTok{ylab =} \StringTok{"cm"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"altura de 30 pessoas"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(X, }\AttributeTok{data =}\NormalTok{ dataX, }\AttributeTok{main =} \StringTok{"Diagrama de Caixa"}\NormalTok{, }
+    \AttributeTok{ylab =} \StringTok{"cm"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"altura de 30 pessoas"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1385,15 +1391,15 @@ Tomando o exemplo de consumo e renda da tabela 2.11 (Sartoris, 2013, p.42) tem-s
 
 \begin{longtable}[]{@{}cccc@{}}
 \toprule
-Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
+Ano & Consumo(X) & Renda(Y) & (XY) \\
 \midrule
 \endhead
-1 & 600 & 1.000 & 600.000\tabularnewline
-2 & 700 & 1.100 & 770.000\tabularnewline
-3 & 800 & 1.300 & 1.040.000\tabularnewline
-4 & 900 & 1.400 & 1.260.000\tabularnewline
-\textbf{Somatória} & \textbf{3.000} & \textbf{4.800} & \textbf{3.670.000}\tabularnewline
-\textbf{Média} & \textbf{750} & \textbf{1.200} & \textbf{917.500}\tabularnewline
+1 & 600 & 1.000 & 600.000 \\
+2 & 700 & 1.100 & 770.000 \\
+3 & 800 & 1.300 & 1.040.000 \\
+4 & 900 & 1.400 & 1.260.000 \\
+\textbf{Somatória} & \textbf{3.000} & \textbf{4.800} & \textbf{3.670.000} \\
+\textbf{Média} & \textbf{750} & \textbf{1.200} & \textbf{917.500} \\
 \bottomrule
 \end{longtable}
 
@@ -1401,12 +1407,12 @@ Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{C1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{600}\NormalTok{, }\DecValTok{700}\NormalTok{, }\DecValTok{800}\NormalTok{, }\DecValTok{900}\NormalTok{)}
-\NormalTok{R1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{1100}\NormalTok{, }\DecValTok{1300}\NormalTok{, }\DecValTok{1400}\NormalTok{)}
-\NormalTok{mediaC1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(C1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
-\NormalTok{mediaR1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(R1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(R1)}
-\NormalTok{mediaC1R1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(C1 }\OperatorTok{*}\StringTok{ }\NormalTok{R1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
-\NormalTok{covC1R1 <-}\StringTok{ }\NormalTok{mediaC1R1 }\OperatorTok{-}\StringTok{ }\NormalTok{mediaC1 }\OperatorTok{*}\StringTok{ }\NormalTok{mediaR1}
+\NormalTok{C1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{600}\NormalTok{, }\DecValTok{700}\NormalTok{, }\DecValTok{800}\NormalTok{, }\DecValTok{900}\NormalTok{)}
+\NormalTok{R1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{1100}\NormalTok{, }\DecValTok{1300}\NormalTok{, }\DecValTok{1400}\NormalTok{)}
+\NormalTok{mediaC1 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(C1)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(C1)}
+\NormalTok{mediaR1 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(R1)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(R1)}
+\NormalTok{mediaC1R1 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(C1 }\SpecialCharTok{*}\NormalTok{ R1)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(C1)}
+\NormalTok{covC1R1 }\OtherTok{\textless{}{-}}\NormalTok{ mediaC1R1 }\SpecialCharTok{{-}}\NormalTok{ mediaC1 }\SpecialCharTok{*}\NormalTok{ mediaR1}
 \NormalTok{covC1R1}
 \end{Highlighting}
 \end{Shaded}
@@ -1417,7 +1423,7 @@ Ano & Consumo(X) & Renda(Y) & (XY)\tabularnewline
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{cov}\NormalTok{(C1, R1)}
+\FunctionTok{cov}\NormalTok{(C1, R1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1447,9 +1453,9 @@ Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{medC1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(C1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
-\NormalTok{medR1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(R1)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(R1)}
-\NormalTok{varC1 <-}\StringTok{ }\NormalTok{(}\KeywordTok{sum}\NormalTok{((C1 }\OperatorTok{-}\StringTok{ }\NormalTok{medC1)}\OperatorTok{^}\DecValTok{2}\NormalTok{))}\OperatorTok{/}\KeywordTok{length}\NormalTok{(C1)}
+\NormalTok{medC1 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(C1)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(C1)}
+\NormalTok{medR1 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(R1)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(R1)}
+\NormalTok{varC1 }\OtherTok{\textless{}{-}}\NormalTok{ (}\FunctionTok{sum}\NormalTok{((C1 }\SpecialCharTok{{-}}\NormalTok{ medC1)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(C1)}
 \NormalTok{varC1}
 \end{Highlighting}
 \end{Shaded}
@@ -1460,7 +1466,7 @@ Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{varR1 <-}\StringTok{ }\NormalTok{(}\KeywordTok{sum}\NormalTok{((R1 }\OperatorTok{-}\StringTok{ }\NormalTok{medR1)}\OperatorTok{^}\DecValTok{2}\NormalTok{))}\OperatorTok{/}\KeywordTok{length}\NormalTok{(R1)}
+\NormalTok{varR1 }\OtherTok{\textless{}{-}}\NormalTok{ (}\FunctionTok{sum}\NormalTok{((R1 }\SpecialCharTok{{-}}\NormalTok{ medR1)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(R1)}
 \NormalTok{varR1}
 \end{Highlighting}
 \end{Shaded}
@@ -1471,9 +1477,9 @@ Portanto, quando o coeficiente de correlação é igual a zero ou muito próximo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dpC1 <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(varC1))}
-\NormalTok{dpR1 <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(varR1))}
-\NormalTok{corrC1R1 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(covC1R1}\OperatorTok{/}\NormalTok{(dpC1 }\OperatorTok{*}\StringTok{ }\NormalTok{dpR1), }\DecValTok{4}\NormalTok{)}
+\NormalTok{dpC1 }\OtherTok{\textless{}{-}} \FunctionTok{abs}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(varC1))}
+\NormalTok{dpR1 }\OtherTok{\textless{}{-}} \FunctionTok{abs}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(varR1))}
+\NormalTok{corrC1R1 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(covC1R1}\SpecialCharTok{/}\NormalTok{(dpC1 }\SpecialCharTok{*}\NormalTok{ dpR1), }\DecValTok{4}\NormalTok{)}
 \NormalTok{corrC1R1}
 \end{Highlighting}
 \end{Shaded}
@@ -1486,7 +1492,7 @@ Ou simplesmente
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{round}\NormalTok{(}\KeywordTok{cor}\NormalTok{(C1, R1), }\DecValTok{4}\NormalTok{)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{cor}\NormalTok{(C1, R1), }\DecValTok{4}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1513,140 +1519,45 @@ Essa tranferência de renda do mais pobre para o mais rico, mantida a renda méd
 \hypertarget{curva-de-lorenz}{%
 \section{Curva de Lorenz}\label{curva-de-lorenz}}
 
-\begin{longtable}[]{@{}rcccc@{}}
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.13}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.23}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.20}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.20}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.24}}@{}}
 \caption{\label{tab:pessoasocupadas} Distribuição de pessoas ocupadas conforme renda obtida na atividade exercida no Brasil, de acordo com a PNAD 2003}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.11\columnwidth}\raggedleft
-estrato\strut
-\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\centering
-\% no estrato
+estrato & \% no estrato
 da população
-(\%)\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
-\% no estrato
+(\%) & \% no estrato
 da renda
-(\%)\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
-\% acumulada
+(\%) & \% acumulada
 da população
-(100\(p\))\strut
-\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\centering
-\% acumulada
+(100\(p\)) & \% acumulada
 da renda
-(100\(\Phi\))\strut
-\end{minipage}\tabularnewline
+(100\(\Phi\)) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.11\columnwidth}\raggedleft
-estrato\strut
-\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\centering
-\% no estrato
+estrato & \% no estrato
 da população
-(\%)\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
-\% no estrato
+(\%) & \% no estrato
 da renda
-(\%)\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
-\% acumulada
+(\%) & \% acumulada
 da população
-(100\(p\))\strut
-\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\centering
-\% acumulada
+(100\(p\)) & \% acumulada
 da renda
-(100\(\Phi\))\strut
-\end{minipage}\tabularnewline
+(100\(\Phi\)) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-I\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-7\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-II\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-16\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-III\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-13\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-70\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-29\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-IV\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-80\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-39\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-V\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-16\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-90\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-55\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-VI\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-13\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-95\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-68\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-VII\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-99\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-87\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedleft
-VIII\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-13\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-100\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\centering
-100\strut
-\end{minipage}\tabularnewline
+I & 30 & 7 & 30 & 7 \\
+II & 20 & 9 & 50 & 16 \\
+III & 20 & 13 & 70 & 29 \\
+IV & 10 & 10 & 80 & 39 \\
+V & 10 & 16 & 90 & 55 \\
+VI & 5 & 13 & 95 & 68 \\
+VII & 4 & 19 & 99 & 87 \\
+VIII & 1 & 13 & 100 & 100 \\
 \bottomrule
 \end{longtable}
 
@@ -1654,15 +1565,16 @@ Considere os dados da tabela \ref{tab:pessoasocupadas}. Na coluna de porcentagem
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(ineq)}
-\CommentTok{# usando os valores do exemplo em porcentagem mesmo}
-\NormalTok{p <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{)}
-\NormalTok{r <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DecValTok{13}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(ineq)}
+\CommentTok{\# usando os valores do exemplo em porcentagem}
+\CommentTok{\# mesmo}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{r }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DecValTok{13}\NormalTok{)}
 
-\CommentTok{# calcula o mínimo da curva de Lorenz}
-\NormalTok{Lcmin <-}\StringTok{ }\KeywordTok{Lc}\NormalTok{(r, }\DataTypeTok{n =}\NormalTok{ p)}
-\CommentTok{# Desenha a curva de Lorenz em um gráfico}
-\KeywordTok{plot}\NormalTok{(Lcmin)}
+\CommentTok{\# calcula o mínimo da curva de Lorenz}
+\NormalTok{Lcmin }\OtherTok{\textless{}{-}} \FunctionTok{Lc}\NormalTok{(r, }\AttributeTok{n =}\NormalTok{ p)}
+\CommentTok{\# Desenha a curva de Lorenz em um gráfico}
+\FunctionTok{plot}\NormalTok{(Lcmin)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1671,7 +1583,7 @@ Considerando a curva de Lorenz, figura \ref{fig:CurvaLorenz}, que é basicamente
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"lorenz3.png"}\NormalTok{)}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"lorenz3.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1832,144 +1744,30 @@ A relação \eqref{eq:GiniFinal} mostra que, no cálculo do índice de Gini, cad
 
 Para aplicar a fórmula do índice de Gini, utiliza-se os dados apresentados na tabela abaixo, obtidos de \citet{Hoffmann2006}.
 
-\begin{longtable}[]{@{}cccccc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.12}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.22}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.11}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.24}}@{}}
 \caption{\label{tab:DadosdoExemploNumericoParaGini} Valores de \(X_i\), \(p_i\), \(\Phi_i\) e \(\Phi_{i-1} + \Phi_i\) para a população hipotética de 8 elementos}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.10\columnwidth}\centering
-\(i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(p_i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(X_i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\centering
-\(\sum_{j=1}^{n}X_j\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
-\(\Phi_i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
-\(\Phi_{i-1} + \Phi_i\)\strut
-\end{minipage}\tabularnewline
+\(i\) & \(p_i\) & \(X_i\) & \(\sum_{j=1}^{n}X_j\) & \(\Phi_i\) & \(\Phi_{i-1} + \Phi_i\) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.10\columnwidth}\centering
-\(i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(p_i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(X_i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\centering
-\(\sum_{j=1}^{n}X_j\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
-\(\Phi_i\)\strut
-\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
-\(\Phi_{i-1} + \Phi_i\)\strut
-\end{minipage}\tabularnewline
+\(i\) & \(p_i\) & \(X_i\) & \(\sum_{j=1}^{n}X_j\) & \(\Phi_i\) & \(\Phi_{i-1} + \Phi_i\) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.10\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,125\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,02\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,02\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,250\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,04\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,06\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,375\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,06\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,10\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,500\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,10\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,16\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,625\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,18\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,28\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,750\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-17\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,34\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,52\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-0,875\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-13\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-0,60\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0,94\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-1,000\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
-1,00\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-1,60\strut
-\end{minipage}\tabularnewline
+1 & 0,125 & 1 & 1 & 0,02 & 0,02 \\
+2 & 0,250 & 1 & 2 & 0,04 & 0,06 \\
+3 & 0,375 & 1 & 3 & 0,06 & 0,10 \\
+4 & 0,500 & 2 & 5 & 0,10 & 0,16 \\
+5 & 0,625 & 4 & 9 & 0,18 & 0,28 \\
+6 & 0,750 & 8 & 17 & 0,34 & 0,52 \\
+7 & 0,875 & 13 & 30 & 0,60 & 0,94 \\
+8 & 1,000 & 20 & 50 & 1,00 & 1,60 \\
 \bottomrule
 \end{longtable}
 
@@ -2001,10 +1799,10 @@ Usando \eqref{eq:GiniEmTermosDePhi}, é necessário totalizar a coluna \(\Phi_{i
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{options}\NormalTok{(}\DataTypeTok{OutDec =} \StringTok{","}\NormalTok{)}
-\NormalTok{somaphis <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.02}\NormalTok{, }\FloatTok{0.06}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.16}\NormalTok{, }\FloatTok{0.28}\NormalTok{, }\FloatTok{0.52}\NormalTok{, }\FloatTok{0.94}\NormalTok{, }
+\FunctionTok{options}\NormalTok{(}\AttributeTok{OutDec =} \StringTok{","}\NormalTok{)}
+\NormalTok{somaphis }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.02}\NormalTok{, }\FloatTok{0.06}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.16}\NormalTok{, }\FloatTok{0.28}\NormalTok{, }\FloatTok{0.52}\NormalTok{, }\FloatTok{0.94}\NormalTok{, }
     \FloatTok{1.6}\NormalTok{)}
-\NormalTok{somasomaphis <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(somaphis)}
+\NormalTok{somasomaphis }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(somaphis)}
 \NormalTok{somasomaphis}
 \end{Highlighting}
 \end{Shaded}
@@ -2021,7 +1819,7 @@ Portanto
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{giniphis <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\KeywordTok{length}\NormalTok{(somaphis) }\OperatorTok{*}\StringTok{ }\NormalTok{somasomaphis}
+\NormalTok{giniphis }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}} \DecValTok{1}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(somaphis) }\SpecialCharTok{*}\NormalTok{ somasomaphis}
 \NormalTok{giniphis}
 \end{Highlighting}
 \end{Shaded}
@@ -2038,10 +1836,10 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{xi <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{20}\NormalTok{)}
+\NormalTok{xi }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{20}\NormalTok{)}
 
-\NormalTok{XC <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(xi, }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \KeywordTok{length}\NormalTok{(xi), }
-    \DataTypeTok{byrow =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{XC }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(xi, }\AttributeTok{nrow =} \FunctionTok{length}\NormalTok{(xi), }\AttributeTok{ncol =} \FunctionTok{length}\NormalTok{(xi), }
+    \AttributeTok{byrow =} \ConstantTok{FALSE}\NormalTok{)}
 \NormalTok{XC}
 \end{Highlighting}
 \end{Shaded}
@@ -2060,8 +1858,8 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{XL <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(xi, }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \KeywordTok{length}\NormalTok{(xi), }
-    \DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{XL }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(xi, }\AttributeTok{nrow =} \FunctionTok{length}\NormalTok{(xi), }\AttributeTok{ncol =} \FunctionTok{length}\NormalTok{(xi), }
+    \AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
 \NormalTok{XL}
 \end{Highlighting}
 \end{Shaded}
@@ -2080,7 +1878,7 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{DIFX <-}\StringTok{ }\NormalTok{XC }\OperatorTok{-}\StringTok{ }\NormalTok{XL}
+\NormalTok{DIFX }\OtherTok{\textless{}{-}}\NormalTok{ XC }\SpecialCharTok{{-}}\NormalTok{ XL}
 \NormalTok{DIFX}
 \end{Highlighting}
 \end{Shaded}
@@ -2099,7 +1897,7 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ABSDIFX <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(DIFX)}
+\NormalTok{ABSDIFX }\OtherTok{\textless{}{-}} \FunctionTok{abs}\NormalTok{(DIFX)}
 \NormalTok{ABSDIFX}
 \end{Highlighting}
 \end{Shaded}
@@ -2118,7 +1916,7 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{iota <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \DecValTok{1}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{iota }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{nrow =} \FunctionTok{length}\NormalTok{(xi), }\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
 \NormalTok{iota}
 \end{Highlighting}
 \end{Shaded}
@@ -2137,7 +1935,7 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{somacolunaABSDIFX <-}\StringTok{ }\KeywordTok{t}\NormalTok{(iota) }\OperatorTok{%*%}\StringTok{ }\NormalTok{ABSDIFX}
+\NormalTok{somacolunaABSDIFX }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(iota) }\SpecialCharTok{\%*\%}\NormalTok{ ABSDIFX}
 \NormalTok{somacolunaABSDIFX}
 \end{Highlighting}
 \end{Shaded}
@@ -2149,8 +1947,8 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{somalinhasomacolunaABSDIFX <-}\StringTok{ }\NormalTok{somacolunaABSDIFX }\OperatorTok{%*%}\StringTok{ }
-\StringTok{    }\NormalTok{iota}
+\NormalTok{somalinhasomacolunaABSDIFX }\OtherTok{\textless{}{-}}\NormalTok{ somacolunaABSDIFX }\SpecialCharTok{\%*\%} 
+\NormalTok{    iota}
 \NormalTok{somalinhasomacolunaABSDIFX}
 \end{Highlighting}
 \end{Shaded}
@@ -2162,9 +1960,9 @@ Para aplicar a fórmula \eqref{eq:GiniEmTermosDeDiferencaAbsolutaMedia} que é a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{obs <-}\StringTok{ }\KeywordTok{length}\NormalTok{(xi)}
+\NormalTok{obs }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(xi)}
 
-\NormalTok{delta <-}\StringTok{ }\NormalTok{obs}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{somalinhasomacolunaABSDIFX}
+\NormalTok{delta }\OtherTok{\textless{}{-}}\NormalTok{ obs}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{) }\SpecialCharTok{*}\NormalTok{ somalinhasomacolunaABSDIFX}
 \NormalTok{delta}
 \end{Highlighting}
 \end{Shaded}
@@ -2184,7 +1982,7 @@ Com a diferença absoluta média de \(X_i\) devidamente calculada, aplica-se a f
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ximedio <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(xi)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(xi)}
+\NormalTok{ximedio }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(xi)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(xi)}
 \NormalTok{ximedio}
 \end{Highlighting}
 \end{Shaded}
@@ -2195,7 +1993,7 @@ Com a diferença absoluta média de \(X_i\) devidamente calculada, aplica-se a f
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ginidelta <-}\StringTok{ }\NormalTok{delta}\OperatorTok{/}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{ximedio)}
+\NormalTok{ginidelta }\OtherTok{\textless{}{-}}\NormalTok{ delta}\SpecialCharTok{/}\NormalTok{(}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ ximedio)}
 \NormalTok{ginidelta}
 \end{Highlighting}
 \end{Shaded}
@@ -2219,8 +2017,8 @@ usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{is <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{nrow =} \KeywordTok{length}\NormalTok{(xi), }\DataTypeTok{ncol =} \DecValTok{1}\NormalTok{, }
-    \DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{is }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(xi), }\AttributeTok{nrow =} \FunctionTok{length}\NormalTok{(xi), }\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }
+    \AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
 \NormalTok{is}
 \end{Highlighting}
 \end{Shaded}
@@ -2239,7 +2037,7 @@ usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ixi <-}\StringTok{ }\KeywordTok{t}\NormalTok{(is) }\OperatorTok{*}\StringTok{ }\NormalTok{xi}
+\NormalTok{ixi }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(is) }\SpecialCharTok{*}\NormalTok{ xi}
 \NormalTok{ixi}
 \end{Highlighting}
 \end{Shaded}
@@ -2251,7 +2049,7 @@ usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{somaixi <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ixi)}
+\NormalTok{somaixi }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(ixi)}
 \NormalTok{somaixi}
 \end{Highlighting}
 \end{Shaded}
@@ -2262,8 +2060,8 @@ usando os dados da tabela \ref{tab:DadosdoExemploNumericoParaGini}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ginifinal <-}\StringTok{ }\DecValTok{2}\OperatorTok{/}\NormalTok{(obs}\OperatorTok{^}\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{ximedio) }\OperatorTok{*}\StringTok{ }\NormalTok{somaixi }\OperatorTok{-}\StringTok{ }\NormalTok{obs}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\DecValTok{1}
+\NormalTok{ginifinal }\OtherTok{\textless{}{-}} \DecValTok{2}\SpecialCharTok{/}\NormalTok{(obs}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ ximedio) }\SpecialCharTok{*}\NormalTok{ somaixi }\SpecialCharTok{{-}}\NormalTok{ obs}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{) }\SpecialCharTok{{-}} 
+    \DecValTok{1}
 \NormalTok{ginifinal}
 \end{Highlighting}
 \end{Shaded}
@@ -2361,7 +2159,7 @@ O mesmo resultado poderia ser obtido através da fórmula \eqref{eq:Discrepancia
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{somadesvioabsolutomedioxi <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{abs}\NormalTok{(xi }\OperatorTok{-}\StringTok{ }\NormalTok{ximedio))}
+\NormalTok{somadesvioabsolutomedioxi }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\FunctionTok{abs}\NormalTok{(xi }\SpecialCharTok{{-}}\NormalTok{ ximedio))}
 \NormalTok{somadesvioabsolutomedioxi}
 \end{Highlighting}
 \end{Shaded}
@@ -2372,8 +2170,8 @@ O mesmo resultado poderia ser obtido através da fórmula \eqref{eq:Discrepancia
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{desvioabsolutomedioxi <-}\StringTok{ }\NormalTok{(}\KeywordTok{length}\NormalTok{(xi))}\OperatorTok{^}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{abs}\NormalTok{(xi }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\NormalTok{ximedio))}
+\NormalTok{desvioabsolutomedioxi }\OtherTok{\textless{}{-}}\NormalTok{ (}\FunctionTok{length}\NormalTok{(xi))}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{) }\SpecialCharTok{*} \FunctionTok{sum}\NormalTok{(}\FunctionTok{abs}\NormalTok{(xi }\SpecialCharTok{{-}} 
+\NormalTok{    ximedio))}
 \NormalTok{desvioabsolutomedioxi}
 \end{Highlighting}
 \end{Shaded}
@@ -2389,8 +2187,8 @@ Portanto,
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{discrepanciamaximaxi <-}\StringTok{ }\NormalTok{desvioabsolutomedioxi}\OperatorTok{/}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{ximedio)}
+\NormalTok{discrepanciamaximaxi }\OtherTok{\textless{}{-}}\NormalTok{ desvioabsolutomedioxi}\SpecialCharTok{/}\NormalTok{(}\DecValTok{2} \SpecialCharTok{*} 
+\NormalTok{    ximedio)}
 \NormalTok{discrepanciamaximaxi}
 \end{Highlighting}
 \end{Shaded}
@@ -2767,119 +2565,28 @@ Usualmente, o valor do índice é dado em porcentagem, calculando-se
 
 Seja os dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} abaixo
 
-\begin{longtable}[]{@{}ccccccc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.09}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}@{}}
 \caption{\label{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005} dados hipotético de preços e quantidades para três produtos no período de 2001 a 2005}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.08\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(P_{1t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(Q_{1t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(P_{2t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(Q_{2t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(P_{3t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(Q_{3t}\)\strut
-\end{minipage}\tabularnewline
+ano & \(P_{1t}\) & \(Q_{1t}\) & \(P_{2t}\) & \(Q_{2t}\) & \(P_{3t}\) & \(Q_{3t}\) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.08\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(P_{1t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(Q_{1t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(P_{2t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(Q_{2t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(P_{3t}\)\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\(Q_{3t}\)\strut
-\end{minipage}\tabularnewline
+ano & \(P_{1t}\) & \(Q_{1t}\) & \(P_{2t}\) & \(Q_{2t}\) & \(P_{3t}\) & \(Q_{3t}\) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.08\columnwidth}\centering
-2001\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-3\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.08\columnwidth}\centering
-2002\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-15\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-4\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.08\columnwidth}\centering
-2003\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-20\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-35\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-5\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.08\columnwidth}\centering
-2004\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-45\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-6\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.08\columnwidth}\centering
-2005\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-60\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-5\strut
-\end{minipage}\tabularnewline
+2001 & 12 & 3 & 5 & 7 & 20 & 3 \\
+2002 & 15 & 4 & 10 & 9 & 25 & 4 \\
+2003 & 18 & 5 & 20 & 8 & 35 & 5 \\
+2004 & 24 & 5 & 30 & 7 & 45 & 6 \\
+2005 & 30 & 6 & 60 & 6 & 50 & 5 \\
 \bottomrule
 \end{longtable}
 
@@ -2894,77 +2601,25 @@ Tomando com base o ano 2002, o preço relativo do produto 1 em 2004, de acordo c
 
 Com base na tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}, os demais preços relativos podem ser calculados, tomando como base o ano de 2002, que são apresentados na tabela \ref{tab:PrecosRelativosDosTresProdutosBase2002}.
 
-\begin{longtable}[]{@{}cccc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.10}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.17}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.17}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.18}}@{}}
 \caption{\label{tab:PrecosRelativosDosTresProdutosBase2002} Preços relativos dos três produtos no período de 2001 a 2005, tomando como base o ano de 2002}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
-Produto 1\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
-Produto 2\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\centering
-Produto 3\strut
-\end{minipage}\tabularnewline
+ano & Produto 1 & Produto 2 & Produto 3 \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
-Produto 1\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
-Produto 2\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\centering
-Produto 3\strut
-\end{minipage}\tabularnewline
+ano & Produto 1 & Produto 2 & Produto 3 \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2001\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-80\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-80\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2002\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-100\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-100\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-100\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2003\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-120\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-200\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-140\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2004\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-160\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-300\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-180\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2005\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-200\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
-600\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-200\strut
-\end{minipage}\tabularnewline
+2001 & 80 & 50 & 80 \\
+2002 & 100 & 100 & 100 \\
+2003 & 120 & 200 & 140 \\
+2004 & 160 & 300 & 180 \\
+2005 & 200 & 600 & 200 \\
 \bottomrule
 \end{longtable}
 
@@ -2974,16 +2629,16 @@ Carrega-se os preços dos três produtos e calcula os respectivos preços relati
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{prd1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{)}
-\NormalTok{prd2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{60}\NormalTok{)}
-\NormalTok{prd3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{)}
+\NormalTok{prd1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\NormalTok{prd2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{60}\NormalTok{)}
+\NormalTok{prd3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{)}
 
-\NormalTok{iprprd1 <-}\StringTok{ }\NormalTok{prd1}\OperatorTok{/}\NormalTok{prd1[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{iprprd2 <-}\StringTok{ }\NormalTok{prd2}\OperatorTok{/}\NormalTok{prd2[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{iprprd3 <-}\StringTok{ }\NormalTok{prd3}\OperatorTok{/}\NormalTok{prd3[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iprprd1 }\OtherTok{\textless{}{-}}\NormalTok{ prd1}\SpecialCharTok{/}\NormalTok{prd1[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{iprprd2 }\OtherTok{\textless{}{-}}\NormalTok{ prd2}\SpecialCharTok{/}\NormalTok{prd2[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{iprprd3 }\OtherTok{\textless{}{-}}\NormalTok{ prd3}\SpecialCharTok{/}\NormalTok{prd3[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{*} \DecValTok{100}
 
-\NormalTok{ipr161 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(iprprd1, iprprd2, iprprd3)}
-\KeywordTok{rownames}\NormalTok{(ipr161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
+\NormalTok{ipr161 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(iprprd1, iprprd2, iprprd3)}
+\FunctionTok{rownames}\NormalTok{(ipr161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
 
 \NormalTok{ipr161}
 \end{Highlighting}
@@ -3032,49 +2687,23 @@ om base nos dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a20
 
 Analogamente, obtém-se os demais índices que são apresentados na tabela \ref{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002}.
 
-\begin{longtable}[]{@{}cc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.10}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.28}}@{}}
 \caption{\label{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002} Índice simples de preços agregados dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_A^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_A^*(P_t|P_0)\) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_A^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_A^*(P_t|P_0)\) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2001\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-74\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2002\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-100\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2003\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-146\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2004\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-198\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2005\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-280\strut
-\end{minipage}\tabularnewline
+2001 & 74 \\
+2002 & 100 \\
+2003 & 146 \\
+2004 & 198 \\
+2005 & 280 \\
 \bottomrule
 \end{longtable}
 
@@ -3084,21 +2713,21 @@ A seguir é calculado o Índice simples de preços agregados do exemplo numéric
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{)}
-\NormalTok{p2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{60}\NormalTok{)}
-\NormalTok{p3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{60}\NormalTok{)}
+\NormalTok{p3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{)}
 
-\NormalTok{p161 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(p1, p2, p3)}
-\KeywordTok{rownames}\NormalTok{(p161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
+\NormalTok{p161 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(p1, p2, p3)}
+\FunctionTok{rownames}\NormalTok{(p161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
 
-\NormalTok{IAp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{IAp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{IAp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{IAp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{IAp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{IAp1p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{IAp2p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{IAp3p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{IAp4p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{IAp5p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
 
-\NormalTok{ispa161 <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(IAp1p2, IAp2p2, IAp3p2, IAp4p2, IAp5p2)}
-\KeywordTok{colnames}\NormalTok{(ispa161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ISPA"}\NormalTok{)}
+\NormalTok{ispa161 }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(IAp1p2, IAp2p2, IAp3p2, IAp4p2, IAp5p2)}
+\FunctionTok{colnames}\NormalTok{(ispa161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"ISPA"}\NormalTok{)}
 
 \NormalTok{ispa161}
 \end{Highlighting}
@@ -3134,49 +2763,23 @@ ou, em porcentagem,
 
 Na tabela \ref{tab:IndiceSimplesDePrecosAgregadosDeTresProdutosBase2002} abaixo são apresentados os valores desse índice para os dados da tabela \ref{tab:DadosPrecosQuantidadesDeTresProdutos2001a2005}
 
-\begin{longtable}[]{@{}cc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.10}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.28}}@{}}
 \caption{\label{tab:IndiceMediaAritmeticaPrecosRelativosDeTresProdutosBase2002} Índice média aritmética dos preços relativos dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_M^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_M^*(P_t|P_0)\) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_M^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_M^*(P_t|P_0)\) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2001\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-70,0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2002\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-100,0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2003\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-153,3\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2004\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-213,3\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2005\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-333,3\strut
-\end{minipage}\tabularnewline
+2001 & 70,0 \\
+2002 & 100,0 \\
+2003 & 153,3 \\
+2004 & 213,3 \\
+2005 & 333,3 \\
 \bottomrule
 \end{longtable}
 
@@ -3209,15 +2812,15 @@ base 2002, é só calcular a média aritmética para cada ano.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{maprp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{1}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{1}\NormalTok{, ])}
-\NormalTok{maprp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{2}\NormalTok{, ])}
-\NormalTok{maprp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{3}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{3}\NormalTok{, ])}
-\NormalTok{maprp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{4}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{4}\NormalTok{, ])}
-\NormalTok{maprp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(ipr161[}\DecValTok{5}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{length}\NormalTok{(ipr161[}\DecValTok{5}\NormalTok{, ])}
+\NormalTok{maprp1p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(ipr161[}\DecValTok{1}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(ipr161[}\DecValTok{1}\NormalTok{, ])}
+\NormalTok{maprp2p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(ipr161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(ipr161[}\DecValTok{2}\NormalTok{, ])}
+\NormalTok{maprp3p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(ipr161[}\DecValTok{3}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(ipr161[}\DecValTok{3}\NormalTok{, ])}
+\NormalTok{maprp4p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(ipr161[}\DecValTok{4}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(ipr161[}\DecValTok{4}\NormalTok{, ])}
+\NormalTok{maprp5p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(ipr161[}\DecValTok{5}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(ipr161[}\DecValTok{5}\NormalTok{, ])}
 
-\NormalTok{mapr161 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{rbind}\NormalTok{(maprp1p2, maprp2p2, maprp3p2, }
+\NormalTok{mapr161 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{rbind}\NormalTok{(maprp1p2, maprp2p2, maprp3p2, }
 \NormalTok{    maprp4p2, maprp5p2), }\DecValTok{1}\NormalTok{)}
-\KeywordTok{colnames}\NormalTok{(mapr161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"MAPR"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(mapr161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"MAPR"}\NormalTok{)}
 
 \NormalTok{mapr161}
 \end{Highlighting}
@@ -3297,49 +2900,23 @@ produtos, em 2004, tomando 2002 como ano-base é
 Os valores do índice de preços de Laspeyres para 2001, 2003 e 2005 podem ser obtidos
 da mesma maneira e são apresentados na tabela \ref{tab:IndiceDeLaspeyresDeTresProdutosBase2002}.
 
-\begin{longtable}[]{@{}cc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.10}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.28}}@{}}
 \caption{\label{tab:IndiceDeLaspeyresDeTresProdutosBase2002} Índice de Laspeyres dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_L^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_L^*(P_t|P_0)\) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_L^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_L^*(P_t|P_0)\) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2001\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-69,2\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2002\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-100,0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2003\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-156,8\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2004\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-218,4\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2005\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-344,0\strut
-\end{minipage}\tabularnewline
+2001 & 69,2 \\
+2002 & 100,0 \\
+2003 & 156,8 \\
+2004 & 218,4 \\
+2005 & 344,0 \\
 \bottomrule
 \end{longtable}
 
@@ -3347,11 +2924,11 @@ ano\strut
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{q1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{)}
-\NormalTok{q2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{6}\NormalTok{)}
-\NormalTok{q3 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{5}\NormalTok{)}
-\NormalTok{q161 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(q1, q2, q3)}
-\KeywordTok{rownames}\NormalTok{(q161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
+\NormalTok{q1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{)}
+\NormalTok{q2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{6}\NormalTok{)}
+\NormalTok{q3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{q161 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(q1, q2, q3)}
+\FunctionTok{rownames}\NormalTok{(q161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2001}\NormalTok{, }\DecValTok{2002}\NormalTok{, }\DecValTok{2003}\NormalTok{, }\DecValTok{2004}\NormalTok{, }\DecValTok{2005}\NormalTok{)}
 
 \NormalTok{q161}
 \end{Highlighting}
@@ -3368,20 +2945,20 @@ ano\strut
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{iplp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{iplp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{iplp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{iplp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{iplp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{iplp1p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{iplp2p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{iplp3p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{iplp4p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{iplp5p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
 
-\NormalTok{ipl161 <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(iplp1p2, iplp2p2, iplp3p2, iplp4p2, }
+\NormalTok{ipl161 }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(iplp1p2, iplp2p2, iplp3p2, iplp4p2, }
 \NormalTok{    iplp5p2)}
-\KeywordTok{colnames}\NormalTok{(ipl161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"IPL"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(ipl161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"IPL"}\NormalTok{)}
 
 \NormalTok{ipl161}
 \end{Highlighting}
@@ -3449,49 +3026,23 @@ de preços de Paasche para os três produtos em 2004, tomando 2002 como ano-base
 \end{equation}
 Os valores dos índices de preços de Paasche para os demais anos podem ser calculados na mesma forma e são apresentados na tabela \ref{tab:IndiceDePaascheDeTresProdutosBase2002}.
 
-\begin{longtable}[]{@{}cc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.10}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.28}}@{}}
 \caption{\label{tab:IndiceDePaascheDeTresProdutosBase2002} Índice de Paasche dos três produtos no período 2001-2005 tomando como base o ano de 2002}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_P^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_P^*(P_t|P_0)\) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.09\columnwidth}\centering
-ano\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering
-\(I_P^*(P_t|P_0)\)\strut
-\end{minipage}\tabularnewline
+ano & \(I_P^*(P_t|P_0)\) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2001\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-68,9\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2002\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-100,0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2003\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-151,8\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2004\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-203,4\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-2005\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\centering
-287,3\strut
-\end{minipage}\tabularnewline
+2001 & 68,9 \\
+2002 & 100,0 \\
+2003 & 151,8 \\
+2004 & 203,4 \\
+2005 & 287,3 \\
 \bottomrule
 \end{longtable}
 
@@ -3499,20 +3050,20 @@ ano\strut
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ippp1p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{1}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{1}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{ippp2p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{2}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{ippp3p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{3}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{3}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{ippp4p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{4}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{4}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
-\NormalTok{ippp5p2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }\NormalTok{q161[}\DecValTok{5}\NormalTok{, ])}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{q161[}\DecValTok{5}\NormalTok{, ]) }\OperatorTok{*}\StringTok{ }\DecValTok{100}
+\NormalTok{ippp1p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{1}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{1}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{1}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{ippp2p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{2}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{2}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{ippp3p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{3}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{3}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{3}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{ippp4p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{4}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{4}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{4}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{ippp5p2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(p161[}\DecValTok{5}\NormalTok{, ] }\SpecialCharTok{*}\NormalTok{ q161[}\DecValTok{5}\NormalTok{, ])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(p161[}\DecValTok{2}\NormalTok{, ] }\SpecialCharTok{*} 
+\NormalTok{    q161[}\DecValTok{5}\NormalTok{, ]) }\SpecialCharTok{*} \DecValTok{100}
 
-\NormalTok{ipp161 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{rbind}\NormalTok{(ippp1p2, ippp2p2, ippp3p2, ippp4p2, }
+\NormalTok{ipp161 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{rbind}\NormalTok{(ippp1p2, ippp2p2, ippp3p2, ippp4p2, }
 \NormalTok{    ippp5p2), }\DecValTok{1}\NormalTok{)}
-\KeywordTok{colnames}\NormalTok{(ipp161) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"IPP"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(ipp161) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"IPP"}\NormalTok{)}
 
 \NormalTok{ipp161}
 \end{Highlighting}
@@ -3971,17 +3522,17 @@ visualização.
 
 \begin{longtable}[]{@{}ccc@{}}
 \toprule
-jogada 1 & jogada 2 & jogada 3\tabularnewline
+jogada 1 & jogada 2 & jogada 3 \\
 \midrule
 \endhead
-C & C & C\tabularnewline
-C & C & K\tabularnewline
-C & K & C\tabularnewline
-C & K & K\tabularnewline
-K & C & C\tabularnewline
-K & C & K\tabularnewline
-K & K & C\tabularnewline
-K & K & K\tabularnewline
+C & C & C \\
+C & C & K \\
+C & K & C \\
+C & K & K \\
+K & C & C \\
+K & C & K \\
+K & K & C \\
+K & K & K \\
 \bottomrule
 \end{longtable}
 
@@ -4225,9 +3776,9 @@ O primeiro exemplo numérico 3.2.3.1 da página 62 de \citet{Sartoris2013} resol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(MASS)}
+\FunctionTok{library}\NormalTok{(MASS)}
 
-\NormalTok{p1 <-}\StringTok{ }\KeywordTok{dbinom}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{dbinom}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
 \NormalTok{p1}
 \end{Highlighting}
 \end{Shaded}
@@ -4238,7 +3789,7 @@ O primeiro exemplo numérico 3.2.3.1 da página 62 de \citet{Sartoris2013} resol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p1frac <-}\StringTok{ }\KeywordTok{fractions}\NormalTok{(p1)}
+\NormalTok{p1frac }\OtherTok{\textless{}{-}} \FunctionTok{fractions}\NormalTok{(p1)}
 \NormalTok{p1frac}
 \end{Highlighting}
 \end{Shaded}
@@ -4255,8 +3806,8 @@ O primeiro exemplo numérico 3.2.3.1 da página 62 de \citet{Sartoris2013} resol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(MASS)}
-\NormalTok{p2 <-}\StringTok{ }\KeywordTok{dbinom}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(MASS)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{dbinom}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
 \NormalTok{p2}
 \end{Highlighting}
 \end{Shaded}
@@ -4267,7 +3818,7 @@ O primeiro exemplo numérico 3.2.3.1 da página 62 de \citet{Sartoris2013} resol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p2frac <-}\StringTok{ }\KeywordTok{fractions}\NormalTok{(p2)}
+\NormalTok{p2frac }\OtherTok{\textless{}{-}} \FunctionTok{fractions}\NormalTok{(p2)}
 \NormalTok{p2frac}
 \end{Highlighting}
 \end{Shaded}
@@ -4284,9 +3835,9 @@ O primeiro exemplo numérico 3.2.3.1 da página 62 de \citet{Sartoris2013} resol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(MASS)}
+\FunctionTok{library}\NormalTok{(MASS)}
 
-\NormalTok{p3 <-}\StringTok{ }\KeywordTok{dbinom}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\NormalTok{p3 }\OtherTok{\textless{}{-}} \FunctionTok{dbinom}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
 \NormalTok{p3}
 \end{Highlighting}
 \end{Shaded}
@@ -4297,7 +3848,7 @@ O primeiro exemplo numérico 3.2.3.1 da página 62 de \citet{Sartoris2013} resol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p3frac <-}\StringTok{ }\KeywordTok{fractions}\NormalTok{(p3)}
+\NormalTok{p3frac }\OtherTok{\textless{}{-}} \FunctionTok{fractions}\NormalTok{(p3)}
 \NormalTok{p3frac}
 \end{Highlighting}
 \end{Shaded}
@@ -4320,7 +3871,7 @@ Considerando uma ,duas e três jogadas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{media1 <-}\StringTok{ }\DecValTok{1} \OperatorTok{*}\StringTok{ }\FloatTok{0.5}
+\NormalTok{media1 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{*} \FloatTok{0.5}
 \NormalTok{media1}
 \end{Highlighting}
 \end{Shaded}
@@ -4331,7 +3882,7 @@ Considerando uma ,duas e três jogadas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{var1 <-}\StringTok{ }\DecValTok{1} \OperatorTok{*}\StringTok{ }\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{)}
+\NormalTok{var1 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{*} \FloatTok{0.5} \SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}} \FloatTok{0.5}\NormalTok{)}
 \NormalTok{var1}
 \end{Highlighting}
 \end{Shaded}
@@ -4348,7 +3899,7 @@ Considerando uma ,duas e três jogadas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{media2 <-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\FloatTok{0.5}
+\NormalTok{media2 }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{*} \FloatTok{0.5}
 \NormalTok{media2}
 \end{Highlighting}
 \end{Shaded}
@@ -4359,7 +3910,7 @@ Considerando uma ,duas e três jogadas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{var2 <-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{)}
+\NormalTok{var2 }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{*} \FloatTok{0.5} \SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}} \FloatTok{0.5}\NormalTok{)}
 \NormalTok{var2}
 \end{Highlighting}
 \end{Shaded}
@@ -4376,7 +3927,7 @@ Considerando uma ,duas e três jogadas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{media3 <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\FloatTok{0.5}
+\NormalTok{media3 }\OtherTok{\textless{}{-}} \DecValTok{3} \SpecialCharTok{*} \FloatTok{0.5}
 \NormalTok{media3}
 \end{Highlighting}
 \end{Shaded}
@@ -4387,7 +3938,7 @@ Considerando uma ,duas e três jogadas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{var3 <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{)}
+\NormalTok{var3 }\OtherTok{\textless{}{-}} \DecValTok{3} \SpecialCharTok{*} \FloatTok{0.5} \SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}} \FloatTok{0.5}\NormalTok{)}
 \NormalTok{var3}
 \end{Highlighting}
 \end{Shaded}
@@ -4512,7 +4063,7 @@ Exemplo 3.2.6.1 da página 67 de \citet{Sartoris2013}. Suponha que, em média, o
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p4 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{ppois}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p4 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{ppois}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DecValTok{4}\NormalTok{)}
 \NormalTok{p4}
 \end{Highlighting}
 \end{Shaded}
@@ -4529,7 +4080,7 @@ Usando distribuição binomial:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p5 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{dbinom}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{100}\NormalTok{, }\FloatTok{0.02}\NormalTok{), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p5 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{dbinom}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{100}\NormalTok{, }\FloatTok{0.02}\NormalTok{), }\DecValTok{4}\NormalTok{)}
 \NormalTok{p5}
 \end{Highlighting}
 \end{Shaded}
@@ -4542,7 +4093,7 @@ Usando a distribuição de Poisson como aproximação e sabendo que \(\lambda = 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p6 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{dpois}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p6 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{dpois}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DecValTok{4}\NormalTok{)}
 \NormalTok{p6}
 \end{Highlighting}
 \end{Shaded}
@@ -4583,12 +4134,12 @@ A situação do exemplo do relógio analógico do \citet{Sartoris2013}, como a m
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
 
-\NormalTok{hora <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{12}\NormalTok{)}
-\NormalTok{prob <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }
-    \DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\OperatorTok{/}\DecValTok{12}\NormalTok{)}
-\NormalTok{horaanalogica <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(hora, prob))}
+\NormalTok{hora }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{12}\NormalTok{)}
+\NormalTok{prob }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }
+    \DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{)}
+\NormalTok{horaanalogica }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(hora, prob))}
 \NormalTok{horaanalogica}
 \end{Highlighting}
 \end{Shaded}
@@ -4611,9 +4162,9 @@ A situação do exemplo do relógio analógico do \citet{Sartoris2013}, como a m
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(horaanalogica, }\KeywordTok{aes}\NormalTok{(hora, prob)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }
-\StringTok{    }\KeywordTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{13}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }
-    \DecValTok{12}\NormalTok{, }\DataTypeTok{by =} \DecValTok{1}\NormalTok{))}
+\FunctionTok{ggplot}\NormalTok{(horaanalogica, }\FunctionTok{aes}\NormalTok{(hora, prob)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} 
+    \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{13}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.2}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }
+    \DecValTok{12}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5200,8 +4751,8 @@ Usando o R, a probabilidade de \(z\) estar entre zero e 1,23 é calculada atrav�
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p0z1}\FloatTok{.23}\NormalTok{ <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.23}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }
-    \DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p0z1}\FloatTok{.23} \OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.23}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }
+    \AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{), }\DecValTok{4}\NormalTok{)}
 \NormalTok{p0z1}\FloatTok{.23}
 \end{Highlighting}
 \end{Shaded}
@@ -5255,10 +4806,10 @@ Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(1,43) - F(0)}
+\CommentTok{\# Calculo de F(1,43) {-} F(0)}
 
-\NormalTok{p2 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
 
 \NormalTok{p2}
 \end{Highlighting}
@@ -5270,10 +4821,10 @@ Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(0,27) - F(0)}
+\CommentTok{\# Calculo de F(0,27) {-} F(0)}
 
-\NormalTok{p1 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
 
 \NormalTok{p1}
 \end{Highlighting}
@@ -5285,9 +4836,9 @@ Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de P(0,27 < z < 1,43)}
+\CommentTok{\# Calculo de P(0,27 \textless{} z \textless{} 1,43)}
 
-\NormalTok{p027z143 <-}\StringTok{ }\NormalTok{p2 }\OperatorTok{-}\StringTok{ }\NormalTok{p1}
+\NormalTok{p027z143 }\OtherTok{\textless{}{-}}\NormalTok{ p2 }\SpecialCharTok{{-}}\NormalTok{ p1}
 
 \NormalTok{p027z143}
 \end{Highlighting}
@@ -5313,13 +4864,13 @@ Usando o R, o cálculo da probabilidade de \(z\) estar entre 0,27 e 1,43 é simp
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p027z143r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{), }
+\NormalTok{p027z143r }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{), }
     \DecValTok{4}\NormalTok{)}
 
-\CommentTok{# Calculo de F(1,43)}
+\CommentTok{\# Calculo de F(1,43)}
 
-\NormalTok{p2r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{p2r }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.43}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 
 \NormalTok{p2r}
@@ -5332,9 +4883,9 @@ Usando o R, o cálculo da probabilidade de \(z\) estar entre 0,27 e 1,43 é simp
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(0,27)}
+\CommentTok{\# Calculo de F(0,27)}
 
-\NormalTok{p1r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{p1r }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.27}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 
 \NormalTok{p1r}
@@ -5347,9 +4898,9 @@ Usando o R, o cálculo da probabilidade de \(z\) estar entre 0,27 e 1,43 é simp
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de P(0,27 < z < 1,43)}
+\CommentTok{\# Calculo de P(0,27 \textless{} z \textless{} 1,43)}
 
-\NormalTok{p027z143r <-}\StringTok{ }\NormalTok{p2r }\OperatorTok{-}\StringTok{ }\NormalTok{p1r}
+\NormalTok{p027z143r }\OtherTok{\textless{}{-}}\NormalTok{ p2r }\SpecialCharTok{{-}}\NormalTok{ p1r}
 
 
 \NormalTok{p027z143r}
@@ -5392,10 +4943,10 @@ Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(1,38) - F(0)}
+\CommentTok{\# Calculo de F(1,38) {-} F(0)}
 
-\NormalTok{pf138f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.38}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+\NormalTok{pf138f0 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.38}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
 
 \NormalTok{pf138f0}
 \end{Highlighting}
@@ -5407,10 +4958,10 @@ Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(0,97) - F(0)}
+\CommentTok{\# Calculo de F(0,97) {-} F(0)}
 
-\NormalTok{pf097f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+\NormalTok{pf097f0 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
 
 \NormalTok{pf097f0}
 \end{Highlighting}
@@ -5422,9 +4973,9 @@ Usando o R, a probabilidade de \(z\) estar entre 0,27 e 1,43 pode ser calculada 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de P(1,38 < z < 0,97)}
+\CommentTok{\# Calculo de P(1,38 \textless{} z \textless{} 0,97)}
 
-\NormalTok{p138z097 <-}\StringTok{ }\NormalTok{pf138f0 }\OperatorTok{+}\StringTok{ }\NormalTok{pf097f0}
+\NormalTok{p138z097 }\OtherTok{\textless{}{-}}\NormalTok{ pf138f0 }\SpecialCharTok{+}\NormalTok{ pf097f0}
 
 \NormalTok{p138z097}
 \end{Highlighting}
@@ -5452,13 +5003,13 @@ Usando o R, o cálculo da probabilidade de \(z\) estar entre -1,38 e 0,97 é sim
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p138z097r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\OperatorTok{-}\FloatTok{1.38}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{), }
+\NormalTok{p138z097r }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{1.38}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{), }
     \DecValTok{4}\NormalTok{)}
 
-\CommentTok{# Calculo de F(-1,38)}
+\CommentTok{\# Calculo de F({-}1,38)}
 
-\NormalTok{pf138r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\OperatorTok{-}\FloatTok{1.38}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{pf138r }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{1.38}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 
 \NormalTok{pf138r}
@@ -5471,9 +5022,9 @@ Usando o R, o cálculo da probabilidade de \(z\) estar entre -1,38 e 0,97 é sim
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(0,97)}
+\CommentTok{\# Calculo de F(0,97)}
 
-\NormalTok{pf097r <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{pf097r }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.97}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 
 \NormalTok{pf097r}
@@ -5486,9 +5037,9 @@ Usando o R, o cálculo da probabilidade de \(z\) estar entre -1,38 e 0,97 é sim
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de P(-1,38 < z < 0,97)}
+\CommentTok{\# Calculo de P({-}1,38 \textless{} z \textless{} 0,97)}
 
-\NormalTok{p138z097r <-}\StringTok{ }\NormalTok{pf097r }\OperatorTok{-}\StringTok{ }\NormalTok{pf138r}
+\NormalTok{p138z097r }\OtherTok{\textless{}{-}}\NormalTok{ pf097r }\SpecialCharTok{{-}}\NormalTok{ pf138r}
 
 
 \NormalTok{p138z097r}
@@ -5523,7 +5074,7 @@ Usando o R, o cálculo é
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{f222 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{2.22}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{f222 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{2.22}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 \NormalTok{f222}
 \end{Highlighting}
@@ -5535,7 +5086,7 @@ Usando o R, o cálculo é
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{f0 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 \NormalTok{f0}
 \end{Highlighting}
@@ -5547,7 +5098,7 @@ Usando o R, o cálculo é
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pf222f0 <-}\StringTok{ }\NormalTok{f222 }\OperatorTok{-}\StringTok{ }\NormalTok{f0}
+\NormalTok{pf222f0 }\OtherTok{\textless{}{-}}\NormalTok{ f222 }\SpecialCharTok{{-}}\NormalTok{ f0}
 
 \NormalTok{pf222f0}
 \end{Highlighting}
@@ -5559,7 +5110,7 @@ Usando o R, o cálculo é
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pz222 <-}\StringTok{ }\FloatTok{0.5} \OperatorTok{-}\StringTok{ }\NormalTok{pf222f0}
+\NormalTok{pz222 }\OtherTok{\textless{}{-}} \FloatTok{0.5} \SpecialCharTok{{-}}\NormalTok{ pf222f0}
 
 \NormalTok{pz222}
 \end{Highlighting}
@@ -5585,7 +5136,7 @@ Usando o R para o cálculo,
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pz222r <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{2.22}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }
+\NormalTok{pz222r }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{2.22}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }
     \DecValTok{4}\NormalTok{)}
 
 \NormalTok{pz222r}
@@ -5669,10 +5220,10 @@ Usando o R para os cálculos intermediários, se tem
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(1,25) - F(0)}
+\CommentTok{\# Calculo de F(1,25) {-} F(0)}
 
-\NormalTok{pf125f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{1.25}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+\NormalTok{pf125f0 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.25}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
 
 \NormalTok{pf125f0}
 \end{Highlighting}
@@ -5684,10 +5235,10 @@ Usando o R para os cálculos intermediários, se tem
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de F(0,25) - F(0)}
+\CommentTok{\# Calculo de F(0,25) {-} F(0)}
 
-\NormalTok{pf025f0 <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(}\FloatTok{0.25}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T) }\OperatorTok{-}\StringTok{ }
-\StringTok{    }\KeywordTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
+\NormalTok{pf025f0 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.25}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T) }\SpecialCharTok{{-}} 
+    \FunctionTok{pnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{, }\AttributeTok{lower.tail =}\NormalTok{ T), }\DecValTok{4}\NormalTok{)}
 
 \NormalTok{pf025f0}
 \end{Highlighting}
@@ -5699,9 +5250,9 @@ Usando o R para os cálculos intermediários, se tem
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calculo de P(-0,25 < z < 1,25)}
+\CommentTok{\# Calculo de P({-}0,25 \textless{} z \textless{} 1,25)}
 
-\NormalTok{p025z125 <-}\StringTok{ }\NormalTok{pf025f0 }\OperatorTok{+}\StringTok{ }\NormalTok{pf125f0}
+\NormalTok{p025z125 }\OtherTok{\textless{}{-}}\NormalTok{ pf025f0 }\SpecialCharTok{+}\NormalTok{ pf125f0}
 
 \NormalTok{p025z125}
 \end{Highlighting}
@@ -5938,86 +5489,29 @@ Por enquanto considera-se que \(X\) e \(Y\) são variáveis independentes.
 
 Como são três jogos com dois resultados possíveis, vitória ou derrota com 0,5 de probabilidade cada um, existem oito possibilidades entre os três primeiros jogos em análise. Na tabela \ref{tab:ResultadosProvaveisEmTresPartidas} abaixo é apresentado os valores de \(X\) e \(Y\) de acordo com os resultados possíveis.
 
-\begin{longtable}[]{@{}ccc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.30}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.35}}@{}}
 \caption{\label{tab:ResultadosProvaveisEmTresPartidas} Resultados prováveis em três partidas, considerando vitória (V) ou derrota(D) como resultado possível de cada partida com 0,5 de probabilidade}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.28\columnwidth}\centering
 resultados
-possíveis\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\centering
-X\strut
-\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\centering
-Y\strut
-\end{minipage}\tabularnewline
+possíveis & X & Y \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.28\columnwidth}\centering
 resultados
-possíveis\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\centering
-X\strut
-\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\centering
-Y\strut
-\end{minipage}\tabularnewline
+possíveis & X & Y \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.28\columnwidth}\centering
-VVV\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-1\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-VVD\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-1\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-VDV\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-1\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-VDD\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-1\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-DVV\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-DDV\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-DVD\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\centering
-DDD\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
+VVV & 3 & 1 \\
+VVD & 2 & 1 \\
+VDV & 2 & 1 \\
+VDD & 1 & 1 \\
+DVV & 2 & 0 \\
+DDV & 1 & 0 \\
+DVD & 1 & 0 \\
+DDD & 0 & 0 \\
 \bottomrule
 \end{longtable}
 
@@ -6027,58 +5521,23 @@ Onde o resultado possível nos três primeiros jogos definido como VDV significa
 
 Na sequência o estatístico constrói uma tabela que apresenta as probabilidades conjuntas de \(x\) e \(Y\) cujo preenchimento é feito com base na tabela \ref{tab:ProbabilidadesConjuntasDeXeY}
 
-\begin{longtable}[]{@{}lcccc@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}@{}}
 \caption{\label{tab:ProbabilidadesConjuntasDeXeY} Probabilidades conjuntas de \(X\) e \(Y\)}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.12\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=0\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=1\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=2\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=3\strut
-\end{minipage}\tabularnewline
+& X=0 & X=1 & X=2 & X=3 \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.12\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=0\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=1\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=2\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=3\strut
-\end{minipage}\tabularnewline
+& X=0 & X=1 & X=2 & X=3 \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\textbf{Y=0}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-2/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\textbf{Y=1}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-2/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage}\tabularnewline
+\textbf{Y=0} & 1/8 & 2/8 & 1/8 & 0 \\
+\textbf{Y=1} & 0 & 1/8 & 2/8 & 1/8 \\
 \bottomrule
 \end{longtable}
 
@@ -6117,79 +5576,25 @@ ou seja,
 Na tabela \ref{tab:ProbabilidadesConjuntasDeXeY}, \(P(Y=1)\) é obtida somando os valores da linha para \(Y=1\).
 Assim, usando este raciocínio, é possível agregar mais uma linha e mais uma coluna com as probabilidades marginais de \(X\) e de \(Y\). As probabilidades marginais de \(X\) são as somas de cada uma das colunas da tabela \ref{tab:ProbabilidadesConjuntasDeXeY}. As probabilidades marginais de \(Y\) são as somas de cada uma das linhas da tabela \ref{tab:ProbabilidadesConjuntasDeXeY}. Desta forma se obtém a tabela \ref{tab:ProbabilidadesMarginaisDeXeY}.
 
-\begin{longtable}[]{@{}lccccc@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.15}}@{}}
 \caption{\label{tab:ProbabilidadesMarginaisDeXeY} Probabilidades marginais de \(X\) e \(Y\)}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.12\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=0\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=1\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=2\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=3\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-P(Y)\strut
-\end{minipage}\tabularnewline
+& X=0 & X=1 & X=2 & X=3 & P(Y) \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.12\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=0\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=1\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=2\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-X=3\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-P(Y)\strut
-\end{minipage}\tabularnewline
+& X=0 & X=1 & X=2 & X=3 & P(Y) \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\textbf{Y=0}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-2/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{1/2}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\textbf{Y=1}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-2/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-1/8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{1/2}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\textbf{P(X)}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{1/8}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{3/8}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{3/8}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{1/8}\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-\textbf{1}\strut
-\end{minipage}\tabularnewline
+\textbf{Y=0} & 1/8 & 2/8 & 1/8 & 0 & \textbf{1/2} \\
+\textbf{Y=1} & 0 & 1/8 & 2/8 & 1/8 & \textbf{1/2} \\
+\textbf{P(X)} & \textbf{1/8} & \textbf{3/8} & \textbf{3/8} & \textbf{1/8} & \textbf{1} \\
 \bottomrule
 \end{longtable}
 
@@ -6351,84 +5756,27 @@ Para calcular a covariancia entre \(X\) e \(Y\), com base na fórmula alternativ
 
 é necessário calcular o produto entre \(X\) e \(Y\) que segue na tabela \ref{tab:ProdutoEntreXeY}.
 
-\begin{longtable}[]{@{}ccc@{}}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.22}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.22}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.22}}@{}}
 \caption{\label{tab:ProdutoEntreXeY} Produto entre \(X\) e \(Y\)}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\centering
-X\strut
-\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
-Y\strut
-\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
-XY\strut
-\end{minipage}\tabularnewline
+X & Y & XY \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\centering
-X\strut
-\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
-Y\strut
-\end{minipage} & \begin{minipage}[b]{0.20\columnwidth}\centering
-XY\strut
-\end{minipage}\tabularnewline
+X & Y & XY \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.20\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-3\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-2\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-2\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\centering
-0\strut
-\end{minipage}\tabularnewline
+3 & 1 & 3 \\
+2 & 1 & 2 \\
+2 & 1 & 2 \\
+1 & 1 & 1 \\
+2 & 0 & 0 \\
+1 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 \\
 \bottomrule
 \end{longtable}
 
@@ -7864,6 +7212,8 @@ O todo é denominado \textbf{população} e a parte é denominada \textbf{amostr
 Quando o tamanho da amostra é muito pequeno em relação ao tamanho da população, se diz que a população é \textbf{infinita}.
 
 Um exemplo seria a amostra de três mil eleitores para a pesquisa de intenção de votos na capital do Estado de São Paulo que tem atualmente um pouco mais de oito milhões e quatrocentos mils eleitores.
+
+\textbf{Continuará. Texto em construção}
 
 \hypertarget{teste-de-hipuxf3ste}{%
 \chapter{Teste de hipóste}\label{teste-de-hipuxf3ste}}

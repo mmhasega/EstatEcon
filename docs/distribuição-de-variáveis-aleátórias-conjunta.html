@@ -935,9 +935,9 @@ e
   Var[E(X|Y)] = E\{[E(X|Y)]^2\} - \{E[E(X|Y)]\}^2
 \]</span></p>
 <p>Então,</p>
-<p><span class="math display">\[
-  E\{[E(X|Y)]^2\} = E[E(X|Y=0)]^2\times P(Y=0) + E[E(X|Y=1)]^2\times P(Y=1) 
-\]</span></p>
+<p><span class="math display">\[\begin{multline}
+  E\{[E(X|Y)]^2\} = [E(X|Y=0)]^2\times P(Y=0) + [E(X|Y=1)]^2\times P(Y=1) 
+\end{multline}\]</span></p>
 <p><span class="math display">\[
   E\{[E(X|Y)]^2\} = 1^2\times 0,5 + 2^2\times 0,5 
 \]</span></p>
@@ -1087,7 +1087,7 @@ calculando para <span class="math inline">\(x=0,2\)</span> e <span class="math i
 \]</span>
 calculando a diferença para intervalo
 <span class="math display">\[
-  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}4y\left[0,08 - 0,04 \right]~\text{d}y
+  P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}4y\left[0,08 - 0,02 \right]~\text{d}y
 \]</span></p>
 <p><span class="math display">\[
   P(0,2 &lt; x &lt; 0,4~~\text{ e }~~0,6 &lt; y &lt; 0,8) = \int_{0,6}^{0,8}0,24y~\text{d}y
@@ -1286,7 +1286,7 @@ ou seja, as f.d.p. condicionais são iguais a f.d.p. incondicionais ou marginais
 \]</span></p>
 <p>Partindo-se da f.d.p. conjunta, obtém-se <span class="math inline">\(E(x)\)</span> calculando</p>
 <p><span class="math display">\[
-  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x)~\text{d}x\text{d}y.
+  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x,y)~\text{d}x\text{d}y.
 \]</span>
 Já partindo de uma f.d.p. marginal de <span class="math inline">\(x\)</span>, obtém=se calculando</p>
 <p><span class="math display">\[
@@ -1306,7 +1306,7 @@ calcule <span class="math inline">\(E(x)\)</span>.</p>
 <p><strong>Resposta</strong>:</p>
 <p>Partindo da f.d.p. conjunta, é necessário calcular</p>
 <p><span class="math display">\[
-  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x)~\text{d}x\text{d}y
+  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x,y)~\text{d}x\text{d}y
 \]</span></p>
 <p><span class="math display">\[
   E(x) = \int_{0}^{1} \int_{0}^{1} x~4xy~\text{d}x\text{d}y

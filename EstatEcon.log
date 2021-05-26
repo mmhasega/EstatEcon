@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  19 NOV 2020 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.30)  19 NOV 2020 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1231,8 +1231,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18035 strings out of 481446
- 305772 string characters out of 5919951
+ 18036 strings out of 481446
+ 305787 string characters out of 5919951
  622228 words of memory out of 5000000
  33903 multiletter control sequences out of 15000+600000
  646777 words of font info for 109 fonts, out of 8000000 for 9000
@@ -1265,10 +1265,10 @@ k/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/macbook/L
 ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/macbook/Libr
 ary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/macbook/Librar
 y/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (173 pages, 814026 bytes).
+Output written on EstatEcon.pdf (173 pages, 814096 bytes).
 PDF statistics:
- 1844 PDF objects out of 2073 (max. 8388607)
- 1587 compressed objects within 16 object streams
- 500 named destinations out of 1000 (max. 500000)
+ 1845 PDF objects out of 2073 (max. 8388607)
+ 1588 compressed objects within 16 object streams
+ 501 named destinations out of 1000 (max. 500000)
  428 words of extra memory for PDF output out of 10000 (max. 10000000)
 

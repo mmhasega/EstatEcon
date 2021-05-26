@@ -704,9 +704,9 @@ No caso da $Var[E(X|Y)]$ é necessário calcular $E\{[E(X|Y)]^2\}$, pois
 
 Então,
 
-\[
-  E\{[E(X|Y)]^2\} = E[E(X|Y=0)]^2\times P(Y=0) + E[E(X|Y=1)]^2\times P(Y=1) 
-\]
+\begin{multline}
+  E\{[E(X|Y)]^2\} = [E(X|Y=0)]^2\times P(Y=0) + [E(X|Y=1)]^2\times P(Y=1) 
+\end{multline}
 
 \[
   E\{[E(X|Y)]^2\} = 1^2\times 0,5 + 2^2\times 0,5 
@@ -897,7 +897,7 @@ calculando para $x=0,2$ e $x=0,4$
 \]
 calculando a diferença para intervalo
 \[
-  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}4y\left[0,08 - 0,04 \right]~\text{d}y
+  P(0,2 < x < 0,4~~\text{ e }~~0,6 < y < 0,8) = \int_{0,6}^{0,8}4y\left[0,08 - 0,02 \right]~\text{d}y
 \]
 
 \[
@@ -1166,7 +1166,7 @@ Para o cálculo da esperança matemática de $x$, a semelhança da esperança ma
 Partindo-se da f.d.p. conjunta, obtém-se $E(x)$ calculando
 
 \[
-  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x)~\text{d}x\text{d}y.
+  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x,y)~\text{d}x\text{d}y.
 \]
 Já partindo de uma f.d.p. marginal de $x$, obtém=se calculando
 
@@ -1192,7 +1192,7 @@ calcule $E(x)$.
 Partindo da f.d.p. conjunta, é necessário calcular
 
 \[
-  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x)~\text{d}x\text{d}y
+  E(x) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x~f(x,y)~\text{d}x\text{d}y
 \]
 
 \[

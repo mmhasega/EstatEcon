@@ -18,4 +18,5 @@ Quando o tamanho da amostra é muito pequeno em relação ao tamanho da populaç
 
 Um exemplo seria a amostra de três mil eleitores para a pesquisa de intenção de votos na capital do Estado de São Paulo que tem atualmente um pouco mais de oito milhões e quatrocentos mils eleitores.
 
+**Continuará. Texto em construção**
 

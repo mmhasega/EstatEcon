@@ -103,6 +103,20 @@ Ou seja,
   f(x) = \dfrac{2}{9} x
 \]
 
+\begin{center}
+  \begin{figure}
+    \begin{tikzpicture}[yscale=2]
+      \draw[->] (0,0) -- (0,1) node[left]{$f(x)$};
+      \draw[->] (0,0) -- (4,0) node[below]{$x$};
+      \draw[blue,thick] (0,0) -- (3,2/3);
+      \draw[dashed] (0,2/3) node[left]{$3A$} -- (3,2/3);
+      \draw[dashed] (3,0) node[below]{3} -- (3,2/3);
+    \end{tikzpicture}
+    \caption{Distribuição de probababilidade de $x$ entre 0 e
+    3}\label{fig:fig413a}
+  \end{figure}
+\end{center}
+
 b) Determine a probabilidade de que $x$ esteja entre 2 e 3.
 
 Para $x=2$ se tem

@@ -117,6 +117,7 @@
 \usepackage{graphics,graphicx,import,color,float}
 \usepackage{url,booktabs,siunitx}
 \usepackage{xcolor}
+\usepackage{tikz}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -125,7 +126,7 @@
 
 \title{Notas de aulas de Estatística Econômica}
 \author{Marcos Minoru Hasegawa}
-\date{2021-05-26}
+\date{2021-05-27}
 
 \begin{document}
 \maketitle
@@ -4243,6 +4244,20 @@ Ou seja,
 \[
   f(x) = \dfrac{2}{9} x
 \]
+
+\begin{center}
+  \begin{figure}
+    \begin{tikzpicture}[yscale=2]
+      \draw[->] (0,0) -- (0,1) node[left]{$f(x)$};
+      \draw[->] (0,0) -- (4,0) node[below]{$x$};
+      \draw[blue,thick] (0,0) -- (3,2/3);
+      \draw[dashed] (0,2/3) node[left]{$3A$} -- (3,2/3);
+      \draw[dashed] (3,0) node[below]{3} -- (3,2/3);
+    \end{tikzpicture}
+    \caption{Distribuição de probababilidade de $x$ entre 0 e
+    3}\label{fig:fig413a}
+  \end{figure}
+\end{center}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}

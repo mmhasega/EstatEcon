@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.24)  26 MAY 2021 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.24)  27 MAY 2021 21:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,35 +724,311 @@ LaTeX3 Info: Defining command \SIlist (pdfstring context) with sig. 'omm' on
 LaTeX3 Info: Defining command \SIrange (pdfstring context) with sig. 'ommm' on
 (LaTeX3)     line 7345.
 
-) (./EstatEcon.aux)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/us
+r/local/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/te
+xlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen261
+\pgfutil@tempdimb=\dimen262
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box71
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/
+local/texlive/2021/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks40
+))
+\pgf@x=\dimen263
+\pgf@y=\dimen264
+\pgf@xa=\dimen265
+\pgf@ya=\dimen266
+\pgf@xb=\dimen267
+\pgf@yb=\dimen268
+\pgf@xc=\dimen269
+\pgf@yc=\dimen270
+\pgf@xd=\dimen271
+\pgf@yd=\dimen272
+\w@pgf@writea=\write4
+\r@pgf@reada=\read4
+\c@pgf@counta=\count328
+\c@pgf@countb=\count329
+\c@pgf@countc=\count330
+\c@pgf@countd=\count331
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count332
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count333
+\pgfsyssoftpath@bigbuffer@items=\count334
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr
+/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/
+local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen273
+\pgfmath@count=\count335
+\pgfmath@box=\box72
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex))) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/m
+ath/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count336
+)) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen274
+\pgf@picmaxx=\dimen275
+\pgf@picminy=\dimen276
+\pgf@picmaxy=\dimen277
+\pgf@pathminx=\dimen278
+\pgf@pathmaxx=\dimen279
+\pgf@pathminy=\dimen280
+\pgf@pathmaxy=\dimen281
+\pgf@xx=\dimen282
+\pgf@xy=\dimen283
+\pgf@yx=\dimen284
+\pgf@yy=\dimen285
+\pgf@zx=\dimen286
+\pgf@zy=\dimen287
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen288
+\pgf@path@lasty=\dimen289
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen290
+\pgf@shorten@start@additional=\dimen291
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box73
+\pgf@hbox=\box74
+\pgf@layerbox@main=\box75
+\pgf@picture@serial@count=\count337
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen292
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen293
+\pgf@pt@y=\dimen294
+\pgf@pt@temp=\dimen295
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen296
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen297
+\pgf@sys@shading@range@num=\count338
+\pgf@shadingcount=\count339
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box76
+))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box77
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen298
+\pgf@nodesepend=\dimen299
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr
+/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/
+texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/loca
+l/texlive/2021/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/20
+21/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2021/
+texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen300
+\pgffor@skip=\dimen301
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
+))
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count340
+\pgfplotmarksize=\dimen302
+)
+\tikz@lastx=\dimen303
+\tikz@lasty=\dimen304
+\tikz@lastxsaved=\dimen305
+\tikz@lastysaved=\dimen306
+\tikz@lastmovetox=\dimen307
+\tikz@lastmovetoy=\dimen308
+\tikzleveldistance=\dimen309
+\tikzsiblingdistance=\dimen310
+\tikz@figbox=\box78
+\tikz@figbox@bg=\box79
+\tikz@tempbox=\box80
+\tikz@tempbox@bg=\box81
+\tikztreelevel=\count341
+\tikznumberofchildren=\count342
+\tikznumberofcurrentchild=\count343
+\tikz@fig@count=\count344
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count345
+\pgfmatrixcurrentcolumn=\count346
+\pgf@matrix@numberofcolumns=\count347
+)
+\tikz@expandcount=\count348
+
+(/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (./EstatEcon.aux)
 \openout1 = `EstatEcon.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Info: Redefining \microtypecontext on input line 130.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Info: Redefining \microtypecontext on input line 131.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 130.
+LaTeX Info: Redefining \showhyphens on input line 131.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -761,17 +1037,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 ) (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
-\scratchdimen=\dimen261
-\scratchbox=\box71
-\nofMPsegments=\count329
-\nofMParguments=\count330
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count331
-\MPscratchDim=\dimen262
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count349
+\scratchdimen=\dimen311
+\scratchbox=\box82
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count352
+\MPscratchDim=\dimen312
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -780,7 +1056,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 130.
+Package hyperref Info: Link coloring OFF on input line 131.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -790,11 +1066,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count334
+\c@section@level=\count355
 )
-LaTeX Info: Redefining \ref on input line 130.
-LaTeX Info: Redefining \pageref on input line 130.
-LaTeX Info: Redefining \nameref on input line 130.
+LaTeX Info: Redefining \ref on input line 131.
+LaTeX Info: Redefining \pageref on input line 131.
+LaTeX Info: Redefining \nameref on input line 131.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/translations/translations-basic-d
 ictionary-brazil.trsl
@@ -802,41 +1078,41 @@ File: translations-basic-dictionary-brazil.trsl (brazil translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `brazil'. on input line 130.
+or `brazil'. on input line 131.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-30.
+31.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-30.
+31.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-130.
+131.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-130.
+131.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 130.
+(Font)              <10> on input line 131.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 130.
+(Font)              <7> on input line 131.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 130.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 130
+(Font)              <5> on input line 131.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 131
 .
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 130
+LaTeX Font Info:    Trying to load font information for U+msb on input line 131
 .
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -844,7 +1120,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-130.
+131.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -853,24 +1129,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-130.
+131.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 132.
+(Font)              <12> on input line 133.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 132.
+(Font)              <8> on input line 133.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 132.
+(Font)              <6> on input line 133.
 [1
 
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] (./EstatEcon.toc [3])
-\tf@toc=\write4
-\openout4 = `EstatEcon.toc'.
+\tf@toc=\write5
+\openout5 = `EstatEcon.toc'.
 
 [4] [5
 
@@ -883,36 +1159,36 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-73.
+74.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [11]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-00.
+01.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [12] [13] [14] [15] [16] [17] [18] [19]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 815.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 816.
 [20] [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [22] [23] [24] [25] [26] [27]
-<EstatEcon_files/figure-latex/histograma12-1.pdf, id=333, 276.03125pt x 246.922
+<EstatEcon_files/figure-latex/histograma12-1.pdf, id=336, 276.03125pt x 246.922
 5pt>
 File: EstatEcon_files/figure-latex/histograma12-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/histograma12-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/histograma12-1.pdf  used 
-on input line 1236.
+on input line 1237.
 (pdftex.def)             Requested size: 276.03056pt x 246.92188pt.
 [28 <./EstatEcon_files/figure-latex/histograma12-1.pdf>] [29]
-<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=355, 253.94875pt x 
+<EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf, id=358, 253.94875pt x 
 249.93375pt>
 File: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf Graphic file (type
  pdf)
 <use EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/diagrama de caixa12-1.pdf
-  used on input line 1353.
+  used on input line 1354.
 (pdftex.def)             Requested size: 253.95586pt x 249.94075pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -923,19 +1199,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Cap\'{\i }tulo 2.
 [35]
-<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=405, 262.9825pt x 248.93pt
+<EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf, id=408, 262.9825pt x 248.93pt
 >
 File: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf  used 
-on input line 1581.
+on input line 1582.
 (pdftex.def)             Requested size: 262.98584pt x 248.93317pt.
 
 LaTeX Warning: Reference `fig:CurvaLorenzR' on page 36 undefined on input line 
-1582.
+1583.
 
 
-Underfull \hbox (badness 2334) in paragraph at lines 1581--1583
+Underfull \hbox (badness 2334) in paragraph at lines 1582--1584
 [][] \T1/lmr/m/n/10 (+20) Con-si-de-rando a
  []
 
@@ -943,10 +1219,10 @@ Underfull \hbox (badness 2334) in paragraph at lines 1581--1583
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [36]
-<lorenz3.png, id=412, 1286.8075pt x 794.97pt>
+<lorenz3.png, id=415, 1286.8075pt x 794.97pt>
 File: lorenz3.png Graphic file (type png)
 <use lorenz3.png>
-Package pdftex.def Info: lorenz3.png  used on input line 1592.
+Package pdftex.def Info: lorenz3.png  used on input line 1593.
 (pdftex.def)             Requested size: 344.98828pt x 213.12848pt.
 
 Underfull \vbox (badness 3965) has occurred while \output is active []
@@ -955,10 +1231,10 @@ Underfull \vbox (badness 3965) has occurred while \output is active []
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.1600 
+l.1601 
         <./EstatEcon_files/figure-latex/CurvaLorenzR-1.pdf> <./lorenz3.png>] [3
 8] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
-Overfull \hbox (49.17578pt too wide) detected at line 2269
+Overfull \hbox (49.17578pt too wide) detected at line 2270
 \OML/lmm/m/it/10 h\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 ) \OMS/l
 msy/m/n/10 ^^@ \OML/lmm/m/it/10 h\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 y[]\OT1/lmr/
 m/n/10 ) = [] [] \OMS/lmsy/m/n/10 ^^@ [] [] \OT1/lmr/m/n/10 = [] [] + [] [][] =
@@ -987,156 +1263,161 @@ Cap\'{\i }tulo 5.
 [87
 
 ]
-<EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf, id=895, 279.0
+<EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf, id=898, 279.0
 425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf Graphic f
 ile (type pdf)
 <use EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/DistribuicaoUniformeConti
-nua-1.pdf  used on input line 4173.
+nua-1.pdf  used on input line 4174.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
 [88] [89pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.4190 
+l.4191 
         <./EstatEcon_files/figure-latex/DistribuicaoUniformeContinua-1.pdf>] [9
-0] [91] [92] [93] [94] [95] [96] [97]
-<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=968, 279.0425pt x 280.
+0] [91pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.4317 \]
+         ] [92] [93] [94] [95] [96] [97]
+<EstatEcon_files/figure-latex/graficobinomial1-1.pdf, id=972, 279.0425pt x 280.
 04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial1-1.pdf Graphic file (type pd
 f)
 <use EstatEcon_files/figure-latex/graficobinomial1-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial1-1.pdf  u
-sed on input line 4674.
+sed on input line 4689.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [98]
-<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=976, 279.0425pt x 280.
+<EstatEcon_files/figure-latex/graficobinomial2-1.pdf, id=980, 279.0425pt x 280.
 04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial2-1.pdf Graphic file (type pd
 f)
 <use EstatEcon_files/figure-latex/graficobinomial2-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial2-1.pdf  u
-sed on input line 4676.
+sed on input line 4691.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [99 <./EstatEcon_files/figure-latex/graficobinomial1-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=988, 279.0425pt x 280.
+<EstatEcon_files/figure-latex/graficobinomial3-1.pdf, id=992, 279.0425pt x 280.
 04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial3-1.pdf Graphic file (type pd
 f)
 <use EstatEcon_files/figure-latex/graficobinomial3-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial3-1.pdf  u
-sed on input line 4678.
+sed on input line 4693.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [100 <./EstatEcon_files/figure-latex/graficobinomial2-1.pdf>]
-<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1000, 279.0425pt x 280.
+<EstatEcon_files/figure-latex/graficobinomia5-1.pdf, id=1004, 279.0425pt x 280.
 04625pt>
 File: EstatEcon_files/figure-latex/graficobinomia5-1.pdf Graphic file (type pdf
 )
 <use EstatEcon_files/figure-latex/graficobinomia5-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomia5-1.pdf  us
-ed on input line 4680.
+ed on input line 4695.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
-<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1001, 279.0425pt x 28
+<EstatEcon_files/figure-latex/graficobinomial10-1.pdf, id=1005, 279.0425pt x 28
 0.04625pt>
 File: EstatEcon_files/figure-latex/graficobinomial10-1.pdf Graphic file (type p
 df)
 <use EstatEcon_files/figure-latex/graficobinomial10-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/graficobinomial10-1.pdf  
-used on input line 4684.
+used on input line 4699.
 (pdftex.def)             Requested size: 279.05032pt x 280.0541pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [101 <./EstatEcon_files/figure-latex/graficobinomial3-1.pdf>]
-<EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf, id=1015, 283.0575pt x 
+<EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf, id=1019, 283.0575pt x 
 277.035pt>
 File: EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf Graphic file (type
  pdf)
 <use EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf
-  used on input line 4692.
+  used on input line 4707.
 (pdftex.def)             Requested size: 283.0568pt x 277.03432pt.
 [102 <./EstatEcon_files/figure-latex/graficobinomia5-1.pdf>] [103pdfTeX warning
- (ext4): destination with the same identifier (name{figure.5.2}) has been alrea
+ (ext4): destination with the same identifier (name{figure.5.3}) has been alrea
 dy used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.4712 
+l.4727 
         <./EstatEcon_files/figure-latex/graficobinomial10-1.pdf>] [104pdfTeX wa
-rning (ext4): destination with the same identifier (name{figure.5.3}) has been 
+rning (ext4): destination with the same identifier (name{figure.5.4}) has been 
 already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.4712 
+l.4727 
         <./EstatEcon_files/figure-latex/DistribuicaoNormal0-1.pdf>] [105]
 
 LaTeX Warning: Reference `fig:ExemploDistribuicaoNormalPadronizada1' on page 10
-6 undefined on input line 4770.
+6 undefined on input line 4785.
 
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf, id=1
-058, 279.0425pt x 277.035pt>
+062, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
-Padronizada1-1.pdf  used on input line 4772.
+Padronizada1-1.pdf  used on input line 4787.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [106]
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf, id=1
-064, 279.0425pt x 277.035pt>
+068, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
-Padronizada2-1.pdf  used on input line 4791.
+Padronizada2-1.pdf  used on input line 4806.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
 [107 <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada1-1.pd
 f>] [108pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.5.4}) has been already used, duplicate ignored
+e.5.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.4799 \]
+l.4814 \]
           <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada2
 -1.pdf>] [109]
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf, id=1
-100, 279.0425pt x 277.035pt>
+104, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
-Padronizada3-1.pdf  used on input line 4924.
+Padronizada3-1.pdf  used on input line 4939.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
 [110] [111pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.5.5}) has been already used, duplicate ignored
+ure.5.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.4940 \]
+l.4955 \]
           <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada3
 -1.pdf>] [112]
 
 LaTeX Warning: Reference `fig:ExemploDistribuicaoNormalPadronizada4' on page 11
-3 undefined on input line 5065.
+3 undefined on input line 5080.
 
 <EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf, id=1
-125, 279.0425pt x 277.035pt>
+129, 279.0425pt x 277.035pt>
 File: EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf 
 Graphic file (type pdf)
 <use EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada4-1.pdf>
 Package pdftex.def Info: EstatEcon_files/figure-latex/ExemploDistribuicaoNormal
-Padronizada4-1.pdf  used on input line 5067.
+Padronizada4-1.pdf  used on input line 5082.
 (pdftex.def)             Requested size: 279.04181pt x 277.03432pt.
 [113] [114 <./EstatEcon_files/figure-latex/ExemploDistribuicaoNormalPadronizada
 4-1.pdf>] [115] [116] [117] [118] [119] [120]
@@ -1150,7 +1431,7 @@ Overfull \hbox (16.42834pt too wide) has occurred while \output is active
  []
 
 [122]
-Overfull \hbox (73.24225pt too wide) detected at line 5571
+Overfull \hbox (73.24225pt too wide) detected at line 5586
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y \OT1/lmr/m/n/10 = 1) = \O
 ML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 X \OT1/lmr/m/n/10 = 0 [] \OML
 /lmm/m/it/10 Y \OT1/lmr/m/n/10 = 1) + \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/l
@@ -1341,7 +1622,7 @@ Overfull \hbox (16.42834pt too wide) has occurred while \output is active
  []
 
 [152]
-Overfull \hbox (10.6801pt too wide) detected at line 7127
+Overfull \hbox (10.6801pt too wide) detected at line 7142
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x < \OT1/lmr/m/n/10 0\OML/l
 mm/m/it/10 ; \OT1/lmr/m/n/10 5 \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 y \OT1/lmr/m
 /n/10 = 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 5) = [] [][] []  []\OML/lmm/m/it/10
@@ -1380,13 +1661,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 21411 strings out of 478836
- 385206 string characters out of 5855599
- 731120 words of memory out of 5000000
- 37842 multiletter control sequences out of 15000+600000
+ 31323 strings out of 478836
+ 602732 string characters out of 5855599
+ 916404 words of memory out of 5000000
+ 47545 multiletter control sequences out of 15000+600000
  529530 words of font info for 267 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,16n,77p,921b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,16n,80p,921b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
 cal/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texliv
 e/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-d
@@ -1412,10 +1693,10 @@ exlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2021
 t/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
 pe1/public/lm/lmtti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on EstatEcon.pdf (161 pages, 815541 bytes).
+Output written on EstatEcon.pdf (161 pages, 816031 bytes).
 PDF statistics:
- 1790 PDF objects out of 2073 (max. 8388607)
- 1545 compressed objects within 16 object streams
- 489 named destinations out of 1000 (max. 500000)
- 70060 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1794 PDF objects out of 2073 (max. 8388607)
+ 1549 compressed objects within 16 object streams
+ 490 named destinations out of 1000 (max. 500000)
+ 70072 words of extra memory for PDF output out of 74296 (max. 10000000)
 
